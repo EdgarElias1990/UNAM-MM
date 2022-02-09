@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="external_layout_header_checkbook_request_report">
+            <div t-attf-class="header o_company_#{company.id}_layout">
+                <div class="row">
+                    <div class="col-2" align="left">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                             style="max-height: 150px;" alt="Logo"/>
+                    </div>
+                    <div class="col-3" style="padding-left:15px;padding-top:10px;margin:top:30px;">
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">UNIVERSITY PATRONATE</p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:13px;">
+                            TREASURY
+                        </p>
+                    </div>
+                    <div class="col-4" align="left">
+                        <p style="margin-top:50px;padding-top:20px;font-size:25px;">
+                        	<br/><br/>
+                            <b>COSTO DE CHEQUES-<span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/></b>
+                        </p>
+                    </div>
+                    <div class="col-3" align="right" style="padding-right:0;padding-left:20px;">
+                    <img src="/jt_check_controls/static/src/img/dgf.png"
+                             style="max-height:100px;width:54%"/>
+                    </div>
+                </div>
+            </div>
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"
+                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+            </div>
+        </template>
+
+        <template id="external_layout_print_checkbook_request">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="jt_check_controls.external_layout_header_checkbook_request_report">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+        <template id="print_checkbook_request_template">
+            <t t-call="web.html_container">
+                <!-- <t t-foreach="docs" t-as="o"> -->
+                    <t>
+                        <t t-call="jt_check_controls.external_layout_print_checkbook_request">
+                            <div class="page">
+                                 
+                                <div class="row">
+                                    <div class="col-12">
+                                        <table class="table  table-bordered" name="checkbook_table">
+                                            <thead>
+                                                <tr>
+                                                    <t t-set="colspan" t-value="8"/>
+                                                    <th name="th_bank" class="text-left">
+                                                        <span>Bank</span>
+                                                    </th>
+                                                    <th name="th_bank_account" class="text-left">
+                                                        <span>Bank Account</span>
+                                                    </th>
+                                                    <th name="th_checkbook" class="text-left">
+                                                        <span>Checkbook No.</span>
+                                                    </th>
+                                                    <th name="th_folio_legal" class="text-left">
+                                                        <span>Box No.</span>
+                                                    </th>
+                                                    <th name="th_init_folio" class="text-left">
+                                                        <span>Initial Folio</span>
+                                                    </th>
+                                                    <th name="th_final_folio" class="text-left">
+                                                        <span>Final Folio</span>
+                                                    </th>
+                                                    <th name="th_check_per_box" class="text-left">
+                                                        <span>Checks Per Box</span>
+                                                    </th>
+                                                    <th name="th_cost_per_box" class="text-left">
+                                                        <span>Cost per check</span>
+                                                    </th>
+                                                    <th name="th_total_cost_check" class="text-left">
+                                                        <span>Total cost for checks</span>
+                                                    </th>
+                                                    
+                                                    <th class="text-left">
+                                                        <span>Checkbook Request Date</span>
+                                                    </th>
+                                                    <th class="text-left">
+                                                        <span>Checkbook receipt date</span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="checkbook_tbody">
+                                            	<t t-set="grad_cost_check" t-value="0"/>
+                                            	<t t-set="grad_total_cost_check" t-value="0"/>
+                                                <tr t-foreach="docs" t-as="o">
+                                                    <td name="td_name">
+                                                        <span t-if="o.bank_id" t-field="o.bank_id.name"/>
+                                                    </td>
+                                                    <td name="td_application_no">
+                                                        <span t-if="o.bank_account_id" t-field="o.bank_account_id.acc_number"/>
+                                                    </td>
+                                                    <td name="td_checkbook_no">
+                                                        <span t-if="o.checkbook_no" t-field="o.checkbook_no"/>
+                                                    </td>
+                                                    <td name="td_folio_legel" class="text-right">
+                                                        <span t-if="o.box_no" t-field="o.box_no"/>
+                                                    </td>
+                                                    <td name="td_initial_folio" class="text-right">
+                                                        <span t-if="o.intial_folio" t-field="o.intial_folio"/>
+                                                    </td>
+                                                    <td name="td_final_folio" class="text-right">
+                                                        <span t-if="o.final_folio" t-field="o.final_folio"/>
+                                                    </td>
+                                                    <td name="td_check_per_box" class="text-right">
+                                                        <span t-if="o.check_per_box" t-field="o.check_per_box"/>
+                                                    </td>
+                                                    <td name="td_cost_per_check" class="text-right">
+                                                        <span t-if="o.cost_per_check" t-field="o.cost_per_check"/>
+                                                    </td>
+                                                    <td name="td_total_cost_for_checks" class="text-right">
+                                                        <span t-if="o.total_cost_for_checks" t-field="o.total_cost_for_checks"/>
+                                                    </td>
+	                                            	<t t-set="grad_cost_check" t-value="grad_cost_check+o.cost_per_check"/>
+	                                            	<t t-set="grad_total_cost_check" t-value="grad_total_cost_check+o.total_cost_for_checks"/>
+                                                    
+                                                    <td name="td_appliaction_date">
+                                                        <span t-if="o.appliaction_date" t-field="o.appliaction_date"/>
+                                                    </td>
+                                                    <td name="td_check_receipt_date">
+                                                        <span t-if="o.check_receipt_date" t-field="o.check_receipt_date"/>
+                                                    </td>
+                                                </tr>
+                                                	<td></td>
+                                                	<td></td>
+                                                	<td></td>
+                                                	<td></td>
+                                                	<td></td>
+                                                	<td></td>
+                                                	<th>Total</th>
+                                                    <th name="total_td_cost_per_check" class="text-right">
+                                                    </th>
+                                                    <th name="total_td_total_cost_for_checks" class="text-right">
+                                                        <span t-esc="grad_total_cost_check"/>
+                                                    </th>
+                                                	<td></td>
+                                                	<td></td>
+												<tr>
+													
+												</tr>                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                <!-- </t> -->
+            </t>
+        </template>
+
+        <record id="paperformat_print_checkbook_request" model="report.paperformat">
+            <field name="name">Checkbook Request Print Checks</field>
+            <field name="default" eval="True"/>
+            <field name="orientation">Landscape</field>
+            <field name="format">A4</field>
+            <field name="margin_top">45</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+            id="checkbook_request_id"
+            model="check.per.box"
+            string="Print PDF"
+            report_type="qweb-pdf"
+            name="jt_check_controls.print_checkbook_request_template"
+            file="jt_check_controls.print_checkbook_request_template"
+            paperformat="jt_check_controls.paperformat_print_checkbook_request"
+            menu="False"
+        />
+
+    </data>
+</odoo>

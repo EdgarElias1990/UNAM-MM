@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="import_payroll_check_issue_tree_view" model="ir.ui.view">
+            <field name="name">import.payroll.check.issue.tree.view</field>
+            <field name="model">import.payroll.check.issue</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="case"/>
+                    <field name="original_check"/>
+                    <field name="original_bank_code"/>
+                    <field name="new_check"/>
+                    <field name="new_bank_code"/>
+                    <field name="employee_id"/>
+                    <field name="original_fortnight"/>
+                    <field name="new_fortnight"/>
+                    <field name="rfc"/>
+                    <field name="original_amount"/>
+                    <field name="new_amount"/>
+                    <field name="upload_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="import_payroll_check_issue_form_view" model="ir.ui.view">
+            <field name="name">import.payroll.check.issue.form.view</field>
+            <field name="model">import.payroll.check.issue</field>
+            <field name="arch" type="xml">
+                <form create="false" edit="false">
+                    <header>
+                        <field name="status" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                    
+                        <group>
+                            <group>
+			                    <field name="case"/>
+                                <field name="original_check" attrs="{'invisible': [('original_check_id', '!=', False)]}"/>
+			                    <field name="original_check_id" attrs="{'invisible': [('new_check_id', '==', False)]}"/>
+			                    <field name="original_bank_code"/>
+                                <field name="new_check" attrs="{'invisible': [('new_check_id', '!=', False)]}"/>
+			                    <field name="new_check_id" attrs="{'invisible': [('original_check_id', '==', False)]}"/>
+			                    <field name="new_bank_code"/>
+			                    
+                            </group>
+                            <group>
+                            	<field name="employee_id"/>
+			                    <field name="original_fortnight"/>
+			                    <field name="new_fortnight"/>
+			                    <field name="rfc"/>
+			                    <field name="original_amount"/>
+			                    <field name="new_amount"/>
+								<field name="upload_date" readonly="1"/>			                    
+                            </group>
+                        </group>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+
+        <record id="action_import_payroll_check_issue" model="ir.actions.act_window">
+            <field name="name">Importación de reexpedición de cheques de nómina</field>
+            <field name="res_model">import.payroll.check.issue</field>
+            <field name="context"></field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_import_payroll_check_issue" name="Importación de reexpedición de cheques de nómina"
+                  parent="check_control_main_menu"
+                  action="action_import_payroll_check_issue" sequence="5"/>
+
+
+        <record id="action_update_check_and_amount" model="ir.actions.server">
+            <field name="name">Update check and amount</field>
+            <field name="model_id" ref="jt_check_controls.model_import_payroll_check_issue"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_import_payroll_check_issue"/>
+            <field name="state">code</field>
+            <field name="code">action = records.action_update_check_and_amount()</field>
+        </record>
+
+        <record id="delete_action_server" model="ir.actions.server">
+            <field name="name">Suprimir</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="jt_check_controls.model_import_payroll_check_issue"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_import_payroll_check_issue"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="state">code</field>
+            <field name="code">
+                records.unlink()
+            </field>
+        </record>
+
+        <record id="import_payroll_tree_no_delete" model="ir.ui.view">
+            <field name="name">import.payroll.tree.no.delete</field>
+            <field name="model">import.payroll.check.issue</field>
+            <field name="inherit_id" ref="jt_check_controls.import_payroll_check_issue_tree_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="import_payroll_form_no_delete" model="ir.ui.view">
+            <field name="name">import.payroll.form.no.delete</field>
+            <field name="model">import.payroll.check.issue</field>
+            <field name="inherit_id" ref="jt_check_controls.import_payroll_check_issue_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>
+                  
+	</data>
+</odoo>

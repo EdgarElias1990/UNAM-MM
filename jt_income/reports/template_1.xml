@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="external_layout_1" name="layout 1">
+            <!--header -->
+            <!-- <div class="header" style="border:1px solid #D3D3D3;">
+                <div class="row" style="float:right;">
+                    <div class="col-6">
+                        <div>
+                            <img t-attf-src="data:image/png;base64,{{res_company.logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: left"><img t-attf-src="data:image/png;base64,{{res_company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-left:20px;margin-bottom:20px;"/>
+                </div>
+
+            </div> -->
+
+            <div class="header" style="border:1px solid #D3D3D3;height:200px;">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo}}" style="width:200px;height:170px;"/>
+                    </div>
+                    <div class="col-6">
+                    	<h4>
+                    		PATRONATO UNIVERSITARIO<br/>
+                    		TESORERIA
+                    	</h4>
+                    </div>
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo2}}" style="width:200px;height:170px;"/>
+                    </div>
+                    
+                </div>
+            </div>
+             <!-- Footer -->
+
+            <div class="footer">
+				<table style="width:100%">
+                	<tr>
+                        <td style="text-align:left;">
+							<b><span t-field="o.template1_sender_title"/>&#160;<span t-if="o.template1_sender_emp_id" t-field="o.template1_sender_emp_id.name"/>
+                				<br/><span t-field="o.template1_sender_professional_title"/></b>                    
+                        </td>
+                     </tr>
+                </table>
+                <br/>
+            	<!-- 
+                <p style="font-size:15px;text-align:left;"><b><span t-field="sender_template.sender_title"/>&#160;<span t-if="sender_template.sender_emp_id" t-field="sender_template.sender_emp_id.name"/>
+                <br/><span t-field="sender_template.sender_professional_title"/></b></p><br/>
+                 -->
+				    
+                <p style="font-size:14px;text-align:left;">
+                	<b>C.c.p.&#160;&#160;&#160;&#160; </b>
+                	<t t-set="count" t-value="0"/>
+            		<t t-foreach="o.template1_employee_ids" t-as="emp">
+            				<t t-if="count==1">
+            					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            				</t>
+            				<t t-set="count" t-value="1"/>
+            				<b><span t-field="emp.emp_title"></span>
+            					<span t-field="emp.name"/>
+            				</b>
+            				<span t-field="emp.emp_job_title"/><br/>
+            		</t>	
+            	</p>	
+            </div>
+            
+        </template>
+
+        <template id="external_layout_2" name="layout 1">
+            <!--header -->
+
+            <div class="header" style="border:1px solid #D3D3D3;height:200px;">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo}}" style="width:200px;height:170px;"/>
+                    </div>
+                    <div class="col-6">
+                    	<h4>
+                    		PATRONATO UNIVERSITARIO<br/>
+                    		TESORERIA
+                    	</h4>
+                    </div>
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo2}}" style="width:200px;height:170px;"/>
+                    </div>
+                    
+                </div>
+            </div>
+             <!-- Footer -->
+
+            <div class="footer">
+				<table style="width:100%">
+                	<tr>
+                        <td style="text-align:left;">
+							<b><span t-field="o.template2_sender_title"/>&#160;<span t-if="o.template2_sender_emp_id" t-field="o.template2_sender_emp_id.name"/>
+                				<br/><span t-field="o.template2_sender_professional_title"/></b>                    
+                        </td>
+                     </tr>
+                </table>
+				<br/>
+				<!--             	
+                <p style="text-align:left;"><b><span t-field="sender_template.sender_title"/>&#160;<span t-if="sender_template.sender_emp_id" t-field="sender_template.sender_emp_id.name"/>
+                <br/><span t-field="sender_template.sender_professional_title"/></b></p><br/>
+				 -->
+                <p style="font-size:14px;text-align:left;">
+                	
+                	<b>C.c.p.&#160;&#160;&#160;&#160; </b>
+                	<t t-set="count" t-value="0"/>
+            		<t t-foreach="o.template2_employee_ids" t-as="emp">
+            				<t t-if="count==1">
+            					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            				</t>
+            				<t t-set="count" t-value="1"/>
+            				<b><span t-field="emp.emp_title"></span>
+            					<span t-field="emp.name"/>
+            				</b>
+            				<span t-field="emp.emp_job_title"/><br/>
+            		</t>	
+            	</p>	
+            </div>
+            
+        </template>   
+
+        <template id="external_layout_3" name="layout_3">
+            <!--header -->
+
+            <div class="header" style="border:1px solid #D3D3D3;height:200px;">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo}}" style="width:200px;height:170px;"/>
+                    </div>
+                    <div class="col-6">
+                    	<h4>
+                    		PATRONATO UNIVERSITARIO<br/>
+                    		TESORERIA
+                    	</h4>
+                    </div>
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo2}}" style="width:200px;height:170px;"/>
+                    </div>
+                    
+                </div>
+            </div>
+             <!-- Footer -->
+
+            <div class="footer">
+				<table style="width:100%">
+                	<tr>
+                        <td style="text-align:left;">
+							<b><span t-field="o.template3_sender_title"/>&#160;<span t-if="o.template3_sender_emp_id" t-field="o.template3_sender_emp_id.name"/>
+                				<br/><span t-field="o.template3_sender_professional_title"/></b>                    
+                        </td>
+                     </tr>
+                </table>
+				<br/>
+				<!--             	
+                <p style="font-size:22px;text-align:left;"><b><span t-field="sender_template.sender_title"/>&#160;<span t-if="sender_template.sender_emp_id" t-field="sender_template.sender_emp_id.name"/>
+                <br/><span t-field="sender_template.sender_professional_title"/></b></p><br/>
+				 -->
+                <p style="font-size:14px;text-align:left;">
+                	
+                	<b>C.c.p.&#160;&#160;&#160;&#160; </b>
+                	<t t-set="count" t-value="0"/>
+            		<t t-foreach="o.template3_employee_ids" t-as="emp">
+            				<t t-if="count==1">
+            					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            				</t>
+            				<t t-set="count" t-value="1"/>
+            				<b><span t-field="emp.emp_title"></span>
+            					<span t-field="emp.name"/>
+            				</b>
+            				<span t-field="emp.emp_job_title"/><br/>
+            		</t>	
+            	</p>	
+            </div>
+            
+        </template>   
+
+        <template id="external_layout_4" name="layout 1">
+            <!--header -->
+            
+            <div class="header" style="border:1px solid #D3D3D3;height:200px;">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo}}" style="width:200px;height:170px;"/>
+                    </div>
+                    <div class="col-6">
+                    	<h4>
+                    		PATRONATO UNIVERSITARIO<br/>
+                    		TESORERIA
+                    	</h4>
+                    </div>
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo2}}" style="width:200px;height:170px;"/>
+                    </div>
+                    
+                </div>
+            </div>
+            
+             <!-- Footer -->
+            <div class="footer">
+            	<span t-set="sender_template" t-value="o.get_all_employee('2nd application_form_20')"/>
+				<table style="width:100%">
+                	<tr>
+                        <td style="text-align:left;">
+							<b><span t-field="o.template4_sender_title"/>&#160;<span t-if="o.template4_sender_emp_id" t-field="o.template4_sender_emp_id.name"/>
+                				<br/><span t-field="o.template4_sender_professional_title"/></b>                    
+                        </td>
+                     </tr>
+                </table>
+				<br/>
+				<!--             	
+             	
+                <p style="font-size:22px;text-align:left;"><b><span t-field="sender_template.sender_title"/>&#160;<span t-if="sender_template.sender_emp_id" t-field="sender_template.sender_emp_id.name"/>
+                <br/><span t-field="sender_template.sender_professional_title"/></b></p><br/>
+				-->
+                <p style="font-size:14px;text-align:left;">
+                	
+                	<b>C.c.p.&#160;&#160;&#160;&#160; </b>
+                	<t t-set="count" t-value="0"/>
+            		<t t-foreach="o.template4_employee_ids" t-as="emp">
+            				<t t-if="count==1">
+            					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            				</t>
+            				<t t-set="count" t-value="1"/>
+            				<b><span t-field="emp.emp_title"></span>
+            					<span t-field="emp.name"/>
+            				</b>
+            				<span t-field="emp.emp_job_title"/><br/>
+            		</t>	
+            	</p>	
+            </div>
+            
+        </template>
+
+
+        <template id="external_layout_5" name="layout 1">
+            <!--header -->
+            
+            <div class="header" style="border:1px solid #D3D3D3;height:200px;">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo}}" style="width:200px;height:170px;"/>
+                    </div>
+                    <div class="col-6">
+                    	<h4>
+                    		PATRONATO UNIVERSITARIO<br/>
+                    		TESORERIA
+                    	</h4>
+                    </div>
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo2}}" style="width:200px;height:170px;"/>
+                    </div>
+                    
+                </div>
+            </div>
+            
+             <!-- Footer -->
+
+            <div class="footer">
+				<table style="width:100%">
+                	<tr>
+                        <td style="text-align:left;">
+							<b><span t-field="o.template5_sender_title"/>&#160;<span t-if="o.template5_sender_emp_id" t-field="o.template5_sender_emp_id.name"/>
+                				<br/><span t-field="o.template5_sender_professional_title"/></b>                    
+                        </td>
+                     </tr>
+                </table>
+				<br/>
+				<!--             	
+            	
+                <p style="font-size:22px;text-align:left;"><b><span t-field="sender_template.sender_title"/>&#160;<span t-if="sender_template.sender_emp_id" t-field="sender_template.sender_emp_id.name"/>
+                <br/><span t-field="sender_template.sender_professional_title"/></b></p><br/>
+				-->
+                <p style="font-size:14px;text-align:left;">
+                	
+                	<b>C.c.p.&#160;&#160;&#160;&#160; </b>
+                	<t t-set="count" t-value="0"/>
+            		<t t-foreach="o.template5_employee_ids" t-as="emp">
+            				<t t-if="count==1">
+            					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            				</t>
+            				<t t-set="count" t-value="1"/>
+            				<b><span t-field="emp.emp_title"></span>
+            					<span t-field="emp.name"/>
+            				</b>
+            				<span t-field="emp.emp_job_title"/><br/>
+            		</t>	
+            	</p>	
+            </div>
+
+        </template>
+
+        <template id="external_layout_6" name="layout 1">
+            <!--header -->
+            
+            <div class="header" style="border:1px solid #D3D3D3;height:200px;">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo}}" style="width:200px;height:170px;"/>
+                    </div>
+                    <div class="col-6">
+                    	<h4>
+                    		PATRONATO UNIVERSITARIO<br/>
+                    		TESORERIA
+                    	</h4>
+                    </div>
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo2}}" style="width:200px;height:170px;"/>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Footer -->
+
+            <div class="footer">
+            	<span t-set="sender_template" t-value="o.get_all_employee('reporting_format_returned_check')"/>
+				<table style="width:100%">
+                	<tr>
+                        <td style="text-align:left;">
+							<b><span t-field="o.template6_sender_title"/>&#160;<span t-if="o.template6_sender_emp_id" t-field="o.template6_sender_emp_id.name"/>
+                				<br/><span t-field="o.template6_sender_professional_title"/></b>                    
+                        </td>
+                     </tr>
+                </table>
+				<br/>
+				<!--             	
+            	
+                <p style="font-size:22px;text-align:left;"><b><span t-field="sender_template.sender_title"/>&#160;<span t-if="sender_template.sender_emp_id" t-field="sender_template.sender_emp_id.name"/>
+                <br/><span t-field="sender_template.sender_professional_title"/></b></p><br/>
+				
+                <p style="font-size:14px;text-align:left;">
+                	
+                	<b>C.c.p.&#160;&#160;&#160;&#160; </b>
+                	<t t-set="count" t-value="0"/>
+            		<t t-foreach="sender_template.employee_ids" t-as="emp">
+            				<t t-if="count==1">
+            					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            				</t>
+            				<t t-set="count" t-value="1"/>
+            				<b><span t-field="emp.emp_title"></span>
+            					<span t-field="emp.name"/>
+            				</b>
+            				<span t-field="emp.emp_job_title"/><br/>
+            		</t>	
+            	</p>
+            	-->	
+            </div>
+
+        </template>
+
+        <template id="external_layout_7" name="layout 1">
+            <!--header -->
+            
+            <div class="header" style="border:1px solid #D3D3D3;height:200px;">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo}}" style="width:200px;height:170px;"/>
+                    </div>
+                    <div class="col-6">
+                    	<h4>
+                    		PATRONATO UNIVERSITARIO<br/>
+                    		TESORERIA
+                    	</h4>
+                    </div>
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{res_company.header_logo2}}" style="width:200px;height:170px;"/>
+                    </div>
+                    
+                </div>
+            </div>
+            
+             <!-- Footer -->
+            <div class="footer">
+                <p style="font-size:22px;text-align:left;">C.P. ROLANDO DUARTE SÁNCHEZ <br/>JEFE DEL DEPARTAMENTO DE INGRESOS</p><br/>
+            </div>
+
+        </template>
+
+		
+    </data>
+</odoo>

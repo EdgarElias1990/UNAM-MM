@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_journal_form_view_project" model="ir.ui.view">
+            <field name="name">account.journal.form.view.project</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <field name="code" position="before">
+            		<field name="is_conacyt_project"/>
+                    <field name="is_purchase_of_foreign_curr"/>
+            	</field>
+                 <xpath expr="//notebook/page[@name='journal_entries']" position="inside">
+                    <group attrs="{'invisible':[('is_purchase_of_foreign_curr','=',False)]}" string="Purchase of foreign currency">
+                        <group string="Currency Purchase">
+                            <field name="receivable_CFDIS_debit_account_id" />
+                            <field name="receivable_CFDIS_credit_account_id"/>
+                            <field name="conac_receivable_CFDIS_credit_account_id"/>
+                            <field name="conac_receivable_CFDIS_debit_account_id"/>
+                        </group>
+                    </group>                
+                </xpath>
+            	<xpath expr="//notebook/page[@name='journal_entries']" position="inside">
+                	<group attrs="{'invisible':[('is_conacyt_project','=',False)]}" string="CONACYT Project">
+                		<group string="Account receivable CFDIS">
+	                        <field name="receivable_CFDIS_credit_account_id"/>
+	                        <field name="conac_receivable_CFDIS_credit_account_id"/>
+	                        <field name="receivable_CFDIS_debit_account_id" />
+	                        <field name="conac_receivable_CFDIS_debit_account_id"/>
+                		</group>
+                		<group string="Extraordinary Income by CFDIS">
+	                        <field name="income_CFDIS_credit_account_id"/>
+	                        <field name="conac_income_CFDIS_credit_account_id"/>
+	                        <field name="income_CFDIS_debit_account_id"/>
+	                        <field name="conac_income_CFDIS_debit_account_id"/>
+                		</group>
+                		<group string="Ministrations">
+	                        <field name="ministrations_credit_account_id"/>
+	                        <field name="conac_ministrations_credit_account_id"/>
+	                        <field name="ministrations_debit_account_id" />
+	                        <field name="conac_ministrations_debit_account_id"/>
+                		</group>
+                		<group string="Account of Extraordinary Income">
+	                        <field name="ei_credit_account_id"/>
+	                        <field name="conac_ei_credit_account_id"/>
+	                        <field name="ei_debit_account_id" />
+	                        <field name="conac_ei_debit_account_id"/>
+                		</group>
+                		<group string="Application of income">
+	                        <field name="ai_credit_account_id"/>
+	                        <field name="conac_ai_credit_account_id"/>
+	                        <field name="ai_debit_account_id" />
+	                        <field name="conac_ai_debit_account_id"/>
+                		</group>
+
+                		<group string="Capitalizable Assets">
+	                        <field name="capitalizable_credit_account_id"/>
+	                        <field name="conac_capitalizable_credit_account_id"/>
+	                        <field name="capitalizable_debit_account_id" />
+	                        <field name="conac_capitalizable_debit_account_id"/>
+                		</group>
+                		
+					</group>            	
+            	</xpath>
+            </field>
+        </record>
+	</data>
+</odoo>

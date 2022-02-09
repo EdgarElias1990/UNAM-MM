@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="view_mm_fornight_inherit" model="ir.ui.view">
+            <field name="name">view.mm.fornight.inherit</field>
+            <field name="model">payment.batch.supplier</field>
+            <field name="inherit_id" ref="jt_check_controls.payment_batch_supp_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet//group//field[@name='description_layout']" position="after">
+                    <field name="fornight" attrs="{'invisible':[('type_of_batch','!=','nominal')]}"/>
+                </xpath>
+            </field>
+        </record>
+	</data>
+</odoo>

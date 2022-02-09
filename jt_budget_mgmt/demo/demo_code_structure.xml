@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Demo data for Programmatic Code Structure and Orders -->
+    <data noupdate="1">
+        <record id="code_structure_1" model="code.structure">
+            <field name="position_priority">01</field>
+            <field name="section">year</field>
+        </record>
+
+        <record id="code_structure_2" model="code.structure">
+            <field name="position_priority">02</field>
+            <field name="section">pr</field>
+        </record>
+
+        <record id="code_structure_3" model="code.structure">
+            <field name="position_priority">03</field>
+            <field name="section">sp</field>
+        </record>
+
+        <record id="code_structure_4" model="code.structure">
+            <field name="position_priority">04</field>
+            <field name="section">dep</field>
+        </record>
+
+        <record id="code_structure_5" model="code.structure">
+            <field name="position_priority">05</field>
+            <field name="section">sd</field>
+        </record>
+
+        <record id="code_structure_6" model="code.structure">
+            <field name="position_priority">06</field>
+            <field name="section">par</field>
+        </record>
+
+        <record id="code_structure_7" model="code.structure">
+            <field name="position_priority">07</field>
+            <field name="section">dv</field>
+        </record>
+
+        <record id="code_structure_8" model="code.structure">
+            <field name="position_priority">08</field>
+            <field name="section">or</field>
+        </record>
+
+        <record id="code_structure_9" model="code.structure">
+            <field name="position_priority">09</field>
+            <field name="section">ai</field>
+        </record>
+
+        <record id="code_structure_10" model="code.structure">
+            <field name="position_priority">10</field>
+            <field name="section">conpp</field>
+        </record>
+
+        <record id="code_structure_11" model="code.structure">
+            <field name="position_priority">11</field>
+            <field name="section">conpa</field>
+        </record>
+
+        <record id="code_structure_12" model="code.structure">
+            <field name="position_priority">12</field>
+            <field name="section">tg</field>
+        </record>
+
+        <record id="code_structure_13" model="code.structure">
+            <field name="position_priority">13</field>
+            <field name="section">ug</field>
+        </record>
+
+        <record id="code_structure_14" model="code.structure">
+            <field name="position_priority">14</field>
+            <field name="section">cc</field>
+        </record>
+
+        <record id="code_structure_15" model="code.structure">
+            <field name="position_priority">15</field>
+            <field name="section">tp</field>
+        </record>
+
+        <record id="code_structure_16" model="code.structure">
+            <field name="position_priority">16</field>
+            <field name="section">np</field>
+        </record>
+
+        <record id="code_structure_17" model="code.structure">
+            <field name="position_priority">17</field>
+            <field name="section">e</field>
+        </record>
+
+        <record id="code_structure_18" model="code.structure">
+            <field name="position_priority">18</field>
+            <field name="section">tc</field>
+        </record>
+
+        <record id="code_structure_19" model="code.structure">
+            <field name="position_priority">19</field>
+            <field name="section">nc</field>
+        </record>
+    </data>
+</odoo>

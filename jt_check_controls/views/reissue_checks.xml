@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="request_for_changes_to_the_check" name="Request for changes to the check"
+                  parent="check_control_main_menu" sequence="4"/>
+
+        <!-- Reissue Check of the Supplier-->
+        <record id="reissue_checks_tree_view" model="ir.ui.view">
+            <field name="name">reissue.checks.tree.view</field>
+            <field name="model">reissue.checks</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="application_folio"/>
+                    <field name="type_of_request"/>
+                    <field name="checkbook_req_id"/>
+                    <field name="check_log_id"/>
+                    <field name="check_amount"/>
+                    <field name="bank_id"/>
+                    <field name="bank_account_id"/>
+                    <field name="move_id"/>
+                    <field name="folio_against_receipt"/>
+                    <field name="partner_id"/>
+                    <field name="dependence_id"/>
+                    <field name="subdependence_id"/>
+                    <field name="date_protection"/>
+                    <field name="is_physical_check"/>
+                    <field name="layout_generated"/>
+                    <field name="status"/>
+                    <field name="state"/>
+                    <field name="general_status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="reissue_checks_form_view" model="ir.ui.view">
+            <field name="name">reissue.checks.form.view</field>
+            <field name="model">reissue.checks</field>
+            <field name="arch" type="xml">
+                <form >
+                    <header>
+                        <button name="action_request" states="draft" type="object" string="Request" class="oe_highlight"/>
+                        <button name="action_approve" states="request" type="object" string="Approve" class="oe_highlight"/>
+                        <button name="action_reject" states="request" type="object" string="Reject" class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="application_folio" readonly="1"/>
+                            </h1>
+                        </div>
+                    
+                        <group>
+                            <group>
+                                <field name="type_of_batch" invisible="1"/>
+                                <field name="type_of_request" attrs="{'readonly':[('state','!=','draft')]}" required="1"/>
+                                
+                                <field name="check_log_ids" invisible="1"/>
+                                <field name="checkbook_req_id" domain="[('checkbook_no','!=',False),('state','!=','cancelled')]" attrs="{'readonly':[('state','!=','draft')]}" context="{'from_approve_check': 1}" options="{'no_create': True, 'no_open': True}" required="1"/>
+                                <field name="check_log_id" attrs="{'readonly':[('state','!=','draft')]}"
+                                       domain="[('id','in',check_log_ids)]"
+                                    options="{'no_create_edit': 1}" required="1"/>
+                                <field name="check_amount"/>
+                                <field name="status"/>
+                                <field name="general_status"/>
+                                <field name="is_physical_check" attrs="{'readonly':[('state','!=','draft')],
+                                       'invisible': [('type_of_request', '=', 'check_adjustments')]}"/>
+                                <field name="reason_reissue"  attrs="{'readonly':[('state','!=','draft')],
+                                'invisible':[('type_of_request','!=','check_reissue')]}"/>
+                                <field name="reason_cancellation" attrs="{'readonly':[('state','!=','draft')],
+                                'invisible':[('type_of_request','!=','check_cancellation')]}"/>
+                                <field name="reason_rejection" attrs="{'invisible':[('state','!=','rejected')],
+                                'required':[('state','=','rejected')]}"/>
+                                <field name="reason_adjustments" attrs="{'invisible':[('state','!=','rejected'),
+                                (('type_of_request','!=','check_adjustments'))],'required':[('state','=','rejected')]}"/>
+                                <field name="layout_generated" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="bank_id"/>
+                                <field name="bank_account_id"/>
+                                <field name="move_id" options="{'no_create_edit': 1}" attrs="{'readonly':[('state','!=','draft')],
+                                    'invisible': [('type_of_request', '=', 'check_adjustments')]}"
+                                       domain="[('check_folio_id','in',check_log_ids),('payment_state','in',('payment_method_cancelled',
+                                       'assigned_payment_method')),('is_payment_request', '=', True),
+                                       ('type', '=', 'in_invoice')]"/>
+                                <field name="folio_against_receipt" options="{'no_create_edit': 1}" context="{'show_folio_name':True}"
+                                       attrs="{'readonly':[('state','!=','draft')],
+                                       'invisible': [('type_of_request', '=', 'check_adjustments')]}"
+                                   domain="[('check_folio_id','in',check_log_ids),('payment_state','=',('payment_method_cancelled','assigned_payment_method'))
+                                   ,('is_payment_request', '=', True),('type', '=', 'in_invoice')]"/>
+                                <field name="folio_against_receipt_name" invisible="1"/>
+                                <field name="partner_id"/>
+                                <field name="observations" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="dependence_id"/>
+                                <field name="subdependence_id"/>
+                                <field name="date_protection"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                    
+                </form>
+            </field>
+        </record>
+
+        <record id="action_request_for_changes_to_the_check_supplier" model="ir.actions.act_window">
+            <field name="name">Suppliers</field>
+            <field name="res_model">reissue.checks</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type_of_batch','=','supplier')]</field>
+            <field name="context">{'show_name_and_folio_name':True,'default_type_of_batch':'supplier', 'from_approve_check':1   }</field>
+        </record>
+
+        <menuitem id="menu_request_for_changes_to_the_check_supplier" name="Suppliers"
+                  parent="request_for_changes_to_the_check"
+                  action="action_request_for_changes_to_the_check_supplier" sequence="1"/>
+
+    <!-- View and menu into finance -->
+    
+      <record id="reissue_checks_tree_view_finance" model="ir.ui.view">
+            <field name="name">reissue.checks.tree.view.for.management</field>
+            <field name="model">reissue.checks</field>
+            <field name="mode">primary</field>
+            <field eval="100" name="priority"/>
+            <field name="inherit_id" ref="reissue_checks_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="create">0</attribute>
+                    <attribute name="edit">0</attribute>
+                </xpath>
+            </field>
+        </record>
+
+      <record id="reissue_checks_form_view_finance" model="ir.ui.view">
+            <field name="name">reissue.checks.form.view.management</field>
+            <field name="model">reissue.checks</field>
+            <field name="mode">primary</field>
+            <field eval="100" name="priority"/>
+            <field name="inherit_id" ref="reissue_checks_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="create">0</attribute>
+                    <attribute name="edit">0</attribute>
+                </xpath>
+                <field name="type_of_request" position="after">
+                	<field name="type_of_request_payroll" attrs="{'invisible':[('type_of_batch','=','supplier')]}"/>
+                </field>
+                <field name="type_of_request" position="attributes">
+                	<attribute name="attrs">{'readonly':[('state','!=','draft')],'invisible':[('type_of_batch','!=','supplier')]}</attribute> 
+                </field>
+                
+            </field>
+        </record>
+        <record id="action_cancellation_of_checks" model="ir.actions.act_window">
+            <field name="name">Cancellation of checks</field>
+            <field name="res_model">reissue.checks</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'show_name_and_folio_name':True,'from_approve_check':1}</field>
+            <field name="domain">[('state','=','approved'),'|',
+                ('type_of_request','=','check_cancellation'), ('type_of_request_payroll','=','check_cancellation')]</field>
+        </record>
+
+        <record id="action_cancellation_of_checks_link_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="reissue_checks_tree_view_finance"/>
+            <field name="act_window_id" ref="action_cancellation_of_checks"/>
+        </record>
+
+        <record id="action_cancellation_of_checks_link_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="reissue_checks_form_view_finance"/>
+            <field name="act_window_id" ref="action_cancellation_of_checks"/>
+        </record>
+    
+        <menuitem id="menu_action_cancellation_of_checks" name="Cancellation of checks"
+                  action="action_cancellation_of_checks"
+                  parent="jt_payroll_payment.menu_payment_finance" sequence="1"/>
+    
+        <record id="action_layout_cancel_check" model="ir.actions.server">
+            <field name="name">Check cancellation layout</field>
+            <field name="model_id" ref="jt_check_controls.model_reissue_checks"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_reissue_checks"/>
+            <field name="state">code</field>
+            <field name="code">action = records.action_layout_check_cancel()</field>
+        </record>
+
+
+        <!-- Reissue Check of the Project-->
+        <record id="reissue_checks_project_tree_view" model="ir.ui.view">
+            <field name="name">reissue.checks.project.tree.view</field>
+            <field name="model">reissue.checks</field>
+            <field eval="100" name="priority"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="application_folio"/>
+                    <field name="type_of_request"/>
+                    <field name="checkbook_req_id"/>
+                    <field name="check_log_id"/>
+                    <field name="check_amount"/>
+                    <field name="bank_id"/>
+                    <field name="bank_account_id"/>
+                    <field name="move_id"/>
+                    <field name="folio_against_receipt"/>
+                    <field name="partner_id"/>
+                    <field name="dependence_id"/>
+                    <field name="subdependence_id"/>
+                    <field name="date_protection"/>
+                    <field name="is_physical_check"/>
+                    <field name="layout_generated"/>
+                    <field name="status"/>
+                    <field name="state"/>
+                    <field name="general_status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="reissue_checks_project_form_view" model="ir.ui.view">
+            <field name="name">reissue.checks.project.form.view</field>
+            <field name="model">reissue.checks</field>
+            <field eval="100" name="priority"/>
+            <field name="arch" type="xml">
+                <form >
+                    <header>
+                        <button name="action_request" states="draft" type="object" string="Request" class="oe_highlight"/>
+                        <button name="action_approve" states="request" type="object" string="Approve" class="oe_highlight"/>
+                        <button name="action_reject" states="request" type="object" string="Reject" class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="application_folio" readonly="1"/>
+                            </h1>
+                        </div>
+                    
+                        <group>
+                            <group>
+                                <field name="type_of_batch" invisible="1"/>
+                                <field name="type_of_request"  attrs="{'readonly':[('state','!=','draft')]}" required="1"/>
+                                <field name="check_log_ids" invisible="1"/>
+                                <field name="checkbook_req_id" domain="[('checkbook_no','!=',False),('state','!=','cancelled')]" attrs="{'readonly':[('state','!=','draft')]}"
+                                    context="{'from_approve_check':1}" required="1" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="check_log_id" required="1" attrs="{'readonly':[('state','!=','draft')]}"
+                                       domain="[('id','in',check_log_ids)]" options="{'no_create_edit': 1}"/>
+                                <field name="check_amount"/>
+                                <field name="status"/>
+                                <field name="general_status"/>
+                                <field name="is_physical_check" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="reason_reissue"  attrs="{'readonly':[('state','!=','draft')],'invisible':[('type_of_request','!=','check_reissue')]}"/>
+                                <field name="reason_cancellation" attrs="{'readonly':[('state','!=','draft')],'invisible':[('type_of_request','!=','check_cancellation')]}"/>
+                                <field name="reason_rejection" attrs="{'invisible':[('state','!=','rejected')],'required':[('state','=','rejected')]}"/>
+                            </group>
+                            <group>
+                                <field name="bank_id"/>
+                                <field name="bank_account_id"/>
+                                <field name="move_id" options="{'no_create_edit': 1}" attrs="{'readonly':[('state','!=','draft')]}" domain="[('check_folio_id','in',check_log_ids),('payment_state','in',('payment_method_cancelled','assigned_payment_method')),('is_project_payment', '=', True),('type', '=', 'in_invoice')]"/>
+                                <field name="folio_against_receipt" options="{'no_create_edit': 1}"  context="{'show_folio_name':True}" attrs="{'readonly':[('state','!=','draft')]}" domain="[('check_folio_id','in',check_log_ids),('payment_state','=',('payment_method_cance    lled','assigned_payment_method')),('is_project_payment', '=', True),('type', '=', 'in_invoice')]"/>
+                                <field name="folio_against_receipt_name" invisible="1"/>
+                                <field name="partner_id"/>
+                                <field name="observations" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="dependence_id"/>
+                                <field name="subdependence_id"/>
+                                <field name="date_protection"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                    
+                </form>
+            </field>
+        </record>
+
+        <record id="action_request_for_changes_to_the_check_project" model="ir.actions.act_window">
+            <field name="name">Project</field>
+            <field name="res_model">reissue.checks</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type_of_batch','=','project')]</field>
+            <field name="context">{'show_name_and_folio_name':True,'default_type_of_batch':'project', 'from_approve_check':1}</field>
+        </record>
+
+        <record id="action_project_reissue_of_checks_link_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="reissue_checks_project_tree_view"/>
+            <field name="act_window_id" ref="action_request_for_changes_to_the_check_project"/>
+        </record>
+
+        <record id="action_project_reissue_of_checks_link_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="reissue_checks_project_form_view"/>
+            <field name="act_window_id" ref="action_request_for_changes_to_the_check_project"/>
+        </record>
+
+        <menuitem id="menu_request_for_changes_to_the_check_project" name="Project"
+                  parent="request_for_changes_to_the_check"
+                  action="action_request_for_changes_to_the_check_project" sequence="5"/>
+
+        <!-- Reissue Check of the Payroll-->
+        <record id="reissue_checks_payroll_tree_view" model="ir.ui.view">
+            <field name="name">reissue.checks.payroll.tree.view</field>
+            <field name="model">reissue.checks</field>
+            <field eval="100" name="priority"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="application_folio"/>
+                    <field name="type_of_request_payroll"/>
+                    <field name="checkbook_req_id"/>
+                    <field name="check_log_id"/>
+                    <field name="check_amount"/>
+                    <field name="bank_id"/>
+                    <field name="bank_account_id"/>
+                    <field name="move_id"/>
+                    <field name="folio_against_receipt"/>
+                    <field name="partner_id"/>
+                    <field name="dependence_id"/>
+                    <field name="subdependence_id"/>
+                    <field name="date_protection"/>
+                    <field name="is_physical_check"/>
+                    <field name="layout_generated"/>
+                    <field name="status"/>
+                    <field name="state"/>
+                    <field name="general_status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="reissue_checks_payroll_form_view" model="ir.ui.view">
+            <field name="name">reissue.checks.payroll.form.view</field>
+            <field name="model">reissue.checks</field>
+            <field eval="100" name="priority"/>
+            <field name="arch" type="xml">
+                <form >
+                    <header>
+                        <button name="action_request" states="draft" type="object" string="Request" class="oe_highlight"/>
+                        <button name="action_approve" states="request" type="object" string="Approve" class="oe_highlight"/>
+                        <button name="action_reject" states="request" type="object" string="Reject" class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="application_folio" readonly="1"/>
+                            </h1>
+                        </div>
+                    
+                        <group>
+                            <group>
+                                <field name="type_of_batch" invisible="1"/>
+                                <field name="type_of_request_payroll" attrs="{'readonly':[('state','!=','draft')]}"
+                                    required="1"/>
+<!--                                <field name="reissue_type" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                <field name="type_of_reissue_id" attrs="{'readonly':[('state','!=','draft')],
+                                    'invisible':[('type_of_request_payroll', '!=', 'check_reissue')]}"/>
+                                <field name="check_log_ids" invisible="1"/>
+                                <field name="checkbook_req_id"  context="{'from_approve_check':1}"
+                                       domain="[('checkbook_no','!=',False),('state','!=','cancelled')]"
+                                       attrs="{'readonly':[('state','!=','draft')]}" required="1"
+                                       options="{'no_create': True, 'no_open': True}"/>
+                                <field name="check_log_id" attrs="{'readonly':[('state','!=','draft')]}"
+                                       domain="[('id','in',check_log_ids)]" options="{'no_create_edit': 1}" required="1"/>
+                                <field name="check_amount"/>
+                                <field name="status"/>
+                                <field name="general_status"/>
+                                <field name="is_physical_check" attrs="{'readonly':[('state','!=','draft')],'invisible':[('type_of_request_payroll','=','check_adjustments')]}"/>
+                                <field name="reason_adjustments" attrs="{'invisible':[('state','!=','rejected'),
+                                ('type_of_request_payroll','!=','check_adjustments')],'required':[('state','=','rejected')]}"/>
+                                <field name="reason_reissue"
+                                       attrs="{'readonly':[('state','!=','draft')],
+                                       'invisible':[('type_of_request_payroll','!=','check_reissue')]}"/>
+                                <field name="reason_cancellation"
+                                       attrs="{'readonly':[('state','!=','draft')],
+                                       'invisible':[('type_of_request_payroll','!=','check_cancellation')]}"/>
+                                <field name="reason_rejection"
+                                       attrs="{'invisible':[('state','!=','rejected')],
+                                       'required':[('state','=','rejected')]}"/>
+                            </group>
+                            <group>
+                                <field name="bank_id"/>
+                                <field name="bank_account_id"/>
+                                <field name="move_id" options="{'no_create_edit': 1}" attrs="{'readonly':[('state','!=','draft')],'invisible':[('type_of_request_payroll','=','check_adjustments')]}"
+                                 domain="[('check_folio_id','in',check_log_ids),('check_folio_id','in',check_log_ids),('payment_state','in',('payment_method_cancelled','assigned_payment_method')),('is_payroll_payment_request', '=', True),('type', '=', 'in_invoice')]"/>
+                                <field name="folio_against_receipt" options="{'no_create_edit': 1}"  context="{'show_folio_name':True}"
+                                       attrs="{'readonly':[('state','!=','draft')],'invisible':[('type_of_request_payroll','=','check_adjustments')]}"
+                                domain="[('check_folio_id','in',check_log_ids),('check_folio_id','in',check_log_ids),('payment_state','=',('payment_method_cancelled','assigned_payment_method')),('is_payroll_payment_request', '=', True),('type', '=', 'in_invoice')]"/>
+                                <field name="folio_against_receipt_name" invisible="1"/>
+                                <field name="partner_id"/>
+                                <field name="fornight"/>
+                                <field name="employee_number"/>
+                                <field name="observations" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="dependence_id"/>
+                                <field name="subdependence_id"/>
+                                <field name="date_protection"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                    
+                </form>
+            </field>
+        </record>
+
+        <record id="action_request_for_changes_to_the_check_payroll" model="ir.actions.act_window">
+            <field name="name">Payroll</field>
+            <field name="res_model">reissue.checks</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type_of_batch','=','nominal')]</field>
+            <field name="context">{'show_name_and_folio_name':True,'default_type_of_batch':'nominal',
+                'from_approve_check':1}</field>
+        </record>
+
+        <record id="action_payroll_reissue_of_checks_link_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="reissue_checks_payroll_tree_view"/>
+            <field name="act_window_id" ref="action_request_for_changes_to_the_check_payroll"/>
+        </record>
+
+        <record id="action_payroll_reissue_of_checks_link_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="reissue_checks_payroll_form_view"/>
+            <field name="act_window_id" ref="action_request_for_changes_to_the_check_payroll"/>
+        </record>
+
+        <menuitem id="menu_request_for_changes_to_the_check_payroll" name="Payroll"
+                  parent="request_for_changes_to_the_check"
+                  action="action_request_for_changes_to_the_check_payroll" sequence="3"/>
+
+        <record id="action_request_for_changes_to_the_check_pension" model="ir.actions.act_window">
+            <field name="name">Pension Payment</field>
+            <field name="res_model">reissue.checks</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type_of_batch','=','pension')]</field>
+            <field name="context">{'show_name_and_folio_name':True,'default_type_of_batch':'pension',
+                'from_approve_check':1}</field>
+        </record>
+
+        <record id="action_pension_reissue_of_checks_link_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="reissue_checks_payroll_tree_view"/>
+            <field name="act_window_id" ref="action_request_for_changes_to_the_check_pension"/>
+        </record>
+
+        <record id="action_pension_reissue_of_checks_link_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="reissue_checks_payroll_form_view"/>
+            <field name="act_window_id" ref="action_request_for_changes_to_the_check_pension"/>
+        </record>
+
+        <menuitem id="menu_request_for_changes_to_the_check_pension" name="Pension Payment"
+                  parent="request_for_changes_to_the_check"
+                  action="action_request_for_changes_to_the_check_pension" sequence="3"/>
+                  
+
+    <!--  Payroll revocation Into Finance -->
+
+        <record id="action_revocation_reissue_check_finance" model="ir.actions.act_window">
+            <field name="name">Revocations</field>
+            <field name="res_model">reissue.checks</field>
+            <field name="view_mode">tree,form</field>
+             <field name="context">{'show_name_and_folio_name':True,'default_type_of_batch':'nominal',
+                'from_approve_check':1}</field>
+            <field name="domain">[('type_of_batch','=','nominal'),('state','=','request'),
+                ('type_of_reissue_id.name','=','Revocación')]</field>
+        </record>
+
+        <record id="action_revocation_reissue_check_finance_link_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="reissue_checks_payroll_tree_view"/>
+            <field name="act_window_id" ref="action_revocation_reissue_check_finance"/>
+        </record>
+
+        <record id="action_revocation_reissue_check_finance_link_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="reissue_checks_payroll_form_view"/>
+            <field name="act_window_id" ref="action_revocation_reissue_check_finance"/>
+        </record>
+    
+        <menuitem id="menu_revocation_reissue_check_finance" name="Revocations"
+                  action="action_revocation_reissue_check_finance"
+                  parent="jt_payroll_payment.menu_payment_finance" sequence="1"/>
+
+    <!--  Payroll reexped Into Finance -->
+
+        <record id="action_reexped_reissue_check_finance" model="ir.actions.act_window">
+            <field name="name">Request for reissues</field>
+            <field name="res_model">reissue.checks</field>
+            <field name="view_mode">tree,form</field>
+             <field name="context">{'show_name_and_folio_name':True,'default_type_of_batch':'nominal',
+                'from_approve_check':1}</field>
+            <field name="domain">[('type_of_batch','=','nominal'),('state','=','request'),
+                ('type_of_reissue_id.name','=','Reexpedición o Reimpresión')]</field>
+        </record>
+
+        <record id="action_reexped_reissue_check_finance_link_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="reissue_checks_payroll_tree_view"/>
+            <field name="act_window_id" ref="action_reexped_reissue_check_finance"/>
+        </record>
+
+        <record id="action_reexped_reissue_check_finance_link_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="reissue_checks_payroll_form_view"/>
+            <field name="act_window_id" ref="action_reexped_reissue_check_finance"/>
+        </record>
+    
+        <menuitem id="menu_reexped_reissue_check_finance" name="Request for reissues"
+                  action="action_reexped_reissue_check_finance"
+                  parent="jt_payroll_payment.menu_payment_of_payroll" sequence="3"/>
+       
+       <!--  Server Action -->
+
+        <record id="action_mass_request_reissue_check" model="ir.actions.server">
+            <field name="name">Request</field>
+            <field name="model_id" ref="jt_check_controls.model_reissue_checks"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_reissue_checks"/>
+            <field name="state">code</field>
+            <field name="binding_view_types">list</field>
+            <field name="code">action = records.action_mass_request()</field>
+        </record>
+        <record id="action_mass_approve_reissue_check" model="ir.actions.server">
+            <field name="name">Approve</field>
+            <field name="model_id" ref="jt_check_controls.model_reissue_checks"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_reissue_checks"/>
+            <field name="state">code</field>
+            <field name="binding_view_types">list</field>
+            <field name="code">action = records.action_mass_approve()</field>
+        </record>
+        <record id="action_mass_reject_reissue_check" model="ir.actions.server">
+            <field name="name">Reject</field>
+            <field name="model_id" ref="jt_check_controls.model_reissue_checks"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_reissue_checks"/>
+            <field name="state">code</field>
+            <field name="binding_view_types">list</field>
+            <field name="code">action = records.action_mass_reject()</field>
+        </record>
+
+        <record id="action_request_reissue_check_document" model="ir.actions.server">
+            <field name="name">Attach File</field>
+            <field name="model_id" ref="jt_check_controls.model_reissue_checks"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_reissue_checks"/>
+            <field name="state">code</field>
+            <field name="binding_view_types">list</field>
+            <field name="code">action = records.action_request_attach_file()</field>
+        </record>
+
+        <record id="reissue_check_attach_file_wizard" model="ir.ui.view">
+            <field name="name">reissue.check.attach.file.wizard</field>
+            <field name="model">reissue.check.attach.file</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                            	<field name="file_name" invisible="1"/>
+                                <field name="file_data" filename="file_name" required="1"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+						<footer>
+                   			<button string="Attach" class="btn btn-primary" type="object" name="action_attach"/>
+							<button string="Cancel" class="oe_link" special="cancel"/>
+                		</footer>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+                                  
+    </data>
+</odoo>

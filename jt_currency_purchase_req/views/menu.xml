@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <!-- calender payment posting menus-->
+        <menuitem id="menu_cale_pay_post" name="Calendar for payment posting"
+                  sequence="99" parent="jt_payroll_payment.menu_payment_finance_setting"/>
+
+
+             
+        <!-- Resource Requests for Foreign Exchange Purchase menus-->
+        <menuitem id="menu_resource_req_foreign_ex_purchase" name="Resource Requests for Foreign Exchange Purchase"
+                  sequence="100" parent="jt_payroll_payment.menu_payment_finance"/>
+
+ 
+         <!--  Federal Grant Registeration menus-->
+        <menuitem id="menu_federal_grant_registeration" name="Federal Grant Registeration"
+                  sequence="7" parent="jt_payroll_payment.menu_payment_finance"/>
+
+		    <!--  Calender Of Assigned amount menus-->
+        <menuitem id="jt_budget_mgmt_menu_control_assigned_amounts" name="Calender Of Assigned Amount"
+                  sequence="0" parent="menu_federal_grant_registeration" action="jt_budget_mgmt.action_control_assigned_amounts"
+                  />
+
+        <!--Account management menu-->
+        <menuitem id="menu_account_management" name="Account Management"
+                  sequence="8" parent="jt_payroll_payment.menu_payment_finance"/>
+
+       <!--  Movement type menu-->
+        <menuitem id="menu_movement_type" name="Movement Type"
+                  sequence="0" parent="menu_account_management"/>
+
+            <!-- request for new account  menu-->
+        <menuitem id="menu_request_account" name="Request for new account"
+                  sequence="0" parent="menu_movement_type"
+                  action="jt_currency_purchase_req.fiance_request_accounts_action"
+                  />
+
+        <!-- account modification menu-->
+        <menuitem id="menu_account_modification" 
+                  name="Account modification"
+                  sequence="1" 
+                  parent="menu_movement_type"
+                  action="account_modification_action"
+                  />
+
+          <!-- Offices  menu-->
+        <menuitem id="menu_trade" 
+                  name="Offices"
+                  sequence="104" 
+                  parent="jt_payroll_payment.menu_payment_finance"
+                  
+                  />
+
+         <!-- signuature  menu-->
+        <menuitem id="menu_signautre_update"
+                  name="Office of updating signatures"
+                  sequence="1"
+                  action="action_update_signature"
+                  parent="menu_trade"
+
+                  />
+
+          <!-- opening checking account menu-->
+        <menuitem id="menu_checking_account" 
+                  name="Opening a checking account"
+                  sequence="0"
+                  action="action_open_account_checking"
+                  parent="menu_trade"
+                  
+                  />
+
+                
+            <!-- cancellation  menu-->
+        <menuitem id="menu_cancellation_account" 
+                  name="Cancellation of checking account"
+                  sequence="2" 
+                  parent="menu_trade"
+                  action="action_account_cancellation"
+                  />
+
+                    <!-- Procedure menu-->
+        <menuitem id="menu_other_procedure" 
+                  name="Other procedures"
+                  sequence="3" 
+                  parent="menu_trade"
+                  action="action_other_procedures"  
+                  />
+
+ 
+ 
+    </data>
+</odoo>

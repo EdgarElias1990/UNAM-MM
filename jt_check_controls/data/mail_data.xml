@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Activities -->
+        <record id="mail_act_send_checks" model="mail.activity.type">
+            <field name="name">Send Checks</field>
+            <field name="icon">fa-envelope</field>
+            <field name="res_model_id" ref="jt_check_controls.model_send_checks"/>
+        </record>
+
+        <record id="mail_act_mininum_of_checks" model="mail.activity.type">
+            <field name="name">Minimum of Checks</field>
+            <field name="icon">fa-envelope</field>
+            <field name="res_model_id" ref="jt_check_controls.model_minimum_checks"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+                <!-- STATE OF INCOME, EXPENSES AND COMPARATIVE INVESTMENTS-->
+        <template id="external_layout_income_expenses_comparative" name="external_layout_income_expenses_comparative">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+                    <div class="col-6 text-center">
+                            <span style="font-size:14px;"><b>UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</b></span>
+                            <span> DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL</span>
+                        <br/>
+                        <span style="font-size:14px;">ESTADO DE INGRESOS, GASTOS E INVERSIONES COMPARATIVOS DEL
+                            <t t-esc="header_date"/> </span><br/>
+                        <span>Cifras en Miles de Pesos</span>                   
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+        </template> 
+        <!-- State partimonial situation report header-->
+        <template id="external_layout_state_partimonial" name="external_layout_state_partimonial">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b><span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>
+                            <span style="font-size:14px;">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL
+                            </span>
+                        
+                        <br/>
+
+                        <span style="font-size:14px;">INTEGRACIÓN DE ALGUNOS RUBROS DEL ESTADO DE SITUACIÓN PATRIMONIAL DEL 
+                            <t t-esc="header_date"/> </span><br/>
+                        <span>Cifras en Pesos</span>
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>     
+
+
+        <!-- trial balance header-->
+        <template id="external_layout_trial_balance" name="external_layout_trial_balance">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b><span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>
+                            <span style="font-size:14px;">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL
+                            </span>
+                        <br/>
+                        <span style="font-size:14px;">BALANZA DE COMPROBACIÓN DEL
+                            <t t-esc="header_date"/> </span><br/>
+                        <span>Cifras en Pesos</span>
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>       
+  
+
+         <!-- Detail Statement of Income,Expenses and Investments Report -->
+        <template id="external_layout_income_exp_and_invest" name="external_layout_income_exp_and_invest">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b>
+                            <span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>
+                            <span style="font-size:14px;">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL
+                            </span>
+                        <br/>
+                        
+                        <span>ESTADO DE INGRESOS, GASTOS E INVERSIONES DETALLADOS DEL <t t-esc="header_date"/> </span><br />
+                        <span>Cifras en Miles de Pesos</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>   
+
+
+                 <!-- Detail Statement of Income,Expenses and Investments summary Report -->
+        <template id="external_layout_income_exp_and_invest_summary" name="external_layout_income_exp_and_invest_summary">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b><span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>
+                            <span style="font-size:14px;">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL</span>
+                        <br/>
+                        
+                        <span>ESTADO DE INGRESOS, GASTOS E INVERSIONES RESUMEN DEL <t t-esc="header_date"/> </span><br/>
+                        <span>Cifras en Miles de Pesos</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>     
+  
+
+
+            <!-- Weight Income report -->
+        <template id="external_layout_weight_income" name="external_layout_weight_income_report">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b><span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>
+                            <span style="font-size:14px;">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL</span>
+                        <br/>
+                        <span>REPORTE DE INGRESOS POR EL PERÍODO DEL <t t-esc="header_date"/> </span><br/>
+                        <span>Cifras en Pesos</span>
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>       
+
+        <!-- Financial positional statment Report -->
+        <template id="external_layout_fianancial_statement_report" name="external_layout_fianancial_statement_report">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+               
+                    <div class="col-3">
+                   
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                          
+                    </div>
+ 
+                    <div class="col-6 text-center">
+                        <b><span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>
+                            <span style="font-size:14px;">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL</span>
+                        <br/>
+                        
+                        <span>CONTABILIDAD GENERAL DEL <t t-esc="header_date"/> </span><br/>
+                        <span>Cifras en Pesos</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>  
+
+
+                <!-- Financial positional statment Report -->
+        <template id="external_layout_fianancial_statement_id" name="external_layout_fianancial_statement_id">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b><span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>
+                            <span style="font-size:14px;">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL</span>
+                        <br/>
+                        
+                        <span>ESTADO DE SITUACIÓN FINANCIERA DEL <t t-esc="header_date"/> </span><br />
+                        <span>Cifras en Miles de Pesos</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>   
+
+
+
+                        <!-- Daily counts Report -->
+        <template id="external_layout_daily_count_id" name="external_layout_daily_count_id">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <!-- <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/> -->
+                             <img src="/jt_account_module_design/static/src/img/dgf.png"
+                             style="max-height:100px;width:120%;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b><span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>
+                        <span>Direccion General de Finanzas </span><br/>
+                        <span>Reporte de Control de Diario </span><br /><br /><br />
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>     
+  
+
+
+                    <!-- Miles Revenue  Report -->
+        <template id="external_layout_miles_revenue_report" name="external_layout_miles_revenue_report">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b><span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>
+                            <span style="font-size:14px;">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL</span>
+                            <br/>
+                        
+                        <span>REPORTE DE INGRESOS POR EL PERÍODO DEL  <t t-esc="header_date"/> </span><br/>
+                        <span>Cifras en Miles de Pesos</span>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>     
+
+   
+
+	<!-- custom template mail for financial report -->
+	
+	<template id="financial_statement_main_template">
+    <div class='o_account_reports_body'>
+        <div class="alert alert-info text-center mb-0 no_print" t-if="not options.get('all_entries') and options.get('unposted_in_period')">
+            <span>There are <a action="open_unposted_moves">unposted Journal Entries</a> prior or included in this period</span>
+        </div>
+        <div class="o_account_reports_page o_account_reports_no_print">
+
+            <div class="o_account_reports_header">
+                <div class="print_only"><h2><t t-esc="report.get('name')"></t></h2></div>
+                <t t-if="model._name == 'account.general.ledger'">
+                    <div class="o_account_reports_filter_input_wrapper no_print">
+                        <span class="searchIcon"><i class="fa fa-search" role="img" aria-label="Search" title="Search"></i></span>
+                        <input class="o_account_reports_filter_input" type="text" placeholder="Search account" />
+                    </div>
+                </t>
+                <t t-call="account_reports.filter_info_template"/>
+            </div>
+            <div class="o_account_reports_summary"/>
+				<!-- 
+                <table class="o_account_reports_table table-hover">
+                    <t t-call="{{model._get_templates()['main_table_header_template']}}"/>
+                    <tbody>
+
+                      <t t-if="lines.get('lines')">
+                            <t t-call="{{model._get_templates()['custom_line_template_left']}}"/>
+                        </t>
+                    </tbody>
+                </table>
+                 -->
+			         
+            <div class="row">
+            
+            <div class="table-responsive col-6">
+                <table class="o_account_reports_table table-hover">
+                    <t t-call="{{model._get_templates()['main_table_header_template']}}"/>
+                    <tbody>
+
+                      <t t-if="lines.get('lines')">
+                            <t t-call="{{model._get_templates()['custom_line_template_left']}}"/>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-responsive col-6">
+                <table class="o_account_reports_table table-hover">
+                    <t t-call="{{model._get_templates()['main_table_header_template']}}"/>
+                    <tbody>
+                    	
+                        <t t-if="lines.get('lines')">
+                            <t t-call="{{model._get_templates()['custom_line_template_right']}}"/>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+            
+            </div>
+            <div class="js_account_report_footnotes"/>
+        </div>
+    </div>
+</template>
+	
+    <!-- custom Line-->
+
+<template id="custom_line_template_left">
+	<div class="row">
+	<div class="col-6">
+    <t t-foreach="lines['lines']" t-as="line">
+    	<t t-if="line.get('side','')=='left'">
+        <t t-set="trclass" t-value="''"/>
+        <t t-set="domainClass" t-value="'o_account_reports_domain_line_2'"/>
+        <t t-if="not line.get('caret_options')">
+            <t t-set="trclass" t-value="'o_account_reports_default_style'"/>
+            <t t-if="line.get('level') != None">
+                <t t-set="trclass" t-value="'o_account_reports_level'+str(line['level'])"/>
+            </t>
+        </t>
+        <t t-if="line.get('caret_options')">
+            <t t-if="line.get('level')">
+                <t t-set="domainClass" t-value="'o_account_reports_domain_line_'+str(line['level'])"/>
+            </t>
+        </t>
+
+        <tr t-attf-class="#{trclass} #{line.get('class', '')} #{'o_js_account_report_parent_row_unfolded' if line.get('unfolded', False) else ''}"
+            t-att-data-pagebreak="'before' if (line.get('page_break') and context.get('print_mode')) else None"
+            t-att-data-parent-id="line.get('parent_id', False)"
+            t-att-style="line.get('style', '')">
+            <td t-att-data-id="line['id']" t-att-class="'o_account_report_line o_account_report_line_indent ' + (line.get('unfoldable') and 'js_account_report_foldable o_foldable_total' or '')" t-att-data-unfolded="line.get('unfolded', False)" t-att-colspan="line.get('colspan', '1')"
+            t-att-data-offset="line.get('offset', False)" t-att-data-progress="line.get('progress', False)" t-att-data-remaining="line.get('remaining', False)"
+            >
+                    <t t-if="line.get('unfoldable')">
+                        <span t-att-data-id="line['id']" class="o_account_reports_caret_icon">
+                            <i class="fa fa-caret-down" t-if="line.get('unfolded')" role="img" aria-label="Unfolded" title="Unfolded"/>
+                            <i class="fa fa-caret-right" t-if="not line.get('unfolded')" role="img" aria-label="Folded" title="Folded"/>
+                        </span>
+                    </t>
+                    <t t-elif="not line.get('caret_options')">
+                        <span t-att-data-id="line['id']" class="o_account_reports_caret_icon">
+                            <i class="fa fa-caret-right invisible" role="img" aria-label="Unfolded" title="Unfolded"/>
+                        </span>
+                    </t>
+                    <t t-if="not line.get('caret_options')">
+                            <span class="account_report_line_name" t-att-title="line.get('title_hover')">
+                                <a t-if="line.get('action_id')" t-att-data-id="line['id']" t-att-data-action-id="line['action_id']" t-att-action="line.get('action', 'execute_action')">
+                                    <t t-esc="line.get('name')"/>
+                                </a>
+                                <t t-if="not line.get('action_id')" t-esc="line.get('name')"/>
+                                <span class="js_account_report_line_footnote" t-att-data-id="line['id']">
+                                    <sup t-if="line.get('footnote')"><b class="o_account_reports_footnote_sup"><a t-att-href="'#footnote'+line['footnote']"></a><t t-esc="line['footnote']"/></b></sup>
+                                </span>
+                            </span>
+                    </t>
+                    <t t-if="line.get('caret_options')">
+                        <t t-if="not context.get('print_mode')">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href='#'>
+                                    <span t-att-data-id="line['id']" t-att-class="domainClass" t-att-title="line.get('title_hover')">
+                                        <t t-esc="line.get('name')"/>
+                                    </span>
+                                </a>
+                                <span class="js_account_report_line_footnote" t-att-data-id="line['id']"><sup t-if="line.get('footnote')"><b class="o_account_reports_footnote_sup"><a t-att-href="'#footnote'+line['footnote']"></a><t t-esc="line['footnote']"/></b></sup></span>
+                                <div class="dropdown-menu o_account_reports_domain_dropdown" role="menu">
+                                    <t t-call="account_reports.line_caret_options"/>
+                                    <a role="menuitem" tabindex="-1" t-att-data-id="line['id']" class="dropdown-item js_account_reports_add_footnote">Annotate</a>
+                                </div>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <span t-att-data-id="line['id']" t-att-class="domainClass" t-att-title="line.get('title_hover')">
+                                <t t-esc="line.get('name')"/>
+                            </span>
+                            <span class="js_account_report_line_footnote" t-att-data-id="line['id']"><sup t-if="line.get('footnote')"><b class="o_account_reports_footnote_sup"><a t-att-href="'#footnote'+line['footnote']"></a><t t-esc="line['footnote']"/></b></sup></span>
+                        </t>
+                    </t>
+            </td>
+            <t t-set="column_index" t-value="0"/>
+            <t t-foreach="line.get('columns')" t-as="column">
+                <t t-set="hierarchies_enabled" t-value="len(lines.get('columns_header', [])) > 1"/>
+                <td t-att-class="'o_account_report_line ' + (column.get('class', lines.get('columns_header')[-1][column_index+line.get('colspan', 1)].get('class', '')) + (line.get('unfoldable') and ' o_foldable_total' or '')) + ('' if hierarchies_enabled else ' o_account_report_line_indent')" t-att-style="column.get('style', lines.get('columns_header')[-1][column_index+line.get('colspan', 1)].get('style', ''))">
+                    <span class="o_account_report_column_value" t-att-title="column.get('title')">
+                        <t t-esc="column.get('name')"/>
+                    </span>
+                </td>
+                <t t-set="column_index" t-value="column_index + 1"/>
+            </t>
+        </tr>
+    </t>
+    </t>
+    </div>
+    <div class="col-6"></div>
+    </div>
+</template>
+
+<template id="custom_line_template_right">
+    <t t-foreach="lines['lines']" t-as="line">
+    	<t t-if="line.get('side','')=='right'">
+        <t t-set="trclass" t-value="''"/>
+        <t t-set="domainClass" t-value="'o_account_reports_domain_line_2'"/>
+        <t t-if="not line.get('caret_options')">
+            <t t-set="trclass" t-value="'o_account_reports_default_style'"/>
+            <t t-if="line.get('level') != None">
+                <t t-set="trclass" t-value="'o_account_reports_level'+str(line['level'])"/>
+            </t>
+        </t>
+        <t t-if="line.get('caret_options')">
+            <t t-if="line.get('level')">
+                <t t-set="domainClass" t-value="'o_account_reports_domain_line_'+str(line['level'])"/>
+            </t>
+        </t>
+
+        <tr t-attf-class="#{trclass} #{line.get('class', '')} #{'o_js_account_report_parent_row_unfolded' if line.get('unfolded', False) else ''}"
+            t-att-data-pagebreak="'before' if (line.get('page_break') and context.get('print_mode')) else None"
+            t-att-data-parent-id="line.get('parent_id', False)"
+            t-att-style="line.get('style', '')">
+            <td t-att-data-id="line['id']" t-att-class="'o_account_report_line o_account_report_line_indent ' + (line.get('unfoldable') and 'js_account_report_foldable o_foldable_total' or '')" t-att-data-unfolded="line.get('unfolded', False)" t-att-colspan="line.get('colspan', '1')"
+            t-att-data-offset="line.get('offset', False)" t-att-data-progress="line.get('progress', False)" t-att-data-remaining="line.get('remaining', False)"
+            >
+                    <t t-if="line.get('unfoldable')">
+                        <span t-att-data-id="line['id']" class="o_account_reports_caret_icon">
+                            <i class="fa fa-caret-down" t-if="line.get('unfolded')" role="img" aria-label="Unfolded" title="Unfolded"/>
+                            <i class="fa fa-caret-right" t-if="not line.get('unfolded')" role="img" aria-label="Folded" title="Folded"/>
+                        </span>
+                    </t>
+                    <t t-elif="not line.get('caret_options')">
+                        <span t-att-data-id="line['id']" class="o_account_reports_caret_icon">
+                            <i class="fa fa-caret-right invisible" role="img" aria-label="Unfolded" title="Unfolded"/>
+                        </span>
+                    </t>
+                    <t t-if="not line.get('caret_options')">
+                            <span class="account_report_line_name" t-att-title="line.get('title_hover')">
+                                <a t-if="line.get('action_id')" t-att-data-id="line['id']" t-att-data-action-id="line['action_id']" t-att-action="line.get('action', 'execute_action')">
+                                    <t t-esc="line.get('name')"/>
+                                </a>
+                                <t t-if="not line.get('action_id')" t-esc="line.get('name')"/>
+                                <span class="js_account_report_line_footnote" t-att-data-id="line['id']">
+                                    <sup t-if="line.get('footnote')"><b class="o_account_reports_footnote_sup"><a t-att-href="'#footnote'+line['footnote']"></a><t t-esc="line['footnote']"/></b></sup>
+                                </span>
+                            </span>
+                    </t>
+                    <t t-if="line.get('caret_options')">
+                        <t t-if="not context.get('print_mode')">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href='#'>
+                                    <span t-att-data-id="line['id']" t-att-class="domainClass" t-att-title="line.get('title_hover')">
+                                        <t t-esc="line.get('name')"/>
+                                    </span>
+                                </a>
+                                <span class="js_account_report_line_footnote" t-att-data-id="line['id']"><sup t-if="line.get('footnote')"><b class="o_account_reports_footnote_sup"><a t-att-href="'#footnote'+line['footnote']"></a><t t-esc="line['footnote']"/></b></sup></span>
+                                <div class="dropdown-menu o_account_reports_domain_dropdown" role="menu">
+                                    <t t-call="account_reports.line_caret_options"/>
+                                    <a role="menuitem" tabindex="-1" t-att-data-id="line['id']" class="dropdown-item js_account_reports_add_footnote">Annotate</a>
+                                </div>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <span t-att-data-id="line['id']" t-att-class="domainClass" t-att-title="line.get('title_hover')">
+                                <t t-esc="line.get('name')"/>
+                            </span>
+                            <span class="js_account_report_line_footnote" t-att-data-id="line['id']"><sup t-if="line.get('footnote')"><b class="o_account_reports_footnote_sup"><a t-att-href="'#footnote'+line['footnote']"></a><t t-esc="line['footnote']"/></b></sup></span>
+                        </t>
+                    </t>
+            </td>
+            <t t-set="column_index" t-value="0"/>
+            <t t-foreach="line.get('columns')" t-as="column">
+                <t t-set="hierarchies_enabled" t-value="len(lines.get('columns_header', [])) > 1"/>
+                <td t-att-class="'o_account_report_line ' + (column.get('class', lines.get('columns_header')[-1][column_index+line.get('colspan', 1)].get('class', '')) + (line.get('unfoldable') and ' o_foldable_total' or '')) + ('' if hierarchies_enabled else ' o_account_report_line_indent')" t-att-style="column.get('style', lines.get('columns_header')[-1][column_index+line.get('colspan', 1)].get('style', ''))">
+                    <span class="o_account_report_column_value" t-att-title="column.get('title')">
+                        <t t-esc="column.get('name')"/>
+                    </span>
+                </td>
+                <t t-set="column_index" t-value="column_index + 1"/>
+            </t>
+        </tr>
+    </t>
+    </t>
+</template>
+    
+    </data>
+</odoo>
+

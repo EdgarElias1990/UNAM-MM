@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for code structure model -->
+        <record id="code_structure_search_view" model="ir.ui.view">
+            <field name="name">code.structure.search.view</field>
+            <field name="model">code.structure</field>
+            <field name="arch" type="xml">
+                <search string="Code structure">
+                    <field name="position_priority"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Position priority" name='position_priority' context="{'group_by':'position_priority'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for code structure model -->
+    	<record id="code_structure_form_view" model="ir.ui.view">
+            <field name="name">code.structure.form.view</field>
+            <field name="model">code.structure</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+	            		<group>
+	            			<field name="position_priority" required="1"/>
+                            <field name="section" required="1"/>
+	            		</group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for code structure model -->
+    	<record id="code_structure_tree_view" model="ir.ui.view">
+            <field name="name">code.structure.tree.view</field>
+            <field name="model">code.structure</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="position_priority"/>
+                    <field name="section"/>
+            	</tree>
+            </field>
+        </record>
+
+        <!-- action for code structure views -->
+        <record id="action_code_structure" model="ir.actions.act_window">
+            <field name="name">Code Structure</field>
+            <field name="res_model">code.structure</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="code_structure_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

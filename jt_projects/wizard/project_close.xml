@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="close_project_form_view" model="ir.ui.view">
+            <field name="name">close.project.form.view</field>
+            <field name="model">project.close</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                    	<field name="is_papiit_project" invisible="1"/>
+                    	<field name="project_id" invisible="1"/>
+                        <field name="close_letter" attrs="{'invisible':[('is_papiit_project','=',True)],'required':[('is_papiit_project','=',False)]}"/>
+                        <field name="current_id" invisible="1"/>
+                    </group>
+                    <field name="close_label" attrs="{'invisible':[('is_papiit_project','=',False)]}" readonly="1"/>
+                    
+                    <footer>
+                        <button string="Yes" name="apply_document" type="object" class="oe_highlight" attrs="{'invisible':[('is_papiit_project','=',False)]}"/>
+                        <button string="Apply" name="apply_document" type="object" class="oe_highlight" attrs="{'invisible':[('is_papiit_project','=',True)]}"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- <record id="action_project_close" model="ir.actions.act_window">
+            <field name="name">Project Close</field>
+            <field name="res_model">project.close</field>
+            <field name="view_mode">form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record> -->
+
+	</data>
+</odoo>

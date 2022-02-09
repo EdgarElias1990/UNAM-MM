@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+      <record id="view_confirm_payment_date_wizard" model="ir.ui.view">
+            <field name="name">confirm.payment.date.view</field>
+            <field name="model">confirm.payment.date</field>
+            <field name="arch" type="xml">
+                <form string="Confirm Payment Date">
+                    <group>
+                        <field name="payment_date" required="1"  options="{'no_open': True, 'no_create': True}"/>
+                        
+                    </group>
+                    <footer>
+                        <button string="Generate" name="set_payment_date" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+            
+       <record id="action_payment_date_all" model="ir.actions.server">
+            <field name="name">Set the payment date</field>
+            <field name="model_id" ref="jt_account_module_design.model_confirm_payment_date"/>
+            <field name="binding_model_id" ref="account.model_account_payment"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.action_payment_date()
+            </field>
+        </record>
+
+       <record id="action_payment_date_all_other" model="ir.actions.server">
+            <field name="name">Set the payment date</field>
+            <field name="model_id" ref="jt_account_module_design.model_confirm_payment_date"/>
+            <field name="binding_model_id" ref="account.model_account_payment"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.action_payment_date()
+            </field>
+        </record>
+        
+    </data>
+</odoo>

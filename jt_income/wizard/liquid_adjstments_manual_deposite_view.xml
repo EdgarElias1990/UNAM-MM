@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+      <record id="view_liquid_adjustments_manual_deposite" model="ir.ui.view">
+            <field name="name">liquid.adjustments.manual.deposite.view</field>
+            <field name="model">liquid.adjustments.manual.deposite</field>
+            <field name="arch" type="xml">
+                <form string="Liquidity">
+                	<group>
+	                    <group>
+	                    	<field name="folio" readonly="1"/>
+	                    	<field name="budget_id" required="1"/>
+	                    	<field name="adaptation_type" readonly="1"/>
+	                    	<field name="journal_id" readonly="1"/>
+	                    	<field name="date_of_liquid_adu" required="1"/>
+	                    	<field name="move_id" invisible="1"/>
+	                    </group>
+	                    <group>
+	                    	<field name="observation"/>
+	                    </group>
+                    </group>
+                    <footer>
+                        <button string="Generate Adequacies" name="generate_adequacies" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+     </data>
+ </odoo>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+	    <!-- Summary of Operation USD Expenditures -->
+        <record id="action_summary_of_operations_bank_transactions" model="ir.actions.client">
+            <field name="name">Summary of Operations - Bank Transactions</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_finance.summary.of.operations.bank.transactions'}"/>
+        </record>
+
+        <menuitem
+            id="menu_summary_of_operations_bank_transactions"
+            name="Summary of Operations - Bank Transactions"
+            parent="jt_payroll_payment.menu_finance_reports"
+            sequence="15"
+            action="action_summary_of_operations_bank_transactions"
+        />
+	    
+	    <!-- Search Template for the  Summary of Operations - Bank Transactions-->
+
+	<template id="search_template_transfer_request_state">
+        <a type="button" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-book"/>
+            Status:
+            <t t-set="selected_transfer_request_state" t-value="options.get('name_journal_group') or ', '.join(c.get('name') for c in options['transfer_request_state'] if c.get('selected'))"/>
+            <t t-if="selected_transfer_request_state">
+                <t t-esc="selected_transfer_request_state"/>
+            </t>
+            <t t-else="">
+                
+            </t>
+        </a>
+         
+        <div class="dropdown-menu o_filters_menu" role="menu">
+            <t t-foreach="options['transfer_request_state']" t-as="j">
+                <t t-if="j.get('id') == 'divider'">
+                    <div role="separator" class="dropdown-divider"/>
+                    <b role="menuitem" class="ml4 dropdown-item-text"><t t-esc="j.get('name')"/></b>
+                    <div role="separator" class="dropdown-divider"/>
+                </t>
+                <t t-if="j.get('id') != 'divider'">
+                    <t>
+                        <a role="menuitem" class="dropdown-item js_account_report_choice_filter" t-att-title="j.get('name')" t-att-data-id="j.get('id')" data-filter="transfer_request_state">
+                            <t t-esc="j.get('name')"/>
+                        </a>
+                    </t>
+                </t>
+            </t>
+        </div>
+        
+    </template>
+
+    <template id="search_template_transfer_request_state_inherit" inherit_id="account_reports.search_template">
+        <xpath expr="." position="inside">
+            <div class="btn-group o_dropdown o_account_reports_filter_transfer_request_state" t-if="options.get('transfer_request_state') != None">
+                <t t-call="jt_currency_purchase_req.search_template_transfer_request_state"/>
+            </div>
+        </xpath>
+    </template>
+	    
+	</data>
+</odoo>

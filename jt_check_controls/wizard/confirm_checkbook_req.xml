@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+
+		<record id="confirm_checkbook_form_view" model="ir.ui.view">
+			<field name="name">Confirm Checkbook form view</field>
+			<field name="model">confirm.checkbook</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<field name="bank_id" readonly="1" attrs="{'invisible':[('is_click_register','=',True)]}"/>
+							<field name="bank_account_id" readonly="1" attrs="{'invisible':[('is_click_register','=',True)]}"/>
+							<field name="checkbook_no" required="1" attrs="{'invisible':[('is_click_register','=',True)]}"/>
+							<field name="cost_per_check" required="1"/>
+							
+							<field name="received_boxes" required="1" attrs="{'invisible':[('is_click_register','=',True)]}"/>
+							<field name="check_per_box" invisible="1"/>
+							<field name="additional_checks" required="1" attrs="{'invisible':[('is_click_register','=',True)]}"/>
+							<field name="total_cash" invisible="1"/>
+							<field name="total_checks_received" required="1" attrs="{'invisible':[('is_click_register','=',True)]}"/>
+							<field name="is_click_register" invisible="1"/>
+							<field name="checkbook_id" invisible="1"/>
+						</group>
+						<group string="Detail of Boxes" attrs="{'invisible':[('is_click_register','=',False)]}">
+							<field name="detail_box_ids" nolabel="1">
+								<tree editable="bottom">
+									<field name="sequence"/>
+									<field name="intial_folio" required="1"/>
+									<field name="final_folio" required="1"/>
+									<field name="check_per_box"/>
+								</tree>
+							</field>
+ 							<group class="oe_subtotal_footer">
+                                    <field name="total_detail_box_check"/>
+                                </group>							
+						</group>
+						<group string="Additional checks without cash" attrs="{'invisible':[('is_click_register','=',False)]}">
+							<field name="additional_check_ids" nolabel="1">
+								<tree editable="bottom">
+									<field name="intial_folio" required="1"/>
+									<field name="final_folio" required="1"/>
+									<field name="check_per_box"/>
+								</tree>
+							</field>
+							<group class="oe_subtotal_footer">
+                                  <field name="total_additional_check"/>
+                              </group>							
+						</group>
+							<group attrs="{'invisible':[('is_click_register','=',False)]}">
+                                  <field name="total_checks_received_cal"/>
+                              </group>							
+						
+						<footer>
+                   			<button string="Apply" class="btn btn-primary" type="object" name="apply" attrs="{'invisible':[('is_click_register','=',False)]}"/>
+                   			<button string="Register details of boxes" class="btn btn-primary" type="object" name="register_details_box" attrs="{'invisible':[('is_click_register','=',True)]}"/>
+                		</footer>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</odoo>

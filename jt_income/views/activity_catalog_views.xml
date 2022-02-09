@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="activity_catalog_tree" model="ir.ui.view">
+            <field name="name">activity.catalog.tree.view</field>
+            <field name="model">activity.catalog</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="activity_id"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="activity_catalog_from" model="ir.ui.view">
+            <field name="name">activity.catalog.form.view</field>
+            <field name="model">activity.catalog</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="activity_id"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+          <record id="activity_catalog_search" model="ir.ui.view">
+            <field name="name">activity.catalog.search.view</field>
+            <field name="model">activity.catalog</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="activity_id"/>
+                </search>
+            </field>
+        </record>
+
+         <record id="activity_catalog_action" model="ir.actions.act_window">
+            <field name="name">Activity Catalog</field>
+            <field name="res_model">activity.catalog</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="activity_catalog_tree"/>
+        </record>
+
+        <!-- menu for Income -->
+        <menuitem id="main_menu_income" name="Incomes" sequence="10" web_icon="jt_income,static/description/icon.png"/>
+
+        <menuitem id="submenu_menu_income" name="Incomes" sequence="2" parent="main_menu_income"/>
+
+        <menuitem id="submenu_menu_income_config" name="Configuration" sequence="10"
+            parent="main_menu_income"/>
+
+        <menuitem id="menu_activity_catalog" name="Activity Catalog" sequence="3"
+            parent="submenu_menu_income_config" action="activity_catalog_action"/>
+
+
+
+    </data>
+</odoo>

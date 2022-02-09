@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="detail_income_form_view" model="ir.ui.view">
+			<field name="name">Detail Income Form View</field>
+            <field name="model">detailed.statement.income</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                        	<field name="major_id" required="1"/>
+                            <field name="concept" required="1"/>
+                            <field name="account_ids" widget="many2many_tags" required="1"/>
+                            <field name="inc_exp_type" required="1"/>
+                            <field name="item_ids" widget="many2many_tags" attrs="{'invisible': [('inc_exp_type', 'not in', ('investments','expenses', 'other expenses'))]}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+		</record>
+
+        <record id="detail_income_tree_view" model="ir.ui.view">
+            <field name="name">Detail Income Tree view</field>
+            <field name="model">detailed.statement.income</field>
+            <field name="arch" type="xml">
+                <tree>
+                	<field name="major_id" required="1"/>
+                    <field name="concept" />
+                    <field name="account_ids" widget="many2many_tags"/>
+                    <field name="inc_exp_type"/>
+                </tree>
+            </field>
+         </record>
+
+         <record id="detailed_income_action" model="ir.actions.act_window">
+            <field name="name">Income Exprenses and Investment</field>
+            <field name="res_model">detailed.statement.income</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="detailed_income_menu" name="Income Exprenses and Investment"  action="detailed_income_action" parent="menu_conf_item" sequence="3"/>
+
+	</data>
+</odoo>

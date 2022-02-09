@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="res_company_inherited_view" model="ir.ui.view">
+			<field name="name">res.company</field>
+			<field name="model">res.company</field>
+			<field name="inherit_id" ref="base.view_company_form"/>
+			<field name="arch" type="xml">
+
+				<xpath expr="//form//sheet//notebook//page//group//group[2]//field[@name='favicon']" position="after">
+					<field name="header_logo" widget="image"/>
+					<field name="header_logo2" widget="image"/>
+				</xpath>
+
+				<xpath expr="//form//sheet//field[@name='logo']" position="before">
+					<field name="sign" widget="image" class="oe_avatar"/>
+				</xpath>
+
+			</field>
+		</record>
+	</data>
+</odoo>

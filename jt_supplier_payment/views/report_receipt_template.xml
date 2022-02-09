@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_again_receipt_template">
+            <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                <t>
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                
+                                    <center>
+                                        <span>
+                                            <b>UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO</b>
+                                        </span>
+                                    </center>
+                                
+                            </div>
+                        </div>
+                        <br/>
+                        <center>
+                            <span><b>GENERAL DIRECTORATE OF BUDGETARY CONTROL</b></span>
+                        </center>
+                        
+                            <center>
+                                <span><b>Administrative Process Unit</b></span>
+                            </center>
+                        
+                        <h5>
+                            <center><span t-field="o.upa_key"/></center>
+                            
+                        </h5>
+                        <h5>
+                            <center>
+                                <span><b>COUNTER-RECEIPT</b></span>
+                            </center>
+                        </h5>
+                        <br/>
+                        <h5>
+                            <b><span>Date:</span></b>
+                            <span t-field="o.date_receipt"/>
+                        </h5>
+
+                        <h5>
+                            <b><span>ATTENDED:</span></b>
+                            <span t-field="o.user_registering_id.name"/>
+                        </h5>
+                        
+                        <h4>
+                            <b><span>Folio:</span></b>
+                            <span t-field="o.folio"/>
+                        </h4>
+                        <b><span>Dependency:</span></b>
+                        <h6>
+                            <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                            <span t-if="o.dependancy_id" t-field="o.dependancy_id.dependency"/>
+                            <span t-if="o.dependancy_id" t-field="o.dependancy_id.description"/>
+                        </h6>
+                        <b><span>Subdependence:</span></b>
+                        <h6>
+                            <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                            <span t-if="o.dependancy_id" t-field="o.sub_dependancy_id.sub_dependency"/>
+                            <span t-if="o.dependancy_id" t-field="o.sub_dependancy_id.description"/>
+                        </h6>
+                        <b><span>Provider password:</span></b>
+                        <h6>
+                            <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                            <span t-field="o.partner_id.password_beneficiary"/>
+                        </h6>
+                        <b><span>Supplier RFC:</span></b>
+                        <h6>
+                            <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                            
+                            <span t-field="o.rfc"/>
+                        </h6>
+                        <b><span>Provider:</span></b>
+                        <h6>
+                            <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                            <span t-field="o.partner_id.name"/>
+                        </h6>
+                        <h6>
+                            <div align="right">
+                                <b>Number of administrative forms:</b>
+	                            <span t-field="o.administrative_forms"/>    
+                            </div>
+                            
+                        </h6>
+                        <h6>
+                            <div align="right">
+                            <b>Number of Sheets:</b>
+                            <span t-field="o.sheets"/>    
+                            </div>
+                            
+                        </h6>
+                        <h6>
+                            <b><span>Payment to supplier in</span></b>
+                            <span t-field="o.currency_id.name"/>
+                        </h6>
+                        <h6>
+                            <b><span>Request for:</span></b>
+                            <span t-field="o.l10n_mx_edi_payment_method_id.name"/>
+                        </h6>
+                        <h6>
+                            <b><span>Amount:</span></b>
+                            <span t-field="o.amount_total"/>
+                            <span t-field="o.currency_id.currency_unit_label"/>
+                        </h6>
+
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <center>
+                                	<b><span>PLEASE REVIEW THE TICKET DATA</span></b>
+                                </center>
+                                <br/>
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Standard39',o.folio, 80, 100)"
+                                     style="width:200px;height:50px" alt="Barcode"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+            </t>
+        </template>
+
+        <!--
+                <template id="report_again_receipt_template_data">
+
+                        <div class="page" height="1500">
+                            <h1><span>UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO</span></h1>
+                            <h3><span>GENERAL DIRECTORATE OF BUDGETARY CONTROL</span></h3>
+                            <h4><span>Administrative Process Unit</span></h4>
+                            <h4><span t-field="o.upa_key"/></h4>
+                            <h4><span>COUNTER-RECEIPT</span></h4>
+                            <h4><span>Fecha:</span><span t-field="o.date_receipt"/></h4>
+                            <h4><span>ATENDIO:</span><span t-field="o.user_registering_id.name"/></h4>
+                            <h4><span>Folio:</span><span t-field="o.folio"/></h4>
+
+                            <span>Dependencia:</span>
+                            <h4><span t-field="o.dependancy_id.description"/></h4>
+                            <span>Subdependencia:</span>
+                            <h4><span t-field="o.sub_dependancy_id.description"/></h4>
+                            <span>Clave Proveedor:</span>
+                            <h4><span/></h4>
+                            <span>RFC Proveedor:</span>
+                            <h4><span t-field="o.rfc"/></h4>
+                            <span>Proveedor:</span>
+                            <h4><span/></h4>
+                            <h4><span>Numero de formas administrativas:</span><span t-field="o.administrative_forms"/></h4>
+                            <h4><span>Numero de Hojas:</span><span t-field="o.sheets"/></h4>
+                            <h4><span>PAGO A PROVEEDOR en</span><span t-field="o.currency_id.name"/></h4>
+                            <h4><span>Solicitud de:</span><span t-field="o.payment_method"/></h4>
+                            <h4><span>IMPORTE:</span>
+                                <span t-field="o.amount_total"/>
+                                <span t-field="o.currency_id.currency_unit_label"/>
+                            </h4>
+                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;quiet=%s' % ('Code128', o.folio, 400, 100, 0)" style="width:200px;height:50px" alt="Barcode"/>
+                        </div>
+
+
+                </template>
+
+
+              <template id="report_again_receipt_template">
+                      <t t-set="data_report_margin_top" t-value="0"/>
+                    <t t-set="data_report_header_spacing" t-value="0"/>
+
+                    <t t-call="web.html_container">
+                        <t t-foreach="docs" t-as="o">
+                            <t t-set="lang" t-value="o.invoice_user_id.sudo().lang if o.type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                            <t t-call="jt_supplier_payment.report_again_receipt_template_data" t-lang="lang"/>
+                        </t>
+                    </t>
+                </template>
+            -->
+    </data>
+</odoo>

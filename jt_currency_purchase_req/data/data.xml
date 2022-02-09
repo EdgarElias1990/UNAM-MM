@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="sequence_account_modification" model="ir.sequence">
+            <field name="name">Account Modification</field>
+            <field name="code">request.accounts.modification</field>
+            <field name="active">TRUE</field>
+            <field name="padding">8</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+        <record id="sequence_commision_interest" model="ir.sequence">
+            <field name="name">Commission Interest</field>
+            <field name="code">comission.profit</field>
+            <field name="active">TRUE</field>
+            <field name="padding">8</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_update_signature" model="ir.sequence">
+            <field name="name">Update Signature</field>
+            <field name="code">request.update.signature</field>
+            <field name="active">TRUE</field>
+            <field name="padding">8</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_account_cancellation" model="ir.sequence">
+            <field name="name">Account Cancellation</field>
+            <field name="code">request.account.cancellation</field>
+            <field name="active">TRUE</field>
+            <field name="padding">8</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_open_checking_account" model="ir.sequence">
+            <field name="name">Opening a checking account</field>
+            <field name="code">account.open</field>
+            <field name="active">TRUE</field>
+            <field name="padding">8</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_other_procedure" model="ir.sequence">
+            <field name="name">Occupation other procedures</field>
+            <field name="code">other.procedure</field>
+            <field name="active">TRUE</field>
+            <field name="padding">8</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+	</data>
+</odoo>

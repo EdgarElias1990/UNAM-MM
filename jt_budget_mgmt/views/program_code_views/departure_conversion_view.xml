@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for departure conversion model -->
+        <record id="departure_conversion_search_view" model="ir.ui.view">
+            <field name="name">departure.conversion.search.view</field>
+            <field name="model">departure.conversion</field>
+            <field name="arch" type="xml">
+                <search string="Departure conversion">
+                    <field name="conversion_key_id"/>
+                    <field name="item_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Convesion" name='conversion_key_id' context="{'group_by':'conversion_key_id'}"/>
+                        <filter string="Item of Expenditure" name='item_id' context="{'group_by':'item_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for departure conversion model -->
+        <record id="departure_conversion_form_view" model="ir.ui.view">
+            <field name="name">departure.conversion.form.view</field>
+            <field name="model">departure.conversion</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                        	<field name="item_id" required="1"/>
+                        	<field name="conversion_key_id" required="1" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="federal_part" invisible="1"/>
+                            <field name="federal_part_desc"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for departure conversion model -->
+        <record id="departure_conversion_tree_view" model="ir.ui.view">
+            <field name="name">departure.conversion.tree.view</field>
+            <field name="model">departure.conversion</field>
+            <field name="arch" type="xml">
+                <tree>
+                	<field name="item_id"/>
+                	<field name="conversion_key_id"/>
+                    <field name="federal_part" invisible="1"/>
+                    <field name="federal_part_desc"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for departure conversion views -->
+        <record id="action_departure_conversion" model="ir.actions.act_window">
+            <field name="name">SHCP Games (CONPA)</field>
+            <field name="res_model">departure.conversion</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="departure_conversion_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

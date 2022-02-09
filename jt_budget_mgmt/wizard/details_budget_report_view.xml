@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="details_budget_summary_report_form_view" model="ir.ui.view">
+            <field name="name">details.budget.summary.report.view</field>
+            <field name="model">details.budget.summary.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="state" invisible="1"/>
+                    <group states='download'>
+                        <field name="name" invisible="1"/>
+                        <field name="report_file" filename="name" readonly="1"/>
+                    </group>
+                    <group states='request'>
+                        <h3>Your report is in progress you will notify shortly once we prepared the report</h3>
+                    </group>
+                    <group states='draft' string='Period'>
+                        <field name="filter_date" required="1"/>
+<!--                        <field name="start_date"/>-->
+                        <field name="start_date" attrs="{'invisible': [('filter_date', '!=', 'custom')], 'required': [('filter_date', '=', 'custom')]}"/>
+<!--                        <field name="end_date" />-->
+                        <field name="end_date" attrs="{'invisible': [('filter_date', '!=', 'custom')], 'required': [('filter_date', '=', 'custom')]}"/>
+                    </group>
+                    <footer>
+                        <button string="Export Request" name="request_data" type="object" class="oe_highlight" states='draft'/>
+                        <button string="Cancel" class="btn btn-default" special="cancel" states='draft'/>
+                        <button string="Close" class="btn btn-default" special="cancel" states='request'/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_details_budget_summary_report" model="ir.actions.act_window">
+            <field name="name">Details Budget Report</field>
+            <field name="res_model">details.budget.summary.report</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

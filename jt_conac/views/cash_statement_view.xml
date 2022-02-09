@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="cash_statement_form_view" model="ir.ui.view">
+            <field name="name">cash.statement.form.view</field>
+            <field name="model">cash.statement</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="concept"/>
+                            <field name="parent_id" invisible="1"/>
+                            <field name="coa_conac_ids" widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name="major"/>
+                            <field name="types"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="cash_statement_tree_view" model="ir.ui.view">
+            <field name="name">cash.statement.tree.view</field>
+            <field name="model">cash.statement</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="concept"/>
+                    <field name="parent_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_cash_statement" model="ir.actions.act_window">
+            <field name="name">Statement of Cash</field>
+            <field name="res_model">cash.statement</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

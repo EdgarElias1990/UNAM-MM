@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- form view for reject model -->
+        <record id="rejection_form_view" model="ir.ui.view">
+            <field name="name">reject.form.view</field>
+            <field name="model">reason.for.rejection</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="reject_id">
+
+                        </field>
+                    </group>
+                    <footer>
+                        <button string="Apply" name="apply" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- action for rejection  views -->
+        <record id="action_reason_for_rejection" model="ir.actions.act_window">
+            <field name="name">Reject for Rejection</field>
+            <field name="res_model">reason.for.rejection</field>
+            <field name="view_mode">form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

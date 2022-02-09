@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<!-- general total payment amounts -->
+        <record id="action_general_total_payment_amounts" model="ir.actions.client">
+            <field name="name">General Total Payment Amounts</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_supplier_payment.general.total.payment.amounts'}" />
+        </record>
+
+        <menuitem
+            id="menu_general_total_payment_amounts"
+            name="General Total Payment Amounts"
+            parent="jt_payroll_payment.menu_report_payment_of_payroll"
+            sequence="4"
+            action="action_general_total_payment_amounts"
+        />
+
+		<!-- electronic deposits of salaries -->
+        <record id="action_electronic_deposits_of_salaries" model="ir.actions.client">
+            <field name="name">Electronic Deposits Of Salaries</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_supplier_payment.electronic.deposits.of.salaries'}" />
+        </record>
+
+        <menuitem
+            id="menu_electronic_deposits_of_salaries"
+            name="Electronic Deposits Of Salaries"
+            parent="jt_payroll_payment.menu_report_payment_of_payroll"
+            sequence="6"
+            action="action_electronic_deposits_of_salaries"
+        />
+
+		<!-- Cash payment calculation -->
+        <record id="action_cash_payment_calculation" model="ir.actions.client">
+            <field name="name">Cash Payment Calculation</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_supplier_payment.cash.payment.calculation'}"/>
+        </record>
+
+        <menuitem
+            id="menu_cash_payment_calculation"
+            name="Cash Payment Calculation"
+            parent="jt_payroll_payment.menu_report_payment_of_payroll"
+            sequence="8"
+            action="action_cash_payment_calculation"
+        />
+
+
+	<!-- PDF Header Template -->
+		
+		<!-- external_layout_general_total_payment_amount -->
+        <template id="external_layout_general_total_payment_amounts" name="external_layout_general_total_payment_amount">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                   	<span style="font-size:16px;">PATRONATO UNIVERSITARIO</span><br/>
+                   	<span style="font-size:14px;">TESORERIA</span><br/>
+                </div>
+                <div class="col-3">
+                </div>
+                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+         
+        </template>    
+
+		<!-- Report of electronic deposits of salaries, alimony and additional benefit -->
+		
+        <template id="external_layout_electronic_deposits_of_salaries" name="external_layout_electronic_deposits_of_salaries">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                   	<span style="font-size:16px;">REPORTE DE LOS IMPORTES DE LOS DEPOSITOS ELECTRONICOS</span><br/>
+                </div>
+                <div class="col-3">
+                </div>
+                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+         
+        </template>    
+		<!-- Cash payment calculation report -->
+
+        <template id="external_layout_cash_payment_calculation" name="external_layout_cash_payment_calculation">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                   	<span style="font-size:16px;">PATRONATO UNIVERSITARIO</span><br/>
+                   	<span style="font-size:14px;">TESORERIA</span><br/>
+                </div>
+                <div class="col-3">
+                </div>
+                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+         
+        </template>
+
+
+		<!-- salaries, alimony and additional benefit -->
+        <record id="action_salaries_alimony_additional_benefit" model="ir.actions.client">
+            <field name="name">Salaries, Alimony And Additional Benefit</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_supplier_payment.salaries.alimony.additional.benefit'}"/>
+        </record>
+
+        <menuitem
+            id="menu_salaries_alimony_additional_benefit"
+            name="Salaries, Alimony And Additional Benefit"
+            parent="jt_payroll_payment.menu_report_payment_of_payroll"
+            sequence="10"
+            action="action_salaries_alimony_additional_benefit"
+        />
+
+        <template id="external_layout_pension_payment_report" name="external_layout_pension_payment_report">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                   	<span style="font-size:16px;">REPORTE DE LOS IMPORTES DE LOS DEPOSITOS ELECTRONICOS</span><br/>
+                </div>
+                <div class="col-3">
+                </div>
+                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+         
+        </template>
+
+        <!-- payroll report -->
+
+        <record id="action_payroll_report" model="ir.actions.client">
+            <field name="name">Reporte Nóminas</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_check_controls.payroll_report'}" />
+        </record>
+
+        <!-- payroll report -->
+        <menuitem
+            id="payroll_report_submenu"
+            name="Reporte Nóminas"
+            action="action_payroll_report"
+            parent="jt_payroll_payment.menu_report_payment_of_payroll"
+            sequence="11"
+        />
+
+    </data>
+</odoo>

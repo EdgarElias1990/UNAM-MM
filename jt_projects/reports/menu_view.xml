@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- integration of current research project submenu  -->
+        <record id="action_conacyt_report" model="ir.actions.client">
+            <field name="name">Integration of current research projects</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.integration.of.curr.resarch.project'}" />
+        </record>
+
+        <!-- conacyt submenu -->
+        <menuitem
+            id="conacyt_submenu"
+            name="CONACYT"
+            parent="project.menu_project_report"
+            sequence="1"
+            
+        />
+
+        <!--integration of current research project submenu  -->
+        <menuitem
+            id="menu_integration_of_current_research_project"
+            name="Integration of current research projects"
+            parent="jt_projects.conacyt_submenu"
+            action="action_conacyt_report"
+            sequence="1"
+        />
+
+
+         <!-- Accumulated verification recorded in Income / Expense-->
+        <record id="action_accumulated_verfication_report" model="ir.actions.client">
+            <field name="name">Accumulated verification recorded in Income / Expense</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.accumulated.verification.recorded'}" />
+        </record>
+
+
+        <!--Accumulated verification recorded in Income / Expense  -->
+        <menuitem
+            id="menu_accumulated_verfication_recorded"
+            name="Accumulated verification recorded in Income / Expense"
+            parent="jt_projects.conacyt_submenu"
+            action="action_accumulated_verfication_report"
+            sequence="2"
+        />
+
+         <!-- Comparison of balances to check-->
+        <record id="action_comparison_of_balance_report" model="ir.actions.client">
+            <field name="name">Comparison of balances to check</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.comparison.balances.check'}" />
+        </record>
+
+
+        <!--Comparison of balances to check  -->
+        <menuitem
+            id="menu_comparison_balances_to_check"
+            name="Comparison of balances to check"
+            parent="jt_projects.conacyt_submenu"
+            action="action_comparison_of_balance_report"
+            sequence="3"
+        />
+
+       
+
+         <!-- "Accounting and bank account balances-->
+        <record id="action_accounting_bank_balance_report" model="ir.actions.client">
+            <field name="name">Accounting and bank account balances</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.bank.account.balances'}" />
+        </record>
+
+
+        <!--"Accounting and bank account balances -->
+        <menuitem
+            id="menu_accounting_and_bank_account_balances"
+            name="Accounting and bank account balances"
+            parent="jt_projects.conacyt_submenu"
+            action="action_accounting_bank_balance_report"
+            sequence="5"
+        />
+
+        <!-- "Integration of current and expired projects-->
+        <record id="action_integration_of_curr_expired_projects" model="ir.actions.client">
+            <field name="name">Integration of current and expired projects</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.integration.current.expired.project'}" />
+        </record>
+
+
+        <!--Integration of current and expired projects -->
+        <menuitem
+            id="menu_integration_of_curr_expired_projects"
+            name="Integration of current and expired projects"
+            parent="jt_projects.conacyt_submenu"
+            action="action_integration_of_curr_expired_projects"
+            sequence="6"
+        />
+
+
+        
+
+        <!-- Cumulative comparison-->
+        <record id="action_cumulative_comparision" model="ir.actions.client">
+            <field name="name">ACCUMULATED CHECKS</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.cumulative.comparison'}" />
+        </record>
+
+
+        <!--Cumulative comparison -->
+        <menuitem
+            id="menu_cumulative_comparison"
+            name="ACCUMULATED CHECKS"
+            parent="jt_projects.conacyt_submenu"
+            action="action_cumulative_comparision"
+            sequence="7"
+        />
+
+
+        <!--Remnant Resource Integration Configuration-->
+        <!-- <record id="action_resource_remaining_config" model="ir.actions.client">
+            <field name="name">Integration of remaining resources</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.integration.remaining.resources'}" />
+        </record> -->
+
+
+        <!--Remnant Resource Integration Configuration -->
+        <!-- <menuitem
+            id="menu_integration_of_remaining_resource"
+            name="Integration of remaining resources "
+            parent="jt_projects.conacyt_submenu"
+            action="action_resource_remaining_config"
+            sequence="8"
+        /> -->
+
+        <menuitem
+            id="upa_submenu"
+            name="UPA PAPIIT"
+            parent="project.menu_project_report"
+            sequence="9"
+            
+        />
+
+
+        <record id="action_upa_resource_remaining_config" model="ir.actions.client">
+            <field name="name">Integration of remaining resources</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.upa.papiit.remaining.resources'}"/>
+        </record>
+
+        <menuitem
+            id="menu_integration_of_remaining_resource_upa"
+            name="Integration of Remaining Resources"
+            parent="jt_projects.upa_submenu"
+            action="action_upa_resource_remaining_config"
+            sequence="10"
+        />
+
+        <record id="action_budget_resources" model="ir.actions.client">
+            <field name="name">Integration of projects with budget resources</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.budget.resources'}"/>
+        </record>
+
+
+        <menuitem
+            id="menu_integration_of_project_budget_resource"
+            name="Integration of projects with budget resources"
+            parent="jt_projects.upa_submenu"
+            action="action_budget_resources"
+            sequence="11"
+        />
+
+
+        <record id="action_budget_resources_remnants" model="ir.actions.client">
+            <field name="name">Integration by program of budgetary resources and remnants</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.budget.resources.remanats'}"/>
+        </record>
+
+        <menuitem
+            id="menu_integration_of_budgetary_resources_remnants"
+            name="Integration by program of budgetary resources and remnants"
+            parent="jt_projects.upa_submenu"
+            action="action_budget_resources_remnants"
+            sequence="12"
+        />
+
+        <record id="action_integration_of_remnants" model="ir.actions.client">
+            <field name="name">Integration of remnants by PAPIIT, PAPIME, INFOCAB Stage</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.integration.remnants'}"/>
+        </record>
+
+        <menuitem
+            id="menu_integration_of_remnants_papiit_papime_infocab"
+            name="Integration of remnants by PAPIIT, PAPIME, INFOCAB Stage"
+            parent="jt_projects.upa_submenu"
+            action="action_integration_of_remnants"
+            sequence="13"
+        />
+
+        <record id="action_airplane_ticket_papiit" model="ir.actions.client">
+            <field name="name">Integration airplane tickets PAPIIT</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.integration.airplane.ticket'}"/>
+        </record>
+
+        <menuitem
+            id="menu_integration_airplane_tickets_papiit"
+            name="Integration airplane tickets PAPIIT"
+            parent="jt_projects.upa_submenu"
+            action="action_airplane_ticket_papiit"
+            sequence="14"
+        />
+
+        <record id="action_integration_papiit_pime_infocab_iacod" model="ir.actions.client">
+            <field name="name">Integration of PAPIIT, PAPIME, INFOCAB, IACOD editions resources</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.integration.papiit.papime.infocab.iacod'}"/>
+        </record>
+
+        <menuitem
+            id="menu_integration_of_papiit_papime_infocab_iacod"
+            name="Integration of PAPIIT, PAPIME, INFOCAB, IACOD editions resources"
+            parent="jt_projects.upa_submenu"
+            action="action_integration_papiit_pime_infocab_iacod"
+            sequence="15"
+        />
+
+        <record id="action_integration_of_remaining_resources_by_program" model="ir.actions.client">
+            <field name="name">Integration of remaining resources by program PAPIIT, PAPIME, INFOCAB</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_projects.integration.remaining.resources.program'}"/>
+        </record>
+
+        <menuitem
+            id="menu_integration_of_remaining_resource_papiit_pime_infocab"
+            name="Integration of remaining resources by program PAPIIT, PAPIME, INFOCAB"
+            parent="jt_projects.upa_submenu"
+            action="action_integration_of_remaining_resources_by_program"
+            sequence="16"
+        />
+
+    </data>
+</odoo>

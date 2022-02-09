@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="debt_statement_form_view" model="ir.ui.view">
+            <field name="name">debt.statement.form.view</field>
+            <field name="model">debt.statement</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="denomination"/>
+                            <field name="currency_id"/>
+                            <field name="country_id"/>
+                            <field name="init_balance" invisible="1"/>
+                            <field name="end_balance" invisible="1"/>
+                            <field name="parent_id"/>
+                            <field name="coa_conac_ids" widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="debt_statement_tree_view" model="ir.ui.view">
+            <field name="name">debt.statement.tree.view</field>
+            <field name="model">debt.statement</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="denomination"/>
+                    <field name="currency_id"/>
+                    <field name="country_id"/>
+                    <field name="init_balance"/>
+                    <field name="end_balance"/>
+                    <field name="parent_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_debt_statement" model="ir.actions.act_window">
+            <field name="name">Statement of Debt</field>
+            <field name="res_model">debt.statement</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

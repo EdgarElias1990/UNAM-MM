@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record id="trade_confguration_tree_view" model="ir.ui.view">
+            <field name="name">trades.config.tree.view</field>
+            <field name="model">trades.config</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="job_template"/>
+                </tree>
+            </field>
+         </record>
+
+        <record id="trade_configuration_form_view" model="ir.ui.view">
+            <field name="name">trades.config.form.view</field>
+            <field name="model">trades.config</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="job_template" required="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Office of indemnification" name="indemnification">
+                                 <group>
+                                    <group string="General Director">
+                                        <field name="general_director_title"/>
+                                        <field name="general_director_id"/>
+                                        <field name="general_director_job_tile"/>
+                                    </group>
+                                    <group string="Revenue Director">
+                                       <field name="revenue_director_title"/>
+                                       <field name="revenue_dirctor_id"/>
+                                       <field name="revenue_director_job_title"/>
+                                    </group>
+                                     <group string="Employee Collectiong Checkbooks">
+                                        <field name="clerk_title"/>
+                                        <field name="clerk_id"/>
+                                     </group>
+                                </group>
+                                <field name="copied_employee_ids" nolable="1">
+                                    <tree editable="bottom">
+                                        <field name="title"/>
+                                        <field name="employee_id"/>
+                                        <field name="job_title"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="title"/>
+                                            <field name="employee_id"/>
+                                            <field name="job_title"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <record id="action_trade_configuration" model="ir.actions.act_window">
+            <field name="name">Configuration of Trades</field>
+            <field name="res_model">trades.config</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="trades_configuration_menu" name="Configuration of Trades"
+                  parent="check_control_setting_menu"
+                  action="action_trade_configuration" sequence="2"/>
+    </data>
+</odoo>

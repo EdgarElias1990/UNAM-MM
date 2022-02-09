@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record id="request_accounts_tree_view" model="ir.ui.view">
+            <field name="name">Request Accounts List view</field>
+            <field name="model">request.accounts</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="invoice"/>
+                    <field name="project_id"/>
+                    <field name="project_name"/>
+                    <field name="project_type_identifier"/>
+                    <field name="status"/>
+
+                </tree>
+            </field>
+         </record>
+
+         <record id="request_accounts_from_view" model="ir.ui.view">
+            <field name="name">Request Accounts Form view</field>
+            <field name="model">request.accounts</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="generate_request" string="Generate Request" class="oe_highlight"
+                                type="object" attrs="{'invisible': [('status', '!=', 'eraser')]}"/>
+                       
+                        <field name="status" widget="statusbar" statusbar_visible="eraser,request,confirmed,rejected"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="invoice" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="move_type" readonly="1"/>
+                                <field name="project_id" required="1" domain="[('project_type','in',('conacyt','concurrent','other'))]"
+                                attrs="{'readonly': [('status', '!=', 'eraser')]}" context="{'from_conacyt':1}"/>
+                                <field name="project_name"/>
+                                <field name="user_id" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="custom_project_type_id" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="custom_stage_id" />
+                                <field name="ministrations_amount" required="1" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="authorized_amount" required="1" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="project_program_ids" invisible="1"/>
+                                <field name="program_code"  domain="[('id','in',project_program_ids)]" attrs="{'readonly': [('status', '!=', 'eraser')]}" options="{'no_create': True}"/>
+                                <field name="journal_id" required="1" domain="[('is_conacyt_project','=',True)]" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                            </group>
+                            <group>
+                                <field name="observations" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="bank_account_id" readonly="1" force_save="1"/>
+                                <field name="bank_acc_number_id" readonly="1" force_save="1"/>
+                                <field name="no_contract" readonly="1"/>
+                                <field name="customer_number" invisible="1"/>
+                                <field name="supporting_doc_name" invisible="1"/>
+                                <field name="supporting_documentation" attrs="{'readonly': [('status', '!=', 'eraser')]}" filename="supporting_doc_name"/>
+                                <field name="reason_rejection" attrs="{'readonly': [('status', '!=', 'eraser')],'invisible': [('status', '!=', 'rejected')]}"/>
+                                <field name="rejection_observations" readonly="1" attrs="{'invisible': [('status', '!=', 'rejected')]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                        	<page string="Accounting Notes">
+                        		<field name="move_line_ids" readonly="1"/>
+                        	</page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+         </record>
+
+          <record id="request_accounts_action" model="ir.actions.act_window">
+            <field name="name">Requests to open an account</field>
+            <field name="res_model">request.accounts</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('request_accounts_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('request_accounts_from_view')})]"/>
+            <field name="context">{'from_conacyt':1,'default_move_type' : 'account open'}</field>
+            <field name="domain">[('move_type','=','account open')]</field>
+        </record>
+
+        <menuitem id="menu_request_account" name="Request to open an account"
+                  action="request_accounts_action"
+                  parent="menu_conacyt" sequence="2"/>
+
+        <record id="open_request_accounts_from_view" model="ir.ui.view">
+            <field name="name">Open Request Accounts Form view</field>
+            <field name="model">request.accounts</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="%(jt_projects.action_request_confirmation)d" string="Confirm" class="oe_highlight"
+                                type="action" attrs="{'invisible': [('status', '!=', 'request')]}"/>
+                        <button name="%(jt_projects.action_request_Rejection)d" string="Reject" class="oe_highlight"
+                                type="action" attrs="{'invisible': [('status', '!=', 'request')]}"/>
+                        <field name="status" widget="statusbar" statusbar_visible="eraser,request,confirmed,rejected"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="invoice"  attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="project_id" domain="[('project_type', '=', 'conacyt')]"
+                                context="{'from_conacyt':1}" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="project_name" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="user_id" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="project_type_identifier" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="project_stage_identifier" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="ministrations_amount" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="authorized_amount" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="program_code" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="journal_id" required="1" domain="[('is_conacyt_project','=',True)]" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                            </group>
+                            <group>
+                                <field name="observations" readonly="1" attrs="{'invisible': [('status', '!=', 'rejected')]}"/>
+                                <field name="bank_account_id" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="bank_acc_number_id" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="no_contract" readonly="1"/>
+                                <field name="customer_number" invisible="1" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name='supporting_doc_name' invisible="1"/>
+                                <field name="supporting_documentation"  attrs="{'readonly': [('status', '!=', 'eraser')]}" filename="supporting_doc_name"/>
+                                <field name="reason_rejection" attrs="{'invisible': [('status', '!=', 'rejected')]}"/>
+                                <field name="rejection_observations" readonly="1" attrs="{'invisible': [('status', '!=', 'rejected')]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                        	<page string="Accounting Notes">
+                        		<field name="move_line_ids" readonly="1"/>
+                        	</page>
+                        </notebook>                        
+                    </sheet>
+                </form>
+            </field>
+         </record>
+
+          <record id="open_request_accounts_action" model="ir.actions.act_window">
+            <field name="name">Requests to open an account</field>
+            <field name="res_model">request.accounts</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('request_accounts_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('open_request_accounts_from_view')})]"/>
+            <field name="context">{'from_conacyt':1,'default_move_type' : 'account open'}</field>
+            <field name="domain">[('status', '!=', 'eraser'),('move_type','=','account open')]</field>
+        </record>
+
+        <menuitem id="main_menu_open_request_account" name="Bank Account Management"
+                  parent="jt_payroll_payment.menu_payment_finance" sequence="6"/>
+
+        <menuitem id="menu_open_request_account" name="Opening Requests"
+                  action="open_request_accounts_action"
+                  parent="main_menu_open_request_account" sequence="1"/>
+
+    </data>
+</odoo>

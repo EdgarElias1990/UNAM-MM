@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+      <record id="view_payment_declined_wizard" model="ir.ui.view">
+            <field name="name">payment.declined.wizard.view</field>
+            <field name="model">payment.declined.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Payment Declined">
+                    <group>
+                    	<field name="is_reject" invisible="1"/>
+                    	<field name="is_cancel" invisible="1"/>
+                    	
+                    	<field name="reason_for_rejection" attrs="{'invisible':[('is_reject','=',False)],'required':[('is_reject','=',True)]}"/>
+                    	<field name="reason_for_cancel" attrs="{'invisible':[('is_cancel','=',False)],'required':[('is_cancel','=',True)]}"/>
+                    	<field name="payment_ids" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button string="Accept" name="action_reject" type="object" class="oe_highlight" attrs="{'invisible':[('is_reject','=',False)]}"/>
+                        <button string="Accept" name="action_cancel" type="object" class="oe_highlight" attrs="{'invisible':[('is_cancel','=',False)]}"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+            
+       <record id="action_payment_declined_call" model="ir.actions.server">
+            <field name="name">Payment Declined</field>
+            <field name="model_id" ref="jt_supplier_payment.model_payment_declined_wizard"/>
+            <field name="binding_model_id" ref="account.model_account_payment"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.action_payment_declined()
+            </field>
+        </record>
+
+       <record id="action_payment_declined_call_other" model="ir.actions.server">
+            <field name="name">Payment Declined</field>
+            <field name="model_id" ref="jt_supplier_payment.model_payment_declined_wizard"/>
+            <field name="binding_model_id" ref="account.model_account_payment"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.action_payment_declined()
+            </field>
+        </record>
+       <record id="action_payment_cancel_call" model="ir.actions.server">
+            <field name="name">Cancel</field>
+            <field name="model_id" ref="jt_supplier_payment.model_payment_declined_wizard"/>
+            <field name="binding_model_id" ref="account.model_account_payment"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.action_payment_cancel()
+            </field>
+        </record>
+        
+	</data>
+</odoo>

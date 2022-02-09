@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="custom_payroll_processing_form_view" model="ir.ui.view">
+            <field name="name">custom.payroll.processing.form.view</field>
+            <field name="model">custom.payroll.processing</field>
+            <field name="arch" type="xml">
+                <form>
+                  	<header>
+                  		<button string="Process Perception" name="process_perception_cron" attrs="{'invisible':[('perception_hide','=',True)]}" type="object" class="oe_highlight"/>
+                  		<button string="Process Deduction" name="process_deductions_cron" attrs="{'invisible':[('deductions_hide','=',True)]}" type="object" class="oe_highlight"/>
+                  		<button string='Generate Payroll' name='generate_payroll' attrs="{'invisible':['|',('perception_file_load','=',True),('deductions_file_load','=',True)]}" type="object" class="oe_highlight"/>
+                  		<button string='Generate Adjustment' name='generate_adjustment' type="object"
+                                class="oe_highlight"/>
+                  		<button string='Lows and Cancellations' name='lows_and_cancellations' type="object"
+                                class="oe_highlight"/>
+                  		
+                  	</header>
+                    <sheet>
+                    	<field name="payroll_ids" invisible="1"/>
+                        <div class="oe_button_box" name="button_box">
+                             <button name="view_payment_receipt" type="object" class="oe_stat_button" icon="fa-random"
+                                     attrs="{'invisible':[('payroll_ids','=',False)]}"
+                             context="{'show_from_payroll':1}">
+                                <field name="total_record" widget="statinfo"/>
+                            </button>
+                        </div>
+                    	
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" required="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                 <label for="period_start"/>
+                                <div>
+                                    <field name="period_start" class="oe_inline" required="1"/> -
+                                    <field name="period_end" class="oe_inline" required="1"/>
+                                </div>
+                                <field name="fornight" required="1"/>
+                                   <field name="failed_row_file" invisible="1" filename="fialed_row_filename" readonly="1"/>
+                                   <field name="fialed_row_filename" invisible="1"/>
+                                
+                                <field name="perception_file" filename="perception_filename" readonly="1" invisible="1"/>
+                                <field name="perception_filename" invisible="1"/>
+                                <field name="perception_file_index" invisible="1"/>
+                                <field name="perception_file_load" invisible="1"/>
+								<field name="perception_hide" invisible="1"/>
+								
+                                <field name="deductions_file" filename="deductions_filename" readonly="1" invisible="1"/>
+                                <field name="deductions_filename" invisible="1"/>
+                                <field name="deductions_file_index" invisible="1"/>
+                                <field name="deductions_file_load" invisible="1"/>
+                                <field name="deductions_hide" invisible="1"/>
+                             </group>
+                        </group>
+                        <notebook>
+                        	<page string="Failed Log" name="failed_log">
+                        		<field name="failed_log_ids">
+                        			<tree create="0" edit="0" delete="0">
+                        				<field name="import_file_name"/>
+                        				<field name="user_id"/>
+                        				<field name="type_of_movement"/>
+                        				<field name="process_date_time"/>
+                        				<field name="fialed_row_filename"/>
+                        				<field name="failed_row_file" invisible="1" filename="fialed_row_filename" readonly="1"/>
+                        				<button name="download_file" string="Download" type="object" class="oe_highlight"/>
+                        				<field name="state"/>
+                        			</tree>
+                        			<form>
+                        				<group>
+	                        				<field name="import_file_name"/>
+	                        				<field name="user_id"/>
+	                        				<field name="type_of_movement"/>
+	                        				<field name="process_date_time"/>
+	                        				<field name="fialed_row_filename" invisible="1"/>
+	                        				<field name="failed_row_file" filename="fialed_row_filename" readonly="1"/>
+	                        				<field name="state"/>
+                        				</group>
+                        			</form>
+                        		</field>
+                        	</page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for adjustment.cases -->
+        <record id="custom_payroll_processing_tree_view" model="ir.ui.view">
+            <field name="name">custom.payroll.processing.tree.view</field>
+            <field name="model">custom.payroll.processing</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="period_start"/>
+                    <field name="period_start"/>
+                    <field name="fornight"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for adjustment.cases views -->
+        <record id="action_custom_payroll_processing" model="ir.actions.act_window">
+            <field name="name">Payroll Processing</field>
+            <field name="res_model">custom.payroll.processing</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_custom_payroll_processing" name="Payroll Processing" parent="menu_emp_payroll_payment_of_payroll"
+                  sequence="1" action="action_custom_payroll_processing"/>
+
+	<!--  Payroll Processing --> 
+
+         <record id="employee_payroll_file_tree_process" model="ir.ui.view">
+            <field name="name">employee.payroll.file.tree.view.process</field>
+            <field name="model">employee.payroll.file</field>
+            <field eval="100" name="priority"/>
+            <field name="arch" type="xml">
+                <tree create="0">
+                	<field name="state"/>
+                    <field name="reference"/>
+                    <field name="employee_id"/>
+                    <field name="name"/>
+                    <field name="net_salary"/>
+                    <field name="period_start"/>
+                    <field name="period_end"/>
+                </tree>
+            </field>
+         </record>
+
+        <record id="employee_payroll_file_form_processing" model="ir.ui.view">
+            <field name="name">employee.payroll.file.form.view.processing</field>
+            <field name="model">employee.payroll.file</field>
+            <field name="arch" type="xml">
+                <form create="0">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="employee_id" class="oe_edit_only"/>
+                            <h1>
+                                <field name="employee_id" required="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                 <label for="period_start"/>
+                                <div>
+                                    <field name="period_start" class="oe_inline" attrs="{'readonly':[('state','=','done')]}"/> -
+                                    <field name="period_end" class="oe_inline" attrs="{'readonly':[('state','=','done')]}"/>
+                                </div>
+                                <field name="rfc"/>
+                                <field name="employee_number"/>
+                                <field name="job_id"/>
+                                <field name="payment_place_id"/>
+                                
+                                <field name="fornight" attrs="{'readonly':[('state','=','done')]}" invisible="1"/>
+                                <field name="bank_receiving_payment_id" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="receiving_bank_acc_pay_id" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="payment_issuing_bank_id" readonly="1" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="bank_acc_payment_insur_id" readonly="1" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="payment_request_type" required="1" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="amount_payable" attrs="{'readonly':[('state','=','done')]}" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="reference" readonly="1"/>
+                                <field name="name" readonly="1"/>
+                                <field name="l10n_mx_edi_payment_method_id" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="bank_key" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="bank_key_name" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="deposite_number" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="check_number" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="adjustment_case_id" context="{'show_from_payroll':1}" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="adjustment_case_description"/>
+                                <field name="casualties_and_cancellations" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="total_deduction"/>
+                                <field name="net_salary"/>
+                                <field name="request_type" attrs="{'readonly':[('state','=','done')]}" invisible="1"/>
+                                <field name="payroll_adjustment" attrs="{'readonly':[('state','=','done')]}" invisible="1"/>
+                                <field name="due_to_inappropriate"
+                                       attrs="{'invisible':[('payroll_adjustment','!=','inappropriate')],
+                                       'readonly':[('state','=','done')]}" invisible="1"/>
+                                <field name="beneficiary_id" domain="[('beneficiary_type', '=', 'alimony')]"
+                                       attrs="{'readonly':[('state','=','done')]}" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                        	<page string="Perception" name="preception_line">
+                        		<field name="preception_line_ids" readonly="1">
+                        			<tree>
+                        				<field name="preception_id"/>
+                        				<field name="description"/>
+                        				<field name="account_id"/>
+                        				<field name="amount"/>
+                        			</tree>
+                        			<form>
+                        				<group>
+	                        				<field name="preception_id"/>
+	                        				<field name="description"/>
+	                        				<field name="account_id"/>
+	                        				<field name="amount"/>
+                        				</group>
+                        			</form>
+                        		</field>
+                        	</page>
+                        	<page string="Deductions" name="deduction_line">
+                        		<field name="deduction_line_ids" readonly="1">
+                        			<tree>
+                        				<field name="credit_account_id"/>
+                        				<field name="deduction_id"/>
+                        				<field name="description"/>
+                        				<field name="amount"/>
+                        				<field name="net_salary" invisible="1"/>
+                        			</tree>
+                        			<form>
+                        				<group>
+	                        				<field name="credit_account_id"/>
+	                        				<field name="deduction_id"/>
+	                        				<field name="description"/>
+	                        				<field name="amount"/>
+	                        				<field name="net_salary" invisible="1"/>
+                        				</group>
+                        			</form>
+                        		</field>
+                        	</page>
+
+                        	<page string="Pension Payment" name="pension_line">
+                        		<field name="pension_payment_line_ids" readonly="1">
+                        			<tree>
+                        				<field name="partner_id"/>
+                        				<field name="rfc"/>
+                        				<field name="l10n_mx_edi_payment_method_id"/>
+                        				<field name="journal_id" invisible="1"/>
+                        				<field name="bank_acc_number"/>
+                        				<field name="bank_key"/>
+                        				<field name="bank_id"/>
+                        				<field name="deposit_number"/>
+                        				<field name="check_number"/>
+                        				<field name="total_pension"/>
+                        			</tree>
+                        			<form>
+                        				<group>
+	                        				<field name="partner_id"/>
+	                        				<field name="rfc"/>
+	                        				<field name="l10n_mx_edi_payment_method_id"/>
+	                        				<field name="journal_id" invisible="1"/>
+	                        				<field name="bank_acc_number"/>
+	                        				<field name="bank_key"/>
+	                        				<field name="bank_id"/>
+	                        				<field name="deposit_number"/>
+	                        				<field name="check_number"/>
+	                        				<field name="total_pension"/>
+                        				</group>
+                        			</form>
+                        		</field>
+                        	</page>
+                        	<page string="Additional payments" name="additional_payments_line">
+                        		<field name="additional_payments_line_ids" readonly="1">
+                        			<tree>
+                        				<field name="details"/>
+                        				<field name="description"/>
+                        				<field name="amount"/>
+                        			</tree>
+                        			<form>
+                        				<group>
+	                        				<field name="details"/>
+	                        				<field name="description"/>
+	                        				<field name="amount"/>
+                        				</group>
+                        			</form>
+                        		</field>
+                        	</page>
+                        	
+                        	<page string="Additional Pension Payments" name="additional_pension_payments_line">
+                        		<field name="additional_pension_payments_line_ids" readonly="1">
+                        			<tree>
+                        				<field name="partner_id"/>
+                        				<field name="amount"/>
+                        			</tree>
+                        			<form>
+                        				<group>
+	                        				<field name="partner_id"/>
+	                        				<field name="amount"/>
+                        				</group>
+                        			</form>
+                        		</field>
+                        	</page>
+                        	
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                    
+                </form>
+            </field>
+        </record>
+	       
+	</data>
+</odoo>

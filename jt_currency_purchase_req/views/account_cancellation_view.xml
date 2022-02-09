@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="account_cancel_tree_finance_view" model="ir.ui.view">
+            <field name="name">Account Cancel Tree view</field>
+            <field name="model">request.accounts</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="invoice_cancel"/>
+                    <field name="project_id"/>
+                    <field name="project_name"/>
+                    <field name="project_type_identifier"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+         </record>
+
+
+        <record id="cancellation_request_finance_view" model="ir.ui.view">
+            <field name="name">Cancellation Request Form View</field>
+            <field name="model">request.accounts</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    	<button name="generate_request" string="Generate Request" class="oe_highlight" type="object" attrs="{'invisible': [('status', '!=', 'eraser')]}"/>
+                        <button name="approve_account" string="approved" class="oe_highlight" type="object" attrs="{'invisible': ['|',('status', '=', 'approved'),('status','!=','request')]}"/>
+
+                        <button name="confirm_account" string="Confirmed" class="oe_highlight" type="object" attrs="{'invisible':[('status','!=','approved')]}"/>
+
+                        <button name="%(jt_projects.action_request_Rejection)d" string="Reject" class="oe_highlight"
+                                type="action" attrs="{'invisible': [('status', '!=', 'request')]}"/>
+
+                        <field name="status" widget="statusbar" statusbar_visible="eraser,request,approved,confirmed,rejected" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="invoice" readonly="1"/>
+                                <field name="move_type" readonly="1"/>
+                                <field name="off_number"/>
+                                <field name="project_id" domain="[('project_type', '=', 'conacyt')]"
+                                 attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="project_name" attrs="{'readonly': [('status', '!=', 'eraser')]}" />
+                                <field name="user_id" attrs="{'readonly': [('status', '!=', 'eraser')]}" />
+                                <field name="project_type_identifier" attrs="{'readonly': [('status', '!=', 'eraser')]}" string="Project Type"/>
+                                <field name="project_stage_identifier" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="ministrations_amount" attrs="{'readonly': [('status', '!=', 'eraser')]}" invisible="1"/>
+                                <field name="no_trade" attrs="{'readonly': [('status', '!=', 'eraser')]}" invisible="1"/>
+                                <field name="authorized_amount" attrs="{'readonly': [('status', '!=', 'eraser')]}" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="cancellation_date" readonly="1"/>
+                                <field name="observations" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="bank_account_id" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="bank_acc_number_id" readonly="1"/>
+                                 <field name="no_contract" readonly="1"/>
+                                <field name="customer_number" invisible="1"/>
+                                <field name="supporting_documentation" attrs="{'readonly': [('status', '=', 'confirmed')]}"/>
+                                <field name="reason_rejection" attrs="{'readonly': [('status', '!=', 'eraser')],'invisible':[('status','!=','rejected')]}"/>
+                                <field name="rejection_observations" attrs="{'readonly': [('status', '!=', 'eraser')],'invisible':[('status','!=','rejected')]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+         </record>
+
+          <record id="finance_cancellation_request_action" model="ir.actions.act_window">
+            <field name="name">Cancellation Request</field>
+            <field name="res_model">request.accounts</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('account_cancel_tree_finance_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('cancellation_request_finance_view')})]"/>
+            <field name="context">{'from_conacyt':1,'default_move_type' : 'account cancel'}</field>
+            <field name="domain">[('move_type', '=', 'account cancel')]</field>
+        </record>
+
+        <menuitem id="finance_menu_cancel_request" name="Account Cancellation"
+                  action="finance_cancellation_request_action"
+                  parent="menu_movement_type" sequence="2"/>
+
+
+	</data>
+</odoo>

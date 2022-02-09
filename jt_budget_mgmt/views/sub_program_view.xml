@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for sub program model -->
+        <record id="sub_program_search_view" model="ir.ui.view">
+            <field name="name">sub.program.search.view</field>
+            <field name="model">sub.program</field>
+            <field name="arch" type="xml">
+                <search string="Sub program">
+                    <field name="unam_key_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="UNAM key" name='unam_key_id' context="{'group_by':'unam_key_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- form view for sub program model -->
+    	<record id="sub_program_form_view" model="ir.ui.view">
+            <field name="name">sub.program.form.view</field>
+            <field name="model">sub.program</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+	            		<group>
+	            			<field name="unam_key_id" required="1"/>
+                            <field name="sub_program" required="1"/>
+                            <field name="desc"/>
+	            		</group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for sub program model -->
+    	<record id="sub_program_tree_view" model="ir.ui.view">
+            <field name="name">sub.program.tree.view</field>
+            <field name="model">sub.program</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="unam_key_id"/>
+                    <field name="sub_program"/>
+                    <field name="desc"/>
+            	</tree>
+            </field>
+        </record>
+
+        <!-- action for sub program views -->
+        <record id="action_sub_program" model="ir.actions.act_window">
+            <field name="name">Sub-Program</field>
+            <field name="res_model">sub.program</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="sub_program_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

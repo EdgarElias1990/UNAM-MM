@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for institutional activity model -->
+        <record id="institutional_activity_search_view" model="ir.ui.view">
+            <field name="name">institutional.activity.search.view</field>
+            <field name="model">institutional.activity</field>
+            <field name="arch" type="xml">
+                <search string="Institutional activity">
+                    <field name="number"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Number" name='number' context="{'group_by':'number'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for institutional activity model -->
+    	<record id="institutional_activity_form_view" model="ir.ui.view">
+            <field name="name">institutional.activity.form.view</field>
+            <field name="model">institutional.activity</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+	            		<group>
+	            			<field name="number" required="1"/>
+                            <field name="description"/>
+	            		</group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for institutional activity model -->
+    	<record id="institutional_activity_tree_view" model="ir.ui.view">
+            <field name="name">institutional.activity.tree.view</field>
+            <field name="model">institutional.activity</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="number"/>
+                    <field name="description"/>
+            	</tree>
+            </field>
+        </record>
+        
+        <!-- action for institutional activity views -->
+        <record id="action_institutional_activity" model="ir.actions.act_window">
+            <field name="name">Institutional Activity</field>
+            <field name="res_model">institutional.activity</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="institutional_activity_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

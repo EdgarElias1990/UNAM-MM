@@ -1,0 +1,35 @@
+<section class="oe_container">
+	<div class="oe_row oe_spaced">
+		<h3 class="oe_slogan">Web Client Extension</h3>
+	</div>
+</section>
+
+<section class="oe_container" style="padding-bottom: 50px;">
+	<div class="oe_row oe_spaced">
+		<div class="text-justify" style="max-width: 84%; margin: 16px 8%;">
+			<h3 class="oe_slogan">Overview</h3>
+			<p class="oe_mt32" style="padding-bottom: 10px; text-align: justify;">
+				Extends the Odoo web client to include bus channels. Channels can be
+				created to listen to Odoo bus notifications. To add a channel
+				listener to the client just extend the web client and declare a new
+				bus channel.</p>
+			<pre>
+		    	<code>
+var WebClient = require('web.WebClient');
+var session = require('web.session');	
+
+WebClient.include({
+    show_application: function() {
+        var channel = 'mychannel';
+        this.bus_declare_channel(channel, this.doSomething);
+        return this._super.apply(this, arguments);
+    },
+	doSomething: function(message) {
+		...
+	}
+});
+		    	</code>
+			</pre>
+		</div>
+	</div>
+</section>

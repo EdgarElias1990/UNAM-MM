@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="declaration_conagua_tree_view" model="ir.ui.view">
+            <field name="name">declaration.conagua.tree.view</field>
+            <field name="model">declaration.conagua</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="folio"/>
+                    <field name="year"/>
+                    <field name="month"/>
+                    <field name="filling_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="declaration_conagua_form_view" model="ir.ui.view">
+            <field name="name">declaration.conagua.form.view</field>
+            <field name="model">declaration.conagua</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                    
+                        <group>
+                            <group>
+			                    <field name="folio"/>
+                                <field name="year"/>
+                                <field name="month"/>
+                                <field name="filling_date"/>
+                                <field name="year_id" invisible="1"/>
+                                <field name="programatic_code_id" domain="[('year','=',year_id)]"/>
+                                <field name="observations"/>
+                            </group>
+                            <group>
+                                <field name="application_office"/>
+                                <field name="meter_reading"/>
+                                <field name="laboratory_analysis"/>
+                                <field name="statement"/>
+                                <field name="accused"/>
+                                <field name="payment_proof"/>
+                            </group>
+                        </group>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+
+        <record id="action_declaration_conagua" model="ir.actions.act_window">
+            <field name="name">Conagua</field>
+            <field name="res_model">declaration.conagua</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_tribune_operations" name="Tribune Operations" parent="account_accountant.menu_accounting" sequence="5"/>
+
+        <menuitem id="menu_other_declarations" name="Other Declarations" parent="jt_tax_transaction.menu_tribune_operations" sequence="5"/>
+        <menuitem id="conagua_menu" name="CONAGUA" parent="jt_tax_transaction.menu_other_declarations" action="action_declaration_conagua" sequence="1"/>
+
+    </data>
+</odoo>

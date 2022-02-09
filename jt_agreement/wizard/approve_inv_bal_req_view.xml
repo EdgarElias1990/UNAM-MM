@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="approve_open_balance_req_operation" model="ir.ui.view">
+            <field name="name">rapprove.open.balance.req.operation.form.view</field>
+            <field name="model">approve.investment.bal.req</field>
+            <field name="arch" type="xml">
+                <form>
+                	<group>
+                            <group>
+                            	<field name="is_agr" invisible="1"/>
+                                <field name="invoice"/>
+                                <field name="operation_number" readonly="1"/>
+                                <field name="investment_fund_id"
+                                       attrs="{'invisible':[('is_agr','=',False)],'required':[('is_agr','=',True)]}"
+                                       context="{'show_for_agreement':True}" domain="[('state','=','confirmed')]"/>
+                                <field name="type_of_operation" readonly="1" />
+                                <field name="patrimonial_id" invisible="1"/>
+                                <field name="trust_id" invisible="1"/>
+                                <field name="agreement_number" readonly="1"
+                                 attrs="{'invisible':['|', ('patrimonial_id','!=',False),('trust_id', '!=', False)]}"/>
+                                <field name="base_collabaration_id"
+                                        context="{'show_agreement_name': True}"
+                                 attrs="{'invisible':['|', ('patrimonial_id','!=',False),('trust_id', '!=', False)]}"/>
+                                <field name="agreement_type_id"
+                                 attrs="{'invisible':['|', ('patrimonial_id','!=',False),('trust_id', '!=', False)]}"/>
+                                <field name="fund_type"
+                                 attrs="{'invisible':['|', ('patrimonial_id','!=',False),('trust_id', '!=', False)]}"/>
+                                <field name="bank_account_id" domain="[('type', '=', 'bank')]"
+                                    required="1"/>
+                                    
+                                
+                            </group>
+                            <group>
+                            	<field name="user_id"/>
+                                <field name="unit_req_transfer_id" context="{'bal_user_id': user_id,
+                                    'show_for_agreement':1}" readonly="1"/>
+                                <field name="dependency_id" context="{'show_for_agreement':1}" />
+                                <field name="sub_dependency_id" attrs="{'invisible':[('is_agr','=',False)]}" domain="[('dependency_id','=',dependency_id)]" context="{'show_for_supplier_payment':1}"/>
+                            	<field name="origin_resource_id" readonly="1"/>
+                            	<field name="amount" readonly="1"/>
+                                <field name="date_required" required="1"/>
+                                <field name="desti_bank_account_id" domain="[('type', '=', 'bank')]"
+                                    required="1" options="{'no_open': True, 'no_create': True}"/>
+                                
+                                <field name="concept" invisible="1"/>
+                                <field name="date" invisible="1"/>                                
+                                <field name="fund_id" invisible="1"/>
+                        		<field name="is_balance" invisible="1"/>         
+                                
+                                
+                                
+                            </group>
+                        </group>
+                	<footer>
+                        <button string="Approve" attrs="{'invisible':[('is_balance','=',False)]}"
+                                name="approve" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

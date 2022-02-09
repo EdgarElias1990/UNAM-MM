@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="distribution_of_income" model="account.journal">
+        <field name="name">Distribution of income</field>
+        <field name="code">DOII</field>
+        <field name="type">bank</field>
+    </record>
+    </data>
+</odoo>

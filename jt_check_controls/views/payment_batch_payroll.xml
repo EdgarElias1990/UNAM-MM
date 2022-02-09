@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_payment_batch_payroll" model="ir.actions.act_window">
+            <field name="name">Payment Batch(Payroll)</field>
+            <field name="res_model">payment.batch.supplier</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type_of_batch','=','nominal')]</field>
+            <field name="context">{'from_approve_check':1,'default_type_of_batch':'nominal'}</field>
+        </record>
+
+        <menuitem id="payment_batch_payroll_menu" name="Payment Batch(Payroll)"
+                  parent="payment_batch_main_menu"
+                  action="action_payment_batch_payroll" sequence="3"/>
+
+		<!-- Menu Into Finance -->
+
+        <menuitem id="payment_batch_payroll_menu_finance" name="Payment Batch(Payroll)"
+                  parent="payment_batch_menu_finance"
+                  action="action_payment_batch_payroll" sequence="3"/>
+		                  
+	</data>
+</odoo>

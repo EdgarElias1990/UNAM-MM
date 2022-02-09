@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+
+		<record id="cancel_available_check_form_view" model="ir.ui.view">
+			<field name="name">Cancel Available Check form view</field>
+			<field name="model">cancel.available.check</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<field name="check_folio_ids" invisible="1"/>
+							<field name="reason_cancellation" required="1"/>
+							<field name="is_physical_check"/>
+						</group>
+						<footer>
+                   			<button string="Apply" class="btn btn-primary" type="object" name="apply"/>
+                   			<button string="Cancel" class="oe_link" special="cancel"/>
+                		</footer>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</odoo>

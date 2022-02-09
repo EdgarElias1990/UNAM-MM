@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="budget_appr_jour" model="account.journal">
+        <field name="name">Journal Budget Approved</field>
+        <field name="code">DPA</field>
+        <field name="type">general</field>
+    </record>
+
+    <record id="daily_income_jour" model="account.journal">
+        <field name="name">Daily Income of the Federal Subsidy</field>
+        <field name="code">DISF</field>
+        <field name="type">general</field>
+    </record>
+
+    <record id="liq_adequacy_jour" model="account.journal">
+        <field name="name">Liquid Adequacies Journal</field>
+        <field name="code">DPR</field>
+        <field name="type">general</field>
+
+    </record>
+
+    <record id="comp_adequacy_jour" model="account.journal">
+        <field name="name">Compensation Adequacies Journal</field>
+        <field name="code">DACR</field>
+        <field name="type">general</field>
+    </record>
+
+    <record id="re_standardization_jour" model="account.journal">
+        <field name="name">Re-standardization Journal</field>
+        <field name="code">RSJ</field>
+        <field name="type">general</field>
+    </record>
+
+
+</odoo>

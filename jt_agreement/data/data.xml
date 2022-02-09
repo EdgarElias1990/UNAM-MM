@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="acc_transfer_fund_origin_res" model="sub.origin.resource">
+            <field name="name">Transferencia Contable de Fondos</field>
+        </record>
+
+        <record id="collaboration_jou_id" model="account.journal">
+        <field name="name">Bases Of Collaboration</field>
+        <field name="code">BC2</field>
+        <field name="type">general</field>
+
+    </record>
+    </data>
+</odoo>

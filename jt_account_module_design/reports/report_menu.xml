@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Special Reports submenu -->
+        <menuitem
+            id="special_reports_submenu"
+            name="Special Reports"
+            parent="account_accountant.menu_accounting"
+            sequence="6"
+        />    
+        <!-- Weight Income Report. menu  -->
+        <record id="action_weight_income_report" model="ir.actions.client">
+            <field name="name">weight income report</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_account_module_design.weight.income.report'}" />
+        </record>
+
+        <record id="action_state_partimonial_report" model="ir.actions.client">
+            <field name="name">State Paritmonial Situation</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_account_design.state.partimonial.situation'}" />
+        </record>
+
+        <record id="action_income_expenses_report" model="ir.actions.client">
+            <field name="name">Income Exprenses and Investment</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_account_design.state.income.expenses'}" />
+        </record>
+
+        <!-- Detailed Statement of Income, Expenses and Investments summary action  -->
+        <record id="action_state_income_expense_invest_summary_action" model="ir.actions.client">
+            <field name="name">Detailed Statement of Income, Expenses and Investments Summary report</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_account_module_design.stat.inc.exp.inv.summary.report'}" />
+        </record>
+
+        <!-- Detailed Statement of Income, Expenses and Investments action  -->
+        <record id="action_state_income_expense_invest_action" model="ir.actions.client">
+            <field name="name">Detailed Statement of Income, Expenses and Investments report</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_account_module_design.stat.inc.exp.inv.report'}" />
+        </record>
+
+
+                 <!-- Miles revenue Report. menu  -->
+        <record id="action_miles_income_report" model="ir.actions.client">
+            <field name="name">Miles Revenue report</field>
+            <field name="tag">account_report</field>
+            <field name=
+                "context" eval="{'model': 'jt_account_module_design.miles.revenue.report'}" />
+        </record>
+
+        <!-- Daily Control Report menu  -->
+<!--        <record id="action_daily_control_report" model="ir.actions.client">-->
+<!--            <field name="name">Daily Control report</field>-->
+<!--            <field name="tag">account_report</field>-->
+<!--            <field name=-->
+<!--                "context" eval="{'model':'jt_account_module_design.daily.control.report'}" />-->
+<!--        </record>-->
+
+        <!-- Daily Control Report menu  -->
+        <record id="action_daily_control_report_two" model="ir.actions.client">
+            <field name="name">Reporte Control Diario</field>
+            <field name="tag">account_report</field>
+            <field name=
+                "context" eval="{'model':'jt_account_module_design.daily.control.report.two'}" />
+        </record>
+
+
+
+
+
+        <!-- weight income  submenu -->
+        <menuitem
+            id="weight_income_report_submenu"
+            name="Weight Income Report"
+            parent="special_reports_submenu"
+            action = "action_weight_income_report"
+            sequence="1"
+        />
+
+        <!-- state patrimonial report -->
+        <menuitem
+            id="state_partimonial_report"
+            name="State Partimonial Report"
+            parent="special_reports_submenu"
+            action = "action_state_partimonial_report"
+            sequence="2"
+        />
+  
+
+        <!-- Detailed Statement of Income, Expenses and Investments submenu -->
+        <menuitem
+            id="Detailed_Statement_of_Income_Expenses_and_Investments_submenu"
+            name="Detailed Statement of Income, Expenses and Investments Report"
+            parent="special_reports_submenu"
+            action = "action_state_income_expense_invest_action"
+            sequence="3"
+        />
+
+
+
+        <!-- Detailed Statement of Income, Expenses and Investments summary submenu -->
+        <menuitem
+            id="action_state_income_expense_invest_summary_submenu"
+            name="Detailed Statement of Income, Expenses and Investments Summary"
+            parent="special_reports_submenu"
+            action = "action_state_income_expense_invest_summary_action"
+            sequence="4"
+        />
+
+        <!-- Miles revenue  submenu -->
+        <menuitem
+            id="miles_revenue_report_submenu"
+            name="Miles Revenue Report"
+            parent="special_reports_submenu"
+            action = "action_miles_income_report"
+            sequence="5"
+        />
+
+        <menuitem
+            id="state_income_expenses_report"
+            name="Income Expenses and Investment"
+            parent="special_reports_submenu"
+            action = "action_income_expenses_report"
+            sequence="6"
+        />
+
+        <record id="action_status_program_report" model="ir.actions.client">
+            <field name="name">Trial Balance</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_account_module_design.general.ledger.inherit'}" />
+        </record>
+
+        <!-- added menu for the status program report -->
+        <menuitem id="menu_status_program_report" 
+                name="Trial Balance" 
+                parent="special_reports_submenu" 
+                action="action_status_program_report"
+                sequence="9"/>
+
+		<!-- Trial Balance Base -->
+       <record id="action_trial_balance_base_inherit" model="ir.actions.client">
+            <field name="name">Trial Balance</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_account_module_design.trial.balance.base'}" />
+        </record>
+
+        <!-- added menu for the status program report -->
+        <menuitem id="menu_trial_balance_base_inherit" 
+                name="Trial Balance Base" 
+                parent="special_reports_submenu" 
+                action="action_trial_balance_base_inherit"
+                sequence="9"/>		
+        <!-- general accounting action -->
+        <record id="action_general_accounting" model="ir.actions.client">
+            <field name="name">General Accouting</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_account_module_design.account_coa.inherit'}" />
+        </record>
+
+        <!-- added menu for the general accounting report -->
+        <menuitem id="menu_general_accounting" 
+                name="General Accouting" 
+                parent="special_reports_submenu" 
+                action="action_general_accounting"
+                sequence="10"/>
+
+
+        <!-- Statement of Financial Position action -->
+        <record id="action_financial_positional_statement" model="ir.actions.client">
+            <field name="name">Statement Of Financial Position</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_account_module_design.financial.report'}" />
+        </record>
+
+        <!-- added menu for the Statement of Financial Position report -->
+        <menuitem id="menu_financial_position_report" 
+                name="Statement of Financial Position" 
+                parent="special_reports_submenu" 
+                action="action_financial_positional_statement"
+                sequence="11"/>
+
+                <!-- added menu for the daily control-->
+<!--        <menuitem id="menu_daily_control_report" -->
+<!--                name="Daily Control" -->
+<!--                parent="jt_payroll_payment.menu_finance_reports" -->
+<!--                action="action_daily_control_report"-->
+<!--                sequence="20"/>-->
+
+        <menuitem id="menu_daily_control_report_tt"
+                name="Control diario"
+                parent="jt_payroll_payment.menu_finance_reports"
+                action="action_daily_control_report_two"
+                sequence="21"/>
+
+    </data>
+</odoo>

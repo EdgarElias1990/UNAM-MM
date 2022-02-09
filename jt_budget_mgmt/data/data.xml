@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <!-- server action for draft state -->
+		<record id="draft_action" model="ir.actions.server">
+            <field name="name">Draft</field>
+            <field name="model_id" ref="jt_budget_mgmt.model_standardization"/>
+            <field name="binding_model_id" ref="jt_budget_mgmt.model_standardization"/>
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">action = records.action_draft()</field>
+        </record>
+
+        <!-- server action for received state -->
+        <record id="received_action" model="ir.actions.server">
+            <field name="name">Received</field>
+            <field name="model_id" ref="jt_budget_mgmt.model_standardization"/>
+            <field name="binding_model_id" ref="jt_budget_mgmt.model_standardization"/>
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">action = records.action_received()</field>
+        </record>
+
+        <!-- server action for in process state -->
+        <record id="in_process_action" model="ir.actions.server">
+            <field name="name">In process</field>
+            <field name="model_id" ref="jt_budget_mgmt.model_standardization"/>
+            <field name="binding_model_id" ref="jt_budget_mgmt.model_standardization"/>
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">action = records.action_in_process()</field>
+        </record>
+
+        <!-- server action for authorized state -->
+        <record id="authorized_action" model="ir.actions.server">
+            <field name="name">Authorized</field>
+            <field name="model_id" ref="jt_budget_mgmt.model_standardization"/>
+            <field name="binding_model_id" ref="jt_budget_mgmt.model_standardization"/>
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">action = records.action_authorized()</field>
+        </record>
+
+        <!-- server action for cancelled state -->
+        <record id="cancelled_action" model="ir.actions.server">
+            <field name="name">Cancelled</field>
+            <field name="model_id" ref="jt_budget_mgmt.model_standardization"/>
+            <field name="binding_model_id" ref="jt_budget_mgmt.model_standardization"/>
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">action = records.action_cancelled()</field>
+        </record>
+    </data>
+</odoo>

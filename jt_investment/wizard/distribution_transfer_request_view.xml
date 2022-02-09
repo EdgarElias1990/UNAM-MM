@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="distribution_transfer_request_form" model="ir.ui.view">
+            <field name="name">distribution.transfer.request.form</field>
+            <field name="model">distribution.transfer.request</field>
+            <field name="arch" type="xml">
+                <form>
+                	<group>
+                            <group>
+                            	<field name="distribution_income_id"/>
+                                <field name="bank_account_id" domain="[('type', '=', 'bank')]"/>
+                                <field name="amount" required="1"/>
+                                <field name="date"/>
+                            </group>
+                            <group>
+                                <field name="desti_bank_account_id" domain="[('type', '=', 'bank'),('is_productive_account','=',True)]"
+                                    required="1"/>
+								<field name="destination_investment_id"
+									   domain="[('journal_id', '=', desti_bank_account_id)]" required="1"/>
+                            	<field name="user_id"/>
+                                <field name="concept"/>
+                            </group>
+                        </group>
+                        <notebook>
+                        	<page string="Operation">
+                        		<field name="line_ids">
+                        			<tree create="0" delete="0" editable="bottom">
+                        				<field name="check"/>
+                        				<field name="investment_fund_id"  context="{'show_for_agreement':True}"/>
+                        				<field name="agreement_number" />
+                        				<field name="base_collabaration_id"
+											   context="{'show_agreement_name':1}"/>
+                        				<field name="amount" invisible="1"/>
+                        				<field name="amount_to_transfer"/>
+                        				<field name="opt_line_ids" invisible="1"/>
+                        			</tree>
+                        			<form>
+                        				<group>
+                        					<field name="check"/>
+	                        				<field name="investment_fund_id"/>
+	                        				<field name="agreement_number"/>
+	                        				<field name="base_collabaration_id"
+											 context="{'show_agreement_name':1}"/>
+	                        				<field name="amount"/>
+	                        				<field name="amount_to_transfer"/>
+	                        				<field name="opt_line_ids" invisible="1"/>
+                        				</group>
+                        			</form>
+                        		</field>
+                        	</page>
+                        </notebook>
+                	<footer>
+                        <button string="Approve" name="approve" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

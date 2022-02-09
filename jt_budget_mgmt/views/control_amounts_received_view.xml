@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for control of amounts received model -->
+        <record id="control_amounts_received_search_view" model="ir.ui.view">
+            <field name="name">control.amounts.received.search.view</field>
+            <field name="model">control.amounts.received</field>
+            <field name="arch" type="xml">
+                <search string="Control of amounts received">
+                    <field name="folio"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Folio" name='folio' context="{'group_by':'folio'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for control of amounts received model -->
+        <record id="control_amounts_received_form_view" model="ir.ui.view">
+            <field name="name">control.amounts.received.form.view</field>
+            <field name="model">control.amounts.received</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="folio"/>
+                                <field name="budget_id"/>
+                                <field name="made_by_id"/>
+                                <field name="import_date"/>
+                                <field name="observations"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Control of amounts received lines">
+                                <field name="line_ids">
+                                    <tree>
+                                       <field name="amount_assigned"/>
+                                       <field name="deposit_date"/>
+                                       <field name="amount_deposited"/>
+                                       <field name="account_id"/>
+                                       <field name="amount_pending"/>
+                                       <field name="observations"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                           <field name="amount_assigned"/>
+                                           <field name="deposit_date"/>
+                                           <field name="amount_deposited"/>
+                                           <field name="account_id"/>
+                                           <field name="amount_pending"/>
+                                           <field name="observations"/> 
+                                           <field name="control_id" invisible="1"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for control of amounts received model -->
+        <record id="control_amounts_received_tree_view" model="ir.ui.view">
+            <field name="name">control.amounts.received.tree.view</field>
+            <field name="model">control.amounts.received</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="folio"/>
+                    <field name="budget_id"/>
+                    <field name="made_by_id"/>
+                    <field name="import_date"/>
+                    <field name="observations"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for control of amounts received views -->
+        <record id="action_control_amounts_received" model="ir.actions.act_window">
+            <field name="name">Control of amounts received</field>
+            <field name="res_model">control.amounts.received</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="control_amounts_received_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

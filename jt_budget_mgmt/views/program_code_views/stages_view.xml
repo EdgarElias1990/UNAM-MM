@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for stage model -->
+        <record id="stage_search_view" model="ir.ui.view">
+            <field name="name">stage.search.view</field>
+            <field name="model">stage</field>
+            <field name="arch" type="xml">
+                <search string="Stage">
+                    <field name="project_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Stage" name='project_id' context="{'group_by':'project_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for stage model -->
+        <record id="stage_form_view" model="ir.ui.view">
+            <field name="name">stage.form.view</field>
+            <field name="model">stage</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="project_id" required="1"/>
+                            <field name="desc"/>
+                            <field name="project_type_identifier" invisible="1"/>
+                            <field name="stage_identifier" invisible="1"/>
+                            <field name="agreement_type" invisible="1"/>
+                            <field name="name_agreement" invisible="1"/>
+                            <field name="number_agreement" invisible="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for stage model -->
+        <record id="stage_tree_view" model="ir.ui.view">
+            <field name="name">stage.tree.view</field>
+            <field name="model">stage</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="project_id"/>
+                    <field name="desc"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for stage views -->
+        <record id="action_stage" model="ir.actions.act_window">
+            <field name="name">Stage (E)</field>
+            <field name="res_model">stage</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="stage_tree_view"/>
+            <field name="context">{'display_name_custom': 'stage_identifier'}</field>
+        </record>
+    </data>
+</odoo>

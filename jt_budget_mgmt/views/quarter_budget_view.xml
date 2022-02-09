@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Action for Quarter -->
+        <record id="action_quarter_budget" model="ir.actions.act_window">
+            <field name="name">Quarter</field>
+            <field name="res_model">quarter.budget</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="external_layout_payment_expense" name="external_layout_payment_expense">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                   	<span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>
+                   	<span style="font-size:14px;">PATRONATO UNIVERSITARIO</span><br/>
+                   	<span style="font-size:12px;">DIRECCIÓN GENERAL DE FINANZAS</span><br/>
+                   	<span style="font-size:12px;">SUBDIRECCION DE FINANZAS</span><br/>
+                   	<span style="font-size:12px;">Departamento de Control Financiero</span><br/>
+                </div>
+                <div class="col-3 text-left" style="vertical-align: bottom;">
+                	<span>Fecha y hora de impresión  </span><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/> 
+                </div>
+                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+         
+        </template>
+
+        <template id="external_layout_minimum_balance" name="external_layout_minimum_balance">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                   	<span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>
+                   	<span style="font-size:14px;">PATRONATO UNIVERSITARIO</span><br/>
+                   	<span style="font-size:12px;">DIRECCIÓN GENERAL DE FINANZAS</span><br/>
+                </div>
+                <div class="col-3 text-left" style="vertical-align: bottom;">
+                	<span>Fecha y hora de impresión  </span><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/> 
+                </div>
+                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+         
+        </template>        
+	</data>
+</odoo>

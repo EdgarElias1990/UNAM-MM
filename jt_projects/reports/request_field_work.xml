@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <template id="external_layout_header_request_field">
+        <div t-attf-class="header o_company_#{company.id}_layout">
+            <div class="row">
+                <div class="col-3 mb4" align="left">
+                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 80px;" alt="Logo"/>
+                </div>
+                <div class="col-6 mb4" align="center">
+                    <h4>Request for payment for field work expenses</h4>
+                </div>
+                <div class="col-3 mb4" align="right">
+                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Standard39',o.folio_dependency, 80, 100)"
+                                     style="width:200px;height:50px" alt="Barcode"/>
+
+                </div>
+            </div>
+            <div class="row zero_min_height">
+                <div class="col-12">
+                    <div style="border-bottom: 1px solid black;"/>
+                </div>
+            </div>
+        </div>
+        <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-raw="0"/>
+        </div>
+        <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+            <br/>
+            <table class="table table-condensed" width="100%" style="border:1px solid black;">
+                <thead>
+                <th style="border:1px solid black;">
+                    <span>Titular de la dependencia</span>
+                </th>
+                <th style="border:1px solid black;">
+                    <span>Secretario Administrativo</span>
+                </th>
+                <th style="border:1px solid black;">
+                    <span>UNIDAD DE PROCESO ADMINISTRATIVO/MODULO</span>
+                </th>
+                </thead>
+                <tbody>
+                    <td style="border:1px solid black;text-align: center;" height="70">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <span t-if="o.holder_of_dependency_id" t-field="o.holder_of_dependency_id.name"/>
+                    </td>
+                    <td style="border:1px solid black;text-align: center;" height="70">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <span t-if="o.administrative_secretary_id" t-field="o.administrative_secretary_id.name"/>
+                    </td>
+                    <td style="border:1px solid black;" height="70"></td>
+                </tbody>
+            </table>
+        </div>
+    </template>
+
+   <template id="external_layout_field_work">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t  t-call="jt_projects.external_layout_header_request_field"><t t-raw="0"/></t>
+   </template>
+    
+    <template id="request_field_request_docs">
+        <t t-call="jt_projects.external_layout_field_work">
+            <div class="page">
+                <style>
+                 .border1
+                    {
+                        border: 1px solid black;
+                    }
+
+                .style1
+                    {
+                        font-size:15px;
+                    }
+                </style>
+                <div id="info" class="row mt32 mb32">
+                    <div class="col-3" t-if="o.dependancy_id" name="dependancy_id">
+                        <strong>Dependencia:</strong>
+                        <p class="m-0"  t-field="o.dependancy_id"/>
+                    </div>
+                    <div class="col-3" t-if="o.sub_dependancy_id" name="sub_dependancy_id">
+                        <strong>Subdependencia:</strong>
+                        <p class="m-0"   t-field="o.sub_dependancy_id"/>
+                    </div>
+                    <div class="col-3" t-if="o.folio_dependency" name="folio_dependency">
+                        <strong>Folio de dependencia:</strong>
+                        <p class="m-0"  t-field="o.folio_dependency"/>
+                    </div>
+                    <div class="col-3" t-if="o.folio_dependency" name="date_receipt">
+                        <strong>Fetcha:</strong>
+                        <p class="m-0"  t-field="o.date_receipt" t-options="{'widget': 'date'}"/>
+                    </div>
+                </div>
+                
+                <div id="info1" class="row mt32 mb32">
+                    <div class="col-3" t-if="o.l10n_mx_edi_payment_method_id" name="l10n_mx_edi_payment_method">
+                        <strong>Medio de pago:</strong>
+                        <p class="m-0"  t-field="o.l10n_mx_edi_payment_method_id"/>
+                    </div>
+                    <div class="col-3" t-if="o.document_type" name="document_type">
+                        <strong>Moneda:</strong>
+                        <p class="m-0"   t-field="o.document_type"/>
+                    </div>
+                    <div class="col-3" t-if="o.no_of_document" name="no_of_document">
+                        <strong>Documentos:</strong>
+                        <p class="m-0"  t-field="o.no_of_document"/>
+                    </div>
+                    <div class="col-3" t-if="o.administrative_forms" name="administrative_forms">
+                        <strong>Formas:</strong>
+                        <p class="m-0"  t-field="o.administrative_forms"/>
+                    </div>
+                </div>  
+               <h4 align="center">BENEFICIARY DATA</h4>
+                <div id="info3" class="row mt32 mb32">
+                    <div class="col-3" t-if="o.partner_id" name="partner">
+                        <strong>Name:</strong>
+                        <p class="m-0"  t-field="o.partner_id"/>
+                    </div>
+                    <div class="col-3" t-if="o.rfc" name="rfc">
+                        <strong>Key:</strong>
+                        <p class="m-0"   t-field="o.rfc"/>
+                    </div>
+                    <div class="col-3" t-if="o.baneficiary_key" name="baneficiary_key">
+                        <strong>Baneficiary Key:</strong>
+                        <p class="m-0"   t-field="o.baneficiary_key"/>
+                    </div>
+                </div>  
+
+                <h4 align="center">PROJECT</h4>
+                <div id="info4" class="row mt32 mb32">
+                    <div class="col-3" t-if="o.project_number_id" name="project_number">
+                        <strong>Project(s):</strong>
+                        <p class="m-0"  t-field="o.project_number_id.number"/>
+                    </div>
+                    <div class="col-3" t-if="o.responsible_category_key" name="cat_key">
+                        <strong>Category Key:</strong>
+                        <p class="m-0"   t-field="o.responsible_category_key"/>
+                    </div>
+                    <div class="col-3" t-if="o.responsible_expend_id" name="responsible_expend">
+                        <strong>Responsible Name:</strong>
+                        <p class="m-0"   t-field="o.responsible_expend_id"/>
+                    </div>
+                     <div class="col-3" t-if="o.responsible_rfc" name="responsible_rfc">
+                        <strong>RFC:</strong>
+                        <p class="m-0"   t-field="o.responsible_rfc"/>
+                    </div>
+                </div>  
+
+                
+                <div id="info5" class="row mt32 mb32">
+                    <div class="col-3" t-if="o.manager_job_id" name="workstation">
+                        <strong>Appointment:</strong>
+                        <p class="m-0"   t-field="o.manager_job_id"/>
+                    </div>
+                </div>    
+                <div id="info6" class="row mt32 mb32">
+                    <div class="col-12" t-if="o.reason_for_expendiure" name="reason_for_expenditure">
+                       <h4 align="center">REASON FOR EXPENDITURE</h4>
+                        <p style="margin-left:30px;text-align:justify;" class="m-0"  t-field="o.reason_for_expendiure"/>
+                    </div>
+                </div>  
+
+                <div id="info7" class="row">
+                    <div class="col-12" name="destination">
+                        <h4 align="center">DESTINATION</h4>
+                        <p style="margin-left:30px;text-align:justify;" class="m-0"  t-field="o.destination"/>
+                    </div>
+                </div>  
+                <div  id="table_label" class="row">
+                    <div align="center" class="col-12">
+                        <h4>Data for Discharge</h4>
+                    </div>
+                </div>
+
+               <table class="table table-sm o_main_table" name="invoice_line_table">
+                        <thead>
+                            <tr>
+                                
+                                <t t-set="colspan" t-value="6"/>
+                               
+                                <th name="th_type_business" class="text-left">
+                                    <span>Type of business</span>
+                                </th>
+                                <th name="th_key" class="text-left">
+                                    <span>Egress key</span>
+                                </th>
+                                <th name="th_account" class="text-left">
+                                    <span>Account and / or Program Code</span>
+                                </th>
+                                <th name="th_unit" class="text-left">
+                                    <span>Unit Price</span>
+                                </th>
+                                                       
+                                <th class="text-right" name="th_amount">
+                                    <span>Amount</span>
+
+                                </th>
+                                <th name="th_subtotal">
+                                    <span>Subtotal</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="invoice_tbody">
+                            <t t-set="lines" t-value="o.invoice_line_ids.sorted(key=lambda l: (-l.sequence, l.date, l.move_name, -l.id), reverse=True)"/>
+                            
+                            <t t-foreach="lines" t-as="line">
+                                
+
+                                <tr>
+
+                                     <td name="account_invoice_line_bus">
+                                         <span class="text-left" t-field="line.type_of_bussiness_line"/>
+                                      </td>
+                                     <td name="account_invoice_line_keys">
+                                         <span class="text-left" t-if="line.egress_key_id" t-field="line.egress_key_id.key"/>
+                                     </td>
+                                     <td name="account_invoice_line_account">
+                                         <span class="text-left" t-if="line.account_id" t-field="line.account_id.name"/><span class="text-left" t-if="line.program_code_id" t-field="line.program_code_id"/>
+                                     </td>
+                                     <td name="account_invoice_line_unit">
+                                         <span class="text-right" t-field="line.price_unit"/>
+                                     </td>
+                                     <td  name="account_invoice_line_other_amount">
+                                         <span class="text-right" t-field="line.other_amounts"/>
+                                     </td>
+                                     
+                                     <td name="account_invoice_line_amount">
+                                         <span class="text-right" t-field="line.price_subtotal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                     </td>
+                                </tr>
+
+                            </t>
+                        </tbody>
+                    </table>
+                    <div class="clearfix">
+                        <div id="total" class="row">
+                            <table class="table table-sm" style="page-break-inside: avoid;">
+                                <div id="total" class="row">
+                                    <tr class=" col-6  text-right border-black o_total">
+                                        <td></td>
+                                        <td>
+                                            <strong>Total:</strong><span class="text-nowrap" t-field="o.amount_total"/>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+            </div>
+        </t>
+       </template>
+
+        <template id="request_field_work_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="jt_projects.request_field_request_docs"/>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_request_field_work" model="report.paperformat">
+            <field name="name">Format 1</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">50</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="dpi">90</field>
+        </record>
+
+        <report 
+            id="request_field_work_action"
+            model="account.move"
+            string="Solicitud Trabajos de Campo"
+            report_type="qweb-pdf"
+            name="jt_projects.request_field_work_template"
+            file="jt_projects.request_field_work_template"
+            print_report_name="object.name"
+            paperformat="jt_projects.paperformat_request_field_work"
+        />
+
+    </data>
+</odoo>

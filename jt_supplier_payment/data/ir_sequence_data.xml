@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Sequences for Folio -->
+        <record id="seq_folio" model="ir.sequence">
+            <field name="name">Folio</field>
+            <field name="code">payment.folio</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_batch_sheet_folio" model="ir.sequence">
+            <field name="name">Batch Sheet Folio</field>
+            <field name="code">batch.sheet.folio</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_payroll_payment_batch_sheet_folio" model="ir.sequence">
+            <field name="name">Payroll Payment Batch Sheet Folio</field>
+            <field name="code">payroll.payment.batch.sheet.folio</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_different_payroll_payment_batch_sheet_folio" model="ir.sequence">
+            <field name="name">Different Payroll Payment Batch Sheet Folio</field>
+            <field name="code">different.payroll.payment.batch.sheet.folio</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_project_payroll_payment_batch_sheet_folio" model="ir.sequence">
+            <field name="name">project Payroll Payment Batch Sheet Folio</field>
+            <field name="code">project.payroll.payment.batch.sheet.folio</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_pension_payroll_payment_batch_sheet_folio" model="ir.sequence">
+            <field name="name">pension Payroll Payment Batch Sheet Folio</field>
+            <field name="code">pension.payroll.payment.batch.sheet.folio</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+        <record id="seq_bank_transfer_request" model="ir.sequence">
+            <field name="name">Bank Transfer Request</field>
+            <field name="code">bank.transfer.request</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

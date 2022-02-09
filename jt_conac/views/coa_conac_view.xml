@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- COA CONAC View Search -->
+        <record id="coa_conac_search_view" model="ir.ui.view">
+            <field name="name">coa.conac.search.view</field>
+            <field name="model">coa.conac</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="gender"/>
+                    <field name="group"/>
+                    <field name="item"/>
+                    <field name="applicability"/>
+                    <field name="parent_id"/>
+                </search>
+            </field>
+        </record>
+        
+        <!-- COA CONAC View Form -->
+        <record id="coa_conac_form_view" model="ir.ui.view">
+            <field name="name">coa.conac.form.view</field>
+            <field name="model">coa.conac</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="display_name" invisible="1"/>
+                                <field name="code" required="1"/>
+                                <field name="name" required="1"/>
+                                <field name="gender"/>
+                                <field name="group"/>
+                                <field name="item"/>
+                                <field name="applicability"/>
+                                <field name="parent_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- COA CONAC View List -->
+        <record id="coa_conac_view_list" model="ir.ui.view">
+            <field name="name">coa.conac.list.view</field>
+            <field name="model">coa.conac</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="display_name"/>
+                    <field name="code" invisible="1"/>
+                    <field name="name" invisible="1"/>
+                    <field name="gender"/>
+                    <field name="group"/>
+                    <field name="item"/>
+                    <field name="applicability"/>
+                    <field name="parent_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action View COA CONAC -->
+        <record id="action_view_coa_conac" model="ir.actions.act_window">
+            <field name="name">Chart Of Accounts CONAC</field>
+            <field name="res_model">coa.conac</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+    </data>
+</odoo>

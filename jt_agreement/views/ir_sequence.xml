@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record id="seq_collaboration_modification" model="ir.sequence">
+            <field name="name">Collaboration Modification</field>
+            <field name="code">collaboration.modification</field>
+            <field name="padding">5</field>
+            <field name="prefix">M-</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+         <record id="seq_trust_modification" model="ir.sequence">
+            <field name="name">Trust Modification</field>
+            <field name="code">trust.modification</field>
+            <field name="padding">5</field>
+            <field name="prefix">M-</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_applove_bal_invest_folio" model="ir.sequence">
+            <field name="name">Approv Request Invest</field>
+            <field name="code">approve.bal.invest</field>
+            <field name="padding">5</field>
+            <field name="prefix"></field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

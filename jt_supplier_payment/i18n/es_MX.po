@@ -1,0 +1,2843 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_supplier_payment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-27 19:14+0000\n"
+"PO-Revision-Date: 2021-04-27 14:28-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "&amp;nbsp;&amp;nbsp;"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b><span>ATTENDED:</span></b>"
+msgstr "<b><span>ATENDIO:</span></b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b><span>Amount:</span></b>"
+msgstr "<b><span>IMPORTE:</span></b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b><span>Date:</span></b>"
+msgstr "<b><span>Fecha:</span></b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b><span>Dependency:</span></b>"
+msgstr "<b><span>Dependencia:</span></b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b><span>Folio:</span></b>"
+msgstr "<b><span>Folio:</span></b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b><span>PLEASE REVIEW THE TICKET DATA</span></b>"
+msgstr "<b><span>FAVOR DE REVISAR LOS DATOS DEL TICKET</span></b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b><span>Payment to supplier in</span></b>"
+msgstr "<b><span>Pago a proveedor:</span></b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b><span>Provider password:</span></b>"
+msgstr "<b><span>Clave Proveedor:</span></b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b><span>Provider:</span></b>"
+msgstr "<b><span>Proveedor:</span></b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b><span>Request for:</span></b>"
+msgstr "<b><span>Solicitud de:</span></b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b><span>Subdependence:</span></b>"
+msgstr "<b><span>Subdependencia:</span></b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b><span>Supplier RFC:</span></b>"
+msgstr "<b><span>RFC Proveedor:</span></b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b>Number of Sheets:</b>"
+msgstr "<b>No. de Hojas:</b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<b>Number of administrative forms:</b>"
+msgstr "<b>Numero de formas administrativas</b>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid ""
+"<span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Invoice</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Credit Note</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Bill</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Refund</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Sales Receipt</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Purchase Receipt</span>"
+msgstr ""
+"<span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Factura Borrador</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Borrador Nota de Crédito</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Factura Borrador</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Reembolso Borrador</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Borrador de Recibo de Venta</"
+"span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Borrador de Recibo de Compra</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.search_template_payment_method
+msgid ""
+"<span class=\"fa fa-book\"/>\n"
+"            Payment Method:"
+msgstr ""
+"<span class=\"fa fa-book\"/>\n"
+"            Método de Pago:"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid ""
+"<span class=\"o_form_label mx-3 oe_edit_only\" attrs=\"{'invisible': [ '|', '|', '|', ('state', '!=', 'draft'), ('invoice_payment_term_id', '!=', False), ('type', 'not in', "
+"('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))]}\"> or </span>"
+msgstr ""
+"<span class=\"o_form_label mx-3 oe_edit_only\" attrs=\"{'invisible': [ '|', '|', '|', ('state', '!=', 'draft'), ('invoice_payment_term_id', '!=', False), ('type', 'not in', "
+"('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))]}\"> o </span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "<span class=\"o_form_label\" attrs=\"{'invisible': [('invoice_sequence_number_next_prefix', '=', False)]}\">First Number:</span>"
+msgstr "<span class=\"o_form_label\" attrs=\"{'invisible': [('invoice_sequence_number_next_prefix', '=', False)]}\">Primer Número:</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.external_layout_cash_payment_calculation
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.external_layout_general_total_payment_amounts
+msgid ""
+"<span style=\"font-size:16px;\">PATRONATO UNIVERSITARIO</span><br/>\n"
+"                   \t<span style=\"font-size:14px;\">TESORERIA</span><br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">PATRONATO UNIVERSITARIO</span><br/>\n"
+"                   \t<span style=\"font-size:14px;\">TESORERIA</span><br/>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.external_layout_electronic_deposits_of_salaries
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.external_layout_pension_payment_report
+msgid "<span style=\"font-size:16px;\">REPORTE DE LOS IMPORTES DE LOS DEPOSITOS ELECTRONICOS</span><br/>"
+msgstr "<span style=\"font-size:16px;\">REPORTE DE LOS IMPORTES DE LOS DEPOSITOS ELECTRONICOS</span><br/>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid ""
+"<span>\n"
+"                                            <b>UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO</b>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+"                                            <b>UNIVERSIDAD NACIONAL AUTONOMA DE MÉXICO</b>\n"
+"                                        </span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<span><b>Administrative Process Unit</b></span>"
+msgstr "<span><b>Unidad De Proceso Administrativo</b></span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<span><b>COUNTER-RECEIPT</b></span>"
+msgstr "<span><b>CONTRA-RECIBO</b></span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "<span><b>GENERAL DIRECTORATE OF BUDGETARY CONTROL</b></span>"
+msgstr "<span><b>DIRECCION GENERAL DE CONTROL PRESUPUESTAL</b></span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<span>Account</span>"
+msgstr "<span>Cuenta</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.external_layout_standard_payment
+msgid "<span>Administrative Secretary</span>"
+msgstr "<span>Secretario administrativo</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.search_template_payment_method
+msgid "<span>All</span>"
+msgstr "<span>Todo</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<span>Amount</span>"
+msgstr "<span>Importe</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.external_layout_standard_payment
+msgid "<span>COORDINATION OF UPA'S Documentary review</span>"
+msgstr "<span>COORDINACIÓN DE LA REVISIÓN DOCUMENTAL DE LA UPA</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<span>Description</span>"
+msgstr "<span>Descripción</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<span>Egress key</span>"
+msgstr "<span>Clave de egreso</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.external_layout_standard_payment
+msgid "<span>Head of the dependence</span>"
+msgstr "<span>Titular de la dependencia</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<span>Other amounts</span>"
+msgstr "<span>Otros Importes</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<span>Taxes</span>"
+msgstr "<span>Impuestos</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<span>Type of business</span>"
+msgstr "<span>Tipo de giro</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<span>Unit</span>"
+msgstr "<span>Precio Unitario</span>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr "<strong class=\"mr16\">Subtotal</strong>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<strong>Currency:</strong>"
+msgstr "<strong>Moneda:</strong>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Fecha:</strong>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<strong>Dependency Folio:</strong>"
+msgstr "<strong>Folio de Solicitud:</strong>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<strong>Documents:</strong>"
+msgstr "<strong>Documentos:</strong>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<strong>Forms:</strong>"
+msgstr "<strong>Formas:</strong>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<strong>Name:</strong>"
+msgstr "<strong>Nombre:</strong>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<strong>Password:</strong>"
+msgstr "<strong>Clave del proveedor:</strong>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<strong>Payment method:</strong>"
+msgstr "<strong>Forma de pago:</strong>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<strong>RFC:</strong>"
+msgstr "<strong>RFC:</strong>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Subtotal</strong>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "AL"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_balance_check_wizard model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_payment_declined_wizard
+msgid "Accept"
+msgstr "Aceptar"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__account_balance
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__account_balance
+msgid "Account Balance"
+msgstr "Saldo de la cuenta"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__required_balance
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__required_balance
+msgid "Account balance required"
+msgstr "Saldo requerido en la cuenta"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Accounting"
+msgstr "Contabilidad"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_account_journal_form_view_payment
+msgid "Accured"
+msgstr "Devengado"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_bank_statement_import_journal_creation__conac_accured_credit_account_id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_journal__conac_accured_credit_account_id
+msgid "Accured CONAC Credit Account"
+msgstr "Cuenta de crédito CONAC"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_bank_statement_import_journal_creation__conac_accured_debit_account_id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_journal__conac_accured_debit_account_id
+msgid "Accured CONAC Debit Account"
+msgstr "Cuenta de débito CONAC"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_bank_statement_import_journal_creation__accured_credit_account_id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_journal__accured_credit_account_id
+msgid "Accured Credit Account"
+msgstr "Cuenta acreedora por defecto"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_bank_statement_import_journal_creation__accured_debit_account_id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_journal__accured_debit_account_id
+msgid "Accured Debit Account"
+msgstr "Cuenta deudora por defecto"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Add a line"
+msgstr "Agregar una línea"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Add a note"
+msgstr "Agregar una nota"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Add a section"
+msgstr "Agregar una sección"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Add an internal note..."
+msgstr "Agregar una nota interna..."
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__sit_additional_data
+msgid "Additional Data"
+msgstr "Datos Adicionales"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__administrative_secretary_id
+msgid "Administrative Secretary"
+msgstr "Secretario administrativa"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/cash_payment_calculation.py:0
+#, python-format
+msgid "Al"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__employee_partner_type__alimony
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Alimony"
+msgstr "Pensión Alimenticia"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__amount
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_scholarship_payment_breakdown__amount
+msgid "Amount"
+msgstr "Monto"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__application_date
+msgid "Application Date"
+msgstr "Fecha de aplicación"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__workstation_id
+msgid "Appointment"
+msgstr "Cita"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__bank_transfer_request__state__approved
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__payment_state__approved_payment
+msgid "Approved for payment"
+msgstr "Aprobada para pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__area_req_transfer
+msgid "Area requesting transfer"
+msgstr "Área que solicita transferencia"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__net_cash_availability
+msgid "Availability"
+msgstr "Disponibilidad"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__load_bank_format__banamex
+msgid "BANAMEX"
+msgstr "BANAMEX"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__load_bank_format__bbva_bancomer
+msgid "BBVA BANCOMER"
+msgstr "BBVA BANCOMER"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_form
+msgid "BBVA Bancomer Net Cash"
+msgstr "BBVA Bancomer Net Cash"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__bank_format__bbva_tnn_ptc
+msgid "BBVA Bancomer Net Cash (TNN or PTC)"
+msgstr "BBVA Bancomer Net Cash (TNN or PTC)"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__bank_format__bbva_tsc_pcs
+msgid "BBVA Bancomer Net Cash (TSC or PCS)"
+msgstr "BBVA Bancomer Net Cash (TSC or PCS)"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__bank_format__bbva_sit
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_form
+msgid "BBVA Bancomer SIT"
+msgstr "BBVA Bancomer SIT"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_drawdown_type__book
+msgid "BOOK"
+msgstr "Libro"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_method__booktx
+msgid "BOOKTX"
+msgstr "Libro"
+
+#. module: jt_supplier_payment
+#: model:account.financial.html.report.line,name:jt_supplier_payment.account_financial_report_budget_account
+msgid "BUDGET ACCOUNTS"
+msgstr "CUENTAS DE ORDEN"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__is_balance
+msgid "Balance"
+msgstr "Balance"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__bank_format__banamex
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_form
+msgid "Banamex"
+msgstr "Banamex"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/general_total_payment_amounts.py:0
+#, python-format
+msgid "Banco de recepción de pago"
+msgstr "Banco de recepción de pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__baneficiary_key
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__baneficiary_key
+msgid "Baneficiary Key"
+msgstr "Clave de Beneficiario"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__bank_id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_scholarship_payment_breakdown__bank_id
+msgid "Bank"
+msgstr "Banco"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__account_id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__bank_account_id
+msgid "Bank Account"
+msgstr "Cuenta Bancaria"
+
+#. module: jt_supplier_payment
+#: model:ir.model,name:jt_supplier_payment.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Cuentas bancarias"
+
+#. module: jt_supplier_payment
+#: model:ir.model,name:jt_supplier_payment.model_bank_balance_check
+msgid "Bank Balance Check"
+msgstr "Verificación de saldo bancario"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__bank_key
+msgid "Bank Key"
+msgstr "Clave del Banco"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__journal_id
+msgid "Bank Of Payment Issue"
+msgstr "Banco emisor de pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__jp_bank_transfer
+msgid "Bank To Bank Transfer"
+msgstr "Transferencia bancaria"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.act_window,name:jt_supplier_payment.bank_transfer_request_action
+#: model:ir.actions.act_window,name:jt_supplier_payment.different_payroll_payment_bank_transfer_request_action
+#: model:ir.actions.act_window,name:jt_supplier_payment.payroll_payment_bank_transfer_request_action
+msgid "Bank Transfer Request"
+msgstr "Solicitud de transferencia bancaria"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.report,name:jt_supplier_payment.report_payroll_bank_deposite_slip
+msgid "Comprobante de depósito bancario"
+msgstr "Papeleta de Deposito Bancario"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__payment_bank_id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__payment_bank_id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_reschedule_request__payment_bank_id
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_search
+msgid "Bank of receipt of payment"
+msgstr "Banco de Recepción de Pago"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.external_layout_standard_payment model_terms:ir.ui.view,arch_db:jt_supplier_payment.report_again_receipt_template
+msgid "Barcode"
+msgstr "Código de Barras"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__batch_folio
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__batch_folio
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__move_id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_employee_payroll_file__batch_folio
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet_line__batch_folio
+msgid "Batch Folio"
+msgstr "Folio por lotes"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet_line__batch_sheet_id model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_generate_batch_sheet
+msgid "Batch Sheet"
+msgstr "Hoja de lote"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_charges__beneficiary
+msgid "Beneficiary"
+msgstr "Beneficiario"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "Beneficiary Data"
+msgstr "Datos del beneficiario"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_scholarship_payment_breakdown__name
+msgid "Beneficiary Name"
+msgstr "Nombre del Beneficiario"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__baneficiary_id model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Beneficiary of the payment"
+msgstr "Beneficiario del Pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_bank_statement_import_journal_creation__branch_number
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_journal__branch_number
+msgid "Branch Number"
+msgstr "Número de sucursal"
+
+#. module: jt_supplier_payment
+#: model:account.account.type,name:jt_supplier_payment.data_account_type_budget_accounts
+msgid "Budget Accounts"
+msgstr "CUENTAS DE ORDEN"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__net_cash_availability__cecoban
+msgid "CECOBAN"
+msgstr "CECOBAN"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_id_type__clabe
+msgid "CLABE"
+msgstr "CLABE"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "CLAVE"
+msgstr "CLAVE"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "CORRESPONDIENTES A LA QUINCENA"
+msgstr "CORRESPONDIENTES A LA QUINCENA"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Can't create Payment Request with same Folio Dependency!"
+msgstr "No puede haber 2 Solicitudes de Pago con el mismo Folio de Solicitud!"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/wizard/payment_declined.py:0 model:ir.actions.server,name:jt_supplier_payment.action_payment_cancel_call
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payment_declined_wizard__is_cancel
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__payment_state__cancel
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_payment_provider_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.reschedule_request_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_balance_check_wizard model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_bank_balance_check
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_generate_bank_layout model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_generate_batch_sheet
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_generate_payroll_payment_bank_layout
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_load_bank_layout_payroll_payment_form
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_load_bank_layout_supplier_payment_form model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_payment_declined_wizard
+#, python-format
+msgid "Cancel"
+msgstr "Cancelada"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__payment_state__cancelled
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_search
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Cannot create an invoice of type %s with a journal having %s as type."
+msgstr "No se puede crear una factura de tipo %s con un diario que tenga como tipo %s."
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/electronic_deposits_of_salaries.py:0 code:addons/jt_supplier_payment/reports/general_total_payment_amounts.py:0
+#: code:addons/jt_supplier_payment/reports/pension_payment_report.py:0
+#, python-format
+msgid "Cantidad a pagar"
+msgstr "Cantidad a Pagar"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__payment_method__cash
+msgid "Cash"
+msgstr "Efectivo"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/cash_payment_calculation.py:0 model:ir.actions.client,name:jt_supplier_payment.action_cash_payment_calculation
+#: model:ir.model,name:jt_supplier_payment.model_jt_supplier_payment_cash_payment_calculation
+#: model:ir.model,name:jt_supplier_payment.model_jt_supplier_payment_salaries_alimony_additional_benefit model:ir.ui.menu,name:jt_supplier_payment.menu_cash_payment_calculation
+#, python-format
+msgid "Cash Payment Calculation"
+msgstr "Cálculos de pago en efectivo"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__category_key
+msgid "Category Key"
+msgstr "Clave de Categoría"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__jp_charges
+msgid "Charges"
+msgstr "Cargos"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__payment_method__check
+msgid "Check"
+msgstr "Cheque"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet_line__check_batch_folio
+msgid "Check Batch Folio"
+msgstr "Consultar folio por lotes"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__check_number
+msgid "Check number"
+msgstr "Número de Cheque"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_payment_provider_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_load_bank_layout_payroll_payment_form
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_load_bank_layout_supplier_payment_form
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Column  contains incorrect values. Error %s"
+msgstr "La columna contiene valores Incorrectos. Error %s"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0 code:addons/jt_supplier_payment/wizard/load_bank_layout.py:0
+#, python-format
+msgid "Column  contains incorrect values. Error: %s"
+msgstr "La columna contiene valores Incorrectos. Error %s"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__commitment_date
+msgid "Commitment Date"
+msgstr "Fecha de compromiso"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__banamex_concept
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__concept
+msgid "Concept"
+msgstr "Concepto"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.server,name:jt_supplier_payment.confirm_other_then_payroll
+msgid "Confirmed Other Payroll"
+msgstr "Confirmar Pago Diferente de Nómina"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.server,name:jt_supplier_payment.confirm_pension_payroll_payment
+msgid "Confirmed Pension Payment"
+msgstr "Confirmar pago de pensión"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.actions.act_window,help:jt_supplier_payment.payroll_payment_schedule_programming_action
+#: model_terms:ir.actions.act_window,help:jt_supplier_payment.supplier_payment_programming_action
+msgid "Crear un nuevo documento"
+msgstr "Crear un nuevo documento"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__create_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__create_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__create_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_bank_layout__create_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet__create_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet_line__create_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__create_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payment_declined_wizard__create_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payroll_payment_provider_wizard__create_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_reschedule_request__create_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_scholarship_payment_breakdown__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__create_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__create_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__create_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_bank_layout__create_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet__create_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet_line__create_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__create_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payment_declined_wizard__create_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payroll_payment_provider_wizard__create_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_reschedule_request__create_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_scholarship_payment_breakdown__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/electronic_deposits_of_salaries.py:0 code:addons/jt_supplier_payment/reports/pension_payment_report.py:0
+#, python-format
+msgid "Cuenta bancaria de emisión de pago"
+msgstr "Cuenta bancaria de emisión de pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "DEPENDENCIA"
+msgstr "DEPENDENCIA"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "Data for Discharge"
+msgstr "Datos para el Egreso"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Date"
+msgstr "Fecha"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__date_approval_request
+msgid "Date Approval Request"
+msgstr " Fecha de aprobación de la Solicitud"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__date_receipt
+msgid "Date of Receipt"
+msgstr "Fecha de recibo"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__days
+msgid "Days"
+msgstr "Días"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_id_type__debit_card
+msgid "Debit Card"
+msgstr "Tarjeta de débito"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+msgid "Deductions"
+msgstr "Deducciones"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/cash_payment_calculation.py:0
+#, python-format
+msgid "Del"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__deposite_number
+msgid "Deposit number"
+msgstr "Número de Depósito"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/cash_payment_calculation.py:0
+#, python-format
+msgid "Descripción del lugar de pago"
+msgstr "Descripción del Lugar de Pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__banamex_description
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Description"
+msgstr "Descripción"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__destination
+msgid "Destination"
+msgstr "Destino"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__bank_account_id
+msgid "Destination Account"
+msgstr "Cuenta Destino"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__different_balance
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__different_balance
+msgid "Difference Between current and required balance"
+msgstr "Diferencia entre el saldo actual y el requerido"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__generate_batch_sheet__payment_type__different_payroll
+msgid "Different Payroll"
+msgstr "Pagos Diferente a Nómina"
+
+#. module: jt_supplier_payment
+#: model:ir.ui.menu,name:jt_supplier_payment.different_payroll_payment_menu_in_payment model:ir.ui.menu,name:jt_supplier_payment.different_payroll_payment_request_main_menu
+msgid "Different To Payroll"
+msgstr "Pagos Diferente a Nómina"
+
+#. module: jt_supplier_payment
+#: model:ir.ui.menu,name:jt_supplier_payment.different_payroll_payment_management_menu
+msgid "Different To Payroll Management"
+msgstr "Gestión de Pagos Diferentes a Nómina"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Disc.%"
+msgstr "Desc.%"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_bank_layout__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet_line__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_jt_supplier_payment_cash_payment_calculation__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_jt_supplier_payment_electronic_deposits_of_salaries__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_jt_supplier_payment_general_total_payment_amounts__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_jt_supplier_payment_salaries_alimony_additional_benefit__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payment_declined_wizard__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payroll_payment_provider_wizard__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_reschedule_request__display_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_scholarship_payment_breakdown__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__document_type
+msgid "Document Type"
+msgstr "Tipo de Documento"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__upa_document_type
+msgid "Document Type UPA"
+msgstr "Tipo de Documento UPA"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__payment_state__done
+msgid "Done"
+msgstr "Hecho"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_bank_layout__file_data
+msgid "Download"
+msgstr "Descarga"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.server,name:jt_supplier_payment.action_server_draft_upload_payroll
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__payment_state__draft
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__payment_state__draft
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__bank_transfer_request__state__draft
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_search
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Draft Bill"
+msgstr "Factura borrador"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Draft Credit Note"
+msgstr "Borrador de factura rectificativa"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Draft Entry"
+msgstr "Entrada en Borrador"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Draft Invoice"
+msgstr "Factura borrador"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Draft Purchase Receipt"
+msgstr "Borrador de recibo de compra"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Draft Sales Receipt"
+msgstr "Borrador de recibo de ventas"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Draft Vendor Credit Note"
+msgstr "Borrador de factura rectificativa de proveedor"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_drawdown_type__drawdown
+msgid "Drawdown"
+msgstr "Reducción"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__jp_drawdown_type
+msgid "Drawdown Type"
+msgstr "Tipo de reducción"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__egress_key_id
+msgid "Egress Key"
+msgstr "Clave de Egresos"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/electronic_deposits_of_salaries.py:0 model:ir.actions.client,name:jt_supplier_payment.action_electronic_deposits_of_salaries
+#: model:ir.model,name:jt_supplier_payment.model_jt_supplier_payment_electronic_deposits_of_salaries model:ir.ui.menu,name:jt_supplier_payment.menu_electronic_deposits_of_salaries
+#, python-format
+msgid "Electronic Deposits Of Salaries"
+msgstr "Depósitos electrónicos de salarios"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__payment_method__electronic_transfer
+msgid "Electronic Transfer"
+msgstr "Transferencia Electrónica"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__employee_partner_type__employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payroll_payment_provider_wizard__emp_payroll_ids
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+msgid "Employee Payroll"
+msgstr "Nómina de Empleado"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/cash_payment_calculation.py:0 code:addons/jt_supplier_payment/reports/electronic_deposits_of_salaries.py:0
+#: code:addons/jt_supplier_payment/reports/general_total_payment_amounts.py:0 code:addons/jt_supplier_payment/reports/pension_payment_report.py:0
+#, python-format
+msgid "Export (XLSX)"
+msgstr "Exportar (XLSX)"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "FECHA"
+msgstr "FECHA"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "FIRMA"
+msgstr "FIRMA"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "FOLIOS DE DEPOSITOS DEL"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__failed_file_data
+msgid "Failed File"
+msgstr "Archivo erróneo"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__failed_file_name
+msgid "Failed Filename"
+msgstr "Nombre de archivo erróneo"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__file_name
+msgid "File"
+msgstr "Expediente"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/wizard/load_bank_layout.py:0
+#, python-format
+msgid "File Format not Valid!"
+msgstr "Formato de Archivo no Válido!"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__sit_file_key
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_bank_layout__sit_file_key
+msgid "File Key"
+msgstr "Clave de Archivo"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_bank_layout__file_name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__file_name
+msgid "Filename"
+msgstr "Nombre de Expediente"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_bank_transfer__financial_institution
+msgid "Financial Institutions"
+msgstr "Institución Financiera"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet__batch_line_ids
+msgid "Folio"
+msgstr "Folio"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__folio_dependency
+msgid "Folio Dependency"
+msgstr "Folio de Solicitud"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__folio_invoice
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__folio_invoice
+msgid "Folio Invoice"
+msgstr "Folio de Factura"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__folio model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__folio
+msgid "Folio against Receipt"
+msgstr "Folio contra recibo"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__is_for_approved_payment
+msgid "For Approved Payment"
+msgstr "Para Tramite de Pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__payment_state__for_payment_procedure
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__payment_state__for_payment_procedure
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_search
+msgid "For Payment Procedure"
+msgstr "Para trámite de pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__document_type__foreign
+msgid "Foreign Currency"
+msgstr "Moneda extranjera"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_from_reschedule_payment
+msgid "From Reschedule"
+msgstr "Reprogramar"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/general_total_payment_amounts.py:0 model:ir.actions.client,name:jt_supplier_payment.action_general_total_payment_amounts
+#: model:ir.model,name:jt_supplier_payment.model_jt_supplier_payment_general_total_payment_amounts model:ir.ui.menu,name:jt_supplier_payment.menu_general_total_payment_amounts
+#, python-format
+msgid "General Total Payment Amounts"
+msgstr "Montos de pagos totales generales"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_payment_provider_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_generate_bank_layout
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_generate_payroll_payment_bank_layout
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_load_bank_layout_payroll_payment_form
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_load_bank_layout_supplier_payment_form
+msgid "Generate"
+msgstr "Generar"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/wizard/generate_bank_layout.py:0 model:ir.actions.server,name:jt_supplier_payment.action_generate_bank_layout_payment
+#: model:ir.model,name:jt_supplier_payment.model_generate_bank_layout
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_bank_statement_import_journal_creation__bank_format
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_journal__bank_format
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_bank_layout__bank_format model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_generate_bank_layout
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_generate_payroll_payment_bank_layout
+#, python-format
+msgid "Generate Bank Layout"
+msgstr "Generar Formato de Banco"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/wizard/generate_batch_sheet.py:0 model:ir.actions.server,name:jt_supplier_payment.action_account_invoice_from_list_batch_sheet
+#: model:ir.model,name:jt_supplier_payment.model_generate_batch_sheet model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_balance_check_wizard
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_generate_batch_sheet
+#, python-format
+msgid "Generate Batch Sheet"
+msgstr "Generar hoja de lote"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_balance_check_wizard
+msgid "Generate Report"
+msgstr "Generar Reporte"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "HOJAS NOMINA FOLIO"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__bank_format__hsbc
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__load_bank_format__hsbc
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_form
+msgid "HSBC"
+msgstr "HSBC"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__hsbc_reference
+msgid "HSBC Reference"
+msgstr "Referencia HSBC"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__is_hide_failed
+msgid "Hide Failed"
+msgstr "Ocultar errores"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__is_hide_file_upload
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__is_hide_success
+msgid "Hide Success"
+msgstr "Ocultar exitosos"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__holder_of_dependency_id
+msgid "Holder of the Dependency"
+msgstr "Titular de la dependencia"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__id model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__id model:ir.model.fields,field_description:jt_supplier_payment.field_generate_bank_layout__id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet__id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet_line__id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_jt_supplier_payment_cash_payment_calculation__id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_jt_supplier_payment_electronic_deposits_of_salaries__id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_jt_supplier_payment_general_total_payment_amounts__id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_jt_supplier_payment_salaries_alimony_additional_benefit__id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payment_declined_wizard__id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payroll_payment_provider_wizard__id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_reschedule_request__id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_scholarship_payment_breakdown__id
+msgid "ID"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__jp_id_type
+msgid "ID Type Beneficiary"
+msgstr "ID Tipo de Beneficiario"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__jp_id_type_beneficiary_bank
+msgid "ID Type Beneficiary Bank"
+msgstr "ID Banco de beneficiario"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+msgid "IMPORT LINES"
+msgstr "Líneas Importadas"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/cash_payment_calculation.py:0
+#, python-format
+msgid "Importe"
+msgstr "Importado"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,help:jt_supplier_payment.field_account_move__l10n_mx_edi_payment_method_id
+#: model:ir.model.fields,help:jt_supplier_payment.field_employee_payroll_file__l10n_mx_edi_payment_method_id
+msgid "Indicates the way the payment was/will be received, where the options could be: Cash, Nominal Check, Credit Card, etc."
+msgstr "Indica la forma en que se recibió / recibirá el pago, donde las opciones podrían ser: Efectivo, Cheque Nominal, Tarjeta de Crédito, etc."
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_balance_check_wizard
+msgid "Insufficient Balance"
+msgstr "Saldo Insuficiente"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet_line__account_move_id
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Invoice"
+msgstr "Facturas"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Invoice Lines"
+msgstr "Líneas de Factura"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__invoice_series
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__invoice_series
+msgid "Invoice Series"
+msgstr "Serie de facturas"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__invoice_uuid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__invoice_uuid
+msgid "Invoice UUID"
+msgstr "UUID de Factura"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__invoice_ids
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__is_balance
+msgid "Is Check"
+msgstr "Es Cheque"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__is_hide_banamex
+msgid "Is Hide Banamex"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__is_hide_bbva_net
+msgid "Is Hide Bbva Net"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__is_hide_bbva_sit
+msgid "Is Hide Bbva Sit"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__is_hide_hsbc
+msgid "Is Hide Hsbc"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__is_hide_jp_morgan
+msgid "Is Hide Jp Morgan"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__is_hide_santander
+msgid "Is Hide Santander"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__load_bank_format__jp_morgan
+msgid "JP MORGAN"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_form
+msgid "JP Morgan"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__bank_format__jpma
+msgid "JP Morgan Advice to Receive"
+msgstr "Consejos para recibir de JP Morgan"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__bank_format__jpmu
+msgid "JP Morgan US Drawdowns"
+msgstr "Disposiciones de US JP Morgan"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__bank_format__jpmw
+msgid "JP Morgan WIRES / BOOKTX"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model,name:jt_supplier_payment.model_account_journal model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: jt_supplier_payment
+#: model:ir.model,name:jt_supplier_payment.model_account_move
+msgid "Journal Entries"
+msgstr "Asientos contables"
+
+#. module: jt_supplier_payment
+#: model:ir.model,name:jt_supplier_payment.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Journal Items"
+msgstr "Asientos Contables"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "La columna contiene valores incorrectos. Error %s"
+msgstr "La columna contiene valores incorrectos. Error %s"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "La columna contiene valores incorrectos. Error: %s"
+msgstr "La columna contiene valores incorrectos. Error %s"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_bank_layout____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet_line____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_jt_supplier_payment_cash_payment_calculation____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_jt_supplier_payment_electronic_deposits_of_salaries____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_jt_supplier_payment_general_total_payment_amounts____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_jt_supplier_payment_salaries_alimony_additional_benefit____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payment_declined_wizard____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payroll_payment_provider_wizard____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_reschedule_request____last_update
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_scholarship_payment_breakdown____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__write_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__write_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__write_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_bank_layout__write_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet__write_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet_line__write_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__write_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payment_declined_wizard__write_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payroll_payment_provider_wizard__write_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_reschedule_request__write_uid
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_scholarship_payment_breakdown__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__write_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__write_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__write_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_bank_layout__write_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet__write_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet_line__write_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__write_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payment_declined_wizard__write_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payroll_payment_provider_wizard__write_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_reschedule_request__write_date
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_scholarship_payment_breakdown__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__layout_scholarship_data
+msgid "Layout Scholarship"
+msgstr "Layout de Becas"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__layout_scholarship_filename
+msgid "Layout Scholarship Filename"
+msgstr "Nombre del archivo layout de becas"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/wizard/load_bank_layout.py:0 model:ir.actions.server,name:jt_supplier_payment.action_load_bank_layout_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_bank_statement_import_journal_creation__load_bank_format
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_journal__load_bank_format
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_load_bank_layout_payroll_payment_form
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_load_bank_layout_supplier_payment_form
+#, python-format
+msgid "Load Bank Layout"
+msgstr "Carga de Layout Bancario"
+
+#. module: jt_supplier_payment
+#: model:ir.model,name:jt_supplier_payment.model_load_bank_layout_supplier_payment
+msgid "Load Bank Layout Supplier Payment"
+msgstr "Cargar Layout Bancario de Pago a Proveedor"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.external_layout_standard_payment
+msgid "Logo"
+msgstr "Logo"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/cash_payment_calculation.py:0
+#, python-format
+msgid "Lugar de pago"
+msgstr "Lugar de Pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__manager_job_id
+msgid "Manager’s job"
+msgstr "Trabajo del gerente"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__jp_method
+msgid "Method"
+msgstr "Método"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_setup_bank_manual_config__minimum_balance
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__minimum_balance
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__minimum_balance
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_res_partner_bank__minimum_balance
+msgid "Minimum Balance"
+msgstr "Saldo Mínimo"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "More Information"
+msgstr "Mas Información"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_scholarship_payment_breakdown__move_id
+msgid "Move"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "NOMBRE COMPLETO"
+msgstr "NOMBRE COMPLETO"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__name
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet_line__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__responsible_expend_id
+msgid "Name of the responsible"
+msgstr "Nombre del responsable"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__document_type__national
+msgid "National Currency"
+msgstr "Moneda Nacional"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_bank_transfer__non_financial_institution
+msgid "Non Financial Institution"
+msgstr "Institución no Financiera"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_id_type_beneficiary_bank__none
+msgid "None"
+msgstr "Ninguno"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__no_validate_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_search
+msgid "Not Validated"
+msgstr "No Validado"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/account_payment.py:0
+#, python-format
+msgid "Not allow to schedule payment for non-working days."
+msgstr "No se puede programar un pago en un día no Laborable."
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Note"
+msgstr "Nota"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__administrative_forms
+msgid "Number of Administrative Forms"
+msgstr "Número de formas administrativos"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__no_of_document
+msgid "Number of Documents"
+msgstr "Numero de Documentos"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__observation
+msgid "Observation"
+msgstr "Observaciones"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__sit_operation_code
+msgid "Operation Code"
+msgstr "Código de operación"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__operation_type_id
+msgid "Operation Type"
+msgstr "Tipo de Operación"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__origin_payment
+msgid "Origin"
+msgstr "Origen"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__origin_bank_id
+msgid "Origin Bank"
+msgstr "Banco origen"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__origin_bank_account_id
+msgid "Origin Bank Account"
+msgstr "Cuenta Bancaria Origen"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__other_amounts
+msgid "Other Amounts"
+msgstr "Otros importes"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Other Info"
+msgstr "Otra Información"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "PAGADOR HABILITADO"
+msgstr "PAGADOR HABILITADO"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/cash_payment_calculation.py:0 code:addons/jt_supplier_payment/reports/electronic_deposits_of_salaries.py:0
+#: code:addons/jt_supplier_payment/reports/general_total_payment_amounts.py:0 code:addons/jt_supplier_payment/reports/pension_payment_report.py:0
+#, python-format
+msgid "PDF"
+msgstr "PDF"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__payment_state__paid
+msgid "Paid"
+msgstr "Pagada"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__employee_partner_type
+msgid "Partner Type"
+msgstr "Tipo de socio"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_batch_sheet__payment_type
+msgid "Payent Type"
+msgstr "Tipo de Pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__jp_payment_concept
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__santander_payment_concept
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_scholarship_payment_breakdown__payment_concept
+msgid "Payment Concept"
+msgstr "Concepto de pago"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/wizard/payment_declined.py:0 model:ir.actions.server,name:jt_supplier_payment.action_payment_declined_call
+#: model:ir.model,name:jt_supplier_payment.model_payment_declined_wizard model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_payment_declined_wizard
+#, python-format
+msgid "Payment Declined"
+msgstr "Cobro Rechazado"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.server,name:jt_supplier_payment.action_payment_declined_call_other
+#, python-format
+msgid "Payment Declined"
+msgstr "Pago Rechazado"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__payment_move_line_ids
+msgid "Payment Journal Items"
+msgstr "Elementos del Diario de Pagos"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__payment_line_ids
+msgid "Payment Line"
+msgstr "Línea de pago"
+
+#. module: jt_supplier_payment
+#: model:ir.ui.menu,name:jt_supplier_payment.supplier_payment_management_menu
+msgid "Payment Management"
+msgstr "Gestión de pagos"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_employee_payroll_file__l10n_mx_edi_payment_method_id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_reschedule_request__l10n_mx_edi_payment_method_id
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.employee_payroll_file_inherit_search
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+msgid "Payment Method"
+msgstr "Método de Pago"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Payment Method"
+msgstr "Método de Cobro"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/upload_payroll_file.py:0 model:ir.model.fields,field_description:jt_supplier_payment.field_payroll_payment_provider_wizard__partner_id
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_payment_provider_form_view
+#, python-format
+msgid "Payment Provider"
+msgstr "Proveedor de Pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__payment_bank_account_id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__payment_bank_account_id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_reschedule_request__payment_bank_account_id
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_search
+msgid "Payment Receipt bank account"
+msgstr "Cuenta Bancaria de Recepción de Pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__payment_req_id
+msgid "Payment Req"
+msgstr "Pago requerido"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_payment_request
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__type__payment_req model:ir.ui.menu,name:jt_supplier_payment.different_payroll_payment_request_menu
+#: model:ir.ui.menu,name:jt_supplier_payment.payroll_payment_request_menu model:ir.ui.menu,name:jt_supplier_payment.supplier_payment_request_menu
+msgid "Payment Request"
+msgstr "Solicitud de pago"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.act_window,name:jt_supplier_payment.payroll_payment_schedule_programming_action
+#: model:ir.actions.act_window,name:jt_supplier_payment.supplier_payment_programming_action
+#: model:ir.ui.menu,name:jt_supplier_payment.supplier_payment_request_menu_programm
+msgid "Payment Schedule"
+msgstr "Programación de Pago"
+
+#. module: jt_supplier_payment
+#: model:ir.ui.menu,name:jt_supplier_payment.payroll_payment_schedule_menu_programm
+msgid "Payroll Payment Schedule"
+msgstr "Programación de pago de nómina"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__payment_state
+msgid "Payment State"
+msgstr "Estado de pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__sit_operation_code__payment_interbank
+msgid "Payment interbank account next day"
+msgstr "Pago cuenta interbancaria al día siguiente"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__payment_issuing_bank_id
+msgid "Payment issuing Bank"
+msgstr "Banco de Emisión de Pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__payment_issuing_bank_acc_id
+msgid "Payment issuing bank Account"
+msgstr "Banco emisor de Cobros"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__payment_issuing_bank_acc_id
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_search
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_form
+msgid "Payment issuing bank Account"
+msgstr "Cuenta Bancaria de Emisión de Pago"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_account_move_filter_inherit_payment
+msgid "Payment method"
+msgstr "Método de pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__payment_state__payment_not_applied
+msgid "Payment not Applied"
+msgstr "Pago no aplicado"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__sit_operation_code__payment_on_account_bancomer
+msgid "Payment on account bancomer"
+msgstr "Pago a cuenta Bancomer"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.act_window,name:jt_supplier_payment.different_payroll_payment_account_payment_action
+#: model:ir.actions.act_window,name:jt_supplier_payment.payroll_payment_account_payment_action model:ir.actions.act_window,name:jt_supplier_payment.supplier_payment_account_action
+#: model:ir.model,name:jt_supplier_payment.model_account_payment model:ir.model.fields,field_description:jt_supplier_payment.field_generate_bank_layout__payment_ids
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__payment_ids
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payment_declined_wizard__payment_ids
+#: model:ir.ui.menu,name:jt_supplier_payment.supplier_account_payment_req model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: jt_supplier_payment
+#: model:ir.ui.menu,name:jt_supplier_payment.payroll_payment_account_payment_menu
+msgid "Payroll Payment"
+msgstr "Pago de nómina"
+
+#. module: jt_supplier_payment
+#: model:ir.ui.menu,name:jt_supplier_payment.different_payroll_payment_account_payment_menu
+msgid "Different to Payroll Payment"
+msgstr "Pagos diferentes a nómina"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.act_window,name:jt_supplier_payment.in_payment_different_payroll_payment_request_action
+#: model:ir.actions.act_window,name:jt_supplier_payment.payroll_payment_request_action_in_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__generate_batch_sheet__payment_type__payroll
+#: model:ir.ui.menu,name:jt_supplier_payment.in_payment_different_payroll_payment_request_menu model:ir.ui.menu,name:jt_supplier_payment.in_payment_payroll_payment_request_menu
+msgid "Payroll"
+msgstr "Pagos"
+
+#. module: jt_supplier_payment
+#: model:ir.ui.menu,name:jt_supplier_payment.payroll_payment_management_menu
+msgid "Payroll Payment Management"
+msgstr "Gestión de pagos de nómina"
+
+#. module: jt_supplier_payment
+#: model:ir.ui.menu,name:jt_supplier_payment.payroll_payment_request_main_menu model:ir.ui.menu,name:jt_supplier_payment.payroll_payment_request_menu_in_payment
+msgid "Payroll Payment Request"
+msgstr "Solicitud de Pagos de Nómina"
+
+#. module: jt_supplier_payment
+#: model:ir.model,name:jt_supplier_payment.model_payroll_payment_provider_wizard
+msgid "PayrollPaymentProviderwizard"
+msgstr "Asistente para proveedores de Pago de Nómina"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.act_window,name:jt_supplier_payment.pension_payment_request_action_in_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__generate_batch_sheet__payment_type__pension_payment
+#: model:ir.ui.menu,name:jt_supplier_payment.in_pensions_payroll_payment_request_menu
+msgid "Pension Payment"
+msgstr "Pago de Pensión"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.act_window,name:jt_supplier_payment.pension_payroll_payment_request_action model:ir.ui.menu,name:jt_supplier_payment.pension_payroll_payment_request_menu
+msgid "Pension Payment Request"
+msgstr "Solicitud de Pagos de Pensión Alimenticia"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.act_window,name:jt_supplier_payment.pension_payment_account_payment_action model:ir.ui.menu,name:jt_supplier_payment.pension_payment_account_payment_menu
+msgid "Pension Payments"
+msgstr "Pagos de pensión"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+msgid "Perception"
+msgstr "Percepción"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__period_start
+msgid "Period"
+msgstr "Periodo"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__period_end
+msgid "Period End"
+msgstr "Fin del Periodo"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Please Upload File."
+msgstr "Cargue el Archivo."
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Please add Egress Key into lines"
+msgstr "Agregue la clave de  egreso en las líneas"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Please define an accounting miscellaneous journal in your company"
+msgstr "Defina un diario contable misceláneo en su compañía"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Please define an accounting purchase journal in your company"
+msgstr "Defina un diario de compras en su compañía"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "Please define an accounting sale journal in your company"
+msgstr "Defina un diario de venta en su compañía"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__previous_number
+msgid "Previous Number"
+msgstr "Número Previo"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__price_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Price"
+msgstr "Precio"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/cash_payment_calculation.py:0
+#: code:addons/jt_supplier_payment/reports/electronic_deposits_of_salaries.py:0
+#: code:addons/jt_supplier_payment/reports/general_total_payment_amounts.py:0
+#: code:addons/jt_supplier_payment/reports/pension_payment_report.py:0
+#, python-format
+msgid "Export to PDF"
+msgstr "Exportar a PDF"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__generate_batch_sheet__payment_type__project_payment
+msgid "Project Payment"
+msgstr "Pago del proyecto"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__provenance
+msgid "Provenance"
+msgstr "Procedencia"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__type_of_payment_custom__provider
+msgid "Provider"
+msgstr "Proveedor"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__provision_move_id
+msgid "Provision"
+msgstr "Provisión"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__provision_move_ids
+msgid "Provision Move"
+msgstr "Mover provisión"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_create_from_provision
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_provision_request
+msgid "Provision Request"
+msgstr "Solicitud de Provesión"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Quantity:"
+msgstr "Cantidad:"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "RECIBÍ DEL DEPARTAMENTO DE PAGO DE NÓMINA Y PRESTACIONES DE LA DIRECCIÓN GENERAL DE FINANZAS LOS SIGUIENTES DOCUMENTOS PARA EL PAGO DE NÓMINA"
+msgstr "RECIBÍ DEL DEPARTAMENTO DE PAGO DE NÓMINA Y PRESTACIONES DE LA DIRECCIÓN GENERAL DE FINANZAS LOS SIGUIENTES DOCUMENTOS PARA EL PAGO DE NÓMINA"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "REVISO"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__rfc
+msgid "RFC"
+msgstr "RFC"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__rf_person
+msgid "RFC of the person in charge"
+msgstr "RFC del responsable"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__rate
+msgid "Rate"
+msgstr "Tarifa"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Reason"
+msgstr "Razon"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__reason_for_cancel
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payment_declined_wizard__reason_for_cancel
+msgid "Reason For Cancellation"
+msgstr "Razón de la cancelación"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__sit_reason_for_payment
+msgid "Reason For Payment"
+msgstr "Razón de pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__reason_for_rejection
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payment_declined_wizard__reason_for_rejection
+msgid "Reason For Rejection"
+msgstr "Motivo del rechazo"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__reason_cancellation
+msgid "Reason for Cancellation"
+msgstr "Motivo de cancelación"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__reason_for_expendiure
+msgid "Reason for Expenditure/Trip"
+msgstr "Motivo del gasto / viaje"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__reason_rejection_req
+msgid "Reason for Rejecting Request"
+msgstr "Razón para rechazar la solicitud"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__reason_rejection
+msgid "Reason for Rejection"
+msgstr "Motivo del rechazo"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__payment_state__reconciled
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_search
+msgid "Reconciled"
+msgstr "Concilicación"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__pension_reference
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__banamex_reference
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__net_cash_reference
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.server,name:jt_supplier_payment.register_pension_payroll_payment model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Register"
+msgstr "Registro"
+
+#. module: jt_supplier_payment
+#: model:ir.model,name:jt_supplier_payment.model_account_payment_register
+msgid "Register Payment"
+msgstr "Registrar Cobro"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__payment_state__registered
+msgid "Registered"
+msgstr "Registrada"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_payment_declined_wizard__is_reject
+msgid "Reject"
+msgstr "Rehcazar"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__payment_state__rejected
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__payment_state__rejected
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__bank_transfer_request__state__rejected
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_search
+msgid "Rejected"
+msgstr "Rechazada"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_charges__remitter
+msgid "Remitter"
+msgstr "Remitente"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__excel_file
+msgid "Report"
+msgstr "Informe"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.report,name:jt_supplier_payment.report_agains_receipt
+msgid "Report Agains Receipt"
+msgstr "Informe contra recibo"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__bank_transfer_request__state__request
+msgid "Request"
+msgstr "Solicitud"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__req_registeration_date
+msgid "Request Registeration Date"
+msgstr "Fecha de registro de solicitud"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.act_window,name:jt_supplier_payment.different_payroll_payment_request_action
+msgid "Request for Different Payroll Payment"
+msgstr "Pagos Diferentes de Nómina"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.act_window,name:jt_supplier_payment.supplier_payment_action
+msgid "Request for Payment"
+msgstr "Solicitud de Pago"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.act_window,name:jt_supplier_payment.payroll_payment_request_action
+msgid "Request for Payroll Payment"
+msgstr "Solicitud de Pago de Nómina"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.server,name:jt_supplier_payment.action_server_done_upload_payroll model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Request for payment"
+msgstr "Solicitud de Pago"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__user_id
+msgid "Requesting User"
+msgstr "Usuario solicitante"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__required_handover_date
+msgid "Required Handover Date"
+msgstr "Fecha de entrega requerida"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__req_transfer
+msgid "Required Transfer"
+msgstr "Transferencia requerida"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_form
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.reschedule_request_form_view
+msgid "Reschedule"
+msgstr "Reprogramar"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0 model:ir.model,name:jt_supplier_payment.model_reschedule_request
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.reschedule_request_form_view
+#, python-format
+msgid "Reschedule Request"
+msgstr "Solicitud de Reprogramación"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__responsible_category_key
+msgid "Responsible category key"
+msgstr "Clave de categoría responsable"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__responsible_id
+msgid "Responsible/Irresponsible"
+msgstr "Responsable / Irresponsable"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_show_resposible_group
+msgid "Resposible Group"
+msgstr "Grupo Responsable"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.server,name:jt_supplier_payment.action_server_reviewed_upload_payroll
+msgid "Reviewed"
+msgstr "Revisado"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__load_bank_format__santander
+msgid "SANTANDER"
+msgstr "SANTANDER"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__sit_reference
+msgid "SIT Reference"
+msgstr "Referencia SIT"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_id_type_beneficiary_bank__spei
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__net_cash_availability__spei
+msgid "SPEI"
+msgstr "SPEI"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_id_type_beneficiary_bank__swift
+msgid "SWIFT"
+msgstr "SWIFT"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/pension_payment_report.py:0 model:ir.actions.client,name:jt_supplier_payment.action_salaries_alimony_additional_benefit
+#: model:ir.ui.menu,name:jt_supplier_payment.menu_salaries_alimony_additional_benefit
+#, python-format
+msgid "Salaries, Alimony And Additional Benefit"
+msgstr "Salarios, Pensión Alimenticia y Beneficiario adicional"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_journal__bank_format__santander
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_form
+msgid "Santander"
+msgstr "Santander"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/account_payment.py:0 code:addons/jt_supplier_payment/wizard/balance_check_message.py:0
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_bank_balance_check
+#, python-format
+msgid "Schedule Payment"
+msgstr "Pago programado"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_bank_balance_check
+msgid "Schedule payment"
+msgstr "Pago programado"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__scholarship_breakdown_ids
+msgid "Scholarship Breakdown"
+msgstr "Desglose de Pago de Becas"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+msgid "Scholarship Payment Breakdown"
+msgstr "Desglose de Pago de Becas"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_move__type_of_payment_custom__scholarships
+msgid "Scholarships"
+msgstr "Becas"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Section"
+msgstr "Sección"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_generate_bank_layout__journal_id
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__journal_id
+msgid "Select the file to generate"
+msgstr "Seleccione el archivo a generar"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__set_readonly_into_payment
+msgid "Set Readonly"
+msgstr "Solo Lectura"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_charges__shared
+msgid "Shared"
+msgstr "Compartido"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__sheets
+msgid "Sheets"
+msgstr "Hojas"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_show_appointment
+msgid "Show Appointment"
+msgstr "Mostrar cita"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_show_beneficiary_key
+msgid "Show Beneficiary Key"
+msgstr "Mostrar clave de beneficiario"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_show_category_key
+msgid "Show Category Key"
+msgstr "Mostrar clave de categoría"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_show_commitment_date
+msgid "Show Commitmet Date"
+msgstr "Mostrar fecha de compromiso"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__show_conac_line_views
+msgid "Show Conac Line"
+msgstr "Mostrar línea CONAC"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_show_responsible
+msgid "Show Responsible"
+msgstr "Mostrar responsable"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_show_student_account
+msgid "Show Student Account"
+msgstr "Mostrar cuenta de estudiante"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_show_turn_type
+msgid "Show Turn Type"
+msgstr "Mostrar tipo de turno"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_zone_res
+msgid "Show Zone Res"
+msgstr "Mostrar zona res"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_show_holder_of_dependency
+msgid "Show holder_of_dependency"
+msgstr "Mostrar titular de dependencia"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.report,name:jt_supplier_payment.payment_request_report
+msgid "Solicitud Proveedor"
+msgstr "Solicitud Proveedor"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Source Document"
+msgstr "Documento fuente"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__payment_state
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__state model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_search
+msgid "Status"
+msgstr "Estatus"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__student_account
+msgid "Student Account"
+msgstr "Cuenta de estudiante"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__sub_total_payment
+msgid "Sub Total"
+msgstr "Subtotal"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_employee_payroll_file__substate
+msgid "SubState"
+msgstr "Subestado"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Subtotal"
+msgstr "SubTotal"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__success_file_data
+msgid "Success File"
+msgstr "Archivo exitoso"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__success_file_name
+msgid "Success Filename"
+msgstr "Nombre de archivo exitoso"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_balance_check_wizard
+msgid "Sufficient Balance"
+msgstr "Saldo suficiente"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__generate_batch_sheet__payment_type__supplier
+msgid "Suppier"
+msgstr "Proveedor"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.external_layout_standard_payment
+msgid "Supplier Payment Request"
+msgstr "Solicitud de pago a proveedor"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "TELEFONO"
+msgstr "TELEFONO"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__tax
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Tax Grids"
+msgstr "Impuesto"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__tax_price_cr
+msgid "Tax Price"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Taxes Applied"
+msgstr "Impuestos aplicados"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Terms"
+msgstr "Terminos"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/account_payment.py:0
+#, python-format
+msgid "The Banamex Reference must be numeric value"
+msgstr "La Referencia Banamex debe ser un valor numérico"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,help:jt_supplier_payment.field_account_move__rfc
+msgid "The Tax Identification Number. Complete it if the contact is subjected to government taxes. Used in some legal statements."
+msgstr "El número de identificación fiscal. Rellénelo si el contacto está sujeto a impuestos gubernamentales. Utilizado en algunas declaraciones legales."
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/wizard/generate_bank_layout.py:0 code:addons/jt_supplier_payment/wizard/load_bank_layout.py:0
+#, python-format
+msgid "The selected layout does NOT match the bank of the selected payments"
+msgstr "El Layout seleccionado no coincide con el Banco del pago seleccionado"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/electronic_deposits_of_salaries.py:0 code:addons/jt_supplier_payment/reports/pension_payment_report.py:0
+#, python-format
+msgid "Tipo de solicitud de pago de nómina"
+msgstr "Tipo de solicitud de pago de nómina"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Total"
+msgstr "Total"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__total_amount model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+msgid "Total Amount"
+msgstr "Monto total"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Total Credit"
+msgstr "Crédito Total"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Total Debit"
+msgstr "Débito total"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_balance_check__total_request
+msgid "Total Request"
+msgstr "Cantidad de solicitudes"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/cash_payment_calculation.py:0
+#, python-format
+msgid "Total de depósitos"
+msgstr "Total de depósitos"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__amount
+msgid "Transfer Amount requested"
+msgstr "Monto de transferencia solicitado"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__transfer_key
+msgid "Transfer Key"
+msgstr "Transferir clave"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__turn_type
+msgid "Turn type"
+msgstr "Tipo de giro"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__type_of_bussiness_line
+msgid "Type Of Bussiness Line"
+msgstr "Tipo de línea de negocio"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__type_of_payment_custom
+msgid "Type Of Request"
+msgstr "Tipo de Solicitud"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_bank_transfer_request__operation_type
+msgid "Type Operation"
+msgstr "Tipo de operación"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_account_move_filter_inherit_payment
+msgid "Type of operatio"
+msgstr "Tipo de operación"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__upa_key
+msgid "UPA Key"
+msgstr "Catálogo UPA"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Unit Price:"
+msgstr "Precio Unitaro:"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "UoM"
+msgstr "Unidad de Medida"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_load_bank_layout_supplier_payment__file_data
+msgid "Upload File"
+msgstr "Cargar Archivo"
+
+#. module: jt_supplier_payment
+#: model:ir.model,name:jt_supplier_payment.model_employee_payroll_file
+msgid "Upload Files"
+msgstr "Importar archivos"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__user_registering_id
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view
+msgid "User Registering"
+msgstr "Registro de usuario"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "VALES DE DESPENSA DEL FOLIO"
+msgstr "VALES DE DESPENSA DEL FOLIO"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__responsible_rfc
+msgid "VAT"
+msgstr "RFC"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_form
+msgid "Validate"
+msgstr "Vallidado"
+
+#. module: jt_supplier_payment
+#: model:ir.actions.server,name:jt_supplier_payment.validate_supplier_payment_request
+msgid "Validate Budget"
+msgstr "Validación Presupuestal"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__payment_state__posted
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_search
+msgid "Validated"
+msgstr "Validado"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__vault_folio
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move_line__vault_folio
+msgid "Vault folio"
+msgstr "Folio de Bóveda"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_bank_balance_check
+msgid "Verify Balance"
+msgstr "Verificar Saldo"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_id_type__vostro
+msgid "Vostro"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_drawdown_type__wire
+msgid "WIRE"
+msgstr "WIRE"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields.selection,name:jt_supplier_payment.selection__account_payment__jp_method__wires
+msgid "WIRES"
+msgstr "WIRES"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_balance_check_wizard__wizard_id
+msgid "Wizard"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/reports/cash_payment_calculation.py:0 code:addons/jt_supplier_payment/reports/electronic_deposits_of_salaries.py:0
+#: code:addons/jt_supplier_payment/reports/general_total_payment_amounts.py:0 code:addons/jt_supplier_payment/reports/pension_payment_report.py:0
+#, python-format
+msgid "XLSX"
+msgstr "XLSX"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/wizard/payment_declined.py:0
+#, python-format
+msgid "You can Reject only for those payments which are in 'For Payment Procedure'!"
+msgstr "¡Puede rechazar solo los pagos que se encuentran en \"Para Trámite de Pago\"!"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/upload_payroll_file.py:0
+#, python-format
+msgid "You can Request for payment only for those Payroll which are in 'Reviewed'!"
+msgstr "¡Puede solicitar el pago solo para las Nóminas que esta Revisadas!"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/upload_payroll_file.py:0
+#, python-format
+msgid "You can Reviewed only for those Payroll which are in 'Draft'!"
+msgstr "¡Solo puede revisar las Nóminas que están en estatus 'Borrador'!"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "You can confirm only other then payroll"
+msgstr "Solo puede confirmar otro pago que no sea la nómina"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "You can confirm only pension payment"
+msgstr "Puede confirmar solo el Pago de Pensión"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "You can confirm only registered payment"
+msgstr "Puede confirmar solo el pago registrado"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "You can delete only draft request"
+msgstr "Puede eliminar solo solicitudes en estatus de Borrador"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/wizard/generate_bank_layout.py:0
+#, python-format
+msgid "You can generate Bank Layout only for those payments which are in 'For Payment Procedure'!"
+msgstr "Solo se puede Generar el Formato de Banco de los pagos que están en estatus 'Para trámite de Pago'!"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/wizard/load_bank_layout.py:0
+#, python-format
+msgid "You can load Bank Layout only for those payments which are in 'For Payment Procedure'!"
+msgstr "Solo se puede Cargar el Formato de Banco de los pagos que están en estatus 'Para trámite de Pago'!"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/upload_payroll_file.py:0
+#, python-format
+msgid "You can not Request for payment for Casualties And Cancellations which are in BDEF"
+msgstr "No se puede solicitar pago por siniestros o cancelaciones que se encuentren en BDEF"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/upload_payroll_file.py:0
+#, python-format
+msgid "You can not Request for payment for both Payment Provider and Direct Employee"
+msgstr "No se puede solicitar el pago tanto para el Proveedor del pago como para el Empleado directo"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/account_payment.py:0
+#, python-format
+msgid "You can not register payment with 0 amount"
+msgstr "No se puede programar una Solicitud de Pago que tiene un monto de 0"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/wizard/payment_declined.py:0
+#, python-format
+msgid "You can not reject Cancelled or Reconciled payment"
+msgstr "No puede rechazar el pago cancelado o conciliado"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/account_payment.py:0
+#, python-format
+msgid "You can only register payment for  Approved for payment request"
+msgstr "Solo puede registrar el pago para Aprobado para solicitud de pago"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "You can registered only draft payment"
+msgstr "Solo puede Registrar pagos en estatus 'Borrador'"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/invoice.py:0
+#, python-format
+msgid "You can registered only payroll,other then payroll or Pension Payment"
+msgstr "Puede registrarse solo nómina, excepto nómina o pago de pensión"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/account_payment.py:0
+#, python-format
+msgid "You have to define a sequence for %s in your company."
+msgstr "Debes definir una secuencia para %s en tu empresa."
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__zone
+msgid "Zone"
+msgstr "Zona"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.different_payroll_payment_req_form_view model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.pensions_payroll_payment_req_form_view
+msgid "Zone Responsible"
+msgstr "Responsable de Zona"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "_____________"
+msgstr ""
+
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "______________"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "____________________"
+msgstr "___________________"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid "______________________"
+msgstr "___________________"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payroll_bank_deposite_slip_template
+msgid ""
+"________________________________<br/><span style=\"text-align:center;margin-"
+"left:40px;align:right;\">FIRMA</span>"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model,name:jt_supplier_payment.model_balance_check_wizard
+msgid "balance.check.wizard"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model,name:jt_supplier_payment.model_bank_transfer_request
+msgid "bank.transfer.request"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__payment_request_id
+msgid "circular"
+msgstr "Folio de Solicitud"
+
+#. module: jt_supplier_payment
+#: model:ir.model,name:jt_supplier_payment.model_generate_batch_sheet_line
+msgid "generate.batch.sheet.line"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_show_destination
+msgid "is_show_destination"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_show_origin
+msgid "is_show_origin"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_request_report_document
+msgid "on"
+msgstr "en"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__is_show_reason_for_expendiure
+msgid "reason_for_expendiure"
+msgstr "motivo para el gasto"
+
+#. module: jt_supplier_payment
+#: model:ir.model,name:jt_supplier_payment.model_scholarship_payment_breakdown
+msgid "scholarship.payment.breakdown"
+msgstr ""
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_balance_check_wizard
+msgid "the selected bank account does not have sufficient balance to execute payment.It is necessary to make a bank transfer request."
+msgstr "la cuenta bancaria seleccionada no tiene saldo suficiente para ejecutar el pago, es necesario realizar una solicitud de transferencia bancaria."
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.view_balance_check_wizard
+msgid "the selected bank account has sufficient balance to execute"
+msgstr "la cuenta bancaria seleccionada tiene saldo suficiente para ejecutar"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_tree
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_tree_view
+msgid "Counter Receipt Folio"
+msgstr "Folio contra recibo"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_tree
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_tree_view
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: account
+#: model:ir.model.fields,field_description:account.field_account_payment_register__payment_method_id
+msgid "Payment Method Type"
+msgstr "Tipo de Método de Cobro"
+
+#. module: account
+#: model:ir.model.fields,field_description:account.field_account_payment_register__group_payment
+msgid "Group Payment"
+msgstr "Cobro Agrupado"
+
+#. module: account
+#: model:ir.model.fields,field_description:account.field_account_payment_register__payment_date
+#: model_terms:ir.ui.view,arch_db:account.view_account_payment_search
+msgid "Payment Date"
+msgstr "Fecha de Cobro"
+
+#. module: l10n_mx_edi
+#: model:ir.actions.act_window,name:l10n_mx_edi.action_l10n_mx_payment_method
+#: model:ir.model.fields,field_description:l10n_mx_edi.field_account_bank_statement_import_journal_creation__l10n_mx_edi_payment_method_id
+#: model:ir.model.fields,field_description:l10n_mx_edi.field_account_bank_statement_line__l10n_mx_edi_payment_method_id
+#: model:ir.model.fields,field_description:l10n_mx_edi.field_account_journal__l10n_mx_edi_payment_method_id
+#: model:ir.model.fields,field_description:l10n_mx_edi.field_account_payment__l10n_mx_edi_payment_method_id
+#: model:ir.model.fields,field_description:l10n_mx_edi.field_account_payment_register__l10n_mx_edi_payment_method_id
+#: model_terms:ir.ui.view,arch_db:l10n_mx_edi.view_l10n_mx_payment_method_form
+#: model_terms:ir.ui.view,arch_db:l10n_mx_edi.view_l10n_mx_payment_method_tree
+msgid "Payment Way"
+msgstr "Forma de Cobro"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.inherited_view_account_payment_form
+msgid "Payment Way"
+msgstr "Forma de Pago"
+
+#. module: account
+#: model_terms:ir.ui.view,arch_db:account.view_account_payment_form_multi
+msgid "Create Payment"
+msgstr "Crear Cobro"
+
+#. module: jt_supplier_payment
+#: model_terms:ir.ui.view,arch_db:jt_supplier_payment.payment_req_form_view
+msgid "Payment Terms"
+msgstr "Plazo de Pago"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Payment Terms"
+msgstr "Plazo de Cobro"
+
+#. module: account
+#: code:addons/account/models/account_payment.py:0
+#: model:ir.actions.act_window,name:account.action_account_payments
+#: model:ir.ui.menu,name:account.root_payment_menu
+#, python-format
+msgid "Payments"
+msgstr "Cobros"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_payment__transfer_confirmation_date
+msgid "Confirmation Date"
+msgstr "Fecha de confirmación"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__diff_payroll_capture_line
+msgid "Capture line"
+msgstr "Línea de Captura"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/models/upload_payroll_file.py:0
+#, python-format
+msgid "You can Draft only for those Payroll which are in 'Revised'!"
+msgstr "Puede hacer un borrador solo para aquellas nóminas que estén en 'Revisado'!"
+
+#. module: jt_supplier_payment
+#: model:ir.model.fields,field_description:jt_supplier_payment.field_account_move__payment_method
+msgid "Dummy Method"
+msgstr "Dummy Method"
+
+#. module: jt_supplier_payment
+#: code:addons/jt_supplier_payment/wizard/load_bank_layout.py:0
+#, python-format
+msgid "Failed_Rows.txt"
+msgstr "Registros Erroneos"

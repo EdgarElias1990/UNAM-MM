@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="inherited_account_journal_form_view" model="ir.ui.view">
+            <field name="name">Inherited account journal form view</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='journal_entries']" position="inside">
+                	<group>
+                		<group string="Estimate Income">
+	                        <field name="estimate_income_debit_account_id"/>
+	                        <field name="estimate_income_credit_account_id"/>
+	                        <field name="conac_estimate_income_debit_account_id" readonly="1" force_save="1"/>
+	                        <field name="conac_estimate_income_credit_account_id" readonly="1" force_save="1"/>
+                		</group>
+                		<group string="Income to run">
+	                        <field name="income_run_credit_account_id"/>
+	                        <field name="income_run_debit_account_id"/>
+	                        <field name="conac_income_run_credit_account_id" readonly="1" force_save="1"/>
+	                        <field name="conac_income_run_debit_account_id" readonly="1" force_save="1"/>
+                		</group>
+                		<group string="Earned Income">
+	                        <field name="accrued_income_credit_account_id"/>
+	                        <field name="accrued_income_debit_account_id"/>
+	                        <field name="conac_accrued_income_credit_account_id" readonly="1" force_save="1"/>
+	                        <field name="conac_accrued_income_debit_account_id" readonly="1" force_save="1"/>
+                		</group>
+                		<group string="Recover Income">
+	                        <field name="recover_income_credit_account_id"/>
+	                        <field name="recover_income_debit_account_id"/>
+	                        <field name="conac_recover_income_credit_account_id" readonly="1" force_save="1"/>
+	                        <field name="conac_recover_income_debit_account_id" readonly="1" force_save="1"/>
+                		</group>
+                	</group>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

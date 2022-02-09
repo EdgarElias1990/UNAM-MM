@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for geographic location model -->
+        <record id="geographic_location_search_view" model="ir.ui.view">
+            <field name="name">geographic.location.search.view</field>
+            <field name="model">geographic.location</field>
+            <field name="arch" type="xml">
+                <search string="Geographic location">
+                    <field name="state_key"/>
+                    <group expand="1" string="Group By">
+                        <filter string="State key" name='state_key' context="{'group_by':'state_key'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for geographic location model -->
+    	<record id="geographic_location_form_view" model="ir.ui.view">
+            <field name="name">geographic.location.form.view</field>
+            <field name="model">geographic.location</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+	            		<group>
+                            <field name="state_key" required="1"/>
+                            <field name="state_name"/>
+	            		</group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+        
+        <!-- tree view for geographic location model -->
+    	<record id="geographic_location_tree_view" model="ir.ui.view">
+            <field name="name">geographic.location.tree.view</field>
+            <field name="model">geographic.location</field>
+            <field name="arch" type="xml">
+            	<tree>
+                    <field name="state_key"/>
+                    <field name="state_name"/>
+            	</tree>
+            </field>
+        </record>
+
+        <!-- action for geographic location views -->
+        <record id="action_geographic_location" model="ir.actions.act_window">
+            <field name="name">Geographic Location (UG)</field>
+            <field name="res_model">geographic.location</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="geographic_location_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

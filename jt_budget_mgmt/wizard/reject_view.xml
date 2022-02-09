@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<!-- form view for reject model -->
+        <record id="reject_form_view" model="ir.ui.view">
+            <field name="name">reject.form.view</field>
+            <field name="model">reject</field>
+            <field name="arch" type="xml">
+                <form>
+                	<p>Are you sure you want to delete this record?</p>
+                	<footer>
+                        <button string="Accept" name="accept" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    	<!-- action for reject views -->
+    	<record id="action_reject" model="ir.actions.act_window">
+            <field name="name">Reject</field>
+            <field name="res_model">reject</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

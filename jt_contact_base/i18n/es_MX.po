@@ -1,0 +1,452 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_contact_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 15:39+0000\n"
+"PO-Revision-Date: 2020-08-08 10:41-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.3\n"
+
+
+#. module: jt_contact_base
+#: code:addons/jt_contact_base/models/res_partner.py:0
+#, python-format
+msgid "Supplier Registration"
+msgstr "Registro de Proveedores"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__aba
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__aba
+msgid "ABA"
+msgstr ""
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner__is_FOVISSSTE_supplier
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_users__is_FOVISSSTE_supplier
+msgid "Is FOVISSSTE supplier"
+msgstr "Es Proveedor FOVISSSTE"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner__is_ISSSTE_supplier
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_users__is_ISSSTE_supplier
+msgid "Is ISSSTE supplier"
+msgstr "Es Proveedor ISSSTE"
+
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__account_type
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__account_type
+msgid "Account type"
+msgstr "Tipo de cuenta"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner__beneficiary_type__alimony
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_search_view
+msgid "Alimony"
+msgstr "Pensión alimenticia"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__authorization_date
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__authorization_date
+msgid "Authorization date"
+msgstr "Fecha de autorización"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__supplier_registration__layout__bbva
+msgid "BBVA Bancomer SIT"
+msgstr "BBVA Bancomer SIT"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__bic_swift
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__bic_swift
+msgid "BIC/SWIFT"
+msgstr "BIC/SWIFT"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__supplier_registration__layout__banamex
+msgid "Banamex"
+msgstr "Banamex"
+
+#. module: jt_contact_base
+#: model:ir.model,name:jt_contact_base.model_res_partner_bank
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_account_form_view
+msgid "Bank Accounts"
+msgstr "Cuentas bancarias"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__bank_account_name
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__bank_account_name
+msgid "Bank account name"
+msgstr "Nombre de la cuenta bancaria"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__bank_authorization_date
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__bank_authorization_date
+msgid "Bank authorization date"
+msgstr "Fecha de autorización bancaria"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__bank_registration_date
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__bank_registration_date
+msgid "Bank registration date"
+msgstr "Fecha de registro bancario"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__bank_status
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__bank_status
+msgid "Bank status"
+msgstr "Estatus bancario"
+
+#. module: jt_contact_base
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_search_view
+msgid "Beneficiary Type"
+msgstr "Tipo de beneficiario"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner__beneficiary_type
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_users__beneficiary_type
+msgid "Beneficiary type"
+msgstr "Tipo de beneficiario"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__branch_number
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__branch_number
+msgid "Branch number"
+msgstr "Número de sucursal"
+
+#. module: jt_contact_base
+#: code:addons/jt_contact_base/models/res_partner_bank.py:0
+#, python-format
+msgid "Capital letters should be used for BIC/SWIFT."
+msgstr "Se deben usar letras mayúsculas para BIC / SWIFT."
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner_bank__account_type__card
+msgid "Card"
+msgstr "Tarjeta"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner__instruction__change
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_search_view
+msgid "Change"
+msgstr "Cambio"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__check_name
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__check_name
+msgid "Check name"
+msgstr "Nombre cheque"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner_bank__account_type__checks
+msgid "Checks"
+msgstr "Cheques"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner_bank__account_type__clabe_acc
+msgid "Clabe Account"
+msgstr "Cuenta Clabe"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner_bank__account_type__con_acc
+msgid "Concentrating Account"
+msgstr "Cuenta Concentradora"
+
+#. module: jt_contact_base
+#: model:ir.model,name:jt_contact_base.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_scholarship_type__create_uid
+#: model:ir.model.fields,field_description:jt_contact_base.field_supplier_registration__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_scholarship_type__create_date
+#: model:ir.model.fields,field_description:jt_contact_base.field_supplier_registration__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner__dob
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_users__dob
+msgid "Date of birth"
+msgstr "Fecha de Nacimiento"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_scholarship_type__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_scholarship_type__display_name
+#: model:ir.model.fields,field_description:jt_contact_base.field_supplier_registration__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_supplier_registration__fec_data
+msgid "FEC File"
+msgstr "Archivo FEC"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_supplier_registration__filename
+msgid "Filename"
+msgstr "Nombre del archivo"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner__beneficiary_type__fixed_fund
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_search_view
+msgid "Fixed Fund"
+msgstr "Fondo fijo"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner__beneficiary_type__foreign_supplier
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_search_view
+msgid "Foreign supplier"
+msgstr "Proveedor extranjero"
+
+#. module: jt_contact_base
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.supplier_registration_form_view
+msgid "Generate"
+msgstr "Generar"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__supplier_registration__layout__hsbc
+msgid "HSBC"
+msgstr "HSBC"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner__instruction__high
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_search_view
+msgid "High"
+msgstr "Alta"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_scholarship_type__id
+#: model:ir.model.fields,field_description:jt_contact_base.field_supplier_registration__id
+msgid "ID"
+msgstr "ID"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner__instruction
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_users__instruction
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_search_view
+msgid "Instruction with the banking institution"
+msgstr "Instrucción ante Institución Bancaria"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__key_bank
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__key_bank
+msgid "KeyBank"
+msgstr "Clave banco"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_scholarship_type____last_update
+#: model:ir.model.fields,field_description:jt_contact_base.field_supplier_registration____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_scholarship_type__write_uid
+#: model:ir.model.fields,field_description:jt_contact_base.field_supplier_registration__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_scholarship_type__write_date
+#: model:ir.model.fields,field_description:jt_contact_base.field_supplier_registration__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_supplier_registration__layout
+msgid "Layout"
+msgstr "Layout"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner__instruction__low
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_search_view
+msgid "Low"
+msgstr "Baja"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__low_date
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__low_date
+msgid "Low Date"
+msgstr "Fecha de Baja"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner_bank__account_type__master_acc
+msgid "Master Account"
+msgstr "Cuenta maestra"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner__person_type__moral
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_search_view
+msgid "Moral"
+msgstr "Moral"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner__beneficiary_type__national_provider
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_search_view
+msgid "National provider"
+msgstr "Proveedor Nacional"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner__nationality
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_users__nationality
+msgid "Nationality"
+msgstr "Nacionalidad"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner__password_beneficiary
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_users__password_beneficiary
+msgid "Password of the beneficiary of the payment"
+msgstr "Clave del proveedor"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner_bank__account_type__payment_card
+msgid "Payment Card"
+msgstr "Tarjeta de pago"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner_bank__account_type__payment_order
+msgid "Payment Order"
+msgstr "Orden de pago"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner__period
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_users__period
+msgid "Period"
+msgstr "Periodo"
+
+#. module: jt_contact_base
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_search_view
+msgid "Person Type"
+msgstr "Tipo de Persona"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner__person_type
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_users__person_type
+msgid "Person type"
+msgstr "Tipo de Persona"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner__person_type__physics
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_search_view
+msgid "Physics"
+msgstr "Física"
+
+#. module: jt_contact_base
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_form_view
+msgid "RFC"
+msgstr "RFC"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__registration_date
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__registration_date
+msgid "Registration date"
+msgstr "Fecha de Registro"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__supplier_registration__layout__santander
+msgid "Santander"
+msgstr "Santander"
+
+#. module: jt_contact_base
+#: model:ir.model.fields.selection,name:jt_contact_base.selection__res_partner__beneficiary_type__scholar
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_search_view
+msgid "Scholar"
+msgstr "Becario"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner__scholar_key_payment
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_users__scholar_key_payment
+msgid "Scholar key payment"
+msgstr "Clave becario pago"
+
+#. module: jt_contact_base
+#: model_terms:ir.ui.view,arch_db:jt_contact_base.res_partner_form_view
+msgid "Scholarship Information"
+msgstr "Información de becas"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner__scholarship_approved_month
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_users__scholarship_approved_month
+msgid "Scholarship approved month"
+msgstr "Mes de beca aprobada"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_setup_bank_manual_config__status
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner_bank__status
+msgid "Status"
+msgstr "Estatus"
+
+#. module: jt_contact_base
+#: model:ir.actions.act_window,name:jt_contact_base.supplier_registration_action
+#: model:ir.model,name:jt_contact_base.model_supplier_registration
+#: model:ir.model.fields,field_description:jt_contact_base.field_account_journal__supplier_registration_layout
+msgid "Supplier Registration"
+msgstr "Registro de proveedores"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner__tax_email
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_users__tax_email
+msgid "Tax email"
+msgstr "Correo electrónico fiscal"
+
+#. module: jt_contact_base
+#: code:addons/jt_contact_base/models/res_partner_bank.py:0
+#, python-format
+msgid "The Branch Number should be of 4 digits."
+msgstr "El número de sucursal debe tener 4 dígitos."
+
+#. module: jt_contact_base
+#: model:ir.model.constraint,message:jt_contact_base.constraint_res_partner_password_beneficiary_uniq
+msgid "The Password of the beneficiary of the payment must be unique."
+msgstr "La contraseña del beneficiario del pago debe ser única."
+
+#. module: jt_contact_base
+#: code:addons/jt_contact_base/models/res_partner_bank.py:0
+#, python-format
+msgid "The length of BIC/SWIFT should not be more than 11."
+msgstr "La longitud de BIC / SWIFT no debe ser superior a 11."
+
+#. module: jt_contact_base
+#: model:ir.model.constraint,message:jt_contact_base.constraint_res_partner_scholar_key_payment_uniq
+msgid "The scholar key payment must be unique."
+msgstr "El pago de la clave de becario debe ser único."
+
+#. module: jt_contact_base
+#: code:addons/jt_contact_base/models/res_partner_bank.py:0
+#, python-format
+msgid "The value should be alphanumeric for BIC/SWIFT."
+msgstr "El valor debe ser alfanumérico para BIC / SWIFT."
+
+#. module: jt_contact_base
+#: model:ir.actions.act_window,name:jt_contact_base.scholarship_type_action
+#: model:ir.model,name:jt_contact_base.model_scholarship_type
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_partner__scholarship_id
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_users__scholarship_id
+#: model:ir.model.fields,field_description:jt_contact_base.field_scholarship_type__name
+#: model:ir.ui.menu,name:jt_contact_base.scholarship_type_menu
+msgid "Type of Scholarship"
+msgstr "Tipo de beca"
+
+#. module: jt_contact_base
+#: model:ir.model.fields,field_description:jt_contact_base.field_res_bank__company_name
+msgid "Company Name"
+msgstr "Razón social"

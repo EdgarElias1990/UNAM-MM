@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- form view for import adequacies line model -->
+        <record id="budget_insufficien_view" model="ir.ui.view">
+            <field name="name">budget.insufficien.wiz.view</field>
+            <field name="model">budget.insufficien.wiz</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="msg" readonly="1"/>
+                    <group>
+                    	<field name="move_id" invisible="1"/>
+                    	<field name="move_ids" invisible="1"/>
+         				<field name="is_budget_suf" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button string="OK" name="action_ok" type="object" class="oe_highlight" attrs="{'invisible':[('is_budget_suf','=',True)]}"/>
+                        <button string="Budget Allocation" name="action_budget_allocation" type="object" class="oe_highlight" attrs="{'invisible':[('is_budget_suf','=',False)]}"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Budgetary Insufficiency"
+            id="action_budget_insufficiency"
+            res_model="budget.insufficien.wiz"
+            view_mode="form"
+            target="new"
+        />
+    </data>
+</odoo>

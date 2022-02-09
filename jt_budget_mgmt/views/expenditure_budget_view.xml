@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for expenditure budget model -->
+        <record id="expenditure_budget_search_view" model="ir.ui.view">
+            <field name="name">expenditure.budget.search.view</field>
+            <field name="model">expenditure.budget</field>
+            <field name="arch" type="xml">
+                <search string="Expenditure Budget">
+                	
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="total_budget"/>
+                    <field name="state"/>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <filter string="Draft" name="state_draft" domain="[('state','=', 'draft')]"/>
+                    <filter string="Privous" name="state_previous" domain="[('state','=', 'previous')]"/>
+                    <filter string="Confirm" name="state_confirm" domain="[('state','=', 'confirm')]"/>
+                    <filter string="Validate" name="state_validate" domain="[('state','=', 'validate')]"/>
+                    <filter string="Done" name="state_done" domain="[('state','=', 'done')]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Responsible" name='responsible' context="{'group_by':'user_id'}"/>
+                        <filter string="Status" name='status_groupby' context="{'group_by':'state'}"/>
+                        <filter string="From Date" name='from_date' context="{'group_by':'from_date'}"/>
+                        <filter string="To Date" name='to_date' context="{'group_by':'to_date'}"/>
+                    </group>
+                    
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for expenditure budget model -->
+        <record id="expenditure_budget_form_view" model="ir.ui.view">
+            <field name="name">expenditure.budget.form.view</field>
+            <field name="model">expenditure.budget</field>
+            <field name="arch" type="xml">
+                <form duplicate="0">
+                    <center><div attrs="{'invisible': [('cron_running', '=', False)]}" class="alert alert-primary" role="alert">
+                        Data validation is running in background, Page will be auto refreshed and <b>Data Validation Status</b> will be auto turned off when the process will get finished!
+                    </div></center>
+                    <header>
+                        <button name="previous_budget" type="object" string="Previous budget" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        <button name="confirm" type="object" string="Confirm" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'previous')]}"/>
+                        <button name="approve" type="object" string="Approve" class="oe_highlight" states='confirm'/>
+                        <button name="reject" type="object" string="Reject" class="oe_highlight" states='confirm'/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,previous,confirm,validate"/>
+                    </header>
+                    <sheet>
+                        <div name="button_box" class="oe_button_box">
+                            <button class="oe_stat_button" name="show_imported_lines" type="object" icon="fa-bars"
+                                attrs="{'invisible': [('line_ids', '=', [])]}">
+                                <field name="imported_lines_count" widget="statinfo" string="Imported Lines"/>
+                            </button>
+                            <button class="oe_stat_button" name="show_success_lines" type="object" icon="fa-bars"
+                                attrs="{'invisible': [('success_line_ids', '=', [])]}">
+                                <field name="success_lines_count" widget="statinfo" string="Success Lines"/>
+                            </button>
+                        </div>
+                        <div>
+                            <span class="o_form_label">Budget name</span>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="user_id" readonly="1"/>
+                                <button name="import_lines" type="object" string="Import lines" class="oe_highlight" attrs="{'invisible': ['|', ('import_status', '!=', 'draft'), ('state', '!=', 'draft')]}"/>
+                                <button name="import_lines" type="object" string="Re-Import Lines" class="oe_highlight" attrs="{'invisible': ['|', '|', ('import_status', '=', 'draft'), ('state', 'not in', ('draft', 'previous')), ('cron_running', '=', True)]}" context="{'reimport': True}"/>
+                                <field name="total_budget"/>
+                                <field name="total_budget_validate" invisible="1"/>
+                                <field name="total_quarter_budget" invisible="1"/>
+                                <field name="record_number"/>
+                                <field name="import_record_number"/>
+                                <field name="is_validation_process_start" invisible="1"/>
+                                <field name="validation_process_start_user" invisible="1"/>
+                            </group>        
+                            <group>
+                                <label for="from_date"/>
+                                <div>
+                                    <field name="from_date" class="oe_inline" required="1"/> - 
+                                    <field name="to_date" class="oe_inline" required="1"/>
+                                </div>
+                                <field name="journal_id" readonly="1" force_save="1"/>
+                                <field name="assigned_total" invisible="1"/>
+                                <field name="authorised_total" invisible="1"/>
+                                <field name="available_total" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Success Budget Lines" attrs="{'invisible': [('success_line_ids', '=', [])]}">
+                                <field name="success_line_ids">
+                                    <tree decoration-success="state == 'success'" create="false"
+                                          delete="false" edit="true" limit="80">
+                                        <!-- Hidden fields -->
+                                        <field name="imported" invisible="1"/>
+                                        <field name="imported" invisible="1"/>
+                                        <field name="imported_sessional" invisible="1"/>
+                                        <field name="state" invisible="1"/>
+
+                                        <field name="program_code_id" readonly="1" context="{'from_conacyt':True}"/>
+                                        <field name="dependency_id" readonly="1"/>
+                                        <field name="sub_dependency_id" readonly="1"/>
+                                        <field name="program_id" readonly="1"/>
+                                        <field name="item_id" readonly="1"/>
+                                        <field name="start_date"/>
+                                        <field name="end_date"/>
+
+                                        <field name="authorized" widget="monetary" sum="Total Authorized Amount"
+                                               options="{'currency_field': 'currency_id'}"/>
+                                        <field name="assigned" widget="monetary" sum="Total Assigned Amount"
+                                               options="{'currency_field': 'currency_id'}" invisible="1"/>
+                                        <field name="available" widget="monetary" options="{'currency_field': 'currency_id'}"
+                                               sum="Total Available Amount" readonly="1" invisible="1"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                    <form create="false" edit="true" delete="false">
+                                        <group>
+                                            <!-- Hidden Fields -->
+                                            <field name="imported" invisible="1"/>
+                                            <field name="imported_sessional" invisible="1"/>
+                                            <field name="state" invisible="1"/>
+
+                                            <field name="program_code_id"
+                                                   attrs="{'invisible': ['|', ('state', 'in', ('draft', 'fail'))]}"
+                                                   readonly="1" context="{'from_conacyt':True}"/>
+                                            <field name="dependency_id" invisible="1"/>
+                                            <field name="sub_dependency_id" invisible="1"/>
+                                            <field name="program_id" invisible="1"/>
+                                            <field name="item_id" invisible="1"/>
+                                            <field name="start_date"/>
+                                            <field name="end_date"/>
+                                            <field name="authorized" widget="monetary"
+                                                   options="{'currency_field': 'currency_id'}" required="1" readonly="1"/>
+                                            <field name="assigned" widget="monetary"
+                                                   options="{'currency_field': 'currency_id'}" required="1" invisible="1"/>
+                                            <field name="available" widget="monetary"
+                                                   options="{'currency_field': 'currency_id'}" readonly="1" invisible="1"/>
+                                            <field name="expenditure_budget_id" invisible="1"/>
+                                            <field name="currency_id" invisible="1"/>
+                                        </group>
+                                        <!-- Import related fields -->
+                                        <group attrs="{'invisible': [('state', 'in', ('manual', 'success'))]}">
+                                            <field name="year"/>
+                                            <field name="program"/>
+                                            <field name="subprogram"/>
+                                            <field name="dependency"/>
+                                            <field name="subdependency"/>
+                                            <field name="item"/>
+                                            <field name="dv"/>
+                                            <field name="origin_resource"/>
+                                            <field name="ai"/>
+                                            <field name="conversion_program"/>
+                                            <field name="departure_conversion"/>
+                                            <field name="expense_type"/>
+                                            <field name="location"/>
+                                            <field name="portfolio"/>
+                                            <field name="project_type"/>
+                                            <field name="project_number"/>
+                                            <field name="stage"/>
+                                            <field name="agreement_type"/>
+                                            <field name="agreement_number"/>
+                                            <field name="exercise_type"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Imported Lines" attrs="{'invisible': [('state', 'not in', ['draft', 'previous'])]}">
+                                <field name="line_ids" attrs="{'readonly': [('cron_running', '=', True)]}">
+                                    <tree decoration-danger="state == 'fail'">
+                                        <!-- Hidden fields -->
+                                        <field name="imported" invisible="1"/>
+                                        <field name="imported_sessional" invisible="1"/>
+                                        <field name="state" invisible="1"/>
+
+                                        <field name="program_code_id" context="{'from_conacyt':True}"/>
+                                        <field name="dependency_id" invisible="1"/>
+                                        <field name="sub_dependency_id" invisible="1"/>
+                                        <field name="program_id" invisible="1"/>
+                                        <field name="item_id" invisible="1"/>
+                                        <field name="start_date" invisible="1"/>
+                                        <field name="end_date" invisible="1"/>
+
+                                        <!-- Imported data fields -->
+                                        <field name="year"/>
+                                        <field name="program"/>
+                                        <field name="subprogram"/>
+                                        <field name="dependency"/>
+                                        <field name="subdependency"/>
+                                        <field name="item"/>
+                                        <field name="dv"/>
+                                        <field name="origin_resource"/>
+                                        <field name="ai"/>
+                                        <field name="conversion_program"/>
+                                        <field name="departure_conversion"/>
+                                        <field name="expense_type"/>
+                                        <field name="location"/>
+                                        <field name="portfolio"/>
+                                        <field name="project_type"/>
+                                        <field name="project_number"/>
+                                        <field name="stage"/>
+                                        <field name="agreement_type"/>
+                                        <field name="agreement_number"/>
+                                        <field name="exercise_type"/>
+
+                                        <field name="authorized" widget="monetary"
+                                               options="{'currency_field': 'currency_id'}"
+                                               sum="Total Authorized Amount"/>
+                                        <field name="assigned" widget="monetary"
+                                               options="{'currency_field': 'currency_id'}"
+                                               sum="Total Assigned Amount" invisible="1"/>
+                                        <field name="available" widget="monetary"
+                                               options="{'currency_field': 'currency_id'}"
+                                               sum="Total Available Amount" invisible="1"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <!-- Hidden Fields -->
+                                            <field name="imported" invisible="1"/>
+                                            <field name="imported_sessional" invisible="1"/>
+                                            <field name="state" invisible="1"/>
+
+                                            <field name="program_code_id"
+                                                   attrs="{'readonly': [('imported', '=', True)], 'invisible': ['|', ('state', 'in', ('draft', 'fail'))]}" context="{'from_conacyt':True}"/>
+                                            <field name="dependency_id" invisible="1"/>
+                                            <field name="sub_dependency_id" invisible="1"/>
+                                            <field name="program_id" invisible="1"/>
+                                            <field name="item_id" invisible="1"/>
+                                            <field name="start_date"/>
+                                            <field name="end_date"/>
+                                            <field name="authorized" widget="monetary"
+                                                   options="{'currency_field': 'currency_id'}" required="1"/>
+                                            <field name="assigned" widget="monetary"
+                                                   options="{'currency_field': 'currency_id'}" required="1" invisible="1"/>
+                                            <field name="available" widget="monetary"
+                                                   options="{'currency_field': 'currency_id'}" readonly="1" invisible="1"/>
+                                            <field name="expenditure_budget_id" invisible="1"/>
+                                            <field name="currency_id" invisible="1"/>
+                                        </group>
+                                        <!-- Import related fields -->
+                                        <group attrs="{'invisible': ['|', ('state', 'in', ('manual', 'success'))]}">
+                                            <field name="year"/>
+                                            <field name="program"/>
+                                            <field name="subprogram"/>
+                                            <field name="dependency"/>
+                                            <field name="subdependency"/>
+                                            <field name="item"/>
+                                            <field name="dv"/>
+                                            <field name="origin_resource"/>
+                                            <field name="ai"/>
+                                            <field name="conversion_program"/>
+                                            <field name="departure_conversion"/>
+                                            <field name="expense_type"/>
+                                            <field name="location"/>
+                                            <field name="portfolio"/>
+                                            <field name="project_type"/>
+                                            <field name="project_number"/>
+                                            <field name="stage"/>
+                                            <field name="agreement_type"/>
+                                            <field name="agreement_number"/>
+                                            <field name="exercise_type"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string='Import Status'>
+                                <group>
+                                    <field name="cron_running" readonly="1" widget="boolean_toggle"
+                                           string="Data validation Status"/>
+                                    <field name="import_status" readonly="1" invisible="1"/>
+                                    <field name="total_rows" string="Total Rows"/>
+                                    <field name="draft_rows" string="Rows To Validate" invisible="1"/>
+                                    <field name="success_rows" string="Total Success Rows"/>
+                                    <field name="failed_rows" string="Total Failed Rows"/>
+                                    <field name="failed_row_file" filename="fialed_row_filename" readonly="1"/>
+                                    <field name="fialed_row_filename" invisible="1"/>
+                                </group>
+                            </page>
+                            <page string="Journal Items">
+                                <field name="move_line_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <!-- Chatter -->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for expenditure budget model -->
+        <record id="expenditure_budget_tree_view" model="ir.ui.view">
+            <field name="name">expenditure.budget.tree.view</field>
+            <field name="model">expenditure.budget</field>
+            <field name="arch" type="xml">
+                <tree import="0">
+                    <field name="name"/>
+                    <field name="user_id" readonly="1"/>
+                    <field name="total_budget"/>
+                    <field name="record_number"/>
+                    <field name="import_record_number"/>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <field name="import_record_number" invisible="1"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for expenditure budget views -->
+        <record id="action_expenditure_budget" model="ir.actions.act_window">
+            <field name="name">Expenditure budget</field>
+            <field name="res_model">expenditure.budget</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="expenditure_budget_tree_view"/>
+            <field name="search_view_id" ref="expenditure_budget_search_view"/>
+            <field name="context">{}</field>
+        </record>
+
+        <record id="expenditure_budget_success_line_search_view" model="ir.ui.view">
+            <field name="name">expenditure.budget.success.line.search.view</field>
+            <field name="model">expenditure.budget.line</field>
+            <field name="arch" type="xml">
+                <search string="Expenditure Budget Line">
+                    <field name="program_code_id"/>
+                    <field name="dependency_id"/>
+                    <field name="sub_dependency_id"/>
+                    <field name="program_id"/>
+                    <field name="item_id"/>
+                    <filter name="imported" string="Imported" domain="[('imported', '=', True)]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Imported" name='imported' context="{'group_by':'imported'}"/>
+                        <filter string="State" name='state' context="{'group_by':'state'}"/>
+                        <filter string="Start Date" name='start_date' context="{'group_by':'start_date'}"/>
+                        <filter string="End Date" name='end_date' context="{'group_by':'end_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="expenditure_budget_imported_line_search_view" model="ir.ui.view">
+            <field name="name">expenditure.budget.imported.line.search.view</field>
+            <field name="model">expenditure.budget.line</field>
+            <field name="arch" type="xml">
+                <search string="Expenditure Budget Line">
+                    <field name="year"/>
+                    <field name="program"/>
+                    <field name="subprogram"/>
+                    <field name="dependency"/>
+                    <field name="subdependency"/>
+                    <field name="item"/>
+                    <field name="dv"/>
+                    <field name="origin_resource"/>
+                    <field name="ai"/>
+                    <field name="conversion_program"/>
+                    <field name="departure_conversion"/>
+                    <field name="expense_type"/>
+                    <field name="location"/>
+                    <field name="portfolio"/>
+                    <field name="project_type"/>
+                    <field name="project_number"/>
+                    <field name="stage"/>
+                    <field name="agreement_type"/>
+                    <field name="agreement_number"/>
+                    <field name="exercise_type"/>
+                    <field name="program_code_id"/>
+                    <field name="dependency_id"/>
+                    <field name="sub_dependency_id"/>
+                    <field name="program_id"/>
+                    <field name="item_id"/>
+                    <filter name="imported" string="Imported" domain="[('imported', '=', True)]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Imported" name='imported' context="{'group_by':'imported'}"/>
+                        <filter string="State" name='state' context="{'group_by':'state'}"/>
+                        <filter string="Start Date" name='start_date' context="{'group_by':'start_date'}"/>
+                        <filter string="End Date" name='end_date' context="{'group_by':'end_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- tree view for expenditure budget line success model -->
+        <record id="expenditure_budget_line_success_tree_view" model="ir.ui.view">
+            <field name="name">expenditure.budget.line.success.tree.view</field>
+            <field name="model">expenditure.budget.line</field>
+            <field name="arch" type="xml">
+                <tree decoration-success="state == 'success'" create="false" delete="false" edit="true">
+                    <!-- Hidden fields -->
+                    <field name="imported" invisible="1"/>
+                    <field name="imported_sessional" invisible="1"/>
+                    <field name="state" invisible="1"/>
+
+                    <field name="program_code_id" readonly="1"/>
+                    <field name="dependency_id" readonly="1"/>
+                    <field name="sub_dependency_id" readonly="1"/>
+                    <field name="program_id" readonly="1"/>
+                    <field name="item_id" readonly="1"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+
+                    <field name="authorized" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <field name="assigned" widget="monetary" options="{'currency_field': 'currency_id'}" invisible="1"/>
+                    <field name="available" widget="monetary" options="{'currency_field': 'currency_id'}" invisible="1" sum="Total Available Amount" readonly="1"/>
+                    <field name="currency_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- tree view for expenditure budget line model -->
+        <record id="expenditure_budget_line_tree_view" model="ir.ui.view">
+            <field name="name">expenditure.budget.line.tree.view</field>
+            <field name="model">expenditure.budget.line</field>
+            <field name="arch" type="xml">
+                <tree decoration-danger="state == 'fail'">
+                    <!-- Hidden fields -->
+                    <field name="imported" invisible="1"/>
+                    <field name="imported_sessional" invisible="1"/>
+                    <field name="state" invisible="1"/>
+
+                    <field name="program_code_id"/>
+                    <field name="dependency_id" invisible="1"/>
+                    <field name="sub_dependency_id" invisible="1"/>
+                    <field name="program_id" invisible="1"/>
+                    <field name="item_id" invisible="1"/>
+                    <field name="start_date" invisible="1"/>
+                    <field name="end_date" invisible="1"/>
+
+                    <!-- Imported data fields -->
+                    <field name="year"/>
+                    <field name="program"/>
+                    <field name="subprogram"/>
+                    <field name="dependency"/>
+                    <field name="subdependency"/>
+                    <field name="item"/>
+                    <field name="dv"/>
+                    <field name="origin_resource"/>
+                    <field name="ai"/>
+                    <field name="conversion_program"/>
+                    <field name="departure_conversion"/>
+                    <field name="expense_type"/>
+                    <field name="location"/>
+                    <field name="portfolio"/>
+                    <field name="project_type"/>
+                    <field name="project_number"/>
+                    <field name="stage"/>
+                    <field name="agreement_type"/>
+                    <field name="agreement_number"/>
+                    <field name="exercise_type"/>
+
+                    <field name="authorized" widget="monetary" options="{'currency_field': 'currency_id'}" sum="Total Authorized Amount"/>
+                    <field name="assigned" widget="monetary" options="{'currency_field': 'currency_id'}" sum="Total Assigned Amount"/>
+                    <field name="available" widget="monetary" options="{'currency_field': 'currency_id'}" sum="Total Available Amount" invisible="1"/>
+                    <field name="currency_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_expenditure_budget_imported_line" model="ir.actions.act_window">
+            <field name="name">Expenditure budget imported line</field>
+            <field name="res_model">expenditure.budget.line</field>
+            <field name="view_mode">tree,search</field>
+            <field name="view_id" ref="expenditure_budget_line_tree_view"/>
+            <field name="search_view_id" ref="expenditure_budget_imported_line_search_view"/>
+            <field name="context">{}</field>
+        </record>
+
+        <record id="action_expenditure_budget_success_line" model="ir.actions.act_window">
+            <field name="name">Expenditure budget success line</field>
+            <field name="res_model">expenditure.budget.line</field>
+            <field name="view_mode">tree,search</field>
+            <field name="view_id" ref="expenditure_budget_line_success_tree_view"/>
+            <field name="search_view_id" ref="expenditure_budget_success_line_search_view"/>
+            <field name="context">{}</field>
+        </record>
+
+        <record id="tree_id" model="ir.actions.act_window.view"> 
+            <field eval="3" name="sequence"/> 
+            <field name="view_mode">tree</field> 
+            <field name="view_id" ref="expenditure_budget_line_tree_view"/> 
+            <field name="act_window_id" ref="action_expenditure_budget_imported_line"/> 
+        </record>
+
+        <record id="tree_id1" model="ir.actions.act_window.view"> 
+            <field eval="3" name="sequence"/> 
+            <field name="view_mode">tree</field> 
+            <field name="view_id" ref="expenditure_budget_line_success_tree_view"/> 
+            <field name="act_window_id" ref="action_expenditure_budget_success_line"/> 
+        </record>
+    </data>
+</odoo>

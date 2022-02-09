@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template id="template" xml:space="preserve">
+	 
+	<t t-extend="ImportView">
+		<t t-jquery='.oe_import_debug_options' t-operation='replace'>
+                <div class="oe_import_debug_options">
+                    <div title="If the model uses openchatter, history tracking will set up subscriptions and send notifications during the import, but lead to a slower import." >
+                        <input type="checkbox" id="oe_import_tracking"/>
+                        <label for="oe_import_tracking">
+                            Track history during import
+                        </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="oe_import_has_header"
+                               id="oe_import_has_header" checked="checked"/>
+                        <label for="oe_import_has_header">The first row
+                         contains the label of the column</label>
+                    </div>
+                    <div class="js_import_options  oe_import_batch_limit">
+                        <label for="oe_import_batch_limit">Batch limit</label>
+                        <input id="oe_import_batch_limit" value="2000"/>
+                    </div>
+                    <div class="js_import_options " title="Warning: ignores the labels line, empty lines and
+                            lines composed only of empty cells">
+                        <label for="oe_import_row_start">Start at line</label>
+                        <input id="oe_import_row_start" value="1"/>
+                    </div>
+                    <div >
+                        <input type="checkbox" class="oe_import_advanced_mode" checked="checked"
+                               id="oe_import_advanced_mode"/>
+                        <label for="oe_import_advanced_mode">Show fields of relation fields (advanced)</label>
+                    </div>
+                </div>
+		
+		</t>
+	</t>
+</template>

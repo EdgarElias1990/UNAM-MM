@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for agreement number model -->
+        <record id="agreement_number_search_view" model="ir.ui.view">
+            <field name="name">agreement.number.search.view</field>
+            <field name="model">agreement.number</field>
+            <field name="arch" type="xml">
+                <search string="Agreement number">
+                    <field name="code"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Code" name='code' context="{'group_by':'code'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for agreement number model -->
+        <record id="agreement_number_form_view" model="ir.ui.view">
+            <field name="name">agreement.number.form.view</field>
+            <field name="model">agreement.number</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="code"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for agreement number model -->
+        <record id="agreement_number_tree_view" model="ir.ui.view">
+            <field name="name">agreement.number.tree.view</field>
+            <field name="model">agreement.number</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for agreement number views -->
+        <record id="action_agreement_number" model="ir.actions.act_window">
+            <field name="name">Agreement Number</field>
+            <field name="res_model">agreement.number</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="agreement_number_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+  
+          <!-- search view for calendar assigned amounts model -->
+        <record id="report_calendar_amount_assign_line_search_view" model="ir.ui.view">
+            <field name="name">report.calendar.amount.assign.line.search.view</field>
+            <field name="model">report.calendar.amount.assign.line</field>
+            <field name="arch" type="xml">
+                <search string="Reports">
+                    <group expand="1" string="Group By">
+                        <filter string="Grouping by Object of Expenditure" name='item_first' context="{'group_by':'item_first'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+  
+          <record id="report_calendar_amount_assign_line_tree_view" model="ir.ui.view">
+            <field name="name">report.calendar.amount.assign.line.tree.view</field>
+            <field name="model">report.calendar.amount.assign.line</field>
+            <field name="arch" type="xml">
+                <tree>
+                	<field name="line_id" invisible="1"/>
+                    <field name="item_first" invisible="1"/>
+                    <field name="item_second"/>
+                    <field name="annual_amount"/>
+                    
+                    <field name="january"/>
+                    <field name="amount_deposite_january"/>
+                    <field name="clc_january"></field>
+                    <field name="pending_january"/>
+						                    
+                    <field name="february"/>
+                    <field name="amount_deposite_february"/>
+                    <field name="clc_february"></field>
+                    <field name="pending_february"/>
+
+                    <field name="march"/>
+                    <field name="amount_deposite_march"/>
+                    <field name="clc_march"></field>
+                    <field name="pending_march"/>
+
+                    <field name="april"/>
+                    <field name="amount_deposite_april"/>
+                    <field name="clc_april"></field>
+                    <field name="pending_april"/>
+
+                    <field name="may"/>
+                    <field name="amount_deposite_may"/>
+                    <field name="clc_may"></field>
+                    <field name="pending_may"/>
+
+                    <field name="june"/>
+                    <field name="amount_deposite_june"/>
+                    <field name="clc_june"></field>
+                    <field name="pending_june"/>
+
+                    <field name="july"/>
+                    <field name="amount_deposite_july"/>
+                    <field name="clc_july"></field>
+                    <field name="pending_july"/>
+
+                    <field name="august"/>
+                    <field name="amount_deposite_august"/>
+                    <field name="clc_august"></field>
+                    <field name="pending_august"/>
+
+                    <field name="september"/>
+                    <field name="amount_deposite_september"/>
+                    <field name="clc_september"></field>
+                    <field name="pending_september"/>
+
+                    <field name="october"/>
+                    <field name="amount_deposite_october"/>
+                    <field name="clc_october"></field>
+                    <field name="pending_october"/>
+
+                    <field name="november"/>
+                    <field name="amount_deposite_november"/>
+                    <field name="clc_november"></field>
+                    <field name="pending_november"/>
+
+                    <field name="december"/>
+                    <field name="amount_deposite_december"/>
+                    <field name="clc_december"></field>
+                    <field name="pending_december"/>
+                    
+  				</tree>
+  			</field>
+  		</record>
+          <!-- action for calendar assigned amounts views -->
+        <record id="action_report_calendar_amount_assign" model="ir.actions.act_window">
+            <field name="name">Report Calendar of assigned amounts</field>
+            <field name="res_model">report.calendar.amount.assign.line</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{'search_default_item_first':1}</field>
+        </record>
+  
+
+    <!-- menu for calendar of assigned amounts -->
+    <menuitem
+        id="menu_assigned_amount_control_report"
+        name="Assigned Amount Control Report"
+        parent="menu_jt_finance_report"
+        sequence="1"
+        action="action_report_calendar_amount_assign"
+    />
+
+
+       <record id="action_export_excel_assigned_amount" model="ir.actions.server">
+            <field name="name">Export Summary</field>
+            <field name="model_id" ref="jt_finance.model_report_calendar_amount_assign_line"/>
+            <field name="binding_model_id" ref="jt_finance.model_report_calendar_amount_assign_line"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.action_get_excel_report()
+            </field>
+        </record>
+
+	</data>
+</odoo>

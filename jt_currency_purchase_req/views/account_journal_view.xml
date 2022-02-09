@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+         <record id="account_bank_journal_form_inherit_view" model="ir.ui.view">
+            <field name="name">account.bank.journal.form.view.inh</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_bank_journal_form"/>
+            <field name="arch" type="xml">
+            	
+                <xpath expr="//group/group[2]/field[@name='contract']" position="after">
+                    <field name="account_type"/>
+                    <field name="dependency_id"  context="{'show_for_agreement':1}"/>
+                </xpath>
+                <xpath expr="//page[@name='update_history']" position="after">
+                    <page name="auth_sign" string="Authorized Signatures">
+                        <field name="auth_sign_ids"  nolabel="1">
+                            <tree>
+                            <field name="employee_id"/>
+                            <field name="poistion"/>
+                            <field name="movement"/>
+                            <field name="type_of_signature"/>
+                            <field name="ownership"/>
+                         </tree>
+                         <form>
+                            <group>
+                            <field name="employee_id"/>
+                            <field name="poistion"/>
+                            <field name="movement"/>
+                            <field name="type_of_signature"/>
+                            <field name="ownership"/>
+                        </group>
+                         </form>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="account.action_account_bank_journal_form" model="ir.actions.act_window">
+            <field name="context">{'default_type': 'bank','show_for_agreement':1}</field>
+        </record>
+
+
+    </data>
+</odoo>

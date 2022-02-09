@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- template for proforma budget summary -->
+        <template id="summary_report_template">
+            <t t-if="env.context.get('type') == 'download_pdf'" t-call="web.html_container">
+                <div class="page">
+                    <t t-call="web.external_layout">
+                        <style type="text/css">
+                            .cust_tbl tr td, .cust_tbl tr th{
+                                text-align: center;
+                                border: 1px solid #c9c7c7;
+                            }
+                            .cust_tbl tr th{
+                                background-color: #edeaea;
+                            }
+                            .cust_tbl tr:nth-child(odd){
+                                background-color: #f7f7f7;
+                            }
+                            .cust_tbl tr:nth-child(even){
+                                background-color: white;
+                            }
+                        </style>
+                        <!-- Column heading -->
+                        <center id='tbl_wo'>
+                            <h3>Proforma Budget Summary Report</h3>
+                            <table class="cust_tbl table table-bordered" width="100%">
+                                <tr>
+                                    <th>Program code</th>
+                                    <th>Authorized</th>
+                                    <th>Assigned</th>
+                                    <th>Modified</th>
+                                    <th>For exercising</th>
+                                    <th>Committed</th>
+                                    <th>Accrued</th>
+                                    <th>Exercised</th>
+                                    <th>Paid out</th>
+                                    <th>Available</th>
+                                </tr>
+                                <t t-foreach="env.context.get('program_code')" t-as="code">
+                                    <t t-set="code" t-value="request.env['program.code'].sudo().browse(code)"/>
+                                    <tr>
+                                        <td><t t-esc="code.program_code"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </center>
+                    </t>
+                </div>
+            </t>
+            <t t-if="env.context.get('type') == 'view'">
+                <div class="page">
+                    <style type="text/css">
+                        .cust_tbl tr td, .cust_tbl tr th{
+                            text-align: center;
+                            border: 1px solid #c9c7c7;
+                        }
+                        .cust_tbl tr th{
+                            background-color: #edeaea;
+                        }
+                        .cust_tbl tr:nth-child(odd){
+                            background-color: #f7f7f7;
+                        }
+                        .cust_tbl tr:nth-child(even){
+                            background-color: white;
+                        }
+                    </style>
+                    <center id='tbl_wo'>
+                        <h3>Proforma Budget Summary Report</h3>
+                        <table class="cust_tbl table table-bordered" width="100%">
+                            <tr>
+                                <th>Program code</th>
+                                <th>Authorized</th>
+                                <th>Assigned</th>
+                                <th>Modified</th>
+                                <th>For exercising</th>
+                                <th>Committed</th>
+                                <th>Accrued</th>
+                                <th>Exercised</th>
+                                <th>Paid out</th>
+                                <th>Available</th>
+                            </tr>
+                            <t t-foreach="env.context.get('program_code')" t-as="code">
+                                <t t-set="code" t-value="request.env['program.code'].sudo().browse(code)"/>
+                                <tr>
+                                    <td><t t-esc="code.program_code"/></td>
+                                </tr>
+                            </t>
+                        </table>
+                    </center>
+                </div>
+            </t>
+        </template>
+
+        <!-- paperformat for proforma budget summary -->
+        <record id="summary_report_paperformat" model="report.paperformat">
+            <field name="name">Proforma Budget Summary Report</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">60</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">55</field>
+            <field name="dpi">80</field>
+        </record>
+
+        <!-- report for proforma budget summary -->
+        <report 
+            id="summary_report" 
+            model="proforma.budget.summary" 
+            string="Proforma Budget Summary Report" 
+            report_type="qweb-html" 
+            name="jt_budget_mgmt.summary_report_template" 
+            file="jt_budget_mgmt.summary_report_template" 
+            print_report_name="object.name" 
+            paperformat="jt_budget_mgmt.summary_report_paperformat" 
+            />
+    </data>
+</odoo>

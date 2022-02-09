@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+    	<!-- Check Printing Journal -->
+    	
+	     <record id="supplier_check_printing_journal" model="account.journal">
+	        <field name="name">Supplier Check Printing Journal</field>
+	        <field name="code">IPRO</field>
+	        <field name="type">general</field>
+	    </record>
+	     <record id="payroll_check_printing_journal" model="account.journal">
+	        <field name="name">Payroll Check Printing Journal</field>
+	        <field name="code">INOM</field>
+	        <field name="type">general</field>
+	    </record>
+	     <record id="project_check_printing_journal" model="account.journal">
+	        <field name="name">Daily Check Printing Projects</field>
+	        <field name="code">IPRY</field>
+	        <field name="type">general</field>
+	    </record>
+	     <record id="pension_check_printing_journal" model="account.journal">
+	        <field name="name">Journal Printing of Pension Pay Checks</field>
+	        <field name="code">IPEN</field>
+	        <field name="type">general</field>
+	    </record>
+	    <!-- Check Protection Journal -->
+	     <record id="supplier_checks_protection_journal" model="account.journal">
+	        <field name="name">Supplier Checks Protection Journal</field>
+	        <field name="code">PPROV</field>
+	        <field name="type">general</field>
+	    </record>
+	     <record id="payroll_checks_protection_journal" model="account.journal">
+	        <field name="name">Payroll Check Protection Journal</field>
+	        <field name="code">PNOM</field>
+	        <field name="type">general</field>
+	    </record>
+	     <record id="project_checks_protection_journal" model="account.journal">
+	        <field name="name">Journal Protection of Checks Projects</field>
+	        <field name="code">PPRY</field>
+	        <field name="type">general</field>
+	    </record>
+	     <record id="pension_checks_protection_journal" model="account.journal">
+	        <field name="name">Journal Protection of Checks Payment of Pension</field>
+	        <field name="code">PPEN</field>
+	        <field name="type">general</field>
+	    </record>
+
+	    
+	 </data>
+</odoo>

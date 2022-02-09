@@ -1,0 +1,3375 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_projects
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-06 18:08+0000\n"
+"PO-Revision-Date: 2021-04-06 13:52-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_MX\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#, python-format
+msgid " Accumulated of "
+msgstr " Acumulado de "
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_curr_exp_project.py:0
+#, python-format
+msgid "% Total overdue"
+msgstr "% Total expirados"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#, python-format
+msgid "443 GTOS I.E. REC. CONCURRENTES CYT"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#, python-format
+msgid "448 GTOS I.E. CONACYT CHEQUERAS"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#, python-format
+msgid "449 GTOS I.E. OTROS PROYS C/CHEQUERA"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid ""
+"<b>\n"
+"                                <span style=\"font-size:17px;margin-top:10px;\">Supplier Payment Request</span>\n"
+"                                </b>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_current_research_projects
+msgid ""
+"<b><span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO</span></b><br/>\n"
+"                        <span style=\"font-size:16px;\">PATRONATO UNIVERSITARIO</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:14px;\">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">CONTADURÍA GENERAL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN</span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_current_exp_projects
+msgid ""
+"<b><span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO</span></b><br/>\n"
+"                        <span style=\"font-size:16px;\">PATRONATO UNIVERSITARIO</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:14px;\">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN</span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "<b><span style=\"margin-left:350px;\">BENEFICIARY DATA</span></b><br/>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid ""
+"<br/>\n"
+"                            <b><span style=\"margin-left:20px;font-size:16px;\">Dependencia:                         </span></b>\n"
+"                            <b><span style=\"margin-left:20px;font-size:16px;\">Subdependencia:      </span></b>\n"
+"                            <b><span style=\"margin-left:20px;font-size:16px;\">Folio de dependencia:      </span></b>\n"
+"                            <b><span style=\"margin-left:20px;font-size:16px;\">Fetcha:</span></b><br/><br/>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid ""
+"<br/>\n"
+"                            <b><span style=\"margin-left:20px;font-size:16px;\">Medio de pago:                      </span></b>\n"
+"                            <b><span style=\"margin-left:20px;font-size:16px;\">Moneda:                    </span></b>\n"
+"                            <b><span style=\"margin-left:20px;font-size:16px;\">Documentos:                    </span></b>\n"
+"                            <b><span style=\"margin-left:20px;font-size:16px;\">Formas:</span></b><br/><br/>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid ""
+"<br/>\n"
+"                            <b><span style=\"margin-left:20px;font-size:16px;\">Name:</span></b>\n"
+"                            <b><span style=\"margin-left:225px;font-size:16px;\">Key:</span></b>\n"
+"                            <b><span style=\"margin-left:165px;font-size:16px;\">RFC:</span></b><br/><br/>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid ""
+"<br/>\n"
+"                            <b><span style=\"margin-left:350px;\">DATA FOR DISCHARGE</span></b>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid ""
+"<span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Invoice</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Credit Note</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Bill</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Refund</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Sales Receipt</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Purchase Receipt</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_request_reimbursement
+msgid "<span class=\"align-text-bottom\">Secretario Administrativo</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_request_reimbursement
+msgid "<span class=\"align-text-bottom\">Titular de la dependencia</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.search_template_project_type
+msgid ""
+"<span class=\"fa fa-book\"/>\n"
+"            Project Type:"
+msgstr ""
+"<span class=\"fa fa-book\"/>\n"
+"            Tipo de Proyecto:"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.search_template_subdependancy
+msgid ""
+"<span class=\"fa fa-book\"/>\n"
+"            Sub Dependency:"
+msgstr ""
+"<span class=\"fa fa-book\"/>\n"
+"            Subdependencia:"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_remnants_by_papiit_papime_infocab
+msgid ""
+"<span style=\"font-size:16px;\">UNIVERSITY BOARD TREASURY</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:14px;\">GENERAL DIRECTORATE OF BUDGETARY CONTROL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">GENERAL ACCOUNTING</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">RESEARCH PROJECT CONTROL DEPARTMENT</span>\n"
+"                        <br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">PATRONATO UNIVERSITARIO TESORERÍA</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:14px;\">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">CONTADURÍA GENERAL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN</span>\n"
+"                        <br/>"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_program_papiit_papime_infocab
+msgid ""
+"<span style=\"font-size:16px;\">UNIVERSITY BOARD TREASURY</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:14px;\">GENERAL DIRECTORATE OF BUDGETARY CONTROL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">GENERAL ACCOUNTING</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">RESEARCH PROJECT CONTROL DEPARTMENT</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">INTEGRATION OF REMAINING RESOURCES BY PAPIIT, PAPIME, INFOCAB PROGRAM</span>\n"
+"                        <br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">PATRONATO UNIVERSITARIO TESORERÍA</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:14px;\">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">CONTADURÍA GENERAL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">INTEGRACIÓN DE RECURSOS REMANENTES POR PROGRAMA PAPIIT, PAPIME, INFOCAB</span>\n"
+"                        <br/>"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_papiit_papime_infocab_iacod
+msgid ""
+"<span style=\"font-size:16px;\">UNIVERSITY BOARD TREASURY</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:14px;\">GENERAL DIRECTORATE OF BUDGETARY CONTROL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">GENERAL ACCOUNTING</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">RESEARCH PROJECT CONTROL DEPARTMENT</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">INTEGRATION OF RESOURCES PAPIIT, PAPIME, INFOCAB,\n"
+"                        IACOD EDITIONS</span>\n"
+"                        <br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">PATRONATO UNIVERSITARIO TESORERÍA</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:14px;\">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">CONTADURÍA GENERAL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">INTEGRACIÓN DE RECURSOS EDICIONES PAPIIT, PAPIME,\n"
+"                        INFOCAB, IACOD</span>\n"
+"                        <br/>"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_airplane_ticket_upi_papiit_projects
+msgid ""
+"<span style=\"font-size:16px;\">UNIVERSITY BOARD TREASURY</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:14px;\">GENERAL DIRECTORATE OF BUDGETARY CONTROL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">GENERAL ACCOUNTING</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">RESEARCH PROJECT CONTROL DEPARTMENT</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">PAPIIT PLANE TICKETS INTEGRATION</span>\n"
+"                        <br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">PATRONATO UNIVERSITARIO TESORERÍA</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:14px;\">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">CONTADURÍA GENERAL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">INTEGRACIÓN BOLETOS DE AVIÓN PAPIIT</span>\n"
+"                        <br/>"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_upi_papiit_projects
+msgid ""
+"<span style=\"font-size:16px;\">UNIVERSITY BOARD TREASURY</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:14px;\">GENERAL DIRECTORATE OF BUDGETARY CONTROL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">GENERAL ACCOUNTING</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">RESEARCH PROJECT CONTROL DEPARTMENT</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">REPORT ON CURRENT RESEARCH PROJECTS OF THE</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">PAPIIT, PAPIME AND INFOCAB PROGRAMS</span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_int_of_project_budget_resources
+msgid ""
+"<span style=\"font-size:16px;\">UNIVERSITY BOARD TREASURY</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:16px;\">TREASURY</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:14px;\">GENERAL DIRECTORATE OF BUDGETARY CONTROL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">GENERAL ACCOUNTING</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">RESEARCH PROJECT CONTROL DEPARTMENT</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">REPORT ON CURRENT RESEARCH PROJECTS OF THE</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">PAPIIT, PAPIME AND INFOCAB PROGRAMS</span>"
+msgstr ""
+"<span style=\"font-size:16px;\">PATRONATO UNIVERSITARIO TESORERÍA</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:14px;\">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">CONTADURÍA GENERAL</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">INFORME DE PROYECTOS DE INVESTIGACIÓN VIGENTES DE LOS PROGRAMAS</span>\n"
+"                        <br/>\n"
+"                        <span style=\"font-size:12px;\">PAPIIT, PAPIME E INFOCAB</span>\n"
+"                        <br/>"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "<span style=\"margin-left:600px;\">Total                  </span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "<span>Account and / or Program Code</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.search_template_subdependancy
+msgid "<span>All</span>"
+msgstr "Todo"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "<span>Amount</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<span>Clave de egreso</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<span>Cuenta y/o codigo programatico</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs
+msgid "<span>Description</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "<span>Egress Key</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs
+msgid "<span>Egress key</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_int_of_project_budget_resources
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_airplane_ticket_upi_papiit_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_current_exp_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_current_research_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_papiit_papime_infocab_iacod
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_program_papiit_papime_infocab
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_remnants_by_papiit_papime_infocab
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_upi_papiit_projects
+msgid "<span>Fecha y hora de impresión</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<span>Importe</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<span>Precio Unitario</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_request_field model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_school_intership
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_travel_request
+msgid "<span>Secretario Administrativo</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "<span>Subtotal</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs
+msgid "<span>Taxes</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_request_field model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_school_intership
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_travel_request
+msgid "<span>Titular de la dependencia</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs
+msgid "<span>Type of business</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_request_field model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_request_reimbursement
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_school_intership model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_travel_request
+msgid "<span>UNIDAD DE PROCESO ADMINISTRATIVO/MODULO</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs
+msgid "<span>Unit Price</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "<span>Unit price</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs
+msgid "<span>VAT</span>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs
+msgid "<strong align=\"center\" style=\"text-align:center;\">Appointment:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "<strong>Agreement Type:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "<strong>Agreement(s):</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "<strong>Appointment:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Baneficiary Key:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "<strong>Category Key:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Clave categoria:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>DESTINO</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Dependencia:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Documentos:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Fetcha:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Folio de dependencia:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Formas:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Key:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>MOTIVO DEL VIAJE</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Medio de pago:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Moneda:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Name:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Nombramiento:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Nombre del responsable</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "<strong>Project(s):</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>RFC:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "<strong>Responsible Name:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs
+msgid "<strong>Responsible Position:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Subdependencia:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Subtotal</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "<strong>Total:</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/cumulative_comparison.py:0 model:ir.actions.client,name:jt_projects.action_cumulative_comparision
+#: model:ir.model,name:jt_projects.model_jt_projects_cumulative_comparison model:ir.ui.menu,name:jt_projects.menu_cumulative_comparison
+#, python-format
+msgid "ACCUMULATED CHECKS"
+msgstr "Comprobaciones acumuladas"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_of_project_budget_resources.py:0
+#, python-format
+msgid "ASIGNADOS Y AUTHORIZADOS "
+msgstr "ASIGNADOS Y AUTORIZADOS "
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__agreement_type_id
+msgid "AT"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__account_move__status__accept
+msgid "Accepted"
+msgstr "Aceptado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_remaining_resource__account_id
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_accounts__move_type__account_cancel
+msgid "Account Cancellation"
+msgstr "Cancelación de cuenta"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_accounts__move_type__account_open
+msgid "Account Open"
+msgstr "Apertura de cuenta  "
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.account_journal_form_view_project
+msgid "Account of Extraordinary Income"
+msgstr "Cuentas de Ingresos Extraordinarios"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.account_journal_form_view_project
+msgid "Account receivable CFDIS"
+msgstr "Cuentas por cobrar CFDI"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_current_project.py:0
+#, python-format
+msgid "Accounting Balance at"
+msgstr "Saldo contable al"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.open_request_accounts_from_view model_terms:ir.ui.view,arch_db:jt_projects.request_accounts_from_view
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_transfer_from_view
+msgid "Accounting Notes"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/remaining_resources.py:0
+#, python-format
+msgid "Accounting account"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_current_project.py:0
+#, python-format
+msgid "Accounting account of various debtors"
+msgstr "Cuenta contable de varios deudores"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#, python-format
+msgid "Accounting accounts (443,448 and 449) that affect Income / Expense"
+msgstr "Cuentas contables (443,448 y 449) que afectan Ingresos / Gastos"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0 model:ir.actions.client,name:jt_projects.action_accounting_bank_balance_report
+#: model:ir.model,name:jt_projects.model_jt_projects_bank_account_balances model:ir.ui.menu,name:jt_projects.menu_accounting_and_bank_account_balances
+#, python-format
+msgid "Accounting and bank account balances"
+msgstr "Saldos Contables y de cuentas bancarias"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#, python-format
+msgid "Accumulated"
+msgstr "Acumulado"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0 model:ir.actions.client,name:jt_projects.action_accumulated_verfication_report
+#: model:ir.model,name:jt_projects.model_jt_projects_accumulated_verification_recorded model:ir.ui.menu,name:jt_projects.menu_accumulated_verfication_recorded
+#, python-format
+msgid "Accumulated verification recorded in Income / Expense"
+msgstr "Comprobación acumulada registrado en Ingresos/Gastos"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_current_project.py:0
+#, python-format
+msgid "Active project control system balances"
+msgstr "Saldos activos del sistema de control de proyectos"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__desc_institutional_activity
+msgid "Activity Description Institutional"
+msgstr "Descripción de Actividad Institucional."
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Add a line"
+msgstr "Agregar Linea"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Add a note"
+msgstr "Agregar nota"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Add a section"
+msgstr "Agregar Sección"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Add an internal note..."
+msgstr "Agregar una Nota Interna"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.action_adequacies_project model:ir.model,name:jt_projects.model_adequacies
+#: model:ir.ui.menu,name:jt_projects.menu_adequacies_amounts_project
+msgid "Adequacies"
+msgstr "Adecuaciones"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Adequacies Lines"
+msgstr "Líneas de Adecuación"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__administrative_forum
+msgid "Administrative Forms"
+msgstr "Formas administrativas"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__administrative_manager_id
+msgid "Administrative Manager"
+msgstr "Gerente Administrativo"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__admin_manager
+msgid "Administrative manager"
+msgstr "Responsable administrativo"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.project_registry_form_view
+msgid "Agreement"
+msgstr "Convenio"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__agreement_name
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__custom_agreement_name
+msgid "Agreement Name"
+msgstr "Nombre de convenio"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__agreement_number
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__agreement_number
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__custom_agreement_number
+msgid "Agreement Number"
+msgstr "Numero de convenio"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__agreement_type_id
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__agreement_type_id model_terms:ir.ui.view,arch_db:jt_projects.project_registry_form_view
+msgid "Agreement Type"
+msgstr "Tipo de convenio"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__number_agreement
+msgid "Agreement number"
+msgstr "Númerod e Convenio"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__aggrement
+msgid "Agreement or Project reference"
+msgstr "Convenio o referencia de proyecto"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__allocated_amount
+msgid "Allocated Amount"
+msgstr "Monto asignado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__amount model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "Amount"
+msgstr "Tipo Importe"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__verification_expense_line__amount__amount_me
+msgid "Amount ME"
+msgstr "Importe ME"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__exercised_amount
+msgid "Amount exercised"
+msgstr "Monto ejercido"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__ministrations_amount
+msgid "Amount of ministrations"
+msgstr "Monto de la ministración"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__amount_req_tranfer
+msgid "Amount of the transfer requested"
+msgstr "Monto requerido de la transferencia"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__application_approval_date
+msgid "Application Approval Date"
+msgstr "Fecha de aprobación de solicitud"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__application_concept
+msgid "Application Concept"
+msgstr "Concepto de aplicación"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__application_date
+msgid "Application Date"
+msgstr "Fecha de aplicación"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.account_journal_form_view_project
+msgid "Application of income"
+msgstr "Aplicación de Ingreso"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.close_project_form_view model_terms:ir.ui.view,arch_db:jt_projects.rejection_form_view
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_confirm_form_view
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.verification_of_expense_from_view
+msgid "Approve"
+msgstr "Aprobar"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__expense_verification__status__approve
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_accounts__status__approved
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_transfer__status__approved
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__approved_amount
+msgid "Approved Amount"
+msgstr "Monto aprobado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__request_area
+msgid "Area requesting the transfer"
+msgstr "Área que solicita la transferencia"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_custom_project_programcode__total_assigned_amt
+msgid "Assigned Total Annual"
+msgstr "Total Asignado Anual"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__authorized_amount
+msgid "Authorized Amount"
+msgstr "Monto autorizado"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "BENEFICIARY DATA"
+msgstr "Datos del Beneficiario"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__fund_type
+msgid "Background"
+msgstr "Antecedente"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__bank_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_request_confirm__bank_account_id
+msgid "Bank"
+msgstr "Banco"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__bank_acc_number_id
+#: model:ir.model.fields,field_description:jt_projects.field_request_confirm__bank_acc_number_id
+msgid "Bank Account"
+msgstr "Cuenta bancaria"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__bank_account_id
+#, python-format
+msgid "Bank account"
+msgstr "banco"
+
+#. module: jt_projects
+#: model:ir.ui.menu,name:jt_projects.main_menu_open_request_account
+msgid "Bank Account Management"
+msgstr "Gestión de Cuentas Bancarias"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__bank_acc_number_id
+msgid "Bank Key"
+msgstr "Cuenta Bancaria"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0
+#, python-format
+msgid "Bank account"
+msgstr "Cuenta bancaria"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_request_field model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_request_reimbursement
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_school_intership model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_travel_request
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "Barcode"
+msgstr "Código de Barras"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__beneficiary_name
+msgid "Beneficiary Name"
+msgstr "Nombre del beneficiario"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Beneficiary of the payment"
+msgstr "Beneficiario del Pago"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__bill model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "Bill"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__conac_ai_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__conac_capitalizable_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__conac_ei_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__conac_income_CFDIS_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__conac_ministrations_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__conac_receivable_CFDIS_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__conac_ai_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__conac_capitalizable_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__conac_ei_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__conac_income_CFDIS_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__conac_ministrations_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__conac_receivable_CFDIS_credit_account_id
+msgid "CONAC Credit Account"
+msgstr "Cuenta de Crédito CONAC"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__conac_ai_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__conac_capitalizable_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__conac_ei_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__conac_income_CFDIS_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__conac_ministrations_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__conac_receivable_CFDIS_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__conac_ai_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__conac_capitalizable_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__conac_ei_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__conac_income_CFDIS_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__conac_ministrations_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__conac_receivable_CFDIS_debit_account_id
+msgid "CONAC Debit Account"
+msgstr "Cuenta de Débito CONAC"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__project_type__conacyt model:ir.ui.menu,name:jt_projects.conacyt_submenu
+#: model:ir.ui.menu,name:jt_projects.menu_conacyt
+msgid "CONACYT"
+msgstr "CONACYT"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.rejection_checks_action
+msgid "CONACYT Check Rejections"
+msgstr "Motivos de rechazo CONACYT"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_program_code__conacyt_code
+msgid "CONACYT Code"
+msgstr "Código CONACYT"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__is_conacyt_project
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__is_conacyt_project
+#: model:ir.model.fields,field_description:jt_projects.field_program_code__conacyt_project_id
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__conacyt_project_id model_terms:ir.ui.view,arch_db:jt_projects.account_journal_form_view_project
+msgid "CONACYT Project"
+msgstr "Proyecto CONACYT"
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_project_project
+msgid "CONACYT Project Registry"
+msgstr "Registro de Proyectos CONACYT"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.project_registry_action_conacyt model:ir.ui.menu,name:jt_projects.menu_project_registry
+msgid "CONACYT Projects"
+msgstr "Proyectos CONACYT"
+
+#. module: jt_projects
+#: model:ir.ui.menu,name:jt_projects.menu_rejection_checks
+msgid "CONACYT check rejections"
+msgstr "Motivos de rechazo CONACYT"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.account_request_reject_form_view model_terms:ir.ui.view,arch_db:jt_projects.close_project_form_view
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit model_terms:ir.ui.view,arch_db:jt_projects.project_program_code_form_view
+#: model_terms:ir.ui.view,arch_db:jt_projects.rejection_form_view model_terms:ir.ui.view,arch_db:jt_projects.request_confirm_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_transfer__status__canceled
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.cancellation_request_action
+msgid "Cancellation Request"
+msgstr "Solicitud de Cancelación"
+
+#. module: jt_projects
+#: model:ir.ui.menu,name:jt_projects.menu_cancel_request
+msgid "Cancellation Requests"
+msgstr "Solicitud de Cancelación"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.account_journal_form_view_project
+msgid "Capitalizable Assets"
+msgstr "Activos capitalizables"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__check_counts
+msgid "Check Counts"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__check_digit
+msgid "Check Digit (DV)"
+msgstr "Digito Verificador (DV)"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__check_project_due
+msgid "Check Project Due"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.actions.server,name:jt_projects.ir_cron_check_project_due_ir_actions_server model:ir.cron,cron_name:jt_projects.ir_cron_check_project_due
+#: model:ir.cron,name:jt_projects.ir_cron_check_project_due
+msgid "Check Project Due and Expire"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__check_project_expire
+msgid "Check Project expire"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0 code:addons/jt_projects/reports/integration_current_project.py:0
+#, python-format
+msgid "Checked"
+msgstr "Comprobado"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.project_registry_form_view
+msgid "Checks"
+msgstr "Comprobado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_close__close_label
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__project_status__close model_terms:ir.ui.view,arch_db:jt_projects.project_registry_form_view
+msgid "Close"
+msgstr "Cerrado"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__status__closed
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_close__close_letter
+msgid "Closing Official Letter"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__co_responsible_id
+msgid "Co-responsible Name"
+msgstr "Nombre del Co-responsable"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__co_responsible_rfc
+msgid "Co-responsible RFC"
+msgstr "RFC del Co-responsable"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__is_code_create
+msgid "Code Created"
+msgstr "Crear Código"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__currency_id
+msgid "Coin"
+msgstr "Moneda"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/comparison_of_balance_check.py:0 model:ir.actions.client,name:jt_projects.action_comparison_of_balance_report
+#: model:ir.model,name:jt_projects.model_jt_projects_comparison_balances_check model:ir.ui.menu,name:jt_projects.menu_comparison_balances_to_check
+#, python-format
+msgid "Comparison of balances to check"
+msgstr "Comparativo de saldos a comprobar"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0 code:addons/jt_projects/reports/remaining_resources.py:0
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__concept model:ir.model.fields,field_description:jt_projects.field_remaining_resource__concept
+#, python-format
+msgid "Concept"
+msgstr "Concepto"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#, python-format
+msgid "Concepts that do not affect Income / Expenditure"
+msgstr "Conceptos que no afectan Ingresos / Gastos"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__project_type__concurrent
+msgid "Concurrent"
+msgstr "Concurrente"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.open_request_accounts_from_view
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.action_request_confirmation
+msgid "Confirm Request"
+msgstr "Confirmar Solicitud"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_accounts__status__confirmed
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_transfer__status__confirmed model_terms:ir.ui.view,arch_db:jt_projects.cancellation_request_view
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__customer_number
+msgid "Contact No."
+msgstr "Numero de contrato."
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__no_contract
+msgid "Contract No."
+msgstr "No. de contrato."
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__budget_program_conversion_id
+msgid "Conversion Program SHCP"
+msgstr "Conversión de Programa Presupuestario"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_current_project.py:0
+#, python-format
+msgid "Countable balance"
+msgstr "Saldo contable"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.project_registry_form_view
+msgid "Create Cod. Program"
+msgstr "Crear Cód. Programático"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_request_reject__create_uid
+#: model:ir.model.fields,field_description:jt_projects.field_custom_project_programcode__create_uid
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__create_uid model:ir.model.fields,field_description:jt_projects.field_project_close__create_uid
+#: model:ir.model.fields,field_description:jt_projects.field_project_custom_stage__create_uid
+#: model:ir.model.fields,field_description:jt_projects.field_project_ministrations__create_uid
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__create_uid
+#: model:ir.model.fields,field_description:jt_projects.field_project_type_custom__create_uid
+#: model:ir.model.fields,field_description:jt_projects.field_reason_for_rejection__create_uid model:ir.model.fields,field_description:jt_projects.field_rejection_checks__create_uid
+#: model:ir.model.fields,field_description:jt_projects.field_remaining_resource__create_uid model:ir.model.fields,field_description:jt_projects.field_request_accounts__create_uid
+#: model:ir.model.fields,field_description:jt_projects.field_request_confirm__create_uid model:ir.model.fields,field_description:jt_projects.field_request_transfer__create_uid
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_request_reject__create_date
+#: model:ir.model.fields,field_description:jt_projects.field_custom_project_programcode__create_date
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__create_date model:ir.model.fields,field_description:jt_projects.field_project_close__create_date
+#: model:ir.model.fields,field_description:jt_projects.field_project_custom_stage__create_date
+#: model:ir.model.fields,field_description:jt_projects.field_project_ministrations__create_date
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__create_date
+#: model:ir.model.fields,field_description:jt_projects.field_project_type_custom__create_date
+#: model:ir.model.fields,field_description:jt_projects.field_reason_for_rejection__create_date model:ir.model.fields,field_description:jt_projects.field_rejection_checks__create_date
+#: model:ir.model.fields,field_description:jt_projects.field_remaining_resource__create_date model:ir.model.fields,field_description:jt_projects.field_request_accounts__create_date
+#: model:ir.model.fields,field_description:jt_projects.field_request_confirm__create_date model:ir.model.fields,field_description:jt_projects.field_request_transfer__create_date
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__currency_id
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.account_journal_form_view_project
+msgid "Currency Purchase"
+msgstr "Compra de Divisas"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_close__current_id
+msgid "Current Id"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_curr_exp_project.py:0
+#, python-format
+msgid "Current projects"
+msgstr "Proyectos vigentes"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "DATOS PARA ELEGRESO"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "DESTINATION"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_reimbursement_template_docs model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "Data for Discharge"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Data validation Status"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Data validation is running in background, Page will be auto refreshed and <b>Data Validation Status</b> will be auto turned off when the process will get finished!"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__ai_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__capitalizable_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__ei_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__income_CFDIS_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__ministrations_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__receivable_CFDIS_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__ai_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__capitalizable_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__ei_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__income_CFDIS_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__ministrations_credit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__receivable_CFDIS_credit_account_id
+msgid "Default Credit Account"
+msgstr "Cuenta acreedora por defecto"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__ai_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__capitalizable_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__ei_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__income_CFDIS_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__ministrations_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__receivable_CFDIS_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__ai_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__capitalizable_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__ei_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__income_CFDIS_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__ministrations_debit_account_id
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__receivable_CFDIS_debit_account_id
+msgid "Default Debit Account"
+msgstr "Cuenta deudora por defecto"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0
+#, python-format
+msgid "Dependence"
+msgstr "Dependencia"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__dependence
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__dependency_id
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__dependency_id model:ir.model.fields,field_description:jt_projects.field_request_transfer__dependency_id
+msgid "Dependency"
+msgstr "Dependencia"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__desc_dependency
+msgid "Dependency Description"
+msgstr "Descripción de Dependencia"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_custom_stage__description
+#: model:ir.model.fields,field_description:jt_projects.field_stage__description model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "Description"
+msgstr "Descripción de la Etapa"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_type__description
+#: model:ir.model.fields,field_description:jt_projects.field_project_type_custom__description 
+msgid "Description"
+msgstr "Descripción Tipo de Proyecto"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_rejection_checks__description
+msgid "Description"
+msgstr "Descripción del Motivo"
+
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__desc_budget_program_conversion
+msgid "Description Conversion Program SHCP"
+msgstr "Descripción de Conversión de Programa Presupuestario"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__desc_expense_type
+msgid "Description Expenditure Type"
+msgstr "Descripción Tipo de Gasto"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__desc_program
+msgid "Description KEY UNAM"
+msgstr "Descripción de Clave de Programa UNAM"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__desc_resource_origin
+msgid "Description Resource Origin"
+msgstr "Descripción Origen del Recurso"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__custom_stage_description
+msgid "Description Stage"
+msgstr "Descripción de la Etapa"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__desc_project_type
+msgid "Description Type of Project"
+msgstr "Descripción Tipo de Proyecto"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__desc_conversion_item
+msgid "Description of Federal Item"
+msgstr "Descripción Partida de Gastos"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__desc_item
+msgid "Description of Item"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__destination_journal_id
+msgid "Destination Bank"
+msgstr "Banco de Destino"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__destination_bank_id
+msgid "Destination Bank Account"
+msgstr "Cuenta bancaria de destino"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "Dias"
+msgstr "Días"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0
+#, python-format
+msgid "Diferencia"
+msgstr "Diferencia"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_request_reject__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_custom_project_programcode__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_accumulated_verification_recorded__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_bank_account_balances__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_budget_resources__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_budget_resources_remanats__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_comparison_balances_check__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_cumulative_comparison__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_airplane_ticket__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_current_expired_project__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_of_curr_resarch_project__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_papiit_papime_infocab_iacod__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_remaining_resources__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_remaining_resources_program__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_remnants__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_upa_papiit_remaining_resources__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_project_close__display_name model:ir.model.fields,field_description:jt_projects.field_project_custom_stage__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_project_ministrations__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_project_type_custom__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_reason_for_rejection__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_rejection_checks__display_name model:ir.model.fields,field_description:jt_projects.field_remaining_resource__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__display_name model:ir.model.fields,field_description:jt_projects.field_request_confirm__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__display_name
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__doc_type
+msgid "Document Type"
+msgstr "Tipo de documento"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__account_request_reject__reason_rejection__discharge
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_accounts__reason_rejection__discharge
+msgid "Does not comply with the documentation supporting the discharge"
+msgstr "No cumple con la documentación que sustente el alta."
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_transfer__status__done
+msgid "Done"
+msgstr "Hecho"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0 model:ir.model.fields.selection,name:jt_projects.selection__project_program_code__state__draft
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_transfer__status__draft model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+#, python-format
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "Egress Key"
+msgstr "Clave de Egreso"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0
+#, python-format
+msgid "End"
+msgstr "Fin"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__proj_end_date
+msgid "End Date"
+msgstr "Fecha Fin"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_curr_exp_project.py:0
+#, python-format
+msgid "Entity"
+msgstr "Entidad"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__expense_verification__status__eraser
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_accounts__status__eraser
+msgid "Eraser"
+msgstr "Borrador"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__exchange_rate model:ir.model.fields,field_description:jt_projects.field_expense_verification__exchange_rate
+msgid "Exchange Rate"
+msgstr "Tipo de cambio"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__exercise
+msgid "Exercise"
+msgstr "Ejercicio"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__expense_id
+msgid "Expense"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__expense_journal_id
+msgid "Expense Journal"
+msgstr "Diario"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/Integration_of_papiit_papime_infocab_iacod_resource.py:0 code:addons/jt_projects/reports/Integration_of_remaining_resources_by_program.py:0
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0 code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#: code:addons/jt_projects/reports/comparison_of_balance_check.py:0 code:addons/jt_projects/reports/cumulative_comparison.py:0
+#: code:addons/jt_projects/reports/integration_airplan_ticket_papiit.py:0 code:addons/jt_projects/reports/integration_curr_exp_project.py:0
+#: code:addons/jt_projects/reports/integration_current_project.py:0 code:addons/jt_projects/reports/integration_of_project_budget_resources.py:0
+#: code:addons/jt_projects/reports/integration_of_remnants.py:0 code:addons/jt_projects/reports/integration_program_budgetary_resource_remanants.py:0
+#: code:addons/jt_projects/reports/remaining_resources.py:0 code:addons/jt_projects/reports/upa_remaining_resources.py:0
+#, python-format
+msgid "Export (XLSX)"
+msgstr "Exportar (XLSX)"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__ext_sponsor
+msgid "External sponsor"
+msgstr "Patrocinador externo"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.account_journal_form_view_project
+msgid "Extraordinary Income by CFDIS"
+msgstr "Ingresos extraordinarios por CFDIS"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_upi_papiit_projects
+msgid "FINANCIAL YEAR"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Failed Rows"
+msgstr "Filas Erróneas"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Failed Rows Tracker"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Failed/Success Rows"
+msgstr "Filas Erróneas / Exitosas"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__conversion_item_id
+msgid "Federal Item"
+msgstr "Partida de Gasto"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.project_registry_form_view
+msgid "Files"
+msgstr "Archivo"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__final_amount
+msgid "Final amount"
+msgstr "Monto Final"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0
+#, python-format
+msgid "Financing"
+msgstr "Financiación"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__expense_verification__type_of_currency__foreign
+msgid "Foreign currency"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__foreign_currency_amount
+msgid "Foreign currency amount"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_adequacies__is_from_project model:ir.model.fields,field_description:jt_projects.field_project_type__from_project
+#: model:ir.model.fields,field_description:jt_projects.field_stage__from_project
+msgid "From Project"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__fund_id
+msgid "Fund"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.account_cancel_form_view model_terms:ir.ui.view,arch_db:jt_projects.request_accounts_from_view
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_transfer_from_view
+msgid "Generate Request"
+msgstr "Generar Solicitud"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__location_id
+msgid "Geographic Location"
+msgstr "Ubicación Geográfica"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__line
+msgid "Header"
+msgstr ""
+
+#. module: jt_projects
+#: model:res.groups,name:jt_projects.menu_hide_group
+msgid "Hide"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Holder of the Unit"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_request_reject__id model:ir.model.fields,field_description:jt_projects.field_custom_project_programcode__id
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_accumulated_verification_recorded__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_bank_account_balances__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_budget_resources__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_budget_resources_remanats__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_comparison_balances_check__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_cumulative_comparison__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_airplane_ticket__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_current_expired_project__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_of_curr_resarch_project__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_papiit_papime_infocab_iacod__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_remaining_resources__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_remaining_resources_program__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_remnants__id
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_upa_papiit_remaining_resources__id
+#: model:ir.model.fields,field_description:jt_projects.field_project_close__id model:ir.model.fields,field_description:jt_projects.field_project_custom_stage__id
+#: model:ir.model.fields,field_description:jt_projects.field_project_ministrations__id model:ir.model.fields,field_description:jt_projects.field_project_program_code__id
+#: model:ir.model.fields,field_description:jt_projects.field_project_type_custom__id model:ir.model.fields,field_description:jt_projects.field_reason_for_rejection__id
+#: model:ir.model.fields,field_description:jt_projects.field_rejection_checks__id model:ir.model.fields,field_description:jt_projects.field_remaining_resource__id
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__id model:ir.model.fields,field_description:jt_projects.field_request_confirm__id
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__id model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__id
+msgid "ID"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__PAPIIT_project_type__infocab
+#: model:ir.model.fields.selection,name:jt_projects.selection__remaining_resource__project_type__infocab
+msgid "INFOCAB"
+msgstr "INFOCAB"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#, python-format
+msgid "INGRESO"
+msgstr "INGRESO"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_remnants_by_papiit_papime_infocab
+msgid "INTEGRATION OF REMNANTS STAGE-"
+msgstr "INTEGRACIÓN DE REMANENTES ETAPA"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_upi_papiit_projects
+msgid "INTEGRATION OF RESOURCES REMAINING FROM THE"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_type__name model:ir.model.fields,field_description:jt_projects.field_project_type_custom__name
+msgid "Identifier"
+msgstr "Identificador Tipo de Proyecto"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Import Status"
+msgstr "Estado de Importación"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Import lines"
+msgstr "Líneas Importadas"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.verification_of_expense_from_view
+msgid "Inovice Lines"
+msgstr "Líneas de Factura"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__institutional_activity_id
+msgid "Institutional Activity Number"
+msgstr "Número de Actividad Institucional"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_airplan_ticket_papiit.py:0 model:ir.actions.client,name:jt_projects.action_airplane_ticket_papiit
+#: model:ir.model,name:jt_projects.model_jt_projects_integration_airplane_ticket model:ir.ui.menu,name:jt_projects.menu_integration_airplane_tickets_papiit
+#, python-format
+msgid "Integration airplane tickets PAPIIT"
+msgstr "Integración boletos de avión PAPIIT"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_program_budgetary_resource_remanants.py:0 model:ir.actions.client,name:jt_projects.action_budget_resources_remnants
+#: model:ir.model,name:jt_projects.model_jt_projects_budget_resources_remanats model:ir.ui.menu,name:jt_projects.menu_integration_of_budgetary_resources_remnants
+#, python-format
+msgid "Integration by program of budgetary resources and remnants"
+msgstr "Integración por programa de recursos presupuestales y remanentes"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/Integration_of_papiit_papime_infocab_iacod_resource.py:0 model:ir.actions.client,name:jt_projects.action_integration_papiit_pime_infocab_iacod
+#: model:ir.model,name:jt_projects.model_jt_projects_integration_papiit_papime_infocab_iacod model:ir.ui.menu,name:jt_projects.menu_integration_of_papiit_papime_infocab_iacod
+#, python-format
+msgid "Integration of PAPIIT, PAPIME, INFOCAB, IACOD editions resources"
+msgstr "Integración de recursos ediciones PAPIIT, PAPIME, INFOCAB, IACOD"
+
+#. module: jt_projects
+#: model:ir.ui.menu,name:jt_projects.menu_integration_of_remaining_resource_upa
+msgid "Integration of Remaining Resources"
+msgstr "Integración de recursos remanentes"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_curr_exp_project.py:0 model:ir.actions.client,name:jt_projects.action_integration_of_curr_expired_projects
+#: model:ir.model,name:jt_projects.model_jt_projects_integration_current_expired_project model:ir.ui.menu,name:jt_projects.menu_integration_of_curr_expired_projects
+#, python-format
+msgid "Integration of current and expired projects"
+msgstr "Integración de proyectos vigentes y vencidos"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_current_project.py:0 model:ir.actions.client,name:jt_projects.action_conacyt_report
+#: model:ir.model,name:jt_projects.model_jt_projects_integration_of_curr_resarch_project model:ir.ui.menu,name:jt_projects.menu_integration_of_current_research_project
+#, python-format
+msgid "Integration of current research projects"
+msgstr "Integración proyectos de investigación vigentes"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_of_project_budget_resources.py:0 model:ir.actions.client,name:jt_projects.action_budget_resources
+#: model:ir.model,name:jt_projects.model_jt_projects_budget_resources model:ir.ui.menu,name:jt_projects.menu_integration_of_project_budget_resource
+#, python-format
+msgid "Integration of projects with budget resources"
+msgstr "Integración de proyectos con recursos presupuestales"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/remaining_resources.py:0 code:addons/jt_projects/reports/upa_remaining_resources.py:0
+#: model:ir.actions.client,name:jt_projects.action_upa_resource_remaining_config model:ir.model,name:jt_projects.model_jt_projects_integration_remaining_resources
+#: model:ir.model,name:jt_projects.model_jt_projects_upa_papiit_remaining_resources model:ir.model,name:jt_projects.model_remaining_resource
+#, python-format
+msgid "Integration of remaining resources"
+msgstr "INTEGRACIÓN DE RECURSOS REMANENTES"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/Integration_of_remaining_resources_by_program.py:0 model:ir.actions.client,name:jt_projects.action_integration_of_remaining_resources_by_program
+#: model:ir.model,name:jt_projects.model_jt_projects_integration_remaining_resources_program
+#: model:ir.ui.menu,name:jt_projects.menu_integration_of_remaining_resource_papiit_pime_infocab
+#, python-format
+msgid "Integration of remaining resources by program PAPIIT, PAPIME, INFOCAB"
+msgstr "Integración de recursos remanentes por programa PAPIIT, PAPIME, INFOCAB"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_of_remnants.py:0 model:ir.actions.client,name:jt_projects.action_integration_of_remnants
+#: model:ir.model,name:jt_projects.model_jt_projects_integration_remnants model:ir.ui.menu,name:jt_projects.menu_integration_of_remnants_papiit_papime_infocab
+#, python-format
+msgid "Integration of remnants by PAPIIT, PAPIME, INFOCAB Stage"
+msgstr "Integración remanentes por Etapa PAPIIT, PAPIME, INFOCAB"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__investment_fund_id
+msgid "Investment Fund"
+msgstr "Fondo de inversión"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__invoice model:ir.model.fields,field_description:jt_projects.field_request_accounts__invoice_cancel
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__invoice
+msgid "Invoice"
+msgstr "Folio"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__invoice_folio
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__invoice_folio
+msgid "Invoice Folio"
+msgstr "Folio de Factura"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Invoice Lines"
+msgstr "Líneas de Factura"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__invoice_series
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__invoice_series
+msgid "Invoice Series"
+msgstr "Serie de facturas"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__invoice_vault_folio
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__invoice_vault_folio
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__invoice_vault_folio
+msgid "Invoice vault folio"
+msgstr "Folio bóveda factura"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__is_related_agreement
+msgid "Is It related to agreement?"
+msgstr "Esta relacionado a un Convenio?"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__is_papiit_project
+msgid "Is Papiit Project"
+msgstr "Es un Proyecto PAPIIT"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__item_id
+msgid "Item"
+msgstr "Partida"
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_account_journal model:ir.model.fields,field_description:jt_projects.field_request_accounts__journal_id
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_account_move
+msgid "Journal Entries"
+msgstr "Asientos contables"
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__move_line_ids
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__move_line_ids model:ir.model.fields,field_description:jt_projects.field_request_transfer__move_line_ids
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+#: model_terms:ir.ui.view,arch_db:jt_projects.verification_of_expense_from_view
+msgid "Journal Items"
+msgstr "Asientos contables"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_rejection_checks__key
+msgid "Key"
+msgstr "Clave"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__expense_type_id
+msgid "Key Expenditure Type"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__resource_origin_id
+msgid "Key Origin resource"
+msgstr "Clave de Origen del Recurso"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__portfolio_id
+msgid "Key portfolio"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_request_reject____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_custom_project_programcode____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_accumulated_verification_recorded____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_bank_account_balances____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_budget_resources____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_budget_resources_remanats____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_comparison_balances_check____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_cumulative_comparison____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_airplane_ticket____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_current_expired_project____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_of_curr_resarch_project____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_papiit_papime_infocab_iacod____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_remaining_resources____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_remaining_resources_program____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_integration_remnants____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_jt_projects_upa_papiit_remaining_resources____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_project_close____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_project_custom_stage____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_project_ministrations____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_project_type_custom____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_reason_for_rejection____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_rejection_checks____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_remaining_resource____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts____last_update model:ir.model.fields,field_description:jt_projects.field_request_confirm____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer____last_update
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_request_reject__write_uid
+#: model:ir.model.fields,field_description:jt_projects.field_custom_project_programcode__write_uid
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__write_uid model:ir.model.fields,field_description:jt_projects.field_project_close__write_uid
+#: model:ir.model.fields,field_description:jt_projects.field_project_custom_stage__write_uid
+#: model:ir.model.fields,field_description:jt_projects.field_project_ministrations__write_uid
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__write_uid model:ir.model.fields,field_description:jt_projects.field_project_type_custom__write_uid
+#: model:ir.model.fields,field_description:jt_projects.field_reason_for_rejection__write_uid model:ir.model.fields,field_description:jt_projects.field_rejection_checks__write_uid
+#: model:ir.model.fields,field_description:jt_projects.field_remaining_resource__write_uid model:ir.model.fields,field_description:jt_projects.field_request_accounts__write_uid
+#: model:ir.model.fields,field_description:jt_projects.field_request_confirm__write_uid model:ir.model.fields,field_description:jt_projects.field_request_transfer__write_uid
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_request_reject__write_date
+#: model:ir.model.fields,field_description:jt_projects.field_custom_project_programcode__write_date
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__write_date model:ir.model.fields,field_description:jt_projects.field_project_close__write_date
+#: model:ir.model.fields,field_description:jt_projects.field_project_custom_stage__write_date
+#: model:ir.model.fields,field_description:jt_projects.field_project_ministrations__write_date
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__write_date
+#: model:ir.model.fields,field_description:jt_projects.field_project_type_custom__write_date
+#: model:ir.model.fields,field_description:jt_projects.field_reason_for_rejection__write_date model:ir.model.fields,field_description:jt_projects.field_rejection_checks__write_date
+#: model:ir.model.fields,field_description:jt_projects.field_remaining_resource__write_date model:ir.model.fields,field_description:jt_projects.field_request_accounts__write_date
+#: model:ir.model.fields,field_description:jt_projects.field_request_confirm__write_date model:ir.model.fields,field_description:jt_projects.field_request_transfer__write_date
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__leaves
+msgid "Leaves"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__line
+msgid "Line"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_request_field model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_request_reimbursement
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_school_intership model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_travel_request
+msgid "Logo"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__verification_expense_line__amount__mn_amount
+msgid "MN amount"
+msgstr "Importe M.N"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_current_project.py:0
+#, python-format
+msgid "Ministered"
+msgstr "Ministrado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_ministrations__ministering_amount
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__ministering_amount
+msgid "Ministering amount"
+msgstr "Monto Ministrado"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.account_journal_form_view_project model_terms:ir.ui.view,arch_db:jt_projects.project_registry_form_view
+msgid "Ministrations"
+msgstr "Ministraciones"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "More Information"
+msgstr "Más Información"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__move_type
+msgid "Move Type"
+msgstr "Tipo de movimiento"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_curr_exp_project.py:0 model:ir.model.fields,field_description:jt_projects.field_agreement_type__name
+#, python-format
+msgid "Name"
+msgstr "Nombre"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__base_collabaration_id
+msgid "Name Of Agreements"
+msgstr "Nombre del convenio"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__desc_location
+msgid "Name of Geographic Location"
+msgstr "Nombre de la Ubicación Geográfica"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__name_portfolio
+msgid "Name of Portfolio Key"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__name_agreement
+msgid "Name type of Agreement"
+msgstr "Nombre del Tipo de Convenio"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__expense_verification__type_of_currency__national
+msgid "National Currency"
+msgstr "Moneda Nacional"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Next Row To Start"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_curr_exp_project.py:0
+#, python-format
+msgid "No."
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_curr_exp_project.py:0
+#, python-format
+msgid "No. Overdue projects"
+msgstr "No. de proyectos expirados"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_confirm__no_contract
+msgid "No. contract"
+msgstr "No. de Contrato"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_curr_exp_project.py:0
+#, python-format
+msgid "No. of current projects"
+msgstr "No. de proyectos vigentes"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_curr_exp_project.py:0
+#, python-format
+msgid "No. of projects with zero balance,with active bank account"
+msgstr "No. de proyectos con saldo cero, con cuenta bancaria activa"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Note"
+msgstr "Nota"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_agreement_type__number model:ir.model.fields,field_description:jt_projects.field_expense_verification__number
+msgid "Number"
+msgstr "Número de Proyecto"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_ministrations__ministrations
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__ministrations
+msgid "Number of ministrations"
+msgstr "Numero de ministración"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__custom_stage_id
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__project_stage_identifier
+msgid "Number of stages"
+msgstr "Número de Etapa"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs
+msgid "ORIGIN"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_request_reject__observation
+msgid "Observation"
+msgstr "Observaciones"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__observation
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__observations
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__project_status__open
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__status__open
+msgid "Open"
+msgstr "Abierto"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__open_request_id
+msgid "Open Request"
+msgstr "Abrir Solicitud"
+
+#. module: jt_projects
+#: model:ir.ui.menu,name:jt_projects.menu_open_request_account
+msgid "Opening Requests"
+msgstr "Solicitud de Apertura de Cuenta"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__operation_type_id
+msgid "Operation Type"
+msgstr "Tipo de Operación"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__origin_journal_id
+msgid "Origin Bank"
+msgstr "Banco de origen"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__origin_bank_id
+msgid "Origin Bank Account"
+msgstr "Cuenta bancaria origen"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__project_type__other
+msgid "Other projects with checkbook"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_curr_exp_project.py:0
+#, python-format
+msgid "Overdue projects"
+msgstr "Proyectos vencidos"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__resource_type__p
+msgid "P (Budget)"
+msgstr "P(Presupuesto)"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__PAPIIT_project_type__papiit
+#: model:ir.model.fields.selection,name:jt_projects.selection__remaining_resource__project_type__papit
+msgid "PAPIIT"
+msgstr "PAPIIT"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__PAPIIT_project_type
+msgid "PAPIIT Project Type"
+msgstr "Tipo de proyecto"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_close__is_papiit_project
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__is_papiit_project
+msgid "PAPIIT project"
+msgstr "Proyecto PAPIIT"
+
+#. module: jt_projects
+#: model:ir.ui.menu,name:jt_projects.menu_papit_report_config
+msgid "PAPIIT report configuration"
+msgstr "Configuración de reportes PAPIIT"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_integration_of_remnants_by_papiit_papime_infocab
+msgid "PAPIIT, PAPIME, INFOCAB"
+msgstr "  PAPIIT, PAPIME, INFOCAB"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__PAPIIT_project_type__papime
+#: model:ir.model.fields.selection,name:jt_projects.selection__remaining_resource__project_type__papime
+msgid "PAPIME"
+msgstr "PAPIME"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_of_project_budget_resources.py:0 code:addons/jt_projects/reports/integration_program_budgetary_resource_remanants.py:0
+#: code:addons/jt_projects/reports/upa_remaining_resources.py:0
+#, python-format
+msgid ""
+"PATRONATO UNIVERSITARIO TESORERÍA\n"
+"DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL\n"
+"CONTADURÍA GENERAL\n"
+"DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN\n"
+"INFORME DE PROYECTOS DE INVESTIGACIÓN VIGENTES DE LOS PROGRAMAS\n"
+"PAPIIT, PAPIME E INFOCAB"
+msgstr ""
+"PATRONATO UNIVERSITARIO TESORERÍA\n"
+"DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL\n"
+"CONTADURÍA GENERAL\n"
+"DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN\n"
+"INFORME DE PROYECTOS DE INVESTIGACIÓN VIGENTES DE LOS PROGRAMAS\n"
+"PAPIIT, PAPIME E INFOCAB"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_airplan_ticket_papiit.py:0
+#, python-format
+msgid ""
+"PATRONATO UNIVERSITARIO TESORERÍA\n"
+"DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL\n"
+"CONTADURÍA GENERAL\n"
+"DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN\n"
+"INTEGRACIÓN BOLETOS DE AVIÓN PAPIIT"
+msgstr ""
+"PATRONATO UNIVERSITARIO TESORERÍA\n"
+"DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL\n"
+"CONTADURÍA GENERAL\n"
+"DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN\n"
+"INTEGRACIÓN BOLETOS DE AVIÓN PAPIIT"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/Integration_of_papiit_papime_infocab_iacod_resource.py:0
+#, python-format
+msgid ""
+"PATRONATO UNIVERSITARIO TESORERÍA\n"
+"DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL\n"
+"CONTADURÍA GENERAL\n"
+"DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN\n"
+"INTEGRACIÓN DE RECURSOS EDICIONES PAPIIT, PAPIME, INFOCAB, IACOD"
+msgstr ""
+"PATRONATO UNIVERSITARIO TESORERÍA\n"
+"DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL\n"
+"CONTADURÍA GENERAL\n"
+"DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN\n"
+"INTEGRACIÓN DE RECURSOS EDICIONES PAPIIT, PAPIME, INFOCAB, IACOD"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/Integration_of_remaining_resources_by_program.py:0
+#, python-format
+msgid ""
+"PATRONATO UNIVERSITARIO TESORERÍA\n"
+"DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL\n"
+"CONTADURÍA GENERAL\n"
+"DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN\n"
+"INTEGRACIÓN DE RECURSOS REMANENTES POR PROGRAMA PAPIIT, PAPIME, INFOCAB"
+msgstr ""
+"PATRONATO UNIVERSITARIO TESORERÍA\n"
+"DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL\n"
+"CONTADURÍA GENERAL\n"
+"DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN\n"
+"INTEGRACIÓN DE RECURSOS REMANENTES POR PROGRAMA PAPIIT, PAPIME, INFOCAB"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_of_remnants.py:0
+#, python-format
+msgid ""
+"PATRONATO UNIVERSITARIO TESORERÍA\n"
+"DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL\n"
+"CONTADURÍA GENERAL\n"
+"DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN\n"
+"INTEGRACIÓN DE REMANENTES ETAPA 29 PAPIIT, PAPIME, INFOCAB"
+msgstr ""
+"PATRONATO UNIVERSITARIO TESORERÍA\n"
+"DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL\n"
+"CONTADURÍA GENERAL\n"
+"DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN\n"
+"INTEGRACIÓN DE REMANENTES ETAPA 29 PAPIIT, PAPIME, INFOCAB"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/Integration_of_papiit_papime_infocab_iacod_resource.py:0 code:addons/jt_projects/reports/Integration_of_remaining_resources_by_program.py:0
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0 code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#: code:addons/jt_projects/reports/comparison_of_balance_check.py:0 code:addons/jt_projects/reports/cumulative_comparison.py:0
+#: code:addons/jt_projects/reports/integration_airplan_ticket_papiit.py:0 code:addons/jt_projects/reports/integration_curr_exp_project.py:0
+#: code:addons/jt_projects/reports/integration_current_project.py:0 code:addons/jt_projects/reports/integration_of_project_budget_resources.py:0
+#: code:addons/jt_projects/reports/integration_of_remnants.py:0 code:addons/jt_projects/reports/integration_program_budgetary_resource_remanants.py:0
+#: code:addons/jt_projects/reports/remaining_resources.py:0 code:addons/jt_projects/reports/upa_remaining_resources.py:0
+#, python-format
+msgid "PDF"
+msgstr "PDF"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "PROJECT"
+msgstr "PROYECTO"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_program_budgetary_resource_remanants.py:0
+#, python-format
+msgid "PROYECTOS PRESUPUESTALED DESACTIVADOS A SOLICITUD DE LA DGAPA"
+msgstr "PROYECTOS PRESUPUESTALES DESACTIVADOS A SOLICITUD DE LA DGAPA"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__project_type_identifier_id
+msgid "PTI"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_custom_project_programcode__total_paid
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_program_code__parent_program_id
+msgid "Parent Program Code"
+msgstr "Código Programático padre"
+
+#. module: jt_projects
+#: model:ir.ui.menu,name:jt_projects.supplier_payment_request_menu model:ir.ui.menu,name:jt_projects.upa_supplier_payment_request_menu
+msgid "Payment Request"
+msgstr "Solicitud de pago"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.project_payment_schedule_programming_action model:ir.ui.menu,name:jt_projects.project_payment_schedule_menu_programm
+msgid "Payment Schedule"
+msgstr "Programación de Pagos"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Payment issuing Bank"
+msgstr "Banco emisor del Pago"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Payment receipt bank account"
+msgstr "Cuenta del Banco que recibe el pago"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.project_payment_account_payment_action model:ir.ui.menu,name:jt_projects.project_payment_account_payment_menu
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_custom_project_programcode__total_per_exercise
+msgid "Per Exercise"
+msgstr "Por Ejercer"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/request_account.py:0
+#, python-format
+msgid "Please add Amount of ministrations"
+msgstr "Agrega el Monto de la Ministración"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/request_transfer.py:0
+#, python-format
+msgid "Please add Amount of the transfer requested"
+msgstr "Agregue el monto de la Transferencia Solicitada"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/request_account.py:0
+#, python-format
+msgid "Please add Authorized Amount"
+msgstr "Agregue el Monto Autorizado"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/project_registry.py:0
+#, python-format
+msgid "Please add allocated amount"
+msgstr "Agregue el monto Asignado"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/project_registry.py:0
+#, python-format
+msgid "Please add approved amount"
+msgstr "Agregue el monto Aprobado"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/request_transfer.py:0
+#, python-format
+msgid "Please configure UNAM and CONAC account in Bank!"
+msgstr "Configure las cuentas UNAM y CONAC del Banco!"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/request_account.py:0 code:addons/jt_projects/models/request_transfer.py:0 code:addons/jt_projects/models/varfication_of_expense.py:0
+#, python-format
+msgid "Please configure UNAM and CONAC account in journal!"
+msgstr "Por favor configure la cuenta UNAM y CONAC en diario!"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/request_account.py:0
+#, python-format
+msgid "Please configure account into bank"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/request_transfer.py:0
+#, python-format
+msgid "Por favor configure la cuenta UNAM y CONAC en Banco!"
+msgstr "Por favor configure la cuenta UNAM y CONAC en Banco!"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/request_account.py:0 code:addons/jt_projects/models/request_transfer.py:0 code:addons/jt_projects/models/varfication_of_expense.py:0
+#, python-format
+msgid "Por favor configure la cuenta UNAM y CONAC en diario!"
+msgstr "Por favor configure la cuenta UNAM y CONAC en diario!"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__previous model:ir.model.fields,field_description:jt_projects.field_project_project__pre_account_id
+msgid "Previous"
+msgstr "Cuenta"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__price model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Price"
+msgstr "Precio"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/Integration_of_papiit_papime_infocab_iacod_resource.py:0
+#: code:addons/jt_projects/reports/Integration_of_remaining_resources_by_program.py:0
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#: code:addons/jt_projects/reports/comparison_of_balance_check.py:0
+#: code:addons/jt_projects/reports/cumulative_comparison.py:0
+#: code:addons/jt_projects/reports/integration_airplan_ticket_papiit.py:0
+#: code:addons/jt_projects/reports/integration_curr_exp_project.py:0
+#: code:addons/jt_projects/reports/integration_current_project.py:0
+#: code:addons/jt_projects/reports/integration_of_project_budget_resources.py:0
+#: code:addons/jt_projects/reports/integration_of_remnants.py:0
+#: code:addons/jt_projects/reports/integration_program_budgetary_resource_remanants.py:0
+#: code:addons/jt_projects/reports/remaining_resources.py:0
+#: code:addons/jt_projects/reports/upa_remaining_resources.py:0
+#, python-format
+msgid "Export to PDF"
+msgstr "Exportar a PDF"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__program_id
+msgid "Program"
+msgstr "Programa"
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_program_code model:ir.model,name:jt_projects.model_project_program_code
+#: model:ir.model.fields,field_description:jt_projects.field_custom_project_programcode__program_code_id
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__program_code_id
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__program_code model:ir.model.fields,field_description:jt_projects.field_project_project__program_code_ids
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__project_programcode_ids
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__program_code
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__program_code_id
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__program_code
+msgid "Program Code"
+msgstr "Código Programático"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__program_code_ids
+msgid "Program Codes"
+msgstr "Código Programático"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__program_code
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__program_code_copy model_terms:ir.ui.view,arch_db:jt_projects.project_registry_form_view
+msgid "Programmatic Code"
+msgstr "Código Programático"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_custom_project_programcode__project_id
+#: model:ir.model.fields,field_description:jt_projects.field_project_close__project_id model:ir.model.fields,field_description:jt_projects.field_project_ministrations__project_id
+#: model_terms:ir.ui.view,arch_db:jt_projects.stage_form_view_project
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__project_code model:ir.model.fields,field_description:jt_projects.field_expense_verification__project_id
+msgid "Project Code"
+msgstr "Código de proyecto"
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_project_custom_stage
+msgid "Project Custom Stage"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.project_registry_form_view
+msgid "Project Due"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__project_key
+msgid "Project Key"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__user_id
+msgid "Project Manager"
+msgstr "Administrador del proyecto"
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_project_ministrations model:ir.model.fields,field_description:jt_projects.field_project_project__project_ministrations_ids
+msgid "Project Ministrations"
+msgstr "Ministraciones de proyectos"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__project_name model_terms:ir.ui.view,arch_db:jt_projects.project_registry_form_view
+msgid "Project Name"
+msgstr "Nombre del proyecto"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__project_number_id
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__project_number_id
+#: model:ir.model.fields,field_description:jt_projects.field_program_code__project_id model:ir.model.fields,field_description:jt_projects.field_project_program_code__project_number
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__project_id
+msgid "Project Number"
+msgstr "Numero de proyecto"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_open_balance_finance__project_request_id
+msgid "Project Request Transfer"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__project_status
+msgid "Project Status"
+msgstr "Estatus del Proyecto"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/remaining_resources.py:0 model:ir.model,name:jt_projects.model_project_type
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__project_type model:ir.model.fields,field_description:jt_projects.field_remaining_resource__project_type
+#: model_terms:ir.ui.view,arch_db:jt_projects.account_cancel_form_view model_terms:ir.ui.view,arch_db:jt_projects.cancellation_request_view
+#, python-format
+msgid "Project Type"
+msgstr "Tipo de Proyecto"
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_project_type_custom
+msgid "Project Type Custom"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__custom_project_type_id
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__custom_project_type_id
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__project_type_identifier
+msgid "Project Type Identifier"
+msgstr "Identificador Tipo de Proyecto"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/project_type_custom.py:0
+#, python-format
+msgid "Project Type Value Must Be Unique"
+msgstr "El Tipo de Proyecto debe ser un valor único."
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.project_registry_form_view
+msgid "Project next to expire"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_bank_statement_import_journal_creation__is_purchase_of_foreign_curr
+#: model:ir.model.fields,field_description:jt_projects.field_account_journal__is_purchase_of_foreign_curr
+msgid "Purchase of Foreign Currency"
+msgstr "Compra de Divisas Extranjeras"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.account_journal_form_view_project
+msgid "Purchase of foreign currency"
+msgstr "Compra de Divisas Extranjeras"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__resource_type__r
+msgid "R (Remnant)"
+msgstr "R(Remanente)"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.request_exchange_docs model_terms:ir.ui.view,arch_db:jt_projects.request_field_request_docs
+#: model_terms:ir.ui.view,arch_db:jt_projects.school_intership_request_docs
+msgid "REASON FOR EXPENDITURE"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/upa_remaining_resources.py:0
+#, python-format
+msgid "RESOURCES STAGE "
+msgstr "RECURSOS ETAPA "
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__rfc
+msgid "RFC"
+msgstr "RFC"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__rfc
+msgid "RFC of the person in charge"
+msgstr "RFC del responsable a cargo"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Re-Import Lines"
+msgstr "Re-Importar Leneas"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Reason"
+msgstr "Razón"
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_reason_for_rejection
+msgid "Reason For Rejection"
+msgstr "Motivo de Rechazo"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_reason_for_rejection__reject_id
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__reason_rejection
+msgid "Reason for Rejection"
+msgstr "Motivo de rechazo"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_request_reject__reason_rejection
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__reason_for_rejection
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__reason_rejection
+msgid "Reason for rejection"
+msgstr "Motivo de rechazo"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Register"
+msgstr "Registrado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__reg_date
+msgid "Registration Date"
+msgstr "Fecha de registro"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_request_reimbursement
+msgid "Reimbursement Request To Third Parties"
+msgstr "Solicitud de reembolso a Terceros"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.cancellation_request_view model_terms:ir.ui.view,arch_db:jt_projects.open_request_accounts_from_view
+#: model_terms:ir.ui.view,arch_db:jt_projects.verification_of_expense_from_view
+msgid "Reject"
+msgstr "Rechazado"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.action_reason_for_rejection
+msgid "Reject for Rejection"
+msgstr "Rechazado"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__account_move__status__reject
+#: model:ir.model.fields.selection,name:jt_projects.selection__expense_verification__status__reject
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_accounts__status__rejected
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_transfer__status__rejected
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__rejection_observations
+msgid "Rejection observation"
+msgstr "Observaciones de rechazo"
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_rejection_checks
+msgid "Rejections for CONACYT checks"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.remaining_resource_action
+msgid "Remaining Resource"
+msgstr "Configuración de reportes PAPIIT"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_accounts__status__request model_terms:ir.ui.view,arch_db:jt_projects.view_req_open_balance_form_finance_inherit
+msgid "Request"
+msgstr "Solicitud"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__req_registration_date
+msgid "Request Registration Date"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.action_request_Rejection
+msgid "Request Rejection"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_request_open_balance_finance
+msgid "Request Transfer"
+msgstr "Solicitud de TRansferencia"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.project_project_supplier_payment_action model:ir.actions.act_window,name:jt_projects.upa_request_for_payment_action
+msgid "Request for Payment"
+msgstr "Solicitud de pago"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.account_cancel_action model:ir.ui.menu,name:jt_projects.account_cancel_menu
+msgid "Request for account cancellation"
+msgstr "Solicitud de cancelación de cuenta"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_request_field
+msgid "Request for payment exchange expenses of"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_school_intership
+msgid "Request for payment for school placement expenses"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_request_transfer model:ir.ui.menu,name:jt_projects.menu_request_transfer
+msgid "Request for transfer"
+msgstr "Solicitud de Transferencia"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__operation_name
+msgid "Request operation name"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_request_accounts
+msgid "Request to open account"
+msgstr "Solicitud de apertura de cuenta"
+
+#. module: jt_projects
+#: model:ir.ui.menu,name:jt_projects.menu_request_account
+msgid "Request to open an account"
+msgstr "Solicitud de apertura de cuenta"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_transfer__status__requested
+msgid "Requested"
+msgstr "Solicitud"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__user_id
+msgid "Requesting User"
+msgstr "Usuario que solicita"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.request_transfer_action
+msgid "Requests to Transfer"
+msgstr "Solicitud de transferencia"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.open_request_accounts_action model:ir.actions.act_window,name:jt_projects.request_accounts_action
+msgid "Requests to open an account"
+msgstr "Solicitud de Apertura de Cuenta"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__handover_date
+msgid "Required handover Date"
+msgstr "Fecha requerida"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Reschedule"
+msgstr "Reprogramar"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__resource_type
+msgid "Resource Type"
+msgstr "Tipo de Recurso"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__responsible_job_position
+msgid "Responsible job position"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__responsible_name
+msgid "Responsible name"
+msgstr "Nombre del responsable"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__retIVA
+msgid "RetIVA"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__row
+msgid "Row"
+msgstr "Linea"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.external_layout_header_travel_request
+msgid "SOLICITUD DE PAGO POR GASTOS DE VIATICOS"
+msgstr "SOLICITUD DE PAGO POR GASTOS DE VIATICOS"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0
+#, python-format
+msgid "Saldo bancario"
+msgstr "Saldo Bancario"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.project_program_code_form_view
+msgid "Save"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "Secretario Administrativo"
+msgstr "Secretario Administrativo"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Section"
+msgstr "Sección"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_adequacies__is_send_request model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Send Request"
+msgstr "Enviar Solicitud"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__request_transfer__status__sent
+msgid "Sent"
+msgstr "Enviado"
+
+#. module: jt_projects
+#: model:ir.actions.report,name:jt_projects.supplier_request_action
+msgid "Solicitud Prácticas Escolares"
+msgstr "Solicitud Prácticas Escolares"
+
+#. module: jt_projects
+#: model:ir.actions.report,name:jt_projects.request_field_work_action
+msgid "Solicitud Trabajos de Campo"
+msgstr "Solicitud Trabajos de Campo"
+
+#. module: jt_projects
+#: model:ir.actions.report,name:jt_projects.travel_request_action
+msgid "Solicitud Viáticos"
+msgstr "Solicitud Viáticos"
+
+#. module: jt_projects
+#: model:ir.actions.report,name:jt_projects.request_exchange_report
+msgid "Solicitud de Intercambio"
+msgstr "Solicitud de Intercambio"
+
+#. module: jt_projects
+#: model:ir.actions.report,name:jt_projects.reimbursement_request_action
+msgid "Solicitud reembolso a terceros"
+msgstr "Solicitud reembolso a terceros"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__branch_office
+msgid "Square"
+msgstr "Plaza"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0 code:addons/jt_projects/reports/remaining_resources.py:0
+#: model:ir.actions.act_window,name:jt_projects.action_project_budget_stage1 model:ir.actions.act_window,name:jt_projects.action_project_custom_stage
+#: model:ir.actions.act_window,name:jt_projects.action_project_custom_stage_budget model:ir.model,name:jt_projects.model_stage
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__stage model:ir.model.fields,field_description:jt_projects.field_account_move_line__stage
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__custom_stage_id
+#: model:ir.model.fields,field_description:jt_projects.field_project_custom_stage__name model:ir.model.fields,field_description:jt_projects.field_project_program_code__stage_id
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__custom_stage_id model:ir.model.fields,field_description:jt_projects.field_remaining_resource__stage_id
+#: model:ir.model.fields,field_description:jt_projects.field_remaining_resource__stage_name model:ir.model.fields,field_description:jt_projects.field_stage__name
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__custom_stage_id model:ir.ui.menu,name:jt_projects.menu_project_custom_stage
+#: model:ir.ui.menu,name:jt_projects.menu_project_custom_stage_budget
+#, python-format
+msgid "Stage"
+msgstr "Etapa"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#, python-format
+msgid "Stage "
+msgstr "Etapa "
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_current_project.py:0
+#, python-format
+msgid "Stage / Year"
+msgstr "Etapa / Año"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__desc_stage
+msgid "Stage Description"
+msgstr "Descripción de la etapa"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/project_stage.py:0
+#, python-format
+msgid "Stage Value Must Be Unique"
+msgstr "La Etapa debe ser un valor único."
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0
+#, python-format
+msgid "Start"
+msgstr "Inicio"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__proj_start_date
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0
+#, python-format
+msgid "State"
+msgstr "Estado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__status model:ir.model.fields,field_description:jt_projects.field_expense_verification__status
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__state model:ir.model.fields,field_description:jt_projects.field_project_project__status
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__status model:ir.model.fields,field_description:jt_projects.field_request_transfer__status
+msgid "Status"
+msgstr "Estado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__subdependence
+msgid "Sub Dependence"
+msgstr "Subdependencia"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__subdependency_id
+#: model:ir.model.fields,field_description:jt_projects.field_request_transfer__subdependency_id
+msgid "Sub Dependency"
+msgstr "Subdependencia"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__desc_sub_program
+msgid "Sub Program Description"
+msgstr "Descripción de Subprograma"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__sub_dependency_id
+msgid "Sub dependency"
+msgstr "Subdependencia"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__sub_program_id
+msgid "Sub program"
+msgstr "Subprograma"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__desc_sub_dependency
+msgid "Sub-dependency Description"
+msgstr "Descripción de Subdependencia"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__subtotal model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "Subtotal"
+msgstr "SubTotal"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Success Rows"
+msgstr "Filas Exitosas"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__supporting_documentation
+msgid "Supporting Documentation"
+msgstr "Documentación comprobatoria"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__base_id
+msgid "TOA"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "Tarifa"
+msgstr "Tarifa"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__amount_tax
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__amount_tax
+msgid "Tax Amount"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Tax Grids"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__tax_ids model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Taxes Applied"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__tech_support
+msgid "Technical Support"
+msgstr "Responsable técnico"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__technical_support_id
+msgid "Technical support"
+msgstr "Soporte Técnico"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/project_stage.py:0
+#, python-format
+msgid "The Stage must be numeric value"
+msgstr "La Etapa debe ser un valor numérico."
+
+#. module: jt_projects
+#: model:ir.model.fields,help:jt_projects.field_expense_verification__rfc
+msgid "The Tax Identification Number. Complete it if the contact is subjected to government taxes. Used in some legal statements."
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/adequacies.py:0
+#, python-format
+msgid "The amount does not match"
+msgstr "El monto no coincide."
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/project_registry.py:0
+#, python-format
+msgid "The combination of the Project Type Identifier,Stage and Project Number fields must be unique"
+msgstr "La combinación del Tipo de Proyecto, Etapa y Numero de Proyecto debe ser única."
+
+#. module: jt_projects
+#: model:ir.model.fields,help:jt_projects.field_expense_verification__currency_id
+msgid "The currency used to enter statement"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/varfication_of_expense.py:0
+#, python-format
+msgid "There is not enough allocated to approve this verification of expense,verify the amount allocated to the corresponding quarter"
+msgstr "No hay suficiente monto asignado para aprobar esta comprobación de gastos,verifique el monto asignado al trimestre correspondiente"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/project_registry.py:0
+#, python-format
+msgid "This Program Code Already Link To Project "
+msgstr "El Código Programático ya se encuentra en uso en el proyecto: "
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "Titular de la dependencia"
+msgstr "Titular de la dependencia"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0 code:addons/jt_projects/reports/integration_current_project.py:0
+#, python-format
+msgid "To check"
+msgstr "Por comprobar"
+
+#. module: jt_projects
+#: code:addons/jt_projects/models/request_account.py:0
+#, python-format
+msgid "To request the cancellation of a bank account the account balance must be 0"
+msgstr "Para solicitar la cancelación de una Cuenta Bancaria el saldo de la cuenta debe ser 0."
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0 model:ir.model.fields,field_description:jt_projects.field_expense_verification__amount_total
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#, python-format
+msgid "Total 443,448 Y 449"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#, python-format
+msgid "Total Checked"
+msgstr "Total comprobado"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Total Credit"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Total Debit"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Total Failed Rows"
+msgstr "Total de Filas Erróneas"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Total Rows"
+msgstr "Total de Filas"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.adequacies_form_view_project
+msgid "Total Success Rows"
+msgstr "Total de Filas Exitosas"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_current_project.py:0
+#, python-format
+msgid "Total of (Number of projects)"
+msgstr "Total de Proyectos"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_curr_exp_project.py:0
+#, python-format
+msgid "Total projects"
+msgstr "Total proyectos"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__trade_number
+msgid "Trade Number"
+msgstr "Numero Comercial"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__transfer_request_id
+msgid "Transfer Request"
+msgstr "Solicitud de TRansferencia"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "Turn Type"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__custom_type_of_aggrement
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__type_of_aggrement
+msgid "Type Of Agreement"
+msgstr "Tipo de convenio"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__type_of_currency
+msgid "Type Of Currency"
+msgstr "Tipo de moneda"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__type_of_operation
+msgid "Type Of Operation"
+msgstr "Tipo de Operación"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.action_project_budget_type_custom1 model:ir.actions.act_window,name:jt_projects.action_project_type_custom
+#: model:ir.actions.act_window,name:jt_projects.action_project_type_custom_budget model:ir.ui.menu,name:jt_projects.menu_project_type_custom
+#: model:ir.ui.menu,name:jt_projects.menu_project_type_custom_budget
+msgid "Type Of Project"
+msgstr "Tipo de proyecto"
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_agreement_type model:ir.model.fields,field_description:jt_projects.field_agreement_type__base_id
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__agreement_type_id
+msgid "Type of Agreement"
+msgstr "Tipo de Convenio"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__project_type_id
+msgid "Type of Project"
+msgstr "Tipo de Proyecto"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "UNIDAD DE PROCESO ADMINISTRATIVO/MODULO"
+msgstr "UNIDAD DE PROCESO ADMINISTRATIVO/MODULO"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/Integration_of_remaining_resources_by_program.py:0
+#, python-format
+msgid ""
+"UNIVERSITY BOARD TREASURY\n"
+"GENERAL DIRECTORATE OF BUDGETARY CONTROL\n"
+"GENERAL ACCOUNTING\n"
+"RESEARCH PROJECT CONTROL DEPARTMENT\n"
+"INTEGRATION OF REMAINING RESOURCES BY PAPIIT, PAPIME, INFOCAB PROGRAM"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_of_remnants.py:0
+#, python-format
+msgid ""
+"UNIVERSITY BOARD TREASURY\n"
+"GENERAL DIRECTORATE OF BUDGETARY CONTROL\n"
+"GENERAL ACCOUNTING\n"
+"RESEARCH PROJECT CONTROL DEPARTMENT\n"
+"INTEGRATION OF REMNANTS STAGE 29 PAPIIT, PAPIME, INFOCAB"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/Integration_of_papiit_papime_infocab_iacod_resource.py:0
+#, python-format
+msgid ""
+"UNIVERSITY BOARD TREASURY\n"
+"GENERAL DIRECTORATE OF BUDGETARY CONTROL\n"
+"GENERAL ACCOUNTING\n"
+"RESEARCH PROJECT CONTROL DEPARTMENT\n"
+"INTEGRATION OF RESOURCES PAPIIT, PAPIME, INFOCAB,\n"
+"                        IACOD EDITIONS"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_airplan_ticket_papiit.py:0
+#, python-format
+msgid ""
+"UNIVERSITY BOARD TREASURY\n"
+"GENERAL DIRECTORATE OF BUDGETARY CONTROL\n"
+"GENERAL ACCOUNTING\n"
+"RESEARCH PROJECT CONTROL DEPARTMENT\n"
+"PAPIIT PLANE TICKETS INTEGRATION"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_program_budgetary_resource_remanants.py:0 code:addons/jt_projects/reports/upa_remaining_resources.py:0
+#, python-format
+msgid ""
+"UNIVERSITY BOARD TREASURY\n"
+"GENERAL DIRECTORATE OF BUDGETARY CONTROL\n"
+"GENERAL ACCOUNTING\n"
+"RESEARCH PROJECT CONTROL DEPARTMENT\n"
+"REPORT ON CURRENT RESEARCH PROJECTS OF THE\n"
+"PAPIIT, PAPIME AND INFOCAB PROGRAMS"
+msgstr ""
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/integration_of_project_budget_resources.py:0
+#, python-format
+msgid ""
+"UNIVERSITY BOARD TREASURY\n"
+"GENERAL DIRECTORATE OF BUDGETARY CONTROL\n"
+"GENERAL ACCOUNTING\n"
+"RESEARCH PROJECT CONTROL DEPARTMENT\n"
+"REPORT ON CURRENT RESEARCH PROJECTS OF THE PAPIIT, PAPIME AND \n"
+" INFOCAB PROGRAMS"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__upa_code
+msgid "UPA Code"
+msgstr "Clave UPA"
+
+#. module: jt_projects
+#: model:ir.ui.menu,name:jt_projects.menu_payment_programming model:ir.ui.menu,name:jt_projects.supplier_payment_request_main_menu
+#: model:ir.ui.menu,name:jt_projects.upa_payment_main_menu model:ir.ui.menu,name:jt_projects.upa_submenu
+msgid "UPA PAPIIT"
+msgstr "UPA PAPIIT"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.action_project_papiit_1 model:ir.ui.menu,name:jt_projects.menu_project_registry_papiit
+msgid "UPA PAPIIT Projects"
+msgstr "Proyectos UPA PAPIIT"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__uuid_invoice
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__uuid_invoice
+msgid "UUID Invoice"
+msgstr "UUID Factura"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "Unit price"
+msgstr "Precio Unitario"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__amount_untaxed
+msgid "Untaxed Amount"
+msgstr "Monto sin impuestos"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "User who registers"
+msgstr "Usuario que Registra"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.supplier_request_template_docs
+msgid "VAT"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Validate budget"
+msgstr "Validación Presupuestal"
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_program_code__state__validated
+msgid "Validated"
+msgstr "Validado"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__vat
+msgid "Vat"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__verifcation_expense_ids
+#: model_terms:ir.ui.view,arch_db:jt_projects.verification_of_expense_from_view
+msgid "Verfication Expense Line"
+msgstr "Líneas comprobaciones de gastos  "
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_verification_expense_line__verification_expense_id
+msgid "Verification Expense"
+msgstr "Comprobación de gastos"
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_verification_expense_line
+msgid "Verification Expense Line"
+msgstr "Líneas comprobaciones de gastos"
+
+#. module: jt_projects
+#: model:ir.actions.act_window,name:jt_projects.verification_expense_action model:ir.model,name:jt_projects.model_expense_verification
+msgid "Verification Of Expense"
+msgstr "Comprobación de gastos"
+
+#. module: jt_projects
+#: model:ir.ui.menu,name:jt_projects.menu_verification_expense
+msgid "Verification Of Expenses"
+msgstr "Comprobación de gastos"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_expense_verification__Vouchers
+msgid "Vouchers"
+msgstr "Comprobantes"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/Integration_of_papiit_papime_infocab_iacod_resource.py:0 code:addons/jt_projects/reports/Integration_of_remaining_resources_by_program.py:0
+#: code:addons/jt_projects/reports/accounting_and_bank_account_balances.py:0 code:addons/jt_projects/reports/accumulated_verfication_report.py:0
+#: code:addons/jt_projects/reports/comparison_of_balance_check.py:0 code:addons/jt_projects/reports/cumulative_comparison.py:0
+#: code:addons/jt_projects/reports/integration_airplan_ticket_papiit.py:0 code:addons/jt_projects/reports/integration_curr_exp_project.py:0
+#: code:addons/jt_projects/reports/integration_current_project.py:0 code:addons/jt_projects/reports/integration_of_project_budget_resources.py:0
+#: code:addons/jt_projects/reports/integration_of_remnants.py:0 code:addons/jt_projects/reports/integration_program_budgetary_resource_remanants.py:0
+#: code:addons/jt_projects/reports/remaining_resources.py:0 code:addons/jt_projects/reports/upa_remaining_resources.py:0
+#, python-format
+msgid "XLSX"
+msgstr "XLSX"
+
+#. module: jt_projects
+#: code:addons/jt_projects/reports/remaining_resources.py:0 model:ir.model.fields,field_description:jt_projects.field_remaining_resource__year
+#, python-format
+msgid "Year"
+msgstr "Año"
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_program_code__year
+msgid "Year (YEAR)"
+msgstr "Año"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.close_project_form_view
+msgid "Yes"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "ZONA CORRESPONDIENTE"
+msgstr "ZONA CORRESPONDIENTE"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.travel_request_template_docs
+msgid "Zona"
+msgstr "Zona"
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.payment_req_form_view_inherit
+msgid "Zone Responsible"
+msgstr "Responsable de Zona"
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_account_request_reject
+msgid "account.request.reject"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.cancellation_request_view
+msgid "approved"
+msgstr ""
+
+#. module: jt_projects
+#: model_terms:ir.ui.view,arch_db:jt_projects.account_request_reject_form_view
+msgid "confirm"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_custom_project_programcode
+msgid "custom.project.programcode"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__visibility__due
+msgid "due"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move__excercise model:ir.model.fields,field_description:jt_projects.field_account_move_line__excercise
+msgid "excercise"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields.selection,name:jt_projects.selection__project_project__visibility__expire
+msgid "expire"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_account_move_line__operation_type_name
+msgid "name"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.actions.report,print_report_name:jt_projects.reimbursement_request_action model:ir.actions.report,print_report_name:jt_projects.request_exchange_report
+#: model:ir.actions.report,print_report_name:jt_projects.request_field_work_action model:ir.actions.report,print_report_name:jt_projects.supplier_request_action
+#: model:ir.actions.report,print_report_name:jt_projects.travel_request_action
+msgid "object.name"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_project_close
+msgid "project.close"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model,name:jt_projects.model_request_confirm
+msgid "request.confirm"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_request_accounts__supporting_doc_name
+msgid "supporting documentation name"
+msgstr ""
+
+#. module: jt_projects
+#: model:ir.model.fields,field_description:jt_projects.field_project_project__visibility
+msgid "visibility"
+msgstr ""

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <template id="external_layout_header_request_transfer">
+        <div t-attf-class="header o_company_#{company.id}_layout">
+            <div class="row">
+                <div class="col-3 mb2" align="left">
+                    <img src="/jt_account_module_design/static/src/img/dgf.png"
+                             style="max-height:150px;width:140%;margin-top:5px;margin-right:5px;margin-bottom:5px;"/>
+                </div>
+                <div class="col-9 text-center">
+                        <b><span style="font-size:15px;">National Autonomous University of Mexicoof</span></b><br/>
+                            <span style="font-size:15px;">University BoardTrustees</span><br/>
+                            <span style="font-size:15px;">General Directorate of Finance</span><br/>
+                            <span style="font-size:15px;">Directorate of Expenditures</span><br/>
+                            <span style="font-size:15px;">Coordination of Operation by Electronic Banking</span><br/>
+                            <span style="font-size:15px;">Report of financial resources requested </span>
+                            <span style="font-size:15px;">from the Department of Financial Operations</span>
+                </div>
+            </div>
+        </div>
+        <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-raw="0"/>
+        </div>
+        <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+            <div class="row">
+                    <style>
+                        hr.new5 {
+                          border: 1px solid black;
+                        }
+                    </style>
+                    <div class="col-4">
+                        <hr class="new5" style="width:50%;color:black;"/><br/>
+                        <strong style="text-align:center;">Prepared By</strong><br/>
+                        <strong style="text-align:center;"><span t-field="o.prepared_by_emp_id.name"/></strong>
+                    </div>
+                    <div class="col-4">
+                        <hr class="new5" style="width:50%;color:black;"/><br/>
+                        <strong style="text-align:center;">Authorized by:</strong><br/>
+                        <strong style="text-align:center;"><span t-field="o.authorized_by_emp_id.name"/></strong>
+                        </div>
+                    <div class="col-4">
+
+                       <!--  <hr class="new5" style="width:50%;color:black;"/><br/>
+                        <strong style="text-align:center;">Department to which it belongs</strong><br/>
+                        <strong style="text-align:center;"><span t-field="o.prepared_by_dept_id.name"/></strong> -->
+                    </div>
+                </div>
+            </div>
+    </template>
+
+   <template id="external_layout_request_transfer_company">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t  t-call="jt_account_module_design.external_layout_header_request_transfer"><t t-raw="0"/></t>
+   </template>
+    
+    <template id="request_transfer_template_docs">
+        <t t-call="jt_account_module_design.external_layout_request_transfer_company">
+            <div class="page">
+                <style>
+                 .border1
+                    {
+                        border: 1px solid black;
+                    }
+
+                .style1
+                    {
+                        font-size:15px;
+                    }
+                </style>
+              
+                <br/>
+                <br/>
+                <br/>
+                
+                <div class="row">
+                    <div class="col-12 float-left">
+                        <strong>ATN:</strong><span t-field="o.attention_to_emp_id.name" style="margin-left:15px;"/>
+                    </div>
+                </div>
+                <div id="info1" class="row mt32 mb32">
+                    <div class="col-6 float-left" name="application_date">
+                        <strong style="padding-left:30px;">Production Date:</strong><span t-field="o.date" style="margin-left:45px;padding-left:50px;text-align:center;" t-options="{'widget':'date','format': 'MMMM  dd, YYYY'}"/>
+                        
+                    </div>
+                    <div class="col-6 float-right" t-if="o.operation_number" name="folio">
+                        <strong style="margin-left:50px;padding-left:40px;">Folio:</strong><span t-field="o.operation_number" style="margin-left:80px;text-align:right;padding-left:50px;"/>
+                    </div>
+
+                    
+                </div>
+
+               
+
+                
+                 <table class="table table-bordered" name="tranfer_request_line">
+                        <thead>
+                            <tr>
+                                
+                                <t t-set="colspan" t-value="9"/>
+                               
+                                <th name="th_bank" class="text-left">
+                                    <span>Bank</span>
+                                </th>
+                                <th name="th_bank_account" class="text-left">
+                                    <span>Bank Account</span>
+                                </th>
+                                <th name="th_app_concept" class="text-left">
+                                    <span>Application Concept</span>
+                                </th>
+                                <th name="th_amount" class="text-left">
+                                    <span>Amount</span>
+                                </th>
+                                <th name="th_currency" class="text-left">
+                                    <span>Currency</span>
+                                </th>
+                                <th name="th_req_date" class="text-left">
+                                    <span>Required Date</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="transfer_tbody">
+                                <t t-set="total_amount" t-value="0"/>
+                                <tr>
+                                    <td><span t-field="o.desti_bank_account_id.bank_id.name"/></td>
+                                    <td><span t-field="o.desti_bank_account_id.bank_account_id.acc_number"/></td>
+                                    <td><span t-field="o.concept"/></td>
+                                    <td><span t-field="o.amount"/>
+                                    <t t-set="total_amount" t-value="total_amount + o.amount"/>
+                                    </td>
+                                    <td><span t-field="o.currency_id.name"/></td>
+                                    <td><span t-field="o.date_required" t-options="{'widget':'date','format': 'MMMM  dd, YYYY'}"/></td>
+                                </tr>
+                                <tr>
+                                    <td>TOTAL</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><t t-esc="total_amount"/></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                        </tbody>
+                    </table>
+                   
+              </div>
+        </t>
+       </template>
+
+        <template id="request_trasnfer_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="jt_account_module_design.request_transfer_template_docs"/>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_request_ransfer" model="report.paperformat">
+            <field name="name">Format3</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">50</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="dpi">90</field>
+        </record>
+
+        <report 
+            id="trasfer_request_action"
+            model="request.open.balance.finance"
+            string="Transfer Request"
+            report_type="qweb-pdf"
+            name="jt_account_module_design.request_trasnfer_template"
+            file="jt_account_module_design.request_trasnfer_template"
+            print_report_name="object.operation_number"
+            paperformat="jt_account_module_design.paperformat_request_ransfer"
+        />
+
+    </data>
+</odoo>

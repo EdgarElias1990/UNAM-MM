@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="closing_collaboration_form_view" model="ir.ui.view">
+            <field name="name">closing.collaboration.form.view</field>
+            <field name="model">closing.collaboration</field>
+            <field name="arch" type="xml">
+                <form>
+                	<group>
+                        <field name="start_date" required="1"/>
+                        <field name="end_date" required="1"/>
+                        <field name="registration_date" required="1"/>
+                    </group>
+                	<footer>
+                        <button string="Confirm" name="confirm" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

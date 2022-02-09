@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <report
+            id="report_agains_receipt"
+            model="account.move"
+            string="Report Agains Receipt"
+            report_type="qweb-pdf"
+            name="jt_supplier_payment.report_again_receipt_template"
+            file="jt_supplier_payment.report_again_receipt_template"
+            paperformat="jt_supplier_payment.report_receipt_paperformat"
+        />
+        <!-- QWeb Reports -->
+
+        <record id="paperformat_supplier_payment_request" model="report.paperformat">
+            <field name="name">Supplier Payment</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">50</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="dpi">90</field>
+        </record>
+        
+        <report
+            id="payment_request_report"
+            model="account.move"
+            string="Solicitud Proveedor"
+            report_type="qweb-pdf"
+            name="jt_supplier_payment.payment_request_report_template"
+            file="jt_supplier_payment.payment_request_report_template"
+            paperformat="jt_supplier_payment.paperformat_supplier_payment_request"
+        />
+	</data>
+</odoo>

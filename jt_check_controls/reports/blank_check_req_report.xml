@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="external_blank_req_check">
+            <div t-attf-class="header o_company_#{company.id}_layout">
+                <div class="row">
+                    <div class="col-2" align="left">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                             style="max-height: 150px;" alt="Logo"/>
+                    </div>
+                    <div class="col-2" style="padding-left:15px;padding-top:10px;margin:top:30px;">
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">UNIVERSITY PATRONATE</p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            TREASURY
+                        </p>
+                    </div>
+                    <div class="col-8" align="right" style="padding-right:0;padding-left:20px;">
+                        <img src="/jt_check_controls/static/src/img/dgf.png"
+                             style="max-height:100px;width:54%"/>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            Directorate-General for Finance
+                        </p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            Finance Sub-Direction
+                        </p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">FINANCIAL OPERATIONS DEPARTMENT</p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            Of. No.
+                            <t t-esc="o.application_no"/>
+                        </p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            SUBJECT: Delivery of check format
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <t t-set="trade" t-value="o.get_trade_configuration()"/>
+                   
+                    <div class="col-12" align="left" style="font-weight:bold;">
+                        <t t-if="trade">
+                            <t t-if="trade.general_director_title">
+                                <span style="font-size:15px;" t-esc="trade.general_director_title"/>
+                                <span style="font-size:15px;">.</span>
+                            </t>
+                            <t t-if="trade.general_director_id">
+                                <span style="font-size:15px;" t-esc="trade.general_director_id.name"/>
+                            </t>
+                        </t>
+                    </div>
+                </div>
+            </div>
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"
+                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+                <div class="row">
+                    <div class="col-6" align="left">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <t t-set="trade" t-value="o.get_trade_configuration()"/>
+                        <p>
+                            <t t-if="trade">
+                                <t t-if="trade.revenue_director_title">
+                                    <span style="font-size:15px;" t-esc="trade.revenue_director_title"/>
+                                    <span style="font-size:15px;">.</span>
+                                </t>
+                                <t t-if="trade.revenue_dirctor_id">
+                                    <span style="font-size:15px;" t-esc="trade.revenue_dirctor_id.name"/>
+                                </t>
+                            </t>
+                        </p>
+                        <br/>
+                        <strong>DIRECTOR GENERAL</strong>
+                    </div>
+                    <div class="col-6" align="right" style="margin-left:50px;">
+                        <img src="/jt_check_controls/static/src/img/sign.png"
+                             style="max-height:100px;width:50%;align:right;"/>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </template>
+
+        <template id="external_layout_blank_req_check">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="jt_check_controls.external_blank_req_check">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+
+        <template id="blank_check_request_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-if="o.state in  ['approved','confirmed']">
+
+                        <t t-call="jt_check_controls.external_layout_blank_req_check">
+                            <div class="page">
+                                <br/><br/><br/> <br/><!--<br/><br/><br/><br/> -->
+
+                                <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                                    <span>Present:</span>
+                                </p>
+                                <br/>
+                                <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                                    <span>Through this conduit and in attention to your trade with the aforementioned
+                                        reference, I allow you to give you the following checks</span>
+                                </p>
+                                <br/><br/>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <table class="table  table-bordered" name="bank_req_table">
+                                            <thead>
+                                                <tr>
+
+                                                    <t t-set="colspan" t-value="6"/>
+                                                    <th name="th_bank" class="text-left">
+                                                        <span>Bank</span>
+                                                    </th>
+
+                                                    <th name="th_bank_account" class="text-left">
+                                                        <span>Bank Account</span>
+                                                    </th>
+                                                    <th name="th_concept" class="text-left">
+                                                        <span>Concept</span>
+                                                    </th>
+                                                    <th name="th_init_folio" class="text-left">
+                                                        <span>Initial Folio</span>
+                                                    </th>
+                                                    <th name="th_unit" class="text-left">
+                                                        <span>Final Folio</span>
+                                                    </th>
+                                                    <th class="text-left">
+                                                        <span>amounts</span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bank_req_tbody">
+                                                <tr>
+                                                    <td name="td_bank">
+                                                        <span t-if="o.bank_account_id"
+                                                              t-field="o.bank_account_id.bank_id"/>
+                                                    </td>
+                                                    <td name="td_bank_account">
+                                                        <span t-if="o.bank_account_id" t-field="o.bank_account_id.bank_account_id.acc_number"/>
+                                                    </td>
+                                                    <td name="td_concept">
+                                                        <span t-if="o.reason_request"
+                                                              t-field="o.reason_request"/>
+                                                    </td>
+                                                    <td name="td_inital_folio">
+                                                        <span t-if="o.intial_folio" t-field="o.intial_folio"/>
+                                                    </td>
+                                                    <td name="td_final_folio">
+                                                        <span t-if="o.final_folio" t-field="o.final_folio"/>
+                                                    </td>
+                                                    <td name="td_auth_amount">
+                                                        <span t-if="o.number_of_checks_auth"
+                                                              t-field="o.number_of_checks_auth"/>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <t t-if="o.distribution_of_module_ids">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>Distribution to Modules</h4>
+                                        <table class="table  table-bordered" style="text-align:center;" name="module_dist">
+                                            <thead>
+                                                <tr>
+                                                    <t t-set="colspan" t-value="4"/>
+                                                    <th name="th_module" class="text-left">
+                                                        <span>Module</span>
+                                                    </th>
+
+                                                    <th name="th_inital_folio" class="text-left">
+                                                        <span>Initial folio</span>
+                                                    </th>
+                                                    <th name="th_final_folio" class="text-left">
+                                                        <span>Final Folio</span>
+                                                    </th>
+                                                    <th name="th_amount_of_check" class="text-left">
+                                                        <span>Amounts of Checks</span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="module_distr_body">
+                                                <tr t-foreach="o.distribution_of_module_ids" t-as="module_id">
+                                                    <td name="td_module" t-if="module_id">
+                                                        <span t-if="module_id.module"
+                                                              t-field="module_id.module"/>
+                                                    </td>
+                                                    <td name="td_inital_filio" t-if="module_id">
+                                                        <span t-if="module_id.intial_filio" t-field="module_id.intial_filio"/>
+                                                    </td>
+                                                    <td name="td_final" t-if="module_id">
+                                                        <span t-if="module_id.final_folio"
+                                                              t-field="module_id.final_folio"/>
+                                                    </td>
+                                                    <td name="td_amount_of_checks" t-if="module_id">
+                                                        <span t-if="module_id.amounts_of_checks" t-field="module_id.amounts_of_checks"/>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                                </t>
+                                <br/>
+                                <br/>
+                                <t t-if=" not o.distribution_of_module_ids">
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                </t>
+                                <div class="row">
+                                    <div class="col-12" align="left" style="margin-left:10px;">
+                                        <span>Nice Stay</span>
+                                        <br/>
+                                        <span>"BY MY RACE WILL SPEAK THE SPIRIT"</span>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-12" align="left" style="margin-left:10px;">
+                                        <span>University City, Cdmx.,</span>  <span>
+                                            <t t-esc="o.get_date()"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+        <record id="paperformat_blank_req_check" model="report.paperformat">
+            <field name="name">Blank Request Check</field>
+            <field name="default" eval="True"/>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">80</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="blank_check_request"
+                model="blank.checks.request"
+                string="Blank Check Request"
+                report_type="qweb-pdf"
+                name="jt_check_controls.blank_check_request_template"
+                file="jt_check_controls.blank_check_request_template"
+                paperformat="jt_check_controls.paperformat_blank_req_check"
+        />
+    </data>
+</odoo>

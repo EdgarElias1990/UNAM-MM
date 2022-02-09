@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for program model -->
+        <record id="program_search_view" model="ir.ui.view">
+            <field name="name">program.search.view</field>
+            <field name="model">program</field>
+            <field name="arch" type="xml">
+                <search string="Program">
+                    <field name="key_unam"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Key UNAM" name='key_unam' context="{'group_by':'key_unam'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for program model -->
+    	<record id="program_form_view" model="ir.ui.view">
+            <field name="name">program.form.view</field>
+            <field name="model">program</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+	            		<group>
+	            			<field name="key_unam" required="1"/>
+                            <field name="desc_key_unam" required="1"/>
+	            		</group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for program model -->
+    	<record id="program_tree_view" model="ir.ui.view">
+            <field name="name">program.tree.view</field>
+            <field name="model">program</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="key_unam"/>
+                    <field name="desc_key_unam"/>
+            	</tree>
+            </field>
+        </record>
+
+        <!-- action for program views -->
+        <record id="action_program" model="ir.actions.act_window">
+            <field name="name">Program</field>
+            <field name="res_model">program</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="program_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

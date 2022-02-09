@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <template id="external_layout_header_request_field">
+        <div t-attf-class="header o_company_#{company.id}_layout">
+            <div class="row">
+                    <div class="col-2" align="left">
+                        <img t-if="res_company.logo" t-att-src="image_data_uri(res_company.logo)"
+                             style="max-height: 150px;" alt="Logo"/>
+                    </div>
+                    <div class="col-2" style="padding-left:7px;margin-left:5px;padding-top:15px;padding-right:0px;">
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            UNIVERSITY 
+                            BOARD OF 
+                            TRUSTEES</p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            TREASURY
+                        </p>
+                    </div>
+                    <div class="col-8" align="right" style="padding-right:0;padding-left:0px;">
+                        <img src="/jt_check_controls/static/src/img/dgf.png"
+                             style="max-height:100px;width:54%"/>
+                    </div>
+                </div>
+
+        </div>
+        <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-raw="0"/>
+        </div>
+        <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+            <center>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                    
+
+                 <table  width="60%" style="border:1px solid black;">
+                <thead>
+                <th style="border:1px solid black;text-align:center;">
+                    <span>FIRMA</span>
+                </th>
+                <th style="border:1px solid black;text-align:center;">
+                    <span>FIRMA</span>
+                </th>
+              
+                </thead>
+                <tbody>
+                    <td style="border:1px solid black;" height="110"></td>
+                    <td style="border:1px solid black;" height="110"></td>
+                </tbody>
+             </table>
+         </center>
+        </div>
+    </template>
+
+   <template id="external_layout_field_work">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t  t-call="jt_check_controls.external_layout_header_request_field"><t t-raw="0"/></t>
+   </template>
+
+        <template id="sending_check_to_file_template">
+            <t t-call="web.html_container">
+                <t t-call="jt_check_controls.external_layout_field_work">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                           
+                            <div id="info1" class="row mt32 mb32">
+                                <div class="col-3" name="batch_folio">
+                                    <strong>Batch Folio:</strong>
+                                    <p class="m-0" t-if="o.batch_folio" t-field="o.batch_folio"/>
+                                </div>
+                                <div class="col-3" name="folio_dependency">
+                                    <strong>List of integrated checks:</strong>
+                                    <p class="m-0" t-if="o.total_checks" t-field="o.total_checks"/>
+                                </div>
+                                <div class="col-3" name="date">
+                                    <strong>Date:</strong>
+                                    <p class="m-0" t-field="o.date"/>
+                                </div>
+                                
+                            </div>
+                            <div id="info1" class="row mt32 mb32">
+                                <div class="col-3" name="res_for_shipping">
+                                    <strong>Responsible for shipping:</strong>
+                                    <p class="m-0" t-if="o.responsible" t-field="o.responsible"/>
+                                </div>
+                                <div class="col-3" name="area_and_position">
+                                    <strong>Area and position:</strong>
+                                    <p class="m-0" t-if="o.area_position" t-field="o.area_position"/>
+                                </div>
+                            </div>
+                             <table class="table  table-condensed" name="check_foilo_table" style="margin-top:10px;">
+                                <thead>
+                                    <tr>
+                                        
+                                        <t t-set="colspan" t-value="2"/>
+                                        <th name="th_check_folio" class="text-left">
+                                            <span>Check Folio</span>
+                                        </th>
+                                        
+                                       
+                                    </tr>
+                                </thead>
+                                <tbody class="check_folio_tbody">
+                                    <t t-foreach="o.check_line_ids" t-as="line">
+                                    <tr>
+                                        <td name="td_foilo"><span t-if="line.check_log_id" t-field="line.check_log_id"/>
+                                        </td>
+                                        
+                                    </tr>
+                                </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+        <record id="paperformat_cancel_check" model="report.paperformat">
+            <field name="name">send checks</field>
+            <field name="default" eval="True"/>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">80</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="send_check_view"
+                model="send.checks"
+                string="Front page for sending checks to file"
+                report_type="qweb-pdf"
+                name="jt_check_controls.sending_check_to_file_template"
+                file="jt_check_controls.sending_check_to_file_template"
+                paperformat="jt_check_controls.paperformat_cancel_check"
+        />
+
+    </data>
+</odoo>

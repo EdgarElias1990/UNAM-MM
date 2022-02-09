@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="base_collaboration_header_template">
+            <div t-attf-class="header o_company_#{company.id}_layout">
+                <!-- style="border-top:1px solid black;border-left:1px solid black;border-right:1px solid black;" -->
+                <div style="border:1px solid grey;">
+                    <div class="row">
+                        <div class="col-3">
+                           <img t-attf-src="data:image/png;base64,{{res_company.header_logo}}" style="width:140px;height:140px;"/>                
+                       </div>
+                        <div class="col-8 text-center">
+                            <b>
+                                <span style="font-size:19px;" >UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>
+                                <span style="font-size:18px;">PATRONATO UNIVERSITARIO -TESORERÍA</span><br/>
+                                <span style="font-size:17px;">DIRECCIÓN GENERAL DE FINANZAS</span><br/>
+                                <span style="font-size:16px;">DIRECCION DE INGRESOS Y OPERACIÓN FINANCIERA</span><br/>
+                                <span style="font-size:15px;">ESTADO DE CUENTA DE CONVENIOS BASES DE COLABORACIÓN</span>
+                            </b> 
+                        </div>
+                        <div class="col-1 text-left">
+                        </div>
+                    </div>
+                    <br/>
+                    <!-- style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;" -->
+                    <div class="row">
+                        <div class="col-6 text-left">
+                            <hr style="width:90%;border-top: 2px solid black;margin-left:5px;"/>
+                        </div>
+                        <div class="col-6 text-left" style="vertical-align: bottom;">
+                            <strong>Fecha y hora de impresión  </strong><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"
+                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+            </div>
+        </template>
+
+        <template id="external_layout_base_collabortion">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="jt_agreement.base_collaboration_header_template">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+        <template id="collaboration_base_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="jt_agreement.external_layout_base_collabortion">
+
+                        <div class="page">
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            
+                        <span t-set="opening_bal" t-value="o.get_opening_balance()"/>
+                        <span t-set="deposite" t-value="o.get_deposite()"/>
+                        <span t-set="retiros" t-value="o.get_retiros()"/>
+                        <span t-set="intereses" t-value="o.get_interes()"/>
+                        <span t-set="actual" t-value="deposite-retiros+intereses"/>
+                    <table style="width:100%">
+                    <span t-set="period_name" t-value="o.get_period_name()"/>
+                    <tr style="width:100%">
+                        <th style="width:10%;text-align:left;">Fondo:</th>
+                        <td style="width:50%;text-align:left;"><span t-field="o.fund_type_id"/></td>
+                        <th style="width:15%;text-align:left;">Periodo:</th>
+                        <td style="width:35%;text-align:left;"><span t-esc="period_name"/></td>
+                    </tr>
+                    <tr style="width:100%">
+                        <th style="width:10%;text-align:left;">Convenio:</th>
+                        <td style="width:50%;text-align:left;"><span t-field="o.name"/></td>
+                        <th style="width:15%;text-align:left;">Num.de Convenio:</th>
+                        <td style="width:35%;text-align:left;"> <span t-field="o.n_report"/></td>
+                    </tr>
+
+                    <tr style="width:100%">
+                        <th style="width:10%;text-align:left;">Dep:</th>
+                        <td style="width:50%;text-align:left;"><span t-if="o.dependency_id" t-field="o.dependency_id.description"/></td>
+                        <th style="width:15%;text-align:left;">Clave dependencia:</th>
+                        <td style="width:35%text-align:left;"> <span t-if="o.dependency_id" t-field="o.dependency_id.dependency"/>
+                            <span t-if="o.subdependency_id" t-field="o.subdependency_id.sub_dependency"/>
+                        </td>
+                    </tr>
+                    <tr style="width:100%">
+                        <th style="width:10%"></th>
+                        <td style="width:50%"></td>
+                        <th style="width:15%;text-align:left;">Moneda:</th>
+                        <td style="width:35%;text-align:left;"> <span t-if="o.currency_id" t-field="o.currency_id.name"/>
+                        </td>
+                    </tr>
+                </table>
+                <div style="border:1px solid grey;">
+                <table style="width:100%;border-top: 1px solid black;border-bottom:1px solid black;">
+                    <tr style="width:100%;" class="border">
+                        <th></th>
+                        <th></th>
+                        <th style="text-align:right;"><span>Saldo Anterior:</span></th>
+                        <th class="style1 border1" style="text-align:right;"><span t-esc="opening_bal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                    </tr>
+                    <tr style="width:100%;" class="border">
+                        <th></th>
+                        <th></th>
+                        <th style="text-align:right;"><span>(+)Depositos:</span></th>
+                        <th class="style1 border1" style="text-align:right;"><span t-esc="deposite" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                    </tr>
+                    <tr style="width:100%;" class="border">
+                        <th></th>
+                        <th></th>
+                        <th style="text-align:right;"><span>(-)Retiros:</span></th>
+                        <th class="style1 border1" style="text-align:right;"><span t-esc="retiros" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                    </tr>
+                    <tr style="width:100%;" class="border">
+                        <th></th>
+                        <th></th>
+                        <th style="text-align:right;"><span>(+)Intereses:</span></th>
+                        <th class="style1 border1" style="text-align:right;"><span t-esc="intereses" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                    </tr>
+                    <!-- 
+                    <tr style="width:100%;" class="border">
+                        <th></th>
+                        <th></th>
+                        <th style="text-align:right;"><span>(-)Recup. por financ.:</span></th>
+                        <th class="style1 border1" style="text-align:right;"><span t-esc="retiros" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                    </tr>
+                    <tr style="width:100%;" class="border">
+                        <th></th>
+                        <th></th>
+                        <th style="text-align:right;"><span>(±)Dif. por Redondeo:</span></th>
+                        <th class="style1 border1" style="text-align:right;"><span t-esc="retiros" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                    </tr>
+                     -->
+                    <tr style="width:100%;" class="border">
+                        <th></th>
+                        <th></th>
+                        <th style="text-align:right;"><span>Saldo Actual:</span></th>
+                        <th class="style1 border1" style="text-align:right;"><span t-esc="actual" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                    </tr>
+                
+                </table>
+                <table style="width:100%;border-top: 1px solid black;border-bottom:1px solid black;">
+
+                    <thead>
+                        <tr style="height:6%;text-align:center;font-size:15px;background-color:#C0C0C0;">
+                            <th class="style1">Fecha</th>
+                            <th class="style1">Operacion</th>
+                            <th class="style1">Depositos</th>
+                            <th class="style1">Retiro</th>
+                            <th class="style1">Saldo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="total_final" t-value="opening_bal"/>
+                        <t t-set="total_inc" t-value="0"/>
+                        <t t-set="total_ret" t-value="0"/>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="style1 border1" style="text-align:right;"><span t-esc="opening_bal"/></td>
+                        </tr>
+                        <t t-set="total_final" t-value="0"/>
+                        <t t-set="total_debit" t-value="0"/>
+                        <t t-set="total_credit" t-value="0"/>
+                        
+                        <tr class="style1" t-foreach="o.get_report_lines()" t-as="line">
+                        
+                            <td style="text-align:left;"><span t-esc="line['date']"/></td>
+                            <td style="text-align:left;"><span t-esc="line['opt']"/></td>
+                            <td style="text-align:right;"><span t-esc="line['debit']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                            <td style="text-align:right;"><span t-esc="line['credit']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                            <td style="text-align:right;"><span t-esc="line['final']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                            <t t-set="total_final" t-value="line['final']"/>
+                            <t t-set="total_debit" t-value="total_debit + line['debit']"/>
+                            <t t-set="total_credit" t-value="total_credit + line['credit']"/>
+                            
+                        </tr>
+                        <td></td>
+                        <td></td>
+                        <tr>
+                            <th></th>
+                            <th>TOTAL:</th>
+                            <th class="style1 border1" style="text-align:right;"><span t-esc="total_debit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                            <th class="style1 border1" style="text-align:right;"><span t-esc="total_credit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                            <th class="style1 border1" style="text-align:right;"><span t-esc="total_final" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                </div>
+            </t>
+        </t>
+    </t>
+</template>
+
+        <record id="paperformat_bases_collaboration" model="report.paperformat">
+            <field name="name">Format 1</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="margin_top">1</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="dpi">100</field>
+        </record>
+
+        <report 
+            id="bases_collaboration_report"
+            model="bases.collaboration"
+            string="Bases collaboration"
+            report_type="qweb-pdf"
+            name="jt_agreement.collaboration_base_template"
+            file="jt_agreement.collaboration_base_template"
+            print_report_name="object.name"
+            paperformat="jt_agreement.paperformat_bases_collaboration"
+            menu="False"
+        
+        />
+
+    </data>
+</odoo>

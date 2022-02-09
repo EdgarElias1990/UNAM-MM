@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for program code model -->
+        <record id="program_code_search_view" model="ir.ui.view">
+            <field name="name">program.code.search.view</field>
+            <field name="model">program.code</field>
+            <field name="arch" type="xml">
+                <search string="Program code">
+                    <field name="program_code"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Status" name='status' context="{'group_by':'state'}"/>
+                        <filter string="Budget" name='budget' context="{'group_by':'budget_id'}"/>
+                        <filter string="Year" name='year' context="{'group_by':'year'}"/>
+                        <filter string="Program" name='program' context="{'group_by':'program_id'}"/>
+                        <filter string="Sub-Program" name='subprogram' context="{'group_by':'sub_program_id'}"/>
+                        <filter string="Dependency" name='dependency' context="{'group_by':'dependency_id'}"/>
+                        <filter string="Sub-Dependency" name='subdependency' context="{'group_by':'sub_dependency_id'}"/>
+                        <filter string="Item" name='item' context="{'group_by':'item_id'}"/>
+                        <filter string="Resource Origin" name='resource_origin' context="{'group_by':'resource_origin_id'}"/>
+                        <filter string="Institutional Activity" name='institutional_activity' context="{'group_by':'institutional_activity_id'}"/>
+                        <filter string="Conversation Program SHCP" name='budget_program_conversion' context="{'group_by':'budget_program_conversion_id'}"/>
+                        <filter string="Federal Item" name='federal_item' context="{'group_by':'conversion_item_id'}"/>
+                        <filter string="Expense Type" name='expense_type' context="{'group_by':'expense_type_id'}"/>
+                        <filter string="State Code" name='location' context="{'group_by':'location_id'}"/>
+                        <filter string="Key Porfolio" name='portfolio_id' context="{'group_by':'portfolio_id'}"/>
+                        <filter string="Project Type Identifier" name='project_type' context="{'group_by':'project_type_id'}"/>
+                        <filter string="Stage Identifier" name='stage_id' context="{'group_by':'stage_id'}"/>
+                        <filter string="Agreement Type" name='agreement_type' context="{'group_by':'agreement_type_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for program code model -->
+        <record id="program_code_form_view" model="ir.ui.view">
+            <field name="name">program.code.form.view</field>
+            <field name="model">program.code</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="program_code"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="year" required="1"/>
+                                
+                                <!-- Program Relation -->
+                                <field name="program_id" required="1" attrs="{'readonly': [('state', '=', 'validated')]}"/>
+                                <field name="desc_program"/>
+                                <!-- Dependency Relation -->
+                                <field name="dependency_id" attrs="{'readonly': [('state', '=', 'validated')]}"
+                                       required="1"/>
+                                <field name="desc_dependency"/>
+                                <!-- Sub-Dependency Relation -->
+                                <field name="sub_dependency_id" attrs="{'readonly': [('state', '=', 'validated')]}"
+                                       required="1" domain="[('dependency_id', '=', dependency_id)]" context="{'default_dependency_id': dependency_id}"/>
+                                <field name="desc_sub_dependency"/>
+                                
+                                <!-- Sub Program Relation -->
+                                <field name="sub_program_id"
+                                       required="1" domain="[('unam_key_id', '=', program_id),('dependency_id','=',dependency_id),('sub_dependency_id','=',sub_dependency_id)]"
+                                       context="{'default_unam_key_id': program_id,'default_dependency_id':dependency_id,'default_sub_dependency_id':sub_dependency_id}"/>
+                                <field name="desc_sub_program"/>
+                                <!-- Item Relation -->
+                                <field name="item_id" required="1" attrs="{'readonly': [('state', '=', 'validated')]}"/>
+                                <field name="desc_item"/>
+                                <!-- Digit Verification -->
+                                <field name="check_digit"/>
+                                <!-- Resource Origin Relation -->
+                                <field name="resource_origin_id" required="1"/>
+                                <field name="desc_resource_origin"/>
+                                <!-- Institutional Activity Relation -->
+                                <field name="institutional_activity_id" required="1"/>
+                                <field name="desc_institutional_activity"/>
+                                <!-- Budget ProgramConversion Relation -->
+                                
+                            </group>
+                            <group>
+								<field name="key_unam_digit_id" invisible="1"/>
+                                <!-- Federal Item Relation -->
+                                <field name="conversion_item_id" required="1" domain="[('item_id','=',item_id)]"/>
+                                <field name="desc_conversion_item"/>
+                                <field name="sg_id" invisible="1"/>
+                                <field name="budget_program_conversion_id" required="1" domain="[('conversion_key_id','=',sg_id),('program_key_id', '=', key_unam_digit_id)]" context="{'default_program_key_id': key_unam_digit_id}"/>
+                                <field name="desc_budget_program_conversion"/>                            
+                                <!-- Expense Type Relation -->
+                                <field name="expense_type_id" required="1"/>
+                                <field name="desc_expense_type"/>
+                                <!-- Geographic Location Relation -->
+                                <field name="location_id" required="1"/>
+                                <field name="desc_location"/>
+                                <!-- Wallet Password Relation -->
+                                <field name="portfolio_id" required="1"/>
+                                <field name="name_portfolio"/>
+                                <!-- Project Type Relation -->
+                                <field name="project_type_id" required="1" context="{'display_name_custom': 'project_type_identifier'}"/>
+                                <field name="desc_project_type"/>
+                                <field name="project_number"/>
+                                <!-- Stage Relation -->
+                                <field name="stage_id" context="{'display_name_custom': 'stage_identifier'}" required="1"/>
+                                <field name="desc_stage"/>
+                                <!-- Agreement Relation -->
+                                <field name="agreement_type_id" context="{'display_name_custom': 'agreement_type'}" required="1"/>
+                                <field name="name_agreement"/>
+                                <field name="number_agreement"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for program code model -->
+        <record id="program_code_tree_view" model="ir.ui.view">
+            <field name="name">program.code.tree.view</field>
+            <field name="model">program.code</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="program_code"/>
+                    <field name="dependency_id"/>
+                    <field name="sub_dependency_id"/>
+                    <field name="program_id"/>
+                    <field name="item_id"/>
+                    <field name="total_authorized_amt"/>
+                    <field name="total_assigned_amt"/>
+                    <field name="total_1_assigned_amt"/>
+                    <field name="total_2_assigned_amt"/>
+                    <field name="total_3_assigned_amt"/>
+                    <field name="total_4_assigned_amt"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for program code views -->
+        <record id="action_program_code" model="ir.actions.act_window">
+            <field name="name">Program Code</field>
+            <field name="res_model">program.code</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="program_code_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+
+	    <record id="action_update_program_master" model="ir.actions.server">
+	        <field name="name">Update Master Data</field>
+	        <field name="type">ir.actions.server</field>
+	        <field name="model_id" ref="jt_budget_mgmt.model_program_code"/>
+	        <field name="binding_model_id" ref="jt_budget_mgmt.model_program_code"/>
+	        <field name="state">code</field>
+	        <field name="code">action = records.update_program_master_data()</field>
+	    </record>
+        
+    </data>
+</odoo>

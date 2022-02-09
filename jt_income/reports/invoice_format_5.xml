@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="invoice_format_5_document">
+           <t t-call="jt_income.external_layout_5">
+                </t>
+                <t t-set="o" t-value="o.with_context(lang=lang)" />
+                <br/><br/><br/><br/><br/><br/><br/><br/>
+                <div class="page">
+                    <style>
+                        .main_box{
+                        position: relative;
+                        width: 410px;
+                        height: 55px;
+                        border: 2px solid black;
+
+                        }
+
+                        .box{
+
+                        position: absolute;
+                        left:15px;
+                        right:15px;
+                        width: 380px;
+                        height: 25px;
+                        top:10px;
+                        bottom:10px;
+                        border: 1px solid gray;
+                        padding-top:10px;
+                        color:red;
+                        font-size:20px;
+                        
+                        }
+
+                        .tab1 { 
+                                tab-size: 2; 
+                                text-indent: 5.0em; font-size:20px;
+                            } 
+                        </style>
+
+                        <table style="width:100%">
+                        <tr>
+                            <td style="width:50%;"><br/>
+                            	<!-- 
+                                <div class="main_box">
+                                    <div class="box"><b>FORMATO DE CONDONACIÓN 20 %</b></div>
+                                </div>
+                                 -->
+                            </td>
+
+                            <td style="width:50%;"><br/><br/>
+                                <div style="text-align:left;font-size:20px;">
+                                    <b>Dirección General de Finanzas<br/> Dirección de Ingresos y Op. Financiera<br/>Departamento de Ingresos</b>
+                                </div>
+                            </td>
+                        </tr>
+							<tr>
+								<td style="width:50%;">
+									<br/><b><span t-field="o.template5_recipient_title"/>&#160;<span t-if="o.template5_recipient_emp_id" t-field="o.template5_recipient_emp_id.name"/>
+										<br/><span t-field="o.template5_recipient_professional_title"/>
+									</b>
+								</td>
+								<td style="width:50%;">
+									<b><br/>Of. No. <span t-field="o.trade_no"/><br/><br/>Asunto: No Aplicación del 20% por Indemnización</b>
+								</td>
+							</tr>
+                        
+                        </table>
+                        <table style="width:100%">
+
+                            <tr>
+                                <br/><br/>
+                                <td style="text-align:left;font-size:15px;">
+                                    <h2><b><span t-field="o.addressee"/>
+                                    <br/>
+                                    P r e s e n t e</b>
+                                    </h2>
+                                </td>
+                            </tr>
+                        </table>
+
+                    <table style="width:100%">
+                        <tr>
+						<t t-set="number_of_return_check" t-value="o.number_of_return_check_char()"/>
+						<t t-set="amount_in_text" t-value="o.get_my_amount_to_text(o.amount_total)"/>
+						<t t-set="amount_in_text_decimal" t-value="o.get_my_amount_to_text_decimal(o.amount_total)"/>
+
+                        <p style="font-size:20px;">Por instrucciones del Lic. Alejandro Macias Ortega, Director de la Dirección General de Finanzas,  en  relación al oficio <b><span t-field="o.legal_compensation"/>.,</b> referente al cheque devuelto <b>No. <span t-esc="number_of_return_check"/> </b>del banco<b> <span t-field="o.income_bank_journal_id.name"/>;</b> le  informo  que <b> no se aplicará el  20% de  indemnización</b> por un importe de  ------------------------- <b>  <span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/> (<span t-esc="amount_in_text"/> <span t-esc="amount_in_text_decimal"/>)</b>
+                        </p><br/>
+
+                        <p style="font-size:20px;">Procede la condonación con base a la circular número <span t-field="o.circular_number"/> en virtud de que el cheque es de <span t-field="o.partner_id.name"/>.</p><br/>
+
+                        <p style="font-size:20px;">Sin más por el momento, quedo de usted enviándole un cordial saludo. </p><br/>
+                        
+						<t t-set="invoice_date" t-value="o.get_invoice_date_in_pdf()"/>
+                        <p style="font-size:20px;"><b>A t e n t a m e n t e <br/>"POR MI RAZA HABLARÁ EL ESPÍRITU"</b><br/>Ciudad Universitaria,  Cd. Mx., <span t-esc="invoice_date"/> 
+                            </p>
+                        <br/>
+                        </tr>
+
+                        <div class="row" style="float:right;">
+                            <div class="col-6">
+                                <div>
+                                    <img t-attf-src="data:image/png;base64,{{res_company.sign}}" style="width:120px;height:100px;"/>
+                                </div>
+                            </div>
+                        </div>
+
+                    </table>
+                </div>
+        </template>
+
+        <template id="invoice_format_5">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="lang" t-value="o.invoice_user_id.sudo().lang if o.type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                    <t t-call="jt_income.invoice_format_5_document" t-lang="lang"/>
+                </t>
+            </t>
+        </template>
+
+            <record id="paperformat_invoice_format_5" model="report.paperformat">
+                <field name="name">Format 5</field>
+                <field name="default" eval="True"/>
+                <field name="format">A4</field>
+                <field name="orientation">Portrait</field>
+                <field name="margin_top">15</field>
+                <field name="margin_bottom">40</field>
+                <field name="margin_left">10</field>
+                <field name="margin_right">10</field>
+                <field name="header_line" eval="False"/>
+                <field name="header_spacing">5</field>
+                <field name="dpi">100</field>
+            </record>
+
+            <report 
+                id="invoice_pdf_format5_name"
+                model="account.move"
+                string="FORMATO DE CONDONACIÓN 20%"
+                report_type="qweb-pdf"
+                name="jt_income.invoice_format_5"
+                file="jt_income.invoice_format_5"
+                paperformat="jt_income.paperformat_invoice_format_5"
+            />
+
+    </data>
+</odoo>

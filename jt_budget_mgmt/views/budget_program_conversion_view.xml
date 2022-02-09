@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for budget program conversion model -->
+        <record id="budget_program_conversion_search_view" model="ir.ui.view">
+            <field name="name">budget.program.conversion.search.view</field>
+            <field name="model">budget.program.conversion</field>
+            <field name="arch" type="xml">
+                <search string="Budget program conversion">
+                    <field name="shcp"/>
+                    <group expand="1" string="Group By">
+                        <filter string="SHCP" name='shcp' context="{'group_by':'shcp'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for budget program conversion model -->
+    	<record id="budget_program_conversion_form_view" model="ir.ui.view">
+            <field name="name">budget.program.conversion.form.view</field>
+            <field name="model">budget.program.conversion</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+	            		<group>
+	            			<field name="unam_key_id" required="1"/>
+                            <field name="desc" required="1"/>
+                            <field name="shcp" required="1"/>
+                            <field name="description"/>
+	            		</group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for budget program conversion model -->
+    	<record id="budget_program_conversion_tree_view" model="ir.ui.view">
+            <field name="name">budget.program.conversion.tree.view</field>
+            <field name="model">budget.program.conversion</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="unam_key_id"/>
+                    <field name="desc"/>
+                    <field name="shcp"/>
+                    <field name="description"/>
+            	</tree>
+            </field>
+        </record>
+
+        <!-- action for budget program conversion views -->
+        <record id="action_budget_program_conversion" model="ir.actions.act_window">
+            <field name="name">Budget Program Conversion</field>
+            <field name="res_model">budget.program.conversion</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="budget_program_conversion_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

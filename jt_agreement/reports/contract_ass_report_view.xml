@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="external_layout_header_contract_ass">
+            <div t-attf-class="header o_company_#{company.id}_layout">
+            <div class="row">
+                <div class="col-3">
+                   <img t-attf-src="data:image/png;base64,{{res_company.header_logo}}" style="width:140px;height:140px;"/>                
+               </div>
+                <div class="col-6 text-center">
+                    <br/>
+                    <b>
+                        <span style="font-size:17px;" >UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>
+                        <span style="font-size:15px;">PATRONATO UNIVERSITARIO -TESORERÍA</span><br/>
+                        <span style="font-size:14px;">DIRECCIÓN GENERAL DE FINANZAS</span><br/>
+                        <span style="font-size:13px;">Auxililar Contrato</span><br/>
+                    </b> 
+                </div>
+                <div class="col-3 text-left" style="vertical-align: bottom;">
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-6 text-left">
+                    <table>
+                        <tr>
+                            <td><strong>Convenio:</strong></td>
+                            <td><span t-field="o.convention_no"/></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nombre:</strong></td>
+                            <td><span t-field="o.name"/><br/></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dependencia:</strong></td>
+                            <td><span t-field="o.desc_dependency"/></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-2 text-left"></div>
+                <div class="col-4 text-left" style="margin-top:75px;vertical-align: bottom;">
+                    
+                    <strong>Fecha de Impresión:</strong>
+                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y')"/>
+                </div>
+            </div>
+            </div>
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"
+                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+            </div>
+        </template>
+
+        <template id="external_layout_contract_assistant">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="jt_agreement.external_layout_header_contract_ass">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+        <template id="contract_assistant_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="jt_agreement.external_layout_contract_assistant">
+                        <div class="page">
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                        <span t-set="opening_bal" t-value="o.opening_bal"/>
+                        <span t-set="opening_opt" t-value="o.opening_opt_number()"/>
+                        <span t-set="opening_date" t-value="o.opening_opt_date()"/>
+                        <span t-set="deposite" t-value="o.get_deposite()"/>
+                        <span t-set="retiros" t-value="o.get_retiros()"/>
+                        <span t-set="actual" t-value="opening_bal+deposite-retiros"/>
+						<span t-set="bal_final" t-value="0.0"/>
+						<span t-set="total_debit" t-value="0.0"/>
+						<span t-set="total_credit" t-value="0.0"/>
+							
+                         <table style="width:100%;height:auto;">
+                            <thead style="border-bottom:2px solid black;">
+                                <tr>
+                                    <th>FECHA</th>
+                                    <th>FOLIO</th>
+                                    <th>DESCRIPCION</th>
+                                    <th>SALDO INICIAL</th>
+                                    <th>DEPOSITOS</th>
+                                    <th>RETIROS</th>
+                                    <th>SALDO FINAL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="style1">
+                            	<td style="text-align:left;"><span t-esc="opening_date"></span></td>
+                            	<td style="text-align:left;"><span t-esc="opening_opt"></span></td>
+                            	<td style="text-align:left;"><span>Importe de apertura</span></td>
+                            	<td style="text-align:right;">0</td>
+                            	<td style="text-align:right;"><span t-esc="opening_bal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                            	<td style="text-align:right;">0</td>
+                            	<td style="text-align:right;"><span t-esc="opening_bal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                            </tr>
+                            <tr class="style1" t-foreach="o.get_contract_assistant_report_lines()" t-as="line">
+                        
+                                <td style="text-align:left;"><span t-esc="line['date']"/></td>
+                                <td style="text-align:left;"><span t-esc="line['operation_number']"/></td>
+                                <td style="text-align:left;"><span t-esc="line['opt']"/></td>
+                                 <td style="text-align:right;"><span t-esc="opening_bal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                                <td style="text-align:right;"><span t-esc="line['debit']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                                <td style="text-align:right;"><span t-esc="line['credit']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                                <span t-set="bal_final" t-value="opening_bal+line['debit']-line['credit']"/>
+                                <td style="text-align:right;"><span t-esc="bal_final" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                               	<span t-set="opening_bal" t-value="opening_bal+line['debit']-line['credit']"/>
+                               	
+                               	<span t-set="total_debit" t-value="total_debit+line['debit']"/>
+								<span t-set="total_credit" t-value="total_credit+line['credit']"/>
+                               	
+                            </tr>
+
+                            <tr class="style1" >
+                        
+                                <th></th>
+                                <th></th>
+                                <th>TOTAL:</th>
+                                 <th style="text-align:right;"><span t-esc="opening_bal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                                <th style="text-align:right;"><span t-esc="total_debit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                                <th style="text-align:right;"><span t-esc="total_credit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                                <th style="text-align:right;"><span t-esc="bal_final" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></th>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_bases_collaboration" model="report.paperformat">
+            <field name="name">Format 1</field>
+            <field name="default" eval="True"/>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">2</field>
+            <field name="margin_right">2</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report 
+            id="contract_assistant_report"
+            model="bases.collaboration"
+            string="Contract Assistant"
+            report_type="qweb-pdf"
+            name="jt_agreement.contract_assistant_template"
+            file="jt_agreement.contract_assistant_template"
+            print_report_name="object.name"
+            paperformat="jt_agreement.paperformat_bases_collaboration"
+            menu="False"
+
+        />
+
+    </data>
+</odoo>

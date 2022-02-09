@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="external_layout_header_check_registration">
+            <div t-attf-class="header o_company_#{company.id}_layout">
+                <div class="row">
+                    <div class="col-2" align="left">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                             style="max-height: 150px;" alt="Logo"/>
+                    </div>
+                    <div class="col-4" style="padding-left:15px;padding-top:7px;padding-right:0px;">
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">UNIVERSITY BOARD OF TRUSTEES</p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            TREASURY
+                        </p>
+                    </div>
+                    <div class="col-6" align="right" style="padding-right:0;padding-left:0px;">
+                        <img src="/jt_check_controls/static/src/img/dgf.png"
+                             style="max-height:100px;width:54%"/>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            GENERAL DIRECTORATE OF FINANCE
+                        </p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            DIRECTORATE OF INCOME AND FINANCIAL OPERATIONS
+                        </p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">FINANCIAL OPERATIONS DEPARTMENT</p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            Of. No. <t t-esc="o.folio_legal"/>
+                        </p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            SUBJECT: CHECK REGISTRATION REQUEST
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb4" align="left">
+                        <t t-if="o.bank_id">
+                            <b>
+                                <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                                    <t t-esc="o.bank_id.bank_id.company_name"/>
+                                </p>
+                                <t t-if="o.bank_id.bank_id">
+                                    <t t-set="bank" t-value="o.bank_id.bank_id"/>
+
+                                <t t-set="exe_name" t-value=""/>
+                                <b>
+                                <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                                    <t t-foreach="o.bank_id.executive_ids" t-as="exe">
+                                        <t t-if="exe.recipient_executive and not exe_name">
+                                            <t t-esc="exe.name"/>
+                                            <t t-set="exe_name" t-value="exe.name"/>
+                                        </t>
+                                    </t>
+<!--                                    <t t-esc="o.bank_id.bank_acc_number"/>-->
+                                </p>
+                            </b>
+
+                                <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                                    <t t-esc="bank.street"/>
+                                    <t t-if="bank.street2">
+                                        ,
+                                        <t t-esc="bank.street2"/>
+                                    </t>
+                                    <t t-if="bank.city">
+                                        ,
+                                        <t t-esc="bank.city"/>
+                                    </t>
+                                    <t t-if="bank.state">
+                                        ,
+                                        <t t-esc="bank.state.name"/>
+                                    </t>
+                                    <t t-if="bank.zip">
+                                        ,
+                                        <t t-esc="bank.zip"/>
+                                    </t>
+                                </p>
+                                <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                                    <t t-if="bank.country">
+                                        <t t-esc="bank.country.name"/>
+                                    </t>
+                                </p>
+                            </t>
+                            <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                                <span>Present</span>
+                            </p>
+                            </b>
+                        </t>
+                    </div>
+                </div>
+            </div>
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"
+                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+                <div class="row">
+                    <div class="col-8" align="left" style="font-size:15px">
+                        <span style="font-size:15px">
+                            Sincerely
+                            <br/>
+                        </span>
+                        <span style="font-size:15px">
+                            FOR MY RACE THE SPIRIT WILL SPEAK
+                        </span><br/>
+                        <span style="font-size:15px">
+                            Ciudad Universitaria, Cd. Mx., A
+                            <br/>
+                            <t t-esc="o.get_application_date(o.appliaction_date)"/>
+                        </span>
+                    </div>
+                    <div class="col-4" align="right">
+                        <img src="/jt_check_controls/static/src/img/sign.png"
+                             style="max-height:100px;width:50%"/>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <t t-set="trade" t-value="o.get_trade_configuration_3()"/>
+                    <div class="col-6" align="left">
+                        <t t-if="trade">
+                            <span style="font-size:15px">GENERAL DIRECTOR</span>
+                        </t>
+                    </div>
+                    <div class="col-6" align="right">
+                        <t t-if="trade">
+                            <span style="font-size:15px">DIRECTOR OF INCOME AND FINANCIAL OPERATION</span>
+                           
+                        </t>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="col-6" align="left">
+                        <t t-if="trade">
+                            <t t-if="trade.general_director_title">
+                                <span style="font-size:15px;" t-esc="trade.general_director_title"/>
+                                <span style="font-size:15px;">.</span>
+                            </t>
+                            <t t-if="trade.general_director_id">
+                                <span style="font-size:15px;" t-esc="trade.general_director_id.name"/>
+                            </t>
+                        </t>
+                    </div>
+                    <div class="col-6" align="right">
+                        <t t-if="trade">
+                            <t t-if="trade.revenue_director_title">
+                                <span style="font-size:15px;" t-esc="trade.revenue_director_title"/>
+                                <span style="font-size:15px;">.</span>
+                            </t>
+                            <t t-if="trade.revenue_dirctor_id">
+                                <span style="font-size:15px;" t-esc="trade.revenue_dirctor_id.name"/>
+                            </t>
+                        </t>
+                    </div>
+                </div><br/>
+                <div class="row">
+                    <div class="col-1" align="left">
+                        <span style="font-size:15px">C.C.P.</span>
+                    </div>
+                    <div class="col-11" align="left">
+                        <t t-if="trade">
+                            <t t-foreach="trade.copied_employee_ids" t-as="employee">
+                                <t t-if="employee.employee_id">
+                                    <t style="font-size:15px" t-esc="employee.title"/>.
+                                    <t style="font-size:15px" t-esc="employee.employee_id.name"/>-
+                                    <t style="font-size:15px" t-esc="employee.job_title"/>
+                                    <br/>
+                                </t>
+                            </t>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="external_layout_check_registration">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="jt_check_controls.external_layout_header_check_registration">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+        <template id="check_registration_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <!--                    <t t-if="o.state == 'approved'">-->
+                    <t t-call="jt_check_controls.external_layout_check_registration">
+                        <div class="page text-justify">
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <p text-align="justify">By means of the present in the character of authorized, we request and authorize the Activation of the issuance of <t t-esc="o.amount_checks"/> special checks with no. From folio <t t-esc="o.intial_folio"/> to <t t-esc="o.final_folio"/>, they belong to checking account no. 
+                            <t t-if="o.bank_account_id">
+                                (<t t-esc="o.bank_account_id.acc_number"/>),
+                            </t> <t t-if="not o.bank_account_id">,</t> on behalf of the National Autonomous University of Mexico.
+                            <br/>
+                            <br/>
+                            <span>It is worth mentioning that the checkbooks were satisfactorily delivered on <t t-esc="o.with_context(check_registration=True).get_application_date(o.check_receipt_date)"/> hereof, in the Financial Operations Department located at <t t-esc="o.full_address"/>, to <t t-set="trades" t-value="o.get_trade_configuration_3()"/>
+                            <t t-if="trades">
+                                <t t-if="trades.clerk_title">
+                                    <t style="font-size:15px;" t-esc="trades.clerk_title"/>
+                                    <t style="font-size:15px;">.</t>
+                                </t>
+                                <t t-if="trades.clerk_id">
+                                    <t style="font-size:15px;" t-esc="trades.clerk_id.name"/>
+                                </t>
+                            </t> who identified himself with _________________________________
+                            _________________, for which a copy of
+                            his identification is attached.</span></p>
+                            <br/>
+                            <p text-align="justify">
+                                Without any other particular and hoping to be favored with your attention to the
+                                present, we say goodbye to you with a cordial greeting.
+                            </p>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_check_registration" model="report.paperformat">
+            <field name="name">Check Registration</field>
+            <field name="default" eval="True"/>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">80</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="check_registration"
+                model="checkbook.request"
+                string="Check Registration"
+                report_type="qweb-pdf"
+                name="jt_check_controls.check_registration_template"
+                file="jt_check_controls.check_registration_template"
+                paperformat="jt_check_controls.paperformat_check_registration"
+        />
+
+    </data>
+</odoo>

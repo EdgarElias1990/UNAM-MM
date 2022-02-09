@@ -1,0 +1,3431 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_income
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-27 23:09+0000\n"
+"PO-Revision-Date: 2021-04-27 18:11-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid ", (CHEQUERA  CONACYT)"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_3_document
+msgid ", excede las facultades de esta Dirección General de Finanzas."
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_3_document
+msgid ", le informo que su solicitud de condonación de indemnización del 20% establecida en la Circular"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document
+msgid ",(CHEQUERA CONACYT)"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_3_document
+msgid "., por la cantidad de"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_2_document
+msgid "., referente al cheque devuelto No."
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid "20 % DE INDEMNIZACIÓN"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document
+msgid "202."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__template4__2nd_application_form_20
+#: model:ir.model.fields.selection,name:jt_income.selection__sender_recipient_trades__template__2nd_application_form_20
+msgid "2nd Application form 20%"
+msgstr "2° formato de aplicación 20%"
+
+#. module: jt_income
+#: model:ir.actions.report,name:jt_income.invoice_pdf_format4_name
+msgid "2° FORMATO DE APLICACIÓN 20%"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document
+msgid "; le  informo  que  la dependencia"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document
+msgid ""
+"<b>A t e n t a m e n t e <br/>\n"
+"                            \"POR MI RAZA HABLARÁ EL ESPÍRITU\"</b><br/>\n"
+"                            Ciudad Universitaria,  Cd. Mx.,"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_5_document
+msgid "<b>A t e n t a m e n t e <br/>\"POR MI RAZA HABLARÁ EL ESPÍRITU\"</b><br/>Ciudad Universitaria,  Cd. Mx.,"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_3_document
+msgid ""
+"<b>A t e n t a m e n t e<br/>\n"
+"                            “POR MI RAZA HABLARÁ EL ESPÍRITU”</b><br/>\n"
+"                            Ciudad Universitaria, Cd. Mex.,"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.external_layout_1 model_terms:ir.ui.view,arch_db:jt_income.external_layout_2 model_terms:ir.ui.view,arch_db:jt_income.external_layout_3
+#: model_terms:ir.ui.view,arch_db:jt_income.external_layout_4 model_terms:ir.ui.view,arch_db:jt_income.external_layout_5
+msgid "<b>C.c.p.     </b>"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_3_document
+msgid ""
+"<b>Dirección General de Finanzas<br/>\n"
+"                                    Dirección de Ingresos y Op. Financiera<br/>Departamento de Ingresos<br/></b>"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid ""
+"<b>Dirección General de Finanzas<br/> Dirección de Ingresos y Op. Financiera<br/>Departamento de Ingresos\n"
+"                                    </b>"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_5_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document
+msgid "<b>Dirección General de Finanzas<br/> Dirección de Ingresos y Op. Financiera<br/>Departamento de Ingresos</b>"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_2_document
+msgid "<b>Dirección General de Finanzas<br/> Dirección de Ingresos y Op. Financiera<br/>Departamento de Ingresos<br/></b>"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document
+msgid "<b>Dirección General de Finanzas<br/>Dirección de Ingresos y Op. Financiera<br/> Departamento de Ingresos<br/></b>"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_external_layout_income_annual_report
+msgid ""
+"<br/>\n"
+"                   \t<span style=\"font-size:12px;\">REAL</span><br/>"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_5_document
+msgid ""
+"<br/>\n"
+"                                    P r e s e n t e"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_2_document
+msgid ""
+"<br/>\n"
+"                                    P r e s e n t e<br/>"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid ""
+"<br/>\n"
+"                                P r e s e n t e"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_3_document
+msgid ""
+"<br/>\n"
+"                        P r e s e n t e"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid ""
+"<br/><br/>\n"
+"\n"
+"                                ATENCIÓN A:         SECRETARIO ADMINISTRATIVO y/o<br/>\n"
+"                                                                JEFE DE UNIDAD ADMINISTRATIVA"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid ""
+"<br/><br/>\n"
+"                                Asunto: Notificación de Cheque Devuelto"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document
+msgid ""
+"<br/><br/><br/>\n"
+"                                ATENCIÓN A:         SECRETARIO ADMINISTRATIVO y/o<br/>\n"
+"                                                                JEFE DE UNIDAD ADMINISTRATIVA"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_2_document
+msgid "<br/><br/>Asunto: 20% de Indemnización"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document
+msgid "<br/><br/>Asunto: Aplicación del 20%"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_5_document
+msgid "<br/><br/>Asunto: No Aplicación del 20% por Indemnización"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document
+msgid "<br/><br/>Asunto: Notificación de Cheque Devuelto"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_3_document
+msgid "<br/>Asunto: 20% de Indemnización"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_2_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_5_document
+msgid "<br/>Of. No."
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid ""
+"<span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Invoice</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Credit Note</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Bill</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Refund</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Sales Receipt</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Purchase Receipt</span>"
+msgstr ""
+"<span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Factura Borrador</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Credit Note</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Bill</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Refund</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Sales Receipt</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Purchase Receipt</span>"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid ""
+"<span class=\"o_form_label mx-3 oe_edit_only\" attrs=\"{'invisible': [ '|', '|', '|', ('state', '!=', 'draft'), ('invoice_payment_term_id', '!=', False), ('type', 'not in', "
+"('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))]}\"> or </span>"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "<span class=\"o_form_label\" attrs=\"{'invisible': [('invoice_sequence_number_next_prefix', '=', False)]}\">First Number:</span>"
+msgstr "<span class=\"o_form_label\" attrs=\"{'invisible': [('invoice_sequence_number_next_prefix', '=', False)]}\">Primer número:</span>"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_external_layout_income_annual_report
+msgid ""
+"<span style=\"font-size:16px;\">DIRECCIÓN GENERAL DE FINANZAS</span><br/>\n"
+"                   \t<span style=\"font-size:14px;\">DIRECCIÓN DE INGRESOS Y OPERACIÓN FINANCIERA</span><br/>\n"
+"                   \t<span style=\"font-size:12px;\">DEPARTAMENTO DE INGRESOS</span><br/>\n"
+"                   \t<span style=\"font-size:12px;\">INFORME ANUAL INGRESOS</span><br/>\n"
+"                   \t<span style=\"font-size:12px;\">INGRESOS POR SERVICIOS DE EDUCACIÓN Y PATRIMONIALES</span><br/>"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid "<u>Ya  que  el  trámite  inicial  fue  cancelado  por  el   sistema,  se  realizara   nuevamente  la  Solicitud  de  Certificado de  Depósito.</u>"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document
+msgid "<u>Ya que el trámite inicial fue cancelado por el sistema,  se realizara nuevamente la Solicitud de Certificado de Depósito. </u>"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_2_document
+msgid ""
+"A t e n t a m e n t e <br/>\n"
+"                            \"POR MI RAZA HABLARÁ EL ESPÍRITU\"<br/>\n"
+"                            Ciudad Universitaria,  Cd. Mx.,"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "ABRIL"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "AGOSTO"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Abril"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__account_code
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__account_id
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__report_account_code
+msgid "Account Code"
+msgstr "Código de cuenta"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__account_ie_id
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__account_ie_id
+msgid "Account I.E."
+msgstr "Cuenta de Afectación"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__account_ie_ids
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__account_ie_ids
+msgid "Account Ie"
+msgstr "Cuenta I.E"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__report_account_name
+msgid "Account Name"
+msgstr "Nombre de Cuenta"
+
+#. module: jt_income
+#: code:addons/jt_income/models/res_partner_bank.py:0 model:ir.model.constraint,message:jt_income.constraint_res_partner_bank_acc_number_uniq
+#, python-format
+msgid "Account Number must be unique."
+msgstr "El Número de Cuenta debe de ser único."
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__account_root_id
+msgid "Account Root"
+msgstr "Raíz de la cuenta"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Accounting"
+msgstr "Contabilidad"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__journal_id
+msgid "Accounting Account Description"
+msgstr "Descripción de la cuenta contable"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts_line__account_id
+msgid "Accounts"
+msgstr "Cuenta contable"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_activity
+msgid "Activity"
+msgstr "Actividad"
+
+#. module: jt_income
+#: model:ir.actions.act_window,name:jt_income.activity_catalog_action model:ir.model,name:jt_income.model_activity_catalog model:ir.ui.menu,name:jt_income.menu_activity_catalog
+msgid "Activity Catalog"
+msgstr "Actividad"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite__adaptation_type
+msgid "Adaptation Type"
+msgstr "Tipo de Adecuación"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Add Credit Note"
+msgstr "Agregar nota de crédito"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Add a line"
+msgstr "Agregar una línea"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Add an internal note..."
+msgstr "Agregar una nota interna."
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__addressee
+msgid "Addressee"
+msgstr "Destinatario"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_adequacies model:ir.model.fields,field_description:jt_income.field_account_move__adequacies_ids
+msgid "Adequacies"
+msgstr "Adecuaciones"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Agosto"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts__amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__amount_cfdi_conacyt_income
+msgid "Amount CFDI CONACYT Income"
+msgstr "Importe CFDI CONACYT Ingreso"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__amount_currency
+msgid "Amount in Currency"
+msgstr "Monto en moneda"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__amount_of_check
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__amount_of_check
+msgid "Amount of the check"
+msgstr "Importe del cheque"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__analytic_account_id
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__analytic_tag_ids
+msgid "Analytic Tags"
+msgstr "Etiqueta analítica"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__analytic_line_ids
+msgid "Analytic lines"
+msgstr "Líneas analíticas"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid "Anexamos copia del oficio"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0 model:ir.actions.act_window,name:jt_income.action_income_by_item_month
+#: model:ir.actions.act_window,name:jt_income.action_income_by_item_month_wizard model:ir.actions.client,name:jt_income.action_new_annual_income_report
+#: model:ir.actions.report,name:jt_income.income_by_item_report model:ir.model,name:jt_income.model_jt_income_annual_income_report
+#: model:ir.ui.menu,name:jt_income.menu_new_annual_income_report
+#, python-format
+msgid "Annual Income Report"
+msgstr "Ingresos por rubro y mes"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__tax_exigible
+msgid "Appears in VAT report"
+msgstr "Aparece en el informe de IVA"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__template1__application_form_20
+#: model:ir.model.fields.selection,name:jt_income.selection__sender_recipient_trades__template__application_form_20
+msgid "Application form 20%"
+msgstr "Formato de aplicación 20%"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__income_status__approved
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__status_certificate__approved
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__april
+msgid "April"
+msgstr "Abril"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_association_distribution_ie_accounts
+msgid "Association Distribution IE Accounts"
+msgstr "Asociación y Distribución de cuentas IE"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_association_distribution_ie_accounts_line
+msgid "Association Distribution IE Accounts Lines"
+msgstr "Asociación y Distribución de cuentas IE"
+
+#. module: jt_income
+#: model:ir.actions.act_window,name:jt_income.action_association_distribution_ie_accounts model:ir.ui.menu,name:jt_income.menu_association_distribution_ie_accounts
+msgid "Association and distribution of IE accounts"
+msgstr "Asociación y distribución de cuentas IE"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid ""
+"Atentamente<br/>\n"
+"                            “POR MI RAZA HABLARA EL ESPIRITU”<br/>\n"
+"                            Cd. Universitaria, Cd. Mx.,"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid "Atentamente<br/>“POR MI RAZA HABLARA EL ESPIRITU”<br/>Cd. Universitaria, Cd. Mx.,"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__august
+msgid "August"
+msgstr "Agosto"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__record_type__automatic
+msgid "Automatic"
+msgstr "Automático"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__balance
+msgid "Balance"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_bank_journal_id
+msgid "Bank"
+msgstr "Banco"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_bank_account
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__bank_account_id
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__bank_account_name
+msgid "Bank Account"
+msgstr "Cuenta bancaria"
+
+#. module: jt_income
+#: model:ir.actions.act_window,name:jt_income.action_account_bank_journal_income model:ir.model,name:jt_income.model_res_partner_bank
+#: model:ir.ui.menu,name:jt_income.menu_partner_bank_account_income_set
+msgid "Bank Accounts"
+msgstr "Cuentas bancarias"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_payment__bank_reference model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Bank Reference"
+msgstr "Referencia bancaria"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__bank_account_statement
+msgid "Bank account statement"
+msgstr "Estado de Cuenta"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__statement_line_id
+msgid "Bank statement line reconciled with this entry"
+msgstr "Línea de extracto bancario conciliada con esta entrada"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__bank_status_account
+msgid "Bank status account"
+msgstr "Banco estado de cuenta"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__tax_base_amount
+msgid "Base Amount"
+msgstr "Cantidad base"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__base_salary
+msgid "Base Salary"
+msgstr "Sueldo base"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__type_of_revenue_collection__billing
+#: model:ir.model.fields.selection,name:jt_income.selection__account_payment__type_of_revenue_collection__billing
+msgid "Billing"
+msgstr "Facturación Digital"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_branch
+msgid "Branch"
+msgstr "Sucursal"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Budget Refund"
+msgstr "Generar Adecuacion"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.external_layout_7
+msgid "C.P. ROLANDO DUARTE SÁNCHEZ <br/>JEFE DEL DEPARTAMENTO DE INGRESOS"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid "CERTIFICADO DE DEPOSITO POR RECUPERACIÓN DE CHEQUE"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__cfdi_20 model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__cfdi_20
+msgid "CFDI 20%"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__cfdi_conacyt_date
+msgid "CFDI CONACYT Date"
+msgstr "Fecha de Emisión CFDI CONACYT"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__cfdi_conacyt_enter
+msgid "CFDI CONACYT Enter"
+msgstr "CFDI CONACYT Ingreso"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid "CFDI DEL 20%"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__cfdi_conacyt_exercise
+msgid "CFDI Exercise CONACYT entry"
+msgstr "Ejercicio CFDI CONACYT Ingreso"
+
+#. module: jt_income
+#: code:addons/jt_income/models/res_partner_bank.py:0 model:ir.model.constraint,message:jt_income.constraint_res_partner_bank_clabe_uniq
+#, python-format
+msgid "CLABE must be unique."
+msgstr "La CLABE debe de ser única."
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__conac_accrued_income_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__conac_estimate_income_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__conac_income_run_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__conac_recover_income_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__conac_accrued_income_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__conac_estimate_income_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__conac_income_run_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__conac_recover_income_credit_account_id
+msgid "CONAC Credit Account"
+msgstr "Cuenta de crédito de CONAC"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__conac_accrued_income_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__conac_estimate_income_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__conac_income_run_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__conac_recover_income_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__conac_accrued_income_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__conac_estimate_income_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__conac_income_run_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__conac_recover_income_debit_account_id
+msgid "CONAC Debit Account"
+msgstr "Cuenta de débito de CONAC"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__conacyt_project_name
+msgid "CONACYT Project Name"
+msgstr "Nombre del proyecto CONACYT"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__conacyt_project_key
+msgid "CONACYT project key"
+msgstr "Clave de proyecto CONACYT"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "CONCURSO DE SELECCIÓN"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "CUENTA"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "CUENTA BANCARIA"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.view_liquid_adjustments_manual_deposite
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Cancel Entry"
+msgstr "Cancelar Asiento"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__cancellation_date
+msgid "Cancellation Date"
+msgstr "Fecha de cancelación"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__status_certificate__cancelled
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__certificate_seal
+msgid "Certificate Seal"
+msgstr "Sello del Certificado"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__type_of_revenue_collection__deposit_cer
+#: model:ir.model.fields.selection,name:jt_income.selection__account_payment__type_of_revenue_collection__deposit_cer
+msgid "Certificates of deposit"
+msgstr "Certificados de deposito"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__charge_id
+msgid "Charge"
+msgstr "Cargo"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__circular_number
+msgid "Circular number"
+msgstr "Número circular"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__res_partner__contact_type__client
+msgid "Client"
+msgstr "Cliente"
+
+#. module: jt_income
+#: model:ir.ui.menu,name:jt_income.menu_partner_income
+msgid "Clients"
+msgstr "Clientes"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_by_item_report_wizard_view
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__company_currency_id
+msgid "Company Currency"
+msgstr "Moneda de la empresa"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__liquid_adjustments_manual_deposite__adaptation_type__compensated
+msgid "Compensated Adjustments"
+msgstr "Ajustes Compensados"
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__tax_audit
+msgid "Computed field, listing the tax grids impacted by this line, and the amount it applies to each of them."
+msgstr "Campo calculado, que enumero las cuadriculas de impuestos afectadas por esta línea y la cantidad que aplica a cada una de ellas."
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_3_document
+msgid ""
+"Con el objetivo de evitar en lo sucesivo las circunstancias que dieron origen a una eventual condonación, me permito sugerir que los pagos se realicen mediante transferencia "
+"bancaria a las cuentas señaladas en la circular en comento."
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document
+msgid "Con relación al oficio"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_2_document
+msgid "Con relación al oficio No."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__income_activity__conacyt
+msgid "Conacyt"
+msgstr "CONACYT"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__concept
+msgid "Concept"
+msgstr "Concepto"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0
+#, python-format
+msgid "Concurso de selección"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.ui.menu,name:jt_income.submenu_menu_income_config
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: jt_income
+#: code:addons/jt_income/models/invoice.py:0
+#, python-format
+msgid "Configure la cuenta de débito predeterminada del Banco %s"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_res_partner__contact_type model:ir.model.fields,field_description:jt_income.field_res_users__contact_type
+msgid "Contact Type"
+msgstr "Tipo de Contacto"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_res_partner__income_control model:ir.model.fields,field_description:jt_income.field_res_users__income_control
+msgid "Control"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__country_id
+msgid "Country"
+msgstr "País"
+
+#. module: jt_income
+#: model_terms:ir.actions.act_window,help:jt_income.action_account_bank_journal_income
+msgid "Create a bank account"
+msgstr "Crea una cuenta bancaria"
+
+#. module: jt_income
+#: model_terms:ir.actions.act_window,help:jt_income.action_move_income_out_invoice_type
+msgid "Create a customer invoice"
+msgstr "Crea una factura cliente"
+
+#. module: jt_income
+#: model_terms:ir.actions.act_window,help:jt_income.res_partner_action_customer_income_menu
+msgid "Create a new customer in your address book"
+msgstr "Cree un nuevo cliente en su libreta de direcciones"
+
+#. module: jt_income
+#: model_terms:ir.actions.act_window,help:jt_income.action_move_income_out_invoice_type
+msgid "Create invoices, register payments and keep track of the discussions with your customers."
+msgstr "Cree facturas, registre cobros y realice un seguimiento de las conversaciones con sus clientes."
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_activity_catalog__create_uid
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts__create_uid
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts_line__create_uid
+#: model:ir.model.fields,field_description:jt_income.field_deposit_certificate_type__create_uid
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__create_uid
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_wizard__create_uid
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__create_uid model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__create_uid
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite__create_uid
+#: model:ir.model.fields,field_description:jt_income.field_payment_of_income__create_uid model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__create_uid
+#: model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_activity_catalog__create_date
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts__create_date
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts_line__create_date
+#: model:ir.model.fields,field_description:jt_income.field_deposit_certificate_type__create_date
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__create_date
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_wizard__create_date
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__create_date model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__create_date
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite__create_date
+#: model:ir.model.fields,field_description:jt_income.field_payment_of_income__create_date model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__create_date
+#: model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__create_date
+msgid "Created on"
+msgstr "Fecha de creación"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__credit
+msgid "Credit"
+msgstr "Crédito"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__voucher_type__credit_note
+msgid "Credit Note"
+msgstr "Nota de Crédito"
+
+#. module: jt_income
+#: model:ir.ui.menu,name:jt_income.menu_invoice_credit_note_income
+msgid "Credit Notes"
+msgstr "Notas de crédito"
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__matched_credit_ids
+msgid "Credit journal items that are matched with this journal item."
+msgstr "Elementos del diario de crédito que coinciden con este elemento del diario."
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Cuenta"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Cuenta Bancaria"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__currency_name
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_wizard__currency_id
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__currency_id model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__currency_type
+msgid "Currency Type"
+msgstr "Tipo de moneda"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__income_by_item_report_wizard__filter_date__custom
+msgid "Custom"
+msgstr "Cliente"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Customer RFC"
+msgstr "RFC del Cliente"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__customer_ref
+msgid "Customer Reference"
+msgstr "Referencia Cliente"
+
+#. module: jt_income
+#: model:ir.actions.act_window,name:jt_income.res_partner_action_customer_income_menu
+msgid "Customers"
+msgstr "Clientes"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__ddi_office_accounting
+msgid "DDI Office to general accounting the"
+msgstr "Oficio D.D.I a la contaduría general"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document
+msgid "DEPENDENCIA:"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid "DEPENDENCIA:      INSTITUTO DE FÍSICA"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "DESCRIPTION CUENTA CONTABLE"
+msgstr "DESCRIPCION CUENTA CONTABLE"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "DICIEMBRE"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite__journal_id
+msgid "Daily"
+msgstr "Diario"
+
+#. module: jt_income
+#: model:ir.actions.act_window,name:jt_income.action_daily_cash_cuts model:ir.ui.menu,name:jt_income.menu_daily_cash_cur
+msgid "Daily cash cuts"
+msgstr "Corte de caja diarios"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__cut_date model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__date
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Date"
+msgstr "Fecha y hora"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite__date_of_liquid_adu
+msgid "Affection Date"
+msgstr "Fecha de Afectación"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__date_reference
+msgid "Date of Reference"
+msgstr "Fecha de la referencia"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__debit
+msgid "Debit"
+msgstr "Debito"
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__matched_debit_ids
+msgid "Debit journal items that are matched with this journal item."
+msgstr "Elementos del diario de débito que coinciden con este elemento del diario."
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__december
+msgid "December"
+msgstr "Diciembre"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__accrued_income_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__estimate_income_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__income_run_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__recover_income_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__accrued_income_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__estimate_income_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__income_run_credit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__recover_income_credit_account_id
+msgid "Default Credit Account"
+msgstr "Cuenta de crédito por defecto"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__accrued_income_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__estimate_income_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__income_run_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__recover_income_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__accrued_income_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__estimate_income_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__income_run_debit_account_id
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__recover_income_debit_account_id
+msgid "Default Debit Account"
+msgstr "Cuenta de débito por defecto"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts__ie_account_line_ids
+#: model_terms:ir.ui.view,arch_db:jt_income.association_distribution_ie_accounts_from
+msgid "Definition"
+msgstr "Definición"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__dependancy_id model:ir.model.fields,field_description:jt_income.field_product_product__unit_id
+#: model:ir.model.fields,field_description:jt_income.field_product_template__unit_id
+msgid "Dependency"
+msgstr "Dependencia"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__deposit_date
+msgid "Deposit Date"
+msgstr "Fecha de depósito"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__deposit_for_check_recovery
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__deposit_for_check_recovery
+msgid "Deposit for check recovery"
+msgstr "Deposito para recuperación de cheques"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Descripción cuenta contable"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_activity_catalog__description
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts__desc
+#: model:ir.model.fields,field_description:jt_income.field_payment_of_income__description model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Description"
+msgstr "Descripción"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__description_of_the_movement
+msgid "Description of the movement"
+msgstr "Descripción del movimiento"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Diciembre"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid ""
+"Dirección de Ingresos y Op. Financiera<br/>\n"
+"                                Departamento de Ingresos<br/><br/>\n"
+"                                Of. No."
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Disc.%"
+msgstr "Desc.%"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__fixed_discount
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__fixed_discount
+msgid "Discount"
+msgstr "Descuento"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__discount
+msgid "Discount (%)"
+msgstr "Descuento (%)"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_activity_catalog__display_name
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts__display_name
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts_line__display_name
+#: model:ir.model.fields,field_description:jt_income.field_deposit_certificate_type__display_name
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__display_name
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__display_name
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__display_name
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_wizard__display_name
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__display_name
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__display_name
+#: model:ir.model.fields,field_description:jt_income.field_jt_income_annual_income_report__display_name
+#: model:ir.model.fields,field_description:jt_income.field_jt_income_income_annual_report__display_name
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite__display_name
+#: model:ir.model.fields,field_description:jt_income.field_payment_of_income__display_name
+#: model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__display_name
+#: model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__display_type
+msgid "Display Type"
+msgstr "Tipo de visualización"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__income_activity__disposal_property
+msgid "Disposal of property"
+msgstr "Enajenación de bienes"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_product_product__do_you_require_password
+#: model:ir.model.fields,field_description:jt_income.field_product_template__do_you_require_password
+msgid "Do you require password?"
+msgstr "¿Requiere clave de Ingreso?"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__income_activity__donations
+msgid "Donations"
+msgstr "Donativos"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__date_maturity
+msgid "Due Date"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Duplicate"
+msgstr "Duplicado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__employee_ids
+msgid "EMPLOYEES COPIED"
+msgstr "EMPLEADOS COPIADOS"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "ENERO"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.inherited_account_journal_form_view
+msgid "Earned Income"
+msgstr "Ingreso Ganado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__emitter
+msgid "Emitter"
+msgstr "Emisor"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__recipient_emp_id
+#: model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__sender_emp_id
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid "En relación a los siguientes oficios de Cheques Devueltos de la"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_3_document
+msgid "En respuesta a su Oficio No."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_wizard__end_date
+msgid "End Date"
+msgstr "Fecha final"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Enero"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__enrollment_and_tuition
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__enrollment_and_tuition
+msgid "Enrollment And Tuition"
+msgstr "Inscripciones y Colegiaturas"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.inherited_account_journal_form_view
+msgid "Estimate Income"
+msgstr "Ingreso Estimado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__exchange_rate
+msgid "Exchange Rate"
+msgstr "Tipo de cambio"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__exclude_from_invoice_tab
+msgid "Exclude From Invoice Tab"
+msgstr "Excluir de la pestaña Factura"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__exercise
+msgid "Exercise"
+msgstr "Ejercicio"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__exercise_upa
+msgid "Exercise UPA"
+msgstr "Ejercicio UPA"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__exercise_reference
+msgid "Exercise of the reference"
+msgstr "Ejercicio de la referencia"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__voucher_type__expenditure
+msgid "Expenditure"
+msgstr "Egreso"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite__budget_id
+msgid "Expenditure Budget"
+msgstr "Presupuesto de Egresos"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0 code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Export (XLSX)"
+msgstr "Exportar (XLSX)"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__income_type__extra
+#: model:ir.model.fields.selection,name:jt_income.selection__sub_origin_resource__income_type__extra
+msgid "Extraordinary"
+msgstr "Extraordinario"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__sub_origin_resource_id
+#: model:ir.model.fields,field_description:jt_income.field_account_payment__sub_origin_resource_id
+msgid "Extraordinary / Own income"
+msgstr "Ingreso extraordinario/propio"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__extraordinary_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__extraordinary_income
+msgid "Extraordinary Income"
+msgstr "Ingresos Extraordinarios"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "FEBRERO"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__fif_funds
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__fif_funds
+msgid "FIF Funds"
+msgstr "Fondos FIF"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "FONDO MANT MAYOR"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "FONDOS FIF"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.actions.report,name:jt_income.invoice_pdf_format1_name
+msgid "FORMATO DE APLICACIÓN 20%"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.actions.report,name:jt_income.invoice_pdf_format3_name
+msgid "FORMATO DE AVISO CAMBIO FORMA DE COBRO A TRANSFERENCIA"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.actions.report,name:jt_income.invoice_pdf_format2_name
+msgid "FORMATO DE CONDONACIÓN"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.actions.report,name:jt_income.invoice_pdf_format5_name
+msgid "FORMATO DE CONDONACIÓN 20%"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.actions.report,name:jt_income.invoice_pdf_format6_name
+msgid "FORMATO DE NOTIFICACIÓN DE CHEQUE DEVUELTO"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Febrero"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__february
+msgid "February"
+msgstr "Febrero"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_wizard__filter_date
+msgid "Filter Date"
+msgstr "Filtro de fecha"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__financial_products
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__financial_products
+msgid "Financial Products"
+msgstr "Productos Financieros"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite__folio
+msgid "Folio"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__folio_cfd
+msgid "Folio CFD"
+msgstr "Folio CFDI"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__cfdi_folio
+msgid "Folio CFDI"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__folio_cfs
+msgid "Folio CFS"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__folio_upa
+msgid "Folio UPA"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0
+#, python-format
+msgid "Fondo Mantenimiento Mayor"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0
+#, python-format
+msgid "Fondos FIF"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__always_set_currency_id
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__currency_type__foreign
+msgid "Foreign Currency"
+msgstr "Moneda Extranjera"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__template2__format_forgiveness
+#: model:ir.model.fields.selection,name:jt_income.selection__sender_recipient_trades__template__format_forgiveness
+msgid "Format Forgiveness"
+msgstr "Formato de condonación"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__template3__format_notice_change
+#: model:ir.model.fields.selection,name:jt_income.selection__sender_recipient_trades__template__format_notice_change
+msgid "Format notice change form of payment to transfer"
+msgstr "Formato de aviso cambio forma de cobro a transferencia"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__template5__format_remission_20
+#: model:ir.model.fields.selection,name:jt_income.selection__sender_recipient_trades__template__format_remission_20
+msgid "Format remission 20%"
+msgstr "Formato de condonación 20%"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__full_name
+msgid "Full Name"
+msgstr "Nombre completo"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_deposit_certificate_type__description
+msgid "General Description"
+msgstr "Descripción general"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.view_liquid_adjustments_manual_deposite
+msgid "Generate Adequacies"
+msgstr "Generar Adecuaciones"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_by_item_report_wizard_view
+msgid "Generate Reports"
+msgstr "Generar Informe"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report_search_view model_terms:ir.ui.view,arch_db:jt_income.income_by_item_month_report_search_view
+#: model_terms:ir.ui.view,arch_db:jt_income.income_by_item_report_data_search_view model_terms:ir.ui.view,arch_db:jt_income.income_cash_cut_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_res_company__header_logo
+msgid "Header Logo1"
+msgstr "Logo 1 cabecera"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_res_company__header_logo2
+msgid "Header Logo2"
+msgstr "Logo 2 cabecera"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__hide_base_on_account
+msgid "Hide Base Accounts"
+msgstr "Ocultar cuentas base"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__is_hide_budget_refund
+msgid "Hide Budget Refund"
+msgstr "Ocultar reembolso de presupuesto"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_id model:ir.model.fields,field_description:jt_income.field_activity_catalog__activity_id
+#: model:ir.model.fields,field_description:jt_income.field_activity_catalog__id model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts__id
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts_line__id
+#: model:ir.model.fields,field_description:jt_income.field_deposit_certificate_type__id model:ir.model.fields,field_description:jt_income.field_income_annual_report__id
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__id model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__id
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_wizard__id model:ir.model.fields,field_description:jt_income.field_income_cash_cut__id
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__id model:ir.model.fields,field_description:jt_income.field_jt_income_annual_income_report__id
+#: model:ir.model.fields,field_description:jt_income.field_jt_income_income_annual_report__id
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite__id model:ir.model.fields,field_description:jt_income.field_payment_of_income__id
+#: model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__id model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__id
+msgid "ID"
+msgstr "ID de Actividad"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_product_product__activity_id model:ir.model.fields,field_description:jt_income.field_product_template__activity_id
+msgid "ID Activity"
+msgstr "ID Actividad"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts_line__ie_account_id
+#: model:ir.model.fields,field_description:jt_income.field_product_product__ie_account_id model:ir.model.fields,field_description:jt_income.field_product_template__ie_account_id
+msgid "IE Account"
+msgstr "Cuenta IE"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts__ie_key
+msgid "IE Key"
+msgstr "Cuenta de Afectación"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__ieps
+msgid "IEPS"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__ieps_amount
+msgid "IEPS Amount"
+msgstr "IEPS importe"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid "IMPORTE DEL CHEQUE"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "INCORPORACIÓN Y REVALIDACIÓN"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "INGRESO EXTRAORDINARIO"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "INGRESO PATRIMONIAL"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "INSCRIP.Y COLEG."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_isr
+msgid "ISR"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/models/invoice.py:0
+#, python-format
+msgid "If you want to use \"Off-Balance Sheet\" accounts, all the accounts of the journal entry must be of this type"
+msgstr "Si deseas usar cuentas \"Fuera de Estado de Situación\", todas las cuentas de la entrada contable deben de ser de este tipo"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "In Payment"
+msgstr "En Cobros"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_bank_statement_import_journal_creation__for_income
+#: model:ir.model.fields,field_description:jt_income.field_account_journal__for_income
+#: model:ir.model.fields,field_description:jt_income.field_account_setup_bank_manual_config__for_income
+#: model:ir.model.fields,field_description:jt_income.field_res_partner_bank__for_income model:ir.model.fields.selection,name:jt_income.selection__account_move__voucher_type__income
+#: model:ir.model.fields.selection,name:jt_income.selection__association_distribution_ie_accounts__scope_of_application__income
+msgid "Income"
+msgstr "Ingreso"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0 model:ir.actions.act_window,name:jt_income.action_income_annual_report
+#: model:ir.actions.client,name:jt_income.action_new_income_annual_report model:ir.actions.report,name:jt_income.pdf_income_annual_report
+#: model:ir.model,name:jt_income.model_income_annual_report model:ir.model,name:jt_income.model_jt_income_income_annual_report
+#: model:ir.ui.menu,name:jt_income.menu_new_income_annual_report
+#, python-format
+msgid "Income Annual Report"
+msgstr "Informe Anual de Ingresos"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_invoice_billing
+msgid "Income Billing"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_invoice_billing_return_checked
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_invoice_deposit_automatic
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_invoice_deposit_manual
+msgid "Income Billing Return Checked"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_income_by_item_month_report
+msgid "Income By Item Month Report"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_income_cash_cut
+msgid "Income Cash Cut"
+msgstr "Corte de caja diarios"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Income Invoice"
+msgstr "Factura de ingresos"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_invoice_line_ids
+msgid "Income Invoice Lines"
+msgstr "Líneas de facturación de ingresos"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__income_line_id
+msgid "Income Line"
+msgstr "Línea de ingresos"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_status
+msgid "Income Status"
+msgstr "Estatus"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__income_sub_account
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__income_sub_account
+msgid "Income Sub-account"
+msgstr "Subcuenta"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__income_sub_subaccount
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__income_sub_subaccount
+msgid "Income Sub-subaccount"
+msgstr "Subsubcuenta"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_type model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__income_type
+msgid "Income Type"
+msgstr "Tipo de ingreso"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_invoice_trades_dgoae
+msgid "Income Type Reference"
+msgstr "Referencia del tipo de ingresos"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.inherited_account_journal_form_view
+msgid "Income to run"
+msgstr "Ingreso por Ejecutar"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_income_by_item_report_data
+msgid "IncomeBYItemReportData"
+msgstr "Datos del informe de ingresos por articulo"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_income_by_item_report_wizard
+msgid "IncomeBYItemReportWizard"
+msgstr "Asistente de informe de ingresos por articulo"
+
+#. module: jt_income
+#: model:ir.ui.menu,name:jt_income.main_menu_income model:ir.ui.menu,name:jt_income.submenu_menu_income
+msgid "Incomes"
+msgstr "Ingresos"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0
+#, python-format
+msgid "Incorporación y Revalidación"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__incorporation_and_revalidation
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__incorporation_and_revalidation
+msgid "Incorporation And Revalidation"
+msgstr "Incorporación y Revalidación"
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__tax_line_id
+msgid "Indicates that this journal item is a tax line"
+msgstr "Indica que este articulo del diario es una línea de impuestos"
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_cash_cut__l10n_mx_edi_payment_method_id
+msgid "Indicates the way the payment was/will be received, where the options could be: Cash, Nominal Check, Credit Card, etc."
+msgstr "Indica la forma en que se recibió / recibirá el pago, donde las opciones podrían ser: Efectivo, Tarjeta de Crédito, etc."
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0
+#, python-format
+msgid "Ingresos Extraordinarios"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0
+#, python-format
+msgid "Inscripciones y Colegiaturas"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/models/product.py:0
+#, python-format
+msgid "Internal Reference NULL Not Allowed!"
+msgstr "Referencia Interna vacía no permitida!"
+
+#. module: jt_income
+#: code:addons/jt_income/models/product.py:0 model:ir.model.constraint,message:jt_income.constraint_product_template_unique_default_code
+#, python-format
+msgid "Internal Reference must be unique."
+msgstr "La Referencia Interna debe de ser única."
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__account_internal_type
+msgid "Internal Type"
+msgstr "Tipo interno"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Invoice"
+msgstr "Facturas"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Invoice Lines"
+msgstr "Líneas de factura"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_adequacies__invoice_move_id
+msgid "Invoice Move"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.actions.act_window,name:jt_income.action_move_income_out_invoice_type model:ir.ui.menu,name:jt_income.menu_invoice_income
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__is_rounding_line
+msgid "Is Rounding Line"
+msgstr "Es línea de redondeo"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__is_it_enabled_for_agreement
+msgid "Is it enabled for agreement?"
+msgstr "¿Está habilitado para convenios?"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__issuer_dependency_id
+msgid "Issuer Dependency"
+msgstr "Dependencia Emisora"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "JULIO"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "JUNIO"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__january
+msgid "January"
+msgstr "Enero"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_account_journal model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_account_move
+msgid "Journal Entries"
+msgstr "Asientos contables"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__move_id
+msgid "Journal Entry"
+msgstr "Asientos Contables"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Journal Items"
+msgstr "Apuntes contables"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Julio"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__july
+msgid "July"
+msgstr "Julio"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__june
+msgid "June"
+msgstr "Junio"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Junio"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite__observation
+msgid "Justification of the Movement"
+msgstr "Justificación del Movimiento"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__l10n_mx_edi_product_code_sat_id
+msgid "Key Product SAT"
+msgstr "Clave Producto SAT"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__key
+msgid "Key origin of the resource"
+msgstr "Clave del origen del recurso"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__name
+msgid "Label"
+msgstr "Descripción"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_activity_catalog____last_update
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts____last_update
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts_line____last_update
+#: model:ir.model.fields,field_description:jt_income.field_deposit_certificate_type____last_update
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report____last_update
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report____last_update
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data____last_update
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_wizard____last_update
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut____last_update
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line____last_update
+#: model:ir.model.fields,field_description:jt_income.field_jt_income_annual_income_report____last_update
+#: model:ir.model.fields,field_description:jt_income.field_jt_income_income_annual_report____last_update
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite____last_update
+#: model:ir.model.fields,field_description:jt_income.field_payment_of_income____last_update
+#: model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades____last_update
+#: model:ir.model.fields,field_description:jt_income.field_sub_origin_resource____last_update
+msgid "Last Modified on"
+msgstr "Ultima modificación en"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_activity_catalog__write_uid
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts__write_uid
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts_line__write_uid
+#: model:ir.model.fields,field_description:jt_income.field_deposit_certificate_type__write_uid
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__write_uid
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_wizard__write_uid model:ir.model.fields,field_description:jt_income.field_income_cash_cut__write_uid
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__write_uid
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite__write_uid
+#: model:ir.model.fields,field_description:jt_income.field_payment_of_income__write_uid model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__write_uid
+#: model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__write_uid
+msgid "Last Updated by"
+msgstr "Última modificación por"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_activity_catalog__write_date
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts__write_date
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts_line__write_date
+#: model:ir.model.fields,field_description:jt_income.field_deposit_certificate_type__write_date
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__write_date
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_wizard__write_date
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__write_date model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__write_date
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite__write_date
+#: model:ir.model.fields,field_description:jt_income.field_payment_of_income__write_date model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__write_date
+#: model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__write_date
+msgid "Last Updated on"
+msgstr "Última fecha de modificación"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__income_activity__leasing_real_estate
+msgid "Leasing of real estate"
+msgstr "Arrendamiento de inmuebles"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__legal_compensation
+msgid "Legal Compensation"
+msgstr "Oficio(s) indemnización"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__legal_number
+msgid "Legal Number"
+msgstr "No. Oficio"
+
+#. module: jt_income
+#: code:addons/jt_income/models/invoice.py:0
+#, python-format
+msgid "Lines from \"Off-Balance Sheet\" accounts cannot be reconciled"
+msgstr "Las líneas de las cuentas \"fuera de balance\" no se pueden conciliar"
+
+#. module: jt_income
+#: code:addons/jt_income/models/invoice.py:0 model:ir.model.fields.selection,name:jt_income.selection__liquid_adjustments_manual_deposite__adaptation_type__liquid
+#, python-format
+msgid "Liquid Adjustments"
+msgstr "Liquidez"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_liquid_adjustments_manual_deposite
+msgid "Liquid Adjustments Manual Deposite"
+msgstr "Deposito manual de ajustes líquidos"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.view_liquid_adjustments_manual_deposite
+msgid "Liquidity"
+msgstr "Liquidez"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "MARZO"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "MAYO"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "MES"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__email
+msgid "Mail"
+msgstr "Correo"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__major_maintenance_fund
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__major_maintenance_fund
+msgid "Major Maintenance Fund"
+msgstr "Fondo Mantenimiento Mayor"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__record_type__manual
+msgid "Manual"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__march
+msgid "March"
+msgstr "Marzo"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Marzo"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__matched_credit_ids
+msgid "Matched Credits"
+msgstr "Créditos igualados"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__matched_debit_ids
+msgid "Matched Debits"
+msgstr "Débitos igualados"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__full_reconcile_id
+msgid "Matching #"
+msgstr "Coincidencia #"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__may
+msgid "May"
+msgstr "Mayo"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Mayo"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0
+#, python-format
+msgid "Mes"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "Moneda"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__month_name
+msgid "Month"
+msgstr "Mes"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__month
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__month
+msgid "Month No"
+msgstr "Mes No"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_liquid_adjustments_manual_deposite__move_id
+msgid "Move"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__move_line_ids
+msgid "Move Line"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__movement_date
+msgid "Movement date"
+msgstr "Fecha de Movimiento"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "NOMBRE"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "NOMINA"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "NOVIEMBRE"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__payment_method_name model:ir.model.fields,field_description:jt_income.field_deposit_certificate_type__name
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__sub_origin_name
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__sub_origin_resource_id model:ir.model.fields,field_description:jt_income.field_income_cash_cut__name
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report_search_view
+msgid "Name"
+msgstr "Nombre"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__sub_origin_name_group_by
+msgid "Name Group"
+msgstr "Nombre del grupo"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__currency_type__national
+msgid "National Currency"
+msgstr "Moneda Nacional"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__blocked
+msgid "No Follow-up"
+msgstr "Sin seguimiento"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_5_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid "No."
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Nombre"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0 model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__nomina
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__nomina
+#, python-format
+msgid "Nomina"
+msgstr "Nómina"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__income_invoice_move_line__display_type__line_note
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Note"
+msgstr "Nota"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__november
+msgid "November"
+msgstr "Noviembre"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Noviembre"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__move_name
+msgid "Number"
+msgstr "Número"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__number_of_returned_check
+msgid "Number of returned check"
+msgstr "No. cheque devuelto"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__number_receipts
+msgid "Number receipts"
+msgstr "No. Recibos"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "OCTUBRE"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid "OFICIO D.D.IA LA CONTADURIA GENERAL"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "OTRAS PREST."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__observations
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.sender_recipient_trades_from
+msgid "Occupation Compensation"
+msgstr "Compensacion de Ocupacion"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__october
+msgid "October"
+msgstr "Octubre"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Octubre"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.actions.act_window,help:jt_income.res_partner_action_customer_income_menu
+msgid "Odoo helps you easily track all activities related to a customer."
+msgstr "Odoo le ayuda a rastrear fácilmente todas las actividades relacionadas con un cliente."
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_3_document
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document
+msgid "Of. No."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__ddi_office_accounting
+msgid "Official DDI to the General Accounting Office"
+msgstr "DDI oficial de la Contaduría General"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__operation_key_id
+msgid "Operation Key"
+msgstr "Clave de Operación"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_resource_origin
+msgid "Origin of the Resource"
+msgstr "Origen del recurso"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__payment_id
+msgid "Originator Payment"
+msgstr "Cobro del originador"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__tax_line_id
+msgid "Originator Tax"
+msgstr "Impuesto del originador"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__tax_repartition_line_id
+msgid "Originator Tax Repartition Line"
+msgstr "Línea de reparto de impuestos del originador"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__tax_group_id
+msgid "Originator tax group"
+msgstr "Grupo de impuestos del originador"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__other_benefits
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__other_benefits
+msgid "Other Benefits"
+msgstr "Otras Prestaciones"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Other Info"
+msgstr "Otra información"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0
+#, python-format
+msgid "Otras Prestaciones"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__income_type__own
+#: model:ir.model.fields.selection,name:jt_income.selection__sub_origin_resource__income_type__own
+msgid "Own"
+msgstr "Propio"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.external_layout_1 model_terms:ir.ui.view,arch_db:jt_income.external_layout_2 model_terms:ir.ui.view,arch_db:jt_income.external_layout_3
+#: model_terms:ir.ui.view,arch_db:jt_income.external_layout_4 model_terms:ir.ui.view,arch_db:jt_income.external_layout_5 model_terms:ir.ui.view,arch_db:jt_income.external_layout_6
+#: model_terms:ir.ui.view,arch_db:jt_income.external_layout_7
+msgid ""
+"PATRONATO UNIVERSITARIO<br/>\n"
+"                    \t\tTESORERIA"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.external_layout_income_annual_report
+msgid ""
+"PATRONATO UNIVERSITARIO<br/>\n"
+"                    \t\tTESORERÍA<br/>\n"
+"                    \t\tDIRECCIÓN GENERAL DE FINANZAS<br/>\n"
+"                    \t\tPRONÓSTICO DE INGRESOS/EGRESOS 2020<br/>\n"
+"                    \t\t(Miles de pesos)<br/>"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0 code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "PDF"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "PRODUCTOS FINANCIEROS"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "PROVEEDORAS"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Paid"
+msgstr "Cobrado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_product_product__parent_product_id
+#: model:ir.model.fields,field_description:jt_income.field_product_template__parent_product_id
+msgid "Parent Product"
+msgstr "Producto padre"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0 model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__patrimonial_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__patrimonial_income
+#, python-format
+msgid "Patrimonial Income"
+msgstr "Ingresos patrimoniales"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__l10n_mx_edi_payment_method_id model_terms:ir.ui.view,arch_db:jt_income.income_cash_cut_search
+msgid "Payment Method"
+msgstr "Método de Cobro"
+
+#. module: l10n_mx_edi
+#: model:ir.model.fields,field_description:l10n_mx_edi.field_account_move__l10n_mx_edi_payment_method_id
+msgid "Payment Method"
+msgstr "Forma de Cobro"
+
+#. module: account
+#: model:ir.actions.act_window,name:account.action_payment_term_form
+#: model:ir.model,name:account.model_account_payment_term
+#: model:ir.model.fields,field_description:account.field_account_invoice_report__invoice_payment_term_id
+#: model:ir.model.fields,field_description:account.field_account_move__invoice_payment_term_id
+#: model:ir.model.fields,field_description:account.field_account_payment_term__name
+#: model:ir.model.fields,field_description:account.field_account_payment_term_line__payment_id
+#: model:ir.ui.menu,name:account.menu_action_payment_term_form
+#: model_terms:ir.ui.view,arch_db:account.view_partner_property_form
+#: model_terms:ir.ui.view,arch_db:account.view_payment_term_form
+#: model_terms:ir.ui.view,arch_db:account.view_payment_term_line_form
+#: model_terms:ir.ui.view,arch_db:account.view_payment_term_line_tree
+#: model_terms:ir.ui.view,arch_db:account.view_payment_term_search
+#: model_terms:ir.ui.view,arch_db:account.view_payment_term_tree
+msgid "Payment Terms"
+msgstr "Plazo de Cobro"
+
+#. module: jt_income
+#: model:ir.actions.act_window,name:jt_income.action_payment_of_income model:ir.ui.menu,name:jt_income.menu_payment_of_income
+msgid "Payment Of"
+msgstr "Cobro de"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_payment_of_income
+msgid "Payment Of Income"
+msgstr "Cobro de ingresos"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__voucher_type__payment_supplement
+msgid "Payment Supplement"
+msgstr "Complemento de cobro"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_payment_type model_terms:ir.ui.view,arch_db:jt_income.view_account_payment_form_income_inherit
+msgid "Payment Type"
+msgstr "Tipo de cobro"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__income_payment_type__ppd_installments
+msgid "Payment in PPD installments"
+msgstr "Cobro en parcialidades PPD"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__income_payment_type__single_pue
+msgid "Payment in a singlePUE"
+msgstr "Cobro en una sola exhibición PUE"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__payment_of_id model:ir.model.fields,field_description:jt_income.field_payment_of_income__name
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Payment of"
+msgstr "Cobro de"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_payment_ref
+msgid "Payment reference or approval number"
+msgstr "Referencia Pay Pal o Número aprobación"
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__payment_id
+msgid "Payment that created this entry"
+msgstr "Cobro que creo esta entrada"
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_account_move__payment_method_name
+msgid "Payment way, is found in the SAT catalog."
+msgstr "Forma de cobro, se encuentra en el catalogo SAT."
+
+#. module: jt_income
+#: model:ir.actions.act_window,name:jt_income.action_account_income_payments model:ir.model,name:jt_income.model_account_payment
+#: model:ir.ui.menu,name:jt_income.menu_invoice_payment_income model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Payments"
+msgstr "Cobros"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Payments Register"
+msgstr "Registrar Cobro"
+
+#. module: jt_income
+#: model_terms:ir.actions.act_window,help:jt_income.action_account_income_payments
+msgid "Payments are used to register liquidity movements. You can process those payments by your own means or by using installed facilities."
+msgstr "Los cobros se utilizan para registrar movimientos de liquidez. Puede procesar esos cobros por sus propios medios o utilizando las herramientas instaladas."
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__association_distribution_ie_accounts__proration_calculation__percentage_price
+msgid "Percentage of the price"
+msgstr "Porcentaje del Precio"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_by_item_report_wizard_view
+msgid "Period"
+msgstr "Periodo"
+
+#. module: jt_income
+#: code:addons/jt_income/models/invoice.py:0
+#, python-format
+msgid "Please Configure Default Debit Account of Bank %s"
+msgstr "Por favor configure la Cuenta Deudora por defecto del Banco %s"
+
+#. module: jt_income
+#: code:addons/jt_income/models/invoice.py:0
+#, python-format
+msgid "Please configure IE Accounts 100% Percentage"
+msgstr "Por favor configure el 100% del porcentaje de las cuentas IE"
+
+#. module: jt_income
+#: code:addons/jt_income/models/account_payment.py:0
+#, python-format
+msgid "Please configure UNAM and CONAC Accrued Income Account!"
+msgstr "Por favor configure las cuentas de Ingresos en el Diario del Banco seleccionado!"
+
+#. module: jt_income
+#: code:addons/jt_income/models/account_payment.py:0
+#, python-format
+msgid "Please configure UNAM and CONAC Recover Income Account!"
+msgstr "Por favor configure las cuentas de Ingresos en el Diario del Banco seleccionado!"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_5_document
+msgid "Por instrucciones del Lic. Alejandro Macias Ortega, Director de la Dirección General de Finanzas,  en  relación al oficio"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Post"
+msgstr "Publicar"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Preview"
+msgstr "Previsualizar"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Price"
+msgstr "Precio"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Export to PDF"
+msgstr "Exportar a PDF"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Printing Information"
+msgstr "Imprimir información"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_2_document
+msgid "Procede la <b>condonación</b> con base a la circular número"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_5_document
+msgid "Procede la condonación con base a la circular número"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0
+#, python-format
+msgid "Productos Financieros"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.ui.menu,name:jt_income.menu_product_income
+msgid "Products"
+msgstr "Producto"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template1_recipient_professional_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template1_sender_professional_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template2_recipient_professional_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template2_sender_professional_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template3_recipient_professional_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template3_sender_professional_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template4_recipient_professional_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template4_sender_professional_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template5_recipient_professional_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template5_sender_professional_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template6_recipient_professional_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template6_sender_professional_title
+#: model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__recipient_professional_title
+#: model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__sender_professional_title
+msgid "Professional Title"
+msgstr "Título Profesional"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__program_code_id
+msgid "Program Code"
+msgstr "Código Programático"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts__proration_calculation
+msgid "Proration calculation"
+msgstr "Cálculo de prorrateo"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0
+#, python-format
+msgid "Proveedores"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__res_partner__contact_type__provider
+msgid "Provider"
+msgstr "Proveedor"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__income_activity__procosion_service
+msgid "Provision of service"
+msgstr "Prestación de servicio"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Quantity:"
+msgstr "Cantidad:"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view model_terms:ir.ui.view,arch_db:jt_income.sender_recipient_trades_from
+msgid "RECIPIENT"
+msgstr "Remitente"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "RESUMEN"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__manual_rfc
+msgid "RFC"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__range_sheet_used
+msgid "Range of sheets used"
+msgstr "Rango de folios utilizados"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__reception_date
+msgid "Reception Date"
+msgstr "Fecha de recepción"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__recompute_tax_line
+msgid "Recompute Tax Line"
+msgstr "Volver a calcular la línea de impuestos"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__reconciled
+msgid "Reconciled"
+msgstr "Reconciliado"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Reconciled Entries"
+msgstr "Entrada conciliadas"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__reconcile_model_id
+msgid "Reconciliation Model"
+msgstr "Modelo de reconciliación"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__record_type
+msgid "Record Type"
+msgstr "Tipo de registro"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.inherited_account_journal_form_view
+msgid "Recover Income"
+msgstr "Ingreso Recaudado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__ref
+msgid "Reference"
+msgstr "Diferencia"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__reference_plugin
+msgid "Reference Plugin"
+msgstr "Referencia Complemento"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__type_of_revenue_collection__dgae_ref
+#: model:ir.model.fields.selection,name:jt_income.selection__account_payment__type_of_revenue_collection__dgae_ref
+msgid "Reference of DGAE"
+msgstr "Referencias DGAE"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_account_payment_register
+msgid "Register Payment"
+msgstr "Registrar Cobro"
+
+#. module: jt_income
+#: model_terms:ir.actions.act_window,help:jt_income.action_account_income_payments
+msgid "Register a payment"
+msgstr "Registrar Cobro"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__registry
+msgid "Registry"
+msgstr "Registró"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__income_status__rejected
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__related_cfdi
+msgid "Related CFDI"
+msgstr "CFDI relacionado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__report_name model:ir.ui.menu,name:jt_income.menu_income_report
+msgid "Report"
+msgstr "Reportes"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__template6__reporting_format_returned_check
+#: model:ir.model.fields.selection,name:jt_income.selection__sender_recipient_trades__template__reporting_format_returned_check
+msgid "Reporting format returned check"
+msgstr "Formato de notificación de cheque devuelto"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report_search_view model_terms:ir.ui.view,arch_db:jt_income.income_by_item_month_report_search_view
+#: model_terms:ir.ui.view,arch_db:jt_income.income_by_item_report_data_search_view
+msgid "Reports"
+msgstr "Informes"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Reset to Draft"
+msgstr "Regresar a Borrador"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__amount_residual
+msgid "Residual Amount"
+msgstr "Cantidad residual"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__amount_residual_currency
+msgid "Residual Amount in Currency"
+msgstr "Cantidad residual en moneda"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__returned_check
+msgid "Returned check"
+msgstr "Cheque devuelto"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Reverse Entry"
+msgstr "Entrada inversa"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__l10n_mx_edi_product_code_sat_id
+msgid "SAT Code"
+msgstr "Código SAT"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__l10n_mx_edi_uom_code_sat_id
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__l10n_mx_edi_uom_code_sat_id
+msgid "SAT Key Unit"
+msgstr "Clave de Unidad SAT"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view model_terms:ir.ui.view,arch_db:jt_income.sender_recipient_trades_from
+msgid "SENDER"
+msgstr "Destinatario"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "SEPTIEMBRE"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "SUBSIDIO/2020"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "SUMA TOTAL"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "SUMAS"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_association_distribution_ie_accounts__scope_of_application
+msgid "Scope Of Application"
+msgstr "Ámbito de aplicación"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid "Se  anexa  al  presente  el  cheque  devuelto"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document
+msgid "Se anexa al presente el cheque devuelto"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__income_invoice_move_line__display_type__line_section
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Section"
+msgstr "Sección"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__selection_contest
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__selection_contest
+msgid "Selection Contest"
+msgstr "Concurso de selección"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Send & Print"
+msgstr "Enviar e Imprimir"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_sender_recipient_trades
+msgid "Sender Recipient Trades"
+msgstr "Remitente y destinatario de oficios"
+
+#. module: jt_income
+#: model:ir.actions.act_window,name:jt_income.action_sender_recipient_trades model:ir.ui.menu,name:jt_income.menu_sender_recipient_trades
+msgid "Sender and Recipient of Trades"
+msgstr "Remitente y destinatario de transacciones"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__september
+msgid "September"
+msgstr "Septiembre"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "Septiembre"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__settlement_date
+msgid "Settlement date"
+msgstr "Fecha de Liquidación"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__is_show_trade_no
+msgid "Show Trade NO"
+msgstr "Mostrar No. de comercio"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_res_company__sign
+msgid "Sign"
+msgstr "Firmar"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_2_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_3_document
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_5_document
+msgid "Sin más por el momento, quedo de usted enviándole un cordial saludo."
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid "Sin otro particular por el momento, le envió un cordial saludo."
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid "Sin otro particular por el momento, le envío un cordial saludo."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.actions.report,name:jt_income.invoice_pdf_format7_name
+msgid "Solicitud de Certificado de Depósito"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Source Document"
+msgstr "Documento fuente"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__resource_id
+msgid "Source of Resource"
+msgstr "Origen del recurso"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_wizard__start_date
+msgid "Start Date"
+msgstr "Fecha Inicial"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__statement_id
+msgid "Statement"
+msgstr "Declaración"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__parent_state
+msgid "Status"
+msgstr "Estado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__status_certificate
+msgid "Status Certificate"
+msgstr "Estatus Certificado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__sub_dependancy_id
+msgid "Sub Dependency"
+msgstr "Subdependencia"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__sub_origin_ids
+msgid "Sub Origin"
+msgstr "Sub Origen"
+
+#. module: jt_income
+#: model:ir.actions.act_window,name:jt_income.sub_origin_resource_action model:ir.ui.menu,name:jt_income.menu_sub_origin_resource_income
+msgid "Sub Origin of Resource"
+msgstr "Sub origen del recurso"
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_sub_origin_resource model:ir.model.fields,field_description:jt_income.field_sub_origin_resource__name
+msgid "Sub origin of Resource"
+msgstr "Sub origen del recurso"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_product_product__sub_dependency_id
+#: model:ir.model.fields,field_description:jt_income.field_product_template__sub_dependency_id
+msgid "Subdependency"
+msgstr "Subdependencia"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__subproduct_count
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__subproduct_count
+#: model:ir.model.fields,field_description:jt_income.field_product_product__sub_product model:ir.model.fields,field_description:jt_income.field_product_template__sub_product
+msgid "Subproduct"
+msgstr "Subproducto"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0
+#, python-format
+msgid "Subsidio"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0
+#, python-format
+msgid "Subsidio por cobrar"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__subsidy_2020
+msgid "Subsidy 2020"
+msgstr "Subsidio actual"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__subsidy_receivable
+msgid "Subsidy Receivable"
+msgstr "Subsidio por cobrar"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__subtotal model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__price_subtotal
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Subtotal"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report
+msgid "Subvención Cuenta por cobrar"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__suppliers
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__suppliers
+msgid "Suppliers"
+msgstr "Proveedores"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__surcharges_ps
+msgid "Surcharges PS"
+msgstr "Recargos PS"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.income_annual_report model_terms:ir.ui.view,arch_db:jt_income.pdf_income_annual_report_1
+msgid "TOTAL"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__tag_ids
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__tag_ids
+msgid "Tags assigned to this line by the tax creating it, if any. It determines its impact on financial reports."
+msgstr "Etiquetas asignadas a esta línea por el impuesto que la creo, si las hubiera. Determina su impacto en los informes financieros."
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__tax_id
+msgid "Tax"
+msgstr "Impuestos"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__tax_audit
+msgid "Tax Audit String"
+msgstr "Cadena de auditoria fiscal"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Tax Grids"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__tax_repartition_line_id
+msgid "Tax repartition line that caused the creation of this move line, if any"
+msgstr "Línea de reparto"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__tax_ids model_terms:ir.ui.view,arch_db:jt_income.income_cash_cut_search
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Taxes Applied"
+msgstr "Impuestos aplicados"
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__tax_ids
+msgid "Taxes that apply on the base amount"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__display_type
+msgid "Technical field for UX purpose."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__balance
+msgid "Technical field holding the debit - credit in order to open meaningful graph views from reports"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__always_set_currency_id
+msgid "Technical field used to compute the monetary field. As currency_id is not a required field, we need to use either the foreign currency, either the company one."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__exclude_from_invoice_tab
+msgid "Technical field used to exclude some lines from the invoice_line_ids tab in the form view."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__recompute_tax_line
+msgid "Technical field used to know on which lines the taxes must be recomputed."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__tax_exigible
+msgid ""
+"Technical field used to mark a tax line as exigible in the vat report or not (only exigible journal items are displayed). By default all new journal items are directly exigible, "
+"but with the feature cash_basis on taxes, some will become exigible only when the payment is recorded."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__is_rounding_line
+msgid "Technical field used to retrieve the cash rounding line."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template1 model:ir.model.fields,field_description:jt_income.field_account_move__template2
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template3 model:ir.model.fields,field_description:jt_income.field_account_move__template4
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template5 model:ir.model.fields,field_description:jt_income.field_account_move__template6
+#: model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__template
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Terms"
+msgstr "Términos"
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__account_internal_type
+msgid ""
+"The 'Internal Type' is used for features available on different types of accounts: liquidity type is for cash or bank accounts, payable/receivable is for vendor/customer accounts."
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/models/invoice.py:0
+#, python-format
+msgid "The Branch must be numeric value"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/models/invoice.py:0
+#, python-format
+msgid "The ID must be numeric value"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/models/association_distribution_ie_accounts.py:0
+#, python-format
+msgid "The IE Key must be numeric value"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/models/invoice.py:0
+#, python-format
+msgid "The account %s (%s) is deprecated."
+msgstr "La cuenta %s (%s) es obsoleta."
+
+#. module: jt_income
+#: code:addons/jt_income/models/invoice.py:0
+#, python-format
+msgid "The account selected on your journal entry forces to provide a secondary currency. You should remove the secondary currency on the account."
+msgstr "La cuenta seleccionada en su entrada de diario obliga a proporcionar una moneda secundaria. Debe eliminar la moneda secundaria en la cuenta."
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__amount_currency
+msgid "The amount expressed in an optional other currency if it is a multi-currency entry."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__statement_id
+msgid "The bank statement used for bank reconciliation"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__move_id
+msgid "The move of this entry line."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__quantity
+msgid "The optional quantity expressed by this line, eg: number of product sold. The quantity is not a legal requirement but is very useful for some reports."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__amount_residual_currency
+msgid "The residual amount on a journal item expressed in its currency (possibly not the company currency)."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__amount_residual
+msgid "The residual amount on a journal item expressed in the company currency."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__income_by_item_report_wizard__filter_date__this_year
+msgid "This Financial Year"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__date_maturity
+msgid "This field is used for payable and receivable journal entries. You can put the limit date for the payment of this line."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_account_move_line__l10n_mx_edi_product_code_sat_id
+msgid "This value is required in CFDI version 3.3 to express the code of the product or service covered by the present concept. Must be used a key from the SAT catalog."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_account_move_line__l10n_mx_edi_uom_code_sat_id
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__l10n_mx_edi_uom_code_sat_id
+msgid ""
+"This value is required in CFDI version 3.3 to specify the standardized unit of measure code applicable to the quantity expressed in the concept. The unit must correspond to the "
+"description in the concept."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template1_recipient_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template1_sender_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template2_recipient_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template2_sender_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template3_recipient_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template3_sender_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template4_recipient_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template4_sender_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template5_recipient_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template5_sender_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template6_recipient_title
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template6_sender_title
+#: model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__recipient_title
+#: model:ir.model.fields,field_description:jt_income.field_sender_recipient_trades__sender_title
+msgid "Title"
+msgstr "Título"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0 code:addons/jt_income/reports/new_income_annual_report.py:0
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__total
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__total_other_expense
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__total_other_income
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__total_other_expense
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__total_other_income
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__total model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__price_total
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+#, python-format
+msgid "Total"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Total Credit"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Total Debit"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__trade_no
+msgid "Trade No"
+msgstr "No. Oficio"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__type_of_revenue_collection__dgoae_trades
+#: model:ir.model.fields.selection,name:jt_income.selection__account_payment__type_of_revenue_collection__dgoae_trades
+msgid "Trades DGOAE"
+msgstr "Oficios DGOAE"
+
+#. module: jt_income
+#: model:ir.model.fields.selection,name:jt_income.selection__account_move__voucher_type__transfer
+msgid "Transfer"
+msgstr "Traslado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__type_of_changes
+msgid "Type Of Changes"
+msgstr "Tipo de cambio"
+
+#. module: jt_income
+#: model:ir.actions.act_window,name:jt_income.deposit_certificate_type_action model:ir.model,name:jt_income.model_deposit_certificate_type
+#: model:ir.ui.menu,name:jt_income.menu_deposit_certificate_type
+msgid "Type of Deposit Certificate"
+msgstr "Tipo de certificado de depósito"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__type_of_revenue_collection
+#: model:ir.model.fields,field_description:jt_income.field_account_payment__type_of_revenue_collection
+msgid "Type of Revenue Collection"
+msgstr "Tipo de captación de ingreso"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "UUID"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__uuid_cfdi_ps
+msgid "UUID CFDI PS"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move_line__unidentified_product
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__unidentified_product
+msgid "Unidentified product"
+msgstr "Producto no identificado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__price_unit
+msgid "Unit Price"
+msgstr "Precio"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Unit Price:"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_invoice_move_line__product_uom_id
+msgid "Unit of Measure"
+msgstr "Unidad de medida"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "UoM"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_cash_cut__user_id model_terms:ir.ui.view,arch_db:jt_income.income_cash_cut_search
+msgid "User"
+msgstr "Usuario"
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__company_currency_id
+msgid "Utility field to express amount currency"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__income_vat
+msgid "VAT"
+msgstr "IVA"
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.account_invoice_income_form_view
+msgid "Vendor"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__voucher_type
+msgid "Voucher Type"
+msgstr "Tipo de comprobante"
+
+#. module: jt_income
+#: code:addons/jt_income/reports/new_annual_income_report.py:0 code:addons/jt_income/reports/new_income_annual_report.py:0
+#, python-format
+msgid "XLSX"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_income_annual_report__year model:ir.model.fields,field_description:jt_income.field_income_by_item_month_report__year
+#: model:ir.model.fields,field_description:jt_income.field_income_by_item_report_data__year model_terms:ir.ui.view,arch_db:jt_income.income_annual_report_search_view
+#: model_terms:ir.ui.view,arch_db:jt_income.income_by_item_month_report_search_view model_terms:ir.ui.view,arch_db:jt_income.income_by_item_report_data_search_view
+msgid "Year"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__blocked
+msgid "You can check this box to mark this journal item as a litigation with the associated partner"
+msgstr ""
+
+#. module: jt_income
+#: code:addons/jt_income/models/invoice.py:0
+#, python-format
+msgid "You cannot use taxes on lines with an Off-Balance account"
+msgstr "No puede usar impuestos en líneas con una cuenta fuera de balance"
+
+#. module: jt_income
+#: code:addons/jt_income/models/invoice.py:0
+#, python-format
+msgid "You cannot use this general account in this journal, check the tab 'Entry Controls' on the related journal."
+msgstr "No puede utilizar esta cuenta general en este diario, compruebe la pestaña 'Controles de asiento' en el diario relacionado."
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document
+msgid "absorberá el importe del 20% de indemnización por un importe de  -------"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid "como  se  indica  en  el estado  de  cuenta"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document
+msgid "como se indica en el estado de cuenta"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document
+msgid "con clave"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid "con clave no."
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid "de"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid "del  banco"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_2_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_5_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document
+msgid "del banco"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_5_document
+msgid "en virtud de que el cheque es de"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_2_document
+msgid "en virtud de que el importe del cheque devueltos fue cubierto dentro de los 5 primeros días"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model,name:jt_income.model_income_invoice_move_line
+msgid "income.invoice.move.line"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_5_document
+msgid "le  informo  que <b> no se aplicará el  20% de  indemnización</b> por un importe de  -------------------------"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_2_document
+msgid "le informo que  <b>se  condona  el  20% de  indemnización</b> por un importe de"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid "le informo que <b>el 20% de indemnización </b>fue liquidada, por lo cual la dependencia solicita su reintegro a la cuenta de Ingresos Extraordinarios"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document
+msgid "los cuales se hará el cargo a la cuenta de Ingresos Extraordinarios número"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_7_document
+msgid "por  un  importe de"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_3_document
+msgid "por cheque devuelto, por la"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document model_terms:ir.ui.view,arch_db:jt_income.invoice_format_6_document
+msgid "por un importe de"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_5_document
+msgid "referente al cheque devuelto"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_4_document
+msgid "referente al cheque devuelto No."
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__sub_origin_resource_name
+msgid "sub origin resource name"
+msgstr ""
+
+#. module: jt_income
+#: model:ir.model.fields,help:jt_income.field_income_invoice_move_line__tax_group_id
+msgid "technical field for widget tax-group-custom-field"
+msgstr ""
+
+#. module: jt_income
+#: model_terms:ir.ui.view,arch_db:jt_income.invoice_format_1_document
+msgid "y antecedentes."
+msgstr ""
+
+#. module: account
+#: model:ir.model.fields.selection,name:account.selection__account_move__invoice_payment_state__paid
+#: model_terms:ir.ui.view,arch_db:account.view_account_invoice_filter
+#: model_terms:ir.ui.view,arch_db:account.view_move_form
+#: model:mail.message.subtype,name:account.mt_invoice_paid
+msgid "Paid"
+msgstr "Cobrado"
+
+#. module: account
+#: model:ir.model.fields.selection,name:account.selection__account_invoice_report__invoice_payment_state__not_paid
+#: model:ir.model.fields.selection,name:account.selection__account_move__invoice_payment_state__not_paid
+#: model_terms:ir.ui.view,arch_db:account.view_account_invoice_filter
+msgid "Not Paid"
+msgstr "No Cobrado"
+
+#. module: account
+#: model:ir.model.fields.selection,name:account.selection__account_invoice_report__invoice_payment_state__in_payment
+#: model:ir.model.fields.selection,name:account.selection__account_move__invoice_payment_state__in_payment
+#: model_terms:ir.ui.view,arch_db:account.view_account_invoice_filter
+#: model_terms:ir.ui.view,arch_db:account.view_move_form
+msgid "In Payment"
+msgstr "En Proceso de Cobro"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template1_recipient_emp_id
+msgid "Application form Recipient Employee"
+msgstr "Formulario de solicitud Destinataria Empleada"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template1_sender_emp_id
+msgid "Application form Sender Employee"
+msgstr "Formulario de solicitud Remitente Empleada"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template2_recipient_emp_id
+msgid "Format Forgiveness Recipient Employee"
+msgstr "Formato Empleado destinatario del perdón"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template2_sender_emp_id
+msgid "Format Forgiveness Sender Employee"
+msgstr "Formato Perdón Remitente Empleada"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template3_recipient_emp_id
+msgid "Format notice Recipient Employee"
+msgstr "Aviso de formato Destinataria Empleada"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template3_sender_emp_id
+msgid "Format notice Sender Employee"
+msgstr "Aviso de formato Remitente Empleada"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template4_recipient_emp_id
+msgid "2nd Application form Recipient Employee"
+msgstr "Segundo formulario de solicitud Destinatario Empleado"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template4_sender_emp_id
+msgid "2nd Application form Sender Employee"
+msgstr "Segundo formulario de solicitud Remitente Empleada"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template5_recipient_emp_id
+msgid "Format remission Recipient Employee"
+msgstr "Remisión de formato Destinataria Empleada"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template5_sender_emp_id
+msgid "Format remission Sender Employee"
+msgstr "Remisión de formato Remitente Empleada"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template6_recipient_emp_id
+msgid "Reporting format Recipient Employee"
+msgstr "Formato de reporte Destinataria Empleada"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template6_sender_emp_id
+msgid "Reporting format Sender Employee"
+msgstr "Formato de informe Remitente Empleada"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template1_employee_ids
+msgid "Application Form EMPLOYEES COPIED"
+msgstr "Formulario de solicitud EMPLEADOS COPIADO"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template2_employee_ids
+msgid "Format Forgiveness EMPLOYEES COPIED"
+msgstr "Formato Perdón EMPLEADAS COPIADAS"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template3_employee_ids
+msgid "Format Notice EMPLOYEES COPIED"
+msgstr "Aviso de formato EMPLEADOS COPIADOS"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template4_employee_ids
+msgid "2nd Application EMPLOYEES COPIED"
+msgstr "2a Solicitud EMPLEADOS COPIADOS"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template5_employee_ids
+msgid "Format remission EMPLOYEES COPIED"
+msgstr "Remisión de formato EMPLEADOS COPIADOS"
+
+#. module: jt_income
+#: model:ir.model.fields,field_description:jt_income.field_account_move__template6_employee_ids
+msgid "Reporting format EMPLOYEES COPIED"
+msgstr "Formato de informe EMPLEADOS COPIADOS"
+

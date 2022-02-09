@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for dependency model -->
+        <record id="dependency_search_view" model="ir.ui.view">
+            <field name="name">dependency.search.view</field>
+            <field name="model">dependency</field>
+            <field name="arch" type="xml">
+                <search string="Dependency">
+                    <field name="dependency"/>
+                    <field name="description"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Dependency" name='dependency' context="{'group_by':'dependency'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for dependency model -->
+    	<record id="dependency_form_view" model="ir.ui.view">
+            <field name="name">dependency.form.view</field>
+            <field name="model">dependency</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+	            		<group>
+	            			<field name="dependency" requried="1"/>
+                            <field name="description"/>
+	            		</group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for dependency model -->
+    	<record id="dependency_tree_view" model="ir.ui.view">
+            <field name="name">dependency.tree.view</field>
+            <field name="model">dependency</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="dependency"/>
+                    <field name="description"/>
+            	</tree>
+            </field>
+        </record>
+
+        <!-- action for dependency views -->
+        <record id="action_dependency" model="ir.actions.act_window">
+            <field name="name">Dependency</field>
+            <field name="res_model">dependency</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="dependency_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

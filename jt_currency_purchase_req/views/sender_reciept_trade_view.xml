@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="sender_recipient_trades_finance_tree" model="ir.ui.view">
+            <field name="name">sender.recipient.trades.tree.view</field>
+            <field name="model">finance.sender.recipient.trades</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="template"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sender_recipient_trades_finance_from" model="ir.ui.view">
+            <field name="name">sender.recipient.trades.form.view</field>
+            <field name="model">finance.sender.recipient.trades</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                 <field name="template"/>
+                            </group>
+                        </group>
+                        <notebook>
+                        	<page string="Occupation Compensation" name="occupation_compensation">
+                        		<group>
+                        			<group string="RECIPIENT">
+                        				<field name="recipient_title" invisible="1"/>
+                        				<field name="recipient_emp_id" invisible="1"/>
+                        				<field name="recipient_professional_title" invisible="1"/>
+                                        <!-- Reciept-->
+                                        <field name="bank_account_id"/>
+                                        <field name="account_bank_id"/>
+                                        <field name="bank_acc_id" invisible="1"/>
+                                        <field name="executive_id" context="{'show_recipet':True}"/>
+                                        <field name="position_id" context="{'show_recipet':True}"/>
+                        			</group>
+                        			<group string="SENDER">
+                        				<field name="sender_title"/>
+                        				<field name="sender_emp_id"/>
+                        				<field name="sender_professional_title"/>
+                        			</group>
+                        		</group>
+                        		<field name="employee_ids">
+                        			<tree>
+                        				<field name="emp_title"/>
+                        				<field name="name"/>
+                        				<field name="emp_job_title"/>
+                        			</tree>
+                        		</field>
+                        	</page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+          <record id="sub_origin_resource_search_finance" model="ir.ui.view">
+            <field name="name">sender.recipient.trades.search.view</field>
+            <field name="model">finance.sender.recipient.trades</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="template"/>
+                </search>
+            </field>
+        </record>
+
+         <record id="action_sender_recipient_trades_finance" model="ir.actions.act_window">
+            <field name="name">Sender and Recipient of Trades</field>
+            <field name="res_model">finance.sender.recipient.trades</field>
+            <field name="context">{'show_recipet':True}</field>
+        </record>
+
+        <menuitem id="menu_sender_recipient_trades_finance" name="Trades Sender and Recipient" sequence="100"
+        parent="jt_payroll_payment.menu_payment_finance_setting"
+        action="action_sender_recipient_trades_finance"/>
+
+    </data>
+</odoo>

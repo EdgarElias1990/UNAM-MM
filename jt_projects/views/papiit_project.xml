@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="action_project_papiit_1" model="ir.actions.act_window">
+            <field name="name">UPA PAPIIT Projects</field>
+            <field name="res_model">project.project</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="domain">[('is_papiit_project','=',True)]</field>
+            <field name="search_view_id" ref="project.view_project_project_filter"/>
+            <field name="context">{'default_is_papiit_project':True,
+                'default_is_related_agreement':True,'show_for_agreement':1}</field>
+        </record>
+
+        <record id="project_registry_papiit_action_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="project_registry_tree_view"/>
+            <field name="act_window_id" ref="action_project_papiit_1"/>
+        </record>
+
+         <record id="project_registry_papiit_action_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="project_registry_form_view"/>
+            <field name="act_window_id" ref="action_project_papiit_1"/>
+        </record>
+
+        <menuitem id="menu_project_registry_papiit" name="UPA PAPIIT Projects" action="action_project_papiit_1"
+        parent="supplier_payment_request_main_menu" sequence="1"/>
+    	
+	</data>
+</odoo>

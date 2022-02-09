@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <!-- form view for program code model -->
+        <record id="project_program_code_form_view" model="ir.ui.view">
+            <field name="name">project.program.code.form.view</field>
+            <field name="model">project.program.code</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="program_code"/>
+                        </group>
+                        <group>
+                            <group>
+                            	<field name="conacyt_project_id"/>
+                                <field name="year" required="1"/>
+                                
+                                <!-- Program Relation -->
+                                <field name="program_id" required="1" attrs="{'readonly': [('state', '=', 'validated')]}"/>
+                                <field name="desc_program"/>
+                                <!-- Dependency Relation -->
+                                <field name="dependency_id" attrs="{'readonly': [('state', '=', 'validated')]}"
+                                       required="1"/>
+                                <field name="desc_dependency"/>
+                                <!-- Sub-Dependency Relation -->
+                                <field name="sub_dependency_id" attrs="{'readonly': [('state', '=', 'validated')]}"
+                                       required="1" domain="[('dependency_id', '=', dependency_id)]" context="{'default_dependency_id': dependency_id}"/>
+                                <field name="desc_sub_dependency"/>
+                                
+                                <!-- Sub Program Relation -->
+                                <field name="sub_program_id"
+                                       required="1" domain="[('unam_key_id', '=', program_id),('dependency_id','=',dependency_id),('sub_dependency_id','=',sub_dependency_id)]"
+                                       context="{'default_unam_key_id': program_id}"/>
+                                <field name="desc_sub_program"/>
+                                <!-- Item Relation -->
+                                <field name="item_id" required="1" attrs="{'readonly': [('state', '=', 'validated')]}"/>
+                                <field name="desc_item"/>
+                                <!-- Digit Verification -->
+                                <field name="check_digit"/>
+                                <!-- Resource Origin Relation -->
+                                <field name="resource_origin_id" required="1"/>
+                                <field name="desc_resource_origin"/>
+                                <!-- Institutional Activity Relation -->
+                                <field name="institutional_activity_id" required="1"/>
+                                <field name="desc_institutional_activity"/>
+                                <!-- Budget ProgramConversion Relation -->
+                                <field name="budget_program_conversion_id" required="1" domain="[('unam_key_id', '=', program_id)]" context="{'default_unam_key_id': program_id}"/>
+                                <field name="desc_budget_program_conversion"/>
+                            </group>
+                            <group>
+                                <!-- Federal Item Relation -->
+                                <field name="conversion_item_id" required="1" domain="[('item_id','=',item_id)]"/>
+                                <field name="desc_conversion_item"/>
+                                <!-- Expense Type Relation -->
+                                <field name="expense_type_id" required="1"/>
+                                <field name="desc_expense_type"/>
+                                <!-- Geographic Location Relation -->
+                                <field name="location_id" required="1"/>
+                                <field name="desc_location"/>
+                                <!-- Wallet Password Relation -->
+                                <field name="portfolio_id" required="1"/>
+                                <field name="name_portfolio"/>
+                                <!-- Project Type Relation -->
+                                <field name="project_type_id" required="1" context="{'display_name_custom': 'project_type_identifier'}"/>
+                                <field name="desc_project_type"/>
+                                <field name="project_number"/>
+                                <!-- Stage Relation -->
+                                <field name="stage_id" context="{'display_name_custom': 'stage_identifier'}" required="1"/>
+                                <field name="desc_stage"/>
+                                <!-- Agreement Relation -->
+                                <field name="agreement_type_id" context="{'display_name_custom': 'agreement_type'}" required="1"/>
+                                <field name="name_agreement"/>
+                                <field name="number_agreement"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Save" name="create_record" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+         <record model="ir.ui.view" id="view_req_open_balance_form_finance_inherit">
+            <field name="name">view.req.open.balance.form.finance.form</field>
+            <field name="model">request.open.balance.finance</field>
+            <field name="inherit_id" ref="jt_agreement.view_req_open_balance_form_finance"/>
+            <field name="arch" type="xml">
+            	<field name="amount" position="after">
+            		<field name="from_opt_transfer" invisible="1"/>
+            	</field>
+            	<xpath expr="//notebook" position="inside">
+            		<page string="Operation" attrs="{'invisible':[('from_opt_transfer','=',False)]}">
+            			
+            			<field name="line_opt_ids" readonly="1">
+            				<tree create="0" edit="0" delete="0">
+                    				<field name="investment_fund_id"  context="{'show_for_agreement':True}"/>
+                    				<field name="agreement_number" />
+                    				<field name="base_collabaration_id" />
+                    				<field name="amount_to_transfer"/>
+            				</tree>
+            				<form>
+            					<group>
+                    				<field name="investment_fund_id"  context="{'show_for_agreement':True}"/>
+                    				<field name="agreement_number" />
+                    				<field name="base_collabaration_id" />
+                    				<field name="amount_to_transfer"/>
+            					</group>
+            				</form>
+            			</field>
+            		</page>
+            	</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

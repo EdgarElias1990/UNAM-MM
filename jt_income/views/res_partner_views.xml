@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="partner_inherit_view_for_income" model="ir.ui.view">
+            <field name="name">partner.inherit.view.for.income</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='function']" position="before">
+                    <field name="contact_type"/>
+                </xpath>
+                <xpath expr="//field[@name='function']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('contact_type','=','client')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('contact_type','=','client')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="income_control" attrs="{'invisible':[('beneficiary_type','not in',('national_provider','foreign_supplier'))]}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="jt_contact_base_res_partner_form_view_inherit" model="ir.ui.view">
+            <field name="name">jt.contact.base.res.partner.form.view.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="jt_contact_base.res_partner_form_view"/>
+            <field name="arch" type="xml">
+            	<field name="beneficiary_type" position="attributes">
+            		<attribute name="attrs">{'invisible':[('contact_type','=','client')]}</attribute>
+            	</field>
+            	<field name="password_beneficiary" position="attributes">
+            		<attribute name="attrs">{'invisible':[('contact_type','=','client')]}</attribute>
+            	</field>
+            </field>
+        </record>
+
+       <record id="jt_budget_mgmt_res_partner_form_view_inherit" model="ir.ui.view">
+            <field name="name">jt.budget.mgmt.res.partner.form.view.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="jt_budget_mgmt.res_partner_form_view"/>
+            <field name="arch" type="xml">
+            	<field name="dependency_id" position="attributes">
+            		<attribute name="attrs">{'invisible':[('contact_type','=','client')]}</attribute>
+            	</field>
+            	<field name="tel_dep_capture" position="attributes">
+            		<attribute name="attrs">{'invisible':[('contact_type','=','client')]}</attribute>
+            	</field>
+            </field>
+        </record>
+
+       <record id="jt_payroll_payment_payroll_supplier_partner_view_inh" model="ir.ui.view">
+            <field name="name">jt.payroll.payment.payroll.supplier.partner.view.inh</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="jt_payroll_payment.payroll_supplier_partner_view_inh"/>
+            <field name="arch" type="xml">
+            	<field name="supplier_of_payment_payroll" position="attributes">
+            		<attribute name="attrs">{'invisible':[('contact_type','=','client')]}</attribute>
+            	</field>
+            	<field name="workstation_id" position="attributes">
+            		<attribute name="attrs">{'invisible':[('contact_type','=','client')]}</attribute>
+            	</field>
+            	<field name="category_key" position="attributes">
+            		<attribute name="attrs">{'invisible':[('contact_type','=','client')]}</attribute>
+            	</field>
+            </field>
+        </record>
+        
+        <record id="res_partner_action_customer_income_menu" model="ir.actions.act_window">
+            <field name="name">Customers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('contact_type','=','client')]</field>
+            <field name="context">{'default_contact_type' : 'client','res_partner_search_mode': 'customer', 'default_is_company': True, 'default_customer_rank': 1}</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new customer in your address book
+              </p><p>
+                Odoo helps you easily track all activities related to a customer.
+              </p>
+            </field>
+        </record>
+
+         <menuitem id="menu_partner_income" name="Clients" sequence="1"
+            parent="main_menu_income" action="res_partner_action_customer_income_menu"/>
+
+		<!-- Bank Accouns Menu -->
+         <record id="account_bank_journal_form_view_income" model="ir.ui.view">
+            <field name="name">account.bank.journal.form.view.inh</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="jt_account_base.account_bank_journal_form_view"/>
+            <field name="mode">primary</field>
+            <field name="priority">100</field>            
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                </xpath>
+            	<field name="bank_account_id" position="after">
+            		<field name="for_income" invisible="1"/>
+            	</field>
+            	<field name="bank_account_id" position="attributes">
+            		<attribute name="context">{'hide_other_group':True,'default_for_income':True}</attribute>
+            	</field>
+			</field>
+		</record>
+
+       <record id="view_income_account_bank_journal_tree" model="ir.ui.view">
+            <field name="name">Bank Accounts Tree View</field>
+            <field name="model">account.journal</field>
+            <field name="arch" type="xml">
+                <tree create="false" import="false">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="bank_acc_number"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+       </record>
+		
+       <record id="action_account_bank_journal_income" model="ir.actions.act_window">
+            <field name="name">Bank Accounts</field>
+            <field name="res_model">account.journal</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('jt_income.view_income_account_bank_journal_tree')}),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('account.account_bank_journal_view_kanban')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('jt_income.account_bank_journal_form_view_income')})]"/>
+            <field name="domain">[('type', '=', 'bank'),('for_income','=',True)]</field>
+            <field name="context">{'default_type': 'bank','default_for_income':1}</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a bank account
+              </p>
+            </field>
+        </record>
+        
+         <menuitem id="menu_partner_bank_account_income_set" name="Bank Accounts" sequence="4"
+            parent="submenu_menu_income_config" action="action_account_bank_journal_income"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="agreement_trust_tree_view" model="ir.ui.view">
+            <field name="name">Agreement Trust view</field>
+            <field name="model">agreement.trust</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="available_bal"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="agreement_trust_kanban_view" model="ir.ui.view">
+            <field name="name">Agreement Trust Kanban view</field>
+            <field name="model">agreement.trust</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" create="0" group_create="0" >
+                    <field name="name"/>
+                    <field name="bank_id"/>
+                    <field name="street"/>
+                    <field name="bank_account_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row mb4">
+                                    <div class="col-6">
+                                        Trust Name:
+                                    </div>
+                                    <div class="col-6">
+                                        <strong><span><field name="name"/></span></strong>
+                                    </div>
+                                </div>
+                                <div class="row mb4">
+                                    <div class="col-6">
+                                        Banking Institution:
+                                    </div>
+                                    <div class="col-6">
+                                        <strong><span><field name="bank_id"/></span></strong>
+                                    </div>
+                                </div>
+                                <div class="row mb4">
+                                    <div class="col-6">
+                                        Bank Address:
+                                    </div>
+                                    <div class="col-6">
+                                        <strong><span><field name="street"/></span></strong>
+                                    </div>
+                                </div>
+                                <div class="row mb4">
+                                    <div class="col-6">
+                                        Bank Account:
+                                    </div>
+                                    <div class="col-6">
+                                        <strong><span><field name="bank_account_id"/></span></strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="agreement_trust_pivot_view" model="ir.ui.view">
+            <field name="name">Agreement Trust pivot view</field>
+            <field name="model">agreement.trust</field>
+            <field name="arch" type="xml">
+                <pivot string="Agreement Trust" disable_linking="True">
+                    <field name="name" type="row"/>
+                    <field name="opening_balance" type="measure"/>
+                    <field name="available_bal" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="agreement_trust_dashboard_view" model="ir.ui.view">
+            <field name="name">Agreement Trust dashboard view</field>
+            <field name="model">agreement.trust</field>
+            <field name="arch" type="xml">
+                <dashboard>
+                    <view type="graph" ref="jt_agreement.agreement_trust_pivot_view"/>
+                    <group>
+                        <aggregate name="opening_balance" field="opening_balance" widget="monetary" string="Opening Balance"/>
+                        <aggregate name="available_bal" field="available_bal" widget="monetary" string="Available Balance"/>
+                    </group>
+                    <view type="pivot" ref="jt_agreement.agreement_trust_pivot_view"/>
+                </dashboard>
+            </field>
+        </record>
+
+        <record id="agreement_trust_form" model="ir.ui.view">
+            <field name="name">agreement.trust.form</field>
+            <field name="model">agreement.trust</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                        <button name="confirm" type="object" string="Confirm" class="oe_highlight"
+                                 attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        
+                        <button name="cancel" type="object" string="Cancel" class="oe_highlight"
+                                 attrs="{'invisible': [('state', '!=', 'valid')]}"/>
+                          
+                    </header>
+                
+                    <sheet>
+                         <div class="oe_button_box" name="button_box">
+                            <button name="action_operations" type="object" class="oe_stat_button"
+                                    icon="fa-random" attrs="{'invisible': [('state', '=', 'draft')]}">
+                                <field name="total_operations" widget="statinfo"/>
+                            </button>
+                             
+                             <button name="action_modifications" type="object" class="oe_stat_button"
+                                    icon="fa-random" attrs="{'invisible': [('state', '=', 'draft')]}">
+                                <field name="total_modifications" widget="statinfo"/>
+                            </button>
+							 
+                    	</div>
+                    	<group>
+	                        <group>
+	                            
+                                <field name="name" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                            
+	                            <field name="bank_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <label for="street" string="Bank Address"/>
+                                <div class="o_address_format">
+                                    <field name="street" readonly="1" placeholder="Street..." class="o_address_street"/>
+                                    <field name="street2" readonly="1" placeholder="Street 2..." class="o_address_street"/>
+                                    <field name="city" readonly="1" placeholder="City" class="o_address_city"/>
+                                    <field name="state_id" readonly="1" class="o_address_state" placeholder="State" options="{&quot;no_open&quot;: True}"/>
+                                    <field name="zip" readonly="1" placeholder="ZIP" class="o_address_zip"/>
+                                    <field name="country" readonly="1" placeholder="Country" class="o_address_country" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                                </div>
+                                <field name="bank_account_id" string="Bank Account"/>
+	                            <field name="dependency_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                            <field name="dependency_desc" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                            <field name="goals" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="register_date"  attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                        </group>
+	                        <group>
+	                            <field name="opening_balance" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                            <field name="available_bal" readonly="1"/>
+	                            <field name="origin_resource_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                            <field name="executive_name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                            <field name="phone" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                            <field name="email" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                            <field name="home" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                            
+	                        </group>
+                        </group>
+                        <notebook>
+                        	<page string="Journal Items" name="accounts" invisible="1">
+                         		<group>
+                        			<group>
+                        				<field name="patrimonial_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="investment_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="interest_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        			</group>
+                        			<group>
+                        				<field name="honorary_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="availability_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="liability_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        			</group>
+                        		</group>
+ 
+                         	</page>
+                        	<page string="Committee" name="committee">
+                                <group string="Committe">
+                                    <field name="committe_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                                        <tree editable="top">
+                                            <field name="column_id"/>
+                                            <field name="column_position_id"/>
+                                        </tree>
+                                        <form>
+                                            <group>
+                                                <field name="column_id"/>
+                                                <field name="column_position_id"/>
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                        	
+                        	</page>
+                        	<page string="Beneficiaries" name="beneficiaries">
+                                <group string="Beneficiaries Sectional">
+                                    <group>
+                                        <field name="no_beneficiary_allowed"
+                                        attrs="{'readonly': [('state', 'not in', ('draft','valid'))]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="beneficiary_ids" nolabel="1"
+                                               attrs="{'readonly': [('state', 'not in', ('draft','valid'))]}">
+                                            <tree>
+                                            	<field name="sequence"/>
+                                            	<field name="is_employee" invisible="1"/>
+                                            	<field name="is_contact" invisible="1"/>
+                                                <field name="employee_id" attrs="{'required':[('is_employee','=',True)],'invisible':[('is_employee','=',False)]}"/>
+                                                <field name="partner_id" domain="[('beneficiary_type','=','scholar')]" attrs="{'required':[('is_contact','=',True)],'invisible':[('is_contact','=',False)]}"/>
+                                                <field name="bank_account_ids" invisible="1"/>
+                                                <field name="bank_id" context="{'from_agreement':1}"
+                                                  domain="[('id', 'in', bank_account_ids)]" required="1"/>
+                                                <field name="account_number" required="1"/>
+                                                <field name="amount" required="1"/>
+                                                <field name="validity_start" required="1"/>
+                                                <field name="validity_final_beneficiary" required="1"/>
+                                                <field name="withdrawal_sch_date" required="1"/>
+                                            </tree>
+                                            <form>
+                                                <group>
+                                                    <group>
+		                                            	<field name="is_employee"/>
+		                                            	<field name="is_contact"/>
+		                                                <field name="employee_id" attrs="{'required':[('is_employee','=',True)],'invisible':[('is_employee','=',False)]}"/>
+		                                                <field name="partner_id" domain="[('beneficiary_type','=','scholar')]" attrs="{'required':[('is_contact','=',True)],'invisible':[('is_contact','=',False)]}"/>
+		                                                <field name="bank_account_ids" invisible="1"/>
+		                                                <field name="bank_id" context="{'from_agreement':1}"
+		                                                  domain="[('id', 'in', bank_account_ids)]" required="1"/>
+                                                        <field name="account_number" required="1"/>
+                                                        <field name="payment_rule_id" required="1"/>
+                                                    </group>
+                                                     <group>
+                                                         <field name="amount" required="1"/>
+                                                        <field name="validity_start" required="1"/>
+                                                        <field name="validity_final_beneficiary" required="1"/>
+                                                        <field name="withdrawal_sch_date" required="1"/>
+                                                    </group>
+                                                </group>
+                                            </form>
+                                        </field>
+                                    </group>
+                                </group>
+                                 <group string="Providers" name="providers">
+                                     <field name="provider_ids" nolabel="1"
+                                            attrs="{'readonly': [('state', 'not in', ('draft','valid'))]}">
+                                         <tree editable="top">
+                                             <field name="partner_id" required="1"/>
+                                                <field name="bank_id" domain="[('partner_id', '=', partner_id)]"
+                                                context="{'from_agreement':1}"/>
+                                                <field name="account_number"/>
+                                         </tree>
+                                         <form>
+                                             <group>
+                                                 <field name="partner_id" required="1"/>
+                                                <field name="bank_id"
+                                                 domain="[('partner_id', '=', partner_id)]"
+                                                context="{'from_agreement':1}"/>
+                                                <field name="account_number"/>
+                                             </group>
+                                         </form>
+                                     </field>
+                                 </group>
+                        	</page>
+                            <page string="Interests" name="interest">
+                            	<field name="interest_rate_ids">
+                            		<tree editable="bottom" delete="0">
+                                        <field name="yields" attrs="{'readonly': [('id', '>', 0)]}"/>
+                                        <field name="fees" attrs="{'readonly': [('id', '>', 0)]}"/>
+                            			<field name="interest_date" required="1" attrs="{'readonly': [('id', '>', 0)]}"/>
+                            		</tree>
+                            		<form>
+                            			<group>
+	                                        <field name="yields" attrs="{'readonly': [('id', '>', 0)]}"/>
+	                                        <field name="fees" attrs="{'readonly': [('id', '>', 0)]}"/>
+	                            			<field name="interest_date" required="1" attrs="{'readonly': [('id', '>', 0)]}"/>
+                            			</group>
+                            		</form>
+                            	</field>
+                            </page>
+                        	<page string="Supporting Documentation" name="supporting_documentation">
+                        		<group>
+                        			<group>
+                        				<field name="trust_agreement_file_name" invisible="1"/>
+                        				<field name="trust_agreement_file" attrs="{'readonly': [('state', '!=', 'draft')]}" filename="trust_agreement_file_name" required="1"/>
+                        			</group>
+                        			<group>
+                        				<field name="trust_office_file_name" invisible="1"/>
+                        				<field name="trust_office_file" attrs="{'readonly': [('state', '!=', 'draft')]}" filename="trust_office_file_name" required="1"/>
+                        			</group>
+                        		</group>
+                        	</page>
+                            
+                            <page name="cancellation_info" string="Cancellation Information"
+                                attrs="{'invisible': [('state', 'not in', ('in_force', 'to_be_cancelled', 'cancelled'))]}">
+                                <group>
+                                    <field name="cancel_date"/>
+                                    <field name="supporing_doc"/>
+                                    <field name="reason_cancel"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_agreement_trust" model="ir.actions.act_window">
+            <field name="name">Trusts</field>
+            <field name="res_model">agreement.trust</field>
+            <field name="view_mode">kanban,dashboard,tree,form,pivot</field>
+            <field name="context">{'from_agreement':1}</field>
+        </record>
+
+        <menuitem id="menu_agreement_trust" name="Trusts" parent="menu_collaboration_contracts"
+                action="action_agreement_trust" sequence="2"/>
+
+		<!-- Schedule Transfers -->
+         <record id="action_schedule_transfers_trust" model="ir.actions.server">
+            <field name="name">Withdrawal Schedule</field>
+            <field name="model_id" ref="jt_agreement.model_agreement_trust"/>
+            <field name="binding_model_id" ref="jt_agreement.model_agreement_trust"/>
+            <field name="state">code</field>
+            <field name="binding_view_types">list</field>
+            <field name="code">action = records.action_schedule_withdrawal()</field>
+        </record>
+
+    </data>
+</odoo>

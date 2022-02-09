@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	        <!-- menus-->
+        <menuitem id="menu_date_control_in" name="Date Control"
+                  action="jt_payroll_payment.cale_pay_reg_action"
+                  sequence="20" parent="submenu_menu_investment_config"/>
+    	
+	</data>
+</odoo>

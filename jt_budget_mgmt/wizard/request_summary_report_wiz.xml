@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="summary_report_download_form_view" model="ir.ui.view">
+            <field name="name">summary.report.download.form.view</field>
+            <field name="model">summary.report.download</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="state" invisible="1"/>
+                    <group states='download'>
+                        <field name="name" invisible="1"/>
+                        <field name="report_file" filename="name" readonly="1"/>
+                    </group>
+                    <group states='request'>
+                        <h3>Your report is in progress you will notify shortly once we prepared the report</h3>
+                    </group>
+                    <group states='draft' string='Period'>
+                        <field name="filter_date" required="1"/>
+<!--                        <field name="start_date"/>-->
+                        <field name="start_date" attrs="{'invisible': [('filter_date', '!=', 'custom')], 'required': [('filter_date', '=', 'custom')]}"/>
+<!--                        <field name="end_date" />-->
+                        <field name="end_date" attrs="{'invisible': [('filter_date', '!=', 'custom')], 'required': [('filter_date', '=', 'custom')]}"/>
+                    </group>
+                    <group states='draft' string='Budget Control'>
+                        <field name="budget_control_ids" widget='many2many_tags'
+                               options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                    </group>
+                    <notebook states="draft">
+                        <page string='Programming Code Section'>
+                            <group states='draft'>
+                                <field name="code_section_ids" widget='many2many_tags'
+                                       options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="program_ids" widget='many2many_tags'
+                                       options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="sub_program_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="dependency_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="sub_dependency_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="item_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="origin_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="activity_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="conpp_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="conpa_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="expense_type_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="location_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="wallet_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="project_type_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="stage_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="agreement_type_ids" widget='many2many_tags'
+                                    options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                            </group>
+                        </page>
+                        <page string='Save as Favourite'>
+                            <group>
+                                <group string='Default Filter'>
+                                    <field name="favourite_report_id" domain="[('favourite_user_id', '=', uid)]" options="{'no_open': True, 'no_create': True}"
+/>
+                                </group>
+                                <group string='Save a Favourite Filter'>
+                                    <field name="favourite_name"/>
+                                    <button string="Save as Favourite" name="save_favourite" type="object" class="oe_highlight"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                    <footer>
+                        <button string="Export Request" name="request_data" type="object" class="oe_highlight" states='draft'/>
+                        <button string="Cancel" class="btn btn-default" special="cancel" states='draft'/>
+                        <button string="Close" class="btn btn-default" special="cancel" states='request'/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_req_summary_report" model="ir.actions.act_window">
+            <field name="name">Request Summary Report</field>
+            <field name="res_model">summary.report.download</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

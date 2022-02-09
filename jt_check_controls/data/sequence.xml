@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="sequence_chekbook_application_no" model="ir.sequence">
+            <field name="name">Checkbook Application No</field>
+            <field name="code">checkbook.application</field>
+            <field name="padding">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_chekbook_legal_folio" model="ir.sequence">
+            <field name="name">Checkbook Legal Folio</field>
+            <field name="code">checkbook.legal.folio</field>
+            <field name="padding">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_blank_check_application" model="ir.sequence">
+            <field name="name">Blank Check Request Application No</field>
+            <field name="code">blank.check.application</field>
+            <field name="padding">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_generate_supp_Banamex_layout" model="ir.sequence">
+            <field name="name">Generate Banamex Supplier Batch Layout</field>
+            <field name="code">sup.batch.banamex.layout</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_generate_batch_folio" model="ir.sequence">
+            <field name="name">Batch Folio</field>
+            <field name="code">batch.folio</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_reissue_check_folio" model="ir.sequence">
+            <field name="name">Reissue Check Folio</field>
+            <field name="code">reissue.check.folio</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

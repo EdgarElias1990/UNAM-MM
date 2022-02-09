@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_declaration_conagua,declaration_conagua_access,model_declaration_conagua,base.group_user,1,1,1,1
+access_declaration_lfpiorpi,declaration_lfpiorpi_access,model_declaration_lfpiorpi,base.group_user,1,1,1,1
+access_declaration_month,declaration_month_access,model_declaration_month,base.group_user,1,1,1,1
+access_tax_diot,tax_diot_access,model_tax_diot,base.group_user,1,1,1,1

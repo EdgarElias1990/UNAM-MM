@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Menu Employee -->
+        <menuitem id="menu_finance_employee" name="Employee"
+                  action="hr.open_view_employee_list_my"
+                  sequence="3" parent="menu_finance_contacts_main"/>
+
+    </data>
+</odoo>

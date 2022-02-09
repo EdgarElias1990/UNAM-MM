@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="approve_money_market_bal_req_form" model="ir.ui.view">
+            <field name="name">approve.money_market.bal.req.form</field>
+            <field name="model">approve.money.market.bal.req</field>
+            <field name="arch" type="xml">
+                <form>
+                	<group>
+                            <group>
+                                <field name="invoice"/>
+                                <field name="operation_number" readonly="1"/>
+                                <field name="agreement_number" readonly="1"/>
+                                <field name="bank_account_id" domain="[('type', '=', 'bank')]"/>
+                                <field name="desti_bank_account_id" domain="[('type', '=', 'bank')]"
+                                    required="1" options="{'no_open': True, 'no_create': True}"/>
+                                <field name="amount" readonly="not context.get('edit_amount_field',False)"/>
+                                <field name="dependency_id" context="{'show_for_supplier_payment':1}"/>
+                                <field name="sub_dependency_id" domain="[('dependency_id','=',dependency_id)]" context="{'show_for_supplier_payment':1}" />
+                                <field name="amount_type" invisible="1"/>
+                                <field name="is_from_set_button" invisible="1"/>
+                            </group>
+                            <group>	
+                                <field name="date"/>
+                                <field name="concept"/>
+                                <field name="user_id"/>
+                                <!-- 
+	                                <field name="employee_id"/>
+	                                <field name="date_required"/>
+                                 -->
+                                <field name="fund_id" /> 
+                                <field name="fund_type"/>
+                                <field name="agreement_type"/>
+                                <field name="base_collabaration_id"/>
+                                
+                                <field name="bonds_id" invisible="1"/>
+                                <field name="cetes_id" invisible="1"/>
+                                <field name="udibonos_id" invisible="1"/>
+                                <field name="will_pay_id" invisible="1"/>
+                                <field name="purchase_sale_security_id" invisible="1"/>
+                                <field name="investment_id" invisible="1"/>
+                            </group>
+                        </group>
+                	<footer>
+                        <button string="Approve" name="approve" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

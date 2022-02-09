@@ -1,0 +1,697 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_hr_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 16:21+0000\n"
+"PO-Revision-Date: 2020-08-08 11:44-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__account_payable_id
+msgid "Account payable"
+msgstr "Cuenta por pagar"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__account_receivable_id
+msgid "Account receivable"
+msgstr "Cuenta por cobrar"
+
+#. module: jt_hr_base
+#: model_terms:ir.ui.view,arch_db:jt_hr_base.hr_employee_form_view
+msgid "Accounting"
+msgstr "Contabilidad"
+
+#. module: jt_hr_base
+#: model_terms:ir.ui.view,arch_db:jt_hr_base.hr_employee_form_view
+msgid "Accounting Entries"
+msgstr "Asientos contables"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__worker_status__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: jt_hr_base
+#: model_terms:ir.ui.view,arch_db:jt_hr_base.hr_employee_form_view
+msgid "Address"
+msgstr "Dirección"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__occ_code__admin_worker
+msgid "Administrative Workers"
+msgstr "Trabajadores administrativos"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__alley_road
+msgid "Alley Road"
+msgstr "Callejón, camino"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__nationality__american_central
+msgid "American Central"
+msgstr "Centroamericano"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__andador
+msgid "Andador"
+msgstr "Andador"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__architect
+msgid "Architect"
+msgstr "Arquitecto"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__avenue
+msgid "Avenue"
+msgstr "Avenida"
+
+#. module: jt_hr_base
+#: model:ir.model,name:jt_hr_base.model_res_partner_bank
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__bank_ids
+#: model_terms:ir.ui.view,arch_db:jt_hr_base.hr_employee_form_view
+msgid "Bank Accounts"
+msgstr "Cuentas bancarias"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__worker_type__base
+msgid "Base"
+msgstr "Base"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__beneficiary_ids
+msgid "Beneficiary"
+msgstr "Beneficiario"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__biologist
+msgid "Biologist"
+msgstr "Biólogo"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__boulevard
+msgid "Boulevard"
+msgstr "Bulevar"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__housing__building
+msgid "Building"
+msgstr "Edificio"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__nationality__canadian
+msgid "Canadian"
+msgstr "Canaciense"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__cardinal
+msgid "Cardinal"
+msgstr "Cardenal"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__certificate__career_tech
+msgid "Career Technical"
+msgstr "Carrera técnica"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__carriage_way
+msgid "Carriage Way"
+msgstr "Camino del carro"
+
+#. module: jt_hr_base
+#: model:ir.model.constraint,message:jt_hr_base.constraint_hr_job_category_key_unique
+msgid "Category Key must be unique."
+msgstr "La clave de categoría debe ser única."
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_job__category_key
+msgid "Category key"
+msgstr "Clave de categoría"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__city
+#: model_terms:ir.ui.view,arch_db:jt_hr_base.hr_employee_form_view
+msgid "City"
+msgstr "Ciudad"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__closed_circuit
+msgid "Closed Circuit"
+msgstr "Circuito cerrado"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__occ_code__commerce
+msgid "Commerce"
+msgstr "Comercio"
+
+#. module: jt_hr_base
+#: model_terms:ir.ui.view,arch_db:jt_hr_base.hr_employee_form_view
+msgid "Configuration RRHH"
+msgstr "Configuración RRHH"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__registration__confirmed
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__country_id
+#: model_terms:ir.ui.view,arch_db:jt_hr_base.hr_employee_form_view
+msgid "Country"
+msgstr "País"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_payment_place__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_payment_place__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__entry_date
+msgid "Date of Entry"
+msgstr "Fecha de entrada"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__dental
+msgid "Dental surgeon"
+msgstr "Cirujano dental"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__housing__department
+msgid "Department"
+msgstr "Departamento"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_payment_place__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__certificate__diploma
+msgid "Diplomat-specialty"
+msgstr "Diplomático-especialidad"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_payment_place__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__doctor
+msgid "Doctor"
+msgstr "Doctor"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__occ_code__drivers
+msgid "Drivers"
+msgstr "Conductores"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__occ_code__edu_workers
+msgid "Education Workers"
+msgstr "Trabajadores de la educación"
+
+#. module: jt_hr_base
+#: model:ir.model,name:jt_hr_base.model_hr_employee
+#: model:ir.model.fields,field_description:jt_hr_base.field_account_setup_bank_manual_config__employee_id
+#: model:ir.model.fields,field_description:jt_hr_base.field_res_partner_bank__employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__engineer
+msgid "Engineer"
+msgstr "Ingeniero"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__ethnologist
+msgid "Ethnologist"
+msgstr "Etnólogo"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__nationality__europe
+msgid "Europe"
+msgstr "Europa"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__occ_code__fab_worker
+msgid "Fabrile Workers"
+msgstr "Trabajadores fabriles"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__marital__free_union
+msgid "Free Union"
+msgstr "Unión Libre"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__general
+msgid "General"
+msgstr "General"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__high_road
+msgid "High Road"
+msgstr "Carretera"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__highway
+msgid "Highway"
+msgstr "Autopista"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__housing__house
+msgid "House"
+msgstr "Casa"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__housing__housing_unit
+msgid "Housing Unit"
+msgstr "Unidad de vivienda"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_payment_place__id
+msgid "ID"
+msgstr "ID"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__occ_code__independent_proff
+msgid "Independent Professional"
+msgstr "Profesional Independiente"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__nationality__israelite
+msgid "Israelite"
+msgstr "Israelita"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__nationality__japanese
+msgid "Japanese"
+msgstr "Japones"
+
+#. module: jt_hr_base
+#: model:ir.model,name:jt_hr_base.model_hr_job
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_payment_place____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_payment_place__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_payment_place__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__nationality__lebanese
+msgid "Lebanese"
+msgstr "Libanés"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__worker_status__license
+msgid "License"
+msgstr "Licencia"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__licensed
+msgid "Licensed"
+msgstr "Con licencia"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__lieutenant
+msgid "Lieutenant"
+msgstr "Teniente"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__marital
+msgid "Marital Status"
+msgstr "Estado civil"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__housing__market
+msgid "Market"
+msgstr "Mercado"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__nationality__mexican
+msgid "Mexican"
+msgstr "Mexicano"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_payment_place__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: jt_hr_base
+#: model:ir.model.constraint,message:jt_hr_base.constraint_payment_place_name_unique
+msgid "Name must be unique."
+msgstr "El nombre debe ser único."
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__occ_code
+msgid "National Occupation Code"
+msgstr "Código Nacional de Ocupación"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__nationality
+msgid "Nationality"
+msgstr "Nacionalidad"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__nationality__north_american
+msgid "North American"
+msgstr "Norteamericano"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__certificate__not_school
+msgid "Not in school"
+msgstr ""
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__place_number
+msgid "Number of Place"
+msgstr "Número de lugar"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__old_road
+msgid "Old Road"
+msgstr "Camino viejo"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__nationality__other
+msgid "Other"
+msgstr "Otro"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__payment_place_id
+msgid "Payment Place"
+msgstr "Lugar de pago"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__worker_type__pensioner
+msgid "Pensioner"
+msgstr "Pensionado"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__phy_anthropologist
+msgid "Physical anthropologist"
+msgstr "Antropólogo físico"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__physicist
+msgid "Physicist"
+msgstr "Físico"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__physicist_math
+msgid "Physicist mathematical"
+msgstr "Físico matemático"
+
+#. module: jt_hr_base
+#: model:ir.actions.act_window,name:jt_hr_base.payment_place_action
+#: model:ir.model,name:jt_hr_base.model_payment_place
+#: model:ir.ui.menu,name:jt_hr_base.payment_place_menu
+msgid "Place of Payment"
+msgstr "Lugar de pago"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__certificate__preparatory
+msgid "Preparatory"
+msgstr "Preparatoria"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__certificate__primary
+msgid "Primary"
+msgstr "Primaria"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__private_return
+msgid "Private Return"
+msgstr "Retorno privado"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__occ_code__private_off
+msgid "Private institution or company official"
+msgstr "Funcionario de institución o empresa privada"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__profession
+msgid "Profession"
+msgstr "Profesión"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__professor
+msgid "Professor"
+msgstr "Profesor"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__prolongation
+msgid "Prolongation"
+msgstr "Prolongación"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__accountant
+msgid "Public Accountant"
+msgstr "Contador publico"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__occ_code__public_off
+msgid "Public institution or company official"
+msgstr "Funcionario de institución pública o empresa"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__rfc
+msgid "RFC"
+msgstr "RFC"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__registration
+msgid "Registration in Financial Institution"
+msgstr "Registro en Institución Financiera"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__registration__rejected
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__occ_code__pensioner
+msgid "Retirees or pensioners"
+msgstr "Jubilados o pensionistas"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__roundabout
+msgid "Roundabout"
+msgstr "Rotonda"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__occ_code__salaried_proff
+msgid "Salaried Professional"
+msgstr "Profesional asalariado"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__certificate
+#: model_terms:ir.ui.view,arch_db:jt_hr_base.hr_employee_form_view
+msgid "Schooling"
+msgstr "Enseñanza"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__certificate__secondary
+msgid "Secondary"
+msgstr "Secundaria"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__marital__separate
+msgid "Separate"
+msgstr "Separado"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__ss_number
+msgid "Social Security Number"
+msgstr "\\Número de seguro social"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__profession__soc_anthropologist
+msgid "Social anthropologist"
+msgstr "Antropólogo social"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__nationality__south_american
+msgid "South American"
+msgstr "Sudamericano"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__state_id
+#: model_terms:ir.ui.view,arch_db:jt_hr_base.hr_employee_form_view
+msgid "State"
+msgstr "Estado"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__street
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__street
+msgid "Street"
+msgstr "Calle"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__street2
+msgid "Street 2"
+msgstr "Calle 2"
+
+#. module: jt_hr_base
+#: model_terms:ir.ui.view,arch_db:jt_hr_base.hr_employee_form_view
+msgid "Street 2..."
+msgstr "Calle 2..."
+
+#. module: jt_hr_base
+#: model_terms:ir.ui.view,arch_db:jt_hr_base.hr_employee_form_view
+msgid "Street..."
+msgstr "Calle..."
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__stroll
+msgid "Stroll"
+msgstr "Paseo"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__occ_code__prot_serve
+msgid "T. in servs of prot"
+msgstr "T. en porciones de prot"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__occ_code__technician
+msgid "Technicians"
+msgstr "Técnicos"
+
+#. module: jt_hr_base
+#: code:addons/jt_hr_base/models/hr_employee.py:0
+#, python-format
+msgid "The Branch Number should be of 4 digits only."
+msgstr "El número de sucursal debe tener solo 4 dígitos."
+
+#. module: jt_hr_base
+#: code:addons/jt_hr_base/models/hr_employee.py:0
+#, python-format
+msgid "The Branch Number should only consist of digits."
+msgstr "El número de sucursal solo debe constar de dígitos."
+
+#. module: jt_hr_base
+#: model:ir.model.constraint,message:jt_hr_base.constraint_hr_employee_worker_number_uniq
+msgid "The Worker Number must be unique."
+msgstr "El número de trabajador debe ser único."
+
+#. module: jt_hr_base
+#: code:addons/jt_hr_base/models/payment_place.py:0
+#, python-format
+msgid "The name must be numeric value"
+msgstr "El nombre debe ser un valor numérico"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__occ_code__trab_del
+msgid "Trab. del Arte, Espe"
+msgstr "Trab. del Arte, Espe"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__worker_type__trust
+msgid "Trust"
+msgstr "Confianza"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__worker_type__subject
+msgid "Subject"
+msgstr "Asignatura"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__worker_type__career
+msgid "Career"
+msgstr "Carrera"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__worker_type__officials
+msgid "Officials"
+msgstr "Funcionarios"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__worker_type__fee
+msgid "Fee"
+msgstr "Honorarios"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__road
+msgid "Type of Road"
+msgstr "Tipo de camino"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__worker_type
+msgid "Type of Worker"
+msgstr "Tipo de trabajador"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__housing
+msgid "Type of housing"
+msgstr "Tipo de vivienda"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__road__valley
+msgid "Valley via Town"
+msgstr "Valle a través de la ciudad"
+
+#. module: jt_hr_base
+#: model:ir.model.fields.selection,name:jt_hr_base.selection__hr_employee__certificate__without_school
+msgid "Without schooling"
+msgstr "Sin escolaridad"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__worker_number
+msgid "Worker Number"
+msgstr "Número de trabajador"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__worker_payment_key
+msgid "Worker Payment Key"
+msgstr "Clave de pago del trabajador"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__worker_status
+msgid "Worker Status"
+msgstr "Estatus de trabajador"
+
+#. module: jt_hr_base
+#: model_terms:ir.ui.view,arch_db:jt_hr_base.hr_employee_form_view
+msgid "ZIP"
+msgstr "C.P"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__zip_code
+msgid "Zip"
+msgstr "C.P"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_payment_place__place
+msgid "Place"
+msgstr "Lugar"
+
+#. module: jt_hr_base
+#: model:ir.model.fields,field_description:jt_hr_base.field_hr_employee__number_of_square
+msgid "Number Of Square"
+msgstr "Número de PLaza"

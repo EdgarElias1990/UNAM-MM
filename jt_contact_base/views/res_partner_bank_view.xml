@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_bank_form_view" model="ir.ui.view">
+            <field name="name">res.bank.form.view</field>
+            <field name="model">res.partner.bank</field>
+            <field name="inherit_id" ref="base.view_partner_bank_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                    <group invisible="context.get('hide_other_group',False)">
+                    	<field name="account_type"/>
+                        <field name="check_name"/>
+                        <field name="bank_account_name"/>
+                        <field name="status"/>
+                        <field name="bank_status"/>
+                        <field name="registration_date"/>
+                        <field name="authorization_date"/>
+                        <field name="low_date"/>
+                        <field name="bank_registration_date"/>
+                        <field name="bank_authorization_date"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="branch_number"/>
+                    <field name="bic_swift"/>
+                    <field name="aba"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="res_partner_bank_form_view_l10n_code_inherit" model="ir.ui.view">
+            <field name="name">res.bank.form.view.l10n.code</field>
+            <field name="model">res.bank</field>
+            <field name="inherit_id" ref="l10n_mx.view_res_bank_inherit_l10n_mx_edi_bank"/>
+            <field name="arch" type="xml">
+            	<field name="l10n_mx_edi_code" position="attributes">
+            		<attribute name='string'>Bank Key</attribute>
+            	</field>
+            	<field name="bic" position="after">
+            		<field name="company_name"/>
+            	</field>
+        	</field>
+        </record>
+    </data>
+</odoo>

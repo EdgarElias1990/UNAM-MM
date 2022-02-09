@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for expense type model -->
+        <record id="expense_type_search_view" model="ir.ui.view">
+            <field name="name">expense.type.search.view</field>
+            <field name="model">expense.type</field>
+            <field name="arch" type="xml">
+                <search string="Expense type">
+                    <field name="key_expenditure_type"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Key expenditure type" name='key_expenditure_type' context="{'group_by':'key_expenditure_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for expense type model -->
+    	<record id="expense_type_form_view" model="ir.ui.view">
+            <field name="name">expense.type.form.view</field>
+            <field name="model">expense.type</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+	            		<group>
+	            			<field name="key_expenditure_type" required="1"/>
+                            <field name="description_expenditure_type"/>
+	            		</group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for expense type model -->
+    	<record id="expense_type_tree_view" model="ir.ui.view">
+            <field name="name">expense.type.tree.view</field>
+            <field name="model">expense.type</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="key_expenditure_type"/>
+                    <field name="description_expenditure_type"/>
+            	</tree>
+            </field>
+        </record>
+
+        <!-- action for expense type views -->
+        <record id="action_expense_type" model="ir.actions.act_window">
+            <field name="name">Type of Expense (TG)</field>
+            <field name="res_model">expense.type</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="expense_type_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

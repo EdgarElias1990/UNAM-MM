@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for verifying digit model -->
+        <record id="verifying_digit_search_view" model="ir.ui.view">
+            <field name="name">verifying.digit.search.view</field>
+            <field name="model">verifying.digit</field>
+            <field name="arch" type="xml">
+                <search string="Verifying digit">
+                    <field name="check"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Check" name='check' context="{'group_by':'check'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for verifying digit model -->
+    	<record id="verifying_digit_form_view" model="ir.ui.view">
+            <field name="name">verifying.digit.form.view</field>
+            <field name="model">verifying.digit</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+	            		<group>
+	            			<field name="unam_key_id" required="1"/>
+                            <field name="sub_program_id" required="1"/>
+                            <field name="dependency_id" required="1"/>
+                            <field name="sub_dependency_id" required="1"/>
+                            <field name="item_id" required="1"/>
+                            <field name="check" required="1"/>
+	            		</group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for verifying digit model -->
+    	<record id="verifying_digit_tree_view" model="ir.ui.view">
+            <field name="name">verifying.digit.tree.view</field>
+            <field name="model">verifying.digit</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="unam_key_id"/>
+                    <field name="sub_program_id"/>
+                    <field name="dependency_id"/>
+                    <field name="sub_dependency_id"/>
+                    <field name="item_id"/>
+                    <field name="check"/>
+            	</tree>
+            </field>
+        </record>
+
+        <!-- action for verifying digit views -->
+        <record id="action_verifying_digit" model="ir.actions.act_window">
+            <field name="name">Verifying Digit</field>
+            <field name="res_model">verifying.digit</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="verifying_digit_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

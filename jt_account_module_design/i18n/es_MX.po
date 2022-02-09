@@ -1,0 +1,2396 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_account_module_design
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-27 23:00+0000\n"
+"PO-Revision-Date: 2021-04-27 23:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_income_exp_and_invest
+msgid ""
+"<b>\n"
+"                            <span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>\n"
+"                            <span style=\"font-size:14px;\">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL\n"
+"                            </span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_header_request_transfer
+msgid ""
+"<b><span style=\"font-size:15px;\">National Autonomous University of Mexicoof</span></b><br/>\n"
+"                            <span style=\"font-size:15px;\">University BoardTrustees</span><br/>\n"
+"                            <span style=\"font-size:15px;\">General Directorate of Finance</span><br/>\n"
+"                            <span style=\"font-size:15px;\">Directorate of Expenditures</span><br/>\n"
+"                            <span style=\"font-size:15px;\">Coordination of Operation by Electronic Banking</span><br/>\n"
+"                            <span style=\"font-size:15px;\">Report of financial resources requested </span>\n"
+"                            <span style=\"font-size:15px;\">from the Department of Financial Operations</span>"
+msgstr ""
+"<b><span style=\"font-size:15px;\">Universidad Nacional Autonoma de México</span></b><br/>\n"
+"                            <span style=\"font-size:15px;\">Patronato Universitario</span><br/>\n"
+"                            <span style=\"font-size:15px;\">Dirección General de Finanzas</span><br/>\n"
+"                            <span style=\"font-size:15px;\">Dirección de Egresos</span><br/>\n"
+"                            <span style=\"font-size:15px;\">Coordinación de Operación por Banca Electrónica</span><br/>\n"
+"                            <span style=\"font-size:15px;\">Reporte de recursos financieros solicitados</span>\n"
+"                            <span style=\"font-size:15px;\">al Departamento de Operación Financiera</span>"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_state_partimonial
+msgid ""
+"<b><span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>\n"
+"                            <span style=\"font-size:14px;\">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL\n"
+"                            </span>\n"
+"                        \n"
+"                        <br/>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_trial_balance
+msgid ""
+"<b><span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>\n"
+"                            <span style=\"font-size:14px;\">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL\n"
+"                            </span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_miles_revenue_report
+msgid ""
+"<b><span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>\n"
+"                            <span style=\"font-size:14px;\">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL</span>\n"
+"                            <br/>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_fianancial_statement_id
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_fianancial_statement_report
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_income_exp_and_invest_summary
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_weight_income
+msgid ""
+"<b><span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>\n"
+"                            <span style=\"font-size:14px;\">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL</span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_daily_count_id
+msgid ""
+"<b><span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>\n"
+"                            <span style=\"font-size:14px;\">University Board</span>\n"
+"                        <br/>\n"
+"                        \n"
+"                        <span>General Directorate of Finance </span><br/>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_fianancial_statement_id
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_income_exp_and_invest
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_income_exp_and_invest_summary
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_income_expenses_comparative
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_miles_revenue_report
+msgid ""
+"<br/>\n"
+"                        <span>Cifras en Miles de Pesos</span>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_fianancial_statement_report
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_state_partimonial
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_trial_balance
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_weight_income
+msgid ""
+"<br/>\n"
+"                        <span>Cifras en Pesos</span>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_header_request_transfer
+msgid ""
+"<br/>\n"
+"                        <strong style=\"text-align:center;\">Authorized by:</strong><br/>"
+msgstr ""
+"<br/>\n"
+"                        <strong style=\"text-align:center;\">Autorizado por:</strong><br/>"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_header_request_transfer
+msgid ""
+"<br/>\n"
+"                        <strong style=\"text-align:center;\">Prepared By</strong><br/>"
+msgstr ""
+"<br/>\n"
+"                        <strong style=\"text-align:center;\">Elaborado por:</strong><br/>"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.custom_line_template_left
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.custom_line_template_right
+msgid ""
+"<i class=\"fa fa-caret-right invisible\" role=\"img\" aria-"
+"label=\"Unfolded\" title=\"Unfolded\"/>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid ""
+"<span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Invoice</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Credit Note</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Bill</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Refund</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Sales Receipt</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Purchase Receipt</span>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid ""
+"<span class=\"o_form_label\" attrs=\"{'invisible': "
+"[('invoice_sequence_number_next_prefix', '=', False)]}\">First "
+"Number:</span>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.financial_statement_main_template
+msgid ""
+"<span class=\"searchIcon\"><i class=\"fa fa-search\" role=\"img\" aria-"
+"label=\"Search\" title=\"Search\"/></span>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_income_expenses_comparative
+msgid ""
+"<span style=\"font-size:14px;\"><b>UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</b></span>\n"
+"                            <span> DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL</span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.request_transfer_template_docs
+msgid "<span>Amount</span>"
+msgstr "<span>Importe</span>"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.request_transfer_template_docs
+msgid "<span>Application Concept</span>"
+msgstr "<span>Concepto de Aplicación</span>"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.request_transfer_template_docs
+msgid "<span>Bank Account</span>"
+msgstr "<span>Cuenta Bancaria</span>"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.request_transfer_template_docs
+msgid "<span>Bank</span>"
+msgstr "<span>Banco</span>"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.request_transfer_template_docs
+msgid "<span>Currency</span>"
+msgstr "<span>Moneda</span>"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.request_transfer_template_docs
+msgid "<span>Required Date</span>"
+msgstr "<span>Fecha de la Solicitud</span>"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.request_transfer_template_docs
+msgid "<strong style=\"margin-left:50px;padding-left:40px;\">Folio:</strong>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.request_transfer_template_docs
+msgid "<strong style=\"padding-left:30px;\">Production Date:</strong>"
+msgstr "<strong style=\"padding-left:30px;\">Fecha de Producción:</strong>"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.request_transfer_template_docs
+msgid "<strong>ATN:</strong>"
+msgstr ""
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#, python-format
+msgid "ASSIGNED ADVICE"
+msgstr "Asignado Consejo"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/miles_revenue_report.py:0
+#: code:addons/jt_account_module_design/reports/weight_income_report.py:0
+#: model:ir.model.fields,field_description:jt_account_module_design.field_detailed_statement_income__account_ids
+#: model:ir.model.fields,field_description:jt_account_module_design.field_integration_statement_asset__account_ids
+#: model:ir.model.fields,field_description:jt_account_module_design.field_miles_revenue__account_ids
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__account_id
+#, python-format
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_account_financial_html_report_line
+msgid "Account Report (HTML Line)"
+msgstr "Informe de cuenta (línea HTML)"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Accounting"
+msgstr "Contabilidad"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Add a line"
+msgstr "Agregar una línea"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Add a note"
+msgstr "Agregar una nota"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Add a section"
+msgstr "Agregar una sección"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Add an internal note..."
+msgstr "Agregar una nota interna..."
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/miles_revenue_report.py:0
+#: code:addons/jt_account_module_design/reports/weight_income_report.py:0
+#, python-format
+msgid "Adjusted"
+msgstr "Ajustado"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/miles_revenue_report.py:0
+#: code:addons/jt_account_module_design/reports/weight_income_report.py:0
+#, python-format
+msgid "Adjustment"
+msgstr "Ajustes"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__administrative_secretary_id
+msgid "Administrative Secretary"
+msgstr "Secretaria administrativa"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__agreement_number
+msgid "Agreement Number"
+msgstr "Numero de convenio"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__agreement_type_id
+msgid "Agreement Type"
+msgstr "Tipo de Convenio"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/state_paritmonial_situation_report.py:0
+#, python-format
+msgid "Ajuste"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__analytic
+msgid "Allow analytic filters"
+msgstr "Permitir filtros analíticos"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__comparison
+msgid "Allow comparison"
+msgstr "Permitir comparación"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__show_journal_filter
+msgid "Allow filtering by journals"
+msgstr "Permitir filtrar por diarios"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.custom_line_template_left
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.custom_line_template_right
+msgid "Annotate"
+msgstr "Anotación"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__applicable_filters_ids
+msgid "Applicable Filters"
+msgstr "Filtros aplicables"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__workstation_id
+msgid "Appointment"
+msgstr "Cita"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#: code:addons/jt_account_module_design/reports/state_inco_exp_summary.py:0
+#, python-format
+msgid "Assigned"
+msgstr "Asignado"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_trial_balance
+msgid "BALANZA DE COMPROBACIÓN DEL"
+msgstr ""
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#: code:addons/jt_account_module_design/reports/miles_revenue_report.py:0
+#: code:addons/jt_account_module_design/reports/weight_income_report.py:0
+#, python-format
+msgid "Balance"
+msgstr "Saldo pendiente"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__baneficiary_key
+msgid "Baneficiary Key"
+msgstr "Clave del beneficiario"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_request_accounts__bank_id
+msgid "Bank"
+msgstr "Banco"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.account_request_form_view
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.cancellation_request_view_form_view
+msgid "Bank Account"
+msgstr "Cuenta Bancaria"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__bank_key
+msgid "Bank Key"
+msgstr "Clave del banco"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__payment_bank_id
+msgid "Bank of receipt of payment"
+msgstr "Banco de recibo de pago"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#, python-format
+msgid "Base Amount"
+msgstr "Importe"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__date_range
+msgid "Based on date ranges"
+msgstr "Basado en rangos de fechas"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__batch_folio
+msgid "Batch Folio"
+msgstr "Folio por Lotes"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__baneficiary_id
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Beneficiary of the payment"
+msgstr "Beneficiario del pago"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#, python-format
+msgid "Budget sufficiency"
+msgstr "Suficiencia Presupuestal"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_budget_insufficien_wiz
+msgid "Budgetary Insufficienc"
+msgstr "Insuficiencia Presupuestal"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#, python-format
+msgid "Budgetary Insufficiency"
+msgstr "Insuficiencia Presupuestal"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/state_inco_exp_summary.py:0
+#, python-format
+msgid "CONCEPTO"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_fianancial_statement_report
+msgid "CONTABILIDAD GENERAL DEL"
+msgstr ""
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#, python-format
+msgid "CONTABLE EXERCISE"
+msgstr "Ejercicio Contable"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__account_move__provision_payment_state__cancel
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__provision__payment_state__cancel
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.view_confirm_payment_date_wizard
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.view_confirm_payment_term_wizard
+msgid "Cancel"
+msgstr "Cancelada"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__provision__state__cancel
+msgid "Cancelled"
+msgstr "Canselado"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__provision__payment_method__cash
+msgid "Cash"
+msgstr "Efectivo"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__category_key
+msgid "Category Key"
+msgstr "Clave de categoría"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__provision__payment_method__check
+msgid "Check"
+msgstr "Control"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__check_number
+msgid "Check number"
+msgstr "Numero de Control"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__commercial_partner_id
+msgid "Commercial Entity"
+msgstr "Entidad comercial"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__commitment_date
+msgid "Commitment Date"
+msgstr "Fecha de compromiso"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#, python-format
+msgid "Communication"
+msgstr "Comunicación"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__company_id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__company_id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__company_id
+msgid "Company"
+msgstr "Compañia"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__currency_id
+msgid "Company Currency"
+msgstr "Moneda de la empresa"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_provision__company_id
+#: model:ir.model.fields,help:jt_account_module_design.field_provision_line__company_id
+msgid "Company related to this journal"
+msgstr "Empresa relacionada con este diario"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/miles_revenue_report.py:0
+#: code:addons/jt_account_module_design/reports/weight_income_report.py:0
+#: model:ir.model.fields,field_description:jt_account_module_design.field_detailed_statement_income__concept
+#: model:ir.model.fields,field_description:jt_account_module_design.field_integration_statement_asset__concept
+#: model:ir.model.fields,field_description:jt_account_module_design.field_miles_revenue__concept
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__concept
+#, python-format
+msgid "Concept"
+msgstr "Concepto"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#: code:addons/jt_account_module_design/reports/income_expenses_report.py:0
+#: code:addons/jt_account_module_design/reports/state_paritmonial_situation_report.py:0
+#, python-format
+msgid "Concepto"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.ui.menu,name:jt_account_module_design.menu_conf_item
+msgid "Configuration Item Accounting"
+msgstr "Configuración de Cuenta"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#, python-format
+msgid "Configure Default Debit and Credit Account in %s!"
+msgstr "Por favor configure la cuenta UNAM y CONAC en %s"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.view_confirm_payment_date_wizard
+msgid "Confirm Payment Date"
+msgstr "Confirmar fecha de pago"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.view_confirm_payment_term_wizard
+msgid "Confirm Payment Terms"
+msgstr "Confirmar condiciones de pago"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_confirm_payment_date
+msgid "Confirm Payment date"
+msgstr "Confirmar fecha de pago"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_invoice_date__create_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_payment_date__create_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_detailed_statement_income__create_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_income_major_details__create_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_integration_statement_asset__create_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_daily_control_report__create_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__create_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_miles_revenue__create_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__create_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_invoice_date__create_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_payment_date__create_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_detailed_statement_income__create_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_income_major_details__create_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_integration_statement_asset__create_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_daily_control_report__create_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__create_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_miles_revenue__create_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__create_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#: code:addons/jt_account_module_design/reports/status_program_report.py:0
+#: code:addons/jt_account_module_design/reports/status_program_report.py:0
+#: code:addons/jt_account_module_design/reports/trial_balance_base.py:0
+#: code:addons/jt_account_module_design/reports/trial_balance_base.py:0
+#: code:addons/jt_account_module_design/reports/trial_balance_base.py:0
+#: code:addons/jt_account_module_design/reports/trial_balance_base.py:0
+#, python-format
+msgid "Credit"
+msgstr "Haber"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/state_paritmonial_situation_report.py:0
+#, python-format
+msgid "Cuenta"
+msgstr ""
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/daily_control_report.py:0
+#, python-format
+msgid "Cuenta Bancaria"
+msgstr ""
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__currency_id
+#, python-format
+msgid "Currency"
+msgstr "Dinero corriente"
+
+#. module: jt_account_module_design
+#: model:ir.ui.menu,name:jt_account_module_design.menu_daily_control_report
+msgid "Daily Control"
+msgstr "Control diario"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/daily_control_report.py:0
+#: model:ir.model,name:jt_account_module_design.model_jt_account_module_design_daily_control_report
+#, python-format
+msgid "Daily Control Report"
+msgstr "Informe de control diario"
+
+#. module: jt_account_module_design
+#: model:ir.actions.client,name:jt_account_module_design.action_daily_control_report
+msgid "Daily Control report"
+msgstr "Informe de control diario"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.view_confirm_payment_term_wizard
+#, python-format
+msgid "Date"
+msgstr "Fecha"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__date_approval_request
+msgid "Date Approval Request"
+msgstr "Fecha de aprobación de solicitud"
+
+#. module: jt_account_module_design
+#: model:ir.actions.server,name:jt_account_module_design.action_invoice_date_all
+msgid "Date Change"
+msgstr "Cambio de Fecha"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__date_receipt
+msgid "Date of Receipt"
+msgstr "Fecha de recibo"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__days
+msgid "Days"
+msgstr "Dias"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#: code:addons/jt_account_module_design/reports/status_program_report.py:0
+#: code:addons/jt_account_module_design/reports/status_program_report.py:0
+#: code:addons/jt_account_module_design/reports/trial_balance_base.py:0
+#: code:addons/jt_account_module_design/reports/trial_balance_base.py:0
+#: code:addons/jt_account_module_design/reports/trial_balance_base.py:0
+#: code:addons/jt_account_module_design/reports/trial_balance_base.py:0
+#, python-format
+msgid "Debit"
+msgstr "Debe"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_dependency
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__dependancy_id
+msgid "Dependency"
+msgstr "Dependencia"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__deposite_number
+msgid "Deposit number"
+msgstr "Número de depósito"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/daily_control_report.py:0
+#, python-format
+msgid "Descripcion"
+msgstr "Descripción"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Description"
+msgstr "Descripción"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__destination
+msgid "Destination"
+msgstr "Destino"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#, python-format
+msgid "Detail Statement of Income,Expenses and Investments Report"
+msgstr "Estado de Ingresos, Gastos e Inversiones (Cifras en Miles de Pesos)"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_jt_account_module_design_stat_inc_exp_inv_report
+msgid "Detail Statements of Income,expenses and investments"
+msgstr ""
+"Estado de Ingresos, Gastos e Inversiones Comparativos (Cifras en Miles de "
+"Pesos)"
+
+#. module: jt_account_module_design
+#: model:ir.ui.menu,name:jt_account_module_design.Detailed_Statement_of_Income_Expenses_and_Investments_submenu
+msgid "Detailed Statement of Income, Expenses and Investments Report"
+msgstr "Estado de Ingresos, Gastos e Inversiones (Cifras en Miles de Pesos)"
+
+#. module: jt_account_module_design
+#: model:ir.ui.menu,name:jt_account_module_design.action_state_income_expense_invest_summary_submenu
+msgid "Detailed Statement of Income, Expenses and Investments Summary"
+msgstr ""
+"Estado de Ingresos, Gastos e Inversiones resumen (Cifras en Miles de Pesos)"
+
+#. module: jt_account_module_design
+#: model:ir.actions.client,name:jt_account_module_design.action_state_income_expense_invest_summary_action
+#: model:ir.model,name:jt_account_module_design.model_jt_account_module_design_stat_inc_exp_inv_summary_report
+msgid "Detailed Statement of Income, Expenses and Investments Summary report"
+msgstr ""
+"Estado de Ingresos, Gastos e Inversiones resumen (Cifras en Miles de Pesos)"
+
+#. module: jt_account_module_design
+#: model:ir.actions.client,name:jt_account_module_design.action_state_income_expense_invest_action
+msgid "Detailed Statement of Income, Expenses and Investments report"
+msgstr "Estado de Ingresos, Gastos e Inversiones (Cifras en Miles de Pesos)"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_detailed_statement_income
+msgid "Detailed Statement of income"
+msgstr "Estado de Ingresos, Gastos e Inversiones (Cifras en miles de Pesos)"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Disc.%"
+msgstr "Desct.%"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__discount
+msgid "Discount (%)"
+msgstr "Descuento (%)"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_invoice_date__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_payment_date__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_detailed_statement_income__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_income_major_details__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_integration_statement_asset__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_design_state_income_expenses__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_design_state_partimonial_situation__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_account_coa_inherit__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_daily_control_report__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_general_ledger_inherit__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_miles_revenue_report__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_stat_inc_exp_inv_report__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_stat_inc_exp_inv_summary_report__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_trial_balance_base__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_weight_income_report__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_miles_revenue__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__display_name
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_jt_account_module_design_financial_report__hierarchy_option
+msgid "Display the hierarchy choice in the report options"
+msgstr "Mostrar la elección de jerarquía en las opciones del informe"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__document_type
+msgid "Document Type"
+msgstr "Tipo de Documento"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__upa_document_type
+msgid "Document Type UPA"
+msgstr "Tipo de documento UPA"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__account_move__provision_payment_state__draft
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__provision__payment_state__draft
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__provision__state__draft
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_income_expenses_comparative
+msgid "ESTADO DE INGRESOS, GASTOS E INVERSIONES COMPARATIVOS DEL"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_income_exp_and_invest
+msgid "ESTADO DE INGRESOS, GASTOS E INVERSIONES DETALLADOS DEL"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_income_exp_and_invest_summary
+msgid "ESTADO DE INGRESOS, GASTOS E INVERSIONES RESUMEN DEL"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_fianancial_statement_id
+msgid "ESTADO DE SITUACIÓN FINANCIERA DEL"
+msgstr ""
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#: code:addons/jt_account_module_design/reports/state_inco_exp_summary.py:0
+#, python-format
+msgid "EXERCISE PENDANT"
+msgstr "Ejercido Contable"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#, python-format
+msgid "EXTRA BOOKS"
+msgstr "Extra Libros"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#, python-format
+msgid "EXTRAORDINARY INCOMES"
+msgstr "Ingresos Extraordinarios"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/daily_control_report.py:0
+#, python-format
+msgid "Egresos"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__egress_key_id
+msgid "Egress Key"
+msgstr "Clave de Egresos"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/income_expenses_report.py:0
+#, python-format
+msgid "Ejercido año actual"
+msgstr "Ejercido anual actual"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/income_expenses_report.py:0
+#, python-format
+msgid "Ejercido año anterior"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__provision__payment_method__electronic_transfer
+msgid "Electronic Transfer"
+msgstr "Transferencia electrónica"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__hierarchy_option
+msgid "Enable the hierarchy option"
+msgstr "Habilite la opción de jerarquía"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__exchange_rate
+msgid "Exchange Rate"
+msgstr "Tipo de cambio"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#: code:addons/jt_account_module_design/reports/state_inco_exp_summary.py:0
+#, python-format
+msgid "Exercised"
+msgstr "Ejercido"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__detailed_statement_income__inc_exp_type__expenses
+msgid "Expenses"
+msgstr "GASTOS"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/daily_control_report.py:0
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#: code:addons/jt_account_module_design/reports/income_expenses_report.py:0
+#: code:addons/jt_account_module_design/reports/miles_revenue_report.py:0
+#: code:addons/jt_account_module_design/reports/state_inco_exp_summary.py:0
+#: code:addons/jt_account_module_design/reports/state_paritmonial_situation_report.py:0
+#: code:addons/jt_account_module_design/reports/weight_income_report.py:0
+#, python-format
+msgid "Export (XLSX)"
+msgstr "Exportar (XLSX)"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_jt_account_module_design_financial_report__applicable_filters_ids
+msgid ""
+"Filters that can be used to filter and group lines in this report. This uses"
+" saved filters on journal items."
+msgstr ""
+"Filtros que se pueden utilizar para filtrar y agrupar líneas en este "
+"informe. Esto utiliza filtros guardados en elementos del diario."
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#, python-format
+msgid "Financial Position Statement"
+msgstr "Estado de situación financiera"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.custom_line_template_left
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.custom_line_template_right
+msgid "Folded"
+msgstr "Doblada"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__folio_dependency
+msgid "Folio Dependency"
+msgstr "Folio Dependencia"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__folio_invoice
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__folio_invoice
+msgid "Folio Invoice"
+msgstr "Folio Factura"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__folio
+msgid "Folio against Receipt"
+msgstr "Folio contra recibo"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/daily_control_report.py:0
+#, python-format
+msgid "Folios"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__provision__document_type__foreign
+msgid "Foreign Currency"
+msgstr "Moneda extranjera"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__foreign_currency_amount
+msgid "Foreign currency amount"
+msgstr "Monto en moneda extranjera"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_from_reschedule_payment
+msgid "From Reschedule"
+msgstr "De reprogramar"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: model:ir.model,name:jt_account_module_design.model_jt_account_module_design_account_coa_inherit
+#, python-format
+msgid "General Accounting"
+msgstr "Contabilidad general"
+
+#. module: jt_account_module_design
+#: model:ir.actions.client,name:jt_account_module_design.action_general_accounting
+#: model:ir.ui.menu,name:jt_account_module_design.menu_general_accounting
+msgid "General Accouting"
+msgstr "Contabilidad General"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#, python-format
+msgid "General Ledger"
+msgstr "Contabilidad General"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_account_general_ledger
+msgid "General Ledger Report"
+msgstr "Reporte de Contabilidad General"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.view_confirm_payment_date_wizard
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.view_confirm_payment_term_wizard
+msgid "Generate"
+msgstr "Generar"
+
+#. module: jt_account_module_design
+#: model:ir.actions.server,name:jt_account_module_design.server_action_generate_payment_request
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Generate Payment Request"
+msgstr "Generar Solicitud de pago"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__line
+msgid "Header"
+msgstr "Encabezado"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move__is_hide_provision_from_view
+msgid "Hide Provision"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__holder_of_dependency_id
+msgid "Holder of the Dependency"
+msgstr "Titular de la dependencia"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Holder of the Unit"
+msgstr "Titular de la Unidad"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move__account_ie_id
+msgid "I.E. Accounts"
+msgstr "I.E. Cuentas"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_invoice_date__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_payment_date__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_detailed_statement_income__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_income_major_details__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_integration_statement_asset__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_design_state_income_expenses__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_design_state_partimonial_situation__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_account_coa_inherit__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_daily_control_report__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_general_ledger_inherit__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_miles_revenue_report__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_stat_inc_exp_inv_report__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_stat_inc_exp_inv_summary_report__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_trial_balance_base__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_weight_income_report__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_miles_revenue__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__id
+msgid "ID"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move__ie_account
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move_line__is_ie_account
+msgid "IEAccount"
+msgstr "IE Cuenta"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_state_partimonial
+msgid "INTEGRACIÓN DE ALGUNOS RUBROS DEL ESTADO DE SITUACIÓN PATRIMONIAL DEL"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__detailed_statement_income__inc_exp_type__investments
+msgid "INVESTMENTS"
+msgstr "INVERSIONES"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/state_paritmonial_situation_report.py:0
+#, python-format
+msgid "Importe"
+msgstr "Importado"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__detailed_statement_income__inc_exp_type__income
+msgid "Income"
+msgstr "INGRESOS"
+
+#. module: jt_account_module_design
+#: model:ir.ui.menu,name:jt_account_module_design.state_income_expenses_report
+msgid "Income Expenses and Investment"
+msgstr "Estado de Ingresos, Gastos e Inversiones Comparativos"
+
+#. module: jt_account_module_design
+#: model:ir.actions.act_window,name:jt_account_module_design.detailed_income_action
+#: model:ir.actions.client,name:jt_account_module_design.action_income_expenses_report
+#: model:ir.ui.menu,name:jt_account_module_design.detailed_income_menu
+msgid "Income Exprenses and Investment"
+msgstr ""
+"Estado de Ingresos, Gastos e Inversiones Comparativos (Cifras en miles de "
+"Pesos)"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/state_inco_exp_summary.py:0
+#, python-format
+msgid "Income,Expenses and Investments Summary Report"
+msgstr "Estado de Ingresos, Gastos e Inversiones (Resumen)"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_provision__l10n_mx_edi_payment_method_id
+msgid ""
+"Indicates the way the payment was/will be received, where the options could "
+"be: Cash, Nominal Check, _compute_rejection_messageedit Card, etc."
+msgstr ""
+"Indica la forma en que se recibió / recibirá el pago, donde las opciones "
+"podrían ser: Efectivo, Cheque Nominal, Tarjeta "
+"_compute_rejection_messageedit, etc."
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#: code:addons/jt_account_module_design/reports/status_program_report.py:0
+#: code:addons/jt_account_module_design/reports/trial_balance_base.py:0
+#, python-format
+msgid "Initial Balance"
+msgstr "Balance inicial"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_integration_statement_asset
+msgid "Integration Of some items of the Statement of Assets"
+msgstr ""
+"Integración de algunos rubros del Estado de Situación Patrimonial (Cifras en"
+" Pesos)"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_invoice_date__invoice_ids
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Invoice Lines"
+msgstr "Línea de facturas"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__invoice_series
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__invoice_series
+msgid "Invoice Series"
+msgstr "Serie de facturas"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__invoice_uuid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__invoice_uuid
+msgid "Invoice UUID"
+msgstr "UUID de la factura"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__invoice_vault_folio
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__invoice_vault_folio
+msgid "Invoice vault folio"
+msgstr "Folio de la bóveda de facturas"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__invoice_date
+msgid "Invoice/Bill Date"
+msgstr "Factura / Fecha de factura"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_papiit_project
+msgid "Is Papiit Project"
+msgstr "Es Proyecto PAPIIT"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_detailed_statement_income__item_ids
+msgid "Item"
+msgstr "PARTIDA"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_account_journal
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__journal_id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_account_move
+msgid "Journal Entries"
+msgstr "Asientos contables"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__line_ids
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Journal Items"
+msgstr "Asientos contables"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__name
+msgid "Label"
+msgstr "Etiqueta"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_invoice_date____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_payment_date____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_detailed_statement_income____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_income_major_details____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_integration_statement_asset____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_design_state_income_expenses____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_design_state_partimonial_situation____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_account_coa_inherit____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_daily_control_report____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_general_ledger_inherit____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_miles_revenue_report____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_stat_inc_exp_inv_report____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_stat_inc_exp_inv_summary_report____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_trial_balance_base____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_weight_income_report____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_miles_revenue____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision____last_update
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line____last_update
+msgid "Last Modified on"
+msgstr "Ultima modificación"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_invoice_date__write_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_payment_date__write_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_detailed_statement_income__write_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_income_major_details__write_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_integration_statement_asset__write_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_daily_control_report__write_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__write_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_miles_revenue__write_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__write_uid
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualización por"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_invoice_date__write_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_payment_date__write_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_detailed_statement_income__write_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_income_major_details__write_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_integration_statement_asset__write_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_daily_control_report__write_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__write_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_miles_revenue__write_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__write_date
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización el"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__leaves
+msgid "Leaves"
+msgstr "Hojas"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__line
+msgid "Line"
+msgstr "Linea"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__line_ids
+msgid "Lines"
+msgstr "Lineas"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#, python-format
+msgid "Load more... (%s remaining)"
+msgstr "Cargar más... (%s restante)"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_detailed_statement_income__major_id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_income_major_details__name
+msgid "Major"
+msgstr "Mayor"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__manager_job_id
+msgid "Manager’s job"
+msgstr "Trabajo del gerente"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__generated_menu_id
+msgid "Menu Item"
+msgstr "Menú rubro"
+
+#. module: jt_account_module_design
+#: model:ir.actions.act_window,name:jt_account_module_design.miles_revenue_action
+#: model:ir.model,name:jt_account_module_design.model_miles_revenue
+#: model:ir.ui.menu,name:jt_account_module_design.miles_revenue_menu
+msgid "Miles Revenue"
+msgstr "Ingresos en Miles"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/miles_revenue_report.py:0
+#: model:ir.model,name:jt_account_module_design.model_jt_account_module_design_miles_revenue_report
+#: model:ir.ui.menu,name:jt_account_module_design.miles_revenue_report_submenu
+#, python-format
+msgid "Miles Revenue Report"
+msgstr "Reporte de ingresos por el Periodo (Cifras en Miles de pesos)"
+
+#. module: jt_account_module_design
+#: model:ir.actions.client,name:jt_account_module_design.action_miles_income_report
+msgid "Miles Revenue report"
+msgstr "Reporte de ingresos por el Periodo (Cifras en Miles de pesos)"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "More Information"
+msgstr "Más información"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__name
+#, python-format
+msgid "Name"
+msgstr "Nombre"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__responsible_expend_id
+msgid "Name of the responsible"
+msgstr "Nombre del responsable"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__provision__document_type__national
+msgid "National Currency"
+msgstr "Moneda Extranjera"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Note"
+msgstr "Nota"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__number
+msgid "Number"
+msgstr "Número"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__administrative_forms
+msgid "Number of Administrative Forms"
+msgstr "Número de Formas Administrativas"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__no_of_document
+msgid "Number of Documents"
+msgstr "Número de Documentos"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__detailed_statement_income__inc_exp_type__other_expenses
+msgid "OTHER EXPENSES"
+msgstr "OTROS GASTOS"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__operation_type_id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__operation_type_id
+msgid "Operation Type"
+msgstr "Tipo de operación"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__origin_payment
+msgid "Origin"
+msgstr "Origen"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__other_amounts
+msgid "Other Amounts"
+msgstr "Otros montos"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Other Info"
+msgstr "Otra Información"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/daily_control_report.py:0
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#: code:addons/jt_account_module_design/reports/income_expenses_report.py:0
+#: code:addons/jt_account_module_design/reports/miles_revenue_report.py:0
+#: code:addons/jt_account_module_design/reports/state_inco_exp_summary.py:0
+#: code:addons/jt_account_module_design/reports/state_paritmonial_situation_report.py:0
+#: code:addons/jt_account_module_design/reports/weight_income_report.py:0
+#, python-format
+msgid "PDF"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__parent_id
+msgid "Parent Menu"
+msgstr "Menú Mayor"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__partner_id
+#, python-format
+msgid "Partner"
+msgstr "Asistente"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_payment_date__payment_ids
+msgid "Payment"
+msgstr "Pago"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_payment_date__payment_date
+msgid "Payment Date"
+msgstr "Fecha de pago"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__l10n_mx_edi_payment_method_id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__payment_method
+msgid "Payment Method"
+msgstr "Método de Pago"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__payment_bank_account_id
+msgid "Payment Receipt bank account"
+msgstr "Recibo de cuenta bancaria de pago"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move__total_provision_move
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_payment_request
+msgid "Payment Request"
+msgstr "Solicitud de Pago"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__payment_state
+msgid "Payment State"
+msgstr "Estado de pago"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_confirm_invoice_date__invoice_date_due
+msgid "Payment Terms"
+msgstr "Términos de pago"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__payment_issuing_bank_id
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Payment issuing Bank"
+msgstr "Banco emisor de pago"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__payment_issuing_bank_acc_id
+msgid "Payment issuing bank Account"
+msgstr "Cuenta bancaria emisora ​​de pago"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Payment receipt bank account"
+msgstr "Recibo de pago cuenta bancaria"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#: code:addons/jt_account_module_design/reports/state_inco_exp_summary.py:0
+#, python-format
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__period_start
+msgid "Period"
+msgstr "Periodo"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__period_end
+msgid "Period End"
+msgstr "Periodo Final"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#, python-format
+msgid "Please add Egress Key into lines"
+msgstr "Agregue la clave de  egreso en las líneas"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/income_expenses_report.py:0
+#, python-format
+msgid "Porcentaje"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__provision__state__posted
+msgid "Posted"
+msgstr "Al corriente"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__previous
+msgid "Previous"
+msgstr "Previo"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__previous_number
+msgid "Previous Number"
+msgstr "Número Previo"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#, python-format
+msgid "Previous Number %s not found into provision"
+msgstr "Número anterior% s no encontrado en la provisión"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#, python-format
+msgid "Previous Number Must Be Unique"
+msgstr "El número anterior debe ser único"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__price_unit
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Price"
+msgstr "Precio"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/daily_control_report.py:0
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#: code:addons/jt_account_module_design/reports/income_expenses_report.py:0
+#: code:addons/jt_account_module_design/reports/miles_revenue_report.py:0
+#: code:addons/jt_account_module_design/reports/state_inco_exp_summary.py:0
+#: code:addons/jt_account_module_design/reports/state_paritmonial_situation_report.py:0
+#: code:addons/jt_account_module_design/reports/weight_income_report.py:0
+#, python-format
+msgid "Export to PDF"
+msgstr "Exportar a PDF"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move__program_code_id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__program_code_id
+msgid "Program Code"
+msgstr "Código programático"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#, python-format
+msgid "Program Code %s not found into provision"
+msgstr "El código de programa% s no se encuentra en la provisión"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move__date_year_program
+msgid "Program Code Search Year"
+msgstr "Buscar Código Programático por año"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move__programatic_code
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move_line__is_programatic_code
+msgid "Programmatic Code"
+msgstr "Código programatico"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__project_code
+msgid "Project Code"
+msgstr "Código de Proyecto"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__project_key
+msgid "Project Key"
+msgstr "Clave de Proyecto"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__project_number_id
+msgid "Project Number"
+msgstr "Número de Proyecto"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__provenance
+msgid "Provenance"
+msgstr "Procedencia"
+
+#. module: jt_account_module_design
+#: model:ir.actions.act_window,name:jt_account_module_design.supplier_provision_action
+#: model:ir.model,name:jt_account_module_design.model_provision
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move_line__provision_id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_budget_insufficien_wiz__provision_id
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__provision_id
+msgid "Provision"
+msgstr "Provisión"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move__provision_amount_total
+msgid "Provision Amount Total"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_provision_line
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__provision_line_ids
+msgid "Provision Line"
+msgstr "Línea Provisión"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move__provision_payment_state
+msgid "Provision Payment State"
+msgstr "Estado de pago de la provisión"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move_line__provision_price
+msgid "Provision Price"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_account_move__is_provision_request_generate
+msgid "Provision Request"
+msgstr "Solicitud de provisión"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__account_move__provision_payment_state__provision
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__provision__payment_state__provision
+#: model:ir.ui.menu,name:jt_account_module_design.supplier_provision_menu
+msgid "Provisions"
+msgstr "Provisionada"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Quantity:"
+msgstr "Cantidad:"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#: code:addons/jt_account_module_design/reports/income_expenses_report.py:0
+#: code:addons/jt_account_module_design/reports/state_inco_exp_summary.py:0
+#, python-format
+msgid "REMAINING BEFORE INVESTMENTS"
+msgstr "REMANENTE ANTES DE INVERSIONES"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#: code:addons/jt_account_module_design/reports/income_expenses_report.py:0
+#: code:addons/jt_account_module_design/reports/state_inco_exp_summary.py:0
+#, python-format
+msgid "REMAINING OF THE YEAR"
+msgstr "REMANENTE DEL EJERCICIO"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_miles_revenue_report
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.external_layout_weight_income
+msgid "REPORTE DE INGRESOS POR EL PERÍODO DEL"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__rfc
+msgid "RFC"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__rf_person
+msgid "RFC of the person in charge"
+msgstr "RFC del responsable"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__rate
+msgid "Rate"
+msgstr "Tasa"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Reason"
+msgstr "Razón"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__reason_cancellation
+msgid "Reason for Cancellation"
+msgstr "Razón de la cancelación"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__reason_for_expendiure
+msgid "Reason for Expenditure/Trip"
+msgstr "Razón del gasto / viaje"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__reason_rejection_req
+msgid "Reason for Rejecting Request"
+msgstr "Razón para rechazar la solicitud"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__reason_rejection
+msgid "Reason for Rejection"
+msgstr "Motivo del rechazo"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__pension_reference
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Register"
+msgstr "Registrarse"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__account_move__provision_payment_state__registered
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__provision__payment_state__registered
+msgid "Registered"
+msgstr "Registrada"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__account_move__provision_payment_state__rejected
+#: model:ir.model.fields.selection,name:jt_account_module_design.selection__provision__payment_state__rejected
+msgid "Rejected"
+msgstr "Rechazada"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/miles_revenue_report.py:0
+#: code:addons/jt_account_module_design/reports/weight_income_report.py:0
+#, python-format
+msgid "Remnants"
+msgstr "REMANENTE"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__req_registeration_date
+msgid "Request Registeration Date"
+msgstr "Solicitar fecha de registro"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__req_registration_date
+msgid "Request Registration Date"
+msgstr "Solicitar fecha de registro"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__operation_name
+msgid "Request operation name"
+msgstr "Solicitar nombre de operación"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_request_accounts
+msgid "Request to open account"
+msgstr "Solicitud de apertura de cuenta"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__responsible_category_key
+msgid "Responsible category key"
+msgstr "Clave de categoría responsable"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__responsible_job_position
+msgid "Responsible job position"
+msgstr "Puesto de trabajo responsable"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__responsible_id
+msgid "Responsible/Irresponsible"
+msgstr "Responsable / Irresponsable"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_show_resposible_group
+msgid "Resposible Group"
+msgstr "Grupo responsable"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__retIVA
+msgid "RetIVA"
+msgstr ""
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/daily_control_report.py:0
+#, python-format
+msgid "Retiros/Depositos"
+msgstr "Retiros/Depósitos"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/weight_income_report.py:0
+#: model:ir.model,name:jt_account_module_design.model_jt_account_module_design_weight_income_report
+#, python-format
+msgid "Revenue Report"
+msgstr "Reporte de Ingresos"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.financial_statement_main_template
+msgid "Search account"
+msgstr "Buscar Cuenta"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Section"
+msgstr "Sección"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/wizard/confirm_payment_date.py:0
+#, python-format
+msgid "Set Payment Date"
+msgstr "Establecer fecha de pago"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/wizard/set_invoice_date.py:0
+#: model:ir.model,name:jt_account_module_design.model_confirm_invoice_date
+#, python-format
+msgid "Set Payment Terms"
+msgstr "Establecer condiciones de pago"
+
+#. module: jt_account_module_design
+#: model:ir.actions.server,name:jt_account_module_design.action_payment_date_all
+msgid "Set the payment date"
+msgstr "Establecer fecha de cobro"
+
+#. module: jt_account_module_design
+#: model:ir.actions.server,name:jt_account_module_design.action_payment_date_all_other
+msgid "Set the payment date"
+msgstr "Establecer fecha de Pago"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_jt_account_module_design_financial_report__tax_report
+msgid ""
+"Set to True to automatically filter out journal items that have the boolean "
+"field 'tax_exigible' set to False"
+msgstr ""
+"Establecer en Verdadero para filtrar automáticamente los elementos del "
+"diario que tienen el campo booleano 'tax_exigible' establecido en Falso"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__sheets
+msgid "Sheets"
+msgstr "Hojas"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#, python-format
+msgid "Should NOT allow placing a different provider"
+msgstr "No debe permitir la colocación de un proveedor diferente"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#, python-format
+msgid "Should not allow cancel because provision already has related requests"
+msgstr ""
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#, python-format
+msgid ""
+"Should not allow returning to draft because provision already has related "
+"requests"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_show_appointment
+msgid "Show Appointment"
+msgstr "Mostrar cita"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_show_beneficiary_key
+msgid "Show Beneficiary Key"
+msgstr "Mostrar clave de beneficiario"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_show_category_key
+msgid "Show Category Key"
+msgstr "Mostrar clave de categoría"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_show_commitment_date
+msgid "Show Commitmet Date"
+msgstr "Mostrar fecha de compromiso"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__debit_credit
+msgid "Show Credit and Debit Columns"
+msgstr "Mostrar columnas de crédito y débito"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_show_responsible
+msgid "Show Responsible"
+msgstr "Mostrar responsable"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_show_student_account
+msgid "Show Student Account"
+msgstr "Mostrar cuenta de estudiante"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_show_turn_type
+msgid "Show Turn Type"
+msgstr "Mostrar tipo de turno"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_zone_res
+msgid "Show Zone Res"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_show_holder_of_dependency
+msgid "Show holder_of_dependency"
+msgstr "Titular de la Dependencia"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__unfold_all_filter
+msgid "Show unfold all filter"
+msgstr "Mostrar desplegar todo el filtro"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Source Document"
+msgstr "Documento fuente"
+
+#. module: jt_account_module_design
+#: model:ir.ui.menu,name:jt_account_module_design.special_reports_submenu
+msgid "Special Reports"
+msgstr "Reportes Especiales"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__stage
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__stage
+msgid "Stage"
+msgstr "Etapa"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/income_expenses_report.py:0
+#, python-format
+msgid "State Of Income Expenses and Investment"
+msgstr "ESTADO DE INGRESOS, GASTOS E INVERSIONES"
+
+#. module: jt_account_module_design
+#: model:ir.actions.client,name:jt_account_module_design.action_state_partimonial_report
+msgid "State Paritmonial Situation"
+msgstr "Integración de algunos rubros del Estado de Situación Patrimonial"
+
+#. module: jt_account_module_design
+#: model:ir.ui.menu,name:jt_account_module_design.state_partimonial_report
+msgid "State Partimonial Report"
+msgstr "Integración de algunos rubros del Estado de Situación Patrimonial"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/state_paritmonial_situation_report.py:0
+#: model:ir.actions.act_window,name:jt_account_module_design.integration_asset_action
+#: model:ir.model,name:jt_account_module_design.model_jt_account_design_state_partimonial_situation
+#: model:ir.ui.menu,name:jt_account_module_design.integration_asset_menu
+#, python-format
+msgid "State Partimonial Situation"
+msgstr "Integración de algunos rubros del Estado de Situación Patrimonial"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_jt_account_design_state_income_expenses
+msgid "State of Income Expenses and Compariative Investment"
+msgstr ""
+"ESTADO DE INGRESOS, GASTOS E INVERSIONES COMPARATIVOS (CIFRAS EN MILES DE "
+"PESOS)"
+
+#. module: jt_account_module_design
+#: model:ir.actions.client,name:jt_account_module_design.action_financial_positional_statement
+msgid "Statement Of Financial Position"
+msgstr "Estado de situación financiera (Cifras en miles de pesos)"
+
+#. module: jt_account_module_design
+#: model:ir.ui.menu,name:jt_account_module_design.menu_financial_position_report
+msgid "Statement of Financial Position"
+msgstr "Estado de situación financiera (Cifras en miles de pesos)"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__student_account
+msgid "Student Account"
+msgstr "Cuenta de estudiante"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__sub_dependancy_id
+msgid "Sub Dependency"
+msgstr "Subdependencia"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_sub_dependency
+msgid "Sub-Dependency"
+msgstr "Subdependencia"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__subtotal
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Subtotal"
+msgstr ""
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#, python-format
+msgid "TIENDA"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.request_transfer_template_docs
+msgid "TOTAL"
+msgstr ""
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/miles_revenue_report.py:0
+#: code:addons/jt_account_module_design/reports/weight_income_report.py:0
+#, python-format
+msgid "TOTAL EGRESSES"
+msgstr "TOTAL EGRESOS"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#: code:addons/jt_account_module_design/reports/income_expenses_report.py:0
+#: code:addons/jt_account_module_design/reports/state_inco_exp_summary.py:0
+#, python-format
+msgid "TOTAL EXPENSES, INVESTMENTS AND OTHER EXPENSES"
+msgstr "TOTAL GASTOS, INVERSIONES Y OTROS GASTOS"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/miles_revenue_report.py:0
+#: code:addons/jt_account_module_design/reports/weight_income_report.py:0
+#, python-format
+msgid "TOTAL REVENUE"
+msgstr "TOTAL INGRESOS"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__amount_tax
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__amount_tax
+#, python-format
+msgid "Tax Amount"
+msgstr "Importe"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#, python-format
+msgid "Tax Declaration"
+msgstr "Declaración de impuestos"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Tax Grids"
+msgstr "Cuadrículas de impuestos"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_jt_account_module_design_financial_report__tax_report
+msgid "Tax Report"
+msgstr "Reporte de Impuestos"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__tax_ids
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Taxes Applied"
+msgstr "Impuestos aplicados"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_provision__rfc
+msgid ""
+"The Tax Identification Number. Complete it if the contact is subjected to "
+"government taxes. Used in some legal statements."
+msgstr ""
+"El número de identificación fiscal. Rellénelo si el contacto está sujeto a "
+"impuestos gubernamentales. Utilizado en algunas declaraciones legales."
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/status_program_report.py:0
+#, python-format
+msgid "The account %s is incorrectly configured. Only one tag is allowed."
+msgstr ""
+"La cuenta% s está configurada incorrectamente. Solo se permite una etiqueta."
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_jt_account_module_design_financial_report__generated_menu_id
+msgid "The menu item generated for this report, or None if there isn't any."
+msgstr ""
+"El elemento de menú generado para este informe, o Ninguno si no hay ninguno."
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_provision_line__quantity
+msgid ""
+"The optional quantity expressed by this line, eg: number of product sold. "
+"The quantity is not a legal requirement but is very useful for some reports."
+msgstr ""
+"La cantidad opcional expresada por esta línea, por ejemplo: número de "
+"producto vendido. La cantidad no es un requisito legal pero es muy útil para"
+" algunos informes."
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.financial_statement_main_template
+msgid "There are"
+msgstr "Existen"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/daily_control_report.py:0
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_accounting.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#: code:addons/jt_account_module_design/reports/general_ledger.py:0
+#: code:addons/jt_account_module_design/reports/state_paritmonial_situation_report.py:0
+#: code:addons/jt_account_module_design/reports/status_program_report.py:0
+#: code:addons/jt_account_module_design/reports/status_program_report.py:0
+#: code:addons/jt_account_module_design/reports/trial_balance_base.py:0
+#: code:addons/jt_account_module_design/reports/trial_balance_base.py:0
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__amount_total
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+#, python-format
+msgid "Total"
+msgstr ""
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/status_program_report.py:0
+#, python-format
+msgid "Total %s"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Total Credit"
+msgstr "Total Crédito"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Total Debit"
+msgstr "Total Debito"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#, python-format
+msgid ""
+"Total Payment amount %f exceeds the original amount of the provision %f"
+msgstr ""
+"El monto total del pago% f excede el monto original de la provisión% f"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__transfer_key
+msgid "Transfer Key"
+msgstr "Clave transferencia"
+
+#. module: jt_account_module_design
+#: model:ir.actions.report,name:jt_account_module_design.trasfer_request_action
+msgid "Transfer Request"
+msgstr "Solicitud de transferencia"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#, python-format
+msgid "Transfers"
+msgstr "Transferencias"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/trial_balance_base.py:0
+#: model:ir.actions.client,name:jt_account_module_design.action_status_program_report
+#: model:ir.actions.client,name:jt_account_module_design.action_trial_balance_base_inherit
+#: model:ir.model,name:jt_account_module_design.model_jt_account_module_design_general_ledger_inherit
+#: model:ir.ui.menu,name:jt_account_module_design.menu_status_program_report
+#, python-format
+msgid "Trial Balance"
+msgstr "Balanza de Comprobación"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_jt_account_module_design_trial_balance_base
+#: model:ir.ui.menu,name:jt_account_module_design.menu_trial_balance_base_inherit
+msgid "Trial Balance Base"
+msgstr "Balanza de comprobación"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__turn_type
+msgid "Turn type"
+msgstr "Tipo de giro"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_detailed_statement_income__inc_exp_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__type_of_bussiness_line
+msgid "Type Of Bussiness Line"
+msgstr "Tipo de línea de negocio"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__upa_key
+msgid "UPA Key"
+msgstr "Clave UPA"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.custom_line_template_left
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.custom_line_template_right
+msgid "Unfolded"
+msgstr "Desplegado"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Unit Price:"
+msgstr "Precio unitario:"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__amount_untaxed
+msgid "Untaxed Amount"
+msgstr "Importe no tributable"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "UoM"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__user_registering_id
+msgid "User Registering"
+msgstr "Registro de usuario"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_provision_line__currency_id
+msgid "Utility field to express amount currency"
+msgstr "Campo de utilidad para expresar el monto de la moneda"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__responsible_rfc
+msgid "VAT"
+msgstr "IVA"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Validate budget"
+msgstr "Validar presupuesto"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/income_expenses_report.py:0
+#, python-format
+msgid "Variación"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__vat
+msgid "Vat"
+msgstr "IVA"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__vault_folio
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__vault_folio
+msgid "Vault folio"
+msgstr "Folio de la bóveda"
+
+#. module: jt_account_module_design
+#: model:ir.ui.menu,name:jt_account_module_design.weight_income_report_submenu
+msgid "Weight Income Report"
+msgstr "Reporte de ingresos por el Periodo (Cifras en Pesos)"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/reports/daily_control_report.py:0
+#: code:addons/jt_account_module_design/reports/detailed_statement_income_expenses_and_investments.py:0
+#: code:addons/jt_account_module_design/reports/income_expenses_report.py:0
+#: code:addons/jt_account_module_design/reports/miles_revenue_report.py:0
+#: code:addons/jt_account_module_design/reports/state_inco_exp_summary.py:0
+#: code:addons/jt_account_module_design/reports/state_paritmonial_situation_report.py:0
+#: code:addons/jt_account_module_design/reports/weight_income_report.py:0
+#, python-format
+msgid "XLSX"
+msgstr ""
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#, python-format
+msgid "You can generate payment request only for provision state."
+msgstr "Puede generar una solicitud de pago solo para el estado de provisión."
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/wizard/set_invoice_date.py:0
+#, python-format
+msgid ""
+"You can set the Invoice date  only for those payments which are in 'Draft "
+"and For Payment Procedure'!"
+msgstr ""
+"¡Puede establecer la fecha de la factura solo para aquellos pagos que están "
+"en 'Borrador y Procedimiento de pago'!"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/wizard/set_invoice_date.py:0
+#, python-format
+msgid ""
+"You can set the Invoice date  only for those payments which are in "
+"'Draft,registered,For Payment Procedure and Approved Payment'!"
+msgstr ""
+"¡Puede establecer la fecha de la factura solo para aquellos pagos que están "
+"en 'Borrador, registrado, Para procedimiento de pago y Pago aprobado'!"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/wizard/confirm_payment_date.py:0
+#: code:addons/jt_account_module_design/wizard/confirm_payment_date.py:0
+#, python-format
+msgid ""
+"You can set the payment date  only for those payments which are in 'Draft "
+"and For Payment Procedure'!"
+msgstr ""
+"¡Puede establecer la fecha de pago solo para aquellos pagos que están en "
+"'Borrador y Procedimiento de pago'!"
+
+#. module: jt_account_module_design
+#: code:addons/jt_account_module_design/models/invoice.py:0
+#, python-format
+msgid "You cannot delete an entry which has been not draft state."
+msgstr "No se puede eliminar una entrada que no esté en estado de borrador."
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__zone
+msgid "Zone"
+msgstr "Zona"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.provision_form_view_inherit
+msgid "Zone Responsible"
+msgstr "Responsable de zona"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_jt_account_module_design_financial_report__analytic
+msgid "display the analytic filters"
+msgstr "mostrar los filtros analíticos"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_jt_account_module_design_financial_report__comparison
+msgid "display the comparison filter"
+msgstr "mostrar el filtro de comparación"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_jt_account_module_design_financial_report__show_journal_filter
+msgid "display the journal filter in the report"
+msgstr "mostrar el filtro de diario en el informe"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_jt_account_module_design_financial_report__unfold_all_filter
+msgid "display the unfold all options in report"
+msgstr "mostrar el despliegue de todas las opciones en el informe"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__excercise
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__excercise
+msgid "excercise"
+msgstr "ejercicio"
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_income_major_details
+msgid "income.major.details"
+msgstr "ingreso.mayor.detalle"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_show_destination
+msgid "is_show_destination"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_show_origin
+msgid "is_show_origin"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model,name:jt_account_module_design.model_jt_account_module_design_financial_report
+msgid "jt Account Report (HTML)"
+msgstr "informe de cuenta jt (HTML)"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision_line__operation_type_name
+msgid "name"
+msgstr "Nombre"
+
+#. module: jt_account_module_design
+#: model:ir.actions.report,print_report_name:jt_account_module_design.trasfer_request_action
+msgid "object.operation_number"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.financial_statement_main_template
+msgid "prior or included in this period"
+msgstr "previo o incluido en este período"
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,field_description:jt_account_module_design.field_provision__is_show_reason_for_expendiure
+msgid "reason_for_expendiure"
+msgstr ""
+
+#. module: jt_account_module_design
+#: model:ir.model.fields,help:jt_account_module_design.field_jt_account_module_design_financial_report__date_range
+msgid "specify if the report use date_range or single date"
+msgstr "especificar si el informe utiliza rango_de_fecha o fecha única"
+
+#. module: jt_account_module_design
+#: model_terms:ir.ui.view,arch_db:jt_account_module_design.financial_statement_main_template
+msgid "unposted Journal Entries"
+msgstr "entradas de diario no publicadas"
+
+#. module: jt_account_module_design
+#: model:ir.actions.client,name:jt_account_module_design.action_weight_income_report
+msgid "weight income report"
+msgstr "reporte de ingresos"
+
+#. module: account_reports
+#: code:addons/account_reports/models/account_report.py:0
+#, python-format
+msgid "Print Preview"
+msgstr "Exportar a PDF"

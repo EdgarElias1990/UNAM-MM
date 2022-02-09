@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="payroll_bank_deposite_slip_template">
+            <t t-call="web.basic_layout">
+            <t t-set="counter" t-value="0"/>
+            <t t-foreach="docs" t-as="o">
+                <t t-set="counter" t-value="counter + 1" />
+                <t style="page-break-inside: avoid;">
+                    <div class="page" style="border:1px solid black;border-spacing: 0;background-color:#A9A9A9;margin-top:10px;height:100%;width:auto;page-break-inside: avoid;
+                    ">
+                        <div class="oe_structure"/>
+                        <table style="font-size:14px;margin-top:10px;">
+                                <tr>
+                                    <td >TELEFONO &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>_____________</span></td>
+                                    <td >CLAVE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u><span t-field="o.payment_place_id.name"/></u></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">DEPENDENCIA:&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;<u> <span t-field="o.sub_dependancy_id.description"/> </u></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="18"> <p style="text-align:left;">RECIBÍ DEL DEPARTAMENTO DE PAGO DE NÓMINA Y PRESTACIONES DE LA DIRECCIÓN GENERAL DE FINANZAS LOS SIGUIENTES DOCUMENTOS PARA EL PAGO DE NÓMINA</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="12"  style="text-align:center;">BANCO:<span t-field="o.payment_issuing_bank_id.name"/></td>
+                                </tr>
+
+                                <tr t-foreach="o.get_counter_council_folio(docs)" t-as="data">
+                                    <t t-if="data['depend'] == o.payment_place_id.name">
+                                        <td colspan="2">
+                                            FOLIOS DE DEPOSITOS DEL  &#8201;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                            <u>
+                                                <t t-esc="data['small']"/>
+                                            </u> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; AL &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                            <u>
+                                                <t t-esc="data['big']"/>
+                                            </u>
+                                        </td>
+                                        <td> </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        VALES DE DESPENSA DEL FOLIO &#x9;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;_________&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; AL &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _________
+                                    </td>
+                                    <td ></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">HOJAS DE NOMINA DEL FOLIO &#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;_________ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; AL &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _________</td>
+                                    <td ></td>
+                                </tr>
+                                <tr t-foreach="o.get_counter_council_folio(docs)" t-as="data">
+                                    <t t-if="data['depend'] == o.dependancy_id.description">
+                                        <td colspan="12">CORRESPONDIENTES A LA QUINCENA : &#160;&#160; &#160;&#160;&#160;&#160;<u><t t-if="o.fornight"><span t-field="o.fornight"/></t> <span t-field="o.invoice_date" t-options='{"format": "yyyy"}'/></u></td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td>REVISO  &#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;<span>______________</span></td>
+                                    <td>FECHA &#160;&#160; &#160;&#160;&#160;&#160; <span>______________</span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">PAGADOR HABILITADO</td>
+                                </tr>
+                        </table>
+                        <div class="row" style="page-break-inside: avoid;">
+                            <div class="col-6 text-center float-left">
+                                ________________________________<br/><span style="text-align:right;margin-left:10px;">NOMBRE COMPLETO</span>
+                            </div>
+                            <div class="col-6 text-center float-right">
+                                ________________________________<br/><span style="text-align:center;margin-left:40px;align:right;">FIRMA</span>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </t>
+                <t t-if="counter == 2">
+                    <p style="page-break-after:always;"> </p>
+                </t>
+            </t>
+            </t>
+        </template>
+
+
+        <record id="paperformat_bank_deposite_slip" model="report.paperformat">
+            <field name="name">Bank Deposite Slip</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">176</field>
+            <field name="page_width">176</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">1</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+        </record>
+
+
+        <report
+            id="report_payroll_bank_deposite_slip"
+            model="account.move"
+            string="Comprobante de depósito bancario"
+            report_type="qweb-pdf"
+            name="jt_supplier_payment.payroll_bank_deposite_slip_template"
+            file="jt_supplier_payment.payroll_bank_deposite_slip_template"
+            paperformat = "jt_supplier_payment.paperformat_bank_deposite_slip"
+        />
+
+
+    </data>
+</odoo>

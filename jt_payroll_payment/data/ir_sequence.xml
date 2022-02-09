@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="seq_payroll_employee_reference" model="ir.sequence">
+            <field name="name">Payroll Employee Reference</field>
+            <field name="code">seq.payroll.employee.reference</field>
+            <field name="padding">6</field>
+            <field name="prefix">Payroll/</field>
+            <field name="company_id" eval="False"/>
+        </record>
+  
+    </data>
+</odoo>

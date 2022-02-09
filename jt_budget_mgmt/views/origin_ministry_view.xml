@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Action for Origin -->
+        <record id="action_origin_ministry" model="ir.actions.act_window">
+            <field name="name">Origin</field>
+            <field name="res_model">origin.ministry</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

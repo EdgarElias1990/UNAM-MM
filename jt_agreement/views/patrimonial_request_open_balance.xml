@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_req_open_balance_patrimonial_tree" model="ir.ui.view">
+            <field name="name">Opening Balance patrimonial List view</field>
+            <field name="model">request.open.balance</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="operation_number"/>
+                    <field name="request_date"/>
+                    <field name="user_id"/>
+                     <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_req_open_balance_patrimonial_form" model="ir.ui.view">
+            <field name="name">Opening Form patrimonial view</field>
+            <field name="model">request.open.balance</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="request" type="object" string="Request" class="oe_highlight"
+                                 attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <field name="create_payment_request" invisible="1"/>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_create_payment_req" type="object" class="oe_stat_button"
+                                    widget="statinfo" string="Payment Requests"
+                                    icon="fa-random" attrs="{'invisible': [('create_payment_request', '=', False)]}">
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" readonly="1"/>
+                                <field name="operation_number" readonly="1"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="type_of_operation"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                <field name="journal_id" readonly="1"/>
+                                <field name="specifics_project_id"/>
+                                <field name="background_project_id" readonly="1"/>
+                            </group>
+                            <group>
+                            	<field name="patrimonial_resources_id" invisible="1"/>
+                                <field name="apply_to_basis_collaboration" readonly="1"/>
+                                <field name="origin_resource_id" domain="[('is_it_enabled_for_agreement', '=',  True)]"
+                                attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                <field name="origin_journal_id" invisible="1" />
+                                <field name="destination_journal_id" invisible="1"/>
+                                <field name="bases_collaboration_id"  invisible="1"/>
+                                <field name="patrimonial_beneficiary_ids" invisible="1"/>
+                                <field name="beneficiary_id" domain="[('id','in',patrimonial_beneficiary_ids)]"/>
+                                <field name="trust_provider_ids" invisible="1"/>
+                                <field name="patrimonial_provider_ids" invisible="1"/>
+                                <field name="provider_id" domain="[('id','in',patrimonial_provider_ids)]"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="reason_rejection" attrs="{'invisible': [('state', '!=', 'rejected')]}"
+                             readonly="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Operation" name="operation">
+                                <group>
+                                    <group>
+                                        <field name="request_date" required="1"/>
+                                        <field name="trade_number" required="1"/>
+                                        <field name="opening_balance" attrs="{'readonly': ['|',('state', '!=', 'draft'),('type_of_operation','=','open_bal')]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="observations" required="1"/>
+                                        <field name="user_id" readonly="1"/>
+                                    </group>
+                                </group>
+                            </page>
+                             <page string="Supporting Documentaion" name="supporting_documentation">
+                        		<group attrs="{'invisible': [('type_of_operation', 'in', ('withdrawal', 'increase',
+                                'retirement','withdrawal_cancellation', 'increase_by_closing', 'withdrawal_closure'))]}">
+                        			<group>
+                        				<field name="trust_agreement_file_name" invisible="1"/>
+                        				<field name="trust_agreement_file" filename="trust_agreement_file_name" string="Fund registration format"/>
+                        			</group>
+                        			<group>
+                        				<field name="trust_office_file_name" invisible="1"/>
+                        				<field name="trust_office_file" filename="trust_office_file_name" string="Fund office"/>
+                        			</group>
+                        		</group>
+                                 <group attrs="{'invisible': [('type_of_operation', 'not in', ('withdrawal', 'increase',
+                                 'retirement', 'withdrawal_cancellation', 'withdrawal_closure', 'increase_by_closing'))]}">
+                                    <group>
+                                        <field name="supporting_documentation"/>
+                                    </group>
+                                </group>
+                        		
+                            </page>
+                             <page string="Journal Items" name="accounts">
+                             	<field name="move_line_ids"/>
+                             	
+<!--                         		<group>
+                        			<group>
+                        				<field name="patrimonial_equity_account_id" readonly="1"/>
+                        				<field name="liability_account_id" readonly="1"/>
+                        			</group>
+                        			<group>
+                        				<field name="patrimonial_yield_account_id" readonly="1"/>
+                        			</group>
+                        		</group>
+ -->                           
+ 							</page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+	</data>
+</odoo>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="quote_finance_tree" model="ir.ui.view">
+            <field name="name">quotes.tree.view</field>
+            <field name="model">quote</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="bank_id"/>
+                    <field name="bank_account_id"/>
+                    <field name="no_of_currencies"/>
+                    <field name="bank_ref"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="quote_finance_from" model="ir.ui.view">
+            <field name="name">quote.form.view</field>
+            <field name="model">quote</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="approve" string="Approve" attrs="{'invisible':[('status','!=','draft')]}" class="oe_highlight" type="object"/>
+                        <button name="reject" string="Reject" attrs="{'invisible':[('status','!=','draft')]}" class="oe_highlight" type="object"/>
+                        <button name="validate" string="Validate" attrs="{'invisible':[('status','in',('draft','validate'))]}" class="oe_highlight" type="object"/>
+                        <button name="generate_modification_request" string="Send Request" class="oe_highlight"
+                                type="object" attrs="{'invisible': [('status', '!=', 'validate')]}"/>
+                        <field name="status" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group colspan="4">
+                            <group>
+                                <field name="bank_id" required="1"/>
+                                <field name="bank_account_id"/>
+                                <field name="bank_ref"/>
+                                <field name="shedule_date" required="1"/>
+                            </group>
+                            <group>
+                                <field name="no_of_currencies" required="1"/>
+                                <field name="exchange_rate" domain="[('currency_id','=',currency_id)]"/>
+                                <field name="currency_id"/>
+                                <field name="amount"/>
+                            </group>
+                        </group>
+                       
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_quotes" model="ir.actions.act_window">
+            <field name="name">quote</field>
+            <field name="res_model">quote</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>
+                <!-- Requests menus-->
+        <menuitem id="menu_quote" name="Quote"
+                  sequence="1"
+                  action="action_quotes"
+                parent="menu_resource_req_foreign_ex_purchase"/>
+
+
+    </data>
+</odoo>

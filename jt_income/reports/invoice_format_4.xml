@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="invoice_format_4_document">
+            <t t-call="jt_income.external_layout_4">
+                </t>
+                <t t-set="o" t-value="o.with_context(lang=lang)" />
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <div class="page">
+                    <style>
+                        .main_box{
+                        position: relative;
+                        width: 380px;
+                        height: 50px;
+                        border: 2px solid black;
+
+                        }
+
+                        .box{
+                        position: absolute;
+                        left:10px;
+                        right:10px;
+                        width: 340px;
+                        height: 20px;
+                        top:5px;
+                        bottom:10px;
+                        border: 1px solid gray;
+                        padding-top:10px;
+                        color:red;
+                        font-size:20px;
+                        }
+
+                        .tab1 { 
+                                tab-size: 2; 
+                                text-indent: 5.0em; font-size:20px;
+                            } 
+                        </style>
+
+                        <table style="width:100%">
+                            <tr>
+                                <td style="width:50%;">
+                                	<!-- 
+                                    <div class="main_box">
+                                        <div class="box"><b>2° FORMATO DE APLICACIÓN 20 %</b></div>
+                                    </div>
+                                     -->
+                                </td>
+                                <td style="width:50px;">
+                                    <div style="text-align:left;font-size:20px;">
+                                        <b>Dirección General de Finanzas<br/>Dirección de Ingresos y Op. Financiera<br/> Departamento de Ingresos<br/></b>
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+							<tr>
+								<td style="width:50%;">
+									<br/><b><span t-field="o.template4_recipient_title"/>&#160;<span t-if="o.template4_recipient_emp_id" t-field="o.template4_recipient_emp_id.name"/>
+										<br/><span t-field="o.template4_recipient_professional_title"/>
+									</b>
+								</td>
+								<td style="width:50%;">
+									<b><br/>Of. No. <span t-field="o.trade_no"/><br/><br/>Asunto: Aplicación del 20%</b>
+								</td>
+							</tr>
+                            
+                        </table>
+                        <table style="width:100%">
+                            <tr>
+                                <br/><br/><br/>
+
+                                <td style="text-align:left;font-size:15px;">
+                                    <h2><b><span t-field="o.addressee"/>
+                                    <br/>
+                                    P r e s e n t e</b>
+                                    </h2>
+                                </td>
+                            </tr>
+                    </table>
+
+                    <table style="width:100%">
+                    	<t t-set="total_5_times" t-value="o.amount_total*5" />
+                    	<span t-set="account_name" t-value="o.get_line_accounts_for_report()"/>
+                    	<t t-set="number_of_return_check" t-value="o.number_of_return_check_char()"/>
+                    	<t t-set="amount_in_text" t-value="o.get_my_amount_to_text(o.amount_total)"/>
+                    	<t t-set="amount_in_text_decimal" t-value="o.get_my_amount_to_text_decimal(o.amount_total)"/>
+                    	
+                        <p style="font-size:20px;">
+                            Con relación al oficio <b><span t-field="o.legal_compensation"/>.,</b> referente al cheque devuelto No. <span t-esc="number_of_return_check"/> por un importe de <t t-if="o.currency_id"><span t-field="o.currency_id.symbol"/> </t><span t-esc="total_5_times" t-options='{"widget": "float", "precision": 2}'/> del banco <span t-field="o.income_bank_journal_id.name"/>; le  informo  que  la dependencia <b><span t-field="o.dependancy_id.description"/> </b>con clave <b><span t-field="o.dependancy_id.dependency"/>.<span t-field="o.sub_dependancy_id.sub_dependency"/>;</b> absorberá el importe del 20% de indemnización por un importe de  -------  <b><span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                            (<span t-esc="amount_in_text"/> <span t-esc="amount_in_text_decimal"/>);</b> los cuales se hará el cargo a la cuenta de Ingresos Extraordinarios número <b> 202.<span t-field="o.dependancy_id.dependency"/><t t-if="o.sub_dependancy_id">.<span t-field="o.sub_dependancy_id.sub_dependency"/>0</t></b>
+                        </p><br/>
+
+                        <p style="font-size:20px;">
+                            Sin más por el momento, quedo de usted enviándole un cordial saludo.
+                        </p><br/>
+
+                        <p style="font-size:20px;">
+                        	<t t-set="invoice_date" t-value="o.get_invoice_date_in_pdf()"/>
+                            <b>A t e n t a m e n t e <br/>
+                            "POR MI RAZA HABLARÁ EL ESPÍRITU"</b><br/>
+                            Ciudad Universitaria,  Cd. Mx., <span t-esc="invoice_date"/>
+                        </p>
+
+                        <div class="row" style="float:right;">
+                            <div class="col-6">
+                                <div>
+                                    <img t-attf-src="data:image/png;base64,{{res_company.sign}}" style="width:120px;height:100px;"/>
+                                </div>
+                            </div>
+                        </div>
+
+                    </table>
+                </div>
+        </template>
+
+        <template id="invoice_format_4">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="lang" t-value="o.invoice_user_id.sudo().lang if o.type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                    <t t-call="jt_income.invoice_format_4_document" t-lang="lang"/>
+                </t>
+            </t>
+        </template>
+
+            <record id="paperformat_invoice_format_4" model="report.paperformat">
+                <field name="name">Format 4</field>
+                <field name="default" eval="True"/>
+                <field name="format">A4</field>
+                <field name="orientation">Portrait</field>
+                <field name="margin_top">15</field>
+                <field name="margin_bottom">60</field>
+                <field name="margin_left">10</field>
+                <field name="margin_right">10</field>
+                <field name="header_line" eval="False"/>
+                <field name="header_spacing">5</field>
+                <field name="dpi">100</field>
+            </record>
+
+            <report 
+                id="invoice_pdf_format4_name"
+                model="account.move"
+                string="2° FORMATO DE APLICACIÓN 20%"
+                report_type="qweb-pdf"
+                name="jt_income.invoice_format_4"
+                file="jt_income.invoice_format_4"
+                paperformat="jt_income.paperformat_invoice_format_4"
+            />
+
+    </data>
+</odoo>

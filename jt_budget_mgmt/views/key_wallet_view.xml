@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for key wallet model -->
+        <record id="key_wallet_search_view" model="ir.ui.view">
+            <field name="name">key.wallet.search.view</field>
+            <field name="model">key.wallet</field>
+            <field name="arch" type="xml">
+                <search string="Key wallet">
+                    <field name="wallet_password"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Wallet password" name='wallet_password' context="{'group_by':'wallet_password'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for key wallet model -->
+    	<record id="key_wallet_form_view" model="ir.ui.view">
+            <field name="name">key.wallet.form.view</field>
+            <field name="model">key.wallet</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+	            		<group>
+	            			<field name="wallet_password" required="1"/>
+                            <field name="wallet_password_name" required="1"/>
+                            <field name="wallet_password_desc"/>
+	            		</group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for key wallet model -->
+    	<record id="key_wallet_tree_view" model="ir.ui.view">
+            <field name="name">key.wallet.tree.view</field>
+            <field name="model">key.wallet</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="wallet_password"/>
+                    <field name="wallet_password_name"/>
+                    <field name="wallet_password_desc"/>
+            	</tree>
+            </field>
+        </record>
+        
+        <!-- action for key wallet views -->
+        <record id="action_key_wallet" model="ir.actions.act_window">
+            <field name="name">Key Wallet</field>
+            <field name="res_model">key.wallet</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="key_wallet_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

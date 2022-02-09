@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="approve_open_balance_req_operation_inherit">
+            <field name="name">approve.investment.bal.req.inherit</field>
+            <field name="model">approve.investment.bal.req</field>
+            <field name="inherit_id" ref="jt_agreement.approve_open_balance_req_operation"/>
+            <field name="arch" type="xml">
+	            	<field name="invoice" position="before">
+	            		<field name="investment_avl_ids" invisible="1"/>
+	            		<field name="investment_id"  attrs="{'invisible':[('is_agr','=',False)],'required':[('is_agr','=',True)]}" domain="[('id','in',investment_avl_ids)]"/>
+	            		<field name="journal_id" invisible="1"/>
+	            		<field name="source_ids" invisible="1"/>
+	            		<field name="dest_ids" invisible="1"/>
+	            	</field>
+	            	<field name="bank_account_id" position="attributes">
+	            		<attribute name="domain">[('id', 'in', source_ids)]</attribute>
+	            	</field>
+	            	<field name="desti_bank_account_id" position="attributes">
+	            		<attribute name="domain">[('id', 'in', dest_ids)]</attribute>
+	            	</field>
+	            	<button name="approve" position="after">
+	            		<button string="Validate Balance" attrs="{'invisible':[('is_balance','=',True)]}"
+								name="validate_balance" type="object" class="oe_highlight"/>
+	            	</button>
+	            	<field name="bank_account_id" position="after">
+	            		<field name="msg" attrs="{'invisible':[('is_balance','=',True)]}" nolable="1"
+							   readonly="1"/>
+	            	</field>
+			</field>
+		</record>
+
+	</data>
+</odoo>

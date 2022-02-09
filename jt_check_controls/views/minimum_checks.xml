@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="check_control_main_menu" name="Check Control"
+                  sequence="10"/>
+
+        <record id="minimum_checks_tree_view" model="ir.ui.view">
+            <field name="name">minimum.checks.tree.view</field>
+            <field name="model">minimum.checks</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="bank_id"/>
+                    <field name="bank_account_id"/>
+                    <field name="checkbook_no"/>
+                    <field name="minimum_of_checks"/>
+                    <field name="reorder_point"/>
+                    <field name="stock_checkbook_registration"/>
+                    <field name="stock_available_for_printing"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="minimum_checks_form_view" model="ir.ui.view">
+            <field name="name">minimum.checks.form.view</field>
+            <field name="model">minimum.checks</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="bank_id" domain="[('type', '=', 'bank')]"/>
+                                <field name="bank_account_id" readonly="1" force_save="1"/>
+                                <field name="checkbook_no" readonly="1" force_save="1"/>
+                            </group>
+                            <group>
+                                <field name="minimum_of_checks"/>
+                                <field name="reorder_point"/>
+                                <field name="stock_checkbook_registration"/>
+                                <field name="stock_available_for_printing"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_minimum_of_checks" model="ir.actions.act_window">
+            <field name="name">Minimum of Checks</field>
+            <field name="res_model">minimum.checks</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="check_control_setting_menu" name="Configuration"
+                  parent="check_control_main_menu" sequence="10"/>
+
+        <menuitem id="minimum_checks_menu" name="Minimum of Checks" parent="check_control_setting_menu"
+                  action="action_minimum_of_checks" sequence="1"/>
+    </data>
+</odoo>

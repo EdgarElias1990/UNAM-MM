@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Sequences for Folio -->
+        <record id="seq_agreement_operation" model="ir.sequence">
+            <field name="name">Agreement Operation</field>
+            <field name="code">agreement.operation</field>
+            <field name="padding">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+        <record id="seq_Funds_number" model="ir.sequence">
+            <field name="name">Funds Number</field>
+            <field name="code">funds.number</field>
+            <field name="prefix">FOND/%(range_year)s/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_IRF_number" model="ir.sequence">
+            <field name="name">IRF Number</field>
+            <field name="code">IRF.number</field>
+            <field name="prefix">IRF/%(range_year)s/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_request_open_balance_finance_manual" model="ir.sequence">
+            <field name="name">Request Open Balance Finance Manual</field>
+            <field name="code">request.open.balance.finance.manual</field>
+            <field name="padding">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_request_open_balance_finance1" model="ir.sequence">
+            <field name="name">Request Open Balance Finance </field>
+            <field name="code">request.open.balance.finance</field>
+            <field name="padding">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+    </data>
+</odoo>

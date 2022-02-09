@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Summary of Operation - Maturities -->
+        <template id="external_layout_summary_of_operation_maturities"
+                  name="external_layout_summary_of_operation_maturities">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span>
+                        <br/>
+                        <span style="font-size:14px;">PATRONATO UNIVERSITARIO</span>
+                        <br/>
+                        <span style="font-size:12px;">DIRECCIÓN GENERAL DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">SUBDIRECCION DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">RESUMEN DE OPERACIÓN - VENCIMIENTOS</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- Summary of Operation - Money Market Investments -->
+        <template id="external_layout_money_market_investments" name="external_layout_money_market_investments">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span>
+                        <br/>
+                        <span style="font-size:14px;">PATRONATO UNIVERSITARIO</span>
+                        <br/>
+                        <span style="font-size:12px;">DIRECCIÓN GENERAL DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">SUBDIRECCION DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">RESUMEN DE OPERACIÓN - INVERSIONES MERCADO DE DINERO</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- Summary of Operation - investment_funds -->
+        <template id="external_layout_investment_funds" name="external_layout_investment_funds">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:2px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span>
+                        <br/>
+                        <span style="font-size:14px;">PATRONATO UNIVERSITARIO</span>
+                        <br/>
+                        <span style="font-size:12px;">DIRECCIÓN GENERAL DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">SUBDIRECCION DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">RESUMEN DE OPERACIÓN - FONDOS DE INVERSIÓN</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- Summary of Operation - Investment Fund Balances -->
+        <template id="external_layout_investment_funds_balances" name="external_layout_investment_funds_balances">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span>
+                        <br/>
+                        <span style="font-size:14px;">PATRONATO UNIVERSITARIO</span>
+                        <br/>
+                        <span style="font-size:12px;">DIRECCIÓN GENERAL DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">SUBDIRECCION DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">RESUMEN DE OPERACIÓN - SALDOS DE FONDOS DE INVERSIÓN</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- Report on the quotation of Investment Funds -->
+        <template id="external_layout_quotation_of_investment_funds"
+                  name="external_layout_quotation_of_investment_funds">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span>
+                        <br/>
+                        <span style="font-size:14px;">PATRONATO UNIVERSITARIO</span>
+                        <br/>
+                        <span style="font-size:12px;">DIRECCIÓN GENERAL DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">SUBDIRECCION DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">Reporte de cotización de Fondos de Inversión</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- 8.6 Report of Investment Funds -->
+        <template id="external_layout_report_of_investment_funds" name="external_layout_report_of_investment_funds">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span>
+                        <br/>
+                        <span style="font-size:14px;">PATRONATO UNIVERSITARIO</span>
+                        <br/>
+                        <span style="font-size:12px;">DIRECCIÓN GENERAL DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">SUBDIRECCION DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">REPORTE DE FONDOS DE INVERSIÓN</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- 8.7 Report of Investment Funds in Productive Accounts -->
+        <template id="external_layout_investment_funds_productive_accounts"
+                  name="external_layout_investment_funds_productive_accounts">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span>
+                        <br/>
+                        <span style="font-size:14px;">PATRONATO UNIVERSITARIO</span>
+                        <br/>
+                        <span style="font-size:12px;">DIRECCIÓN GENERAL DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">SUBDIRECCION DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">REPORTE DE FONDOS DE INVERSIÓN EN CUENTAS PRODUCTIVAS</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- 8.8 Report Productive Accounts -->
+        <template id="external_layout_report_productive_accounts" name="Report Productive Accounts">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span>
+                        <br/>
+                        <span style="font-size:14px;">PATRONATO UNIVERSITARIO</span>
+                        <br/>
+                        <span style="font-size:12px;">DIRECCIÓN GENERAL DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">SUBDIRECCION DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">REPORTE DE CUENTAS PRODUCTIVAS</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- 8.9 Report (Increases and Withdrawals). -->
+        <template id="external_layout_report_increases_and_withdrawals"
+                  name="external_layout_report_increases_and_withdrawals">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span>
+                        <br/>
+                        <span style="font-size:14px;">PATRONATO UNIVERSITARIO</span>
+                        <br/>
+                        <span style="font-size:12px;">DIRECCIÓN GENERAL DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">SUBDIRECCION DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">REPORTE DE INCREMENTOS Y RETIROS</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- 8.10 Indicators Report -->
+        <template id="external_layout_indicators_report" name="external_layout_indicators_report">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span>
+                        <br/>
+                        <span style="font-size:14px;">PATRONATO UNIVERSITARIO</span>
+                        <br/>
+                        <span style="font-size:12px;">DIRECCIÓN GENERAL DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">SUBDIRECCION DE FINANZAS</span>
+                        <br/>
+                        <span style="font-size:12px;">REPORTE DE INDICADORES</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- 8.11 Report to the fund account statement -->
+        <template id="external_layout_fund_account_statement" name="external_layout_fund_account_statement">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b>
+                            <span style="font-size:16px"
+                                  class="text-center">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO
+                            </span>
+                            <br/>
+                            <span style="font-size:14px;"
+                                  class="text-center">DIRECCIÓN GENERAL DE FINANZAS
+                            </span>
+                            <br/>
+                        </b>
+                        <span style="font-size:12px;"
+                              class="text-center">DIRECCIÓN DE INGRESOS Y OPERATIÓN FINANCIERA
+                        </span>
+                        <br/>
+                        <span style="font-size:12px;"
+                              class="text-center">DEPTO. DE OPERACIÓN FINANCIERA
+                        </span>
+                        <br/>
+                        <b>
+                            <span style="padding-top:5px;font-size:12px;">ESTADO DE CUENTA</span>
+                            <span style="padding-top:5px;font-size:12px;" t-esc="period_name"/>
+                        </b>
+                    </div>
+                </div>
+
+                <t t-if="extra_data">
+                    <table class="table" style="border-style:none;border-spacing: 0;" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td style="border-style:none;padding:0">
+                                    <b>Estado de cuenta:</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <span t-esc="name"/>
+                                </td>
+                                <td style="border-style:none;padding:0"/>
+                                <td style="border-style:none;padding:0"/>
+                                <td style="border-style:none;padding:0">
+                                    <b>Saldo Inicial</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <b>
+                                        <span t-esc="intial"/>
+                                    </b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-style:none;padding:0" colspan="4"/>
+                                <td style="border-style:none;padding:0">
+                                    <b>(+) Incrementos</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <span t-esc="increment"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-style:none;padding:0" colspan="4"/>
+                                <td style="border-style:none;padding:0">
+                                    <b>(-) Retiros</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <span t-esc="withdrawal"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-style:none;padding:0" colspan="4"/>
+                                <td style="border-style:none;padding:0">
+                                    <b>Saldo Actual:</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <b>
+                                        <span t-esc="actual"/>
+                                    </b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- Productive account statement -->
+        <template id="external_layout_productive_account_statement" name="external_layout_productive_account_statement">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b>
+                            <span style="font-size:16px"
+                                  class="text-center">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO
+                            </span>
+                            <br/>
+                            <span style="font-size:14px;"
+                                  class="text-center">PATRONATO UNIVERSITARIO
+                            </span>
+                            <br/>
+                        </b>
+                        <span style="font-size:12px;"
+                              class="text-center">DIRECCIÓN GENERAL DE FINANZAS
+                        </span>
+                        <br/>
+                        <span style="font-size:12px;"
+                              class="text-center">SUBDIRECCIÓN DE FINANZAS
+                        </span>
+                        <br/>
+                        <b>
+                            <span style="padding-top:5px;font-size:12px;">REPORTE DE CUENTAS PRODUCTIVAS</span>
+                        </b>
+                    </div>
+                </div>
+
+                <t t-if="extra_data">
+                    <table class="table" style="border-style:none;border-spacing: 0;" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td style="border-style:none;padding:0">
+                                    <b>Estado de cuenta:</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <span t-esc="name"/>
+                                </td>
+                                <td style="border-style:none;padding:0"/>
+                                <td style="border-style:none;padding:0"/>
+                                <td style="border-style:none;padding:0">
+                                    <b>Saldo Inicial</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <b>
+                                        <span t-esc="intial"/>
+                                    </b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-style:none;padding:0" colspan="4"/>
+                                <td style="border-style:none;padding:0">
+                                    <b>(+) Incrementos</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <span t-esc="increment"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-style:none;padding:0" colspan="4"/>
+                                <td style="border-style:none;padding:0">
+                                    <b>(-) Retiros</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <span t-esc="withdrawal"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-style:none;padding:0" colspan="4"/>
+                                <td style="border-style:none;padding:0">
+                                    <b>Saldo Actual:</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <b>
+                                        <span t-esc="actual"/>
+                                    </b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+
+                <!-- 8.11 Report to the Investment Committee -->
+        <template id="external_layout_investment_committee" name="external_layout_investment_committee">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b>
+                            <span style="font-size:16px"
+                                  class="text-center">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO
+                            </span>
+                            <br/>
+                            <span style="font-size:14px;"
+                                  class="text-center">PATRONATO UNIVERSITARIO
+                            </span>
+                            <br/>
+                        </b>
+                        <span style="font-size:12px;"
+                              class="text-center">DIRECCIÓN GENERAL DE FINANZAS
+                        </span>
+                        <br/>
+                        <span style="font-size:12px;"
+                              class="text-center">SUBDIRECCION DE FINANZAS
+                        </span>
+                        <br/>
+                        <span style="font-size:12px;" class="text-center">REPORTE PARA EL COMITÉ DE INVERSIONES</span>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;margin-top:40px;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+
+                <t t-if="extra_data">
+                    <table class="table" style="border-style:none;border-spacing: 0;" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td style="border-style:none;padding:0">
+                                    <b>Estado de cuenta:</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <span t-esc="name"/>
+                                </td>
+                                <td style="border-style:none;padding:0"/>
+                                <td style="border-style:none;padding:0"/>
+                                <td style="border-style:none;padding:0">
+                                    <b>Saldo Inicial</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <b>
+                                        <span t-esc="intial"/>
+                                    </b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-style:none;padding:0" colspan="4"/>
+                                <td style="border-style:none;padding:0">
+                                    <b>(+) Incrementos</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <span t-esc="increment"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-style:none;padding:0" colspan="4"/>
+                                <td style="border-style:none;padding:0">
+                                    <b>(-) Retiros</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <span t-esc="withdrawal"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-style:none;padding:0" colspan="4"/>
+                                <td style="border-style:none;padding:0">
+                                    <b>Saldo Actual:</b>
+                                </td>
+                                <td style="border-style:none;padding:0">
+                                    <b>
+                                        <span t-esc="actual"/>
+                                    </b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+    </data>
+
+</odoo>

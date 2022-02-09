@@ -1,0 +1,73 @@
+id,concept,approved_amt,ext_and_red_amt,modified_amt,accrued_amt,paid_out_amt,sub_exercise,parent_id:id
+jt_conac.1,Servicios Personales,,,,,,,
+jt_conac.2,Remuneraciones al Personal de Carácter Permanente,,,,,,,jt_conac.1
+jt_conac.3,Remuneraciones al Personal de Carácter Transitorio,,,,,,,jt_conac.1
+jt_conac.4,Remuneraciones Adicionales y Especiales,,,,,,,jt_conac.1
+jt_conac.5,Seguridad Social,,,,,,,jt_conac.1
+jt_conac.6,Otras Prestaciones Sociales y Económicas,,,,,,,jt_conac.1
+jt_conac.7,Previsiones,,,,,,,jt_conac.1
+jt_conac.8,Pago de Estímulos a Servidores Públicos,,,,,,,jt_conac.1
+jt_conac.9,Materiales y Suministros,,,,,,,
+jt_conac.10,"Materiales de Administración, Emisión de Documentos y Artículos Oficiales",,,,,,,jt_conac.9
+jt_conac.11,Alimentos y Utensilios,,,,,,,jt_conac.9
+jt_conac.12,Materias Primas y Materiales de Producción y Comercialización,,,,,,,jt_conac.9
+jt_conac.13,Materiales y Artículos de Construcción y de Reparación,,,,,,,jt_conac.9
+jt_conac.14,"Productos Químicos, Farmacéuticos y de Laboratorio",,,,,,,jt_conac.9
+jt_conac.15,"Combustibles, Lubricantes y Aditivos",,,,,,,jt_conac.9
+jt_conac.16,"Vestuario, Blancos, Prendas de Protección y Artículos Deportivos",,,,,,,jt_conac.9
+jt_conac.17,Materiales y Suministros Para Seguridad,,,,,,,jt_conac.9
+jt_conac.18,"Herramientas, Refacciones y Accesorios Menores",,,,,,,jt_conac.9
+jt_conac.19,Servicios Generales,,,,,,,
+jt_conac.20,Servicios Básicos,,,,,,,jt_conac.19
+jt_conac.21,Servicios de Arrendamiento,,,,,,,jt_conac.19
+jt_conac.22,"Servicios Profesionales, Científicos, Técnicos y Otros Servicios",,,,,,,jt_conac.19
+jt_conac.23,"Servicios Financieros, Bancarios y Comerciales",,,,,,,jt_conac.19
+jt_conac.24,"Servicios de Instalación, Reparación, Mantenimiento y Conservación",,,,,,,jt_conac.19
+jt_conac.25,Servicios de Comunicación Social y Publicidad,,,,,,,jt_conac.19
+jt_conac.26,Servicios de Traslado y Viáticos,,,,,,,jt_conac.19
+jt_conac.27,Servicios Oficiales,,,,,,,jt_conac.19
+jt_conac.28,Otros Servicios Generales,,,,,,,jt_conac.19
+jt_conac.29,"Transferencias, Asignaciones, Subsidios y Otras Ayudas",,,,,,,
+jt_conac.30,Transferencias Internas y Asignaciones al Sector Público,,,,,,,jt_conac.29
+jt_conac.31,Transferencias al Resto del Sector Público,,,,,,,jt_conac.29
+jt_conac.32,Subsidios y Subvenciones,,,,,,,jt_conac.29
+jt_conac.33,Ayudas Sociales,,,,,,,jt_conac.29
+jt_conac.34,Pensiones y Jubilaciones,,,,,,,jt_conac.29
+jt_conac.35,"Transferencias a Fideicomisos, Mandatos y Otros Análogos",,,,,,,jt_conac.29
+jt_conac.36,Transferencias a la Seguridad Social,,,,,,,jt_conac.29
+jt_conac.37,Donativos,,,,,,,jt_conac.29
+jt_conac.38,Transferencias al Exterior,,,,,,,jt_conac.29
+jt_conac.39,"Bienes Muebles, Inmuebles e Intangibles",,,,,,,
+jt_conac.40,Mobiliario y Equipo de Administración,,,,,,,jt_conac.39
+jt_conac.41,Mobiliario y Equipo Educacional y Recreativo,,,,,,,jt_conac.39
+jt_conac.42,Equipo e Instrumental Médico y de Laboratorio,,,,,,,jt_conac.39
+jt_conac.43,Vehículos y Equipo de Transporte,,,,,,,jt_conac.39
+jt_conac.44,Equipo de Defensa y Seguridad,,,,,,,jt_conac.39
+jt_conac.45,"Maquinaria, Otros Equipos y Herramientas",,,,,,,jt_conac.39
+jt_conac.46,Activos Biológicos,,,,,,,jt_conac.39
+jt_conac.47,Bienes Inmuebles,,,,,,,jt_conac.39
+jt_conac.48,Activos Intangibles,,,,,,,jt_conac.39
+jt_conac.49,Inversión Pública,,,,,,,
+jt_conac.50,Obra Pública en Bienes de Dominio Público,,,,,,,jt_conac.49
+jt_conac.51,Obra Pública en Bienes Propios,,,,,,,jt_conac.49
+jt_conac.52,Proyectos Productivos y Acciones de Fomento,,,,,,,jt_conac.49
+jt_conac.53,Inversiones Financieras y Otras Provisiones,,,,,,,
+jt_conac.54,Inversiones Para el Fomento de Actividades Productivas.,,,,,,,jt_conac.53
+jt_conac.55,Acciones y Participaciones de Capital,,,,,,,jt_conac.53
+jt_conac.56,Compra de Títulos y Valores,,,,,,,jt_conac.53
+jt_conac.57,Concesión de Préstamos,,,,,,,jt_conac.53
+jt_conac.58,"Inversiones en Fideicomisos, Mandatos y Otros Análogos",,,,,,,jt_conac.53
+jt_conac.59,Otras Inversiones Financieras,,,,,,,jt_conac.53
+jt_conac.60,Provisiones para Contingencias y Otras Erogaciones Especiales,,,,,,,jt_conac.53
+jt_conac.61,Participaciones y Aportaciones,,,,,,,
+jt_conac.62,Participaciones,,,,,,,jt_conac.61
+jt_conac.63,Aportaciones,,,,,,,jt_conac.61
+jt_conac.64,Convenios,,,,,,,jt_conac.61
+jt_conac.65,Deuda Pública,,,,,,,
+jt_conac.66,Amortización de la Deuda Pública,,,,,,,jt_conac.65
+jt_conac.67,Intereses de la Deuda Pública,,,,,,,jt_conac.65
+jt_conac.68,Comisiones de la Deuda Pública,,,,,,,jt_conac.65
+jt_conac.69,Gastos de la Deuda Pública,,,,,,,jt_conac.65
+jt_conac.70,Costo por Coberturas,,,,,,,jt_conac.65
+jt_conac.71,Apoyos Financieros,,,,,,,jt_conac.65
+jt_conac.72,Adeudos de Ejercicios Fiscales Anteriores (Adefas),,,,,,,jt_conac.65

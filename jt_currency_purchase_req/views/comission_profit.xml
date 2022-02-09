@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="comission_profit_tree_view" model="ir.ui.view">
+            <field name="name">Commision and profit List view</field>
+            <field name="model">comission.profit</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="folio"/>
+                    <field name="type_of_record"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="comission_profit_from_view" model="ir.ui.view">
+            <field name="name">Commision Profit Form view</field>
+            <field name="model">comission.profit</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                            <button name="approve" string="Approve" class="oe_highlight" attrs="{'invisible':[('status','!=','draft')]}" type="object"/>
+            
+                            <field name="status" widget="statusbar"/>
+                        </header>
+                    <sheet>
+
+                        <group>
+                            <group>
+                                <field name="folio" readonly="1"/>
+                                <field name="type_of_record"/>
+                                <field name="journal_id" domain="[('type','=','bank')]"/>
+                                <field name="bank_account_id"/>
+                                <field name="programmatic_code_id"/>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="amount"/>
+                                <field name="type_of_comission"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Accounting Notes">
+                                <field name="move_line_ids" readonly="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_commision" model="ir.actions.act_window">
+            <field name="name">Commision And profit</field>
+            <field name="res_model">comission.profit</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>
+
+
+        <menuitem id="balnk_check_request_menu" name="Commision And Profit"
+                  action="action_commision"
+                  parent="jt_payroll_payment.menu_payment_finance_setting"
+                  sequence="8"/>
+            />
+
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Report of accounting operations-withdrawals-->
+        <template id="external_layout_accounting_operation_withdraw" name="external_layout_accounting_operation_withdraw">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header" style="height:100%;">
+                <div class="row">
+                    <div class="col-2" align="left">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:140px;height:140px;margin-top:10px;margin-right:20px;"/>
+                    </div>
+                    <div class="col-2" style="margin:top:10px;align:left;">
+                        <img src="/jt_check_controls/static/src/img/dgf.png"
+                             style="max-height:300px;width:300px;align:left;"/>
+                    </div>
+                    <div class="col-6" style="text-align:center;align:left;vertical-align: bottom;">
+                        <br/>
+                        <br/>
+                        <p style="margin-top:0;margin-bottom:0;font-size:20px;"><b>PATRONATO UNIVERSITARIO-TESORERIA</b></p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:18px;">Direccion General de Finanzas</p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:16px;">Reporte de Operaciones Contables-Retiro</p>
+
+                    </div>
+                    <div class="col-4 text-left" style="vertical-align:bottom;margin-top:150px;">
+                         
+                    </div>
+                </div>
+                <div class="row" style="border-bottom:5px solid black;">
+                    <div class="col-3">
+                    </div>
+                    <div class="col-6 text-center">
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                      <strong>Fecha y hora de impresión  </strong><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>  
+                    </div>
+                </div>
+            </div>
+                
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+            <div class="footer">
+                <div class="row">
+                    <style>
+                        hr.new5 {
+                          border: 1px solid black;
+                        }
+                    </style>
+                    <div class="col-4">
+                        <hr class="new5" style="width:50%;color:black;" t-if="sign.performed"/><br/>
+                        <strong style="text-align:center;"><span t-esc="sign.performed"/></strong><br/>
+                        <strong style="text-align:center;" t-if="sign.performed">REALIZO</strong>
+
+                    </div>
+                    <div class="col-4">
+                        <hr class="new5" style="width:50%;color:black;" t-if="sign.revised"/><br/>
+                        <strong style="text-align:center;"><span t-esc="sign.revised"/></strong><br/>
+                        <strong style="text-align:center;" t-if="sign.revised">REVISO</strong>
+                    </div>
+                    <div class="col-4">
+                        <hr class="new5" style="width:50%;color:black;" t-if="sign.authorized"/><br/>
+                        <strong style="text-align:center;"><span t-esc="sign.authorized"/></strong><br/>
+                        <strong style="text-align:center;" t-if="sign.authorized">AUTORIZO</strong>
+                    </div>
+                </div>
+            </div>
+
+        </template> 
+
+                <!-- Report of accounting operations-intrests-->
+        <template id="external_layout_accounting_operation_interests" name="external_layout_accounting_operation_interests">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header" style="height:100%;">
+                <div class="row">
+                        <div class="col-2" align="left">
+                            <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                                 style="width:140px;height:140px;margin-top:10px;margin-right:20px;"/>
+                        </div>
+                        <div class="col-2" style="margin:top:10px;align:left;">
+                            <img src="/jt_check_controls/static/src/img/dgf.png"
+                                 style="max-height:300px;width:300px;align:left;"/>
+                        </div>
+                        <div class="col-6" style="text-align:center;align:left;vertical-align: bottom;">
+                            <br/>
+                            <br/>
+                            <p style="margin-top:0;margin-bottom:0;font-size:20px;"><b>PATRONATO UNIVERSITARIO-TESORERIA</b></p>
+                            <p style="margin-top:0;margin-bottom:0;font-size:18px;">Direccion General de Finanzas</p>
+                            <p style="margin-top:0;margin-bottom:0;font-size:16px;">Reporte de Operaciones Contables-Intereses</p>
+
+                        </div>
+                        <div class="col-4 text-left" style="vertical-align:bottom;margin-top:150px;">
+                             
+                        </div>
+                </div>
+                <div class="row" style="border-bottom:0px solid black;">
+                    <div class="col-3">
+                    </div>
+                    <div class="col-6 text-center">
+                    </div>
+                    <div class="col-5 text-left" style="vertical-align: bottom;">
+                      <strong>Fecha y hora de impresión  </strong><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>  
+                    </div>
+                </div>
+        </div>
+                
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+                <style>
+                    table{
+                        border:5px solid black;
+                        border-top:5px solid black;
+                    }
+                </style>
+            </div>
+
+            <div class="footer">
+               
+            </div>
+
+        </template> 
+
+                        <!-- Report of account statement collaboration-->
+        <template id="external_layout_account_statement_collabortion" name="external_layout_account_statement_collabortion">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header" style="height:100%;">
+                <div class="row">
+                        <div class="col-3" align="left">
+                            <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                                 style="width:140px;height:140px;margin-top:10px;margin-right:20px;"/>
+                        </div>
+                        
+                        <div class="col-6" style="text-align:center;align:left;vertical-align: bottom;">
+                            <br/>
+                            <br/>
+                            <p style="margin-top:0;margin-bottom:0;font-size:20px;"><b>PATRONATO UNIVERSITARIO-TESORERIA</b></p>
+                            <p style="margin-top:0;margin-bottom:0;font-size:18px;">Direccion General de Finanzas</p>
+                            <p style="margin-top:0;margin-bottom:0;font-size:16px;">Estados de Cuenta</p>
+
+                        </div>
+                        <div class="col-3 text-left" style="vertical-align:bottom;margin-top:150px;">
+                             
+                        </div>
+                </div>
+                <div class="row" style="border-bottom:2px solid black;">
+                    <div class="col-3">
+                    </div>
+                    <div class="col-4 text-center">
+                    </div>
+                    <div class="col-5 text-left" style="vertical-align: bottom;">
+                      <strong>Fecha y hora de impresión  </strong><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>  
+                    </div>
+                </div>
+        </div>
+                
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+            <div class="footer">
+               
+            </div>
+
+        </template> 
+
+                                <!-- Report of Payment detail benificarie-->
+        <template id="external_layout_payment_detail_benificarie" name="external_layout_payment_detail_benificarie">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <!-- style="height:100%;" -->
+            <div class="header" style="height:100%;">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:140px;height:140px;margin-top:20px;margin-right:20px;margin-bottom:0px;"/>
+                    </div>
+                    
+                    <div class="col-6" style="text-align:center;align:center;vertical-align: bottom;margin-top:20px;">
+                        <br/><br/>
+                        <span style="font-size:19px;"><b>PATRONATO UNIVERSITARIO-TESORERIA</b></span><br/>
+                        <span style="font-size:16px;"><b>Direccion General de Finanzas</b></span><br/>
+                        <span style="font-size:15px;"><b>Detalle de pagos a Beneficiarios</b></span><br/>
+                    </div>
+                       
+                </div>
+                <div class="row" style="border-bottom:3px solid black;">
+                    <div class="col-3">
+                    </div>
+                    <div class="col-3 text-center">
+                    </div>
+                    <div class="col-5 text-left" style="vertical-align: bottom;">
+                      <strong>Fecha y hora de impresión  </strong><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>  
+                    </div>
+                </div>
+            </div>
+                
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+
+            </div>
+
+            <div class="footer">
+               
+            </div>
+
+        </template> 
+
+
+</data>
+</odoo>

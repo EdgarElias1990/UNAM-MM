@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="sender_recipient_trades_tree" model="ir.ui.view">
+            <field name="name">sender.recipient.trades.tree.view</field>
+            <field name="model">sender.recipient.trades</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="template"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sender_recipient_trades_from" model="ir.ui.view">
+            <field name="name">sender.recipient.trades.form.view</field>
+            <field name="model">sender.recipient.trades</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                 <field name="template"/>
+                            </group>
+                        </group>
+                        <notebook>
+                        	<page string="Occupation Compensation" name="occupation_compensation">
+                        		<group>
+                        			<group string="RECIPIENT">
+                        				<field name="recipient_title"/>
+                        				<field name="recipient_emp_id"/>
+                        				<field name="recipient_professional_title"/>
+                        			</group>
+                        			<group string="SENDER">
+                        				<field name="sender_title"/>
+                        				<field name="sender_emp_id"/>
+                        				<field name="sender_professional_title"/>
+                        			</group>
+                        		</group>
+                        		<field name="employee_ids">
+                        			<tree>
+                        				<field name="emp_title"/>
+                        				<field name="name"/>
+                        				<field name="emp_job_title"/>
+                        			</tree>
+                        		</field>
+                        	</page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+          <record id="sub_origin_resource_search" model="ir.ui.view">
+            <field name="name">sender.recipient.trades.search.view</field>
+            <field name="model">sender.recipient.trades</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="template"/>
+                </search>
+            </field>
+        </record>
+
+         <record id="action_sender_recipient_trades" model="ir.actions.act_window">
+            <field name="name">Sender and Recipient of Trades</field>
+            <field name="res_model">sender.recipient.trades</field>
+        </record>
+
+        <menuitem id="menu_sender_recipient_trades" name="Sender and Recipient of Trades" sequence="12"
+            parent="submenu_menu_income_config" action="action_sender_recipient_trades"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Menu Bank Account -->
+        <menuitem id="menu_finance_bank_accounts" name="Bank Accounts"
+                  action="account.action_account_bank_journal_form"
+                  sequence="1" parent="menu_payment_finance_setting"/>
+
+        <!-- Menu Bank -->
+        <menuitem id="menu_finance_bank" name="Bank"
+                  action="base.action_res_bank_form"
+                  sequence="2" parent="menu_payment_finance_setting"/>
+
+        <menuitem id="menu_finance_currency" name="Currency"
+                  action="base.action_res_bank_form"
+                  sequence="3" parent="menu_payment_finance_setting"/>
+
+         <menuitem id="menu_finance_currency" action="base.action_currency_form" name="Currencies"
+                   parent="menu_payment_finance_setting" sequence="4"
+                   groups="base.group_multi_currency"/>
+
+        <menuitem id="menu_bank_account_concept" name="Bank Account Concept"
+                  action="jt_account_base.bank_account_concept_action"
+                  sequence="5" parent="menu_payment_finance_setting"/>
+
+        <!-- menu for egress keys -->
+        <menuitem id="egress_keys_menu" name="Egress Keys" parent="menu_payroll_payment_config"
+                  sequence="6" action="egress_keys_action"/>
+
+        <!-- menu for operation type -->
+        <menuitem id="operation_type_menu" name="Type of Operation"
+                  parent="menu_payroll_payment_config" sequence="7"
+                  action="operation_type_action"/>
+
+        <!-- menu for policy keys -->
+        <menuitem id="policy_keys_menu" name="UPA Catalog" parent="menu_payroll_payment_config"
+                  sequence="8" action="policy_keys_action"/>
+
+        <!-- menu for UPA Catalog 
+        <menuitem id="upa_catalog_menu" name="UPA Catalog" parent="menu_payroll_payment_config"
+                  sequence="9" action="upa_catalog_action"/>
+		-->
+        <!-- menu for UPA Catalog -->
+        <menuitem id="upa_document_type_menu" name="Document Type" parent="menu_payroll_payment_config"
+                  sequence="10" action="upa_document_type_action"/>
+                  
+        <!--  Account Type Menu -->
+
+       <record id="action_account_type_menu" model="ir.actions.act_window">
+            <field name="name">Account Type</field>
+            <field name="res_model">account.account.type</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+        <menuitem id="menu_account_type_base" name="Account Type" parent="account.account_account_menu" 
+        			groups="base.group_system" sequence="2"
+                    action="action_account_type_menu"/>
+                  
+    </data>
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        Visualización de accion de servidor-->
+        <record id="operation_type_action_server" model="ir.actions.server">
+            <field name="name">Suprimir</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="jt_payroll_payment.model_operation_type"/>
+            <field name="binding_model_id" ref="jt_payroll_payment.model_operation_type"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="state">code</field>
+            <field name="code">
+                records.unlink()
+            </field>
+        </record>
+
+<!--        Ocultar acciones de servidor en vistas-->
+        <record id="operation_type_tree_no_delete" model="ir.ui.view">
+            <field name="name">operation.type.tree.no.delete</field>
+            <field name="model">operation.type</field>
+            <field name="inherit_id" ref="jt_payroll_payment.operation_type_tree_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="operation_type_form_no_delete" model="ir.ui.view">
+            <field name="name">operation.type.form.no.delete</field>
+            <field name="model">operation.type</field>
+            <field name="inherit_id" ref="jt_payroll_payment.operation_type_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

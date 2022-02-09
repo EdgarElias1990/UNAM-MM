@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for standardization model -->
+        <record id="standardization_search_view" model="ir.ui.view">
+            <field name="name">standardization.search.view</field>
+            <field name="model">standardization</field>
+            <field name="arch" type="xml">
+                <search string="Re-standardization">
+                    <field name="folio"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Folio" name='folio' context="{'group_by':'folio'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- search view for standardization lines model -->
+        <record id="standardization_line_search_view" model="ir.ui.view">
+            <field name="name">standardization.line.search.view</field>
+            <field name="model">standardization.line</field>
+            <field name="arch" type="xml">
+                <search string="Re-standardization Lines">
+                    <field name="folio"/>
+                    <field name="state"/>
+                    <filter name="draft" string="Draft" domain="[('state','=', 'draft')]"/>
+                    <filter name="received" string="Received" domain="[('state','=', 'received')]"/>
+                    <filter name="in_progress" string="In Progress" domain="[('state','=', 'in_progress')]"/>
+                    <filter name="authorized" string="Authorized" domain="[('state','=', 'authorized')]"/>
+                    <filter name="cancelled" string="Cancelled" domain="[('state','=', 'cancelled')]"/>
+
+                    <group expand="1" string="Group By">
+                        <filter string="Status" name='status' context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for standardization model -->
+    	<record id="standardization_form_view" model="ir.ui.view">
+            <field name="name">standardization.form.view</field>
+            <field name="model">standardization</field>
+            <field name="arch" type="xml">
+            	<form>
+                    <center><div attrs="{'invisible': [('cron_running', '!=', True)]}" class="alert alert-primary" role="alert">
+                        Data validation is running in background, Page will be auto refreshed and <b>Data Validation Status</b> will be auto turned off when the process will get finished!
+                    </div></center>
+                    <header>
+                        <button name="validate_draft_lines" type="object" string="Validate Lines" class="oe_highlight" attrs="{'invisible': ['|', ('import_status', '!=', 'in_progress'),  ('failed_rows', '&gt;', 0)]}"/>
+                        <button name="validate_and_add_budget_line" type="object" string="Re-scan Failed Rows" class="oe_highlight" attrs="{'invisible': [('failed_rows', '=', 0)]}" context="{'re_scan_failed':True}"/>
+
+                        <button name="confirm" type="object" string="Validate" class="oe_highlight" attrs="{'invisible': ['|', '|', ('failed_rows', '>', 0), ('state', '!=', 'draft'), ('cron_running', '=', True)]}"/>
+                        <button name="cancel" type="object" string="Cancel" class="oe_highlight" states="draft"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,cancelled"/>
+                    </header>
+            		<sheet>
+                        <div class="oe_button_box">
+                            <button class="oe_stat_button" type="object" name="draft_button" icon="fa-circle">
+                                <field string="Draft" name="draft_count" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" type="object" name="received_button" icon="fa-envelope">
+                                <field string="Received" name="received_count" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" type="object" name="in_process_button" icon="fa-spinner">
+                                <field string="In process" name="in_process_count" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" type="object" name="authorized_button" icon="fa-thumbs-o-up">
+                                <field string="Authorized" name="authorized_count" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" type="object" name="cancelled_button" icon="fa-dot-circle-o">
+                                <field string="Cancelled" name="cancelled_count" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" type="object" name="all_lines_button" icon="fa-dot-circle-o">
+                                <field string="Print Lines" name="all_line_count" widget="statinfo"/>
+                            </button>
+                        </div>
+	            		<group>
+                            <group>
+                                <field name="check_line_state" invisible="1"/>
+    	            			<field name="folio" readonly="1"/>
+                                <button name="import_lines" type="object" string="Import lines" class="oe_highlight" attrs="{'invisible': [('import_status', '!=', 'draft')]}"/>
+                                <button name="import_lines" type="object" string="Re-Import Lines" class="oe_highlight" attrs="{'invisible': ['|', ('import_status', '=', 'draft'), ('state', '!=', 'draft')]}" context="{'reimport': True}"/>
+                                <field name="record_number"/>
+                                <field name="imported_record_number"/>
+<!--                                <field name="journal_id" readonly="1" force_save="1"/>-->
+                            </group>
+                            <group>
+                            	<field name="is_dgpo_authorization"/>
+                                <label for="observations"/>
+                                <div>
+                                    <field name="observations" class="oe_inline" attrs="{'required':[('is_dgpo_authorization','=',True)]}"/>
+                                </div>
+                            </group>
+	            		</group>
+                        <notebook>
+                            <page string="Standardization Lines">
+                            	<field name="line_ids" invisible="1"/>
+                                <button name="select_deselect_checkbox" type="object" string="Select/Deselect" class="oe_highlight"/>
+                                <field name="success_line_ids">
+                                    <tree editable="bottom">
+                                        <field name="amount_effected" invisible="1"/>
+                                        <field name="selected"/>
+                                        <field name="standardization_id" invisible="1"/>
+                                        <field name="folio" required="1" attrs="{'readonly': [('parent.state', 'in', ('confirmed', 'cancelled'))]}"/>
+                                        <field name="budget_id" required="1" attrs="{'readonly': [('parent.state', 'in', ('confirmed', 'cancelled'))]}"/>
+                                        <field name="code_id" required="1" attrs="{'readonly': [('parent.state', 'in', ('confirmed', 'cancelled'))]}"/>
+                                        <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'readonly': [('parent.state', 'in', ('confirmed', 'cancelled'))]}"/>
+                                        <field name="origin_id" required="1" attrs="{'readonly': [('parent.state', 'in', ('confirmed', 'cancelled'))]}" options="{'no_create': True, 'no_create_edit': True}" context="{'create': False, 'edit': False}"/>
+                                        <field name="quarter" required="1" attrs="{'readonly': [('parent.state', 'in', ('confirmed', 'cancelled'))]}" options="{'no_create': True, 'no_create_edit': True}" context="{'create': False, 'edit': False}"/>
+                                        <field name="reason" attrs="{'readonly': [('state', '!=', 'cancelled')]}"/>
+                                        <field name="currency_id" invisible="1"/>
+                                        <field name="state" attrs="{'readonly': [('parent.state', '=', 'draft')]}"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="amount_effected" invisible="1"/>
+                                            <field name="folio"/>
+                                            <field name="code_id"/>
+                                            <field name="budget_id"/>
+                                            <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <field name="origin_id"/>
+                                            <field name="quarter"/>
+                                            <field name="reason"/>
+                                            <field name="standardization_id" invisible="1"/>
+                                            <field name="currency_id" invisible="1"/>
+                                            <field name="state"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Imported Lines" attrs="{'invisible': [('state', '!=', 'draft')]}">
+                            	<field name="import_line_ids"  context="{'default_line_state':'draft'}">
+                            		<tree>
+                            		 <field name="imported" invisible="1"/>
+                            		 <field name="code_id" invisible="1"/>
+                                     <field name="budget_id" invisible="1"/>
+                                      <field name="origin_id" invisible="1"/>
+                                      <field name="quarter" invisible="1"/>
+                                      <field name="reason" invisible="1"/>
+              						 <field name="year"/>
+                                      <field name="program"/>
+                                      <field name="subprogram"/>
+                                      <field name="dependency"/>
+                                      <field name="subdependency"/>
+                                      <field name="item"/>
+                                      <field name="dv"/>
+                                      <field name="origin_resource"/>
+                                      <field name="ai"/>
+                                      <field name="conversion_program"/>
+                                      <field name="departure_conversion"/>
+                                      <field name="expense_type"/>
+                                      <field name="location"/>
+                                      <field name="portfolio"/>
+                                      <field name="project_type"/>
+                                      <field name="project_number"/>
+                                      <field name="stage"/>
+                                      <field name="agreement_type"/>
+                                      <field name="agreement_number"/>
+                                      <field name="exercise_type"/>
+                                      <field name="folio"/>
+                                      <field name="amount"/>
+                                      <field name="origin"/>
+                                      <field name="quarter_data"/>
+                                      <field name="line_state" invisible="1"/>
+                            		  <field name="currency_id" invisible="1"/>
+                            		  <field name="standardization_id" invisible="1"/>
+                            		</tree>
+                            		<form>
+                            			<group>
+									  <field name="code_id" invisible="1"/>
+                                      <field name="budget_id" invisible="1"/>
+                                       <field name="origin_id" invisible="1"/>
+                                       <field name="quarter" invisible="1"/>
+                                      <field name="reason" invisible="1"/>	
+     								  <field name="imported" invisible="1"/>
+              						  <field name="year"/>
+                                      <field name="program"/>
+                                      <field name="subprogram"/>
+                                      <field name="dependency"/>
+                                      <field name="subdependency"/>
+                                      <field name="item"/>
+                                      <field name="dv"/>
+                                      <field name="origin_resource"/>
+                                      <field name="ai"/>
+                                      <field name="conversion_program"/>
+                                      <field name="departure_conversion"/>
+                                      <field name="expense_type"/>
+                                      <field name="location"/>
+                                      <field name="portfolio"/>
+                                      <field name="project_type"/>
+                                      <field name="project_number"/>
+                                      <field name="stage"/>
+                                      <field name="agreement_type"/>
+                                      <field name="agreement_number"/>
+                                      <field name="exercise_type"/>
+                                      <field name="folio"/>
+                                      <field name="amount"/>
+                                      <field name="origin"/>
+                                      <field name="quarter_data"/>
+                                      <field name="line_state" invisible="1"/>
+                            		  <field name="currency_id" invisible="1"/>
+                            		  <field name="standardization_id" invisible="1"/>
+                            		  </group>                            			
+                            		</form>
+                            	</field>
+                            </page>
+                            <page string='Import Status' >
+                                <group>
+                                    <!-- Hidden Fields -->
+                                    <field name="cron_running" readonly="1" widget="boolean_toggle"
+                                           string="Data validation Status" invisible="1"/>
+                                    <field name="allow_upload" invisible="1"/>
+                                    <field name="import_status" readonly="1" invisible="1"/>
+
+                                    <field name="budget_file" filename="filename" invisible="1"/>
+                                    <field name="filename" invisible="1"/>
+                                    <field name="fialed_row_filename" invisible="1"/>
+                                    <field name="failed_row_file" attrs="{'invisible': [('failed_rows', '=', 0)]}" readonly="1" string="Failed Rows Tracker" filename="fialed_row_filename"/>
+                                    <field name="total_rows" string="Total Rows" readonly="1"/>
+                                    <field name="failed_rows" string="Total Failed Rows" readonly="1"/>
+                                    <field name="success_rows" string="Total Success Rows" readonly="1"/>
+                                    <field name="pointer_row" string="Next Row To Start" readonly="1" invisible="1"/>
+                                </group>
+                            </page>
+<!--                            <page string="Journal Items" name="move_lines">-->
+<!--                                <field name="move_line_ids" nolabel="1"/>-->
+<!--                            </page>-->
+                            <page string='Failed/Success Rows' invisible="1">
+                                <group string="Failed Rows" >
+                                    <field name="failed_row_ids" readonly="1" nolabel="1"/>
+                                </group>
+                                <group string="Success Rows">
+                                    <field name="success_row_ids" readonly="1" nolabel="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+	            	</sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for standardization model -->
+    	<record id="standardization_tree_view" model="ir.ui.view">
+            <field name="name">standardization.tree.view</field>
+            <field name="model">standardization</field>
+            <field name="arch" type="xml">
+            	<tree import="0">
+            		<field name="folio"/>
+                    <field name="record_number"/>
+                    <field name="imported_record_number"/>
+                    <field name="observations"/>
+                    <field name="state"/>
+                    <field name="total_rows" invisible="1"/>
+                    <field name="pointer_row" invisible="1"/>
+                    <field name="failed_row_ids" invisible="1"/>
+                    <field name="pointer_row" invisible="1"/>
+                    <field name="success_row_ids" invisible="1"/>
+                    <field name="allow_upload" invisible="1"/>
+                    <field name="budget_file" invisible="1"/>
+                    <field name="filename" invisible="1"/>
+                    <field name="import_status" invisible="1"/>
+                    <field name="failed_row_file" invisible="1"/>
+                    <field name="fialed_row_filename" invisible="1"/>
+                    <field name="failed_rows" invisible="1"/>
+                    <field name="success_rows" invisible="1"/>
+                    <field name="cancelled_count" invisible="1"/>
+                    <field name="authorized_count" invisible="1"/>
+                    <field name="in_process_count" invisible="1"/>
+                    <field name="received_count" invisible="1"/>
+                    <field name="draft_count" invisible="1"/>
+                    <field name="select_box" invisible="1"/>
+            	</tree>
+            </field>
+        </record>
+
+        <!-- action for standardization views -->
+        <record id="action_standardization" model="ir.actions.act_window">
+            <field name="name">Re-standardization</field>
+            <field name="res_model">standardization</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="standardization_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+
+        <!-- tree view for standardization lines model -->
+        <record id="standardization_lines_tree_view" model="ir.ui.view">
+            <field name="name">standardization.lines..tree.view</field>
+            <field name="model">standardization.line</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="imported" invisible="1"/>
+                    <field name="selected" invisible="1"/>
+                    <field name="folio"/>
+                    <field name="code_id"/>
+                    <field name="budget_id"/>
+                    <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <field name="origin_id"/>
+                    <field name="quarter"/>
+                    <field name="reason"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="state"/>
+                    <field name="standardization_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for standardization lines views -->
+        <record id="action_standardization_lines" model="ir.actions.act_window">
+            <field name="name">Re-standardization Lines</field>
+            <field name="res_model">standardization.line</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="standardization_lines_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

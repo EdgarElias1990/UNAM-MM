@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Integration of current research projects -->
+        <template id="external_integration_of_current_research_projects" name="external_integration_of_current_research_projects">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b><span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO</span></b><br/>
+                        <span style="font-size:16px;">PATRONATO UNIVERSITARIO</span>
+                        <br/>
+                        <span style="font-size:14px;">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL</span>
+                        <br/>
+                        <span style="font-size:12px;">CONTADURÍA GENERAL</span>
+                        <br/>
+                        <span style="font-size:12px;">DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN</span>
+                        <br/>
+                        <!-- <span style="font-size:12px;">INTEGRACIÓN DE PROYECTOS DE INVESTIGACIÓN</span> -->
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+
+        <!-- Integration of upi pappit projects -->
+        <template id="external_integration_of_upi_papiit_projects" name="external_integration_of_upi_papiit_projects">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSITY BOARD TREASURY</span>
+                        <br/>
+                        <span style="font-size:14px;">GENERAL DIRECTORATE OF BUDGETARY CONTROL</span>
+                        <br/>
+                        <span style="font-size:12px;">GENERAL ACCOUNTING</span>
+                        <br/>
+                        <span style="font-size:12px;">RESEARCH PROJECT CONTROL DEPARTMENT</span>
+                        <br/>
+                        <span style="font-size:12px;">REPORT ON CURRENT RESEARCH PROJECTS OF THE</span>
+                        <br/>
+                        <span style="font-size:12px;">PAPIIT, PAPIME AND INFOCAB PROGRAMS</span>
+                        <br/>
+                        <span style="font-size:12px;">INTEGRATION OF RESOURCES REMAINING FROM THE <span style="padding-top:5px;font-size:12px;" t-esc="period_name"/> FINANCIAL YEAR</span>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- integration of project budget resources -->
+        <template id="external_int_of_project_budget_resources" name="external_int_of_project_budget_resources">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSITY BOARD TREASURY</span>
+                        <br/>
+                        <span style="font-size:16px;">TREASURY</span>
+                        <br/>
+                        <span style="font-size:14px;">GENERAL DIRECTORATE OF BUDGETARY CONTROL</span>
+                        <br/>
+                        <span style="font-size:12px;">GENERAL ACCOUNTING</span>
+                        <br/>
+                        <span style="font-size:12px;">RESEARCH PROJECT CONTROL DEPARTMENT</span>
+                        <br/>
+                        <span style="font-size:12px;">REPORT ON CURRENT RESEARCH PROJECTS OF THE</span>
+                        <br/>
+                        <span style="font-size:12px;">PAPIIT, PAPIME AND INFOCAB PROGRAMS</span>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- header template of airplane ticket-->
+        <template id="external_integration_of_airplane_ticket_upi_papiit_projects" name="external_integration_of_airplane_ticket_upi_papiit_projects">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSITY BOARD TREASURY</span>
+                        <br/>
+                        <span style="font-size:14px;">GENERAL DIRECTORATE OF BUDGETARY CONTROL</span>
+                        <br/>
+                        <span style="font-size:12px;">GENERAL ACCOUNTING</span>
+                        <br/>
+                        <span style="font-size:12px;">RESEARCH PROJECT CONTROL DEPARTMENT</span>
+                        <br/>
+                        <span style="font-size:12px;">PAPIIT PLANE TICKETS INTEGRATION</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- header template of Integration of PAPIIT, PAPIME, INFOCAB, IACOD editions resources
+-->
+        <template id="external_integration_of_papiit_papime_infocab_iacod" name="external_integration_of_papiit_papime_infocab_iacod">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSITY BOARD TREASURY</span>
+                        <br/>
+                        <span style="font-size:14px;">GENERAL DIRECTORATE OF BUDGETARY CONTROL</span>
+                        <br/>
+                        <span style="font-size:12px;">GENERAL ACCOUNTING</span>
+                        <br/>
+                        <span style="font-size:12px;">RESEARCH PROJECT CONTROL DEPARTMENT</span>
+                        <br/>
+                        <span style="font-size:12px;">INTEGRATION OF RESOURCES PAPIIT, PAPIME, INFOCAB,
+                        IACOD EDITIONS</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <!-- header template of Integration of remaining resources by program PAPIIT, PAPIME, INFOCAB
+
+-->
+        <template id="external_integration_of_program_papiit_papime_infocab" name="external_integration_of_program_papiit_papime_infocab">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSITY BOARD TREASURY</span>
+                        <br/>
+                        <span style="font-size:14px;">GENERAL DIRECTORATE OF BUDGETARY CONTROL</span>
+                        <br/>
+                        <span style="font-size:12px;">GENERAL ACCOUNTING</span>
+                        <br/>
+                        <span style="font-size:12px;">RESEARCH PROJECT CONTROL DEPARTMENT</span>
+                        <br/>
+                        <span style="font-size:12px;">INTEGRATION OF REMAINING RESOURCES BY PAPIIT, PAPIME, INFOCAB PROGRAM</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+
+        <!-- header template of Integration of remnants by PAPIIT, PAPIME, INFOCAB Stage
+-->
+        <template id="external_integration_of_remnants_by_papiit_papime_infocab" name="external_integration_of_remnants_by_papiit_papime_infocab">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <span style="font-size:16px;">UNIVERSITY BOARD TREASURY</span>
+                        <br/>
+                        <span style="font-size:14px;">GENERAL DIRECTORATE OF BUDGETARY CONTROL</span>
+                        <br/>
+                        <span style="font-size:12px;">GENERAL ACCOUNTING</span>
+                        <br/>
+                        <span style="font-size:12px;">RESEARCH PROJECT CONTROL DEPARTMENT</span>
+                        <br/>
+                        <span style="font-size:12px;">INTEGRATION OF REMNANTS STAGE-<span style="padding-top:5px;font-size:12px;" t-esc="period_name"/>PAPIIT, PAPIME, INFOCAB</span>
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+        <template id="external_integration_of_current_exp_projects" name="external_integration_of_current_exp_projects">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b><span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO</span></b><br/>
+                        <span style="font-size:16px;">PATRONATO UNIVERSITARIO</span>
+                        <br/>
+                        <span style="font-size:14px;">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL</span>
+                        <br/>
+                        <span style="font-size:12px;">DEPARTAMENTO DE CONTROL DE PROYECTOS DE INVESTIGACIÓN</span>
+                        <br/>
+                        <!-- <span style="font-size:12px;">INTEGRACIÓN DE PROYECTOS DE INVESTIGACIÓN</span> -->
+                        <br/>
+                    </div>
+                    <div class="col-3 text-left" style="vertical-align: bottom;">
+                        <span>Fecha y hora de impresión</span>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>
+
+	</data>
+</odoo>

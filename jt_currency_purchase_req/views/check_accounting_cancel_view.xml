@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="check_account_cancel_tree_view" model="ir.ui.view">
+            <field name="name">Checking account cancellation  Tree View</field>
+            <field name="model">account.cancellation</field>
+            <field name="arch" type="xml">
+                <tree>
+
+                    <field name="name" readonly="1"/>
+                    <field name="account_cancellation_id" />
+                    <field name="dependancy_id"/>
+                    <field name="bank_id"/>
+                    <field name="bank_account_id" context="{'from_account_design':True}"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="check_account_cancel_from_view" model="ir.ui.view">
+            <field name="name">Checking account cancellation  Form view</field>
+            <field name="model">account.cancellation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                        <field name="name" readonly="1"/>
+                        <field name="account_cancellation_id" />
+                        <field name="dependancy_id"/>
+                        <field name="bank_id"/>
+                     </group>
+                     <group>
+                        <field name="bank_account_id" context="{'from_account_design':True}"/>
+                        <field name="user_id"/>
+                    </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_account_cancellation" model="ir.actions.act_window">
+            <field name="name">Checking account cancellation</field>
+            <field name="res_model">account.cancellation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'from_account_design':True}</field>
+        </record>
+
+
+       
+
+
+
+    </data>
+</odoo>

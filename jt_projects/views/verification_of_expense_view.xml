@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="verification_expense_tree_view" model="ir.ui.view">
+            <field name="name">Verification Of Expense List view</field>
+            <field name="model">expense.verification</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="application_approval_date"/>
+                    <field name="project_id"/>
+                    <field name="project_number_id"/>
+                    <field name="number"/>
+                    <field name="type_of_currency"/>
+                </tree>
+            </field>
+         </record>
+
+         <record id="verification_of_expense_from_view" model="ir.ui.view">
+            <field name="name">Verification Of Expense Form view</field>
+            <field name="model">expense.verification</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_approve" string="Approve" class="oe_highlight"
+                                type="object" attrs="{'invisible': [('status', '!=', 'eraser')]}"/>
+                        <button name="%(jt_projects.action_reason_for_rejection)d" string="Reject" class="oe_highlight"
+                                type="action" attrs="{'invisible': [('status', '!=', 'eraser')]}"/>
+                        <field name="status" widget="statusbar" />
+                    </header>
+                    <sheet>
+                         <group>
+                            <group>
+                                <field name="application_approval_date" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="project_id" domain="[('project_type','in',('conacyt','concurrent','other'))]" required="1"  attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="project_number_id" readonly="1"/>
+                                <field name="program_code_id" invisible="1"/>
+                                <field name="program_code_ids" invisible="1"/>
+                                <field name="number" invisible="1" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="doc_type" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                
+                                <field name="type_of_currency" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="expense_journal_id" required="1" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                  <field name="exchange_rate" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="custom_stage_id" invisible="1" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                 <field name="dependence" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="subdependence" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="type_of_operation" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="rfc" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                               
+                                <field name="observation" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                 <field name="Vouchers" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="administrative_forum" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                            </group>
+                            <group>
+                                <field name="reg_date" required="1" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                 <field name="exercise" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                               
+                                <field name="upa_code" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                              
+                                <field name="invoice_vault_folio" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="uuid_invoice" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="invoice_series" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="invoice_folio" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="beneficiary_name" required="1" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="type_of_aggrement" attrs="{'readonly': [('status', '!=', 'eraser')]}" invisible="1"/>
+                                <field name="agreement_number" attrs="{'readonly': [('status', '!=', 'eraser')]}" invisible="1"/>
+                                <field name="agreement_name" attrs="{'readonly': [('status', '!=', 'eraser')]}" invisible="1"/>
+
+                                <field name="custom_type_of_aggrement" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="custom_agreement_number" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="custom_agreement_name" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                
+                                <field name="ext_sponsor" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="tech_support"  attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="admin_manager" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="reason_for_rejection" attrs="{'readonly': [('status', '!=', 'eraser')],'invisible':[('status','!=','reject')]}"/>                                                                
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string='Inovice Lines' name='invoice_tab'>
+                                <field
+                                name="verifcation_expense_ids"
+                                widget="section_and_note_one2many" attrs="{'readonly': [('status', '!=', 'eraser')]}">
+                                    <tree editable="bottom" string="Verfication Expense Line">
+                                          <field name="row"/>
+                                          <field name="program_code" domain="[('id','in',parent.program_code_ids)]"/>
+	                                 <field name="custom_stage_id"/>
+                                         <field name="verification_expense_id" invisible="1"/>
+                                         <field name="price"/>
+                                         <field name="amount"/>
+                                        <field name="tax_ids" widget="many2many_tags"/>  
+                                         <field name="subtotal"/>
+                                          <field name="amount_tax" invisible="1"/> 
+                                    </tree>
+                            </field>
+                                <group class="oe_subtotal_footer">
+                                    <field name="amount_untaxed"/>
+                                    <field name="amount_tax" colspan="2"/>
+                                    <field name="amount_total" class="oe_subtotal_footer_separator"/>
+                                </group>
+                            
+                            </page>
+                            <page string="Journal Items" name="accounts">
+                                <field name="move_line_ids" readonly="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+         </record>
+
+        <record id="verification_expense_action" model="ir.actions.act_window">
+            <field name="name">Verification Of Expense</field>
+            <field name="res_model">expense.verification</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'from_conacyt':1}</field>
+        </record>
+
+        <menuitem id="menu_verification_expense" name="Verification Of Expenses"
+                  action="verification_expense_action"
+                  parent="menu_conacyt"/>
+
+     </data>
+</odoo>

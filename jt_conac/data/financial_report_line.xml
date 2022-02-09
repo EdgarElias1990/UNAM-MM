@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mx_activo_1_0_0_0" model="account.financial.html.report.line">
+            <field name="name">1.0.0.0 Activo</field>
+            <field name="code">CONAC_MX_COA_1_0_0_0</field>
+            <field name="sequence" eval="0"/>
+            <field name="level" eval="1"/>
+            <field name="figure_type">no_unit</field>
+        </record>
+
+        <record id="mx_activo_1_1_0_0" model="account.financial.html.report.line">
+            <field name="name">1.1.0.0 Activo Circulante</field>
+            <field name="code">CONAC_MX_COA_1_1_0_0</field>
+            <field name="sequence" eval="0"/>
+            <field name="level" eval="2"/>
+            <field name="figure_type">no_unit</field>
+            <field name="parent_id" ref='mx_activo_1_0_0_0'/>
+            <field name="domain" eval="[('tag_ids', 'in', [ref('jt_conac.account_tag_1_1_0_0'),])]" />
+        </record>
+
+        <record id="mx_activo_1_2_0_0" model="account.financial.html.report.line">
+            <field name="name">1.2.0.0 Activo No Circulante</field>
+            <field name="code">CONAC_MX_COA_1_2_0_0</field>
+            <field name="sequence" eval="0"/>
+            <field name="level" eval="2"/>
+            <field name="figure_type">no_unit</field>
+            <field name="parent_id" ref='mx_activo_1_0_0_0'/>
+            <field name="domain" eval="[('tag_ids', 'in', [ref('jt_conac.account_tag_1_2_0_0'),])]" />
+        </record>
+
+        <record id="mx_pasivo_2_0_0_0" model="account.financial.html.report.line">
+            <field name="name">2.0.0.0 Pasivo</field>
+            <field name="code">CONAC_MX_COA_2_0_0_0</field>
+            <field name="sequence" eval="1"/>
+            <field name="level" eval="1"/>
+            <field name="figure_type">no_unit</field>
+        </record>
+    </data>
+</odoo>

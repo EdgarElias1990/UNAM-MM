@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id='account_tag_1_0_0_0' model='account.account.tag'>
+            <field name='name'>1.0.0.0 Activo</field>
+            <field name='color'>4</field>
+            <field name='applicability'>accounts</field>
+            <field name='nature'>D</field>
+        </record>
+        <record id='account_tag_1_1_0_0' model='account.account.tag'>
+            <field name='name'>1.1.0.0 Activo Circulante</field>
+            <field name='color'>4</field>
+            <field name='applicability'>accounts</field>
+            <field name='nature'>D</field>
+        </record>
+        <record id='account_tag_1_2_0_0' model='account.account.tag'>
+            <field name='name'>1.2.0.0 Activo No Circulante</field>
+            <field name='color'>4</field>
+            <field name='applicability'>accounts</field>
+            <field name='nature'>D</field>
+        </record>
+    </data>
+</odoo>

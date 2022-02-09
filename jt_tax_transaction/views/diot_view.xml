@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="diot_tree_view" model="ir.ui.view">
+            <field name="name">diot.tree.view</field>
+            <field name="model">tax.diot</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="folio"/>
+                    <field name="month"/>
+                    <field name="year"/>
+                    <field name="filling_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="diot_form_view" model="ir.ui.view">
+            <field name="name">diot.form.view</field>
+            <field name="model">tax.diot</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                    
+                        <group>
+                            <group>
+			                    <field name="folio"/>
+                                <field name="month"/>
+                                <field name="year"/>
+                                <field name="filling_date"/>
+                            </group>
+                            <group>
+                                <field name="txt_file"/>
+                                <field name="dec_file"/>
+                                <field name="diot_archive"/>
+                                <field name="ackn_acceptance"/>
+                                <field name="shipping_ackn" filename="file_name"/>
+                                <field name="observations"/>
+                                <field name="file_name" invisible="1"/>
+                            </group>
+                        </group>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+
+        <record id="action_diot" model="ir.actions.act_window">
+            <field name="name">DIOT</field>
+            <field name="res_model">tax.diot</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_diot" name="Diot" parent="jt_tax_transaction.menu_tribune_operations" sequence="3" action="action_diot"/>
+
+    </data>
+</odoo>

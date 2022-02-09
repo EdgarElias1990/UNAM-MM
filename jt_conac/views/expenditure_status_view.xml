@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="expenditure_status_form_view" model="ir.ui.view">
+            <field name="name">expenditure.status.form.view</field>
+            <field name="model">status.expen</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="concept"/>
+                            <!-- <field name="approved_amt"/>
+                            <field name="ext_and_red_amt"/>
+                            <field name="modified_amt"/>
+                            <field name="accrued_amt"/>
+                            <field name="paid_out_amt"/>
+                            <field name="sub_exercise"/> -->
+                            <field name="parent_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="expenditure_status_tree_view" model="ir.ui.view">
+            <field name="name">expenditure.status.tree.view</field>
+            <field name="model">status.expen</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="concept"/>
+                    <field name="approved_amt"/>
+                    <field name="ext_and_red_amt"/>
+                    <field name="modified_amt"/>
+                    <field name="accrued_amt"/>
+                    <field name="paid_out_amt"/>
+                    <field name="sub_exercise"/>
+                    <field name="parent_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_expenditure_status" model="ir.actions.act_window">
+            <field name="name">Status of Expenditure</field>
+            <field name="res_model">status.expen</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

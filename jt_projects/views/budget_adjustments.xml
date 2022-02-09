@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- form view for adequacies model -->
+        <record id="adequacies_form_view_project" model="ir.ui.view">
+            <field name="name">adequacies.form.view.project</field>
+            <field name="model">adequacies</field>
+            <field eval="100" name="priority"/>
+            <field name="arch" type="xml">
+                <form duplicate="0">
+                     <center><div attrs="{'invisible': [('cron_running', '!=', True)]}" class="alert alert-primary" role="alert">
+                        Data validation is running in background, Page will be auto refreshed and <b>Data Validation Status</b> will be auto turned off when the process will get finished!
+                    </div></center>
+                    <header>
+                    	<button name="action_send_request" type="object" string="Send Request" class="oe_highlight" attrs="{'invisible': ['|',('is_send_request','=',True),('state', '!=', 'draft')]}"/>
+                    	<!--  
+                        <button name="validate_draft_lines" type="object" string="Validate Lines" class="oe_highlight" attrs="{'invisible': ['|', ('import_status', '!=', 'in_progress'), ('cron_running', '=', True)]}"/>
+                        <button name="validate_and_add_budget_line" type="object" string="Re-scan Failed Rows" class="oe_highlight" attrs="{'invisible': [('failed_rows', '=', 0), ('allow_upload', '=', False)]}" context="{'re_scan_failed':True}"/>
+
+                        <button name="confirm" type="object" string="Confirm" class="oe_highlight" attrs="{'invisible': ['|', '|', ('failed_rows', '>', 0), ('state', '!=', 'draft'), ('cron_running', '=', True)]}"/>
+                        <button name="accept" type="object" string="Accept" class="oe_highlight" states='confirmed'/>
+                        <button name="reject" type="object" string="Reject" class="oe_highlight" states='confirmed'/>
+                        
+                         -->
+                         <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,accepted,rejected"/>
+                         
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                            	<field name="is_from_project" invisible="1"/>
+                            	<field name="is_send_request" invisible="1"/>
+                                <field name="folio" readonly="1"/>
+                                <field name="budget_id" required="1"/>
+                                <field name="adaptation_type" required="1"/>
+                                <field name="journal_id" readonly="1" force_save="1"/>
+                                <field name="date_of_budget_affected" readonly="1" attrs="{'invisible': [('adaptation_type', '=', 'liquid')],
+                                'required': [('adaptation_type', '!=', 'liquid')],}"/>
+                                <field name="date_of_liquid_adu" readonly="1" attrs="{'invisible': [('adaptation_type', '!=', 'liquid')],
+                                'required': [('adaptation_type', '=', 'liquid')],}"/>
+                                <button name="import_lines" type="object" string="Import lines" class="oe_highlight" attrs="{'invisible': ['|', ('state', 'in', ('accepted', 'rejected')), ('import_status', '!=', 'draft')]}"/>
+                                <button name="import_lines" type="object" string="Re-Import Lines" class="oe_highlight" attrs="{'invisible': ['|', ('state', '!=', 'draft'), ('import_status', '=', 'draft')]}"/>
+                                <field name="reason" states='rejected'/>
+                                <field name="record_number"/>
+                                <field name="imported_record_number"/>
+                            </group>        
+                            <group>
+                                <label for="observation"/>
+                                <div>
+                                    <field name="observation" class="oe_inline"/>
+                                </div>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Adequacies Lines">
+                                <field name="adequacies_lines_ids" context="{'default_line_type':'decrease'}">
+                                    <tree>
+                                       <field name="imported" invisible="1"/>
+                                       <field name="program" context="{'from_project_module':True}"/> 
+                                       <field name="line_type"/>
+                                       <field name="amount" sum="Amount"/>
+                                       <field name="creation_type"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="imported" invisible="1"/>
+                                            <field name="adequacies_id" invisible="1"/>
+                                            <field name="program" context="{'from_project_module':True}" required="1" attrs="{'readonly': [('imported', '=', True)]}" domain="[('state', '=', 'validated'), '|',('budget_id', '=', parent.budget_id),('budget_id', '=', False)]"/> 
+                                            <field name="line_type" required="1"/>
+                                            <field name="amount" required="1"/>
+                                            <field name="creation_type" required="1" attrs="{'readonly': [('imported', '=', False)]}"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string='Import Status' attrs="{'invisible': [('allow_upload', '=', False), ('budget_file', '=', False)]}">
+                                <group>
+                                    <field name="cron_running" readonly="1" widget="boolean_toggle"
+                                           string="Data validation Status"/>
+                                    <field name="allow_upload" invisible="1"/>
+                                    <field name="budget_file" filename="filename"/>
+                                    <field name="filename" invisible="1"/>
+                                    <field name="fialed_row_filename" invisible="1"/>
+                                    <field name="import_status" readonly="1" invisible="1"/>
+                                    <field name="failed_row_file" attrs="{'invisible': [('failed_rows', '=', 0)]}" readonly="1" string="Failed Rows Tracker" filename="fialed_row_filename"/>
+                                    <field name="total_rows" string="Total Rows" readonly="1"/>
+                                    <field name="failed_rows" string="Total Failed Rows" readonly="1"/>
+                                    <field name="success_rows" string="Total Success Rows" readonly="1"/>
+                                    <field name="pointer_row" string="Next Row To Start" readonly="1" attrs="{'invisible': [('import_status', '=', 'done')]}"/>
+                                </group>
+                            </page>
+                            <page string='Failed/Success Rows' invisible="1">
+                                <group string="Failed Rows" >
+                                    <field name="failed_row_ids" readonly="1" nolabel="1"/>
+                                </group>
+                                <group string="Success Rows">
+                                    <field name="success_row_ids" readonly="1" nolabel="1"/>
+                                </group>
+                            </page>
+                            <page string="Journal Items" name="move_lines">
+                                <field name="move_line_ids" nolabel="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- action for adequacies views -->
+        <record id="action_adequacies_project" model="ir.actions.act_window">
+            <field name="name">Adequacies</field>
+            <field name="res_model">adequacies</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="domain">[('is_from_project','=',True)]</field>
+            <field name="view_id" ref="jt_budget_mgmt.adequacies_tree_view"/>
+            <field name="context">{'default_is_from_project':True,'from_project_module':True}</field>
+        </record>
+
+		<record id="action_adequacies_project_link_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="jt_budget_mgmt.adequacies_tree_view"/>
+            <field name="act_window_id" ref="action_adequacies_project"/>
+        </record>
+        <record id="action_adequacies_project_link_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="adequacies_form_view_project"/>
+            <field name="act_window_id" ref="action_adequacies_project"/>
+        </record>
+
+    <menuitem
+        id="menu_adequacies_amounts_project"
+        name="Adequacies"
+        parent="supplier_payment_request_main_menu"
+        action="action_adequacies_project"
+        sequence="20"
+    />
+    <!-- Domain into the Budget adequacies Menu -->
+		<record id="jt_budget_mgmt.action_adequacies" model="ir.actions.act_window">
+		    <field name="domain">['|',('is_from_project','=',False),('is_send_request','=',True)]</field>
+		</record>
+    
+    <!--
+    	Program Code View 
+     -->
+
+		<record model="ir.actions.act_window" id="jt_budget_mgmt.action_program_code">
+		      <field name="context">{'from_conacyt':True}</field>
+		 </record> 
+		 
+         <record id="program_code_form_view_inherit" model="ir.ui.view">
+            <field name="name">program.code.form.view.inherit</field>
+            <field name="model">program.code</field>
+            <field name="inherit_id" ref="jt_budget_mgmt.program_code_form_view"/>
+            <field name="arch" type="xml">
+            	<field name="year" position='before'>
+            		<field name="parent_program_id" invisible="not context.get('from_project_module',False)" domain="[('state','=','validated')]"/>
+            	</field>
+
+            	<field name="name_portfolio" position='after'>
+            		<field name="project_id" context="{'from_conacyt':True}"  attrs="{'readonly': [('state', '=', 'validated')]}"/>
+            	</field>
+
+            	<field name="project_number" position='attributes'>
+            		<attribute name="invisible">1</attribute>  
+            	</field>
+            	<field name="project_type_id" position='attributes'>
+            		<attribute name="readonly">1</attribute>
+            		<attribute name="force_save">1</attribute>  
+            		
+            	</field>
+                <field name="agreement_type_id" position='attributes'>
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="force_save">1</attribute>  
+                    
+                </field>
+
+            	<field name="stage_id" position='attributes'>
+            		<attribute name="readonly">1</attribute>  
+            		<attribute name="force_save">1</attribute>
+            	</field>
+            	
+            	
+ 			</field>
+ 		</record>
+ 		<!-- Budget View Inherits -->    
+ 		<record id="expenditure_budget_form_view_inherit" model="ir.ui.view">
+            <field name="name">expenditure.budget.form.view.inherit</field>
+            <field name="model">expenditure.budget</field>
+            <field name="inherit_id" ref="jt_budget_mgmt.expenditure_budget_form_view"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='line_ids']/form/group[1]/field[@name='program_code_id']" position="attributes">
+            		<attribute name="domain">[('custom_project_program_ids','=',False)]</attribute>
+            	</xpath>
+ 			</field>
+ 		</record>
+    </data>
+ </odoo>

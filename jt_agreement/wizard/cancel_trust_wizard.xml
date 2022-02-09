@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="cancel_trust_form_view" model="ir.ui.view">
+            <field name="name">cancel.trust.form.view</field>
+            <field name="model">cancel.trust</field>
+            <field name="arch" type="xml">
+                <form>
+                	<group>
+                        <field name="cancel_date" required="1"/>
+                        <field name="supporing_doc" required="1"/>
+                        <field name="reason_cancel" required="1"/>
+                    </group>
+                	<footer>
+                        <button string="Confirm" name="confirm" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

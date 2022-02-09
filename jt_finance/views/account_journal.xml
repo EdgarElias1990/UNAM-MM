@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="inherited_account_journal_form_view_calendar" model="ir.ui.view">
+            <field name="name">Inherited account journal form view calendar</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+            	
+                <xpath expr="//notebook/page[@name='journal_entries']/group/group[2]" position="after">
+                    <group string="Estimated" name="estimated" attrs="{'invisible':[('is_federal_subsidy','=',False)]}">
+                        <field name="estimated_debit_account_id"/>
+                        <field name="estimated_credit_account_id"/>
+                        <field name="conac_estimated_debit_account_id" readonly="1" force_save="1"/>
+                        <field name="conac_estimated_credit_account_id" readonly="1" force_save="1"/>
+                    </group>
+                    <group string="Collected" name="collected" attrs="{'invisible':[('is_federal_subsidy','=',False)]}">
+                        <field name="collected_debit_account_id"/>
+                        <field name="collected_credit_account_id"/>
+                        <field name="conac_collected_debit_account_id" readonly="1" force_save="1"/>
+                        <field name="conac_collected_credit_account_id" readonly="1" force_save="1"/>
+                    </group>
+                    
+				</xpath>            
+			</field>
+		</record>
+	</data>
+</odoo>

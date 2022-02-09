@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="external_layout_header_check_registration">
+            <div t-attf-class="header o_company_#{company.id}_layout">
+                <div class="row">
+                    <div class="col-2" align="left">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                             style="max-height: 150px;" alt="Logo"/>
+                    </div>
+                    <div class="col-4" style="padding-left:25px;padding-top:15px;padding-right:0px;">
+                        <img src="/jt_currency_purchase_req/static/src/img/dgf.png"
+                             style="max-height:110px;width:80%"/>
+                    </div>
+                    <div class="col-6" align="justify" style="padding-right:0;padding-left:0px;">
+                        
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;font-weight:bold;">UNIVERSITY BOARD OF TRUSTEES-TREASURY</p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;font-weight:bold;">
+                            GENERAL DIRECTORATE OF FINANCE
+                        </p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;font-weight:bold;">
+                            DIRECTORATE OF REVENUE AND FINANCIAL OPERATIONS
+                        </p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;padding-left:5px;">
+                            <strong>Oficio No:</strong><span t-field="o.account_modification_id.legal_number"/><br/>
+                            <strong>No. Solicitude:</strong><span t-field="o.account_modification_id.invoice"/><br/>
+                            <strong>Asunsto:</strong>signature update<br/> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"
+                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+                
+                <div class="row">
+                    <div class="col-8" align="left" style="font-size:15px">
+                        <span>Sin Particular ,agradecemos la atencion a la presente y aprovechamos la oportunidad para enviarle un cordial saludo.</span><br/>
+                        <span style="font-size:15px">
+                            Kind regards,
+                            <br/>
+                        </span>
+                        <span style="font-size:15px">
+                            "BY MY RACE THE SPIRIT WILL SPEAK"
+                        </span><br/>
+                        <span style="font-size:15px">
+                            Ciudad Universitaria, Cd. Mx., A
+                            <br/>
+                            <br/>
+                         </span>
+                    </div>
+                    <div class="col-4" align="right" style="margin-top:60px;">
+                        <t t-esc="o.account_modification_id.modification_date"/>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                        <t t-set="trade" t-value="o.get_sender_recipet1()"/>
+                        <div class="col-6" align="left">
+                            <t t-if="trade">
+                                <span style="font-size:15px">Treasurer of the UNAM</span>
+                            </t>
+                        </div>
+                        <div class="col-6" align="center">
+                            <t t-if="trade">
+                                <span style="font-size:15px">General Director Of the Finance</span>
+                            </t>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col-6" align="left">
+                            <t t-if="trade">
+                                <t>
+                                    <span style="font-size:15px;" t-esc="trade.sender_title"/>
+                                    <span style="font-size:15px;" t-esc="trade.sender_emp_id.name"/><br/>
+                                    <span style="font-size:15px;" t-esc="trade.sender_professional_title"/>
+                                </t>
+                            </t>
+                        </div>
+                        <div class="col-6" align="center">
+                            <t t-if="trade">
+                                <t>
+                                    <span style="font-size:15px;" t-esc="trade.recipient_title"/>
+                                    <span style="font-size:15px;" t-esc="trade.executive_id.name"/><br/>
+                                    <span style="font-size:15px;" t-esc="trade.executive_id.position"/>
+                                </t>                            
+                            </t>
+                        </div>
+                    </div>
+                </div>
+        </template>
+
+
+        <template id="external_layout_check_registration">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="jt_currency_purchase_req.external_layout_header_check_registration">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+        <template id="updating_signature_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <!--                    <t t-if="o.state == 'approved'">-->
+                    <t t-call="jt_currency_purchase_req.external_layout_check_registration">
+                        <div class="page">
+                            <div class="row">
+                                <div class="col-12" align="right">
+                                    <p>Dependencia:<span t-field="o.dependancy_id.dependency"/><span t-field="o.dependancy_id.description"/></p>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-6" align="left" style="font-size:15px;">
+                                    <t>
+                                        <span t-field="o.bank_id.name"/>
+                                        <br/>
+                                        <span t-field="o.bank_id.street" t-if="o.bank_id.street"/>,<span t-field="o.bank_id.street2" t-if="o.bank_id.street2"/>,<span t-field="o.bank_id.zip" t-if="o.bank_id.zip"/>,<br/><span t-field="o.bank_id.state" t-if="o.bank_id.state"/>,<span t-field="o.bank_id.country" t-if="o.bank_id.country"/>.
+                                    </t>
+                                </div>
+                                <div class="col-6">
+                                    <t t-foreach="o.bank_account_id.executive_ids" t-as="data" t-if="o.bank_account_id">
+                                        <p><b>Atn:</b><span t-field="data.name"/>,
+                                            <span t-field="data.position"/>,
+                                            <span t-field="data.email"/>
+                                        </p>        
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p style="padding-left:25px;">We hereby request to incorporate changes into the signatures of the following account(s).</p>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p style="padding-left:25px;"><span t-field="o.bank_account_id.unam_account_name"/></p>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-12" style="padding-left:15px;">
+                                    <p style="padding-left:25px;">As indicated below:</p>
+                                        <span t-field="o.bank_account_id.bank_account_id.acc_number"/>-<span t-field="o.bank_account_id.company_partner_id.name"/>
+                                    <br/>
+                                    <br/>
+
+                                    
+                                    <center>
+                                    <table class="table-bordered" style="font-size:15px;width:auto;height:100%;" cellspacing="10px" cellpadding="10px">
+                                        <thead style="font-weight:bold;">
+                                            <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Movement</th>
+                                            <th>Type Of signature</th>
+                                            <th>Ownership</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr t-foreach="o.bank_account_id.auth_sign_ids" t-as="auth">
+                                                <td><span t-field="auth.employee_id.name"/></td>
+                                                <td><span t-field="auth.poistion"/></td>
+                                                <td><span t-field="auth.movement"/></td>
+                                                <td><span t-field="auth.type_of_signature"/></td>
+                                                <td><span t-field="auth.ownership"/></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </center>
+                                </div>
+                            </div>
+                            <br/>
+                                    <br/>
+                                    <br/>
+                            <div class="row">
+                                <div class="col-6" style="font-size:20px;">
+                                    <p style="text-align:left;"><b>attached information:</b></p><br/>
+                                    <p style="text-align:right;">Identification copy (s) of the signer (s)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_updating_signature" model="report.paperformat">
+            <field name="name">Office Of Updating Signature</field>
+            <field name="default" eval="True"/>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">80</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="updating_signature_action"
+                model="office.signature"
+                string="Office Of Updating Signature"
+                report_type="qweb-pdf"
+                name="jt_currency_purchase_req.updating_signature_template"
+                file="jt_currency_purchase_req.updating_signature_template"
+                paperformat="jt_currency_purchase_req.paperformat_updating_signature"
+        />
+
+    </data>
+</odoo>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="external_payroll_wage">
+            <div t-attf-class="header o_company_#{company.id}_layout">
+                <div class="row">
+                     <div class="col-2" align="left">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                             style="max-height: 150px;" alt="Logo"/>
+                    </div>
+                     <div class="col-6 text-center" style="font-style:bold;">
+                        <span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>
+                        <span style="font-size:12px;">PATRONATO UNIVERSITARIO</span><br/>
+                        <span style="font-size:12px;">TESORERIA</span><br/>
+                        <span style="font-size:12px;">AJUSTE EN SALARIOS DE QUINCENA</span><br/>
+                    </div>
+                    
+                </div>
+            </div>
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"
+                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+            </div>
+                
+           
+        </template>
+
+        <template id="external_layout_payroll_wages">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="jt_check_controls.external_payroll_wage">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+
+         <template id="payroll_wage_adjustment_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="jt_check_controls.external_layout_payroll_wages">
+                        <div class="page">
+                        <div class="row">
+                            <div class="col-3 text-right" align="right" style="vertical-align: bottom;">
+                                <span>Fecha de impresión  </span><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/> 
+                            </div>
+                        </div>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            
+                            
+
+                        <div class="row">
+                            <div class="col-12">
+                             <table class="table" name="payroll_check_table">
+                            <thead>
+                                <tr>
+                                    
+                                    <t t-set="colspan" t-value="6"/>
+                                    <th name="th_rfc" class="text-left">
+                                        <span>RFC</span>
+                                    </th>
+                                    
+                                    <th name="th_nombre" class="text-left">
+                                        <span>Nombre</span>
+                                    </th>
+                                    <th name="th_quincena" class="text-left">
+                                        <span>Quincena</span>
+                                    </th>
+                                    <th name="th_number_de_cheque" class="text-left">
+                                        <span>Número cheque </span>
+                                    </th>
+                                    <th name="th_unit" class="text-left">
+                                        <span>Nuevo número cheque</span>
+                                    </th>
+                                    <th class="text-left" name="th_matter">
+                                        <span>Importe</span>
+                                    </th>
+                                    <th class="text-left" name="th_firma">
+                                        <span>FIRMA</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bank_req_tbody">
+                               
+                            </tbody>
+                        </table>
+                        <div class="col-6" align="left">
+                            <span align="left" style="text-align:left;">Total Folios:</span><br/>
+                            <span style="text-align:left;">Impresos:</span>5
+                        </div>
+                        <div class="col-6 text-center" style="margin-left:20px;" align="center">
+                            <span style="text-align:center;">TOTAL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </t>
+</t>
+</template>
+
+        <record id="paperformat_blank_req_check" model="report.paperformat">
+            <field name="name">Payroll wage adjustment</field>
+            <field name="default" eval="True"/>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">80</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="payroll_wage_ajustment"
+                model=""
+                string="Payroll Wage Adjustment"
+                report_type="qweb-pdf"
+                name="jt_check_controls.payroll_wage_adjustment_template"
+                file="jt_check_controls.payroll_wage_adjustment_template"
+                paperformat="jt_check_controls.paperformat_blank_req_check"
+        />
+    </data>
+</odoo>

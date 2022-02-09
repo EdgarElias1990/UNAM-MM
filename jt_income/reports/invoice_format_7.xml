@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="invoice_format_7_document">
+            <t t-call="jt_income.external_layout_7">
+                </t>
+                <t t-set="o" t-value="o.with_context(lang=lang)" />
+                <br/><br/><br/><br/><br/><br/><br/>
+
+                <div class="page">
+                    <style>
+                    
+                        .tab1 { 
+                                tab-size: 2; 
+                                text-indent: 5.0em;
+                                font-size:22px;
+                                } 
+                    </style>
+
+                    <table style="width:100%">
+                        <tr>
+                            <td style="width:50%;">
+                            </td>
+                            <td style="text-align:left;font-size:15px;width:50%;">
+                                <h2><b>
+                                Dirección de Ingresos y Op. Financiera<br/>
+                                Departamento de Ingresos<br/><br/>
+                                Of. No. <span t-field="o.trade_no"/><br/><br/>
+                                Asunto: Notificación de Cheque Devuelto
+                                </b></h2>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table style="width:100%;">
+                        <tr>
+                            <br/><br/>
+                            <td style="text-align:left;font-size:15px;">
+                               
+                                <h2> <b> DEPENDENCIA:&#160;&#160;&#160;&#160;&#160;&#160;INSTITUTO DE FÍSICA&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span t-field="o.dependancy_id.dependency"/>.<span t-field="o.sub_dependancy_id.sub_dependency"/><br/><br/>
+
+                                ATENCIÓN A:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; SECRETARIO ADMINISTRATIVO y/o<br/>
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;JEFE DE UNIDAD ADMINISTRATIVA </b>
+                                </h2>
+
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table style="width:100%">
+                        <tr class="style1">
+							<t t-set="number_of_return_check" t-value="o.number_of_return_check_char()"/>
+                            <p class="tab1">Se  anexa  al  presente  el  cheque  devuelto  <b><u>No.  <span t-esc="number_of_return_check"/></u></b>   del  banco<b>  <span t-field="o.bank_account_statement"/>, (CHEQUERA  CONACYT) </b>como  se  indica  en  el estado  de  cuenta  <b><span t-field="o.income_bank_journal_id.name"/>; </b> por  un  importe de  <b><u><span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></u></b>
+                            </p>
+                            <br/>
+                        
+                            <p style="font-size:20px;"><u>Ya  que  el  trámite  inicial  fue  cancelado  por  el   sistema,  se  realizara   nuevamente  la  Solicitud  de  Certificado de  Depósito.</u></p>
+                            <br/>
+
+                            <p style="font-size:20px;">Sin otro particular por el momento, le envió un cordial saludo.</p>
+                            <br/><br/>
+
+                            <p style="font-size:20px;">Atentamente<br/>“POR MI RAZA HABLARA EL ESPIRITU”<br/>Cd. Universitaria, Cd. Mx., <t t-if="o.invoice_date"><span t-field="o.invoice_date" t-options='{"format": "d"}'/> de 
+                           	 <span t-field="o.invoice_date" t-options='{"format": "MMMM"}'/> de
+                            <span t-field="o.invoice_date" t-options='{"format": "y"}'/></t> 
+                            </p>
+
+                            <div class="row" style="float:right;">
+                                <div class="col-6">
+                                    <div>
+                                        <img t-attf-src="data:image/png;base64,{{res_company.sign}}" style="width:120px;height:100px;"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </tr>
+                    </table>
+                </div>
+        </template>
+
+        <template id="invoice_format_7">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="lang" t-value="o.invoice_user_id.sudo().lang if o.type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                    <t t-call="jt_income.invoice_format_7_document" t-lang="lang"/>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_invoice_format_7" model="report.paperformat">
+            <field name="name">Format 7</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">15</field>
+            <field name="margin_bottom">40</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">5</field>
+            <field name="dpi">100</field>
+        </record>
+
+        <report 
+            id="invoice_pdf_format7_name"
+            model="account.move"
+            string="Solicitud de Certificado de Depósito"
+            report_type="qweb-pdf"
+            name="jt_income.invoice_format_7"
+            file="jt_income.invoice_format_7"
+        />
+
+        <record id="jt_income.invoice_pdf_format7_name" model="ir.actions.report">
+            <field name="paperformat_id" ref="jt_income.paperformat_invoice_format_7"></field>
+        </record>
+
+    </data>
+</odoo>

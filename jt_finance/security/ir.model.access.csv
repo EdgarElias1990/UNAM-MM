@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_calendar_assigned_amounts,calendar_assigned_amounts,model_calendar_assigned_amounts,base.group_user,1,1,1,1
+access_calendar_assigned_amounts_lines,calendar_assigned_amounts_lines,model_calendar_assigned_amounts_lines,base.group_user,1,1,1,1
+access_control_amounts_received,control_amounts_received,model_control_amounts_received,base.group_user,1,1,1,1
+access_control_amounts_received_line,control_amounts_received_line,model_control_amounts_received_line,base.group_user,1,1,1,1
+access_report_calendar_amount_assign,report_calendar_amount_assign,model_report_calendar_amount_assign_line,base.group_user,1,1,1,1

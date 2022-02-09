@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="background_project_tree_view" model="ir.ui.view">
+            <field name="name">background.project.list.view</field>
+            <field name="model">background.project</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="key"/>
+                    <field name="desc"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="background_project_form_view" model="ir.ui.view">
+            <field name="name">background.project.form.view</field>
+            <field name="model">background.project</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="key" required="1"/>
+                            <field name="desc"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_background_project" model="ir.actions.act_window">
+            <field name="name">Background Project</field>
+            <field name="res_model">background.project</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_background_project" name="Background Project" parent="menu_setting_agreement" action="action_background_project"
+                 sequence="5"/>
+
+    </data>
+</odoo>

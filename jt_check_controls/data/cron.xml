@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="cron_to_send_five_year_old_send_check" model="ir.cron">
+        <field name="name">Create Activity for 5 Years old Send Checks</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="model_id" ref="model_send_checks"/>
+        <field name="code">model.send_five_year_old_send_check_activity()</field>
+        <field name="state">code</field>
+    </record>
+
+    <record id="cron_min_checks_validation" model="ir.cron">
+        <field name="name">Minimum of checks Validation</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="model_id" ref="model_minimum_checks"/>
+        <field name="code">model.min_checks_validation()</field>
+        <field name="state">code</field>
+    </record>
+
+
+
+</odoo>

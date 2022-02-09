@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for upa.catalog keys model -->
+        <record id="upa_catalog_search_view" model="ir.ui.view">
+            <field name="name">upa.catalog.search.view</field>
+            <field name="model">upa.catalog</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- form view for upa.catalog model -->
+        <record id="upa_catalog_form_view" model="ir.ui.view">
+            <field name="name">upa.catalog.form.view</field>
+            <field name="model">upa.catalog</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for egress keys model -->
+        <record id="upa_catalog_tree_view" model="ir.ui.view">
+            <field name="name">upa.catalog.tree.view</field>
+            <field name="model">upa.catalog</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for egress keys views -->
+        <record id="upa_catalog_action" model="ir.actions.act_window">
+            <field name="name">UPA Catalog</field>
+            <field name="res_model">upa.catalog</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="upa_catalog_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+
+    </data>
+</odoo>
