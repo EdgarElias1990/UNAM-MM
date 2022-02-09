@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Header Template of STATEMENT OF FINANCIAL POSITION -->
+        <template id="external_layout_of_stment_of_finan_posi" name="external_layout_of_stment_of_finan_posi">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                    <span style="font-size:16px;">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>
+                    <span>STATEMENT OF FINANCIAL POSITION </span><br/>
+                    <span> <t t-esc="header_date"/> </span>
+                </div>                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+        </template>
+
+        <!-- Header Template of STATUS OF ACTIVITIES -->
+        <template id="external_layout_of_status_activities" name="external_layout_of_status_activities">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                    <span style="font-size:16px;">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>
+                    <span>STATUS OF ACTIVITIES </span><br/>
+                    <span><t t-esc="header_date"/> </span>
+                </div>                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+        </template>
+
+        <!-- Header Template of STATE OF VARIATION IN PUBLIC TREASURY-->
+        <template id="external_layout_of_state_variation" name="external_layout_of_state_variation">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                    <span style="font-size:16px;">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>
+                    <span>STATE OF VARIATION IN PUBLIC TREASURY </span><br/>
+                    <span><t t-esc="header_date"/> </span>
+                </div>                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+        </template>
+
+
+        <!-- Header Template of ANALYTICAL STATUS OF ASSETS-->
+        <template id="external_layout_of_analytical_status_asset" name="external_layout_of_analytical_status_asset">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                    <span style="font-size:16px;">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>
+                    <span>ANALYTICAL STATUS OF ASSETS </span><br/>
+                    <span><t t-esc="header_date"/> </span>
+                </div>                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+        </template>
+
+        <!-- Header Template of ANALYTICAL STATEMENT OF DEBT AND OTHER LIABILITIES-->
+        <template id="external_layout_of_analytical_statement_of_debt" name="external_layout_of_analytical_statement_of_debt">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                    <span style="font-size:16px;">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>
+                    <span>ANALYTICAL STATEMENT OF DEBT AND OTHER LIABILITIES</span><br/>
+                    <span><t t-esc="header_date"/> </span>
+                </div>                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+        </template>
+
+        <!-- Header Template of ANALYTICAL STATEMENT OF CHANGES IN THE FINANCIAL POSITION-->
+        <template id="external_layout_of_statement_change" name="external_layout_of_statement_change">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                    <span style="font-size:16px;">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>
+                    <span>STATEMENT OF CHANGES IN THE FINANCIAL POSITION</span><br/>
+                    <span><t t-esc="header_date"/> </span>
+                </div>                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+        </template>
+
+        <!-- Header Template of ANALYTICAL STATEMENT OF CASH FLOWS-->
+        <template id="external_layout_of_statement_cash_flow" name="external_layout_of_statement_cash_flow">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                    <span style="font-size:16px;">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>
+                    <span>STATEMENT OF CASH FLOWS</span><br/>
+                    <span><t t-esc="header_date"/> </span>
+                </div>                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+        </template>
+
+        <!-- Header Template of ANALYTICAL INCOME STATEMENT-->
+        <template id="external_layout_of_analytical_income_statement" name="external_layout_of_analytical_income_statement">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                    <span style="font-size:16px;">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>
+                    <span>ANALYTICAL INCOME STATEMENT</span><br/>
+                    <span><t t-esc="header_date"/> </span>
+                </div>                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+        </template>
+
+        <!-- Header Template of ANALYTICAL STATUS OF THE EXPENDITURE BUDGET EXERCISE-->
+        <template id="external_layout_of_analytical_status_expenditure_budget_ex" name="external_layout_of_analytical_status_expenditure_budget_ex">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                    <span style="font-size:16px;">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>
+                    <span>ANALYTICAL STATUS OF THE EXPENDITURE BUDGET EXERCISE</span><br/>
+                    <span><t t-esc="header_date"/> </span>
+                </div>                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+        </template>
+
+
+        <!-- Header Template of ANALYTICAL STATES AND PROGRAM REPORTS-->
+        <template id="external_layout_of_analytical_states_and_program_reports" name="external_layout_of_analytical_states_and_program_reports">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                    <span style="font-size:16px;">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>
+                    <span>STATES AND PROGRAM REPORTS</span><br/>
+                    <span><t t-esc="header_date"/> </span>
+                </div>                
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+        </template>
+    </data>
+</odoo>

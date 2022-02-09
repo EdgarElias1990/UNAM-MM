@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for project type model -->
+        <record id="project_type_search_view" model="ir.ui.view">
+            <field name="name">project.type.search.view</field>
+            <field name="model">project.type</field>
+            <field name="arch" type="xml">
+                <search string="Project type">
+                    <field name="project_type_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Project type" name='project_type_id' context="{'group_by':'project_type_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for project type model -->
+    	<record id="project_type_form_view" model="ir.ui.view">
+            <field name="name">project.type.form.view</field>
+            <field name="model">project.type</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+	            		<group>
+	            			<field name="project_type_id" required="1"/>
+                            <field name="desc"/>
+                            <field name="number" required="1"/>
+	            		</group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for project type model -->
+    	<record id="project_type_tree_view" model="ir.ui.view">
+            <field name="name">project.type.tree.view</field>
+            <field name="model">project.type</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="project_type_id"/>
+                    <field name="desc"/>
+                    <field name="number"/>
+            	</tree>
+            </field>
+        </record>
+
+        <!-- action for project type views -->
+        <record id="action_project_type" model="ir.actions.act_window">
+            <field name="name">Project Type</field>
+            <field name="res_model">project.type</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="project_type_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

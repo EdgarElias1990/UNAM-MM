@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="collaboration_amount_invest_template_header" name="bases_collaboration_amount_invest_pdf">
+
+            <!-- <div class="header"> -->
+                <div class="row">
+                    <table style="width:100%;border: 1px solid grey;">
+                        <tr>
+                            <tr style="width:100%;">
+                                <td>
+                                    <img t-attf-src="data:image/png;base64,{{res_company.header_logo}}" style="width:150px;height:170px;"/>
+                                </td>
+
+                                <td style="text-align:right">
+                                    <b>
+                                        <span style="font-size:20px;" >UNIVERSIDAD NACIONAL AUTONOMA DE MAXICO</span><br/>
+                                        <span style="font-size:18px;">PATRONATO UNIVERSITARO-TESORERIA</span><br/>
+                                        <span style="font-size:18px;">DIRECCION GENERAL DE FINANZAS</span><br/>
+                                        <span style="font-size:18px;">DIRECCION DE INGRESOS Y OPERATION FINANCIERA</span><br/>
+                                    </b>
+                                </td><br/>
+                            </tr>
+
+                            <tr style="width:100%;">
+                                <td widht="50%">
+                                    <b><span style="font-size:17px;margin-left:5px;"/></b>
+                                </td>
+                                <td widht="50%">
+                                    <span style="font-size:15px;">Fecha y hora de impresión
+                                    </span><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                                </td>
+                                <br/><br/>
+                            </tr>
+
+                            <tr style="width:100%;">
+                                <td>
+                                    <hr style="width:90%;border-top: 2px solid black;margin-left:5px;"/>
+                                    <hr style="margin-left:5px;width:190%;border-top: 4px solid black;"/>
+                                </td>
+                            </tr>
+                        </tr>
+                    </table>
+
+                </div>
+            <!-- </div> -->
+
+        </template>
+
+        <template id="collaboration_amount_invest_template_doc">
+        <t t-call="web.html_container">
+        <t t-call="jt_agreement.collaboration_amount_invest_template_header"/>
+
+            <div class="page">
+                <style>
+                .border
+                    {
+                    border: 1px solid grey;
+                    }
+
+                .style1
+                    {
+                        font-size:15px;
+                    }
+                </style>
+                <table style="width:100%">
+                    <span t-set="context" t-value="o._context"/>
+                    <span t-set="start_date" t-value="context.get('start_date')"/>
+                    <span t-set="end_date" t-value="context.get('end_date')"/>
+					<span t-set="period_name" t-value="o.get_period_name_amount_invest(start_date, end_date)"/>
+                    <span t-set="balance_dict" t-value="o.get_amount_invest_dict(context.get('collaborations'),
+                                                    start_date, end_date)"/>
+                 	<tr style="width:100%">
+                 		<td style="width:35%;text-align:right;"><b>Periodo: </b><span t-esc="period_name"/></td>
+                 	</tr>
+                </table>
+                <br/>
+                <table width="100%" style="text-align:right">
+                    <tr>
+                        <td width="50%" style="border-bottom:1px solid black;padding-right:20px;">
+                            <b>Saldo al inicio del periodo: <span t-esc="o.get_date_name(start_date)"/></b>
+                        </td>
+                        <td width="50%"  style="border-bottom:1px solid black;">
+                            <span t-esc="o.currency_id.symbol"/>
+                            <span t-esc="balance_dict.get('intial_bal')"/></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:30px;padding-bottom:30px;padding-right:20px;"><b>(+) Incrementos</b></td>
+                        <td style="padding-top:30px;padding-bottom:30px;">
+                            <span t-esc="o.currency_id.symbol"/>
+                            <span t-esc="balance_dict.get('increments')"/></td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:1px solid black;padding-right:20px;"><b>Subtotal</b></td>
+                        <td  style="border-bottom:1px solid black;">
+                            <span t-esc="o.currency_id.symbol"/>
+                            <span t-esc="balance_dict.get('sub_total')"/></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:30px;padding-bottom:30px;padding-right:20px;"><b>(-) Retiros</b></td>
+                        <td style="padding-top:30px;padding-bottom:30px;">
+                            <span t-esc="o.currency_id.symbol"/>
+                            <span t-esc="balance_dict.get('withdrawals')"/></td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:1px solid black;padding-right:20px;">
+                            <b>Saldo al final del periodo: <span t-esc="o.get_date_name(end_date)"/></b></td>
+                        <td  style="border-bottom:1px solid black;">
+                            <span t-esc="o.currency_id.symbol"/>
+                            <span t-esc="balance_dict.get('balance_at_the_end')"/></td>
+                    </tr>
+                     <tr>
+                         <td style="padding-top:30px;padding-bottom:30px;padding-right:20px;"><b>(+) Interés</b></td>
+                        <td style="padding-top:30px;padding-bottom:30px;">
+                            <span t-esc="o.currency_id.symbol"/>
+                            <span t-esc="balance_dict.get('interest')"/></td>
+                    </tr>
+                     <tr>
+                         <td style="border-bottom:1px solid black;padding-right:20px;">
+                             <b>Saldo a Invertir en Enero: <span t-esc="o.get_next_year_name(end_date)"/></b></td>
+                        <td  style="border-bottom:1px solid black;">
+                            <span t-esc="o.currency_id.symbol"/>
+                            <span t-esc="balance_dict.get('to_be_invested')"/></td>
+                    </tr>
+                </table>
+            </div>
+        </t>
+        </template>
+
+        <template id="collaboration_amount_invest_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <!-- <t t-set="lang" t-value="o.invoice_user_id.sudo().lang if o.type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                     -->
+                    <t t-call="jt_agreement.collaboration_amount_invest_template_doc"/>
+                </t>
+            </t>
+        </template>
+
+        <report
+            id="collaboration_amount_to_invest_report"
+            model="bases.collaboration"
+            string="Bases collaboration"
+            report_type="qweb-pdf"
+            name="jt_agreement.collaboration_amount_invest_template"
+            file="jt_agreement.collaboration_amount_invest_template"
+            print_report_name="object.name"
+            paperformat="jt_agreement.paperformat_bases_collaboration"
+            menu="False"
+
+        />
+
+    </data>
+</odoo>

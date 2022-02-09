@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="request_accounts_from_view_account_in" model="ir.ui.view">
+            <field name="name">request.accounts.from.view.account.in</field>
+            <field name="model">request.accounts</field>
+            <field name="inherit_id" ref="jt_projects.request_accounts_from_view"/>
+            <field name="arch" type="xml">
+            	<field name="bank_account_id" position="after">
+            		<field name="bank_id" invisible="1"/>
+            	</field>
+			</field>
+		</record>
+		    	
+        <record id="account_request_form_view" model="ir.ui.view">
+            <field name="name">request.account.form.view.inh</field>
+            <field name="model">request.accounts</field>
+            <field name="inherit_id" ref="jt_projects.open_request_accounts_from_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group/field[@name='ministrations_amount']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='authorized_amount']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='program_code']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='journal_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="required">False</attribute>
+                </xpath>
+                <xpath expr="//field[@name='bank_account_id']" position="attributes">
+                    <attribute name="string">Bank Account</attribute>
+                    <attribute name="context">{'from_account_design':True}</attribute>
+                    
+                </xpath>
+                <xpath expr="//field[@name='bank_acc_number_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[1]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='bank_account_id']" position="before">
+                    <field name="bank_id" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="cancellation_request_view_form_view" model="ir.ui.view">
+            <field name="name">cancellation.request.form.view.inh</field>
+            <field name="model">request.accounts</field>
+            <field name="inherit_id" ref="jt_projects.cancellation_request_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group/field[@name='ministrations_amount']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='authorized_amount']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='bank_account_id']" position="attributes">
+                    <attribute name="string">Bank Account</attribute>
+                    <attribute name="context">{'from_account_design':True}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='bank_acc_number_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                 <xpath expr="//field[@name='bank_account_id']" position="before">
+                    <field name="bank_id" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="account_move_inh_form_view" model="ir.ui.view">
+            <field name="name">account.move.form.view.inh</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group/field[@name='ref']" position="after">
+                    <field name="dependancy_id" context="{'show_for_supplier_payment':True}"/>
+                    <field name="sub_dependancy_id" domain="[('dependency_id','=',dependancy_id)]" context="{'show_for_supplier_payment':True}"/>
+                    <field name="programatic_code"/>
+                    <field name="ie_account"/>
+                    <field name="date_year_program" invisible="1"/>
+                </xpath>
+                <xpath expr="//page[@id='aml_tab']//field[@name='line_ids']/tree/field[@name='partner_id']" position="after">
+                	<field name="is_programatic_code" invisible="1"/>
+                	<field name="is_ie_account" invisible="1"/>
+                    <field name="program_code_id" domain="[('year.name','=',parent.date_year_program),('dependency_id','=',parent.dependancy_id)]" attrs="{'invisible':[('is_programatic_code','=',False)]}"/>
+                    <field name="account_ie_id" attrs="{'invisible':[('is_ie_account','=',False)]}"/>
+                    
+                </xpath>
+                <xpath expr="//page[@id='aml_tab']//field[@name='line_ids']" position="attributes">
+                	<attribute name="context">{'default_is_ie_account':ie_account,'default_is_programatic_code':programatic_code,'default_type': context.get('default_type'), 'line_ids': line_ids, 'journal_id': journal_id, 'default_partner_id': commercial_partner_id, 'default_currency_id': currency_id != company_currency_id and currency_id or False}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="account.action_move_journal_line" model="ir.actions.act_window">
+            <field name="context">{'default_type': 'entry', 'search_default_misc_filter':1, 'view_no_maturity': True,'show_for_supplier_payment':True}</field>
+            <field name="domain">[('is_hide_provision_from_view', '=', False)]</field>
+        </record>
+        
+        <record id="jt_projects.open_request_accounts_action" model="ir.actions.act_window">
+            <field name="context">{'from_account_design':True,'from_conacyt':1,'default_move_type' : 'account open'}</field>
+        </record>
+        <record id="jt_projects.cancellation_request_action" model="ir.actions.act_window">
+            <field name="context">{'from_account_design':True,'from_conacyt':1,'default_move_type' : 'account cancel'}</field>
+        </record>
+
+        <record id="view_conac_move_form_inherit_ie" model="ir.ui.view">
+            <field name="name">"view.conac.move.form.inherit.ie</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="jt_conac.view_conac_move_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="//page[@id='aml_tab']//field[@name='line_ids']/tree/field[@name='program_code_id']" position="after">
+					<field name="account_ie_id"/>               
+               </xpath>
+        	</field>
+        </record>
+        
+    </data>
+</odoo>

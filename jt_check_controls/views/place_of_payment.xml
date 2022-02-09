@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="payment_place_form_view_check" model="ir.ui.view">
+            <field name="name">payment.place.form.view.check</field>
+            <field name="model">payment.place</field>
+            <field name="inherit_id" ref="jt_hr_base.payment_place_form_view"/>
+            <field name="arch" type="xml">
+            	<field name="description" position="after">
+            		<field name="module"/>
+            	</field>
+			</field>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_journal_form_view" model="ir.ui.view">
+            <field name="name">account.journal.form.view.inh</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='bank_id']" position="after">
+                    <field name="account_type"/>
+                    <field name="branch_number"/>
+                </xpath>
+                <field name="code" position="before">
+            		<field name="is_federal_subsidy"/>
+            	</field>
+                
+            </field>
+        </record>
+
+
+         <record id="view_account_bank_journal_tree_hide_delete" model="ir.ui.view">
+            <field name="name">view.account.bank.journal.tree.hide.delete</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_bank_journal_tree"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//tree" position="attributes">
+            		<attribute name="delete">1</attribute> 
+            	</xpath>
+			</field>
+		</record>
+		
+         <record id="account_bank_journal_form_view" model="ir.ui.view">
+            <field name="name">account.bank.journal.form.view.inh</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_bank_journal_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//form" position="attributes">
+            		<attribute name="delete">1</attribute> 
+            	</xpath>
+            
+            	<field name="bank_account_id" position="attributes">
+            		<attribute name="context">{'hide_other_group':True}</attribute>
+            	</field>
+            	<field name="currency_id" position="attributes">
+            		<attribute name="readonly">1</attribute>
+            		<attribute name="force_save">1</attribute>
+            	</field>
+                <xpath expr="//field[@name='bank_id']" position="after">
+                    <field name="customer_number"/>
+                    <field name="branch_office" readonly="1" force_save="1"/>
+                    <field name="unam_account_name"/>
+                    <field name="contract_number"/>
+                    <field name="min_balance" readonly="1" force_save="1"/>
+                    <field name="min_balance_start_date"/>
+                    <field name="min_balance_end_date"/>
+                    <field name="clabe_account"/>
+                </xpath>
+                <xpath expr="//group/group[2]" position="inside">
+                    <field name="opening_date"/>
+                    <field name="cancellation_date"/>
+                    <field name="concept_id"/>
+                    <field name="has_checkbook"/>
+                    <field name="checkbook_type" attrs="{'invisible':[('has_checkbook','=',False)]}"/>
+                    <field name="checkbook_no" attrs="{'invisible':[('has_checkbook','=',False)]}"/>
+                    <field name="cost_per_check" attrs="{'invisible':[('has_checkbook','=',False)]}"/>
+                    <field name="signatures"/>
+                    <field name="contract"/>
+                </xpath>
+                <xpath expr="//sheet" position="inside">
+                    <notebook>
+                        <page name="excutie_data" string="Executive Data">
+                            <field name="executive_ids" nolabel="1">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="position"/>
+                                    <field name="telephone"/>
+                                    <field name="address"/>
+                                    <field name="email"/>
+                                    <field name="recipient_executive"/>
+                                    <field name="copied_executive"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="name"/>
+                                        <field name="position"/>
+                                        <field name="telephone"/>
+                                        <field name="address"/>
+                                        <field name="email" widget="email"/>
+                                        <field name="recipient_executive"/>
+                                        <field name="copied_executive"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Updates" name="update_history">
+                        	<field name="update_history_ids" nolabel="1" readonly="1">
+                        		<tree>
+                        			<field name="start"/>
+                        			<field name="ends"/>
+                        			<field name="amount"/>
+                        			<field name="update_date"/>
+                        			<field name="journal_id" invisible="1"/>
+                        			<field name="currency_id" invisible="1"/>
+                        		</tree>
+                        		<form>
+                        			<group>
+	                        			<field name="start"/>
+	                        			<field name="ends"/>
+	                        			<field name="amount"/>
+	                        			<field name="update_date"/>
+	                        			<field name="journal_id" invisible="1"/>
+	                        			<field name="currency_id" invisible="1"/>
+                        			</group>                        		
+                        		</form>
+                        	</field>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

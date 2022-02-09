@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_bank_balance_check_inherit_check" model="ir.ui.view">
+            <field name="name">check.control.bank.balance.check.view</field>
+            <field name="model">bank.balance.check</field>
+            <field name="inherit_id" ref="jt_supplier_payment.view_bank_balance_check"/>
+            <field name="arch" type="xml">
+                <field name="minimum_balance" position="after">
+                	<field name="is_bank_check" invisible="1"/>
+                	<field name="check_journal_id" invisible="1"/>
+                    <field name="check_balance_in_transit"
+                           attrs="{'invisible':[('is_balance','=',False)]}" readonly="1"/>
+                    <field name="amount_trasnfer_sent"
+                           attrs="{'invisible':[('is_balance','=',False)]}" readonly="1"/>
+                    <field name="amount_trasnfer_confirmed"
+                           attrs="{'invisible':[('is_balance','=',False)]}" readonly="1"/>
+                           
+                    <field name="balance_available"
+                           attrs="{'invisible':[('is_balance','=',False)]}" readonly="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_view_balance_check_wizard_inherit" model="ir.ui.view">
+            <field name="name">check.control.bank.balance.check.wizard</field>
+            <field name="model">balance.check.wizard</field>
+            <field name="inherit_id" ref="jt_supplier_payment.view_balance_check_wizard"/>
+            <field name="arch" type="xml">
+                <field name="minimum_balance" position="after">
+                    <field name="check_balance_in_transit"
+                            readonly="1"/>
+                    <field name="amount_trasnfer_sent"
+                            readonly="1"/>
+                    <field name="amount_trasnfer_confirmed"
+                            readonly="1"/>
+                    <field name="balance_available"
+                            readonly="1"/>
+                </field>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

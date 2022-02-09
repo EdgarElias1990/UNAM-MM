@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- menu for budget module -->
+	<menuitem name="UNAM Budget" id="menu_budget" web_icon="jt_budget_mgmt,static/description/icon.png" sequence="40"/>
+
+    <!-- action for settings view -->
+	<record id="action_budget_settings" model="ir.actions.act_window">
+	  <field name="name">Settings</field>
+	  <field name="type">ir.actions.act_window</field>
+	  <field name="res_model">res.config.settings</field>
+	  <field name="view_mode">form</field>
+	  <field name="target">inline</field>
+	  <field name="context">{}</field>
+	</record>
+
+
+    <!-- menu for configurations -->
+    <menuitem id="menu_budget_config" name="Configurations" parent="jt_budget_mgmt.menu_budget" sequence="5"/>
+
+    <!-- menu for structure and catalog -->
+    <menuitem id="menu_struct_and_catalog" name="Programmatic Structure and Catalogs" parent="jt_budget_mgmt.menu_budget_config" sequence="1"/>
+
+    <!-- menu for code structure and order -->
+    <menuitem id="menu_code_struct_and_order" name="Programmatic Code Structure and Order" parent="jt_budget_mgmt.menu_struct_and_catalog" sequence="1" action="jt_budget_mgmt.action_code_structure"/>
+
+    <!-- menu for code catalog -->
+    <menuitem id="menu_code_catalog" name="Programmatic code catalogs" parent="jt_budget_mgmt.menu_budget_config" sequence="1"/>
+
+    <!-- menu for year -->
+    <menuitem id="menu_year" name="Years" parent="jt_budget_mgmt.menu_code_catalog" sequence="1" action="jt_budget_mgmt.action_year"/>
+
+    <!-- menu for program -->
+    <menuitem id="menu_program" name="Programs" parent="jt_budget_mgmt.menu_code_catalog" sequence="2" action="jt_budget_mgmt.action_program"/>
+
+    <!-- menu for sub program -->
+    <menuitem id="menu_sub_program" name="Sub-Programs" parent="jt_budget_mgmt.menu_code_catalog" sequence="3" action="jt_budget_mgmt.action_sub_program"/>
+
+    <!-- menu for dependency -->
+    <menuitem id="menu_dependency" name="Dependency" parent="jt_budget_mgmt.menu_code_catalog" sequence="4" action="jt_budget_mgmt.action_dependency"/>
+
+    <!-- menu for sub dependency -->
+    <menuitem id="menu_sub_dependency" name="Sub-Dependency" parent="jt_budget_mgmt.menu_code_catalog" sequence="5" action="jt_budget_mgmt.action_sub_dependency"/>
+
+    <!-- menu for expenditure item -->
+    <menuitem id="menu_expenditure_item" name="Item of Expenditure" parent="jt_budget_mgmt.menu_code_catalog" sequence="6" action="jt_budget_mgmt.action_expenditure_item"/>
+
+    <!-- menu for verifying digit -->
+    <menuitem id="menu_verifying_digit" name="Verifying Digit" parent="jt_budget_mgmt.menu_code_catalog" sequence="7" action="jt_budget_mgmt.action_verifying_digit"/>
+
+    <!-- menu for resource origin -->
+    <menuitem id="menu_resource_origin" name="Origin of the Resource" parent="jt_budget_mgmt.menu_code_catalog" sequence="8" action="jt_budget_mgmt.action_resource_origin"/>
+
+    <!-- menu for institutional activity -->
+    <menuitem id="menu_institutional_activity" name="Institutional Activity" parent="jt_budget_mgmt.menu_code_catalog" sequence="9" action="jt_budget_mgmt.action_institutional_activity"/>
+
+    <!-- menu for budget program conversion -->
+    <menuitem id="menu_budget_program_conversion" name="Budget Program Conversion" parent="jt_budget_mgmt.menu_code_catalog" sequence="10" action="jt_budget_mgmt.action_budget_program_conversion"/>
+
+    <!-- menu for departure conversion -->
+    <menuitem id="menu_departure_conversion" name="Conversion with Departure" parent="jt_budget_mgmt.menu_code_catalog" sequence="11" action="jt_budget_mgmt.action_departure_conversion"/>
+
+    <!-- menu for expense type -->
+    <menuitem id="menu_expense_type" name="Expense Type" parent="jt_budget_mgmt.menu_code_catalog" sequence="12" action="jt_budget_mgmt.action_expense_type"/>
+
+    <!-- menu for geographic location -->
+    <menuitem id="menu_geographic_location" name="Geographic Location" parent="jt_budget_mgmt.menu_code_catalog" sequence="13" action="jt_budget_mgmt.action_geographic_location"/>
+
+    <!-- menu for key wallet -->
+    <menuitem id="menu_key_wallet" name="Key Wallet" parent="jt_budget_mgmt.menu_code_catalog" sequence="14" action="jt_budget_mgmt.action_key_wallet"/>
+
+    <!-- menu for project type -->
+    <menuitem id="menu_project_type" name="Type of Project" parent="jt_budget_mgmt.menu_code_catalog" sequence="15" action="jt_budget_mgmt.action_project_type"/>
+
+    <!-- menu for project number -->
+    <!-- <menuitem id="menu_project_number" name="Project Number" parent="jt_budget_mgmt.menu_code_catalog" sequence="16" action="jt_budget_mgmt.action_project_number"/> -->
+
+    <!-- menu for stage -->
+    <menuitem id="menu_stage" name="Stages" parent="jt_budget_mgmt.menu_code_catalog" sequence="17" action="jt_budget_mgmt.action_stage"/>
+
+    <!-- menu for agreement type -->
+    <menuitem id="menu_agreement_type" name="Type of Agreement" parent="jt_budget_mgmt.menu_code_catalog" sequence="18" action="jt_budget_mgmt.action_agreement_type"/>
+
+    <!-- menu for agreement number -->
+    <!-- <menuitem id="menu_agreement_number" name="Agreement Number" parent="jt_budget_mgmt.menu_code_catalog" sequence="19" action="jt_budget_mgmt.action_agreement_number"/> -->
+
+    <!-- menu for settings -->
+    <menuitem id="menu_budget_settings" name="Settings" parent="jt_budget_mgmt.menu_budget_config" sequence="30" action="jt_budget_mgmt.action_budget_settings"/>
+
+    <!-- menu for budget -->
+    <menuitem id="menu_budgets" name="Budgets" parent="jt_budget_mgmt.menu_budget" sequence="1"/>
+
+    <!-- menu for program code -->
+    <menuitem id="menu_program_code" name="Program code" parent="jt_budget_mgmt.menu_budgets" sequence="1" action="jt_budget_mgmt.action_program_code"/>
+
+    <!-- menu for expenditure budget -->
+    <menuitem id="menu_expenditure_budget" name="Expenditure budget" parent="jt_budget_mgmt.menu_budgets" sequence="2" action="jt_budget_mgmt.action_expenditure_budget"/>
+
+    <!-- menu for modifications -->
+    <menuitem id="menu_modifications" name="Modifications" parent="jt_budget_mgmt.menu_budget" sequence="2"/>
+
+    <!-- menu for adequacies -->
+    <menuitem id="menu_adequacies" name="Adequacies" parent="jt_budget_mgmt.menu_modifications" sequence="1" action="jt_budget_mgmt.action_adequacies"/>
+
+    <!-- menu for standardization -->
+    <menuitem id="menu_standardization" name="Re-standardization" parent="jt_budget_mgmt.menu_modifications" sequence="2" action="jt_budget_mgmt.action_standardization"/>
+
+    <!-- menu for budget control -->
+    <menuitem id="menu_budget_control" name="Budget Control" parent="jt_budget_mgmt.menu_budget" sequence="3"/>
+
+    <!-- menu for reports -->
+    <menuitem id="menu_reports" name="Reports" parent="jt_budget_mgmt.menu_budget" sequence="4"/>
+
+    <!-- menu for proforma budget summary -->
+    <menuitem id="menu_proforma_budget_summary" name="Proforma Budget Summary" parent="jt_budget_mgmt.menu_reports" sequence="1" action="jt_budget_mgmt.action_proforma_budget_summary"/>
+</odoo>

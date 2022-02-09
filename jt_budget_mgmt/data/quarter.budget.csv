@@ -1,0 +1,5 @@
+id,name,start_date,end_date
+"quarter_budget_1","Quarter-1","01/01","31/03"
+"quarter_budget_2","Quarter-2","01/04","30/06"
+"quarter_budget_3","Quarter-3","01/07","30/09"
+"quarter_budget_4","Quarter-4","01/10","31/12"

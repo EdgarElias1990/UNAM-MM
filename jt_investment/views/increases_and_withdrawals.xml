@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+         <record model="ir.ui.view" id="view_req_open_balance_form_investment_inherit">
+            <field name="name">request.open.balance.invest.form</field>
+            <field name="model">request.open.balance.invest</field>
+            <field name="inherit_id" ref="jt_agreement.view_req_open_balance_form_investment"/>
+            <field name="arch" type="xml">
+            	<field name="state" position="before">
+            	    <button name="resend_reject_request" type="object" string="Resend" class="oe_highlight"
+                             attrs="{'invisible': [('state', '!=', 'rejected')]}" />
+            	
+            			<!-- 
+            		 <button name="set_to_requested" type="object" string="Requested" class="oe_highlight"
+                             attrs="{'invisible': [('state', '!=', 'draft')]}" />
+                        -->
+            	</field>
+            		<field name="new_journal_id" position="attributes">
+            			<attribute name="domain">[('is_investment_account','=',True)]</attribute>
+            			<attribute name="options">{'no_create': True, 'no_edit': True, 'no_create_edit': True}</attribute>
+            		</field>
+	            	<field name="type_of_operation" position="after">
+	            		<field name="type_of_investment" invisible="1"/>
+	            		<field name="type_of_financial_products" invisible="1"/>
+	            	</field>
+            	
+            	<field name="permanent_instructions" position="before">
+            		<field name="fund_id" invisible="1"/>
+            		<field name="fund_key" invisible="1"/>
+            		<field name="fund_type_id" attrs="{'readonly': [('state', '!=', 'draft')],'required':[('trust_id','=',False),('patrimonial_id','=',False)],'invisible':['|',('trust_id','!=',False),('patrimonial_id','!=',False)]}"/>
+            		<field name="type_of_agreement_id" attrs="{'readonly': [('state', '!=', 'draft')],'required':[('trust_id','=',False),('patrimonial_id','=',False)],'invisible':['|',('trust_id','!=',False),('patrimonial_id','!=',False)]}"/>
+            		<field name="bases_collaboration_id" attrs="{'readonly': [('state', '!=', 'draft')],'required':[('trust_id','=',False),('patrimonial_id','=',False)],'invisible':['|',('trust_id','!=',False),('patrimonial_id','!=',False)]}"/>
+            	</field>
+            	<xpath expr="//page[@name='supporting_documentation']" position="after">
+            		<page string="Financial information" name="financial_information">
+            			<group>
+            				<group>
+            					<!-- 
+            					<field name="finance_investment_id" attrs="{'readonly': [('state', '!=', 'rejected')],'required': [('state', '=', 'rejected')]}" />
+            					<field name="finance_investment_fund_id" attrs="{'readonly': [('state', '!=', 'rejected')],'required': [('state', '=', 'rejected')]}"/>
+            					<field name="finance_bank_account_id" attrs="{'readonly': [('state', '!=', 'rejected')],'required': [('state', '=', 'rejected')]}"/>
+            					 -->
+            					<field name="finance_investment_id" readonly="1"/>
+            					<field name="finance_investment_fund_id" readonly="1"/>
+            					<field name="finance_bank_account_id" readonly="1"/>
+            					 
+            				</group>
+            				<group>
+            					<field name="finance_date_required" attrs="{'readonly': [('state', '!=', 'rejected')],'required': [('state', '=', 'rejected')]}"/>
+            					<field name="finance_desti_bank_account_id" attrs="{'readonly': [('state', '!=', 'rejected')],'required': [('state', '=', 'rejected')]}"/>
+            				</group>
+            			</group>
+            		</page>
+            	</xpath>
+			</field>
+		</record>
+
+		
+		<!--  Fund Menus -->
+
+         <record model="ir.ui.view" id="view_req_open_balance_tree_invest_inherit">
+            <field name="name">view.req.open.balance.tree.invest.inherit</field>
+            <field name="model">request.open.balance.invest</field>
+            <field name="inherit_id" ref="jt_agreement.view_req_open_balance_tree_invest"/>
+            <field name="arch" type="xml">
+            	<field name="name" position="before">
+            		<field name="type_of_investment" invisible="not context.get('from_fund_view',False)"/>
+            		<field name="contract_id" invisible="not context.get('from_fund_view',False)" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            		<!-- 
+            		<field name="fund_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            		<field name="fund_key" />
+            		<field name="fund_type_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            		<field name="type_of_agreement_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            		<field name="bases_collaboration_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            		 -->
+            	</field>
+			</field>
+		</record>	
+
+<!--          <record model="ir.ui.view" id="view_req_open_balance_form_investment_fund_inherit">
+            <field name="name">view.req.open.balance.form.investment.fund.inherit</field>
+            <field name="model">request.open.balance.invest</field>
+            <field name="inherit_id" ref="jt_agreement.view_req_open_balance_form_investment_fund"/>
+            <field name="arch" type="xml">
+            	
+	            	<field name="type_of_operation" position="after">
+	            		<field name="type_of_investment" required="1"  attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	            		<field name="type_of_financial_products" attrs="{'invisible':[('type_of_investment','!=','money_market')],'required':[('type_of_investment','=','money_market')]}"/>
+	            	</field>
+            	<field name="permanent_instructions" position="before">
+            		<field name="contract_id" required="context.get('from_fund_view',False)" invisible="not context.get('from_fund_view',False)" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            	</field>
+	            	
+			
+			</field>
+		</record>		
+ -->	
+		
+	</data>
+</odoo>	

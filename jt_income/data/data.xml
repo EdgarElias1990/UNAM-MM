@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+    <record id="income_billing" model="account.journal">
+        <field name="name">Billing</field>
+        <field name="code">BILL</field>
+        <field name="currency_id" ref="base.MXN"/>
+        <field name="type">sale</field>
+    </record>
+
+    <record id="income_certificate_of_deposit" model="account.journal">
+        <field name="name">Certificate of deposit</field>
+        <field name="code">CODI</field>
+        <field name="currency_id" ref="base.MXN"/>
+        <field name="type">sale</field>
+    </record>
+
+    <record id="income_reference_DGAE" model="account.journal">
+        <field name="name">Reference DGAE</field>
+        <field name="code">DGAE</field>
+        <field name="currency_id" ref="base.MXN"/>
+        <field name="type">sale</field>
+    </record>
+
+    <record id="income_trades_DGOAE" model="account.journal">
+        <field name="name">Trades DGOAE</field>
+        <field name="code">DGOAE</field>
+        <field name="currency_id" ref="base.MXN"/>
+        <field name="type">sale</field>
+    </record>
+    </data>
+</odoo>

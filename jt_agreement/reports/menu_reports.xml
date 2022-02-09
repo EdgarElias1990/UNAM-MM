@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Account statements -->
+        <record id="action_account_statements_collaboration" model="ir.actions.client">
+            <field name="name">Account Statements</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_agreement.account.statements.collaboration'}" />
+        </record>
+
+        <menuitem
+            id="menu_account_statements_collaboration"
+            name="Account Statements"
+            parent="menu_report_agreement"
+            sequence="2"
+            action="action_account_statements_collaboration"
+        />
+
+
+        <!-- Movements report -->
+        <record id="action_movement" model="ir.actions.client">
+            <field name="name">Movements Of Agreements</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_agreement.movements'}" />
+        </record>
+
+        <menuitem
+            id="menu_movements_collaboration"
+            name="Movements Of Agreements"
+            parent="menu_report_agreement"
+            sequence="3"
+            action="action_movement"
+        />
+
+        <!-- Payment Details to beneficiaries report -->
+        <record id="action_payment_detail" model="ir.actions.client">
+            <field name="name">Payment Details to Beneficiaries</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_agreement.payment_details_beneficiaries'}" />
+        </record>
+
+        <menuitem
+            id="menu_payments_details_beneficiaries"
+            name="Payment Details to Beneficiaries"
+            parent="menu_report_agreement"
+            sequence="4"
+            action="action_payment_detail"
+        />
+
+
+        <record id="action_accounting_operation_increases" model="ir.actions.client">
+            <field name="name">Account Operations Increases</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_agreement.account.operation.increases'}" />
+        </record>
+        
+        <menuitem
+            id="menu_account_operation_increases"
+            name="Account Operations Increases"
+            parent="menu_report_agreement"
+            sequence="4"
+            action="action_accounting_operation_increases"
+        />
+
+
+                <!-- Account operation withdraw -->
+        <record id="action_account_operation_withdraw" model="ir.actions.client">
+            <field name="name">Account Operation Withdraw</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_agreement.account.operation.withdraw'}" />
+        </record>
+
+        <menuitem
+            id="menu_accounting_operation_withdraw_id"
+            name="Accounting Operations-Withdrawals"
+            parent="menu_report_agreement"
+            sequence="5"
+            action="action_account_operation_withdraw"
+        />
+
+        <!-- Account operations-Interests -->
+        <record id="action_account_operation_intrests" model="ir.actions.client">
+            <field name="name">Account Operation Interests</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_agreement.account.operation.interests'}" />
+        </record>
+
+        <menuitem
+            id="menu_accounting_operation_interest_id"
+            name="Accounting operations-Interests"
+            parent="menu_report_agreement"
+            sequence="6"
+            action="action_account_operation_intrests"
+        />
+
+
+    <!-- PDF Headers -->
+
+       <template id="external_layout_agreements_movements" name="external_layout_agreements_movements">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:140px;height:140px;margin-top:20px;margin-right:20px;"/>
+                </div>
+            
+                <div class="col-6 text-center">
+                    <br/>
+                    <br/>
+                    <span style="font-size:20px;"><b>UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</b></span><br/>
+                    <span style="font-size:18px;">PATRONATO UNIVERSITARIO</span><br/>
+                    <span style="font-size:16px;">DIRECCIÓN GENERAL DE FINANZAS</span><br/>
+                    <span style="font-size:12px;">RELACION DE MOVIMIENTOS</span><br/>
+                </div>
+                <div class="col-3 text-left">
+                    
+                </div>
+                
+            </div>
+            <div class="row" style="border-bottom:3px solid black;">
+                <div class="col-3">
+                </div>
+                <div class="col-4 text-center">
+                </div>
+                <div class="col-5 text-left" style="vertical-align: bottom;">
+                    <span>Fecha y hora de impresión  </span><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/> 
+                </div>
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+         
+        </template>        
+    
+    </data>
+</odoo>

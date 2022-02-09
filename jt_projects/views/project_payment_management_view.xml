@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem 
+            id="menu_payment_programming" 
+            name="UPA PAPIIT" 
+            parent="jt_payroll_payment.menu_payment_finance" 
+            sequence="3"/>
+
+	<!-- Payroll Payment Schedule -->
+
+      <record id="project_payment_req_form_view_inherit" model="ir.ui.view">
+            <field name="name">project.payment.req.form.view.for.management</field>
+            <field name="model">account.move</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="payment_req_form_view_inherit"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//form" position="attributes">
+            		<attribute name="create">0</attribute>
+            	</xpath>
+            </field>
+        </record>
+	
+	  <record id="project_payment_schedule_programming_action" model="ir.actions.act_window">
+            <field name="name">Payment Schedule</field>
+            <field name="res_model">account.move</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="jt_supplier_payment.view_account_move_filter_inherit_payment"/>
+            <field name="context">{'default_type': 'in_invoice', 'default_is_project_payment': 1,
+                'from_move': 1,'search_default_Payment_method': 1,'search_default_Type_of_operatio': 1}</field>
+            <field name="domain">[('payment_state','not in',('draft','registered')),('type', '=', 'in_invoice'), ('is_project_payment', '=', True)]</field>
+        </record>
+		<record id="project_payment_schedule_link_tree_action" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="jt_supplier_payment.payment_req_tree_view_for_management"/>
+            <field name="act_window_id" ref="project_payment_schedule_programming_action"/>
+        </record>
+
+        <record id="payroll_payment_schedule_link_form_action" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="project_payment_req_form_view_inherit"/>
+            <field name="act_window_id" ref="project_payment_schedule_programming_action"/>
+        </record>
+	
+        <menuitem id="project_payment_schedule_menu_programm" name="Payment Schedule"
+                  action="project_payment_schedule_programming_action"
+                  parent="menu_payment_programming" sequence="3"/>
+
+
+    <!-- Menu Payroll Payments -->
+
+	  <record id="project_payment_account_payment_action" model="ir.actions.act_window">
+            <field name="name">Payments</field>
+            <field name="res_model">account.payment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="jt_supplier_payment.inherited_view_account_payment_search"/>
+            <field name="context">{'default_payment_request_type':'project_payment','default_payment_type': 'outbound','default_partner_type': 
+            	'supplier','search_default_outbound_filter': 1,
+            	'res_partner_search_mode': 'supplier','search_default_journal': 1}
+            </field>
+            <field name="domain">[('payment_request_type','=','project_payment')]</field>
+        </record>
+
+		<record id="project_payment_account_payment_tree_action" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="jt_supplier_payment.inherited_view_account_payment_tree"/>
+            <field name="act_window_id" ref="project_payment_account_payment_action"/>
+        </record>
+        <record id="project_payment_account_payment_form_action" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="jt_supplier_payment.inherited_view_account_payment_form"/>
+            <field name="act_window_id" ref="project_payment_account_payment_action"/>
+        </record>
+        <menuitem id="project_payment_account_payment_menu" name="Payments"
+                  action="project_payment_account_payment_action"
+                  parent="menu_payment_programming" sequence="20"/>
+		
+ 	</data>
+ </odoo>

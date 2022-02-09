@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="check_auth_by_dependence_tree_view" model="ir.ui.view">
+            <field name="name">check.auth.by.dependence.tree.view</field>
+            <field name="model">check.authorized.dependency</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dependency_id"/>
+                    <field name="subdependency_id"/>
+                    <field name="area"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="check_auth_by_dependence_form_view" model="ir.ui.view">
+            <field name="name">check.auth.by.dependence.form.view</field>
+            <field name="model">check.authorized.dependency</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="dependency_id" options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="subdependency_id" domain="[('dependency_id','=',dependency_id)]" options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}"/>
+                                <field name="area"/>
+                            </group>
+                            <group>
+                                <field name="max_authorized_checks"/>
+                                <field name="checks_authorized_on_previous_app"/>
+                                <field name="checks_remaining_to_auth"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_check_auth_by_dependency" model="ir.actions.act_window">
+            <field name="name">Checks authorized by dependency</field>
+            <field name="res_model">check.authorized.dependency</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="check_auth_by_dependency_menu" name="Checks authorized by dependency"
+                  parent="check_control_setting_menu"
+                  action="action_check_auth_by_dependency" sequence="3"/>
+    </data>
+</odoo>

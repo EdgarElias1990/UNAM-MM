@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       
+         <!-- check control submenu -->
+        <menuitem
+            id="report_main_menu"
+            name="Reports"
+            parent="jt_check_controls.check_control_main_menu"
+            sequence="99"
+            
+        />
+
+         <!-- check control submenu -->
+                <record id="action_check_summary_report" model="ir.actions.client">
+                    <field name="name">Check Summary</field>
+                    <field name="tag">account_report</field>
+                    <field name="context" eval="{'model':'jt_check_controls.check_summary'}" />
+                </record>
+
+        <!-- check summary -->
+        <menuitem
+            id="check_summary_submenu"
+            name="Check Summary"
+            action="action_check_summary_report"
+            parent="report_main_menu"
+            sequence="1"
+
+        />
+
+         <!-- check control submenu -->
+                <record id="action_adjustment_payroll_salaries_summary" model="ir.actions.client">
+                    <field name="name">Adjustments in payroll salaries</field>
+                    <field name="tag">account_report</field>
+                    <field name="context" eval="{'model':'jt_check_controls.adjustment_payroll_salaries_summary'}" />
+                </record>
+
+        <!-- check summary -->
+        <menuitem
+            id="adjustment_payroll_salaries_summary_submenu"
+            name="Adjustments in payroll salaries"
+            action="action_adjustment_payroll_salaries_summary"
+            parent="report_main_menu"
+            sequence="1"
+
+        />
+        <!-- payroll report -->
+
+<!--        <record id="action_payroll_report" model="ir.actions.client">-->
+<!--            <field name="name">Payroll Report</field>-->
+<!--            <field name="tag">account_report</field>-->
+<!--            <field name="context" eval="{'model':'jt_check_controls.payroll_report'}" />-->
+<!--        </record>-->
+
+        <!-- payroll report -->
+<!--        <menuitem-->
+<!--            id="payroll_report_submenu"-->
+<!--            name="Payroll Report"-->
+<!--            action="action_payroll_report"-->
+<!--            parent="report_main_menu"-->
+<!--            sequence="2"-->
+<!--            -->
+<!--        />-->
+
+       
+
+        <!-- payroll report -->
+<!--        <menuitem-->
+<!--            id="payroll_report_submenu"-->
+<!--            name="Payroll Report"-->
+<!--            action="action_payroll_report"-->
+<!--            parent="report_main_menu"-->
+<!--            sequence="2"-->
+<!--            -->
+<!--        />-->
+       
+       <!-- check protection report -->
+
+        <record id="action_protection_check_report" model="ir.actions.client">
+            <field name="name"> Check Protection</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_check_controls.check_protection'}" />
+        </record>
+
+        <!-- check protection report -->
+        <menuitem
+            id="check_protection_report_submenu"
+            name="Check Protection"
+            action="action_protection_check_report"
+            parent="report_main_menu"
+            sequence="2"
+
+        />
+
+        <!-- importing Payroll Reshipments-->
+        <!-- <menuitem
+            id="importing_payroll_reshipment_submenu"
+            name="Importing Payroll Check Reshipments"
+            parent="report_main_menu"
+            sequence="3"
+            
+        /> -->
+
+        <!-- Check card for folios and issued payments-->
+
+        <record id="action_card_for_folio_issued_payment" model="ir.actions.client">
+            <field name="name"> Check card for folios and issued payments</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_check_controls.check_card_for_folios_and_issue_payments'}" />
+        </record>
+
+        <!-- Check card for folios and issued payments-->
+        <menuitem
+            id="check_folios_issued_payments_report_submenu"
+            name="Check card for folios and issued payments"
+            action="action_card_for_folio_issued_payment"
+            parent="report_main_menu"
+            sequence="2"
+            
+        />
+
+
+         <!--  Check protection control card detailing check sheet-->
+
+        <record id="action_check_protection_control_certificate" model="ir.actions.client">
+            <field name="name"> Check Protection Control Certificate </field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_check_controls.check_protection_control_control_certificate'}" />
+        </record>
+
+        <!--  Check protection control card detailing check sheet-->
+        <menuitem
+            id="check_protection_control_certificate_submenu"
+            name="Check Protection Control Certificate"
+            action="action_check_protection_control_certificate"
+            parent="report_main_menu"
+            sequence="4"/>
+
+
+         <!-- Reporting the amounts of payroll checks-->
+
+        <record id="action_amounts_of_payroll_checks" model="ir.actions.client">
+            <field name="name">Report of payroll check amounts </field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_check_controls.amount_of_payroll_checks'}" />
+        </record>
+
+        <!-- Reporting the amounts of payroll checks -->
+        <menuitem
+            id="amount_of_payroll_check_submenu"
+            name="Report of payroll check amounts"
+            action="action_amounts_of_payroll_checks"
+            parent="report_main_menu"
+            sequence="5"/>
+            
+       
+      
+    </data>
+</odoo>

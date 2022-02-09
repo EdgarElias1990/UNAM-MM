@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="employee_payroll_file_form_processing_inherit" model="ir.ui.view">
+            <field name="name">employee.payroll.file.form.processing.inherit</field>
+            <field name="model">employee.payroll.file</field>
+            <field name="inherit_id" ref="jt_payroll_payment.employee_payroll_file_form_processing"/>
+            <field name="arch" type="xml">
+            <field name="check_number" position="attributes">
+            	<attribute name="invisible">1</attribute>
+            </field>
+             <field name="check_number" position="after">
+             	<field name="check_folio_id"/>
+             	<field name="check_final_folio_id"/>
+             </field>
+             
+             <xpath expr="//page/field[@name='pension_payment_line_ids']/tree/field[@name='check_number']" position="after">
+             	<field name="check_folio_id"/>
+             </xpath>
+             <xpath expr="//page/field[@name='pension_payment_line_ids']/form/group[1]/field[@name='check_number']" position="after">
+             	<field name="check_folio_id"/>
+             </xpath>
+
+             <xpath expr="//page/field[@name='pension_payment_line_ids']/tree/field[@name='check_number']" position="attributes">
+             	<attribute name='invisible'>1</attribute>
+             </xpath>
+             <xpath expr="//page/field[@name='pension_payment_line_ids']/form/group[1]/field[@name='check_number']" position="attributes">
+             	<attribute name='invisible'>1</attribute>
+             </xpath>
+             
+			</field>
+		</record>
+	</data>
+</odoo>

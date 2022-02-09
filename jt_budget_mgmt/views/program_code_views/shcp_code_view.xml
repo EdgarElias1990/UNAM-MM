@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Action for SHCP -->
+        <record id="action_shcp_code" model="ir.actions.act_window">
+            <field name="name">SHCP Program Code</field>
+            <field name="res_model">shcp.code</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+      <record id="view_confirm_payment_term_wizard" model="ir.ui.view">
+            <field name="name">confirm.invoice.date.view</field>
+            <field name="model">confirm.invoice.date</field>
+            <field name="arch" type="xml">
+                <form string="Confirm Payment Terms">
+                    <group>
+                        <field name="invoice_date_due" required="1" force_save="1" placeholder="Date"/>
+                        
+                    </group>
+                    <footer>
+                        <button string="Generate" name="set_payment_terms" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+            
+       <record id="action_invoice_date_all" model="ir.actions.server">
+            <field name="name">Date Change</field>
+            <field name="model_id" ref="jt_account_module_design.model_confirm_invoice_date"/>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.action_invoice_date()
+            </field>
+        </record>
+    </data>
+</odoo>

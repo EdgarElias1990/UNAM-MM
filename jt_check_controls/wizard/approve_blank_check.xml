@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+
+		<record id="approve_blank_check_req_form" model="ir.ui.view">
+			<field name="name">Approve Checkbook form view</field>
+			<field name="model">approve.blank.check</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<field name="department" required="1"/>
+							<field name="bank_account_id" required="1"
+                            domain="[('type', '=', 'bank')]"/>
+							<field name="checkbook_req_id" domain="[('bank_id','=',bank_account_id),('checkbook_no','!=',False)]" required="1" context="{'from_authorization_check':1}"  options="{'no_create': True, 'no_open': True}" attrs="{'invisible':[('bank_account_id','=',False)]}"/>
+							<field name="number_of_checks_auth" required="1"/>
+							<field name="intial_folio" required="1"/>
+							<field name="final_folio" required="1"/>
+						</group>
+						<footer>
+                   			<button string="Apply" class="btn btn-primary" type="object" name="apply"/>
+                		</footer>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</odoo>

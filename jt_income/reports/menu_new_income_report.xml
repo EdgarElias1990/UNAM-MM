@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<!--     Income Annual Report -->
+        <record id="action_new_income_annual_report" model="ir.actions.client">
+            <field name="name">Income Annual Report</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_income.income.annual.report'}" />
+        </record>
+
+        <menuitem
+            id="menu_new_income_annual_report"
+            name="Income Annual Report"
+            parent="menu_income_report"
+            sequence="10"
+            action="action_new_income_annual_report"
+        />
+
+		<!-- Annual Income Report -->
+        <record id="action_new_annual_income_report" model="ir.actions.client">
+            <field name="name">Annual Income Report</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_income.annual.income.report'}" />
+        </record>
+
+        <menuitem
+            id="menu_new_annual_income_report"
+            name="Annual Income Report"
+            parent="menu_income_report"
+            sequence="15"
+            action="action_new_annual_income_report"
+        />
+
+    </data>
+</odoo>

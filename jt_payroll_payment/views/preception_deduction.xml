@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for preception -->
+        <record id="preception_search_view" model="ir.ui.view">
+            <field name="name">preception.search.view</field>
+            <field name="model">preception</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="key"/>
+                    <field name="concept"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- form view for preception-->
+        <record id="preception_form_view" model="ir.ui.view">
+            <field name="name">preception.form.view</field>
+            <field name="model">preception</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                    	<group>
+	                        <group>
+	                            <field name="key"/>
+	                        </group>
+	                        <group>
+	                        	<field name="concept"/>
+	                        </group>
+                        </group>
+                        <notebook>
+                        	<page string="Accounting" invisible="1">
+                        		<group>
+                        			<group>
+                        				<field name="credit_account_id"/>
+                        			</group>
+                        			<group>
+                        				<field name="debit_account_id"/>
+                        			</group>
+                        		</group>
+                        	</page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for preception -->
+        <record id="preception_tree_view" model="ir.ui.view">
+            <field name="name">preception.tree.view</field>
+            <field name="model">preception</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="key"/>
+                    <field name="concept"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for preception views -->
+        <record id="preception_action" model="ir.actions.act_window">
+            <field name="name">Preception</field>
+            <field name="res_model">preception</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+           <!-- search view for preception -->
+        <record id="preception_search_view" model="ir.ui.view">
+            <field name="name">preception.search.view</field>
+            <field name="model">preception</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="key"/>
+                    <field name="concept"/>
+                </search>
+            </field>
+        </record>
+<!-- 
+        form view for preception
+        <record id="preception_form_view" model="ir.ui.view">
+            <field name="name">preception.form.view</field>
+            <field name="model">preception</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="key"/>
+                            <field name="concept"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        tree view for preception
+        <record id="preception_tree_view" model="ir.ui.view">
+            <field name="name">preception.tree.view</field>
+            <field name="model">preception</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="key"/>
+                    <field name="concept"/>
+                </tree>
+            </field>
+        </record>
+
+        search view for deduction
+        <record id="deduction_search_view" model="ir.ui.view">
+            <field name="name">deduction.search.view</field>
+            <field name="model">deduction</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="key"/>
+                    <field name="concept"/>
+                </search>
+            </field>
+        </record>
+ -->
+        <!-- form view for deduction-->
+        <record id="deduction_form_view" model="ir.ui.view">
+            <field name="name">deduction.form.view</field>
+            <field name="model">deduction</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                    	<group>
+                        <group>
+                            <field name="key"/>
+                        </group>
+                        <group>
+                        	<field name="concept"/>
+                        </group>
+						</group>
+                        <notebook>
+                        	<page string="Accounting">
+                        		<group>
+                        			<group>
+                        				<field name="credit_account_id"/>
+                        			</group>
+                        			<group>
+                        				<field name="debit_account_id"/>
+                        			</group>
+                        		</group>
+                        	</page>
+                        </notebook>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for deduction -->
+        <record id="deduction_tree_view" model="ir.ui.view">
+            <field name="name">deduction.tree.view</field>
+            <field name="model">deduction</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="key"/>
+                    <field name="concept"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for preception views -->
+        <record id="deduction_action" model="ir.actions.act_window">
+            <field name="name">Deduction</field>
+            <field name="res_model">deduction</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+		<!-- 
+        <menuitem id="menu_preception" name="Preception" parent="menu_payroll_admin_process_unit"
+                  sequence="1" action="preception_action"/>
+
+        <menuitem id="menu_deduction" name="Deduction" parent="menu_payroll_admin_process_unit"
+                  sequence="2" action="deduction_action"/>
+		 -->
+        <menuitem id="menu_preception_payment_of_payroll" name="Preception" parent="menu_setting_payment_of_payroll"
+                  sequence="1" action="preception_action"/>
+
+        <menuitem id="menu_deduction_payment_of_payroll" name="Deduction" parent="menu_setting_payment_of_payroll"
+                  sequence="2" action="deduction_action"/>
+
+    </data>
+</odoo>

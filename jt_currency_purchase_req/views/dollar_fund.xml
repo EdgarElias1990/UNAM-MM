@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="dollar_fund_tree" model="ir.ui.view">
+            <field name="name">dollar.fund.tree.view</field>
+            <field name="model">dollar.fund</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="amount"/>
+                    <field name="currency_id"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dollar_fund_from" model="ir.ui.view">
+            <field name="name">dollar.fund.form.view</field>
+            <field name="model">dollar.fund</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="approve" string="Approve" attrs="{'invisible':[('status','!=','draft')]}" class="oe_highlight" type="object"/>
+                        <field name="status" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="amount"/>
+                                <field name="currency_id"/>
+                                <field name="attach_invoice"/>
+                            </group>
+                        </group>
+                       
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_dollar_fund" model="ir.actions.act_window">
+            <field name="name">Dollar Fund</field>
+            <field name="res_model">dollar.fund</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>
+                <!-- Requests menus-->
+        <menuitem id="menu_dollar_fund" name="Delivery of resources in the dollar fund"
+                  sequence="2"
+                  action="action_dollar_fund"
+                parent="menu_resource_req_foreign_ex_purchase"/>
+    </data>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+	<!-- 
+	<record id="investment_operation_rule" model="ir.rule">
+        <field name="name">Investment Operation</field>
+        <field ref="model_investment_operation" name="model_id"/>
+        <field name="domain_force">[('line_state','!=','draft')]</field>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="0"/>
+        <field name="perm_read" eval="1"/>        
+    </record>
+	<record id="investment_operation_draft_rule" model="ir.rule">
+        <field name="name">Investment Operation</field>
+        <field ref="model_investment_operation" name="model_id"/>
+        <field name="domain_force">[('line_state','=','draft')]</field>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_read" eval="1"/>        
+    </record>
+     -->
+</odoo>

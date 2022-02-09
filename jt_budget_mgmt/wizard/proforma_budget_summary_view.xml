@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="summary_backend" name="widget summary" inherit_id="web.assets_common">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="jt_budget_mgmt/static/src/js/proforma_budget_summary_report_widget.js"></script>
+            </xpath>
+        </template>
+
+    	<!-- form view for proforma budget summary model -->
+        <record id="proforma_budget_summary_form_view" model="ir.ui.view">
+            <field name="name">proforma.budget.summary.form.view</field>
+            <field name="model">proforma.budget.summary</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div>
+                        <group>
+                            <field name="name" colspan="4" invisible="1"/>
+                            <field name="report" filename="name" colspan="4"/>
+                        </group>
+                    </div>
+                    <footer>
+                        <button string="Cancel" class="oe_link oe_highlight" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    	<!-- action for proforma budget summary views -->
+        <record id="action_proforma_budget_summary" model="ir.actions.server">
+            <field name="name">Proforma budget summary</field>
+            <field name="model_id" ref="model_proforma_budget_summary"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">action = model.load_report_js()</field>
+        </record>
+
+        <!-- <record id="action_proforma_budget_summary" model="ir.actions.client">
+            <field name="name">Proforma budget summary</field>
+            <field name="tag">account_reports</field>
+            <field name="context" eval="{'model': 'jt_budget_mgmt.proforma.budget.summary'}" />
+        </record> -->
+    </data>
+</odoo>
+
+

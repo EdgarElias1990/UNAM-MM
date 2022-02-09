@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+      <record id="view_balance_check_wizard" model="ir.ui.view">
+            <field name="name">balance.check.wizard.view</field>
+            <field name="model">balance.check.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Generate Batch Sheet">
+                	    <field name="is_balance" invisible="1"/>
+                    	<field name="wizard_id" invisible="1"/>
+                    	<field name="account_balance" invisible="1"/>
+                    <group attrs="{'invisible':[('is_balance','=',False)]}">
+                    	<h2 attrs="{'invisible':[('is_balance','=',False)]}">Sufficient Balance</h2>
+                    
+                    </group>
+                    <group attrs="{'invisible':[('is_balance','=',True)]}">
+                    	<h2 attrs="{'invisible':[('is_balance','=',True)]}">Insufficient Balance</h2>
+                    </group>
+                    
+                    <group attrs="{'invisible':[('is_balance','=',False)]}">
+                    	<h5 attrs="{'invisible':[('is_balance','=',False)]}">the selected bank account has sufficient balance to execute</h5>
+                    </group>
+                    <group attrs="{'invisible':[('is_balance','=',True)]}">
+                    	<h5 attrs="{'invisible':[('is_balance','=',True)]}">the selected bank account does not have sufficient balance to execute payment.It is necessary to make a bank transfer request.</h5>
+                    </group>
+                    <group>
+                    	<field name="file_name" invisible="1"/>
+                    	<field name="excel_file" filename="file_name" readonly="1" attrs="{'invisible':[('excel_file','=',False)]}"/>
+                    </group>
+
+                    <group>
+                    	<group>
+                    		<field name="account_balance"  readonly="1"/>
+                    		<field name="minimum_balance"  readonly="1"/>
+                    	</group>
+                    	<group>
+                    		<field name="required_balance"  readonly="1"/>
+                    		<field name="different_balance"  readonly="1"/>
+                    	</group>
+                    </group>
+                    
+                    <footer>
+                        <button string="Accept" name="accept" type="object" class="oe_highlight" attrs="{'invisible':[('is_balance','=',False)]}"/>
+                        <button string="Generate Report" name="generate_report" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel" attrs="{'invisible':[('is_balance','=',True)]}"/>
+                    </footer>
+                </form>
+            </field>
+        </record>            
+	</data>
+</odoo>

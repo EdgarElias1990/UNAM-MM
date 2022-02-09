@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+                <!-- Witholding tax Report -->
+        <template id="external_layout_witholding_tax_report" name="external_layout_witholding_tax_report">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b><span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>
+                            <span style="font-size:14px;">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL</span>
+                        <br/>
+                        
+                        <span>REPORTE DE RETENCIÓN DE IMPUESTOS DEL <t t-esc="header_date"/> </span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>  
+
+                        <!-- Tax report to find out / pay -->
+        <template id="external_layout_tax_pay" name="external_layout_tax_pay">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b><span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>
+                            <span style="font-size:14px;">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL</span>
+                        <br/>
+                        
+                        <span>REPORTE DE IMPUESTOS A ENTERAR/PAGAR DEL <t t-esc="header_date"/> </span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>  
+
+           <!-- REPORT FOR THE DETERMINATION OF THE VALUE ADDED
+TAX CHARGED  -->
+        <template id="external_layout_value_added_tax" name="external_layout_value_added_tax">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <b><span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>
+                            <span style="font-size:14px;">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL</span>
+                        <br/>
+                        
+                        <span>REPORTE PARA LA DETERMINACIÓN DEL IMPUESTO AL VALOR AGREGADO A CARGO DEL <t t-esc="header_date"/> </span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+        </template>  
+
+
+</data>
+</odoo>

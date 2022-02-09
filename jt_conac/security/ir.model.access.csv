@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cog_conac,User: COG CONAC Access,jt_conac.model_cog_conac,base.group_user,1,1,1,1
+access_coa_conac,User: COA CONAC Access,jt_conac.model_coa_conac,base.group_user,1,1,1,1
+access_debt_statement,User: COA CONAC Access,jt_conac.model_debt_statement,base.group_user,1,1,1,1
+access_cash_statement,User: COA CONAC Access,jt_conac.model_cash_statement,base.group_user,1,1,1,1
+access_income_statement,User: COA CONAC Access,jt_conac.model_income_statement,base.group_user,1,1,1,1
+access_expenditure_status,User: COA CONAC Access,jt_conac.model_status_expen,base.group_user,1,1,1,1
+access_states_program,User: COA CONAC Access,jt_conac.model_states_program,base.group_user,1,1,1,1

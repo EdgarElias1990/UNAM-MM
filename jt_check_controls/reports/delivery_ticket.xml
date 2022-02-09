@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="external_layout_delievery_ticket">
+            <t t-call="web.basic_layout">
+                <span t-set="ticket_data" t-value="docs.get_ticket_data()"/>
+                    <t t-foreach="ticket_data" t-as="line">
+                        <div class="page" style="border:1px solid black;border-spacing: 0;background-color:#A9A9A9;margin-top:10px;height:100%;width:auto;">
+                            <div class="oe_structure"/>
+                            <table style="font-size:15px;width:77pt;height:150pt;margin-top:20px;" cellspacing="15" cellspadding="5">
+                                <tr>
+                                    <td>TELEFONO</td>
+                                    <td>_____________</td>
+                                    <td>CLAVE</td>
+                                    <td><u><span t-esc="line['clave_no']"/></u></td>
+                                </tr>
+                                <tr>
+                                <td>DEPENDENCIA</td>
+                                <td colspan="4"><u><span t-esc="line['dep_name']"/></u></td>
+                                </tr>   
+                                <tr>
+                                    <td colspan="4"> <p style="text-align:justify;">“RECIBÍ DEL DEPARTAMENTO DE PAGO DE NÓMINA Y PRESTACIONES DE LA DIRECCIÓN GENERAL DE FINANZAS LOS SIGUIENTES DOCUMENTOS PARA EL PAGO DE NÓMINA:.</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">BANCO:</td>
+                                    <td colspan="2"><span t-esc="line['bank_id']"/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">CHEQUES DE FOLIO</td>
+                                    <td></td>
+                                    <td><u> <span t-esc="line['folio_min']"/></u></td>
+                                    <td colspan="2"> AL <u> <span t-esc="line['folio_max']"/></u></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">VALES DE DESPENSA DEL FOLIO</td>
+                                    <td></td>
+                                     <td>____________________</td>
+                                    <td>AL______________________</td>
+                                </tr>      
+                                <tr>
+                                    <td colspan="2">HOJAS NÓMINA DEL FOLIO</td>
+                                    <td></td>
+                                    <td>____________________</td>
+                                    <td>AL______________________</td>
+                                </tr>      
+                                <tr>
+                                    <td colspan="2">CORRESPONDIENTES A LA QUINCENA </td>
+                                    <td colspan="2"><u><span t-esc="line['fornight']"/></u></td>
+                                </tr>
+                                <tr>
+                                    <td>REVISO</td>
+                                    <td>______________</td>
+                                    <td>FECHA</td>
+                                    <td>______________</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan="2" style="margin-top:50px;">
+                                        <br/><br/>
+                                        <div class="text-right">______________________________________________________<br/><span style="text-align:right;margin-left:5px;">NOMBRE COMPLETO</span></div></td>
+                                    <td colspan="2" style="margin-top:50px;">
+                                        <br/><br/>
+                                        
+                                        <div class="text-right" >________________________________<br/><span style="text-align:right;margin-left:5px;">FIRMA</span></div></td>
+                                </tr>
+                        </table>
+                        </div>
+                    </t>
+            </t>    
+        </template>
+
+        
+        <record id="paperformat_delivery_ticket" model="report.paperformat">
+            <field name="name">Delivery Ticket</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">180</field>
+            <field name="page_width">170</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">20</field>
+        </record>
+
+        <report 
+            id="delivery_ticket_action"
+            model="account.move"
+            string="Delivery Ticket"
+            report_type="qweb-pdf"
+            name="jt_check_controls.external_layout_delievery_ticket"
+            file="jt_check_controls.external_layout_delievery_ticket"
+            print_report_name="object.name"
+            paperformat = "jt_check_controls.paperformat_delivery_ticket"
+        />
+
+    </data>
+</odoo>

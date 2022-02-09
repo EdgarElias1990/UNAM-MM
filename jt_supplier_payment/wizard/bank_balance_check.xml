@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <record id="view_bank_balance_check" model="ir.ui.view">
+            <field name="name">bank.balance.check.view</field>
+            <field name="model">bank.balance.check</field>
+            <field name="arch" type="xml">
+                <form string="Schedule payment">
+                    <group>
+                    	<group>
+                    		<field name="journal_id" required="1"  domain="[('type','=','bank')]"/>
+                    		<field name="account_id" invisible="1"/>
+                    		<field name="bank_account_id"/>
+                    	</group>
+                    	<group>
+                    		<field name="total_amount" readonly="1"/>
+                    		<field name="total_request" readonly="1"/>
+                    		<field name="is_balance" invisible="1"/>
+                    		<field name="invoice_ids" invisible="1"/>
+                    	</group>                    	
+                    </group>
+                    <group>
+                    	<group>
+                    		<field name="account_balance" attrs="{'invisible':[('is_balance','=',False)]}" readonly="1"/>
+                    		<field name="minimum_balance" attrs="{'invisible':[('is_balance','=',False)]}" readonly="1"/>
+                    	</group>
+                    	<group>
+                    		<field name="required_balance" attrs="{'invisible':[('is_balance','=',False)]}" readonly="1"/>
+                    		<field name="different_balance" attrs="{'invisible':[('is_balance','=',False)]}" readonly="1"/>
+                    	</group>
+                    </group>
+                    <footer>
+                        <button string="Verify Balance" name="verify_balance" type="object" class="oe_highlight"/>
+                        <button string="Schedule Payment" name="schedule_payment" attrs="{'invisible':[('is_balance','=',False)]}" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>            
+	</data>
+</odoo>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+	<!-- Project Base views-->
+	
+        <!-- project.project form view inherited -->
+        <record id="budget_project_project_view_form_inherit" model="ir.ui.view">
+            <field name="name">budget.project.project.form.view.inherit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="jt_budget_mgmt.budget_project_project_view_form"/>
+            <field name="arch" type="xml">
+            	<field name="project_type_identifier" position="before">
+            		<field name="custom_project_type_id" required="1"/>
+            	</field>
+
+            	<field name="project_type_identifier" position="attributes">
+            		<attribute name="required">0</attribute>
+            		<attribute name="invisible">1</attribute>
+            	</field>
+				<!-- 
+            	<field name="agreement_type" position="attributes">
+            		<attribute name="required">0</attribute>
+            		<attribute name="invisible">1</attribute>
+            	</field>
+				 -->
+            	<field name="stage_identifier" position="before">
+            		<field name="custom_stage_id" required="1"/>
+            	</field>
+
+            	<field name="stage_identifier" position="attributes">
+            		<attribute name="required">0</attribute>
+            		<attribute name="invisible">1</attribute>
+            	</field>
+            	
+            	<field name="agreement_type" position="before">
+            		<field name="base_id" invisible="1"/>
+            	</field>
+            </field>
+        </record>
+        <record id="project_registry_tree_view" model="ir.ui.view">
+            <field name="name">Project Registry List view</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+         </record>
+    
+        <record id="project_registry_form_view" model="ir.ui.view">
+            <field name="name">Project Registry Form view</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    	<field name="is_code_create" invisible="1"/>
+                        <button name="close_project" string="Close" class="oe_highlight"
+                                type="object" attrs="{'invisible': [('status', '=', 'closed')]}"/>
+
+                        <button name="create_program_code" string="Create Cod. Program" class="oe_highlight"
+                                type="object" attrs="{'invisible': ['|',('project_type','=',False),('status', '=', 'closed')]}"/>
+                                
+                        <field name="status" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box" groups="base.group_user">
+                            <button attrs="{'invisible':[('is_papiit_project','=',True)]}" name="show_attachment"
+                                string="Files"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-file">
+                            </button>
+                           
+                            <button type="object"
+                                name="count_expense_checks"
+                                class="oe_stat_button"
+                                icon="fa-file-text-o"
+                                attrs="{'invisible': [('check_counts', '=', 0)]}">
+                                <field name="check_counts" widget="statinfo" string="Checks"/>
+                            </button>
+                            <field name='check_project_due' invisible="1"/>
+                            <field name='check_project_expire' invisible="1"/>
+                            
+                            <button string="Project Due" class="oe_stat_button" type="object" name="calculate_project_overdue" attrs="{'invisible': ['|',('check_project_due', '=',False),('is_papiit_project','=',True)]}">
+                            </button>
+                            <button string="Project next to expire"  class="oe_stat_button" type="object" name="calculate_project_overdue" attrs="{'invisible': ['|',('check_project_expire', '=',False),('is_papiit_project','=',True)]}">
+                            </button>
+                            </div>
+
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Project Name"/>
+                            <h1><field name="name" attrs="{'readonly': [('status', '!=', 'open')]}"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                            	<field name="program_code_ids" invisible="1"/>
+                            	<field name="program_code" domain="[('id','in',program_code_ids)]"  invisible="1" attrs="{'readonly': ['|',('is_papiit_project','=',False),('status', '!=', 'open')]}" />
+                                <field name="project_type" attrs="{'readonly': [('status', '!=', 'open')],'invisible':[('is_papiit_project','=',True)]}"/>
+                                <field name="custom_stage_id"  attrs="{'required':[('is_papiit_project','=',True)],'readonly': [('status', '!=', 'open')]}"/>
+                                <field name="stage_identifier" invisible="1" attrs="{'readonly': [('status', '!=', 'open')]}"/>
+                                <field name="desc_stage" invisible="1"/>
+                                <field name="custom_stage_description" />
+                                <field name="custom_project_type_id" attrs="{'required':[('is_papiit_project','=',True)],'readonly': [('status', '!=', 'open')]}"/>
+                                <field name="project_type_identifier" invisible="1" attrs="{'readonly': [('status', '!=', 'open')]}"/>
+                                <field name="number" required="1" attrs="{'readonly': [('status', '!=', 'open')]}"/>
+                                <field name="responsible_name"  attrs="{'required':[('is_papiit_project','!=',True)],'readonly': [('status', '!=', 'open')]}"/>
+                                <field name="rfc" attrs="{'readonly': [('status', '!=', 'open')]}"/>
+                               <!--  <field name="is_related_agreement" attrs="{'invisible':[('is_papiit_project','=',False)],'readonly': [('status', '!=', 'open')]}"/> -->
+								
+
+                                <field name="base_id" string="Agreement"  invisible="1"/>
+                               <field name="agreement_type" string="Agreement Type" required="1" />
+                                <field name="name_agreement" required="1" />
+                                <field name="number_agreement" required="1"/>                                
+                                <field name="PAPIIT_project_type"  attrs="{'invisible':[('is_papiit_project','=',False)]}"/>
+                                <field name="technical_support_id" attrs="{'invisible':[('is_papiit_project','=',False)]}"/>
+                                <field name="administrative_manager_id" attrs="{'invisible':[('is_papiit_project','=',False)]}"/>
+                                <field name="co_responsible_id" />
+                                <field name="co_responsible_rfc"/>
+                                <field name="project_status" attrs="{'invisible':[('is_papiit_project','=',False)]}"/>
+                            </group>
+                            <group>
+                                <field name="proj_start_date" attrs="{'required':[('is_papiit_project','!=',True)],'readonly': [('status', '!=', 'open')]}"/>
+
+                                <field name="proj_end_date" attrs="{'required':[('is_papiit_project','!=',True)],'readonly': [('status', '!=', 'open')]}"/>
+                                <field name="allocated_amount" required="1" attrs="{'readonly': [('status', '!=', 'open')]}"/>
+                                <field name="approved_amount" required="1" attrs="{'invisible':[('is_papiit_project','=',True)],'readonly': [('status', '!=', 'open')]}"/>
+                                <field name="exercised_amount" attrs="{'invisible':[('is_papiit_project','=',False)]}"/>
+                                <field name="final_amount" attrs="{'invisible':[('is_papiit_project','=',False)]}"/>
+                                <field name="bank_account_id" options="{'no_create': True}" domain="[('type', '=', 'bank')]" attrs="{'readonly': [('status', '!=', 'open')],'invisible':[('is_papiit_project','=',True)],'required':[('is_papiit_project','=',False)]}"/>
+                                <field name="bank_acc_number_id" readonly="1" attrs="{'invisible':[('is_papiit_project','=',True)]}"/>
+                                <field name="branch_office" readonly="1" attrs="{'invisible':[('is_papiit_project','=',True)]}"/>
+                                <field name="trade_number" attrs="{'readonly': [('status', '!=', 'open')]}"/>
+                                <field name="resource_type" attrs="{'invisible':[('is_papiit_project','=',False)]}"/>
+                                <!-- <field name="is_papiit_project" attrs="{'invisible':[('is_papiit_project','=',False)]}"/> -->
+                                <field name="is_papiit_project" invisible="1"/>
+                                <field name="pre_account_id" attrs="{'invisible':[('is_papiit_project','=',False)]}"/>
+                                <field name="dependency_id" context="{'show_for_agreement':1}" options="{'no_create': True}"
+                                       attrs="{'invisible':[('is_papiit_project','=',False),('project_type','=',False)]}"/>
+                                <field name="subdependency_id" context="{'show_for_agreement':1}" options="{'no_create': True}"
+                                       domain="[('dependency_id','=',dependency_id)]" attrs="{'invisible':[('is_papiit_project','=',False), ('project_type','=',False)]}"/>
+                                
+                            </group>
+                        </group>
+                        <notebook>
+                        
+                            <page name="ministrations" string="Ministrations" attrs="{'invisible':[('is_papiit_project','=',True)]}">
+
+                            	<field name="project_ministrations_ids" required="1" attrs="{'readonly': [('status', '!=', 'open')]}">
+                            		<tree editable="bottom">
+                            			<field name="ministrations"/>
+                            			<field name="ministering_amount"/>
+                            		</tree>
+                            		<form>
+                            			<field name="ministrations"/>
+                            			<field name="ministering_amount"/>
+                            		</form>
+                            	</field>
+                            </page>
+
+                            <page name="programmatic_code" string="Programmatic Code">
+
+                            	<field name="project_programcode_ids"  attrs="{'readonly': [('status', '!=', 'open')]}">
+                            		<tree editable="bottom">
+                            			<field name="program_code_id" required="1" domain="[('budget_id.state','=','validate')]"/>
+                            			<field name="total_assigned_amt"/>
+                            			<field name="total_paid"/>
+                            			<field name="total_per_exercise"/>
+                            		</tree>
+                            		<form>
+                            			<field name="program_code_id" required="1" domain="[('budget_id.state','=','validate')]"/>
+                            			<field name="total_assigned_amt"/>
+                            			<field name="total_paid"/>
+                            			<field name="total_per_exercise"/>
+                            		</form>
+                            	</field>
+                            </page>
+                            
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+         </record>
+
+          <record id="project_registry_action_conacyt" model="ir.actions.act_window">
+            <field name="name">CONACYT Projects</field>
+            <field name="res_model">project.project</field>
+            <field name="view_mode">tree,form</field>
+			<field name="domain">[('project_type','!=',False)]</field>
+            <field name="context">{'default_project_type':'conacyt'}</field>
+        </record>
+
+         <record id="project.open_view_project_all_config" model="ir.actions.act_window">
+            <field name="name">Projects</field>
+            <field name="res_model">project.project</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('project.view_project'), 'sequence': '0'}),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('project.project_view_kanban'), 'sequence': '2'})]"/>
+            <field name="search_view_id" ref="project.view_project_project_filter"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                    Create a new project
+                </p><p>
+                    Organize your activities (plan tasks, track issues, invoice timesheets) for internal, personal or customer projects.
+                </p>
+            </field>
+        </record>
+
+        <record id="project_main_action_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="project.edit_project"/>
+            <field name="act_window_id" ref="project.open_view_project_all_config"/>
+        </record>
+
+        <record id="project_registry_conacyt_action_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="project_registry_tree_view"/>
+            <field name="act_window_id" ref="project_registry_action_conacyt"/>
+        </record>
+
+         <record id="project_registry_conacyt_action_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="project_registry_form_view"/>
+            <field name="act_window_id" ref="project_registry_action_conacyt"/>
+        </record>
+
+        <menuitem id="menu_conacyt" name="CONACYT"
+                  parent="project.menu_main_pm" sequence="5"/>
+
+        <menuitem id="menu_project_registry" name="CONACYT Projects" action="project_registry_action_conacyt"
+                  parent="menu_conacyt" sequence="1"/>
+    </data>
+</odoo>

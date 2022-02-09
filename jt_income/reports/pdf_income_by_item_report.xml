@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="external_layout_income_annual_report" name="income_annual_report_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row">
+                <div class="col-6">
+                    <img t-attf-src="data:image/png;base64,{{company.header_logo}}" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                </div>
+                <div class="col-6 text-right">
+                       <h4>
+                    		PATRONATO UNIVERSITARIO<br/>
+                    		TESORERÍA<br/>
+                    		DIRECCIÓN GENERAL DE FINANZAS<br/>
+                    		PRONÓSTICO DE INGRESOS/EGRESOS 2020<br/>
+                    		(Miles de pesos)<br/>
+                    	</h4>
+
+                </div>
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+         
+        </template>
+
+        <template id="income_annual_report">
+        	<t t-call="web.html_container">
+        	<t t-call="jt_income.external_layout_income_annual_report">
+                <div class="page">
+                	<br/><br/>
+                	<t t-if="docs">
+                		<div class="row">
+                			<div class="col-1"></div>
+                			<div class="col-1">Moneda</div>
+                			<div class="col-1"><span t-field="docs[0].currency_name"/></div>
+                			<div class="col-9"></div>
+                		</div>
+                	</t>
+                	<br/>
+                	<table class="table table-bordered">
+                        <thead style="display: table-row-group">
+                            <tr>
+                                <th class="text-center">MES</th>
+                                <th class="text-center">SUBSIDIO/2020</th>
+                                <th class="text-center">Subvención Cuenta por cobrar</th>
+                                <th class="text-center">INSCRIP.Y COLEG.</th>
+                                <th class="text-center">CONCURSO DE SELECCIÓN</th>
+                                <th class="text-center">INCORPORACIÓN Y REVALIDACIÓN</th>
+                                <th class="text-center">INGRESO EXTRAORDINARIO</th>
+                                <th class="text-center">INGRESO PATRIMONIAL</th>
+                                <th class="text-center">PRODUCTOS FINANCIEROS</th>
+                                <th class="text-center">TOTAL</th>
+                                <th class="text-center">NOMINA</th>
+                                <th class="text-center">PROVEEDORAS</th>
+                                <th class="text-center">OTRAS PREST.</th>
+                                <th class="text-center">FONDO MANT MAYOR</th>
+                                <th class="text-center">FONDOS FIF</th>
+                                <th class="text-center">TOTAL</th>
+                            </tr>
+                        </thead>
+                		<tbody>
+                			<t t-set="total_subsidy_2020" t-value="0"/>
+                			<t t-set="total_subsidy_receivable" t-value="0"/>
+                			<t t-set="total_enrollment_and_tuition" t-value="0"/>
+                			<t t-set="total_selection_contest" t-value="0"/>
+                			<t t-set="total_incorporation_and_revalidation" t-value="0"/>
+                			<t t-set="total_extraordinary_income" t-value="0"/>
+                			<t t-set="total_patrimonial_income" t-value="0"/>
+                			<t t-set="total_financial_products" t-value="0"/>
+                			<t t-set="total_total_other_income" t-value="0"/>
+                			<t t-set="total_nomina" t-value="0"/>
+                			<t t-set="total_suppliers" t-value="0"/>
+                			<t t-set="total_other_benefits" t-value="0"/>
+                			<t t-set="total_major_maintenance_fund" t-value="0"/>
+                			<t t-set="total_fif_funds" t-value="0"/>
+                			<t t-set="total_total_other_expense" t-value="0"/>
+							<t t-set="year_change" t-value="0"/>							                			
+                			<t t-foreach="docs" t-as="o">
+                				  <t t-if="year_change!=o.year">
+                				  	<t t-set="year_change" t-value="o.year"/>
+                				  	<tr>
+                                      <th colspan="16" class="text-left"><span t-field="o.year"/></th>
+                                     </tr>
+                				  </t>	
+                                  <tr>
+                                      <th class="text-right"><span t-field="o.month_name"/></th>
+                                      <td class="text-right"><span t-field="o.subsidy_2020" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.subsidy_receivable" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.enrollment_and_tuition" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.selection_contest" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.incorporation_and_revalidation" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.extraordinary_income" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.patrimonial_income" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.financial_products" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.total_other_income" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.nomina" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.suppliers" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.other_benefits" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.major_maintenance_fund" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.fif_funds" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      <td class="text-right"><span t-field="o.total_other_expense" t-options='{"widget": "float", "precision": 2}'/></td>
+                                      
+                                      <!-- Total -->
+			                			<t t-set="total_subsidy_2020" t-value="total_subsidy_2020+o.subsidy_2020"/>
+			                			<t t-set="total_subsidy_receivable" t-value="total_subsidy_receivable+o.subsidy_receivable"/>
+			                			<t t-set="total_enrollment_and_tuition" t-value="total_enrollment_and_tuition+o.enrollment_and_tuition"/>
+                						<t t-set="total_selection_contest" t-value="total_selection_contest+o.selection_contest"/>			                			
+			                			<t t-set="total_incorporation_and_revalidation" t-value="total_incorporation_and_revalidation+o.incorporation_and_revalidation"/>
+			                			<t t-set="total_extraordinary_income" t-value="total_extraordinary_income+o.extraordinary_income"/>
+			                			<t t-set="total_patrimonial_income" t-value="total_patrimonial_income+o.patrimonial_income"/>
+			                			<t t-set="total_financial_products" t-value="total_financial_products+o.financial_products"/>
+			                			<t t-set="total_total_other_income" t-value="total_total_other_income+o.total_other_income"/>
+			                			<t t-set="total_nomina" t-value="total_nomina+o.nomina"/>
+			                			<t t-set="total_suppliers" t-value="total_suppliers+o.suppliers"/>
+			                			<t t-set="total_other_benefits" t-value="total_other_benefits+o.other_benefits"/>
+			                			<t t-set="total_major_maintenance_fund" t-value="total_major_maintenance_fund+o.major_maintenance_fund"/>
+			                			<t t-set="total_fif_funds" t-value="total_fif_funds+o.fif_funds"/>
+			                			<t t-set="total_total_other_expense" t-value="total_total_other_expense+o.total_other_expense"/>
+                                  </tr>                				
+                			</t>
+                			<tr>
+                				<th>SUMA TOTAL</th>
+                				<th class="text-right"><span t-esc="total_subsidy_2020" t-options='{"widget": "float", "precision": 2}'/></th>
+                				<th class="text-right"><span t-esc="total_subsidy_receivable" t-options='{"widget": "float", "precision": 2}'/></th>
+                				<th class="text-right"><span t-esc="total_enrollment_and_tuition" t-options='{"widget": "float", "precision": 2}'/></th>
+                				<th class="text-right"><span t-esc="total_selection_contest" t-options='{"widget": "float", "precision": 2}'/></th>
+                				<th class="text-right"><span t-esc="total_incorporation_and_revalidation" t-options='{"widget": "float", "precision": 2}'/></th>                				
+                				<th class="text-right"><span t-esc="total_extraordinary_income" t-options='{"widget": "float", "precision": 2}'/></th>
+                				<th class="text-right"><span t-esc="total_patrimonial_income" t-options='{"widget": "float", "precision": 2}'/></th>
+                				<th class="text-right"><span t-esc="total_financial_products" t-options='{"widget": "float", "precision": 2}'/></th>
+                				<th class="text-right"><span t-esc="total_total_other_income" t-options='{"widget": "float", "precision": 2}'/></th>
+                				<th class="text-right"><span t-esc="total_nomina" t-options='{"widget": "float", "precision": 2}'/></th>
+                				<th class="text-right"><span t-esc="total_suppliers" t-options='{"widget": "float", "precision": 2}'/></th>
+                				<th class="text-right"><span t-esc="total_other_benefits" t-options='{"widget": "float", "precision": 2}'/></th>
+                				<th class="text-right"><span t-esc="total_major_maintenance_fund" t-options='{"widget": "float", "precision": 2}'/></th>
+                				<th class="text-right"> <span t-esc="total_fif_funds" t-options='{"widget": "float", "precision": 2}'/></th>
+                				<th class="text-right"><span t-esc="total_total_other_expense" t-options='{"widget": "float", "precision": 2}'/></th>
+                			</tr>
+                		</tbody>	
+                	</table>
+                	
+				</div>
+				</t>
+				</t>
+		</template>
+		
+           <record id="paperformat_annual_income_report" model="report.paperformat">
+               <field name="name">Annual Income Report</field>
+               <field name="default" eval="True"/>
+               <field name="format">A4</field>
+               <field name="orientation">Landscape</field>
+               <field name="margin_top">45</field>
+               <field name="margin_bottom">5</field>
+               <field name="margin_left">10</field>
+               <field name="margin_right">10</field>
+               <field name="header_line" eval="False"/>
+               <field name="header_spacing">35</field>
+               <field name="dpi">100</field>
+           </record>
+
+		
+        <report 
+            id="income_by_item_report"
+            model="income.by.item.report.data"
+            string="Annual Income Report"
+            report_type="qweb-pdf"
+            name="jt_income.income_annual_report"
+            file="jt_income.income_annual_report"
+            paperformat="jt_income.paperformat_annual_income_report"
+        />
+
+
+    </data>
+</odoo>

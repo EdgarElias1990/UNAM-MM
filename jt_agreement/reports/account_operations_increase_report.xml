@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Report of accounting operations-incrase-->
+        <template id="external_layout_accounting_operation_increase" name="external_layout_accounting_operation_increase">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <div class="header">
+                <div class="row">
+                    <div class="col-2" align="left">
+                        <img t-attf-src="data:image/png;base64,{{company.header_logo}}"
+                             style="width:140px;height:140px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+                    <div class="col-3" style="padding-left:15px;padding-top:10px;">
+                        <img src="/jt_check_controls/static/src/img/dgf.png"
+                             style="max-height:250px;width:250px;"/>
+                    </div>
+                    <!-- padding-left:15px; -->
+                    <div class="col-4" style="padding-top:20px;margin:top:40px;text-align:center;">
+                        <br/>
+                        <p style="margin-top:0;margin-bottom:0;font-size:16px;"><b>PATRONATO UNIVERSITARIO-TESORERIA</b></p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">Direccion General de Finanzas</p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">Reporte de Operaciones Contables-Incrementos</p>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <!-- style="border-bottom:5px solid black;" -->
+                <div class="row" style="border-bottom:3px solid black;">
+                    <div class="col-3">
+                    </div>
+                    <div class="col-4 text-center">
+                    </div>
+                    <div class="col-5 text-center" style="margin-left:30px;padding-left:30px;vertical-align: bottom;">
+                      <strong>Fecha y hora de impresión  </strong><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>  
+                    </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+            <div     class="footer">
+                <div class="row">
+                    <div class="col-6">
+                        <hr style="width:40%;color:black;"/><br/>
+                        <strong>RESPONSABLE DE IMPRESION</strong>
+                    </div>
+                    <div class="col-6">
+                        <hr/><br/>
+                        <strong>VO.BO.</strong>
+                    </div>
+                </div>
+            </div>
+        </template>
+</data>
+</odoo>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Header Template of COA CONAC -->
+        <template id="external_layout_mm_custom" name="external_layout_mm_custom">
+
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img t-attf-src="/web/image?model=res.company&amp;id=1&amp;field=header_logo&amp;unique=09202021113400" style="width:120px;height:100px;margin-top:20px;margin-right:20px;margin-bottom:20px;"/>
+                    </div>
+
+                    <div class="col-8 text-center">
+                        <div class="col-6 text-center">
+                            <span style="font-size:16px;color:white;">unam</span>
+                        </div>
+
+                        <div class="col-8 text-center">
+                            <span style="font-size:16px;">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>
+                            <span>REPORTE COA CONAC </span>
+                        </div>
+
+                    </div>
+                </div>
+                <div>
+                    <div class="col-12 text-right">
+                        <span style="font-size:13px;"> Fecha y hora de impresión <t t-esc="header_date"/> </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </template>
+    </data>
+</odoo>

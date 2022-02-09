@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		
+
+        <record id="view_partner_property_form_inherit_view" model="ir.ui.view">
+            <field name="name">res.partner.form.view.inherit.fiscal</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//group[@name='fiscal_information']" position="replace">
+            		
+            	</xpath>
+			</field>
+		</record>		
+        <record id="res_partner_form_view" model="ir.ui.view">
+            <field name="name">res.partner.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+            	
+            	<field name="vat" position="attributes">
+            		<attribute name="string">RFC</attribute>
+            	</field>
+                <xpath expr="//sheet/group/group/label" position="before">
+                    <field name="person_type"/>
+                    <field name="beneficiary_type"/>
+                    <field name="password_beneficiary"/>
+                </xpath>
+
+                <xpath expr="//sheet/group/group/div" position="after">
+                    <field name="instruction" attrs="{'invisible':[('beneficiary_type','not in',('national_provider','foreign_supplier'))]}"/>
+                </xpath>
+                <xpath expr="//sheet/group/group[2]/field[@name='function']" position="after">
+                    <field name="dob" attrs="{'invisible':[('beneficiary_type','not in',('national_provider','foreign_supplier'))]}"/>
+                    <field name="nationality"/>
+                    <field name="tax_email" widget="email"/>
+                </xpath>
+               <xpath expr="//notebook/page[@name='internal_notes']" position="after">
+                    <page string='Scholarship Information' attrs="{'invisible': [('beneficiary_type', '!=', 'scholar')]}">
+                        <group>
+                            <group>
+                                <field name="scholar_key_payment"/>
+                                <field name="scholarship_id"/>
+                                <field name="scholarship_approved_month"/>
+                                <field name="period"/>
+                                <field name="property_account_position_id" options="{'no_create': True, 'no_open': True}"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="res_partner_l10n_mx_edi_form_viewinherit" model="ir.ui.view">
+            <field name="name">res.partner.l10n.form.inherited.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="l10n_mx_edi.res_partner_form_inherit_l10n_mx_edi"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='l10n_mx_edi_curp']" position="after">
+                    <field name="is_ISSSTE_supplier"/>
+                    <field name="is_FOVISSSTE_supplier"/>
+                </xpath>
+            </field>
+        </record>
+
+       
+        <record id="res_partner_account_form_view" model="ir.ui.view">
+            <field name="name">res.partner.account.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//group[@name='banks']" position="replace">
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                	<page string="Bank Accounts" name="banks">
+	                     <group name="banks" colspan="4"
+	                            groups="account.group_account_invoice">
+	                        <field name="bank_ids" nolabel="1">
+	                             <tree>
+	                                 <field name="sequence" widget="handle"/>
+	                                 <field name="bank_id"/>
+	                                 <field name="acc_number"/>
+	                                 <field name="branch_number"/>
+	                                 <field name="account_type"/>
+	                                 <field name="l10n_mx_edi_clabe"/>
+	                                 <field name="bic_swift"/>
+	                                 <field name="aba"/>
+	                                 <field name="key_bank"/>
+	                             </tree>
+	                        </field>
+	                     </group>
+                	
+                	</page> 
+                </xpath>
+            </field>
+        </record>
+        <record id="res_partner_search_view" model="ir.ui.view">
+            <field name="name">res.partner.search.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+            	<field name='name' position="attributes">
+            		<attribute name="filter_domain">['|', '|','|', ('display_name', 'ilike', self), ('ref', '=', self), ('email', 'ilike', self),('bank_ids.acc_number','=',self)]</attribute>
+            	</field>
+            	
+                <xpath expr="//search/group/filter[@name='group_country']" position="after">
+                    <filter name="person_type" string="Person Type" context="{'group_by': 'person_type'}"/>
+                    <filter name="beneficiary_type" string="Beneficiary Type" context="{'group_by': 'beneficiary_type'}"/>
+                    <filter name="instruction" string="Instruction with the banking institution" context="{'group_by': 'instruction'}"/>
+                </xpath>
+                <xpath expr="//search/separator[3]" position="after">
+                    <filter string="Physics" name="physics" domain="[('person_type', '=', 'physics')]"/>
+                    <filter string="Moral" name="moral" domain="[('person_type', '=', 'moral')]"/>
+                    <separator/>
+                    <filter string="Alimony" name="alimony" domain="[('beneficiary_type', '=', 'alimony')]"/>
+                    <filter string="Scholar" name="scholarship" domain="[('beneficiary_type', '=', 'scholar')]"/>                    
+                    <filter string="National provider" name="national_provider" domain="[('beneficiary_type', '=', 'national_provider')]"/>
+                    <filter string="Foreign supplier" name="foreign_supplier" domain="[('beneficiary_type', '=', 'foreign_supplier')]"/>
+                    <filter string="Fixed Fund" name="fixed_fund" domain="[('beneficiary_type', '=', 'fixed_fund')]"/>                    
+                    <separator/>
+                    <filter string="High" name="high" domain="[('instruction', '=', 'high')]"/>
+                    <filter string="Low" name="low" domain="[('instruction', '=', 'low')]"/>
+                    <filter string="Change" name="change" domain="[('instruction', '=', 'change')]"/>
+                    <separator/>
+                </xpath>
+                <xpath expr="//search/field[@name='user_id']" position="after">
+                    <field name="person_type"/>
+                    <field name="beneficiary_type"/>
+                    <field name="password_beneficiary"/>
+                    <field name="instruction"/>
+                    <field name="dob"/>
+                    <field name="nationality"/>
+                    <field name="tax_email"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

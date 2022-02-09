@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="create_payment_request" model="ir.ui.view">
+            <field name="name">create.payment.request.form.view</field>
+            <field name="model">payment.request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                            <button name="request" type="object" string="Request" class="oe_highlight"
+                                 attrs="{'invisible': ['|',('is_balance_req_id_reject','=',True),('state', '!=', 'draft')]}"/>
+                                <!-- 
+                            <button name="action_paid" type="object" string="Paid" class="oe_highlight"
+                                 attrs="{'invisible': [('state', '!=', 'requested')]}"/>
+                            <button name="action_reject" type="object" string="Reject" class="oe_highlight"
+                                 attrs="{'invisible': [('state', '!=', 'requested')]}"/>
+                                  -->
+                        <field name="state" widget="statusbar"/>
+                        </header>
+                    <sheet>
+                        <group>
+                                <group>
+                                	<field name="is_balance_req_id_reject" invisible="1"/>
+                                    <field name="name" readonly="1"/>
+                                    <field name="operation_number"/>
+                                    <field name="type_of_operation"/>
+                                    <field name="amount" readonly="1"/>
+                                    <field name="payment_request_number"/>
+                                </group>
+                                <group>
+                                    <field name="payment_method_id"/>
+                                    <field name="date"/>
+                                    <field name="reference"/>
+                                    <field name="counter_receipt_sheet"/>
+                                    <field name="beneficiary_id" readonly="1"/>
+                                    <field name="bank_ids" invisible="1"/>
+                                    <field name="bank_id" domain="[('id','in',bank_ids)]" context="{'from_agreement':True}"/>
+                                    <field name="account_number"/>
+                                </group>
+                            </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+         <record id="action_validates_payment_request_list" model="ir.actions.server">
+            <field name="name">Validates</field>
+            <field name="model_id" ref="jt_agreement.model_payment_request"/>
+            <field name="binding_model_id" ref="jt_agreement.model_payment_request"/>
+            <field name="state">code</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="code">action = records.action_validates_payment_request()</field>
+        </record>
+        
+    </data>
+</odoo>

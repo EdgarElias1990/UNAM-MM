@@ -1,0 +1,29 @@
+<odoo>
+	<data>
+		<record id="supplier_registration_form_view" model="ir.ui.view">
+			<field name="name">Supplier registration form view</field>
+			<field name="model">supplier.registration</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<field name="journal_id" required="1" options="{'no_open': True, 'no_create': True}" domain="[('supplier_registration_layout','!=',False)]"/>
+							<field name="filename" invisible="1"/>
+							<field name="fec_data" readonly="1" filename="filename" attrs="{'invisible':[('fec_data','=',False)]}" string="Descarga"/>
+						</group>
+						<footer>
+                   			<button string="Generate" class="btn btn-primary" type="object" name="generate"/>
+                		</footer>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="supplier_registration_action" model="ir.actions.act_window">
+			<field name="name">Supplier Registration</field>
+        	<field name="res_model">supplier.registration</field>
+        	<field name="view_mode">form</field>
+        	<field name="target">new</field>
+		</record>
+	</data>
+</odoo>

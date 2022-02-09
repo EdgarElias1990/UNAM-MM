@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+         <record model="ir.ui.view" id="agreement_trust_form_inherit">
+            <field name="name">agreement.trust.form.view.inherit</field>
+            <field name="model">agreement.trust</field>
+            <field name="inherit_id" ref="jt_agreement.agreement_trust_form"/>
+            <field name="arch" type="xml">
+	            	<field name="goals" position="before">
+	            		<field name="contract_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	            	</field>
+			</field>
+		</record>
+	</data>
+</odoo>

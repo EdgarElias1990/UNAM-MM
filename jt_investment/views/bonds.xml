@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="investment_bonds_tree" model="ir.ui.view">
+            <field name="name">investment.bonds.tree.view</field>
+            <field name="model">investment.bonds</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="first_number"/>
+                    <field name="bank_id"/>
+                    <field name="folio" invisible="1"/>
+       				<field name="kind_of_product" invisible="1"/>
+       				<field name="key"/>
+       				<field name="issue_date"/>
+       				<field name="due_date"/>
+       				<field name="nominal_value"/>
+       				<field name="interest_rate"/>
+       				<field name="time_for_each_cash_flow"/>
+       				<field name="time_to_expiration_date"/>
+       				<field name="coupon"/>
+       				<field name="present_value_bond"/>
+       				<field name="estimated_interest"/>
+       				<field name="real_interest"/>
+       				<field name="profit_variation"/>       				
+       				<field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="investment_bonds_form" model="ir.ui.view">
+            <field name="name">investment.bonds.form.view</field>
+            <field name="model">investment.bonds</field>
+            <field name="arch" type="xml">
+                <form>
+                	<header>
+                		<button name="action_confirm" states="draft" string="Confirm" class="oe_highlight" type="object" />
+                		<button name="action_confirm" states="confirmed" context="{'default_is_from_set_button':True,'default_amount_type':'withdrawal','edit_amount_field':True}" string="Investment Settlement" class="oe_highlight" type="object" />
+                		<button name="action_confirm" states="confirmed" context="{'default_amount_type':'increment','edit_amount_field':True}" string="Returns" class="oe_highlight" type="object" />
+                		<button name="action_confirm" states="confirmed" context="{'default_amount_type':'withdrawal','edit_amount_field':True}" string="Commissions" class="oe_highlight" type="object" />
+                		<button name="action_draft" states="rejected"  string="Reset To Draft" class="oe_highlight" type="object"/>
+                		 
+                		<!-- <button name="action_reinvestment" states="draft" string="Reinvestment" class="oe_highlight" type="object" /> -->
+                		<field name="state" widget="statusbar"/>
+                	</header>
+                
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" string="Rate History" type="action" name="%(action_investment_period_BONUS_rate)d" icon="fa-money" widget="statinfo"/>
+                        </div>
+                    
+                        <group>
+                            <group>
+                            	<field name="first_number" readonly="1"/>
+                            	<field name="new_journal_id" options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}" domain="[('is_investment_account','=',True)]" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            
+                                <field name="folio" readonly="1"/>
+                                <field name="date_time" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="expiry_date" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="investment_fund_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="journal_id" domain="['|',('is_productive_account','=',True),('is_investment_account','=',True),('type','=','bank')]" options="{'no_create': True}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="bank_id"/>
+                                <field name="amount_invest" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="currency_id" options="{'no_create': True}" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="investment_rate_id" domain="[('product_type','=','BONUS')]" context="{'default_product_type':'BONUS',
+                                		'search_view_ref': 'jt_investment.investment_period_rate_BONUS_search',
+                                		'tree_view_ref': 'jt_investment.investment_period_rate_BONUS_tree',
+                                		'form_view_ref': 'jt_investment.investment_period_rate_BONUS_form'
+                                		}" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+
+                                <field name="total_currency_rate"/>
+                                <field name="dependency_id" context="{'show_for_supplier_payment':1}" readonly="1"/>
+                                <field name="sub_dependency_id" domain="[('dependency_id','=',dependency_id)]" context="{'show_for_supplier_payment':1}" readonly="1"/>
+                                <field name="reason_rejection" readonly="1" attrs="{'invisible': [('state', '!=', 'rejected')]}"/>
+                                
+                            </group>
+                            <group>
+                                <field name="contract_id" options="{'no_create': True}" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                
+			            		<field name="fund_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+			            		<field name="fund_key" readonly="1"/>
+			            		<field name="fund_type_id"  attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+			            		<field name="agreement_type_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+			            		<field name="base_collaboration_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                
+                                <field name="instrument_it" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                <field name="account_executive" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="UNAM_operator" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                <field name="is_federal_subsidy_resources" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="origin_resource_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="observations" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="yield_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="rate_of_returns" attrs="{'readonly': [('state', '!=', 'draft')]}"/>                            
+                            </group>
+                        </group>
+                        <notebook>
+                        	<page string="General Information" name="general_information">
+                        		<group string="Annual">
+                        			<group>
+                        				<field name="kind_of_product" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="key" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="issue_date" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="due_date" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        			</group>
+                        			<group>
+                        				<field name="nominal_value" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="interest_rate" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="time_for_each_cash_flow" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="time_to_expiration_date" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="coupon"/>
+                        			</group>
+                        		</group>
+                        		<group string="Monthly">
+                        			<group>
+                        				<field name="month_key" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="month_issue_date" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="month_due_date" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="number_of_title" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        			</group>
+                        			<group>
+                        				<field name="udi_value" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="udi_value_multiplied" readonly="1" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="coupon_rate" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="period_days" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        			</group>
+                        		</group>
+                        		
+                        	</page>
+                        	<page string="Accounting" name="account" invisible="1">
+                        		<group string="Investment">
+                        			<group>
+                        				<field name="investment_income_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        			</group>
+                        			<group>
+                        				<field name="investment_expense_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="investment_price_diff_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        			</group>
+                        		</group>
+                        		<group string="Yields">
+                        			<group>
+                        				<field name="return_income_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        			</group>
+                        			<group>
+                        				<field name="return_expense_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="return_price_diff_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        			</group>
+                        		</group>
+                        	</page>
+                        	<page string="Returns" name="return">
+                        		<group string="Annual">
+                        			<group>
+                        				<field name="present_value_bond"/>
+                        				<field name="estimated_interest"/>
+                        			</group>
+                        			<group>
+                        				<field name="real_interest" attrs="{'readonly': [('state', 'not in', ('draft','confirmed'))]}"/>
+                        				<field name="profit_variation"/>
+                        			</group>
+                        		</group>
+                        		<group string="Monthly">
+                        			<group>
+                        				<field name="monthly_nominal_value"/>
+                        				<field name="monthly_estimated_interest"/>
+                        			</group>
+                        			<group>
+                        				<field name="monthly_real_interest"/>
+                        				<field name="monthly_profit_variation"/>
+                        			</group>
+                        		</group>
+                        	</page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+          <record id="investment_bonds_search" model="ir.ui.view">
+            <field name="name">investment.bonds.search.view</field>
+            <field name="model">investment.bonds</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="folio"/>
+                </search>
+            </field>
+        </record>
+
+         <record id="action_investment_bonds" model="ir.actions.act_window">
+            <field name="name">Bonds</field>
+            <field name="res_model">investment.bonds</field>
+            <field name="context">{'show_for_agreement':True}</field>
+        </record>
+
+        <menuitem id="menu_investment_bonds" name="Bonds" sequence="6"
+            parent="submenu_menu_investment_money_market" action="action_investment_bonds"/>
+    </data>
+</odoo>

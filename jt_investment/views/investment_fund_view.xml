@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_investment_tree_form" model="ir.ui.view">
+            <field name="name">Investment Funds Tree View</field>
+            <field name="model">investment.funds</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="first_number"/>
+                    <field name="new_journal_id" invisible="1"/>
+                	<field name="contract_id"/>
+                	<field name="fund_id"/>
+                	<field name="fund_key"/>
+                	<field name="fund_request_date"/>
+                	<field name="dependency_id"/>
+                	<field name="subdependency_id"/>
+                	<field name="dependency_holder"/>
+                	<field name="responsible_user_id"/>
+                	<field name="type_of_resource"/>
+                	<field name="request_office"/>
+                	<field name="state"/>
+				</tree>
+			</field>
+		</record>
+        <record id="view_investment_funds_form" model="ir.ui.view">
+            <field name="name">Investment Funds Form View</field>
+            <field name="model">investment.funds</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="approve_fund" type="object" string="Approve" class="oe_highlight"
+                             attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                         <button name="reset_fund" type="object" string="Reset" class="oe_highlight"
+                             attrs="{'invisible': [('state', '!=', 'confirmed')]}"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                            	<field name="first_number" readonly="1"/>
+                            	<field name="new_journal_id" options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}" domain="[('is_investment_account','=',True)]" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            
+								<field name="fund_id" string="Fund Name" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+								<field name="fund_key" string="Fund Code" readonly="1"/>                            	
+                                <field name="fund_request_date" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                <field name="dependency_id" context="{'show_for_agreement':1}" attrs="{'readonly': [('state', '!=', 'draft')]}" readonly="1"/>
+                                <field name="subdependency_id" context="{'show_for_agreement':1}" domain="[('dependency_id','=',dependency_id)]" attrs="{'readonly': [('state', '!=', 'draft')]}" readonly="1"/>
+                                <field name="dependency_holder" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1" />
+                                <field name="responsible_user_id" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                <field name="origin_resource_id" attrs="{'readonly': [('state', '!=', 'draft')]}"
+                                       domain="[('is_it_enabled_for_agreement', '=',  True)]" required="1"/>
+                               
+                                <!-- <field name="journal_id" required="1" domain="[('type','=','bank')]"/>
+                                <field name="bank_account_id" readonly="1"/> -->
+                                <field name="request_office" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                            </group>
+                            <group>
+								<field name="contract_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>                                                                
+                                <field name="permanent_instructions" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1" />
+                                <field name="fund_observation" attrs="{'readonly': [('state', '!=', 'draft')]}"  required="1"/>
+                                <field name="yield_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="rate_of_returns" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            
+                        </group>
+                        <notebook>
+                        	<page string="Title" invisible="1">
+								<field name="purchase_sale_ids" eval="[(5,0,0),
+                          						(0,0,{'view_mode':'tree','view_id': ref('jt_investment.purchase_sale_security_tree')}),
+                          						(0,0,{'view_mode':'form', 'view_id': ref('jt_investment.purchase_sale_security_form')})]"/>                        		
+                        	</page>
+                        	<page string="Money Market" invisible="1">
+                        		<group string="CETES">
+									<field nolabel="1" name="cetes_ids" eval="[(5,0,0),
+	                          						(0,0,{'view_mode':'tree','view_id': ref('jt_investment.investment_cetes_tree')}),
+	                          						(0,0,{'view_mode':'form', 'view_id': ref('jt_investment.investment_cetes_form')})]"/>
+									</group>
+								<group string="Udibonos">	
+									<field nolabel="1" name="udibonos_ids" eval="[(5,0,0),
+	                          						(0,0,{'view_mode':'tree','view_id': ref('jt_investment.investment_udibonos_tree')}),
+	                          						(0,0,{'view_mode':'form', 'view_id': ref('jt_investment.investment_udibonos_form')})]"/>                        		
+								</group>
+								<group string="Bonds">
+									<field nolabel="1" name="bonds_ids" eval="[(5,0,0),
+	                          						(0,0,{'view_mode':'tree','view_id': ref('jt_investment.investment_bonds_tree')}),
+	                          						(0,0,{'view_mode':'form', 'view_id': ref('jt_investment.investment_bonds_form')})]"/>                        		
+								</group>
+								<group string="I WILL PAY">
+									<field nolabel="1" name="will_pay_ids" eval="[(5,0,0),
+	                          						(0,0,{'view_mode':'tree','view_id': ref('jt_investment.investment_will_pay_tree')}),
+	                          						(0,0,{'view_mode':'form', 'view_id': ref('jt_investment.investment_will_pay_form')})]"/>
+	                          	</group>                        		
+                        	</page>
+                        	<page string="Investment">
+                        		<field name="inv_operation_ids">
+                    			<tree create="0">
+                    				<field name="investment_fund_id" invisible="1"/>
+                    				<field name="investment_id"/>
+                                    <field name="date_required" string="Date"/>
+                    				<field name="type_of_operation"/>
+                    				<field name="agreement_number"/>
+                    				<field name="base_collabaration_id"/>
+                    				<field name="agreement_type_id"/>
+                    				<field name="fund_type"/>
+                    				<field name="dependency_id"/>
+                    				<field name="sub_dependency_id"/>
+                    				<field name="origin_resource_id"/>
+                    				<field name="amount"/>
+                    				<field name="line_state" readonly="1"/>
+                    				<field name="inc_id" invisible="1"/>
+                    				<field name="seq" invisible="1"/>
+                    				<field name="record_type" invisible="1"/>
+                    				<field name="invoice" invisible="1"/>
+                    				<field name="journal_id" invisible="1"/>
+                    				<field name="source_ids" invisible="1"/>
+                    				<field name="dest_ids" invisible="1"/>
+                    			</tree>
+                    			<form>
+				                	<group>
+			                            <group>
+			                            	<field name="source_ids" invisible="1"/>
+                    						<field name="dest_ids" invisible="1"/>
+			                                <field name="invoice" readonly="1"/>
+			                                <field name="operation_number" />
+			                                <field name="investment_fund_id" invisible="1"/>
+			                                <field name="type_of_operation" />
+			                                <field name="agreement_number" />
+			                                <field name="base_collabaration_id" />
+			                                <field name="agreement_type_id" />
+			                                <field name="fund_type" />
+			                                <field name="bank_account_id" domain="[('id', 'in', source_ids)]"
+			                                    required="1"/>
+			                            </group>
+			                            <group>
+			                            	<field name="user_id"/>
+			                                <field name="unit_req_transfer_id" context="{'bal_user_id': user_id,
+			                                    'show_for_agreement':1}" />
+			                                <field name="dependency_id" />
+			                                <field name="sub_dependency_id" domain="[('dependency_id','=',dependency_id)]"/>
+			                            	<field name="origin_resource_id" />
+			                            	<field name="amount" required="1"/>
+			                                <field name="date_required"/>
+			                                <field name="desti_bank_account_id" domain="[('id', 'in', dest_ids)]"
+			                                    required="1"/>
+		                    				<field name="line_state" readonly="1"/>
+		                    				<field name="inc_id" invisible="1"/>
+		                    				<field name="seq" invisible="1"/>
+		                    				<field name="record_type" invisible="1"/>
+		                    				<field name="journal_id" invisible="1"/>
+			                            </group>
+			                        </group>
+                    			</form>
+                        			
+                        		</field>
+								<field invisible="1" name="productive_ids" eval="[(5,0,0),
+                          						(0,0,{'view_mode':'tree','view_id': ref('jt_investment.investment_investment_tree')}),
+                          						(0,0,{'view_mode':'form', 'view_id': ref('jt_investment.investment_investment_form')})]"/>                        		
+                        	</page>
+                        	
+                        	
+                            <page string="Operation" name="operation" invisible="1">
+                                <group>
+                                    <group>
+                                        <field name="request_date" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                                        <field name="trade_number" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                                        <field name="opening_balance" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                                    </group>
+                                    <group>
+                                        <field name="observations" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                                        <field name="user_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                             <page string="Supporting Documentaion" name="supporting_documentation">
+                                <group>
+                                    <group>
+                                        <field name="cbc_format" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="cbc_shipping_office"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                </group>
+                            </page>                            
+                             <page string="Accounts" name="accounts" invisible="1">
+                                <group>
+                                    <group>
+                                    	
+                                        <field name="liability_account_id"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="investment_account_id"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                               
+                                    </group>
+                                    <group>
+                                        <field name="interest_account_id"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="availability_account_id"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_investment_funds_product" model="ir.actions.act_window">
+            <field name="name">Funds</field>
+            <field name="res_model">investment.funds</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'show_for_agreement':True, 'show_agreement_name': True}</field>
+        </record>
+
+		<record id="action_investment_funds_product_tree_link" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_investment_tree_form"/>
+            <field name="act_window_id" ref="action_investment_funds_product"/>
+        </record>
+        <record id="action_investment_funds_product_form_link" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_investment_funds_form"/>
+            <field name="act_window_id" ref="action_investment_funds_product"/>
+        </record>
+               
+        <menuitem id="menu_investment_funds_product" name="Funds"
+                  parent="submenu_menu_investment_money"
+                 action="action_investment_funds_product" sequence="0"/>
+    	
+	</data>
+</odoo>

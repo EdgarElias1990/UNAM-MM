@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+  
+       <record id="income_by_item_month_report_search_view" model="ir.ui.view">
+            <field name="name">income.by.item.month.report.search.view</field>
+            <field name="model">income.by.item.month.report</field>
+            <field name="arch" type="xml">
+                <search string="Reports">
+                    <group expand="1" string="Group By">
+                        <filter string="Year" name='year' context="{'group_by':'year'}"/>
+                    </group>
+                     
+                </search>
+            </field>
+        </record>
+  
+          <record id="income_by_item_month_report_tree_view" model="ir.ui.view">
+            <field name="name">income.by.item.month.report.tree.view</field>
+            <field name="model">income.by.item.month.report</field>
+            <field name="arch" type="xml">
+                <tree>
+                	<field name="id" invisible="1"/>    
+                	<field name="year"/>
+                	<field name="month"/>
+                	<field name="enrollment_and_tuition"/>
+                	<field name="selection_contest"/>
+                	<field name="incorporation_and_revalidation"/>
+                	<field name="extraordinary_income"/>
+                	<field name="patrimonial_income"/>
+                	<field name="financial_products"/>
+                	<field name="total_other_income"/>
+                	<field name="nomina"/>
+                	<field name="suppliers"/>
+                	<field name="other_benefits"/>
+                	<field name="major_maintenance_fund"/>
+                	<field name="fif_funds"/>
+                	<field name="total_other_expense"/>
+  				</tree>
+  			</field>
+  		</record>
+  		
+        <record id="action_income_by_item_month" model="ir.actions.act_window">
+            <field name="name">Annual Income Report</field>
+            <field name="res_model">income.by.item.month.report</field>
+            <field name="view_mode">tree</field>
+             <field name="context">{'search_default_year':1}</field> 
+        </record>
+ 
+ 	<!--  Wizard Income By Items -->
+
+	 
+          <record id="income_by_item_report_wizard_view" model="ir.ui.view">
+            <field name="name">income.by.item.report.wizard.view</field>
+            <field name="model">income.by.item.report.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                	<group string='Period'>
+                		<field name="currency_id"/>
+                        <field name="filter_date" required="1"/>
+                        <field name="start_date" attrs="{'invisible': [('filter_date', '!=', 'custom')], 'required': [('filter_date', '=', 'custom')]}"/>
+                        <field name="end_date" attrs="{'invisible': [('filter_date', '!=', 'custom')], 'required': [('filter_date', '=', 'custom')]}"/>
+                    </group>
+
+                    <footer>
+                        <button string="Generate Reports" name="generate_reports" type="object" class="oe_highlight"/>
+                        <button string="Close" class="btn btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+           </record>
+ 
+        <record id="action_income_by_item_month_wizard" model="ir.actions.act_window">
+            <field name="name">Annual Income Report</field>
+            <field name="res_model">income.by.item.report.wizard</field>
+	        <field name="view_mode">form</field>
+	        <field name="target">new</field>
+        </record>
+
+	<!-- 				 
+    <menuitem
+        id="menu_income_by_item_month_wizard"
+        name="Annual Income Report"
+        parent="menu_income_report"
+        sequence="5"
+        action="action_income_by_item_month_wizard"
+    />
+	 -->
+	 
+	<!--  Report Tree views -->
+
+       <record id="income_by_item_report_data_search_view" model="ir.ui.view">
+            <field name="name">income.by.item.report.data.search.view</field>
+            <field name="model">income.by.item.report.data</field>
+            <field name="arch" type="xml">
+                <search string="Reports">
+                    <group expand="1" string="Group By">
+                        <filter string="Year" name='year' context="{'group_by':'year'}"/>
+                    </group>
+                     
+                </search>
+            </field>
+        </record>
+  
+          <record id="income_by_item_report_data_tree_view" model="ir.ui.view">
+            <field name="name">income.by.item.report.data.view</field>
+            <field name="model">income.by.item.report.data</field>
+            <field name="arch" type="xml">
+                <tree>
+                	<field name="id" invisible="1"/>    
+                	<field name="year"/>
+                	<field name="month" invisible="1"/>
+                	<field name="month_name"/>
+                	<field name="subsidy_2020"/>
+                	<field name="subsidy_receivable"/>
+                	<field name="enrollment_and_tuition"/>
+                	<field name="selection_contest"/>
+                	<field name="incorporation_and_revalidation"/>
+                	<field name="extraordinary_income"/>
+                	<field name="patrimonial_income"/>
+                	<field name="financial_products"/>
+                	<field name="total_other_income"/>
+                	<field name="nomina"/>
+                	<field name="suppliers"/>
+                	<field name="other_benefits"/>
+                	<field name="major_maintenance_fund"/>
+                	<field name="fif_funds"/>
+                	<field name="total_other_expense"/>
+  				</tree>
+  			</field>
+  		</record>
+	
+	</data>
+</odoo>

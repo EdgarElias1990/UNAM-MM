@@ -1,0 +1,1598 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_tax_transaction
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-27 23:14+0000\n"
+"PO-Revision-Date: 2021-04-27 23:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2000
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2000
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2000
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2000
+msgid "2000"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2001
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2001
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2001
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2001
+msgid "2001"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2002
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2002
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2002
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2002
+msgid "2002"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2003
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2003
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2003
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2003
+msgid "2003"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2004
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2004
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2004
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2004
+msgid "2004"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2005
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2005
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2005
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2005
+msgid "2005"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2006
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2006
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2006
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2006
+msgid "2006"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2007
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2007
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2007
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2007
+msgid "2007"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2008
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2008
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2008
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2008
+msgid "2008"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2009
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2009
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2009
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2009
+msgid "2009"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2010
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2010
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2010
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2010
+msgid "2010"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2011
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2011
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2011
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2011
+msgid "2011"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2012
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2012
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2012
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2012
+msgid "2012"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2013
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2013
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2013
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2013
+msgid "2013"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2014
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2014
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2014
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2014
+msgid "2014"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2015
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2015
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2015
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2015
+msgid "2015"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2016
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2016
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2016
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2016
+msgid "2016"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2017
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2017
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2017
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2017
+msgid "2017"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2018
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2018
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2018
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2018
+msgid "2018"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2019
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2019
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2019
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2019
+msgid "2019"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2020
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2020
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2020
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2020
+msgid "2020"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2021
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2021
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2021
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2021
+msgid "2021"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2022
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2022
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2022
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2022
+msgid "2022"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2023
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2023
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2023
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2023
+msgid "2023"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2024
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2024
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2024
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2024
+msgid "2024"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2025
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2025
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2025
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2025
+msgid "2025"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2026
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2026
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2026
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2026
+msgid "2026"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2027
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2027
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2027
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2027
+msgid "2027"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2028
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2028
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2028
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2028
+msgid "2028"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2029
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2029
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2029
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2029
+msgid "2029"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2030
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2030
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2030
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2030
+msgid "2030"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2031
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2031
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2031
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2031
+msgid "2031"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2032
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2032
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2032
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2032
+msgid "2032"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2033
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2033
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2033
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2033
+msgid "2033"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2034
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2034
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2034
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2034
+msgid "2034"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2035
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2035
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2035
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2035
+msgid "2035"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2036
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2036
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2036
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2036
+msgid "2036"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2037
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2037
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2037
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2037
+msgid "2037"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2038
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2038
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2038
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2038
+msgid "2038"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2039
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2039
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2039
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2039
+msgid "2039"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2040
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2040
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2040
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2040
+msgid "2040"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2041
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2041
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2041
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2041
+msgid "2041"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2042
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2042
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2042
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2042
+msgid "2042"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2043
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2043
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2043
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2043
+msgid "2043"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2044
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2044
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2044
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2044
+msgid "2044"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2045
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2045
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2045
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2045
+msgid "2045"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2046
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2046
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2046
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2046
+msgid "2046"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2047
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2047
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2047
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2047
+msgid "2047"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2048
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2048
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2048
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2048
+msgid "2048"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2049
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2049
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2049
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2049
+msgid "2049"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2050
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2050
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2050
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2050
+msgid "2050"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2051
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2051
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2051
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2051
+msgid "2051"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2052
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2052
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2052
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2052
+msgid "2052"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2053
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2053
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2053
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2053
+msgid "2053"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2054
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2054
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2054
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2054
+msgid "2054"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2055
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2055
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2055
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2055
+msgid "2055"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2056
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2056
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2056
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2056
+msgid "2056"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2057
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2057
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2057
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2057
+msgid "2057"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2058
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2058
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2058
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2058
+msgid "2058"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2059
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2059
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2059
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2059
+msgid "2059"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2060
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2060
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2060
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2060
+msgid "2060"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2061
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2061
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2061
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2061
+msgid "2061"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2062
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2062
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2062
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2062
+msgid "2062"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2063
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2063
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2063
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2063
+msgid "2063"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2064
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2064
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2064
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2064
+msgid "2064"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2065
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2065
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2065
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2065
+msgid "2065"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2066
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2066
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2066
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2066
+msgid "2066"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2067
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2067
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2067
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2067
+msgid "2067"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2068
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2068
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2068
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2068
+msgid "2068"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2069
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2069
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2069
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2069
+msgid "2069"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2070
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2070
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2070
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2070
+msgid "2070"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2071
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2071
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2071
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2071
+msgid "2071"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2072
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2072
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2072
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2072
+msgid "2072"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2073
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2073
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2073
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2073
+msgid "2073"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2074
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2074
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2074
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2074
+msgid "2074"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2075
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2075
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2075
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2075
+msgid "2075"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2076
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2076
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2076
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2076
+msgid "2076"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2077
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2077
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2077
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2077
+msgid "2077"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2078
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2078
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2078
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2078
+msgid "2078"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2079
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2079
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2079
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2079
+msgid "2079"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2080
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2080
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2080
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2080
+msgid "2080"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2081
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2081
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2081
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2081
+msgid "2081"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2082
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2082
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2082
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2082
+msgid "2082"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2083
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2083
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2083
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2083
+msgid "2083"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2084
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2084
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2084
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2084
+msgid "2084"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2085
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2085
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2085
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2085
+msgid "2085"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2086
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2086
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2086
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2086
+msgid "2086"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2087
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2087
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2087
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2087
+msgid "2087"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2088
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2088
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2088
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2088
+msgid "2088"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2089
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2089
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2089
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2089
+msgid "2089"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2090
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2090
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2090
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2090
+msgid "2090"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2091
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2091
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2091
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2091
+msgid "2091"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2092
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2092
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2092
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2092
+msgid "2092"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2093
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2093
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2093
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2093
+msgid "2093"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2094
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2094
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2094
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2094
+msgid "2094"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2095
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2095
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2095
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2095
+msgid "2095"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2096
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2096
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2096
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2096
+msgid "2096"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2097
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2097
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2097
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2097
+msgid "2097"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2098
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2098
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2098
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2098
+msgid "2098"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2099
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2099
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2099
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2099
+msgid "2099"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__year__2100
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__year__2100
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__year__2100
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__year__2100
+msgid "2100"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model_terms:ir.ui.view,arch_db:jt_tax_transaction.external_layout_tax_pay
+#: model_terms:ir.ui.view,arch_db:jt_tax_transaction.external_layout_value_added_tax
+#: model_terms:ir.ui.view,arch_db:jt_tax_transaction.external_layout_witholding_tax_report
+msgid ""
+"<b><span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span></b><br/>\n"
+"                            <span style=\"font-size:14px;\">DIRECCIÓN GENERAL DE CONTROL PRESUPUESTAL-CONTADURÍA GENERAL</span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__accused
+msgid "Accused"
+msgstr "Acuse"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__ackn_acceptance
+msgid "Acknowledgement of acceptance"
+msgstr "Acuse de recibo"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__amount_payable
+msgid "Amount payable"
+msgstr "Importe a pagar"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__application_office
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__application_office
+msgid "Application Office"
+msgstr "Oficio de solicitud"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__month__april
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__month__april
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__month__april
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__month__april
+msgid "April"
+msgstr "Abril"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__month__august
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__month__august
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__month__august
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__month__august
+msgid "August"
+msgstr "Agosto"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__partner_id
+msgid "Beneficiary of the payment"
+msgstr "Beneficiario del pago"
+
+#. module: jt_tax_transaction
+#: model:ir.ui.menu,name:jt_tax_transaction.conagua_menu
+msgid "CONAGUA"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__capture_line
+msgid "Capture line"
+msgstr "Linea de Captura"
+
+#. module: jt_tax_transaction
+#: model:ir.actions.act_window,name:jt_tax_transaction.action_declaration_conagua
+msgid "Conagua"
+msgstr "CONAGUA"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__create_uid
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__create_uid
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__create_uid
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__create_date
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__create_date
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__create_date
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__dec_file
+msgid "DEC file"
+msgstr "Archivo Declaración"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__dgpu_file
+msgid "DGPU file"
+msgstr "Archivo DGPU"
+
+#. module: jt_tax_transaction
+#: model:ir.actions.act_window,name:jt_tax_transaction.action_diot
+msgid "DIOT"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__diot_archive
+msgid "DIOT ARCHIVE"
+msgstr "Archivo DIOT"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__month__december
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__month__december
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__month__december
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__month__december
+msgid "December"
+msgstr "Diciembre"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_account_move__declaration_month_id
+msgid "Declaration Month"
+msgstr "Declaración mensual"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__state__declared
+msgid "Declared"
+msgstr "Declarado"
+
+#. module: jt_tax_transaction
+#: model:ir.ui.menu,name:jt_tax_transaction.menu_diot
+msgid "Diot"
+msgstr "DIOT"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__display_name
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__display_name
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__display_name
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_jt_tax_transaction_taxpay_report__display_name
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_jt_tax_transaction_valueadded_report__display_name
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_jt_tax_transaction_withholding_report__display_name
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__display_name
+msgid "Display Name"
+msgstr "Nombre Mostrado"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__egress_key_id
+msgid "Egress Key"
+msgstr "Clave de Egresos"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "Employment Subsidy"
+msgstr "SUBSIDIO AL EMPLEO"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#: code:addons/jt_tax_transaction/reports/withholding_tax_report.py:0
+#, python-format
+msgid "Export (XLSX)"
+msgstr "Exportar (XLSX)"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__month__february
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__month__february
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__month__february
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__month__february
+msgid "February"
+msgstr "Febrero"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__file_name
+msgid "File Name"
+msgstr "Nombre de Archivo"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__filling_date
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__filling_date
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__filling_date
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__filling_date
+msgid "Filling date"
+msgstr "Fecha de presentación"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__folio
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__folio
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__folio
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__folio
+msgid "Folio"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__id
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__id
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__id
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_jt_tax_transaction_taxpay_report__id
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_jt_tax_transaction_valueadded_report__id
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_jt_tax_transaction_withholding_report__id
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__id
+msgid "ID"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "IEPS ALIM. NO BASIC CERT DEP"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "IEPS PLAG. Cert. D.E.P. T-UNAM"
+msgstr "IEPS PLAG. CERT. DEP. T-UNAM"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "IEPS Payable"
+msgstr "IEPS POR PAGAR"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "ISR 25% RET. S / EXT FEES"
+msgstr "ISR 25% RET. S/HONORARIOS EXT"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "ISR ASIMILATED FEES"
+msgstr "ISR HONORARIOS ASIMILADOS"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "ISR ON RENT PAID"
+msgstr "ISR 10% Ret. s/ Rentas Cobradas"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "ISR PAYMENT ADDITIONAL NOT TAXED"
+msgstr "ISR PAGO ADICIONAL NO GRAVADO"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "ISR Retained Lease"
+msgstr "ISR RETENIDO ARRENDAMIENTO"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "ISR Retained Professional Services"
+msgstr "ISR RETENIDO SERVICIOS PROFESIONALES"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "ISR SALARIES PAYROLL"
+msgstr "ISR SALARIOS NOMINA"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "ISR withholding For Assimilated wages"
+msgstr "ISR. RETENCIÓN POR ASIMILADOS A SALARIOS"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "ISR withholding wages minus subsidy"
+msgstr "ISR. RETENCIÓN POR SALARIOS Menos Subsidio al Empleo (Neto)"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "ISR-SP COPYRIGHT"
+msgstr "ISR-SP DERECHOS DE AUTOR"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "ISR-SP HON. 10% cert. D.E.P. GAS"
+msgstr "ISR-SP HON. 10% CERT. DEP. GAS"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "ISR-SP HON. Cert. D.E.P. CONACYT"
+msgstr "ISR-SP HON. CERT. DEP. CONACYT"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "ISR-SP HONORISTS 10%"
+msgstr "ISR-SP HONORISTAS 10%"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__month__january
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__month__january
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__month__january
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__month__january
+msgid "January"
+msgstr "Enero"
+
+#. module: jt_tax_transaction
+#: model:ir.model,name:jt_tax_transaction.model_account_move
+msgid "Journal Entries"
+msgstr "Asientos contables"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__month__july
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__month__july
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__month__july
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__month__july
+msgid "July"
+msgstr "Julio"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__month__june
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__month__june
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__month__june
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__month__june
+msgid "June"
+msgstr "Junio"
+
+#. module: jt_tax_transaction
+#: model:ir.actions.act_window,name:jt_tax_transaction.action_declaration_lfpiorpi
+msgid "LFPIORPI"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.ui.menu,name:jt_tax_transaction.lfpiorpi_menu
+msgid "LFPIORPI Forms"
+msgstr "Formulario LFPIORPI"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__laboratory_analysis
+msgid "Laboratory analysis"
+msgstr "Análisis de laboratorio"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua____last_update
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi____last_update
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month____last_update
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_jt_tax_transaction_taxpay_report____last_update
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_jt_tax_transaction_valueadded_report____last_update
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_jt_tax_transaction_withholding_report____last_update
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot____last_update
+msgid "Last Modified on"
+msgstr "Ultima modificación"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__write_uid
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__write_uid
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__write_uid
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__write_date
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__write_date
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__write_date
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "Less:"
+msgstr "menos:"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__month__march
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__month__march
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__month__march
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__month__march
+msgid "March"
+msgstr "Marzo"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__month__may
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__month__may
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__month__may
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__month__may
+msgid "May"
+msgstr "Mayo"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__meter_reading
+msgid "Meter reading"
+msgstr "Lectura medidor"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__month
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__month
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__month
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__month
+msgid "Month"
+msgstr "Mes"
+
+#. module: jt_tax_transaction
+#: model:ir.actions.act_window,name:jt_tax_transaction.action_declaration_monthly
+#: model:ir.ui.menu,name:jt_tax_transaction.month_declaration_menu
+msgid "Monthly Declaration"
+msgstr "Declaración mensual"
+
+#. module: jt_tax_transaction
+#: model:ir.model,name:jt_tax_transaction.model_declaration_month
+msgid "Monthly declaration"
+msgstr "Declaración mensual"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/withholding_tax_report.py:0
+#, python-format
+msgid "Name Of The Tax"
+msgstr "Nombre del Impuesto"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/withholding_tax_report.py:0
+#, python-format
+msgid "Net"
+msgstr "Neto"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__month__november
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__month__november
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__month__november
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__month__november
+msgid "November"
+msgstr "Noviembre"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__observations
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__observations
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__observations
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__observations
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__month__october
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__month__october
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__month__october
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__month__october
+msgid "October"
+msgstr "Octubre"
+
+#. module: jt_tax_transaction
+#: model:ir.ui.menu,name:jt_tax_transaction.menu_other_declarations
+msgid "Other Declarations"
+msgstr "Otras declaraciones"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#: code:addons/jt_tax_transaction/reports/withholding_tax_report.py:0
+#, python-format
+msgid "PDF"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__state__paid
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__move_id
+msgid "Payment Request"
+msgstr "Solicitud de Pago"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__payment_ref
+msgid "Payment references"
+msgstr "Referencia de pago"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#: code:addons/jt_tax_transaction/reports/withholding_tax_report.py:0
+#, python-format
+msgid "Export to PDF"
+msgstr "Exportar a PDF"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__programatic_code_id
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__programatic_code_id
+msgid "Programmatic code"
+msgstr "Código programático"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__declaration_proof
+msgid "Proof of Declaration"
+msgstr "Borrador de declaración"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__payment_proof
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__payment_proof
+msgid "Proof of payment"
+msgstr "Comprobante de pago"
+
+#. module: jt_tax_transaction
+#: model_terms:ir.ui.view,arch_db:jt_tax_transaction.external_layout_tax_pay
+msgid "REPORTE DE IMPUESTOS A ENTERAR/PAGAR DEL"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model_terms:ir.ui.view,arch_db:jt_tax_transaction.external_layout_witholding_tax_report
+msgid "REPORTE DE RETENCIÓN DE IMPUESTOS DEL"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model_terms:ir.ui.view,arch_db:jt_tax_transaction.external_layout_value_added_tax
+msgid ""
+"REPORTE PARA LA DETERMINACIÓN DEL IMPUESTO AL VALOR AGREGADO A CARGO DEL"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__state__rejected
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: jt_tax_transaction
+#: model:ir.actions.client,name:jt_tax_transaction.action_valueadded_tax_report
+#: model:ir.model,name:jt_tax_transaction.model_jt_tax_transaction_valueadded_report
+#: model:ir.ui.menu,name:jt_tax_transaction.valueadded_tax_report_menu
+msgid "Report ​ for the determination of Value Added Tax by"
+msgstr "Reporte para la determinación del Impuesto al Valor Agregado a cargo"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__state__requested
+msgid "Requested"
+msgstr "Solicitado"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__sat_receipt
+msgid "SAT acknowledgement of receipt"
+msgstr "Acuse de recibo del SAT"
+
+#. module: jt_tax_transaction
+#: model:ir.ui.menu,name:jt_tax_transaction.menu_salestax_report
+msgid "Sales tax reports"
+msgstr "Reportes de impuestos"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_conagua__month__september
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_lfpiorpi__month__september
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__declaration_month__month__september
+#: model:ir.model.fields.selection,name:jt_tax_transaction.selection__tax_diot__month__september
+msgid "September"
+msgstr "Septiembre"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__shipping_ack
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__shipping_ackn
+msgid "Shipping acknowledgement"
+msgstr "Acuse de envío"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__statement
+msgid "Statement"
+msgstr "Declaración"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__statement_draft
+msgid "Statement draft"
+msgstr "Borrador de declaración"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__state
+msgid "Status"
+msgstr "Estatus"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "TRANSFERRED VAT CFDI¦S"
+msgstr "IVA TRASLADADO CFDI¦S"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__txt_file
+msgid "TXT file"
+msgstr "Archivo TXT"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/withholding_tax_report.py:0
+#, python-format
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__tax_report
+msgid "Tax Payable Report"
+msgstr "Reporte de impuestos a pagar"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#: model:ir.actions.client,name:jt_tax_transaction.action_to_pay_tax_report
+#: model:ir.ui.menu,name:jt_tax_transaction.paid_tax_report_menu
+#, python-format
+msgid "Tax Report to Enter/Pay"
+msgstr "Reporte de impuestos a enterar / pagar"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/valueadded_tax_report.py:0
+#, python-format
+msgid "Tax in Charge / Favor"
+msgstr "Impuesto a Cargo/Favor"
+
+#. module: jt_tax_transaction
+#: model:ir.model.constraint,message:jt_tax_transaction.constraint_declaration_conagua_folio_uniq
+#: model:ir.model.constraint,message:jt_tax_transaction.constraint_declaration_lfpiorpi_folio_uniq
+#: model:ir.model.constraint,message:jt_tax_transaction.constraint_declaration_month_folio_uniq
+#: model:ir.model.constraint,message:jt_tax_transaction.constraint_tax_diot_folio_uniq
+msgid "The folio must be unique."
+msgstr "El folio debe ser único."
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "Total ISR. Withholding For Salaries"
+msgstr "TOTAL ISR. RETENCIÓN POR SALARIOS"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "Total Taxes To Pay"
+msgstr "TOTAL DE IMPUESTOS A PAGAR"
+
+#. module: jt_tax_transaction
+#: model:ir.ui.menu,name:jt_tax_transaction.menu_tribune_operations
+msgid "Tribune Operations"
+msgstr "Operaciones Tributarias"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "VAT Balance In Favor You"
+msgstr "IVA SALDO A FAVOR T. U."
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "VAT PAID"
+msgstr "IVA RENTAS PAGADAS"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "VAT Payable"
+msgstr "IVA POR PAGAR"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "VAT TO PAY GAS STATION"
+msgstr "IVA POR PAGAR GASOLINERA"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "VAT TO PAY YOUR"
+msgstr "IVA POR PAGAR T. U."
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "VAT TRANSPORTATION SERVICES"
+msgstr "IVA SERVICIOS DE TRANSPORTE"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "VAT Withheld"
+msgstr "IVA RETENIDO"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__vat_card
+msgid "VAT card"
+msgstr "Tarjeta de IVA"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "VAT-SERV.TRANSP.CERT. D.E.P. GAS"
+msgstr "IVA-SERV.TRANSP.CERT. DEP. GAS"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "VAT-SP HON. Cert. D.E.P. CONACYT"
+msgstr "IVA-SP HON. CERT. DEP. CONACYT"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "VAT-SP HON. Cert. D.E.P. GASOLIN"
+msgstr "IVA-SP HON. CERT. DEP. GASOLIN"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "VAT-SP HONORISTSRENTAL"
+msgstr "IVA-SP HONORISTAS"
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__tax_comparison
+msgid "Withholding Tax Comparison"
+msgstr "Comparación de retención de impuestos"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/withholding_tax_report.py:0
+#, python-format
+msgid "Withholding Tax report"
+msgstr "Reporte de retención de impuestos"
+
+#. module: jt_tax_transaction
+#: model:ir.actions.client,name:jt_tax_transaction.action_withholding_tax_report
+#: model:ir.ui.menu,name:jt_tax_transaction.withholding_tax_report_menu
+msgid "Withholding tax report"
+msgstr "Reporte de retención de impuestos"
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#: code:addons/jt_tax_transaction/reports/withholding_tax_report.py:0
+#, python-format
+msgid "XLSX"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__year
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_conagua__year_id
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_lfpiorpi__year
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__year
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_declaration_month__year_id
+#: model:ir.model.fields,field_description:jt_tax_transaction.field_tax_diot__year
+msgid "Year"
+msgstr "Año"
+
+#. module: jt_tax_transaction
+#: model:ir.model,name:jt_tax_transaction.model_declaration_conagua
+msgid "conagua"
+msgstr "CONAGUA"
+
+#. module: jt_tax_transaction
+#: model:ir.model,name:jt_tax_transaction.model_tax_diot
+msgid "diot"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: code:addons/jt_tax_transaction/reports/tax_pay_report.py:0
+#, python-format
+msgid "employee subsidy"
+msgstr "SUBSIDIO AL EMPLEO"
+
+#. module: jt_tax_transaction
+#: model:ir.model,name:jt_tax_transaction.model_declaration_lfpiorpi
+msgid "lfpiorpi"
+msgstr ""
+
+#. module: jt_tax_transaction
+#: model_terms:ir.ui.view,arch_db:jt_tax_transaction.declaration_monthly_form_view
+msgid "payment Request"
+msgstr "Solicitud de pago"
+
+#. module: jt_tax_transaction
+#: model:ir.model,name:jt_tax_transaction.model_jt_tax_transaction_withholding_report
+msgid "​ Withholding tax report"
+msgstr "Reporte de retención de impuestos"
+
+#. module: jt_tax_transaction
+#: model:ir.model,name:jt_tax_transaction.model_jt_tax_transaction_taxpay_report
+msgid "​Tax Report to Enter/Pay"
+msgstr "Reporte de impuestos a enterar / pagar"

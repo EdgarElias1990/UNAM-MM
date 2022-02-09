@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+         <record model="ir.ui.view" id="view_financial_product_form">
+            <field name="name">view.financial.product.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="account.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='invoicing']" position="inside">
+                	<group string="Yields" name="yields">
+                		<group string="Aware of the payment">
+                			<field name="investment_income_account_id"/>
+                		</group>
+                		<group string="To Pay">
+                			<field name="investment_expense_account_id"/>
+                			<field name="investment_price_diff_account_id"/>
+                		</group>
+                	</group>
+                </xpath>
+            </field>
+        </record>
+        
+    	<record id="ation_financial_product" model="ir.actions.act_window">
+            <field name="name">Financial Product</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">tree,kanban,form,activity</field>
+            <field name="domain">[('type','=','investment')]</field>
+            <field name="context">{'default_type':'investment'}</field>
+        </record>
+<!-- 
+        <menuitem id="menu_product_income" name="Financial Product" sequence="1"
+            parent="submenu_menu_investment_config" action="ation_financial_product"/>
+ -->
+                     
+	</data>
+</odoo>

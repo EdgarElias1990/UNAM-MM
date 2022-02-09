@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bank_transfer_request,bank_transfer_request,model_bank_transfer_request,base.group_user,1,1,1,1
+access_scholarship_payment_breakdown,scholarship_payment_breakdown,model_scholarship_payment_breakdown,,1,1,1,1

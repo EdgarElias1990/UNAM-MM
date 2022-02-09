@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="payment_batch_supp_tree_view" model="ir.ui.view">
+            <field name="name">payment.batch.supplier.tree.view</field>
+            <field name="model">payment.batch.supplier</field>
+            <field name="arch" type="xml">
+                <tree create='0'>
+                    <field name="batch_folio"/>
+                    <field name="checkbook_req_id"/>
+                    <field name="amount_of_checkes"/>
+                    <field name="intial_check_folio"/>
+                    <field name="final_check_folio"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="payment_batch_supp_form_view" model="ir.ui.view">
+            <field name="name">payment.batch.supp.form.view</field>
+            <field name="model">payment.batch.supplier</field>
+            <field name="arch" type="xml">
+                <form create='0'>
+                    <header>
+                        <field name="printed_checks" invisible="1"/>
+                        <button name="confirm_printed_checks" type="object" string="Confirm Printed Checks"
+                                class="oe_highlight"
+                                attrs="{'invisible': [('printed_checks', '=', False)]}"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                            	<field name="type_of_batch" readonly="1" force_save="1"/>
+                                <field name="batch_folio" readonly="1" force_save="1"/>
+                                <field name="payment_issuing_bank_id" domain="[('type','=','bank')]" readonly="not context.get('readonly_bank_fields')" force_save="1"/>
+                                <field name="payment_issuing_bank_acc_id" readonly="1" force_save="1"/>
+                                <field name="checkbook_req_id" context="{'from_approve_check':1}"
+                                       options="{'no_create_edit':1}"
+                                       domain="[('state','not in',('rejected','cancelled')),
+                                       ('bank_id', '=', payment_issuing_bank_id)]"/>
+                                <field name="type_of_payment_method" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="payment_date"/>
+                                <field name="amount_of_checkes"/>
+                                <field name="intial_check_folio"/>
+                                <field name="final_check_folio"/>
+                                <field name="description_layout"/>
+                            </group>
+                        </group>
+                            <button name="select_lines" type="object" string="Select All"
+                            attrs="{'invisible':[('selected', '=', True)]}"/>
+                            <button name="deselect_lines" type="object" string="Deselect All"
+                            attrs="{'invisible':[('selected', '=', False)]}"/>
+                            <field name="selected" invisible="1"/>
+
+                            <button name="select_available_lines" type="object" string="Select Available for printing checks"
+                            attrs="{'invisible':[('selected_available', '=', True)]}"/>
+                            <button name="deselect_available_lines" type="object" string="Deselect Available for printing checks"
+                            attrs="{'invisible':[('selected_available', '=', False)]}"/>
+                            <field name="selected_available" invisible="1"/>
+                            
+                            
+                        <notebook>
+                            <page name="check_payment_requests" string="Check Payment Requests">
+                                <field name="payment_req_ids" nolabel="1">
+                                    <tree editable="bottom" create="false">
+			                            <button name="select_lines" type="object" string='Select/Deselect'/>
+			                            <field name="layout_generated" readonly="1"/>
+			                            <field name="protected_cheque_file_name" invisible="1"/>
+			                            <field name="protected_cheque_file" filename="protected_cheque_file_name"/>
+			                            
+                                        <field name="selected"/>
+                                        <field name="check_folio_id"/>
+                                        <field name="payment_id" readonly="1" force_save="1"/>
+                                        <field name="payment_req_id" readonly="1" force_save="1"/>
+                                        <field name="payment_partner_id" readonly="1"/>
+                                        <field name="amount_to_pay" readonly="1" force_save="1"/>
+                                        <field name="check_status"/>
+                                        <field name="zone" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Journal Items" name="accounts">
+                             	<field name="move_line_ids" readonly="1"/>
+                             	<field name="payment_move_line_ids"></field>
+ 							</page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_payment_batch_supplier" model="ir.actions.act_window">
+            <field name="name">Payment Batch(Supplier)</field>
+            <field name="res_model">payment.batch.supplier</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type_of_batch','=','supplier')]</field>
+            <field name="context">{'from_approve_check':1,'default_type_of_batch':'supplier','readonly_bank_fields':True}</field>
+        </record>
+
+        <menuitem id="payment_batch_main_menu" name="Payment Batch"
+                  parent="check_control_main_menu" sequence="2"/>
+
+        <menuitem id="payment_batch_supplier_menu" name="Payment Batch(Supplier)"
+                  parent="payment_batch_main_menu"
+                  action="action_payment_batch_supplier" sequence="1"/>
+
+        <record id="action_assign_check_folio" model="ir.actions.server">
+            <field name="name">Assign Check Folio</field>
+            <field name="model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="state">code</field>
+            <field name="code">action = records.action_assign_check_folio()</field>
+        </record>
+        
+        <record id="action_mass_confirm_check_folio" model="ir.actions.server">
+            <field name="name">Confirm Printed Checks</field>
+            <field name="model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="state">code</field>
+            <field name="code">action = records.confirm_printed_checks()</field>
+        </record>
+
+        <record id="action_deliver_checks" model="ir.actions.server">
+            <field name="name">Deliver Checks</field>
+            <field name="model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="state">code</field>
+            <field name="code">action = records.action_deliver_checks()</field>
+        </record>
+
+        <record id="action_layout_check_protection" model="ir.actions.server">
+            <field name="name">Layout Check Protection</field>
+            <field name="model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="state">code</field>
+            <field name="code">action = records.action_layout_check_protection()</field>
+        </record>
+
+        <record id="action_send_file_to_protection" model="ir.actions.server">
+            <field name="name">Send File to Protection</field>
+            <field name="model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="state">code</field>
+            <field name="code">action = records.action_send_file_to_protection()</field>
+        </record>
+
+        <record id="action_protected_checks" model="ir.actions.server">
+            <field name="name">Protected Checks</field>
+            <field name="model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="state">code</field>
+            <field name="code">action = records.action_protected_checks()</field>
+        </record>
+
+        <record id="action_payment_batch_supplier_finance" model="ir.actions.act_window">
+            <field name="name">Payment Batch(Supplier)</field>
+            <field name="res_model">payment.batch.supplier</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type_of_batch','=','supplier')]</field>
+            <field name="context">{'from_approve_check':1,'default_type_of_batch':'supplier'}</field>
+        </record>
+
+        <menuitem id="payment_batch_menu_finance" name="Payment Batch"
+                  parent="jt_payroll_payment.menu_payment_finance"
+                   sequence="1"/>
+
+
+        <menuitem id="payment_batch_supplier_menu_finance" name="Payment Batch(Supplier)"
+                  parent="payment_batch_menu_finance"
+                  action="action_payment_batch_supplier_finance" sequence="1"/>
+
+		<!-- Payment Batch Attachment Wizard-->
+        <record id="action_request_payment_batch_document" model="ir.actions.server">
+            <field name="name">Attach File</field>
+            <field name="model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_payment_batch_supplier"/>
+            <field name="state">code</field>
+            <field name="binding_view_types">list</field>
+            <field name="code">action = records.action_request_attach_file()</field>
+        </record>
+
+        <record id="payment_lot_attachment_wizard" model="ir.ui.view">
+            <field name="name">payment.lot.attachment.wizard</field>
+            <field name="model">payment.lot.attach.file</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                            	<field name="file_name" invisible="1"/>
+                                <field name="file_data" filename="file_name" required="1"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+						<footer>
+                   			<button string="Attach" class="btn btn-primary" type="object" name="action_attach"/>
+							<button string="Cancel" class="oe_link" special="cancel"/>
+                		</footer>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_request_reject_form_view" model="ir.ui.view">
+            <field name="name">account.request.reject.form.view</field>
+            <field name="model">account.request.reject</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="reason_rejection"/>
+                        <field name="observation"/>
+                    </group>
+                    <footer>
+                        <button string="confirm" name="apply" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+         <!-- action for Rejection  views -->
+        <record id="action_request_Rejection" model="ir.actions.act_window">
+            <field name="name">Request Rejection</field>
+            <field name="res_model">account.request.reject</field>
+            <field name="view_mode">form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record>
+
+        
+
+    </data>
+</odoo>

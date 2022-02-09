@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- menu for budget module -->
+	<menuitem
+        name="UNAM Budget"
+        id="menu_budget"
+        web_icon="jt_budget_mgmt,static/description/icon.png"
+        sequence="40"
+    />
+
+    <!-- menu for configurations -->
+    <menuitem
+        id="menu_budget_config"
+        name="Configurations"
+        parent="menu_budget"
+        sequence="5"
+    />
+
+    <menuitem
+        id="menu_extra_views"
+        name="Others"
+        parent="menu_budget_config"
+    />
+
+    <!-- menu for structure and catalog -->
+    <menuitem
+        id="menu_struct_and_catalog"
+        name="Programmatic Structure and Catalogs"
+        parent="menu_budget_config"
+        sequence="1"
+    />
+
+    <!-- menu for code structure and order -->
+    <menuitem
+        id="menu_code_struct_and_order"
+        name="Programmatic Code Structure and Order"
+        parent="menu_struct_and_catalog"
+        action="action_code_structure"
+        sequence="1"
+    />
+
+    <!-- menu for code catalog -->
+    <menuitem
+        id="menu_code_catalog"
+        name="Programmatic code catalogs"
+        parent="menu_budget_config"
+        sequence="1"
+    />
+
+    <!-- menu for program -->
+    <menuitem
+        id="menu_program"
+        name="Program (PR)"
+        parent="menu_code_catalog"
+        action="action_program"
+        sequence="2"
+    />
+
+    <!-- menu for sub program -->
+    <menuitem
+        id="menu_sub_program"
+        name="Subprogram (SP)"
+        parent="menu_code_catalog"
+        action="action_sub_program"
+        sequence="3"
+    />
+
+    <!-- menu for dependency -->
+    <menuitem
+        id="menu_dependency"
+        name="Dependency (DEP)"
+        parent="menu_code_catalog"
+        action="action_dependency"
+        sequence="4"
+    />
+
+    <!-- menu for sub dependency -->
+    <menuitem
+        id="menu_sub_dependency"
+        name="Sub dependency (DEP)"
+        parent="menu_code_catalog"
+        action="action_sub_dependency"
+        sequence="5"
+    />
+
+    <!-- menu for expenditure item -->
+    <menuitem
+        id="menu_expenditure_item"
+        name="Expense Item (PAR)"
+        parent="menu_code_catalog"
+        action="action_expenditure_item"
+        sequence="6"
+    />
+
+    <!-- menu for verifying digit -->
+    <!-- <menuitem
+        id="menu_verifying_digit"
+        name="Verifying Digit (DV)"
+        parent="menu_code_catalog"
+        action="action_verifying_digit"
+        sequence="7"
+    /> -->
+
+    <!-- menu for resource origin -->
+    <menuitem
+        id="menu_resource_origin"
+        name="Origin of the Resource (OR)"
+        parent="menu_code_catalog"
+        action="action_resource_origin"
+        sequence="8"
+    />
+
+    <!-- menu for institutional activity -->
+    <menuitem
+        id="menu_institutional_activity"
+        name="Institutional Activity (AI)"
+        parent="menu_code_catalog"
+        action="action_institutional_activity"
+        sequence="9"
+    />
+
+    <!-- menu for budget program conversion -->
+    <menuitem
+        id="menu_budget_program_conversion"
+        name="Budget Program Conversion (CONPP)"
+        parent="menu_code_catalog"
+        action="action_budget_program_conversion"
+        sequence="10"
+    />
+
+    <menuitem
+        id="menu_shcp_code"
+        name="SHCP Code"
+        parent="menu_extra_views"
+        action="action_shcp_code"
+        sequence="11"
+    />
+
+    <!-- menu for program Key-->
+    <menuitem
+        id="menu_program_key"
+        name="Key UNAM"
+        parent="menu_extra_views"
+        action="action_program_key"
+        sequence="20"
+    />
+
+        <!-- menu for SHCP Games-->
+    <menuitem
+        id="menu_shcp_games"
+        name="Key SHCP Games"
+        parent="menu_extra_views"
+        action="action_shcp_budget"
+        sequence="40"
+    />
+
+    
+    <menuitem
+        id="menu_quarter_budget"
+        name="Quarter"
+        parent="menu_extra_views"
+        action="action_quarter_budget"
+    />    
+
+    <!-- menu for departure conversion -->
+    <menuitem
+        id="menu_departure_conversion"
+        name="SHCP Games (CONPA)"
+        parent="menu_code_catalog"
+        action="action_departure_conversion"
+        sequence="11"
+    />
+
+    <!-- menu for expense type -->
+    <menuitem
+        id="menu_expense_type"
+        name="Type of Expense (TG)"
+        parent="menu_code_catalog"
+        action="action_expense_type"
+        sequence="12"
+    />
+
+    <!-- menu for geographic location -->
+    <menuitem
+        id="menu_geographic_location"
+        name="Geographic Location (UG)"
+        parent="menu_code_catalog"
+        action="action_geographic_location"
+        sequence="13"
+    />
+
+    <!-- menu for key wallet -->
+    <menuitem
+        id="menu_key_wallet"
+        name="Wallet Key (CC)"
+        parent="menu_code_catalog"
+        action="action_key_wallet"
+        sequence="14"
+    />
+
+    <!-- menu for project type -->
+    <!-- 
+    <menuitem
+        id="menu_project_type"
+        name="Project Type (TP)"
+        parent="menu_code_catalog"
+        action="action_project_type"
+        sequence="15"
+    />
+	 -->
+    <!-- menu for stage -->
+    <!-- 
+    <menuitem
+        id="menu_stage"
+        name="Stage (E)"
+        parent="menu_code_catalog"
+        action="action_stage"
+        sequence="16"
+    />
+	 -->
+	 
+    <!-- menu for agreement type -->
+   
+    <!-- <menuitem
+        id="menu_agreement_type"
+        name="Type of agreement (TC)"
+        parent="menu_code_catalog"
+        action="action_agreement_type"
+        sequence="17"
+    /> -->
+	
+    <!-- menu for budget -->
+    <menuitem
+        id="menu_budgets"
+        name="Budgets"
+        parent="menu_budget"
+        sequence="1"
+    />
+
+    <!-- menu for expenditure budget -->
+    <menuitem
+        id="menu_expenditure_budget"
+        name="Expenditure budget"
+        parent="menu_budgets"
+        action="action_expenditure_budget"
+        sequence="1"
+    />
+
+    <!-- menu for program code -->
+    <menuitem
+        id="menu_program_code"
+        name="Program code"
+        parent="menu_budgets"
+        action="action_program_code"
+        sequence="2"
+    />
+
+
+    <!-- menu for modifications -->
+    <menuitem
+        id="menu_modifications"
+        name="Modifications"
+        parent="menu_budget"
+        sequence="2"
+    />
+
+    <!-- menu for adequacies -->
+    <menuitem
+        id="menu_adequacies"
+        name="Adequacies"
+        parent="menu_modifications"
+        action="action_adequacies"
+        sequence="1"
+    />
+
+    <!-- menu for standardization -->
+    <menuitem
+        id="menu_standardization"
+        name="Re-standardization"
+        parent="menu_modifications"
+        action="action_standardization"
+        sequence="2"
+    />
+
+    <!-- menu for budget control -->
+    <menuitem
+        id="menu_budget_control"
+        name="Budget Control"
+        parent="menu_budget"
+        sequence="3"
+    />
+
+    <!-- menu for control of assigned amounts -->
+    <menuitem
+        id="menu_control_assigned_amounts"
+        name="Control of assigned amounts"
+        parent="menu_budget_control"
+        action="action_control_assigned_amounts"
+        sequence="1"
+    />
+
+    <!-- menu for reports -->
+    <menuitem
+        id="menu_reports"
+        name="Reports"
+        parent="menu_budget"
+        sequence="4"
+    />
+
+    <record id="action_proforma_budget_summary" model="ir.actions.client">
+        <field name="name">Proforma budget summary</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'model': 'proforma.budget.summary.report'}" />
+    </record>
+
+    <!-- menu for proforma budget summary -->
+    <menuitem
+        id="menu_proforma_budget_summary"
+        name="Proforma Budget Summary"
+        parent="menu_reports"
+        sequence="1"
+        action="action_proforma_budget_summary"/>
+
+	<!-- Details budget summary -->
+    <record id="action_details_budget_summary_report" model="ir.actions.client">
+        <field name="name">Details Budget Summary</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'model': 'details.budget.summary.report.onscreen'}" />
+    </record>
+
+    
+    <menuitem
+        id="menu_details_budget_summary_report"
+        name="Details Budget Summary"
+        parent="menu_reports"
+        sequence="1"
+        action="action_details_budget_summary_report"/>
+
+    <menuitem
+        id="request_summary_report"
+        name="Response Report"
+        parent="menu_reports"
+        sequence="2"
+        action="act_req_summary_report"/>
+
+    <menuitem
+        id="requested_report_menu"
+        name="Requested Reports"
+        parent="menu_reports"
+        sequence="3"
+        action="action_requested_reports"/>
+
+    <menuitem
+        id="details_budget_report_menu"
+        name="Detailed Budget Reports"
+        parent="menu_reports"
+        sequence="4"
+        action="act_details_budget_summary_report"/>
+        
+</odoo>

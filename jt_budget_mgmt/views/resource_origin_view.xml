@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for resource origin model -->
+        <record id="resource_origin_search_view" model="ir.ui.view">
+            <field name="name">resource.origin.search.view</field>
+            <field name="model">resource.origin</field>
+            <field name="arch" type="xml">
+                <search string="Resource origin">
+                    <field name="key_origin"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Key origin" name='key_origin' context="{'group_by':'key_origin'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for resource origin model -->
+    	<record id="resource_origin_form_view" model="ir.ui.view">
+            <field name="name">resource.origin.form.view</field>
+            <field name="model">resource.origin</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+	            		<group>
+	            			<field name="key_origin" required="1"/>
+                            <field name="desc" required="1"/>
+	            		</group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for resource origin model -->
+    	<record id="resource_origin_tree_view" model="ir.ui.view">
+            <field name="name">resource.origin.tree.view</field>
+            <field name="model">resource.origin</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="key_origin"/>
+                    <field name="desc"/>
+            	</tree>
+            </field>
+        </record>
+
+        <!-- action for resource origin views -->
+        <record id="action_resource_origin" model="ir.actions.act_window">
+            <field name="name">Origin of the Resource</field>
+            <field name="res_model">resource.origin</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="resource_origin_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

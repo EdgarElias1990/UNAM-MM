@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="account_statement_template_header" name="account_statment_pdf">
+
+            <!-- <div class="header"> -->
+            <div class="row">
+                <table style="width:100%">
+                    <tr>
+                        <td>
+                            <img t-attf-src="data:image/png;base64,{{res_company.header_logo}}"
+                                 style="width:150px;height:170px;"/>
+                        </td>
+
+                        <td style="text-align:center">
+                            <b>
+                                <span style="font-size:16px;text-align:center" class="text-center">UNIVERSIDAD NACIONAL
+                                    AUTÓNOMA DE MÉXICO
+                                </span>
+                                <br/>
+                                <span style="font-size:14px;" class="text-center">PATRONATO UNIVERSITARIO</span>
+                                <br/>
+                                <span style="font-size:12px;" class="text-center">Dirección General de Finanzas</span>
+                                <br/>
+                                <span style="font-size:12px;" class="text-center">Departamento de Control Financiero
+                                </span>
+                                <br/>
+                                <span style="font-size:12px;" class="text-center">Movimientos de Fideicomisos</span>
+                                <br/>
+                                <span style="font-size:12px;" class="text-center">CONSULTA: GENERAL POR FIDEICOMISO
+                                </span>
+                                <br/>
+                            </b>
+                        </td>
+                    </tr>
+                    <br/>
+                    <br/>
+                </table>
+
+
+            </div>
+            <!-- </div> -->
+
+        </template>
+
+        <template id="trust_account_statement_template_doc">
+            <t t-call="web.html_container">
+                <t t-call="jt_agreement.account_statement_template_header"/>
+                <div class="page">
+                    <style>
+                        .border1
+                        {
+                        border-bottom: 1px solid black;
+                        }
+
+                        .style1
+                        {
+                        font-size:15px;
+                        }
+                    </style>
+                    <div>
+                        <b>
+                            <span style="margin-left:5px;font-size:15px;">FIDEICOMISO:</span>
+                        </b>
+                        <span t-esc="o.name"/><br/>
+                        <b>
+                            <span style="margin-left:5px;font-size:15px;">Fecha y hora de impresión</span>
+                            <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                        </b>
+                        <br/>
+                        <br/>
+                    </div>
+
+                    <table style="width:100%;border: 1px solid black;">
+                        <thead>
+                            <tr style="height:6%;text-align:center;font-size:15px;background-color:#C0C0C0;">
+                                <th class="style1">Folio C</th>
+                                <th class="style1">Fecha</th>
+                                <th class="style1">Operacion</th>
+                                <th class="style1">Debe</th>
+                                <th class="style1">Haber</th>
+                                <th class="style1">Saldo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="total_final" t-value="0"/>
+                            <t t-set="total_debit" t-value="0"/>
+                            <t t-set="total_credit" t-value="0"/>
+                            <tr class="style1" t-foreach="o.get_report_lines()" t-as="line">
+                                <td class="style1 border1" style="text-align:center;">
+                                    <span t-esc="line['folio']"/>
+                                </td>
+                                <td class="style1 border1" style="text-align:center;">
+                                    <span t-esc="line['date']"/>
+                                </td>
+                                <td class="style1 border1" style="text-align:left;">
+                                    <span t-esc="line['opt']"/>
+                                </td>
+                                <td class="style1 border1" style="text-align:right;">
+                                    <span t-esc="line['debit']"
+                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                                <td class="style1 border1" style="text-align:right;">
+                                    <span t-esc="line['credit']"
+                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                                <td class="style1 border1" style="text-align:right;">
+                                    <span t-esc="line['final']"
+                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                                <t t-set="total_final" t-value="line['final']"/>
+                                <t t-set="total_debit" t-value="total_debit + line['debit']"/>
+                                <t t-set="total_credit" t-value="total_credit + line['credit']"/>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th class="style1 border1" style="text-align:right;">
+                                    <span t-esc="total_debit"
+                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </th>
+                                <th class="style1 border1" style="text-align:right;">
+                                    <span t-esc="total_credit"
+                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </th>
+                                <th class="style1 border1" style="text-align:right;">
+                                    <span t-esc="total_final"
+                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </th>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </template>
+
+        <template id="account_statement_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <!-- <t t-set="lang" t-value="o.invoice_user_id.sudo().lang if o.type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                     -->
+                    <t t-call="jt_agreement.trust_account_statement_template_doc"/>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_account_statement" model="report.paperformat">
+            <field name="name">Format 1</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">6</field>
+            <field name="margin_bottom">60</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="dpi">100</field>
+        </record>
+
+        <report
+                id="account_statement_report"
+                model="agreement.trust"
+                string="Account Statement"
+                report_type="qweb-pdf"
+                name="jt_agreement.account_statement_template"
+                file="jt_agreement.account_statement_template"
+                print_report_name="object.name"
+                paperformat="jt_agreement.paperformat_account_statement"
+        />
+
+    </data>
+</odoo>

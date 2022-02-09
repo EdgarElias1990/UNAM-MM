@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="amount_to_invest_bases_collaboration_view" model="ir.ui.view">
+            <field name="name">amounts.to.invest.bases.collaboration.view</field>
+            <field name="model">bases.collaboration.amounts.invest</field>
+            <field name="arch" type="xml">
+                <form>
+                	<group>
+                		<field name="is_hide_button" invisible="1"/>
+                        <field name="start_date" required="1"
+                               attrs="{'invisible':[('is_hide_button','=',True)]}"/>
+                        <field name="end_date" required="1"
+                               attrs="{'invisible':[('is_hide_button','=',True)]}"/>
+						<field name="filename" readonly="1" invisible="1"/>
+						<field name="file" widget="binary" filename="filename"
+                               attrs="{'invisible':[('is_hide_button','=',False)]}"
+                               readonly="1"/>
+                    </group>
+                	<footer>
+                		<button string="Print" name="print_amount_invest_bases_collaboration" type="object"
+                                class="oe_highlight" attrs="{'invisible':[('is_hide_button','=',True)]}"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Amounts to Invest"
+            id="action_amounts_to_invest_bases_collaboration"
+            res_model="bases.collaboration.amounts.invest"
+            binding_model="bases.collaboration"
+            view_mode="form"
+            target="new"
+        />
+
+	</data>
+</odoo>

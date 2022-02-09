@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- <record id="report_stmt_of_fin_postn" model="account.financial.html.report">
+            <field name="name">Statement of Financial Position</field>
+            <field name="debit_credit" eval="False"/>
+            <field name="date_range" eval="False"/>
+            <field name="analytic" eval="True"/>
+            <field name="unfold_all_filter" eval="True"/>
+            <field name="show_journal_filter" eval="True"/>
+            <field name='parent_id' ref='jt_conac.menu_child_reporting_conac'/>
+        </record>
+
+        <record id="statement_financial_report0" model="account.financial.html.report.line">
+            <field name="name">Activo</field>
+            <field name="code">Activo</field>
+            <field name="financial_report_id" ref="report_stmt_of_fin_postn"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="1"/>
+            <field name="level" eval="0" />
+        </record>
+
+        <record id="statement_financial_report0_1" model="account.financial.html.report.line">
+            <field name="name">Activo Circulante</field>
+            <field name="code">Activo Circulante</field>
+            <field name="financial_report_id" ref="report_stmt_of_fin_postn"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="1"/>
+            <field name="level" eval="1" />
+        </record>
+
+        <record id="statement_financial_report0_1_1" model="account.financial.html.report.line">
+            <field name="name">Efectivo y Equivalentes</field>
+            <field name="code">Efectivo y Equivalentes</field>
+            <field name="parent_id" ref="statement_financial_report0_1"/>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="2"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_1_2" model="account.financial.html.report.line">
+            <field name="name">Derechos a Recibir Efectivo o Equivalentes</field>
+            <field name="code">Derechos a Recibir Efectivo o Equivalentes</field>
+            <field name="parent_id" ref="statement_financial_report0_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="3"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_1_3" model="account.financial.html.report.line">
+            <field name="name">Derechos a Recibir Bienes y Servicios</field>
+            <field name="code">Derechos a Recibir Bienes y Servicios</field>
+            <field name="parent_id" ref="statement_financial_report0_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="4"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_1_4" model="account.financial.html.report.line">
+            <field name="name">Inventarios</field>
+            <field name="code">Inventarios</field>
+            <field name="parent_id" ref="statement_financial_report0_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="5"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_1_5" model="account.financial.html.report.line">
+            <field name="name">Almacenes</field>
+            <field name="code">Almacenes</field>
+            <field name="parent_id" ref="statement_financial_report0_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="6"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_1_6" model="account.financial.html.report.line">
+            <field name="name">Estimación por Pérdidas o Deterioro de Activos Circulantes</field>
+            <field name="code">Estimación por Pérdidas o Deterioro de Activos Circulantes</field>
+            <field name="parent_id" ref="statement_financial_report0_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="7"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_1_7" model="account.financial.html.report.line">
+            <field name="name">Otros Activos Circulantes</field>
+            <field name="code">Otros Activos Circulantes</field>
+            <field name="parent_id" ref="statement_financial_report0_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="8"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_total" model="account.financial.html.report.line">
+            <field name="name">Total de Activos Circulantesa</field>
+            <field name="code">Total de Activos Circulantesa</field>
+            <field name="parent_id" ref="statement_financial_report0_1_7"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="1"/>
+            <field name="level" eval="0" />
+        </record>
+
+        <record id="statement_financial_report0_2" model="account.financial.html.report.line">
+            <field name="name">Activo No Circulante</field>
+            <field name="code">Activo No Circulante</field>
+            <field name="financial_report_id" ref="report_stmt_of_fin_postn"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="1"/>
+            <field name="level" eval="1" />
+        </record>
+
+        <record id="statement_financial_report0_2_1" model="account.financial.html.report.line">
+            <field name="name">Inversiones Financieras a Largo Plazo</field>
+            <field name="code">Inversiones Financieras a Largo Plazo</field>
+            <field name="parent_id" ref="statement_financial_report0_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="2"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_2_2" model="account.financial.html.report.line">
+            <field name="name">Derechos a Recibir Efectivo o Equivalentes a Largo Plazo</field>
+            <field name="code">Derechos a Recibir Efectivo o Equivalentes a Largo Plazo</field>
+            <field name="parent_id" ref="statement_financial_report0_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="3"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_2_3" model="account.financial.html.report.line">
+            <field name="name">Bienes Inmuebles, Infraestructura y Construcciones en Proceso</field>
+            <field name="code">Bienes Inmuebles, Infraestructura y Construcciones en Proceso</field>
+            <field name="parent_id" ref="statement_financial_report0_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="4"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_2_4" model="account.financial.html.report.line">
+            <field name="name">Bienes Muebles</field>
+            <field name="code">Bienes Muebles</field>
+            <field name="parent_id" ref="statement_financial_report0_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="5"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_2_5" model="account.financial.html.report.line">
+            <field name="name">Activos Intangibles</field>
+            <field name="code">Activos Intangibles</field>
+            <field name="parent_id" ref="statement_financial_report0_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="6"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_2_6" model="account.financial.html.report.line">
+            <field name="name">Depreciación, Deterioro y Amortización Acumulada de Bienes</field>
+            <field name="code">Depreciación, Deterioro y Amortización Acumulada de Bienes</field>
+            <field name="parent_id" ref="statement_financial_report0_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="7"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_2_7" model="account.financial.html.report.line">
+            <field name="name">Activos Diferidos</field>
+            <field name="code">Activos Diferidos</field>
+            <field name="parent_id" ref="statement_financial_report0_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="8"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_2_8" model="account.financial.html.report.line">
+            <field name="name">Estimación por Pérdida o Deterioro de Activos no Circulantes</field>
+            <field name="code">Estimación por Pérdida o Deterioro de Activos no Circulantes</field>
+            <field name="parent_id" ref="statement_financial_report0_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="9"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_2_9" model="account.financial.html.report.line">
+            <field name="name">Otros Activos no Circulantes</field>
+            <field name="code">Otros Activos no Circulantes</field>
+            <field name="parent_id" ref="statement_financial_report0_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report0_total1" model="account.financial.html.report.line">
+            <field name="name">Total de Activos No Circulantes</field>
+            <field name="code">Total de Activos No Circulantes</field>
+            <field name="parent_id" ref="statement_financial_report0_2_9"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="1"/>
+            <field name="level" eval="0" />
+        </record>
+
+        <record id="statement_financial_report0_total2" model="account.financial.html.report.line">
+            <field name="name">Total del Activo</field>
+            <field name="code">Total del Activo</field>
+            <field name="parent_id" ref="statement_financial_report0_2_9"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="2"/>
+            <field name="level" eval="0" />
+        </record>
+
+        <record id="statement_financial_report1" model="account.financial.html.report.line">
+            <field name="name">Pasivo</field>
+            <field name="code">Pasivo</field>
+            <field name="financial_report_id" ref="report_stmt_of_fin_postn"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="2"/>
+            <field name="level" eval="0" />
+        </record>
+
+        <record id="statement_financial_report1_1" model="account.financial.html.report.line">
+            <field name="name">Pasivo Circulante</field>
+            <field name="code">Pasivo Circulante</field>
+            <field name="financial_report_id" ref="report_stmt_of_fin_postn"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="2"/>
+            <field name="level" eval="1" />
+        </record>
+
+        <record id="statement_financial_report1_1_1" model="account.financial.html.report.line">
+            <field name="name">Cuentas por Pagar a Corto Plazo</field>
+            <field name="code">Cuentas por Pagar a Corto Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="3"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_1_2" model="account.financial.html.report.line">
+            <field name="name">Documentos por Pagar a Corto Plazo</field>
+            <field name="code">Documentos por Pagar a Corto Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="4"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_1_3" model="account.financial.html.report.line">
+            <field name="name">Porción a Corto Plazo de la Deuda Pública a Largo Plazo</field>
+            <field name="code">Porción a Corto Plazo de la Deuda Pública a Largo Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="5"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_1_4" model="account.financial.html.report.line">
+            <field name="name">Títulos y Valores a Corto Plazo</field>
+            <field name="code">Títulos y Valores a Corto Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="6"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_1_5" model="account.financial.html.report.line">
+            <field name="name">Pasivos Diferidos a Corto Plazo</field>
+            <field name="code">Pasivos Diferidos a Corto Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="7"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_1_6" model="account.financial.html.report.line">
+            <field name="name">Fondos y Bienes de Terceros en Garantía y/o Administración a Corto Plazo</field>
+            <field name="code">Fondos y Bienes de Terceros en Garantía y/o Administración a Corto Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="8"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_1_7" model="account.financial.html.report.line">
+            <field name="name">Provisiones a Corto Plazo</field>
+            <field name="code">Provisiones a Corto Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="9"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_1_8" model="account.financial.html.report.line">
+            <field name="name">Otros Pasivos a Corto Plazo</field>
+            <field name="code">Otros Pasivos a Corto Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_total" model="account.financial.html.report.line">
+            <field name="name">Total de Pasivos Circulantes</field>
+            <field name="code">Total de Pasivos Circulantes</field>
+            <field name="parent_id" ref="statement_financial_report1_1_8"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="2"/>
+            <field name="level" eval="0" />
+        </record>
+
+        <record id="statement_financial_report1_2" model="account.financial.html.report.line">
+            <field name="name">Pasivo No Circulante</field>
+            <field name="code">Pasivo No Circulante</field>
+            <field name="financial_report_id" ref="report_stmt_of_fin_postn"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="2"/>
+            <field name="level" eval="1" />
+        </record>
+
+        <record id="statement_financial_report1_2_1" model="account.financial.html.report.line">
+            <field name="name">Cuentas por Pagar a Largo Plazo</field>
+            <field name="code">Cuentas por Pagar a Largo Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="3"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_2_2" model="account.financial.html.report.line">
+            <field name="name">Documentos por Pagar a Largo Plazo</field>
+            <field name="code">Documentos por Pagar a Largo Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="4"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_2_3" model="account.financial.html.report.line">
+            <field name="name">Deuda Pública a Largo Plazo</field>
+            <field name="code">Deuda Pública a Largo Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="5"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_2_4" model="account.financial.html.report.line">
+            <field name="name">Pasivos Diferidos a Largo Plazo</field>
+            <field name="code">Pasivos Diferidos a Largo Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="6"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_2_5" model="account.financial.html.report.line">
+            <field name="name">Fondos y Bienes de Terceros en Garantía y/o Administración a Largo Plazo</field>
+            <field name="code">Fondos y Bienes de Terceros en Garantía y/o Administración a Largo Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="7"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_2_6" model="account.financial.html.report.line">
+            <field name="name">Provisiones a Largo Plazo</field>
+            <field name="code">Provisiones a Largo Plazo</field>
+            <field name="parent_id" ref="statement_financial_report1_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="8"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report1_total1" model="account.financial.html.report.line">
+            <field name="name">Total de Pasivos No Circulantes</field>
+            <field name="code">Total de Pasivos No Circulantes</field>
+            <field name="parent_id" ref="statement_financial_report1_2_6"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="2"/>
+            <field name="level" eval="0" />
+        </record>
+
+        <record id="statement_financial_report1_total2" model="account.financial.html.report.line">
+            <field name="name">Total del Pasivo</field>
+            <field name="code">Total del Pasivo</field>
+            <field name="parent_id" ref="statement_financial_report1_2_6"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="3"/>
+            <field name="level" eval="0" />
+        </record>
+
+        <record id="statement_financial_report2" model="account.financial.html.report.line">
+            <field name="name">Hacienda Pública / Patrimonio</field>
+            <field name="code">Hacienda Pública / Patrimonio</field>
+            <field name="financial_report_id" ref="report_stmt_of_fin_postn"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="3"/>
+            <field name="level" eval="0" />
+        </record>
+
+        <record id="statement_financial_report3_1" model="account.financial.html.report.line">
+            <field name="name">Hacienda Pública/ Patrimonio Contribuido</field>
+            <field name="code">Hacienda Pública/ Patrimonio Contribuido</field>
+            <field name="financial_report_id" ref="report_stmt_of_fin_postn"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="4"/>
+            <field name="level" eval="1" />
+        </record>
+
+        <record id="statement_financial_report3_1_1" model="account.financial.html.report.line">
+            <field name="name">Aportaciones</field>
+            <field name="code">Aportaciones</field>
+            <field name="parent_id" ref="statement_financial_report3_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="4"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report3_1_2" model="account.financial.html.report.line">
+            <field name="name">Donaciones de Capital</field>
+            <field name="code">Donaciones de Capital</field>
+            <field name="parent_id" ref="statement_financial_report3_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="5"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report3_1_3" model="account.financial.html.report.line">
+            <field name="name">Actualización de la Hacienda Pública/Patrimonio</field>
+            <field name="code">Actualización de la Hacienda Pública/Patrimonio</field>
+            <field name="parent_id" ref="statement_financial_report3_1"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="6"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report3_2" model="account.financial.html.report.line">
+            <field name="name">Hacienda Pública/ Patrimonio Generado</field>
+            <field name="code">Hacienda Pública/ Patrimonio Generado</field>
+            <field name="financial_report_id" ref="report_stmt_of_fin_postn"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="5"/>
+            <field name="level" eval="1" />
+        </record>
+
+        <record id="statement_financial_report3_2_1" model="account.financial.html.report.line">
+            <field name="name">Resultados del Ejercicio (Ahorro/ Desahorro)</field>
+            <field name="code">Resultados del Ejercicio (Ahorro/ Desahorro)</field>
+            <field name="parent_id" ref="statement_financial_report3_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="6"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report3_2_2" model="account.financial.html.report.line">
+            <field name="name">Resultados de Ejercicios Anteriores</field>
+            <field name="code">Resultados de Ejercicios Anteriores</field>
+            <field name="parent_id" ref="statement_financial_report3_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="7"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report3_2_3" model="account.financial.html.report.line">
+            <field name="name">Revalúos</field>
+            <field name="code">Revalúos</field>
+            <field name="parent_id" ref="statement_financial_report3_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="8"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report3_2_4" model="account.financial.html.report.line">
+            <field name="name">Reservas</field>
+            <field name="code">Reservas</field>
+            <field name="parent_id" ref="statement_financial_report3_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="9"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report3_2_5" model="account.financial.html.report.line">
+            <field name="name">Rectificaciones de Resultados de Ejercicios Anteriores</field>
+            <field name="code">Rectificaciones de Resultados de Ejercicios Anteriores</field>
+            <field name="parent_id" ref="statement_financial_report3_2"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report3_3" model="account.financial.html.report.line">
+            <field name="name">Exceso o Insuficiencia en la Actualización de la Hacienda Pública/ Patrimonio</field>
+            <field name="code">Exceso o Insuficiencia en la Actualización de la Hacienda Pública/ Patrimonio</field>
+            <field name="financial_report_id" ref="report_stmt_of_fin_postn"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="6"/>
+            <field name="level" eval="1" />
+        </record>
+
+        <record id="statement_financial_report3_3_1" model="account.financial.html.report.line">
+            <field name="name">Resultado por Posición Monetaria</field>
+            <field name="code">Resultado por Posición Monetaria</field>
+            <field name="parent_id" ref="statement_financial_report3_3"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="7"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report3_3_2" model="account.financial.html.report.line">
+            <field name="name">Resultado por Tenencia de Activos no Monetarios</field>
+            <field name="code">Resultado por Tenencia de Activos no Monetarios</field>
+            <field name="parent_id" ref="statement_financial_report3_3"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="8"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="statement_financial_report3_total" model="account.financial.html.report.line">
+            <field name="name">Total Hacienda Pública/Patrimonio</field>
+            <field name="code">Total Hacienda Pública/Patrimonio</field>
+            <field name="parent_id" ref="statement_financial_report3_3"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="9"/>
+            <field name="level" eval="0" />
+        </record>
+
+        <record id="statement_financial_report3_total1" model="account.financial.html.report.line">
+            <field name="name">Total del Pasivo y Hacienda Pública/Patrimonio</field>
+            <field name="code">Total del Pasivo y Hacienda Pública/Patrimonio</field>
+            <field name="parent_id" ref="statement_financial_report3_3"/>
+            <field name="formulas"></field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="0" />
+        </record> -->
+
+        <!-- <record id="report_status_of_activities" model="account.financial.html.report">
+            <field name="name">Status of Activities</field>
+            <field name="debit_credit" eval="False"/>
+            <field name="date_range" eval="False"/>
+            <field name="analytic" eval="True"/>
+            <field name="unfold_all_filter" eval="True"/>
+            <field name="show_journal_filter" eval="True"/>
+            <field name='parent_id' ref='jt_conac.menu_child_reporting_conac'/>
+        </record> -->
+
+        <!-- <record id="report_status_variation_pt" model="account.financial.html.report">
+            <field name="name">State of Variation in the Public Treasury</field>
+            <field name="debit_credit" eval="False"/>
+            <field name="date_range" eval="False"/>
+            <field name="analytic" eval="True"/>
+            <field name="unfold_all_filter" eval="True"/>
+            <field name="show_journal_filter" eval="True"/>
+            <field name='parent_id' ref='jt_conac.menu_child_reporting_conac'/>
+        </record> -->
+
+        <!-- <record id="report_status_an_assets" model="account.financial.html.report">
+            <field name="name">Analytical Status of Assets</field>
+            <field name="debit_credit" eval="False"/>
+            <field name="date_range" eval="False"/>
+            <field name="analytic" eval="True"/>
+            <field name="unfold_all_filter" eval="True"/>
+            <field name="show_journal_filter" eval="True"/>
+            <field name='parent_id' ref='jt_conac.menu_child_reporting_conac'/>
+        </record> -->
+
+        <!-- <record id="report_stmt_debt_liab" model="account.financial.html.report">
+            <field name="name">Analytical Statement of Debt and Other Liabilities</field>
+            <field name="debit_credit" eval="False"/>
+            <field name="date_range" eval="False"/>
+            <field name="analytic" eval="True"/>
+            <field name="unfold_all_filter" eval="True"/>
+            <field name="show_journal_filter" eval="True"/>
+            <field name='parent_id' ref='jt_conac.menu_child_reporting_conac'/>
+        </record> -->
+
+        <!-- <record id="report_stmt_finc_posn" model="account.financial.html.report">
+            <field name="name">Statement of Changes in the Financial Position</field>
+            <field name="debit_credit" eval="False"/>
+            <field name="date_range" eval="False"/>
+            <field name="analytic" eval="True"/>
+            <field name="unfold_all_filter" eval="True"/>
+            <field name="show_journal_filter" eval="True"/>
+            <field name='parent_id' ref='jt_conac.menu_child_reporting_conac'/>
+        </record> -->
+
+        <!-- <record id="report_stmt_cash_flow" model="account.financial.html.report">
+            <field name="name">Statement of cash flows</field>
+            <field name="debit_credit" eval="False"/>
+            <field name="date_range" eval="False"/>
+            <field name="analytic" eval="True"/>
+            <field name="unfold_all_filter" eval="True"/>
+            <field name="show_journal_filter" eval="True"/>
+            <field name='parent_id' ref='jt_conac.menu_child_reporting_conac'/>
+        </record> -->
+
+        <!-- <record id="report_stmt_ana_income" model="account.financial.html.report">
+            <field name="name">Analytical Income Statement</field>
+            <field name="debit_credit" eval="False"/>
+            <field name="date_range" eval="False"/>
+            <field name="analytic" eval="True"/>
+            <field name="unfold_all_filter" eval="True"/>
+            <field name="show_journal_filter" eval="True"/>
+            <field name='parent_id' ref='jt_conac.menu_child_reporting_conac'/>
+        </record> -->
+
+        <!-- <record id="report_state_exp_bdg_ex" model="account.financial.html.report">
+            <field name="name">Analytical Status of the Expenditure Budget Exercise</field>
+            <field name="debit_credit" eval="False"/>
+            <field name="date_range" eval="False"/>
+            <field name="analytic" eval="True"/>
+            <field name="unfold_all_filter" eval="True"/>
+            <field name="show_journal_filter" eval="True"/>
+            <field name='parent_id' ref='jt_conac.menu_child_reporting_conac'/>
+        </record> -->
+
+        <!-- <record id="report_state_and_program" model="account.financial.html.report">
+            <field name="name">States and Program Reports</field>
+            <field name="debit_credit" eval="False"/>
+            <field name="date_range" eval="False"/>
+            <field name="analytic" eval="True"/>
+            <field name="unfold_all_filter" eval="True"/>
+            <field name="show_journal_filter" eval="True"/>
+            <field name='parent_id' ref='jt_conac.menu_child_reporting_conac'/>
+        </record> -->
+
+        <!-- Need to generate sublines using backend tags/groups -->
+
+        <!-- <record id="account_financial_report_total_assets0" model="account.financial.html.report.line">
+            <field name="name">Activo</field>
+            <field name="code">Activo</field>
+            <field name="financial_report_id" ref="report_stmt_of_fin_postn"/>
+            <field name="formulas">balance = CA.balance + FA.balance + PNCA.balance</field>
+            <field name="sequence" eval="1"/>
+            <field name="level" eval="0" />
+        </record> -->
+
+        <!-- <record id="account_financial_report_total_assets0" model="account.financial.html.report.line">
+            <field name="name">Activo Circulante</field>
+            <field name="code">ActivoCirculante</field>
+            <field name="financial_report_id" ref="report_stmt_of_fin_postn"/>
+            <field name="formulas">balance = CA.balance + FA.balance + PNCA.balance</field>
+            <field name="sequence" eval="1"/>
+            <field name="level" eval="0" />
+        </record> -->
+
+        <!-- <record id="account_financial_report_total_assets0" model="account.financial.html.report.line">
+            <field name="name">Activo No Circulante</field>
+            <field name="code">ActivoNoCirculante</field>
+            <field name="financial_report_id" ref="report_stmt_of_fin_postn"/>
+            <field name="formulas">balance = CA.balance + FA.balance + PNCA.balance</field>
+            <field name="sequence" eval="1"/>
+            <field name="level" eval="0" />
+        </record> -->
+    </data>
+</odoo>

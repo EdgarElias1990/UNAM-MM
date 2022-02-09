@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_activity_catalog,activity.catalog.access,model_activity_catalog,base.group_user,1,1,1,1
+access_deposit_certificate_type,deposit.certificate.type.access,model_deposit_certificate_type,base.group_user,1,1,1,1
+access_sub_origin_resource,sub.origin.resource.access,model_sub_origin_resource,base.group_user,1,1,1,1
+access_income_cash_cut,income.cash.cut.access,model_income_cash_cut,base.group_user,1,1,1,1
+access_income_annual_report,income.annual.report.access,model_income_annual_report,base.group_user,1,1,1,1
+access_association_distribution_ie_accounts,association.distribution.ie.accounts.access,model_association_distribution_ie_accounts,base.group_user,1,1,1,1
+access_association_distribution_ie_accounts_line,association.distribution.ie.accounts.access.line,model_association_distribution_ie_accounts_line,base.group_user,1,1,1,1
+access_sender_recipient_trades,sender.recipient.trades.access,model_sender_recipient_trades,base.group_user,1,1,1,1
+access_income_by_item_month_report,income.by.item.month.report.access,model_income_by_item_month_report,base.group_user,1,1,1,1
+access_income_invoice_move_line,income.invoice.move.line.access,model_income_invoice_move_line,base.group_user,1,1,1,1
+access_payment_of_income,payment.of.income.access,model_payment_of_income,base.group_user,1,1,1,1

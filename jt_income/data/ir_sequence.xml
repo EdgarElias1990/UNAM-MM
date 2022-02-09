@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Sequences for Folio -->
+        <record id="seq_invoice_adequacies_folio" model="ir.sequence">
+            <field name="name">Invoice Adequacies Folio</field>
+            <field name="code">invoice.adequacies.folio</field>
+            <field name="company_id" eval="False"/>
+        </record>
+	</data>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_pension_payment_inherit" model="ir.ui.view">
+            <field name="name">view.pension.payment.inherit</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="jt_supplier_payment.pensions_payroll_payment_req_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='partner_id']" position="attributes">
+                    <attribute name="domain">[["beneficiary_type","=","alimony"]]</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+

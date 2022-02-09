@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="blank_check_req_tree_view" model="ir.ui.view">
+            <field name="name">blank.check.request.tree.view</field>
+            <field name="model">blank.checks.request</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="application_no"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="blank_check_req_form_view" model="ir.ui.view">
+            <field name="name">blank.check.request.form.view</field>
+            <field name="model">blank.checks.request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_request" type="object" string="Generate Request" class="oe_highlight"
+                                attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        <button name="action_approve" type="object" string="Approve" class="oe_highlight"
+                                attrs="{'invisible': [('state', '!=', 'requested')]}"/>
+                        <button name="action_reject" type="object" string="Reject" class="oe_highlight"
+                                attrs="{'invisible': [('state', '!=', 'requested')]}"/>
+                        <button name="action_confirm" type="object" string="Confirm" class="oe_highlight"
+                                attrs="{'invisible': [('state', '!=', 'approved')]}"/>
+                        <button name="action_apply_distribution" type="object" string="Apply Distribution"
+                                class="oe_highlight"
+                                attrs="{'invisible': ['|', ('state', '!=', 'confirmed'),
+                                ('department', '!=', 'Financial transaction')]}"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="application_no" readonly="1"/>
+                                <field name="dependence_id" options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="subdependence_id" options="{'no_create': True, 'no_edit': True, 'no_create_edit': True}" domain="[('dependency_id','=',dependence_id)]" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="amount_checks" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="reason_request" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </group>
+                            <group>
+                                <field name="applicant_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="are_test_prin_formats_sent"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="area" attrs="{'invisible': [('are_test_prin_formats_sent', '=', False)],
+                            'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="number_of_folios"
+                                       attrs="{'invisible': [('are_test_prin_formats_sent', '=', False)],
+                            'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="print_sample_folio_number"
+                                       attrs="{'invisible': [('are_test_prin_formats_sent', '=', False)],
+                            'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="delivery_of_checks"
+                                       attrs="{'invisible': [('state', 'in', ('draft', 'requested'))]}"/>
+<!--                                <field name="check_request" attrs="{'invisible': [('state', 'in', ('draft'))]}"/>-->
+                                <field name="department" readonly="1"
+                                       attrs="{'invisible': [('state', 'in', ('draft', 'requested'))]}"/>
+                                <field name="bank_account_id" readonly="1"
+                                       attrs="{'invisible': [('state', 'in', ('draft', 'requested'))]}"/>
+                                <field name="checkbook_req_id" readonly="1"
+                                       attrs="{'invisible': [('state', 'in', ('draft', 'requested'))]}"/>
+                                <field name="intial_folio" readonly="1"
+                                       attrs="{'invisible': [('state', 'in', ('draft', 'requested'))]}"/>
+                                <field name="final_folio" readonly="1"
+                                       attrs="{'invisible': [('state', 'in', ('draft', 'requested'))]}"/>
+                                <field name="log_ids" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="distribution_to_module" string="Distribution to Modules"
+                                attrs="{'invisible': ['|', ('state', 'in', ('draft', 'requested', 'approved')),
+                                    ('department', '!=', 'Financial transaction')]}">
+                                <field name="distribution_of_module_ids" nolabel="1" readonly="1"
+                                    context="{'default_checkbook_req_id':checkbook_req_id, 'log_ids': log_ids}">
+                                    <tree editable="bottom">
+                                        <field name="module" required="1"/>
+                                        <field name="checkbook_req_id" invisible="1"/>
+                                        <field name="intial_filio" required="1"/>
+                                        <field name="final_folio" required="1"/>
+                                        <field name="amounts_of_checks" required="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_blank_check_req" model="ir.actions.act_window">
+            <field name="name">Request Blank Checks</field>
+            <field name="res_model">blank.checks.request</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'from_approve_check':1}</field>
+        </record>
+
+
+        <menuitem id="balnk_check_request_menu" name="Request Blank Checks"
+                  parent="check_control_main_menu"
+                  action="action_blank_check_req" sequence="2"/>
+
+        <record id="change_status_suthorized_checks" model="ir.actions.server">
+            <field name="name">Change status of authorized checks</field>
+            <field name="model_id" ref="model_blank_checks_request"/>
+            <field name="binding_model_id" ref="model_blank_checks_request"/>
+            <field name="state">code</field>
+            <field name="code">action = records.change_status_suthorized_checks()</field>
+        </record>
+
+    </data>
+</odoo>

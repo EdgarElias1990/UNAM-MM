@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_executive_data,executive_data,model_executive_data,,1,1,1,1
+access_bank_account_concept,bank_account_concept,model_bank_account_concept,,1,1,1,1
+access_minimum_balance_history,minimum_balance_history,model_minimum_balance_history,,1,1,1,1

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="payment_request_report_document_inherit_2" inherit_id="jt_supplier_payment.payment_request_report_document">
+            <xpath expr="//div[@id='informations']/div[@name='folio_dependency']" position="before">
+                 <div class="col-3" name="dependency">
+                     <strong>Dependency:</strong>
+                     <p class="m-0" t-if="o.dependancy_id">  
+                     	<span t-field="o.dependancy_id.dependency"/>
+                     	<span t-field="o.dependancy_id.description"/>
+                     </p>
+                 </div>
+                 <div class="col-3" name="subdependence">
+                     <strong>Subdependence:</strong>
+                     <p class="m-0" t-if="o.sub_dependancy_id"/>
+                     	<span t-field="o.sub_dependancy_id.sub_dependency"/>
+                     	<span t-field="o.sub_dependancy_id.description">
+                     </span>
+                 </div>
+            </xpath>
+            <xpath expr="//table[@name='invoice_line_table']/thead[1]/tr[1]/th[@name='th_account']" position="replace">
+                 <th name="th_code" class="text-left">
+                 	<span>Account and / or Programmatic Code</span>
+                 </th>
+            
+            </xpath>
+            <xpath expr="//td[@name='account_invoice_line_account']" position="replace">
+                   <td name="account_invoice_line_account_and_code">
+                        <span class="text-left" t-if="line.account_id" t-field="line.account_id.name"/>/<span class="text-left" t-if="line.program_code_id" t-field="line.program_code_id.program_code"/>
+                   </td>
+            </xpath>
+            
+        </template>
+   
+	</data>
+</odoo>

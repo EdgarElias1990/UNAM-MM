@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_bank_app_check_form_view_inherit" model="ir.ui.view">
+            <field name="name">res.partner.bank.app.check.form.view.inherit</field>
+            <field name="model">res.partner.bank</field>
+            <field name="inherit_id" ref="jt_account_base.res_partner_bank_app_check_form_view"/>
+            <field name="arch" type="xml">
+            	<field name="for_budget" position="after">
+            		<field name="for_income"/>
+            	</field>
+            </field>
+        </record>    	
+	</data>
+</odoo>

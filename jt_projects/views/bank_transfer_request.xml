@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_req_open_balance_form_finance_inherit" model="ir.ui.view">
+            <field name="name">view.req.open.balance.form.finance.inherit</field>
+            <field name="model">request.open.balance.finance</field>
+            <field name="inherit_id" ref="jt_agreement.view_req_open_balance_form_finance"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//button[@name='approve_finance']" position="before">
+            		<button name="request_finance" type="object" string="Request" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+            	</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

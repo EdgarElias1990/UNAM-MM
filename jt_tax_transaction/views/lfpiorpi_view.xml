@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="declaration_lfpiorpi_tree_view" model="ir.ui.view">
+            <field name="name">declaration.lfpiorpi.tree.view</field>
+            <field name="model">declaration.lfpiorpi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="folio"/>
+                    <field name="year"/>
+                    <field name="month"/>
+                    <field name="filling_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="declaration_lfpiorpi_form_view" model="ir.ui.view">
+            <field name="name">declaration.lfpiorpi.form.view</field>
+            <field name="model">declaration.lfpiorpi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                    
+                        <group>
+                            <group>
+			                    <field name="folio"/>
+                                <field name="year"/>
+                                <field name="month"/>
+                                <field name="filling_date"/>
+                                <field name="observations"/>
+                            </group>
+                            <group>
+                                <field name="application_office"/>
+                                <field name="dgpu_file"/>
+                                <field name="statement_draft"/>
+                                <field name="shipping_ack"/>
+                            </group>
+                        </group>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+
+        <record id="action_declaration_lfpiorpi" model="ir.actions.act_window">
+            <field name="name">LFPIORPI</field>
+            <field name="res_model">declaration.lfpiorpi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="lfpiorpi_menu" name="LFPIORPI Forms" parent="jt_tax_transaction.menu_other_declarations" action="action_declaration_lfpiorpi" sequence="2"/>
+
+    </data>
+</odoo>

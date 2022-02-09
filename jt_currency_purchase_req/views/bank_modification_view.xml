@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record id="modification_account_tree_bank_view" model="ir.ui.view">
+            <field name="name">Modification Accounts List view</field>
+            <field name="model">request.accounts</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="invoice"/>
+                    <field name="modification_date"/>
+                    <!-- <field name="project_id"/>
+                    <field name="bank_account_id"/> -->
+                    <field name="status"/>
+
+                </tree>
+            </field>
+         </record>
+
+
+        <record id="modification_account_from_view" model="ir.ui.view">
+            <field name="name">Open Request Accounts Form view</field>
+            <field name="model">request.accounts</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="generate_request" string="Generate Request" class="oe_highlight"
+                                type="object" attrs="{'invisible': [('status', '!=', 'eraser')]}"/>
+                         <button name="generate_modification_request" string="Send Request" class="oe_highlight"
+                                type="object" attrs="{'invisible': [('status', '!=', 'confirmed')]}"/>
+                        <button name="action_confirm_modification" string="Confirm" class="oe_highlight"
+                                type="object" attrs="{'invisible': [('status', '!=', 'request')]}"/>
+                        <button name="%(jt_projects.action_request_Rejection)d" string="Reject" class="oe_highlight"
+                                type="action" attrs="{'invisible': [('status', '!=', 'request')]}"/>
+                        <field name="status" widget="statusbar" statusbar_visible="eraser,request,confirmed,rejected"/>
+                    </header>
+                    <sheet>
+                        <group colspan="4">
+                            <group>
+                                <field name="invoice" string="Folio"  readonly="1"/>
+                                <field name="modification_date" readonly="1"/>
+                                <field name="move_type" readonly="1"/>
+                                <field name="legal_number"/>
+                               <!--  <field name="bank_account_id" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="bank_acc_number_id"/>
+                                <field name="project_id" domain="[('project_type', '=', 'conacyt')]"
+                                context="{'from_conacyt':1}" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+ -->                            </group>
+                            <group>
+                                <field name="observations" attrs="{'readonly': [('status', '!=', 'eraser')]}"/>
+                                <field name="reason_rejection" attrs="{'invisible': [('status', '!=', 'rejected')]}"/>
+                                <field name="rejection_observations" readonly="1" attrs="{'invisible': [('status', '!=', 'rejected')]}"/>
+                            </group>
+                        </group>                        
+                    <notebook>
+                        <page name="update_data" string="Updated data" attrs="{'readonly': [('status', '!=', 'eraser')]}">
+                            <field name="request_line_ids" attrs="{'readonly': [('status', '!=', 'eraser')]}">
+                                <tree>
+                                    <field name="bank_account_id"/>
+                                    <field name="bank_acc_number_id"/>
+                                    <field name="project_id"/>
+                                    <field name="user_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    </sheet>
+                    
+                </form>
+            </field>
+         </record>
+
+        <record id="account_modification_action" model="ir.actions.act_window">
+            <field name="name">Request for updating bank accounts</field>
+            <field name="res_model">request.accounts</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('modification_account_tree_bank_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('modification_account_from_view')})]"/>
+            <field name="context">{'from_conacyt':1,'default_move_type' : 'account_modify'}</field>
+            <field name="domain">[('move_type','=','account_modify')]</field>
+        </record>
+
+</data>
+</odoo>

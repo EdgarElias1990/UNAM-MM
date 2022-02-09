@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<!-- Payment / Expense Calendar -->
+        <record id="action_payment_expense_calendar" model="ir.actions.client">
+            <field name="name">Payment / Expense Calendar</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_finance.payment.expense.calendar'}" />
+        </record>
+
+        <menuitem
+            id="menu_payment_expense_calendar"
+            name="Payment / Expense Calendar"
+            parent="jt_payroll_payment.menu_finance_reports"
+            sequence="1"
+            action="action_payment_expense_calendar"
+        />
+
+		<!-- Minimum Account Balances -->
+        <record id="action_minimum_account_balances" model="ir.actions.client">
+            <field name="name">Minimum Account Balances</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_finance.minimum.account.balance'}" />
+        </record>
+
+        <menuitem
+            id="menu_minimum_account_balances"
+            name="Minimum Account Balances"
+            parent="jt_payroll_payment.menu_finance_reports"
+            sequence="3"
+            action="action_minimum_account_balances"
+        />
+
+		<!-- Summary of Operation - Recovery of Expenses -->
+        <record id="action_summary_of_operations_recovery_of_expenses" model="ir.actions.client">
+            <field name="name">Summary of Operation - Recovery of Expenses</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_finance.summaryof.operation.recovery.of.expenses'}"/>
+        </record>
+
+        <menuitem
+            id="menu_summary_of_operations_recovery_of_expenses"
+            name="Summary of Operation - Recovery of Expenses"
+            parent="jt_payroll_payment.menu_finance_reports"
+            sequence="5"
+            action="action_summary_of_operations_recovery_of_expenses"
+        />
+
+		<!-- Type of Operation -->
+        <record id="action_type_of_operation_report1" model="ir.actions.client">
+            <field name="name">Type of Operation</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_finance.type.of.operation'}" />
+        </record>
+
+        <menuitem
+            id="menu_type_of_operation_report1"
+            name="Type of Operation"
+            parent="jt_payroll_payment.menu_finance_reports"
+            sequence="7"
+            action="action_type_of_operation_report1"
+        />
+
+		<!-- Summary Query Type -->
+        <record id="action_summary_query_type_report1" model="ir.actions.client">
+            <field name="name">Summary Query Type</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_finance.summary.query.type'}" />
+        </record>
+
+        <menuitem
+            id="menu_summary_query_type_report1"
+            name="Summary Query Type"
+            parent="jt_payroll_payment.menu_finance_reports"
+            sequence="9"
+            action="action_summary_query_type_report1"
+        />
+
+		<!-- Diary of Bank Movements in dollars -->
+        <record id="action_diary_bank_movements_dollars" model="ir.actions.client">
+            <field name="name">Diary of Bank Movements in dollars</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_finance.diary.bank.movements.dollars'}" />
+        </record>
+
+        <menuitem
+            id="menu_diary_bank_movements_dollars"
+            name="Diary of Bank Movements in dollars"
+            parent="jt_payroll_payment.menu_finance_reports"
+            sequence="11"
+            action="action_diary_bank_movements_dollars"
+        />
+
+		<!-- Summary of Operation - Recovery of Expenditures USD -->
+        <record id="action_bank_diary_recovery_expenditures_dollars" model="ir.actions.client">
+            <field name="name">Summary of Operation - Recovery of Expenditures USD</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_finance.bank.diary.recovery.expenditures.dollars'}" />
+        </record>
+
+       <!--  <menuitem
+            id="menu_bank_diary_recovery_expenditures_dollars"
+            name="Summary of Operation - Recovery of Expenditures USD"
+            parent="jt_payroll_payment.menu_finance_reports"
+            sequence="13"
+            action="action_bank_diary_recovery_expenditures_dollars"
+        /> -->
+
+		<!-- Summary of Operation USD Expenditures -->
+        <record id="action_summaryof_operation_usd_expenditures" model="ir.actions.client">
+            <field name="name">Summary of Operation-USD Expenditures</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_finance.summaryof.operation.usd.expenditures'}" />
+        </record>
+
+        <menuitem
+            id="menu_summaryof_operation_usd_expenditures"
+            name="Summary of Operation-USD Expenditures"
+            parent="jt_payroll_payment.menu_finance_reports"
+            sequence="15"
+            action="action_summaryof_operation_usd_expenditures"
+        />
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="inherit_view_journal_purchase" model="ir.ui.view">
+            <field name="name">inherit.view.journal.purchase</field>
+            <field name="model">purchase.sale.security</field>
+            <field name="inherit_id" ref="jt_investment.purchase_sale_security_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='new_journal_id']" position="attributes">
+                    <attribute name="domain">[('is_investment_account','=',True),('type','=','general')]</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='bank_id']" position="attributes">
+                    <attribute name="domain">[('is_investment_account','=',True),('type','=','bank')]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_view_bank_investment" model="ir.ui.view">
+            <field name="name">inherit.view.bank.investment</field>
+            <field name="model">investment.stock.quotation</field>
+            <field name="inherit_id" ref="jt_investment.investment_stock_quotation_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='journal_id']" position="attributes">
+                    <attribute name="domain">[('is_investment_account','=',True),('type','=','bank')]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_view_bank_stock" model="ir.ui.view">
+            <field name="name">inherit.view.bank.stock</field>
+            <field name="model">stock.quote.price</field>
+            <field name="inherit_id" ref="jt_investment.stock_quote_price_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='journal_id']" position="attributes">
+                    <attribute name="domain">[('is_investment_account','=',True),('type','=','bank')]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_view_bank_cetes" model="ir.ui.view">
+            <field name="name">inherit.view.bank.cetes</field>
+            <field name="model">investment.cetes</field>
+            <field name="inherit_id" ref="jt_investment.investment_cetes_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='new_journal_id']" position="attributes">
+                    <attribute name="domain">[('is_investment_account','=',True),('type','=','general')]</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='journal_id']" position="attributes">
+                    <attribute name="domain">[('is_investment_account','=',True),('type','=','bank')]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_view_bank_udibonos" model="ir.ui.view">
+            <field name="name">inherit.view.bank.udibonos</field>
+            <field name="model">investment.udibonos</field>
+            <field name="inherit_id" ref="jt_investment.investment_udibonos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='new_journal_id']" position="attributes">
+                    <attribute name="domain">[('is_investment_account','=',True),('type','=','general')]</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='journal_id']" position="attributes">
+                    <attribute name="domain">[('is_investment_account','=',True),('type','=','bank')]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_view_bank_bonos" model="ir.ui.view">
+            <field name="name">inherit.view.bank.bonos</field>
+            <field name="model">investment.bonds</field>
+            <field name="inherit_id" ref="jt_investment.investment_bonds_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='new_journal_id']" position="attributes">
+                    <attribute name="domain">[('is_investment_account','=',True),('type','=','general')]</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='journal_id']" position="attributes">
+                    <attribute name="domain">[('is_investment_account','=',True),('type','=','bank')]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_view_bank_pagare_new" model="ir.ui.view">
+            <field name="name">inherit.view.bank.pagare.new</field>
+            <field name="model">investment.will.pay</field>
+            <field name="inherit_id" ref="jt_investment.investment_will_pay_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='new_journal_id']" position="attributes">
+                    <attribute name="domain">[('is_investment_account','=',True),('type','=','general')]</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='journal_id']" position="attributes">
+                    <attribute name="domain">[('is_investment_account','=',True),('type','=','bank')]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_view_bank_cuentas_prod" model="ir.ui.view">
+            <field name="name">inherit.view.bank.cuentas.prod</field>
+            <field name="model">investment.investment</field>
+            <field name="inherit_id" ref="jt_investment.investment_investment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='new_journal_id']" position="attributes">
+                    <attribute name="domain">[('is_productive_account','=',True),('type','=','general')]</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='journal_id']" position="attributes">
+                    <attribute name="domain">[('is_productive_account','=',True),('type','=','bank')]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_view_bank_cuentas_prod_lines" model="ir.ui.view">
+            <field name="name">inherit.view.bank.cuentas.prod.lines</field>
+            <field name="model">investment.investment</field>
+            <field name="inherit_id" ref="jt_investment.investment_investment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='bank_account_id']" position="attributes">
+                    <attribute name="domain">[('is_productive_account','=',True),('type','=','bank')]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_view_bank_founds" model="ir.ui.view">
+            <field name="name">inherit.viewb.bank.founds</field>
+            <field name="model">investment.funds</field>
+            <field name="inherit_id" ref="jt_investment.view_investment_funds_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='new_journal_id']" position="attributes">
+                    <attribute name="domain">[('is_investment_account','=',True),('type','=','general')]</attribute>
+                </xpath>
+            </field>
+        </record>
+	</data>
+</odoo>

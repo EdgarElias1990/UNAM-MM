@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for payment place model -->
+        <record id="payment_place_search_view" model="ir.ui.view">
+            <field name="name">payment.place.search.view</field>
+            <field name="model">payment.place</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- form view for payment place model -->
+        <record id="payment_place_form_view" model="ir.ui.view">
+            <field name="name">payment.place.form.view</field>
+            <field name="model">payment.place</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                        	<field name="place" required="1"/>
+                            <field name="name" required="1"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for payment place model -->
+        <record id="payment_place_tree_view" model="ir.ui.view">
+            <field name="name">payment.place.tree.view</field>
+            <field name="model">payment.place</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for payment place views -->
+        <record id="payment_place_action" model="ir.actions.act_window">
+            <field name="name">Place of Payment</field>
+            <field name="res_model">payment.place</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="payment_place_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+
+        <!-- menu for payment place -->
+        <menuitem id="payment_place_menu" name="Place of Payment" parent="hr.menu_human_resources_configuration" sequence="0" action="payment_place_action"/>
+    </data>
+</odoo>

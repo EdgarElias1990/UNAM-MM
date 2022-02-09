@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="generate_bases_collaboration_resemble_view" model="ir.ui.view">
+            <field name="name">generate.account.statement.resemble.view</field>
+            <field name="model">jt_agreement.bases.resemble</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="is_hide_button" invisible="1"/>
+                        <field name="start_date" required="1" attrs="{'invisible':[('is_hide_button','=',True)]}"/>
+                        <field name="end_date" required="1" attrs="{'invisible':[('is_hide_button','=',True)]}"/>
+                    </group>
+                    <notebook>
+                        <page  string="Downloads" attrs="{'invisible':[('is_hide_button','=',False)]}">
+                            <field name="line_ids" readonly="1">
+                                <tree create="0" edit="0" delete="0">
+                                    <field name="bases_id"/>
+                                    <field name="filename" readonly="1"/>
+                                    <field name="file" invisible="1" filename="filename" readonly="1"/>
+                                    <button name="download_pdf" type="object" string="Download"></button>
+                                </tree>
+                            
+                            </field>
+                        </page>
+                    </notebook>
+                    <footer>
+                        <button string="Print" name="print_pdf" type="object" class="oe_highlight" attrs="{'invisible':[('is_hide_button','=',True)]}"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+     <!--    <act_window name="Generate Bases collaboration Resemble"
+            id="action_generate_bases_collaboration_resemble"
+            res_model="jt_agreement.bases.resemble"
+            binding_model="bases.collaboration"
+            view_mode="form"
+            target="new"
+        /> -->
+	</data>
+</odoo>

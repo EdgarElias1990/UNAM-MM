@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+       <menuitem id="supplier_payment_management_menu" name="Payment Management"
+                parent="jt_payroll_payment.menu_payment_finance" sequence="0"/>
+
+      <record id="payment_req_tree_view_for_management" model="ir.ui.view">
+            <field name="name">payment.req.tree.view.for.management</field>
+            <field name="model">account.move</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="payment_req_tree_view_diff"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//tree" position="attributes">
+            		<attribute name="create">0</attribute>
+            	</xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                     <field name="batch_folio"/>
+                    <field name="date_approval_request"/>
+                </xpath>
+                <xpath expr="//field[@name='payment_state']" position="after">
+                    <field name="amount_total"/>
+                </xpath>
+            </field>
+        </record>
+
+      <record id="payment_req_form_view_payment" model="ir.ui.view">
+            <field name="name">payment.req.form.view.for.management</field>
+            <field name="model">account.move</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="payment_req_form_view"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//form" position="attributes">
+            		<attribute name="create">0</attribute>
+            	</xpath>
+            	<field name="batch_folio" position="attributes">
+            		<field name="readonly">0</field>
+            	</field>
+            	<field name="type_of_payment_custom" position="attributes">
+            		<attributes name="readonly">0</attributes>
+            	</field>
+            	
+            	<field name="payment_issuing_bank_id" position="attributes">
+            		<attribute name="readonly">0</attribute>
+            	</field>
+            </field>
+        </record>
+
+     <record id="view_account_move_filter_inherit_payment" model="ir.ui.view">
+            <field name="name">account.move.select.inherit</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_account_move_filter"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//group" position="inside">
+                        <filter string="Payment method" name="Payment_method" domain="[]" context="{'group_by': 'l10n_mx_edi_payment_method_id'}"/>
+                        <filter string="Type of operatio" name="Type_of_operatio" domain="[]" context="{'group_by': 'operation_type_id'}"/>
+            	</xpath>
+            </field>
+      </record>
+           
+	  <record id="supplier_payment_programming_action" model="ir.actions.act_window">
+            <field name="name">Payment Schedule</field>
+            <field name="res_model">account.move</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_account_move_filter_inherit_payment"/>
+            <field name="context">{'default_type': 'in_invoice', 'default_is_payment_request': 1,
+                'from_move': 1,'search_default_Payment_method': 1,'search_default_Type_of_operatio': 1}</field>
+            <field name="domain">[('payment_state','not in',('draft','registered','rejected')),('type', '=', 'in_invoice'), ('is_payment_request', '=', True)]</field>
+        </record>
+		<record id="payment_req_tree_action" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="payment_req_tree_view_for_management"/>
+            <field name="act_window_id" ref="supplier_payment_programming_action"/>
+        </record>
+
+        <record id="payment_req_form_action" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="payment_req_form_view_payment"/>
+            <field name="act_window_id" ref="supplier_payment_programming_action"/>
+        </record>
+	
+        <menuitem id="supplier_payment_request_menu_programm" name="Payment Schedule"
+                  action="supplier_payment_programming_action"
+                  parent="supplier_payment_management_menu" sequence="3"/>
+	
+</odoo>

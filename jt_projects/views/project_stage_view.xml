@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record id="project_custom_stage_tree_view" model="ir.ui.view">
+            <field name="name">project.custom.stage.tree</field>
+            <field name="model">project.custom.stage</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+         </record>
+
+         <record id="project_custom_stage_form_view" model="ir.ui.view">
+            <field name="name">project.custom.stage.form</field>
+            <field name="model">project.custom.stage</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+         </record>
+
+        <record id="action_project_custom_stage" model="ir.actions.act_window">
+            <field name="name">Stage</field>
+            <field name="res_model">project.custom.stage</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <menuitem id="menu_project_custom_stage" 
+                  name="Stage"  
+                  action="action_project_custom_stage"
+                  parent="project.menu_project_config"
+                  sequence="1"
+                  />
+	<!-- Menu Into Budget -->
+
+      <record id="project_custom_stage_tree_view_budget" model="ir.ui.view">
+            <field name="name">project.custom.stage.tree.view.budget</field>
+            <field name="model">project.custom.stage</field>
+            <field name="mode">primary</field>
+            <field eval="100" name="priority"/>
+            <field name="inherit_id" ref="project_custom_stage_tree_view"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//tree" position="attributes">
+            		<attribute name="create">0</attribute>
+            		<attribute name="edit">0</attribute>
+            		<attribute name="delete">0</attribute>
+            	</xpath>
+            </field>
+        </record>
+
+      <record id="project_custom_stage_form_view_budget" model="ir.ui.view">
+            <field name="name">project.custom.stage.form.view.budget</field>
+            <field name="model">project.custom.stage</field>
+            <field name="mode">primary</field>
+            <field eval="100" name="priority"/>
+            <field name="inherit_id" ref="project_custom_stage_form_view"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//form" position="attributes">
+            		<attribute name="create">0</attribute>
+            		<attribute name="edit">0</attribute>
+            		<attribute name="delete">0</attribute>
+            	</xpath>
+            </field>
+        </record>
+
+        <record id="action_project_custom_stage_budget" model="ir.actions.act_window">
+            <field name="name">Stage</field>
+            <field name="res_model">project.custom.stage</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+          <record id="action_project_custom_stage_budget_link_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="project_custom_stage_form_view_budget"/>
+            <field name="act_window_id" ref="action_project_custom_stage_budget"/>
+        </record>
+
+        <record id="action_project_custom_stage_budget_link_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="project_custom_stage_tree_view_budget"/>
+            <field name="act_window_id" ref="action_project_custom_stage_budget"/>
+        </record>
+		
+         <menuitem id="menu_project_custom_stage_budget" 
+                  name="Stage"  
+                  action="action_project_custom_stage_budget"
+                  parent="jt_budget_mgmt.menu_code_catalog"
+                  sequence="16"
+                  />
+			
+	<!-- Budget Stage -->
+
+        <!-- form view for stage model -->
+        <record id="stage_form_view_project" model="ir.ui.view">
+            <field name="name">stage.form.project.view</field>
+            <field name="model">stage</field>
+            <field eval="100" name="priority"/>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                        	<field name="project_id" required="1" string="Project"/>
+		                    <field name="name" required="1"/>
+		                    <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for stage model -->
+        <record id="stage_tree_view_project" model="ir.ui.view">
+            <field name="name">stage.tree.project.view</field>
+            <field name="model">stage</field>
+            <field eval="100" name="priority"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_project_budget_stage1" model="ir.actions.act_window">
+            <field name="name">Stage</field>
+            <field name="res_model">stage</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('from_project','=',True)]</field>
+            <field name="context">{'default_from_project':True}</field>
+        </record>
+
+          <record id="action_project_budget_stage1_lonk_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="stage_form_view_project"/>
+            <field name="act_window_id" ref="action_project_budget_stage1"/>
+        </record>
+
+        <record id="action_project_budget_stage1_link_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="stage_tree_view_project"/>
+            <field name="act_window_id" ref="action_project_budget_stage1"/>
+        </record>
+
+<!--         <menuitem id="menu_project_budget_stage1" 
+                  name="Stage"  
+                  action="action_project_budget_stage1"
+                  parent="project.menu_project_config"
+                  sequence="1"
+                  />
+ -->	
+     </data>
+</odoo>

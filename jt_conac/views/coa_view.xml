@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- COA View Search -->
+        <record id="coa_view_search_inh_jt_conac" model="ir.ui.view">
+            <field name="name">cao.account.account.search</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="conac_name"/>
+                    <field name="coa_conac_id"/>
+                </xpath>
+                <xpath expr="group" position="inside">
+                    <filter string="Code CONAC" name="groupby_code_conac" domain="" context="{'group_by':'coa_conac_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- COA View Form -->
+        <record id="coa_view_form_inh_jt_conac" model="ir.ui.view">
+            <field name="name">cao.account.account.form</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='deprecated']" position="after">
+                    <field name="coa_conac_id"/>
+                    <field name="conac_name"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Action View COA CONAC -->
+        <record id="action_coa_view" model="ir.actions.act_window">
+            <field name="name">Chart Of Accounts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.account</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+    </data>
+</odoo>

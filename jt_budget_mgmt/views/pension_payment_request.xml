@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+	<!-- Different Payroll Payment View -->
+
+        <record id="pensions_payroll_payment_req_form_view_inherit" model="ir.ui.view">
+            <field name="name">pensions.payroll.payment.req.form.view.inherit.view</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="jt_supplier_payment.pensions_payroll_payment_req_form_view"/>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+            	<xpath expr="//header/button[@name='action_register']" position="after">
+            		<button name="action_draft_budget" string="Draft" class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':[('payment_state', 'in', ('draft','paid','cancel','payment_not_applied','approved_payment','for_payment_procedure'))]}"/>
+            		<button name="action_validate_budget" string="Validate budget" class="oe_highlight"
+                            type="object" invisible="1"  /> <!-- attrs="{'invisible':[('payment_state', '!=', 'registered')]}" --><!-- invisible="context.get('hide_validate_button',False)" -->
+            		<button name="action_cancel_budget" string="Cancel" class="oe_highlight"
+                            type="object" attrs="{'invisible':[('payment_state', 'in', ('paid','cancel'))]}"/>
+            	</xpath>
+            
+                
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_id']"
+                       position="after">
+                    <field name="program_code_id" invisible="1" domain="[('budget_id.state','=','validate')]"/>
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_line_ids']/form/sheet/group/field[@name='currency_id']"
+                       position="after">
+                    <field name="program_code_id" invisible="1" domain="[('budget_id.state','=','validate')]"/>
+                </xpath>
+
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='account_id']"
+                       position="after">
+                    <field name="program_code_id" invisible="1"/>
+                </xpath>
+
+                <xpath expr="//field[@name='line_ids']/form/group/field[@name='currency_id']"
+                       position="after">
+                    <field name="program_code_id" invisible="1"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Different for Schedule payroll payment  -->
+        <record id="pension_schedule_payroll_payment_req_form_view" model="ir.ui.view">
+            <field name="name">payment.req.form.view.for.management</field>
+            <field name="model">account.move</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="jt_supplier_payment.pensions_payroll_payment_req_form_view"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//form" position="attributes">
+            		<attribute name="create">0</attribute>
+            	</xpath>
+                <xpath expr="//button[@name='action_draft_budget']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_cancel_budget']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+            	<field name="batch_folio" position="attributes">
+            		<field name="readonly">0</field>
+            	</field>
+            	<field name="payment_issuing_bank_id" position="attributes">
+            		<attribute name="readonly">0</attribute>
+            	</field>
+                <xpath expr="//button[@name='action_reschedule']" position="attributes">
+                	<attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        
+	  <record id="pension_payroll_payment_schedule_programming_action" model="ir.actions.act_window">
+            <field name="name">Pension Payment Schedule</field>
+            <field name="res_model">account.move</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="jt_supplier_payment.view_account_move_filter_inherit_payment"/>
+            <field name="context">{'default_type': 'in_invoice', 'default_is_pension_payment_request': 1,
+                'from_move': 1,'search_default_Payment_method': 1,'search_default_Type_of_operatio': 1}</field>
+            <field name="domain">[('payment_state','not in',('draft','registered')),('type', '=', 'in_invoice'), ('is_pension_payment_request', '=', True)]</field>
+        </record>
+		<record id="pension_payroll_payment_schedule_link_tree_action" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="jt_supplier_payment.payment_req_tree_view_for_management"/>
+            <field name="act_window_id" ref="pension_payroll_payment_schedule_programming_action"/>
+        </record>
+
+        <record id="pension_payroll_payment_schedule_link_form_action" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="pension_schedule_payroll_payment_req_form_view"/>
+            <field name="act_window_id" ref="pension_payroll_payment_schedule_programming_action"/>
+        </record>
+	
+        <menuitem id="pension_payroll_payment_schedule_menu_programm" name="Pension Payment Schedule"
+                  action="pension_payroll_payment_schedule_programming_action"
+                  parent="jt_supplier_payment.payroll_payment_management_menu" sequence="30"/>
+                
+</data>
+</odoo>

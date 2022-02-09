@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="employee_payroll_file_search" model="ir.ui.view">
+            <field name="name">employee.payroll.file.search.view</field>
+            <field name="model">employee.payroll.file</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="employee_id"/>
+                    <field name="beneficiary_id"/>
+                    <field name="employee_number"/>
+                    <field name="reference"/>
+                    <field name="name"/>
+                     <group expand="0" string="Group By">
+                         <filter string="State" name="group_by_state"
+                                context="{'group_by': 'state'}"/>
+                         <filter string="Request Type" name="group_by_request_type"
+                                context="{'group_by': 'request_type'}"/>
+                         <filter string="Payroll Adjustment" name="group_by_payroll_adjustment"
+                                context="{'group_by': 'payroll_adjustment'}"/>
+                         <filter string="Place of Payment" name="group_by_payment_place_id"
+                                context="{'group_by': 'payment_place_id'}"/>
+                         <filter string="Beneficiary" name="group_by_beneficiary_id"
+                                context="{'group_by': 'beneficiary_id'}"/>
+                         <filter string="Payment Request Type" name="group_by_payment_request_type"
+                                context="{'group_by': 'payment_request_type'}"/>
+                        <filter string="Adjustment Cases" name="group_adjustment_case"
+                                context="{'group_by': 'adjustment_case_id'}"/>
+                     </group>
+                </search>
+            </field>
+        </record>
+
+<!--        <record id="employee_payroll_file_form" model="ir.ui.view">-->
+<!--            <field name="name">employee.payroll.file.form.view</field>-->
+<!--            <field name="model">employee.payroll.file</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form>-->
+<!--                    <header>-->
+<!--                        <field name="state" widget="statusbar"/>-->
+<!--                    </header>-->
+<!--                    <sheet>-->
+<!--                        <div class="oe_title">-->
+<!--                            <label for="employee_id" class="oe_edit_only"/>-->
+<!--                            <h1>-->
+<!--                                <field name="employee_id" required="1" attrs="{'readonly':[('state','=','done')]}"/>-->
+<!--                            </h1>-->
+<!--                        </div>-->
+<!--                        <group>-->
+<!--                            <group>-->
+<!--                                 <label for="period_start"/>-->
+<!--                                <div>-->
+<!--                                    <field name="period_start" class="oe_inline" attrs="{'readonly':[('state','=','done')]}"/> - -->
+<!--                                    <field name="period_end" class="oe_inline" attrs="{'readonly':[('state','=','done')]}"/>-->
+<!--                                </div>-->
+<!--                                <field name="fornight" attrs="{'readonly':[('state','=','done')]}"/>-->
+<!--                                <field name="bank_receiving_payment_id" attrs="{'readonly':[('state','=','done')]}"/>-->
+<!--                                <field name="receiving_bank_acc_pay_id" attrs="{'readonly':[('state','=','done')]}"/>-->
+<!--                                <field name="payment_issuing_bank_id" readonly="1" attrs="{'readonly':[('state','=','done')]}"/>-->
+<!--                                <field name="bank_acc_payment_insur_id" readonly="1" attrs="{'readonly':[('state','=','done')]}"/>-->
+<!--                                <field name="payment_request_type" required="1" attrs="{'readonly':[('state','=','done')]}"/>-->
+<!--                                <field name="amount_payable" attrs="{'readonly':[('state','=','done')]}"/>-->
+<!--                            </group>-->
+<!--                            <group>-->
+<!--                                <field name="reference" readonly="1"/>-->
+<!--                                <field name="name" readonly="1"/>-->
+<!--                                <field name="payment_place_id"/>-->
+<!--                                <field name="employee_number"/>-->
+<!--                                <field name="request_type" attrs="{'readonly':[('state','=','done')]}"/>-->
+<!--                                <field name="payroll_adjustment" attrs="{'readonly':[('state','=','done')]}"/>-->
+<!--                                <field name="due_to_inappropriate" attrs="{'invisible':[('payroll_adjustment','!=','inappropriate')],'readonly':[('state','=','done')]}"/>-->
+<!--                                <field name="beneficiary_id" domain="[('beneficiary_type', '=', 'alimony')]" attrs="{'readonly':[('state','=','done')]}"/>-->
+<!--                            </group>-->
+<!--                        </group>-->
+<!--                    </sheet>-->
+<!--                    <div class="oe_chatter">-->
+<!--                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>-->
+<!--                        <field name="activity_ids" widget="mail_activity"/>-->
+<!--                        <field name="message_ids" widget="mail_thread"/>-->
+<!--                    </div>-->
+<!--                    -->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+         <record id="employee_payroll_file_tree" model="ir.ui.view">
+            <field name="name">employee.payroll.file.tree.view</field>
+            <field name="model">employee.payroll.file</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="reference"/>
+                    <field name="employee_id"/>
+                    <field name="employee_number"/>
+                    <field name="payment_request_type"/>
+                    <field name="request_type"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+         </record>
+
+        <record id="employee_payroll_file_action" model="ir.actions.act_window">
+            <field name="name">Upload File</field>
+            <field name="res_model">employee.payroll.file</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--        <menuitem id="menu_emp_payroll_file" name="Upload Files" action="employee_payroll_file_action"-->
+<!--                  sequence="1" parent="menu_emp_payroll_payment_of_payroll"/>-->
+
+    </data>
+</odoo>

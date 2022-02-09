@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for operation type model -->
+        <record id="operation_type_search_view" model="ir.ui.view">
+            <field name="name">operation.type.search.view</field>
+            <field name="model">operation.type</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="op_number"/>
+                    <field name="currency_type"/>
+                    <field name="upa_catalog_policy_id"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- form view for operation type model -->
+        <record id="operation_type_form_view" model="ir.ui.view">
+            <field name="name">operation.type.form.view</field>
+            <field name="model">operation.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="op_number"/>
+                            <field name="currency_type"/>
+                            <field name="upa_catalog_policy_id" context="{'show_for_supplier_payment':True}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for operation type model -->
+        <record id="operation_type_tree_view" model="ir.ui.view">
+            <field name="name">operation.type.tree.view</field>
+            <field name="model">operation.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="op_number"/>
+                    <field name="currency_type"/>
+                    <field name="upa_catalog_policy_id" context="{'show_for_supplier_payment':True}"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for operation type views -->
+        <record id="operation_type_action" model="ir.actions.act_window">
+            <field name="name">Type of Operation</field>
+            <field name="res_model">operation.type</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="operation_type_tree_view"/>
+            <field name="context">{'show_for_supplier_payment':True}</field>
+        </record>
+
+    </data>
+</odoo>

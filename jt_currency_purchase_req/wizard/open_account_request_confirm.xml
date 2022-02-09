@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="request_open_account_confirm_form_view" model="ir.ui.view">
+            <field name="name">request.open.account.confirm.form.view</field>
+            <field name="model">request.confirm</field>
+            <field eval="100" name="priority"/>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="bank_id"/>
+                    </group>
+                    <footer>
+                        <button string="Apply" name="apply_open_account" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+         <!-- action for confirmation  views -->
+        <record id="action_request_open_account_confirmation" model="ir.actions.act_window">
+            <field name="name">Confirm Request</field>
+            <field name="res_model">request.confirm</field>
+            <field name="view_mode">form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">new</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('request_open_account_confirm_form_view')})]"/>
+            <field name="context">{}</field>
+        </record>
+
+        
+
+    </data>
+</odoo>

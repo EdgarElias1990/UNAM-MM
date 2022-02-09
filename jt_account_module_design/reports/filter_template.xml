@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ 
+    <template id="search_template_program_code_section">
+        <a type="button" class="dropdown-toggle program_code_section_filter" data-toggle="dropdown">
+            <span class="fa fa-folder-open"/> Programmatic Code Section
+        </a>
+        <ul class="dropdown-menu o_filters_menu" role="menu">
+            <button class="btn btn-primary o_budget_filter_search">Apply</button>
+            <li class="o_account_report_search js_program_code_section_m2m"/>
+        </ul>
+    </template>
+
+    <template id="search_template_jt" inherit_id="account_reports.search_template">
+        <xpath expr="." position="inside">
+            <div class="btn-group o_dropdown o_account_reports_filter_program_code_section" t-if="options.get('code_sections') != None">
+                <t t-call="jt_budget_mgmt.search_template_program_code_section"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

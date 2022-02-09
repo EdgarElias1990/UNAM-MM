@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_partner_form_view" model="ir.ui.view">
+            <field name="name">res.partner.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+             <field name="arch" type="xml">
+                <xpath expr="//sheet/group/group[2]/field[@name='function']" position="after">
+                    <field name="dependency_id"/>
+                    <field name="tel_dep_capture" widget="phone"/>
+                </xpath>
+             </field>
+        </record>
+    </data>
+</odoo>

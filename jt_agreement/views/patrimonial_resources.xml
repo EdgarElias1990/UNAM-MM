@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="patrimonial_resources_tree_view" model="ir.ui.view">
+            <field name="name">patrimonial.resources.tree.view</field>
+            <field name="model">patrimonial.resources</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="available_bal"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="patrimonial_resources_pivot_view" model="ir.ui.view">
+            <field name="name">patrimonial.resources.pivot.view</field>
+            <field name="model">patrimonial.resources</field>
+            <field name="arch" type="xml">
+                <pivot string="Patrimonial Resources" disable_linking="True">
+                    <field name="name" type="row"/>
+                    <field name="opening_balance" type="measure"/>
+                    <field name="available_bal" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="patrimonial_resources_kanaban_view" model="ir.ui.view">
+            <field name="name">patrimonial.resources.kanban.view</field>
+            <field name="model">patrimonial.resources</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" create="0" group_create="0" >
+                    <field name="name"/>
+                    <field name="origin_resource_id"/>
+                    <field name="opening_balance"/>
+                    <field name="available_bal"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row mb4">
+                                    <div class="col-6">
+                                        Fund Name:
+                                    </div>
+                                    <div class="col-6">
+                                        <strong><span><field name="name"/></span></strong>
+                                    </div>
+                                </div>
+                                <div class="row mb4">
+                                    <div class="col-6">
+                                        Origin of the resource:
+                                    </div>
+                                    <div class="col-6">
+                                        <strong><span><field name="origin_resource_id"/></span></strong>
+                                    </div>
+                                </div>
+                                <div class="row mb4">
+                                    <div class="col-6">
+                                        Opening Balance:
+                                    </div>
+                                    <div class="col-6">
+                                        <strong><span><field name="opening_balance"/></span></strong>
+                                    </div>
+                                </div>
+                                <div class="row mb4">
+                                    <div class="col-6">
+                                        Available Balance:
+                                    </div>
+                                    <div class="col-6">
+                                        <strong><span><field name="available_bal"/></span></strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="patrimonial_resources_dashboard_view" model="ir.ui.view">
+            <field name="name">patrimonial.resources.dashboard.view</field>
+            <field name="model">patrimonial.resources</field>
+            <field name="arch" type="xml">
+                <dashboard>
+                    <view type="graph" ref="jt_agreement.patrimonial_resources_pivot_view"/>
+                    <group>
+                        <aggregate name="opening_balance" field="opening_balance" widget="monetary" string="Opening Balance"/>
+                        <aggregate name="available_bal" field="available_bal" widget="monetary" string="Available Balance"/>
+                    </group>
+                    <view type="pivot" ref="jt_agreement.patrimonial_resources_pivot_view"/>
+                </dashboard>
+            </field>
+        </record>
+
+        <record id="patrimonial_resources_form_view" model="ir.ui.view">
+            <field name="name">patrimonial.resources.form.view</field>
+            <field name="model">patrimonial.resources</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                        <button name="confirm" type="object" string="Confirm" class="oe_highlight"
+                                 attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        
+                        <button name="cancel" type="object" string="Cancel" class="oe_highlight"
+                                 attrs="{'invisible': [('state', '!=', 'valid')]}"/>
+                          
+                    </header>
+                
+                    <sheet>
+                    	 
+                         <div class="oe_button_box" name="button_box">
+                            <button name="action_operations" type="object" class="oe_stat_button"
+                                    icon="fa-random" attrs="{'invisible': [('state', '=', 'draft')]}">
+                                <field name="total_operations" widget="statinfo"/>
+                            </button>
+                             
+                    	</div>
+                    	
+                    	<group>
+	                        <group>
+	                            <field name="name" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="opening_balance" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="available_bal" readonly="1"/>
+                                <field name="dependency_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="desc_dependency" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="subdependency_id" domain="[('dependency_id','=',dependency_id)]" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="desc_subdependency" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                
+	                            <!-- <field name="journal_id" readonly="1"/> -->
+	                            
+	                            
+	                            
+	                            
+	                            
+	                            
+	                        </group>
+	                        <group>
+                                <field name="key" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                           
+	                            <field name="origin_resource_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                            <field name="goals" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                        	<field name="registration_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                        	<field name="specifics_project_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                            <field name="background_project_id" attrs="{'readonly': [('state', '!=', 'draft')]}" readonly="1"/>
+	                            
+	                            
+	                        </group>
+                        </group>
+                        <notebook>
+<!--                         	<page string="Journal Items" name="accounts">
+                        		<field name="move_line_ids"/>
+                        		
+                         		<group>
+                        			<group>
+		                        		<field name="patrimonial_equity_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+		                        		<field name="patrimonial_liability_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                        		</group>
+	                        		<group>
+	                        			<field name="patrimonial_yield_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+	                        		</group>
+                        		</group>
+                        
+ 							</page>
+ -->                        
+ 							<page string="Contacts" name="collaboration_base_contacts">
+                        		<group>
+                        			<group>
+                        				<field name="employee_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="job_id" />
+                        				<field name="work_phone"/>
+                        			</group>
+                        			<group>
+                        				<field name="unit_address" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="observations" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        			</group>
+                        		</group>
+                        		<group>
+                        			<group>
+                        				<field name="administrative_employee_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="administrative_work_phone" />
+                        			</group>
+                        			<group>
+                        				<field name="direct_responsable_employee_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="direct_responsable_work_phone" />
+                        				<field name="direct_responsable_email" />
+                        			</group>
+                        		</group>
+                        	</page>
+                        	<page string="Beneficiaries" name="beneficiaries">
+                                <group string="Beneficiaries Sectional">
+                                    <group>
+                                        <field name="no_beneficiary_allowed"
+                                        attrs="{'readonly': [('state', 'not in', ('draft','valid'))]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="beneficiary_ids" nolabel="1"
+                                               attrs="{'readonly': [('state', 'not in', ('draft','valid'))]}">
+                                            <tree>
+                                            	<field name="sequence"/>
+                                            	<field name="is_employee" invisible="1"/>
+                                            	<field name="is_contact" invisible="1"/>
+                                                <field name="employee_id" attrs="{'required':[('is_employee','=',True)],'invisible':[('is_employee','=',False)]}"/>
+                                                <field name="partner_id" domain="[('beneficiary_type','=','scholar')]" attrs="{'required':[('is_contact','=',True)],'invisible':[('is_contact','=',False)]}"/>
+                                                <field name="bank_account_ids" invisible="1"/>
+                                                <field name="bank_id" context="{'from_agreement':1}"
+                                                  domain="[('id', 'in', bank_account_ids)]" required="1"/>
+                                                <field name="account_number" required="1"/>
+                                                <field name="amount" required="1"/>
+                                                <field name="validity_start" required="1"/>
+                                                <field name="validity_final_beneficiary" required="1"/>
+                                                <field name="withdrawal_sch_date" required="1"/>
+                                            </tree>
+                                            <form>
+                                                <group>
+                                                    <group>
+		                                            	<field name="is_employee"/>
+		                                            	<field name="is_contact"/>
+		                                                <field name="employee_id" attrs="{'required':[('is_employee','=',True)],'invisible':[('is_employee','=',False)]}"/>
+		                                                <field name="partner_id" domain="[('beneficiary_type','=','scholar')]" attrs="{'required':[('is_contact','=',True)],'invisible':[('is_contact','=',False)]}"/>
+		                                                <field name="bank_account_ids" invisible="1"/>
+		                                                <field name="bank_id" context="{'from_agreement':1}"
+		                                                  domain="[('id', 'in', bank_account_ids)]" required="1"/>
+                                                        <field name="account_number" required="1"/>
+                                                        <field name="payment_rule_id" required="1"/>
+                                                    </group>
+                                                     <group>
+                                                         <field name="amount" required="1"/>
+                                                        <field name="validity_start" required="1"/>
+                                                        <field name="validity_final_beneficiary" required="1"/>
+                                                        <field name="withdrawal_sch_date" required="1"/>
+                                                    </group>
+                                                </group>
+                                            </form>
+                                        </field>
+                                    </group>
+                                </group>   
+                                 <group string="Providers" name="providers">
+                                     <field name="provider_ids" nolabel="1"
+                                            attrs="{'readonly': [('state', 'not in', ('draft','valid'))]}">
+                                         <tree editable="top">
+                                             <field name="partner_id" required="1"/>
+                                                <field name="bank_id" domain="[('partner_id', '=', partner_id)]"
+                                                context="{'from_agreement':1}"/>
+                                                <field name="account_number"/>
+                                         </tree>
+                                         <form>
+                                             <group>
+                                                 <field name="partner_id" required="1"/>
+                                                <field name="bank_id"
+                                                 domain="[('partner_id', '=', partner_id)]"
+                                                context="{'from_agreement':1}"/>
+                                                <field name="account_number"/>
+                                             </group>
+                                         </form>
+                                     </field>
+                                 </group>
+                                                     	
+                        	</page>
+                        	<page string="Supporting Documentation" name="supporting_documentation">
+                        		<group>
+                        			<group>
+                        				<field name="fund_registration_file_name" invisible="1"/>
+                        				<field name="fund_registration_file" attrs="{'readonly': [('state', '!=', 'draft')]}" filename="trust_agreement_file_name" required="1"/>
+                        			</group>
+                        			<group>
+                        				<field name="fund_office_file_name" invisible="1"/>
+                        				<field name="fund_office_file" attrs="{'readonly': [('state', '!=', 'draft')]}" filename="trust_office_file_name" required="1"/>
+                        			</group>
+                        		</group>
+                        	</page>
+                            <!-- attrs="{'invisible': [('state', 'not in', ('in_force', 'to_be_cancelled', 'cancelled'))]}" -->
+                            <page name="cancellation_info" string="Cancellation Information">
+                                <group>
+                                    <field name="cancel_date"/>
+                                    <field name="supporing_doc"/>
+                                    <field name="reason_cancel"/>
+                                </group>
+                            </page>
+                        	
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_patrimonial_resources" model="ir.actions.act_window">
+            <field name="name">Patrimonial Resources</field>
+            <field name="res_model">patrimonial.resources</field>
+            <field name="view_mode">kanban,dashboard,tree,form,pivot</field>
+            <field name="context">{'from_agreement':True}</field>
+        </record>
+
+        <menuitem id="menu_patrimonial_resources" name="Patrimonial Resources" parent="jt_agreement.menu_agreements"
+                action="action_patrimonial_resources" sequence="1"/>
+
+		<!-- Schedule Transfers -->
+         <record id="action_schedule_transfers_patrimonial" model="ir.actions.server">
+            <field name="name">Withdrawal Schedule</field>
+            <field name="model_id" ref="jt_agreement.model_patrimonial_resources"/>
+            <field name="binding_model_id" ref="jt_agreement.model_patrimonial_resources"/>
+            <field name="state">code</field>
+            <field name="binding_view_types">list</field>
+            <field name="code">action = records.action_schedule_withdrawal()</field>
+        </record>
+    </data>
+</odoo>

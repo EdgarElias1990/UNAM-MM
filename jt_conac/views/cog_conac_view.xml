@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- COG CONAC View Search -->
+        <record id="cog_conac_search_view" model="ir.ui.view">
+            <field name="name">cog.conac.search.view</field>
+            <field name="model">cog.conac</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="chapter"/>
+                    <field name="name"/>
+                    <field name="heading"/>
+                    <field name="concept"/>
+                </search>
+            </field>
+        </record>
+        
+        <!-- COG CONAC View Form -->
+        <record id="cog_conac_form_view" model="ir.ui.view">
+            <field name="name">cog.conac.form.view</field>
+            <field name="model">cog.conac</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="chapter"/>
+                                <field name="name" required="1"/>
+                                <field name="heading"/>
+                                <field name="concept"/>
+                            </group>        
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- COG CONAC View List -->
+        <record id="cog_conac_view_list" model="ir.ui.view">
+            <field name="name">cog.conac.list.view</field>
+            <field name="model">cog.conac</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="chapter"/>
+                    <field name="name"/>
+                    <field name="heading"/>
+                    <field name="concept"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action View COG CONAC -->
+        <record id="action_view_cog_conac" model="ir.actions.act_window">
+            <field name="name">COG CONAC</field>
+            <field name="res_model">cog.conac</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="context">{'from_cog': True}</field>
+        </record>
+    </data>
+</odoo>

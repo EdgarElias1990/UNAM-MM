@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for year model -->
+        <record id="shcp_search_view" model="ir.ui.view">
+            <field name="name">shcp.search.view</field>
+            <field name="model">shcp.game</field>
+            <field name="arch" type="xml">
+                <search string="SHCP Games">
+                    <field name="conversion_key"/>
+                    <field name="conversion_key_desc"/>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for year model -->
+    	<record id="shcp_form_view" model="ir.ui.view">
+            <field name="name">shcp.form.view</field>
+            <field name="model">shcp.game</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+            			<group>
+		            		<group>
+		            			<field name="conversion_key" required="1"/>
+	                        </group>
+	                        <group>
+	                        	<field name="conversion_key_desc"/>
+	                        </group>
+                        </group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for year model -->
+    	<record id="shcp_tree_view" model="ir.ui.view">
+            <field name="name">shcp.tree.view</field>
+            <field name="model">shcp.game</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="conversion_key"/>
+            		<field name="conversion_key_desc"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Action for shcp -->
+        <record id="action_shcp_budget" model="ir.actions.act_window">
+            <field name="name">Key SHCP Games</field>
+            <field name="res_model">shcp.game</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

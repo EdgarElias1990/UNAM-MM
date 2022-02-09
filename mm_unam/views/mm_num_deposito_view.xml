@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="view_mm_num_deposito_form" model="ir.ui.view">
+            <field name="name">view.mm.num.deposito</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="jt_supplier_payment.payment_req_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_issuing_bank_acc_id']" position="after">
+                    <field name="deposite_number"/>
+                </xpath>
+            </field>
+        </record>
+         <record id="view_mm_num_deposito_tree" model="ir.ui.view">
+            <field name="name">view.mm.num.deposito</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="jt_supplier_payment.payment_req_tree_view_diff"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_state']" position="after">
+                    <field name="deposite_number"/>
+                </xpath>
+            </field>
+        </record>
+	</data>
+</odoo>

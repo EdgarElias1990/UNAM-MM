@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="external_layout_header_check_cancellation">
+            <div t-attf-class="header o_company_#{company.id}_layout">
+                <div class="row">
+                    <div class="col-2" align="left">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                             style="max-height: 150px;" alt="Logo"/>
+                    </div>
+                    <div class="col-4" style="padding-left:15px;margin-left:10px;padding-top:7px;padding-right:0px;">
+                        <img src="/jt_currency_purchase_req/static/src/img/dgf.png"
+                             style="max-height:100px;width:54%"/>
+                    </div>
+                    <div class="col-6" align="left" style="padding-right:0;padding-left:2px;text-align:left:">
+                        
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">UNIVERSITY PATRONAGE -
+TREASURY</p>
+                        
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            GENERAL ADDRESS OF FINANZAS
+                        </p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            INCOME DIRECTION AND FINANCIAL OPERATION
+                        </p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            <strong>Oficio No:</strong><span t-field="o.account_cancellation_id.no_trade"/><br/>
+                            <strong>No. Solicitude:</strong><span t-field="o.account_cancellation_id.invoice"/><br/>
+                            <strong>Asunsto:</strong>Checking account cancellation<br/>
+                            <strong>Dependencia:</strong>:<span t-field="o.dependancy_id.dependency"/><br/><span t-field="o.dependancy_id.description"/> 
+                        </p>
+    
+                    </div>
+                </div>
+               
+            </div>
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"
+                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+                
+                <div class="row">
+                    <div class="col-8" align="left" style="font-size:15px">
+                        <span>Thank you in advance for the attention paid, we stay with you".</span><br/>
+                        <span style="font-size:15px">
+                            Kind regards,
+                            <br/>
+                        </span>
+                        <span style="font-size:15px">
+                            "BY MY RACE THE SPIRIT WILL SPEAK"
+                        </span><br/>
+                        <span style="font-size:15px">
+                            Ciudad Universitaria, Cd. Mx., A<strong style="padding-left:15px;"><t t-esc="o.account_cancellation_id.cancellation_date"/></strong>
+
+                            <br/>
+                         </span>
+                    </div>
+                    <div class="col-4" align="right" style="margin-top:60px;">
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                        <t t-set="trade" t-value="o.get_sender_recipet3()"/>
+                        <div class="col-6" align="left">
+                            <t t-if="trade">
+                                <span style="font-size:15px">Treasurer of the UNAM</span>
+                            </t>
+                        </div>
+                        <div class="col-6" align="right">
+                            <t t-if="trade">
+                                <span style="font-size:15px">General Director Of the Finance</span>
+                            </t>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col-6" align="left">
+                            <t t-if="trade">
+                                <t>
+                                    <span style="font-size:15px;" t-esc="trade.sender_title"/>
+                                    <span style="font-size:15px;" t-esc="trade.sender_emp_id.name"/><br/>
+                                    <span style="font-size:15px;" t-esc="trade.sender_professional_title"/>
+                                </t>
+                            </t>
+                        </div>
+                        <div class="col-6" align="right">
+                            <t t-if="trade">
+                                <t>
+                                    <span style="font-size:15px;" t-esc="trade.recipient_title"/>
+                                    <span style="font-size:15px;" t-esc="trade.executive_id.name"/><br/>
+                                    <span style="font-size:15px;" t-esc="trade.executive_id.position"/>
+                                </t>                            
+                            </t>
+                        </div>
+                    </div>
+                </div>
+        </template>
+
+        <template id="external_layout_check_acc_cancel">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="jt_currency_purchase_req.external_layout_header_check_cancellation">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+        <template id="office_cancellation_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <!--                    <t t-if="o.state == 'approved'">-->
+                    <t t-call="jt_currency_purchase_req.external_layout_check_acc_cancel">
+                        <div class="page">
+                            <br/>
+                            <br/>
+                            <br/>
+                           <div class="row">
+                                <div class="col-6" align="left" style="font-size:15px;">
+                                    <t>
+                                        <span t-field="o.bank_id.name"/>
+                                        <br/>
+                                        <span t-field="o.bank_id.street" t-if="o.bank_id.street"/>,<span t-field="o.bank_id.street2" t-if="o.bank_id.street2"/>,<span t-field="o.bank_id.zip" t-if="o.bank_id.zip"/>,<br/><span t-field="o.bank_id.state" t-if="o.bank_id.state"/>,<span t-field="o.bank_id.country" t-if="o.bank_id.country"/>.
+                                    </t>
+                                </div>
+                                <div class="col-6">
+                                    <t t-foreach="o.bank_account_id.executive_ids" t-as="data" t-if="o.bank_account_id">
+                                        <p><b>Atn:</b><span t-field="data.name"/>,
+                                            <span t-field="data.position"/>,
+                                            <span t-field="data.email"/>
+                                        </p>        
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="row">
+                               <div class="col-12">
+                                   <p style="font-size:15px;text-align:justify;">With this we request that As of this date, the account (s) are canceled</p>
+                                   <p style="font-size:15px;text-align:justify;">Account Number:<t t-esc="o.bank_account_id.bank_account_id.acc_number"/></p>
+                                   <p style="font-size:15px;text-align:justify;"><b>Additional observations of the checkbook:</b><br/>
+                                   <span>We inform you that the account was not used, no checkbook is returned, because it was destroyed</span>
+                                </p>
+                               </div>
+                           </div>
+
+                           
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_office_cancellation" model="report.paperformat">
+            <field name="name">Office Cancellation Checking Account</field>
+            <field name="default" eval="True"/>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">80</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="open_cancellation_checking_account_action"
+                model="account.cancellation"
+                string="Office Cancellation Checking Account"
+                report_type="qweb-pdf"
+                name="jt_currency_purchase_req.office_cancellation_template"
+                file="jt_currency_purchase_req.office_cancellation_template"
+                paperformat="jt_currency_purchase_req.paperformat_office_cancellation"
+        />
+
+    </data>
+</odoo>

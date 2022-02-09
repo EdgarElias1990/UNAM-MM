@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_salestax_report" name="Sales tax reports" parent="jt_tax_transaction.menu_tribune_operations" sequence="1"/>
+
+        <record id="action_withholding_tax_report" model="ir.actions.client">
+            <field name="name">Withholding tax report</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_tax_transaction.withholding.report'}" />
+        </record>
+
+        <menuitem
+            id="withholding_tax_report_menu"
+            name="Withholding tax report"
+            parent="jt_tax_transaction.menu_salestax_report"
+            action="action_withholding_tax_report"
+            sequence="1"
+        />
+
+        <record id="action_valueadded_tax_report" model="ir.actions.client">
+            <field name="name">Report ​ for the determination of Value Added Tax by</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_tax_transaction.valueadded.report'}" />
+        </record>
+
+        <menuitem
+            id="valueadded_tax_report_menu"
+            name="Report ​ for the determination of Value Added Tax by"
+            parent="jt_tax_transaction.menu_salestax_report"
+            action="action_valueadded_tax_report"
+            sequence="2"
+        />
+
+        <record id="action_to_pay_tax_report" model="ir.actions.client">
+            <field name="name">Tax Report to Enter/Pay</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model':'jt_tax_transaction.taxpay.report'}" />
+        </record>
+
+        <menuitem
+            id="paid_tax_report_menu"
+            name="Tax Report to Enter/Pay"
+            parent="jt_tax_transaction.menu_salestax_report"
+            action="action_to_pay_tax_report"
+            sequence="3"
+        />
+    </data>
+</odoo>

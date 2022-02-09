@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- form view for import adequacies line model -->
+        <record id="reassign_budget_wiz_form_view" model="ir.ui.view">
+            <field name="name">reassign.budget.wiz.form.view</field>
+            <field name="model">reassign.budget.wiz</field>
+            <field name="arch" type="xml">
+                <form>
+                    <h6>order to reallocate the budget, you need to select the start and
+end dates will affect the budget confirmed this year.</h6><br/>
+                    <group>
+                        <field name="start_date" required="1"/>
+                        <field name="end_date" required="1"/>
+                    </group>
+                    <footer>
+                        <button string="Accept" name="reassign_budget" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Reassign Budget"
+            id="action_reassign_budget"
+            res_model="reassign.budget.wiz"
+            binding_model="account.payment"
+            view_mode="form"
+            binding_views="list"
+            target="new"
+        />
+    </data>
+</odoo>

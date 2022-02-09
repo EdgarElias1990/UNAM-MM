@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+
+		<record id="generate_supplier_batch_bank_layout" model="ir.ui.view">
+			<field name="name">Generate Supplier Batch Bank form view</field>
+			<field name="model">generate.supp.check.layout</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<field name="layout" required="1"/>
+							<field name="file_name" invisible="1"/>
+                            <field name="file_data" filename="file_name" readonly="1" force_save="1"/>
+						</group>
+						<footer>
+                   			<button string="Generate" class="btn btn-primary" type="object" name="action_generate"
+								attrs="{'invisible': [('file_name', '!=', False)]}"/>
+							<button string="Cancel" class="oe_link" special="cancel"/>
+                		</footer>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</odoo>

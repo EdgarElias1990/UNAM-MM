@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rejection_checks,rejection_checks,model_rejection_checks,base.group_user,1,1,1,1
+access_request_accounts,request_accounts,model_request_accounts,base.group_user,1,1,1,1
+access_request_transfer,request_transfer,model_request_transfer,base.group_user,1,1,1,1 
+access_expense_verification,expense_verification,model_expense_verification,base.group_user,1,1,1,1 
+access_verification_expense_line,verification_expense_line,model_verification_expense_line,base.group_user,1,1,1,1
+access_project_close,project_close,model_project_close,base.group_user,1,1,1,1
+access_remaining_resource,remaining_resource,model_remaining_resource,base.group_user,1,1,1,1
+access_project_ministrations,project_ministrations_acc,model_project_ministrations,base.group_user,1,1,1,1
+access_project_type_custom,project.type.custom,model_project_type_custom,base.group_user,1,1,1,1
+access_project_custom_stage,project.custom.stage,model_project_custom_stage,base.group_user,1,1,1,1
+access_custom_project_programcode,custom.project.programcode,model_custom_project_programcode,base.group_user,1,1,1,1

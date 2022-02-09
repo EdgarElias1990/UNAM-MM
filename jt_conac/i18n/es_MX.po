@@ -1,0 +1,1263 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_conac
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-08 18:07+0000\n"
+"PO-Revision-Date: 2020-07-13 13:07-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. module: jt_conac
+#: model:account.financial.html.report.line,name:jt_conac.mx_activo_1_0_0_0
+msgid "1.0.0.0 Activo"
+msgstr "1.0.0.0 Activo"
+
+#. module: jt_conac
+#: model:account.financial.html.report.line,name:jt_conac.mx_activo_1_1_0_0
+msgid "1.1.0.0 Activo Circulante"
+msgstr "1.1.0.0 Activo Circulante"
+
+#. module: jt_conac
+#: model:account.financial.html.report.line,name:jt_conac.mx_activo_1_2_0_0
+msgid "1.2.0.0 Activo No Circulante"
+msgstr "1.2.0.0 Activo No Circulante"
+
+#. module: jt_conac
+#: model:account.financial.html.report.line,name:jt_conac.mx_pasivo_2_0_0_0
+msgid "2.0.0.0 Pasivo"
+msgstr "2.0.0.0 Pasivo"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid ""
+"<span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Invoice</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Credit Note</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_invoice'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Bill</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_refund'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Refund</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'out_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Sales Receipt</span>\n"
+"                                <span attrs=\"{'invisible': ['|', '|', ('type', '!=', 'in_receipt'), ('state', '!=', 'draft'), ('name', '!=', '/')]}\">Draft Purchase Receipt</span>"
+msgstr ""
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid ""
+"<span class=\"o_form_label mx-3 oe_edit_only\" attrs=\"{'invisible': [ '|', '|', '|', ('state', '!=', 'draft'), ('invoice_payment_term_id', '!=', False), ('type', 'not in', "
+"('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))]}\"> or </span>"
+msgstr ""
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "<span class=\"o_form_label\" attrs=\"{'invisible': [('invoice_sequence_number_next_prefix', '=', False)]}\">First Number:</span>"
+msgstr ""
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_4.py:0
+#, python-format
+msgid "Abonos del Periodo"
+msgstr "Abonos del Periodo"
+
+#. module: jt_conac
+#: model:ir.model,name:jt_conac.model_account_account
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Account Entry"
+msgstr "Entrada de cuenta"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_1_5.py:0 code:addons/jt_conac/models/financial_report_4_0.py:0 code:addons/jt_conac/models/financial_report_4_2.py:0
+#: model:ir.model.fields,field_description:jt_conac.field_coa_conac__display_name
+#, python-format
+msgid "Account Name"
+msgstr "Nombre de Cuenta"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_1_5.py:0
+#, python-format
+msgid "Account Type"
+msgstr "Tipo de cuenta"
+
+#. module: jt_conac
+#: model:ir.ui.menu,name:jt_conac.menu_accounting_conac model:ir.ui.menu,name:jt_conac.menu_accounting_conf_conac model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Accounting"
+msgstr "Contabilidad"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Accounting Date"
+msgstr "Fecha de contabilidad"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_1.py:0
+#, python-format
+msgid "Activo Accounts"
+msgstr "Cuentas de Activo"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Add a line"
+msgstr "Agregar una línea"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Add a note"
+msgstr "Agrega una nota"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Add a section"
+msgstr "Agregar una sección"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Add an internal note..."
+msgstr "Agregar una nota interna ..."
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_0.py:0 code:addons/jt_conac/models/financial_report_4_2.py:0
+#, python-format
+msgid "Amount"
+msgstr "Importe"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_8.py:0 model:ir.model.fields,field_description:jt_conac.field_income_statement__exp_and_red_amt
+#, python-format
+msgid "Ampliaciones y Reducciones"
+msgstr "Ampliaciones y Reducciones"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_10.py:0 code:addons/jt_conac/models/financial_report_4_9.py:0
+#: model:ir.model.fields,field_description:jt_conac.field_states_program__ext_and_red_amt model:ir.model.fields,field_description:jt_conac.field_status_expen__ext_and_red_amt
+#, python-format
+msgid "Ampliaciones/ (Reducciones)"
+msgstr "Ampliaciones/Reducciones"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_8.py:0
+#: model:ir.actions.client,name:jt_conac.action_analytical_income_statement_report model:ir.model,name:jt_conac.model_jt_conac_analytical_income_statement_report
+#: model:ir.ui.menu,name:jt_conac.menu_analytical_income_statement_report
+#, python-format
+msgid "Analytical Income Statement"
+msgstr "Estado Analítico de Ingresos"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_5.py:0
+#: model:ir.actions.client,name:jt_conac.action_analytical_status_of_debts_report model:ir.model,name:jt_conac.model_jt_conac_analytical_status_of_debts_report
+#: model:ir.ui.menu,name:jt_conac.menu_analytical_status_of_debts_report
+#, python-format
+msgid "Analytical Statement of Debt and Other Liabilities"
+msgstr "Estado Analítico de la Deuda y Otros Pasivos"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_4.py:0
+#: model:ir.actions.client,name:jt_conac.action_analytical_status_of_assets_report model:ir.model,name:jt_conac.model_jt_conac_analytical_status_of_assets_report
+#: model:ir.ui.menu,name:jt_conac.menu_analytical_status_of_assets_report
+#, python-format
+msgid "Analytical Status of Assets"
+msgstr "Estado Analítico del Activo"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_9.py:0
+#: model:ir.actions.client,name:jt_conac.action_status_of_expenditure_report model:ir.model,name:jt_conac.model_jt_conac_status_of_expenditure_report
+#: model:ir.ui.menu,name:jt_conac.menu_status_of_expenditure_report
+#, python-format
+msgid "Analytical Status of the Expenditure Budget Exercise"
+msgstr "Estado Analítico del Ejercicio del Presupuesto de Egresos"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_coa_conac__applicability
+msgid "Applicability"
+msgstr "Aplicación"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_6.py:0
+#, python-format
+msgid "Application"
+msgstr "Aplicación"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_10.py:0 code:addons/jt_conac/models/financial_report_4_9.py:0
+#: model:ir.model.fields,field_description:jt_conac.field_states_program__approved_amt model:ir.model.fields,field_description:jt_conac.field_status_expen__approved_amt
+#, python-format
+msgid "Aprobado"
+msgstr "Aprobado"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Auto-Complete"
+msgstr "Autocompletar"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Bill Date"
+msgstr "Fecha de pago"
+
+#. module: jt_conac
+#: model:ir.actions.client,name:jt_conac.action_coa_conac_report model:ir.model,name:jt_conac.model_coa_conac model:ir.ui.menu,name:jt_conac.menu_coa_report
+msgid "COA CONAC"
+msgstr "COA CONAC"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_account_account__coa_conac_id model:ir.model.fields,field_description:jt_conac.field_account_move_line__coa_conac_id
+msgid "CODE CONAC"
+msgstr "Código CONAC"
+
+#. module: jt_conac
+#: model:ir.actions.act_window,name:jt_conac.action_view_cog_conac model:ir.model,name:jt_conac.model_cog_conac model:ir.ui.menu,name:jt_conac.menu_cog_conac
+msgid "COG CONAC"
+msgstr "COG CONAC"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_account_move__conac_move model:ir.model.fields,field_description:jt_conac.field_account_move_line__conac_move
+#: model:ir.ui.menu,name:jt_conac.menu_root_conac
+msgid "CONAC"
+msgstr "CONAC"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_account_journal__conac_credit_account_id
+#: model:ir.model.fields,field_description:jt_conac.field_account_journal__conac_exe_credit_account_id
+#: model:ir.model.fields,field_description:jt_conac.field_account_journal__conac_paid_credit_account_id
+msgid "CONAC Credit Account"
+msgstr "Cuenta de crédito CONAC"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_account_journal__conac_debit_account_id
+#: model:ir.model.fields,field_description:jt_conac.field_account_journal__conac_exe_debit_account_id
+#: model:ir.model.fields,field_description:jt_conac.field_account_journal__conac_paid_debit_account_id
+msgid "CONAC Debit Account"
+msgstr "Cuenta de débito CONAC"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_coa_conac__name
+msgid "CONAC Name"
+msgstr "Nombre CONAC"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_4.py:0
+#, python-format
+msgid "Cargos del Periodo"
+msgstr "Cargos del Periodo"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_cog_conac__chapter
+msgid "Chapter"
+msgstr "Capítulo"
+
+#. module: jt_conac
+#: model:ir.actions.act_window,name:jt_conac.action_coa_view model:ir.ui.menu,name:jt_conac.menu_coa_conac
+msgid "Chart Of Accounts"
+msgstr "Catálogo de cuentas"
+
+#. module: jt_conac
+#: model:ir.actions.act_window,name:jt_conac.action_view_coa_conac model:ir.ui.menu,name:jt_conac.menu_coa_conac_conac
+msgid "Chart Of Accounts CONAC"
+msgstr "Plan de Cuentas CONAC"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Check them"
+msgstr "Revisalos"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_coa_conac__code model:ir.model.fields,field_description:jt_conac.field_states_program__code
+msgid "Code"
+msgstr "Código"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.coa_view_search_inh_jt_conac
+msgid "Code CONAC"
+msgstr "Código CONAC"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_cog_conac__concept
+msgid "Concept"
+msgstr "Concepto"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_10.py:0 code:addons/jt_conac/models/financial_report_4_3.py:0 code:addons/jt_conac/models/financial_report_4_4.py:0
+#: code:addons/jt_conac/models/financial_report_4_6.py:0 code:addons/jt_conac/models/financial_report_4_7.py:0 code:addons/jt_conac/models/financial_report_4_9.py:0
+#: model:ir.model.fields,field_description:jt_conac.field_cash_statement__concept model:ir.model.fields,field_description:jt_conac.field_states_program__concept
+#: model:ir.model.fields,field_description:jt_conac.field_status_expen__concept
+#, python-format
+msgid "Concepto"
+msgstr "Concepto"
+
+#. module: jt_conac
+#: model:ir.ui.menu,name:jt_conac.menu_configuration_conac
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_debt_statement__currency_id
+msgid "Contracting Currency"
+msgstr "Moneda de Contratación"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_cash_statement__create_uid model:ir.model.fields,field_description:jt_conac.field_coa_conac__create_uid
+#: model:ir.model.fields,field_description:jt_conac.field_cog_conac__create_uid model:ir.model.fields,field_description:jt_conac.field_debt_statement__create_uid
+#: model:ir.model.fields,field_description:jt_conac.field_income_statement__create_uid model:ir.model.fields,field_description:jt_conac.field_states_program__create_uid
+#: model:ir.model.fields,field_description:jt_conac.field_status_expen__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_cash_statement__create_date model:ir.model.fields,field_description:jt_conac.field_coa_conac__create_date
+#: model:ir.model.fields,field_description:jt_conac.field_cog_conac__create_date model:ir.model.fields,field_description:jt_conac.field_debt_statement__create_date
+#: model:ir.model.fields,field_description:jt_conac.field_income_statement__create_date model:ir.model.fields,field_description:jt_conac.field_states_program__create_date
+#: model:ir.model.fields,field_description:jt_conac.field_status_expen__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/trial_balance_report.py:0
+#, python-format
+msgid "Credit"
+msgstr "Haber"
+
+#. module: jt_conac
+#: model:ir.model.fields.selection,name:jt_conac.selection__coa_conac__applicability__creditor
+msgid "Creditor"
+msgstr "Acreedora"
+
+#. module: jt_conac
+#: model:ir.ui.menu,name:jt_conac.menu_currency_conac
+msgid "Currencies"
+msgstr "Monedas"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Date"
+msgstr "Fecha"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/trial_balance_report.py:0
+#, python-format
+msgid "Debit"
+msgstr "Debe"
+
+#. module: jt_conac
+#: model:ir.model.fields.selection,name:jt_conac.selection__coa_conac__applicability__debtor
+msgid "Debtor"
+msgstr "Deudora"
+
+#. module: jt_conac
+#: model:ir.model.fields.selection,name:jt_conac.selection__coa_conac__applicability__debtor_creditor
+msgid "Debtor / Creditor"
+msgstr "Deudora / Acreedora"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_account_journal__execercise_credit_account_id
+#: model:ir.model.fields,field_description:jt_conac.field_account_journal__paid_credit_account_id
+msgid "Default Credit Account"
+msgstr "Cuenta acreedora por defecto"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_account_journal__execercise_debit_account_id
+#: model:ir.model.fields,field_description:jt_conac.field_account_journal__paid_debit_account_id
+msgid "Default Debit Account"
+msgstr "Cuenta deudora por defecto"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_5.py:0
+#, python-format
+msgid "Denominación de las Deudas"
+msgstr "Denominación de las Deudas"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_debt_statement__denomination
+msgid "Denomination of Debts"
+msgstr "Denominación de la Deuda"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_10.py:0 code:addons/jt_conac/models/financial_report_4_8.py:0 code:addons/jt_conac/models/financial_report_4_9.py:0
+#: model:ir.model.fields,field_description:jt_conac.field_income_statement__accrued_amt model:ir.model.fields,field_description:jt_conac.field_states_program__accrued_amt
+#: model:ir.model.fields,field_description:jt_conac.field_status_expen__accrued_amt
+#, python-format
+msgid "Devengado"
+msgstr "Devengado"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_8.py:0 model:ir.model.fields,field_description:jt_conac.field_income_statement__difference_amt
+#, python-format
+msgid "Diferencia"
+msgstr "Diferencia"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Disc.%"
+msgstr "Dto.%"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_cash_statement__display_name model:ir.model.fields,field_description:jt_conac.field_cog_conac__display_name
+#: model:ir.model.fields,field_description:jt_conac.field_debt_statement__display_name model:ir.model.fields,field_description:jt_conac.field_income_statement__display_name
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_analytical_income_statement_report__display_name
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_analytical_status_of_assets_report__display_name
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_analytical_status_of_debts_report__display_name
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_coa_conac_report__display_name
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_financial_position_report__display_name
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_state_of_variation_report__display_name
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_statement_of_cash_report__display_name
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_statement_of_changes_report__display_name
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_states_and_program_report__display_name
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_status_of_activities_report__display_name
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_status_of_expenditure_report__display_name
+#: model:ir.model.fields,field_description:jt_conac.field_states_program__display_name model:ir.model.fields,field_description:jt_conac.field_status_expen__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_debt_statement__end_balance
+msgid "End Balance of the Period"
+msgstr "Saldo Final del Periodo"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_8.py:0 model:ir.model.fields,field_description:jt_conac.field_income_statement__estimated_amt
+#, python-format
+msgid "Estimado"
+msgstr "Estimado"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.inherited_account_journal_form_view
+msgid "Excercised"
+msgstr "Ejercido"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_3.py:0
+#, python-format
+msgid "Exceso o Insuficiencia en la Actualización de la Hacienda Pública / Patrimonio"
+msgstr "Exceso o Insuficiencia en la Actualización de la Hacienda Pública / Patrimonio"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/trial_balance_report.py:0
+#, python-format
+msgid "Export For SAT (XML)"
+msgstr "Exportar para SAT (XML)"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_1_5.py:0 model:ir.model.fields,field_description:jt_conac.field_coa_conac__gender
+#, python-format
+msgid "Gender"
+msgstr "Género"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_1_5.py:0 model:ir.model.fields,field_description:jt_conac.field_coa_conac__group
+#, python-format
+msgid "Group"
+msgstr "Grupo"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_3.py:0
+#, python-format
+msgid "Hacienda Pública / Patrimonio Contribuido"
+msgstr "Hacienda Pública / Patrimonio Contribuido"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_cog_conac__heading
+msgid "Heading"
+msgstr "Partida"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_cash_statement__id model:ir.model.fields,field_description:jt_conac.field_coa_conac__id
+#: model:ir.model.fields,field_description:jt_conac.field_cog_conac__id model:ir.model.fields,field_description:jt_conac.field_debt_statement__id
+#: model:ir.model.fields,field_description:jt_conac.field_income_statement__id model:ir.model.fields,field_description:jt_conac.field_jt_conac_analytical_income_statement_report__id
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_analytical_status_of_assets_report__id
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_analytical_status_of_debts_report__id
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_coa_conac_report__id model:ir.model.fields,field_description:jt_conac.field_jt_conac_financial_position_report__id
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_state_of_variation_report__id
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_statement_of_cash_report__id
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_statement_of_changes_report__id
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_states_and_program_report__id
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_status_of_activities_report__id
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_status_of_expenditure_report__id model:ir.model.fields,field_description:jt_conac.field_states_program__id
+#: model:ir.model.fields,field_description:jt_conac.field_status_expen__id
+msgid "ID"
+msgstr "ID"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "In Payment"
+msgstr "En pago"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/trial_balance_report.py:0
+#, python-format
+msgid "Initial Balance"
+msgstr "Balance inicial"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_debt_statement__init_balance
+msgid "Initial Balance of the Period"
+msgstr "Saldo Inicial del Periodo"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_5.py:0
+#, python-format
+msgid "Institución o País Acreedor"
+msgstr "Institución o País Acreedor"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_debt_statement__country_id
+msgid "Institution or Creditor Country"
+msgstr "Institución o País Acreedor"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Invoice Date"
+msgstr "Fecha de la factura"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Invoice Lines"
+msgstr "Líneas de factura"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_1_5.py:0 model:ir.model.fields,field_description:jt_conac.field_coa_conac__item
+#, python-format
+msgid "Item"
+msgstr "Rubro"
+
+#. module: jt_conac
+#: model:ir.model,name:jt_conac.model_account_journal
+msgid "Journal"
+msgstr "Diario"
+
+#. module: jt_conac
+#: model:ir.model,name:jt_conac.model_account_move model:ir.ui.menu,name:jt_conac.menu_journal_entry model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_tree
+msgid "Journal Entries"
+msgstr "Asientos contables"
+
+#. module: jt_conac
+#: model:ir.actions.act_window,name:jt_conac.action_conac_move_journal_line
+msgid "Journal Entries CONAC"
+msgstr "Entradas de diario CONAC"
+
+#. module: jt_conac
+#: model:ir.model,name:jt_conac.model_account_move_line
+msgid "Journal Item"
+msgstr "Asientos Contables"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Journal Items"
+msgstr "Asientos Contables"
+
+#. module: jt_conac
+#: model:ir.ui.menu,name:jt_conac.menu_journals_conac
+msgid "Journals"
+msgstr "Diarios"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_cash_statement____last_update model:ir.model.fields,field_description:jt_conac.field_coa_conac____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_cog_conac____last_update model:ir.model.fields,field_description:jt_conac.field_debt_statement____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_income_statement____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_analytical_income_statement_report____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_analytical_status_of_assets_report____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_analytical_status_of_debts_report____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_coa_conac_report____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_financial_position_report____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_state_of_variation_report____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_statement_of_cash_report____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_statement_of_changes_report____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_states_and_program_report____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_status_of_activities_report____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_jt_conac_status_of_expenditure_report____last_update
+#: model:ir.model.fields,field_description:jt_conac.field_states_program____last_update model:ir.model.fields,field_description:jt_conac.field_status_expen____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_cash_statement__write_uid model:ir.model.fields,field_description:jt_conac.field_coa_conac__write_uid
+#: model:ir.model.fields,field_description:jt_conac.field_cog_conac__write_uid model:ir.model.fields,field_description:jt_conac.field_debt_statement__write_uid
+#: model:ir.model.fields,field_description:jt_conac.field_income_statement__write_uid model:ir.model.fields,field_description:jt_conac.field_states_program__write_uid
+#: model:ir.model.fields,field_description:jt_conac.field_status_expen__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_cash_statement__write_date model:ir.model.fields,field_description:jt_conac.field_coa_conac__write_date
+#: model:ir.model.fields,field_description:jt_conac.field_cog_conac__write_date model:ir.model.fields,field_description:jt_conac.field_debt_statement__write_date
+#: model:ir.model.fields,field_description:jt_conac.field_income_statement__write_date model:ir.model.fields,field_description:jt_conac.field_states_program__write_date
+#: model:ir.model.fields,field_description:jt_conac.field_status_expen__write_date
+msgid "Last Updated on"
+msgstr "Última Actualización el"
+
+#. module: jt_conac
+#: model:ir.model,name:jt_conac.model_jt_conac_coa_conac_report
+msgid "Mexican CONAC Chart of Account Report"
+msgstr "Plan de Cuentas CONAC"
+
+#. module: jt_conac
+#: model:ir.ui.menu,name:jt_conac.menu_miscelleneous
+msgid "Miscellaneous"
+msgstr "Diversa"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_10.py:0 code:addons/jt_conac/models/financial_report_4_8.py:0 code:addons/jt_conac/models/financial_report_4_9.py:0
+#: model:ir.model.fields,field_description:jt_conac.field_income_statement__modified_amt model:ir.model.fields,field_description:jt_conac.field_states_program__modified_amt
+#: model:ir.model.fields,field_description:jt_conac.field_status_expen__modified_amt
+#, python-format
+msgid "Modificado"
+msgstr "Modificado"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_5.py:0
+#, python-format
+msgid "Moneda de Contratación"
+msgstr "Moneda de Contratación"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_cog_conac__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_account_account__conac_name
+msgid "Name CONAC"
+msgstr "Nombre CONAC"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_1_5.py:0 code:addons/jt_conac/models/financial_report_4_1.py:0
+#, python-format
+msgid "Nature"
+msgstr "Naturaleza"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_8.py:0 model:ir.model.fields,field_description:jt_conac.field_income_statement__name
+#, python-format
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Note"
+msgstr "Nota"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_6.py:0
+#, python-format
+msgid "Origin"
+msgstr "Origen"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Other Info"
+msgstr "Otra información"
+
+#. module: jt_conac
+#: model:ir.ui.menu,name:jt_conac.menu_overview_conac
+msgid "Overview"
+msgstr "Visión de conjunto"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_10.py:0 code:addons/jt_conac/models/financial_report_4_9.py:0
+#: model:ir.model.fields,field_description:jt_conac.field_states_program__paid_out_amt model:ir.model.fields,field_description:jt_conac.field_status_expen__paid_out_amt
+#, python-format
+msgid "Pagado"
+msgstr "Pagado"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.inherited_account_journal_form_view model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: jt_conac
+#: model:ir.model.fields,field_description:jt_conac.field_cash_statement__parent_id model:ir.model.fields,field_description:jt_conac.field_coa_conac__parent_id
+#: model:ir.model.fields,field_description:jt_conac.field_debt_statement__parent_id model:ir.model.fields,field_description:jt_conac.field_income_statement__parent_id
+#: model:ir.model.fields,field_description:jt_conac.field_states_program__parent_id model:ir.model.fields,field_description:jt_conac.field_status_expen__parent_id
+msgid "Parent"
+msgstr "Mayor"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_3.py:0
+#, python-format
+msgid "Patrimonio Generado de Ejercicios Anteriores"
+msgstr "Patrimonio Generado de Ejercicios Anteriores"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_3.py:0
+#, python-format
+msgid "Patrimonio Generado del Ejercicio"
+msgstr "Patrimonio Generado del Ejercicio"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Price"
+msgstr "Precio"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Quantity:"
+msgstr "Cantidad:"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_8.py:0 model:ir.model.fields,field_description:jt_conac.field_income_statement__raised_amt
+#, python-format
+msgid "Recaudado"
+msgstr "Recaudado"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Reconciled Entries"
+msgstr "Entradas reconciliadas"
+
+#. module: jt_conac
+#: model:ir.ui.menu,name:jt_conac.menu_child_reporting_conac model:ir.ui.menu,name:jt_conac.menu_reporting_conac
+msgid "Reporting"
+msgstr "Informes"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/trial_balance_report.py:0
+#, python-format
+msgid "SAT XML"
+msgstr "SAT XML"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_4.py:0
+#, python-format
+msgid "Saldo Final"
+msgstr "Saldo Final"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_5.py:0
+#, python-format
+msgid "Saldo Final del Periodo"
+msgstr "Saldo Final del Periodo"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_4.py:0
+#, python-format
+msgid "Saldo Inicial"
+msgstr "Saldo Inicial"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_5.py:0
+#, python-format
+msgid "Saldo Inicial del Periodo"
+msgstr "Saldo Inicial del Periodo"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Section"
+msgstr "Sección"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Select an old vendor bill"
+msgstr "Seleccione una factura de proveedor anterior"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Source Document"
+msgstr "Documento fuente"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_3.py:0
+#: model:ir.actions.client,name:jt_conac.action_state_of_variation_report model:ir.model,name:jt_conac.model_jt_conac_state_of_variation_report
+#: model:ir.ui.menu,name:jt_conac.menu_state_of_variation_report
+#, python-format
+msgid "State of Variation in the Public Treasury"
+msgstr "Estado de Variación en la Hacienda Pública"
+
+#. module: jt_conac
+#: model:ir.actions.act_window,name:jt_conac.action_view_cash_statement model:ir.model,name:jt_conac.model_cash_statement model:ir.ui.menu,name:jt_conac.menu_cash_statement
+msgid "Statement of Cash"
+msgstr "Estado de Flujos de Efectivo"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_7.py:0
+#: model:ir.actions.client,name:jt_conac.action_statement_of_cash_report model:ir.model,name:jt_conac.model_jt_conac_statement_of_cash_report
+#: model:ir.ui.menu,name:jt_conac.menu_statement_of_cash_report
+#, python-format
+msgid "Statement of Cash Flows"
+msgstr "Estado de Flujos de Efectivo"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_6.py:0
+#: model:ir.actions.client,name:jt_conac.action_statement_of_changes_report model:ir.model,name:jt_conac.model_jt_conac_statement_of_changes_report
+#: model:ir.ui.menu,name:jt_conac.menu_statement_of_changes_report
+#, python-format
+msgid "Statement of Changes in the Financial Position"
+msgstr "Estado de Cambios en la Situación Financiera"
+
+#. module: jt_conac
+#: model:ir.actions.act_window,name:jt_conac.action_view_debt_statement model:ir.model,name:jt_conac.model_debt_statement model:ir.ui.menu,name:jt_conac.menu_debt_statement
+msgid "Statement of Debt"
+msgstr "Estado Analítico de la Deuda y Otros Pasivos"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_0.py:0
+#: model:ir.actions.client,name:jt_conac.action_financial_position_report model:ir.model,name:jt_conac.model_jt_conac_financial_position_report
+#: model:ir.ui.menu,name:jt_conac.menu_financial_position_report
+#, python-format
+msgid "Statement of Financial Position"
+msgstr "Estado de Situación Financiera"
+
+#. module: jt_conac
+#: model:ir.actions.act_window,name:jt_conac.action_view_income_statement model:ir.model,name:jt_conac.model_income_statement model:ir.ui.menu,name:jt_conac.menu_income_statement
+msgid "Statement of Income"
+msgstr "Estado Analítico de Ingresos"
+
+#. module: jt_conac
+#: model:ir.actions.act_window,name:jt_conac.action_view_states_program model:ir.model,name:jt_conac.model_states_program model:ir.ui.menu,name:jt_conac.menu_states_program
+msgid "States and Program"
+msgstr "Estados e Informes Programáticos"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_10.py:0
+#: model:ir.actions.client,name:jt_conac.action_states_and_program_report model:ir.model,name:jt_conac.model_jt_conac_states_and_program_report
+#: model:ir.ui.menu,name:jt_conac.menu_states_and_program_report
+#, python-format
+msgid "States and Program Reports"
+msgstr "Estados e Informes Programáticos"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_2.py:0
+#: model:ir.actions.client,name:jt_conac.action_status_of_activities_report model:ir.model,name:jt_conac.model_jt_conac_status_of_activities_report
+#: model:ir.ui.menu,name:jt_conac.menu_status_of_activities_report
+#, python-format
+msgid "Status of Activities"
+msgstr "Estado de Actividades"
+
+#. module: jt_conac
+#: model:ir.actions.act_window,name:jt_conac.action_view_expenditure_status model:ir.model,name:jt_conac.model_status_expen model:ir.ui.menu,name:jt_conac.menu_expenditure_status
+msgid "Status of Expenditure"
+msgstr "Estado Analítico del Ejercicio del Presupuesto de Egresos"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_10.py:0 code:addons/jt_conac/models/financial_report_4_9.py:0
+#: model:ir.model.fields,field_description:jt_conac.field_states_program__sub_exercise model:ir.model.fields,field_description:jt_conac.field_status_expen__sub_exercise
+#, python-format
+msgid "Subejercicio"
+msgstr "Subejercicio"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Tax Grids"
+msgstr "Cuadrícula de impuestos"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Taxes Applied"
+msgstr "Impuestos aplicados"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Terms"
+msgstr "Condiciones"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/cog_conac.py:0
+#, python-format
+msgid "The Coding of the Heading field does not correspond to the chapter."
+msgstr "La codificación del campo Encabezado no corresponde al capítulo."
+
+#. module: jt_conac
+#: model:ir.model.constraint,message:jt_conac.constraint_cog_conac_uniq_heading
+msgid "The Heading must be unique."
+msgstr "El encabezado debe ser único."
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/trial_balance_report.py:0
+#, python-format
+msgid "The account %s is incorrectly configured. Only one tag is allowed."
+msgstr "La cuenta% s está configurada incorrectamente. Solo se permite una etiqueta."
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_1.py:0
+#, python-format
+msgid ""
+"This XML could not be generated because some accounts are not correctly configured and can not be added in this report. This accounts are found in the section \"Misconfigured "
+"Accounts\", please configure your tag and try generate the report XML again."
+msgstr ""
+"Este XML no se pudo generar porque algunas cuentas no están configuradas correctamente y no se pueden agregar en este informe. Estas cuentas se encuentran en la sección \"Cuentas "
+"mal configuradas\", configure su etiqueta e intente generar el informe XML nuevamente."
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_10.py:0 code:addons/jt_conac/models/financial_report_4_9.py:0 code:addons/jt_conac/models/trial_balance_report.py:0
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_tree
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/trial_balance_report.py:0
+#, python-format
+msgid "Total %s"
+msgstr "Total %s"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_tree
+msgid "Total Amount"
+msgstr "Monto total"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Total Credit"
+msgstr "Crédito total"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Total Debit"
+msgstr "Débito total"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Unit Price:"
+msgstr "Precio unitario:"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "UoM"
+msgstr "Unidad de Medida"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_4.py:0
+#, python-format
+msgid "Variación del Periodo"
+msgstr "Variación del Periodo"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "Vendor"
+msgstr "Proveedor"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "You have"
+msgstr "Tienes"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "You have suspense account moves that match this invoice."
+msgstr "Tiene movimientos pendientes que coinciden con esta factura."
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "for this customer. You can allocate them to mark this invoice as paid."
+msgstr "para este cliente Puede asignarlos para marcar esta factura como pagada."
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "for this supplier. You can allocate them to mark this bill as paid."
+msgstr "para este proveedor Puede asignarlos para marcar esta factura como pagada."
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "outstanding debits"
+msgstr "débitos pendientes"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "outstanding payments"
+msgstr "pagos pendientes"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.view_conac_move_form
+msgid "to mark this invoice as paid."
+msgstr "para marcar esta factura como pagada."
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_stment_of_finan_posi
+msgid ""
+"<span style=\"font-size:16px;\">${_(\"NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO\")}</span><br/>\n"
+"                    <span>STATEMENT OF FINANCIAL POSITION </span><br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>\n"
+"                    <span>Estado de Situación Financiera</span><br/>"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_income_statement
+msgid ""
+"<span style=\"font-size:16px;\">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>\n"
+"                    <span>ANALYTICAL INCOME STATEMENT</span><br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>\n"
+"                    <span>Estado Analítico de Ingresos</span><br/>"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_statement_of_debt
+msgid ""
+"<span style=\"font-size:16px;\">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>\n"
+"                    <span>ANALYTICAL STATEMENT OF DEBT AND OTHER LIABILITIES</span><br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>\n"
+"                    <span>Estado Analítico de la Deuda y Otros Pasivos</span><br/>"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_status_asset
+msgid ""
+"<span style=\"font-size:16px;\">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>\n"
+"                    <span>ANALYTICAL STATUS OF ASSETS </span><br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>\n"
+"                    <span>Estado Analítico del Activo</span><br/>"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_status_expenditure_budget_ex
+msgid ""
+"<span style=\"font-size:16px;\">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>\n"
+"                    <span>ANALYTICAL STATUS OF THE EXPENDITURE BUDGET EXERCISE</span><br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>\n"
+"                    <span>Estado Analítico del Ejercicio del Presupuesto de Egresos</span><br/>"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_state_variation
+msgid ""
+"<span style=\"font-size:16px;\">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>\n"
+"                    <span>STATE OF VARIATION IN PUBLIC TREASURY </span><br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>\n"
+"                    <span>Estado de Variación en la Hacienda Pública</span><br/>"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_statement_cash_flow
+msgid ""
+"<span style=\"font-size:16px;\">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>\n"
+"                    <span>STATEMENT OF CASH FLOWS</span><br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>\n"
+"                    <span>Estado de Flujos de Efectivo</span><br/>"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_statement_change
+msgid ""
+"<span style=\"font-size:16px;\">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>\n"
+"                    <span>STATEMENT OF CHANGES IN THE FINANCIAL POSITION</span><br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>\n"
+"                    <span>Estado de Cambios en la Situación Financiera</span><br/>"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_states_and_program_reports
+msgid ""
+"<span style=\"font-size:16px;\">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>\n"
+"                    <span>STATES AND PROGRAM REPORTS</span><br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>\n"
+"                    <span>Estados e Informes Programáticos</span><br/>"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_status_activities
+msgid ""
+"<span style=\"font-size:16px;\">NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO</span><br/>\n"
+"                    <span>STATUS OF ACTIVITIES </span><br/>"
+msgstr ""
+"<span style=\"font-size:16px;\">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>\n"
+"                    <span>Estado de Actividades</span><br/>"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_income_statement
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_statement_of_debt
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_states_and_program_reports
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_status_asset
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_status_expenditure_budget_ex
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_state_variation
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_statement_cash_flow
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_statement_change
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_status_activities
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_stment_of_finan_posi
+msgid "AND"
+msgstr "AL"
+
+#. module: jt_conac
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_income_statement
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_statement_of_debt
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_states_and_program_reports
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_status_asset
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_analytical_status_expenditure_budget_ex
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_state_variation
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_statement_cash_flow
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_statement_change
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_status_activities
+#: model_terms:ir.ui.view,arch_db:jt_conac.external_layout_of_stment_of_finan_posi
+msgid "OF"
+msgstr "DE"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_0.py:0
+#: code:addons/jt_conac/models/financial_report_4_2.py:0
+#: code:addons/jt_conac/models/financial_report_4_3.py:0
+#: code:addons/jt_conac/models/financial_report_4_4.py:0
+#: code:addons/jt_conac/models/financial_report_4_5.py:0
+#: code:addons/jt_conac/models/financial_report_4_6.py:0
+#: code:addons/jt_conac/models/financial_report_4_7.py:0
+#: code:addons/jt_conac/models/financial_report_4_8.py:0
+#: code:addons/jt_conac/models/financial_report_4_9.py:0
+#, python-format
+msgid " AND "
+msgstr " AL "
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_0.py:0
+#: code:addons/jt_conac/models/financial_report_4_0.py:0
+#: code:addons/jt_conac/models/financial_report_4_10.py:0
+#: code:addons/jt_conac/models/financial_report_4_10.py:0
+#: code:addons/jt_conac/models/financial_report_4_2.py:0
+#: code:addons/jt_conac/models/financial_report_4_2.py:0
+#: code:addons/jt_conac/models/financial_report_4_3.py:0
+#: code:addons/jt_conac/models/financial_report_4_3.py:0
+#: code:addons/jt_conac/models/financial_report_4_4.py:0
+#: code:addons/jt_conac/models/financial_report_4_4.py:0
+#: code:addons/jt_conac/models/financial_report_4_5.py:0
+#: code:addons/jt_conac/models/financial_report_4_5.py:0
+#: code:addons/jt_conac/models/financial_report_4_6.py:0
+#: code:addons/jt_conac/models/financial_report_4_6.py:0
+#: code:addons/jt_conac/models/financial_report_4_7.py:0
+#: code:addons/jt_conac/models/financial_report_4_7.py:0
+#: code:addons/jt_conac/models/financial_report_4_8.py:0
+#: code:addons/jt_conac/models/financial_report_4_8.py:0
+#: code:addons/jt_conac/models/financial_report_4_9.py:0
+#: code:addons/jt_conac/models/financial_report_4_9.py:0
+#, python-format
+msgid " OF "
+msgstr " DE "
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_0.py:0
+#, python-format
+msgid ""
+"NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO\n"
+"STATEMENT OF FINANCIAL POSITION"
+msgstr ""
+"UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\n"
+"Estado de Situación Financiera"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_8.py:0
+#, python-format
+msgid ""
+"NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO\n"
+"ANALYTICAL INCOME STATEMENT"
+msgstr ""
+"UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\n"
+"Estado Analítico de Ingresos"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_5.py:0
+#, python-format
+msgid ""
+"NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO\n"
+"ANALYTICAL STATEMENT OF DEBT AND OTHER LIABILITIES"
+msgstr ""
+"UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\n"
+"Estado Analítico de la Deuda y Otros Pasivos"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_4.py:0
+#, python-format
+msgid ""
+"NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO\n"
+"ANALYTICAL STATUS OF ASSETS"
+msgstr ""
+"UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\n"
+"Estado Analítico del Activo"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_9.py:0
+#, python-format
+msgid ""
+"NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO\n"
+"ANALYTICAL STATUS OF THE EXPENDITURE BUDGET EXERCISE"
+msgstr ""
+"UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\n"
+"Estado Analítico del Ejercicio del Presupuesto de Egresos"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_3.py:0
+#, python-format
+msgid ""
+"NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO\n"
+"STATE OF VARIATION IN THE PUBLIC TREASURY"
+msgstr ""
+"UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\n"
+"Estado de Variación en la Hacienda Pública"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_7.py:0
+#, python-format
+msgid ""
+"NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO\n"
+"STATEMENT OF CASH FLOWS"
+msgstr ""
+"UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\n"
+"Estado de Flujos de Efectivo"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_6.py:0
+#, python-format
+msgid ""
+"NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO\n"
+"STATEMENT OF CHANGES IN THE FINANCIAL POSITION"
+msgstr ""
+"UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\n"
+"Estado de Cambios en la Situación Financiera"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_10.py:0
+#, python-format
+msgid ""
+"NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO\n"
+"STATES AND PROGRAM REPORTS"
+msgstr ""
+"UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\n"
+"Estados e Informes Programáticos"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_2.py:0
+#, python-format
+msgid ""
+"NATIONAL AUTONOMOUS UNIVERSITY OF MEXICO\n"
+"STATUS OF ACTIVITIES"
+msgstr ""
+"UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\n"
+"Estado de Actividades"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_0.py:0
+#, python-format
+msgid "BUDGET ACCOUNTS"
+msgstr "CUENTAS DE ORDEN"
+
+#. module: jt_conac
+#: code:addons/jt_conac/models/financial_report_4_0.py:0
+#, python-format
+msgid "Total BUDGET ACCOUNTS"
+msgstr "Total CUENTAS DE ORDEN"

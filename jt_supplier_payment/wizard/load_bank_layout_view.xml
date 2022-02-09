@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+      <record id="view_load_bank_layout_supplier_payment_form" model="ir.ui.view">
+            <field name="name">load.bank.layout.supplier.payment.view</field>
+            <field name="model">load.bank.layout.supplier.payment</field>
+            <field name="arch" type="xml">
+                <form string="Load Bank Layout">
+                    <group attrs="{'invisible':[('is_hide_file_upload','=',True)]}">
+                    	<field name="is_hide_file_upload" invisible="1"/>
+                    	<field name="journal_id" required="1" domain="[('load_bank_format','!=',False)]" options="{'no_open': True, 'no_create': True}"/>
+                    	<field name="payment_ids" invisible="1"/>
+                    	<field name="file_name" invisible="1"/>
+                    	<field name="file_data" filename="file_name" required="1"/>
+                    </group>
+                    <group>
+                    	<field name="is_hide_failed" invisible="1"/>
+                    	<field name="is_hide_success" invisible="1"/>
+                    	<field name="failed_file_name" invisible="1"/>
+                    	<field name="failed_file_data" filename="failed_file_name" readonly="1" attrs="{'invisible':[('is_hide_failed','=',True)]}"/>
+                    	<field name="success_file_name" invisible="1"/>
+                    	<field name="success_file_data" filename="success_file_name" readonly="1" attrs="{'invisible':[('is_hide_success','=',True)]}"/>
+                    </group>
+                    <footer>
+                        <button string="Generate" name="load_bank_layout" type="object" class="oe_highlight" attrs="{'invisible':[('is_hide_file_upload','=',True)]}"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel" attrs="{'invisible':[('is_hide_file_upload','=',True)]}"/>
+                        <button string="Close" class="btn btn-secondary" special="cancel" attrs="{'invisible':[('is_hide_file_upload','=',False)]}"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_load_bank_layout_payroll_payment_form" model="ir.ui.view">
+            <field name="name">load.bank.layout.payroll.payment.view</field>
+            <field name="model">load.bank.layout.supplier.payment</field>
+            <field name="arch" type="xml">
+                <form string="Load Bank Layout">
+                    <group attrs="{'invisible':[('is_hide_file_upload','=',True)]}">
+                    	<field name="is_hide_file_upload" invisible="1"/>
+                    	<field name="journal_id" required="1" domain="[('payroll_load_bank_format','!=',False)]" options="{'no_open': True, 'no_create': True}"/>
+                    	<field name="payment_ids" invisible="1"/>
+                    	<field name="file_name" invisible="1"/>
+                    	<field name="file_data" filename="file_name" required="1"/>
+                    </group>
+                    <group>
+                    	<field name="is_hide_failed" invisible="1"/>
+                    	<field name="is_hide_success" invisible="1"/>
+                    	<field name="failed_file_name" invisible="1"/>
+                    	<field name="failed_file_data" filename="failed_file_name" readonly="1" attrs="{'invisible':[('is_hide_failed','=',True)]}"/>
+                    	<field name="success_file_name" invisible="1"/>
+                    	<field name="success_file_data" filename="success_file_name" readonly="1" attrs="{'invisible':[('is_hide_success','=',True)]}"/>
+                    </group>
+                    <footer>
+                        <button string="Generate" name="load_payroll_payment_bank_layout" type="object" class="oe_highlight" attrs="{'invisible':[('is_hide_file_upload','=',True)]}"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel" attrs="{'invisible':[('is_hide_file_upload','=',True)]}"/>
+                        <button string="Close" class="btn btn-secondary" special="cancel" attrs="{'invisible':[('is_hide_file_upload','=',False)]}"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+            
+       <record id="action_load_bank_layout_payment" model="ir.actions.server">
+            <field name="name">Load Bank Layout</field>
+            <field name="model_id" ref="jt_supplier_payment.model_load_bank_layout_supplier_payment"/>
+            <field name="binding_model_id" ref="account.model_account_payment"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.action_load_bank_layout()
+            </field>
+        </record>
+	</data>
+</odoo>

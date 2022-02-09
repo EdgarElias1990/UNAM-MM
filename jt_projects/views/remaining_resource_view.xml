@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record id="remaining_resource_tree_view" model="ir.ui.view">
+            <field name="name">Remaining Resource List view</field>
+            <field name="model">remaining.resource</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="concept"/>
+                    <field name="stage_id"/>
+                </tree>
+            </field>
+         </record>
+
+         <record id="remaining_resource_from_view" model="ir.ui.view">
+            <field name="name">Remaining Resource Form view</field>
+            <field name="model">remaining.resource</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="concept"/>
+                                <field name="stage_id"/>
+                                <field name="account_id"/>
+                            </group>
+                            <group>
+                                <field name="year"/>
+                                <field name="project_type"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+         </record>
+
+        <record id="remaining_resource_action" model="ir.actions.act_window">
+            <field name="name">Remaining Resource</field>
+            <field name="res_model">remaining.resource</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'from_conacyt':1}</field>
+        </record>
+
+        <menuitem id="menu_papit_report_config" 
+                  name="PAPIIT report configuration"  
+                  action="remaining_resource_action"
+                  parent="project.menu_project_config"
+                  sequence="12"
+                  />
+
+     </data>
+</odoo>

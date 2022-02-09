@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="external_layout_header_print_payment_batch_sup_checks_tem">
+            <div t-attf-class="header o_company_#{company.id}_layout">
+            </div>
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"
+                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+            </div>
+        </template>
+
+        <template id="external_layout_print_payment_batch_sup_checks_tem">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="jt_check_controls.external_layout_header_check_request_1">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+        <template id="print_payment_batch_sup_checks_tem">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="jt_check_controls.external_layout_print_payment_batch_sup_checks_tem">
+                        <div class="page">
+                            <t t-if="not o" t-set="o" t-value="doc"/>
+                            <t t-if="not company">
+                                <!-- Multicompany -->
+                                <t t-if="company_id">
+                                    <t t-set="company" t-value="company_id"/>
+                                </t>
+                                <t t-elif="o and 'company_id' in o">
+                                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                                </t>
+                                <t t-else="else">
+                                    <t t-set="company" t-value="res_company"/>
+                                </t>
+                            </t>
+                            <t t-foreach="o.payment_req_ids" t-as="line" t-if="o.type_of_batch in ('nominal','pension')">
+                                <t t-if="line.selected and line.check_folio_id and line.check_status == 'Available for printing'">
+                                    <!--   -->
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-12" align="left" style="margin-left:5px;text-align:right" >
+                                                <b><span t-esc="o.get_date()"/> <br/>
+                                                   </b>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6" align="left" style="margin-left:5px;margin-top:15px;">
+                                                <p><strong><span t-esc="line.payment_req_id.rfc"/> </strong><br/>
+    <!--                                                 <b>Benef:</b>
+ -->                                                <t t-if="line.payment_req_id">
+                                            <span t-esc="line.payment_req_id.partner_id.name"/></t></p>               
+                                                    
+
+                                            </div>
+                                            <div class="col-6" align="left" style="margin-left:5px;text-align:right;margin-top:25px;">
+                                                <t t-if="line.payment_req_id">
+                                                        <span t-esc="line.amount_to_pay"
+                                                            t-options='{"widget": "monetary",
+                                                            "display_currency": line.currency_id}'/>
+                                                    </t>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                         <t t-if="line.payment_req_id">
+                                             <span style="margin-left:5px;">(</span>
+                                                 <span
+                                           t-esc="line.payment_req_id.currency_id.with_context(from_supplier_payment_batch_report=True).amount_to_text(line.amount_to_pay)"/> )
+                                         </t>
+                                        <br/>
+                                        <hr/>
+                                        <br/>
+                                    </div>
+                                </t>
+                            </t>
+                                <t t-foreach="o.payment_req_ids" t-as="line" t-if="o.type_of_batch in ('supplier','project')">
+                                <t t-if="line.selected and line.check_folio_id and line.check_status == 'Available for printing'">
+                                    <!--    -->
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-6" align="left" style="margin-left:5px;">
+                                                <b>Benef:</b>
+                                                    <t t-if="line.payment_req_id">
+                                                    <b><span t-esc="line.payment_req_id.partner_id.name"/></b>
+                                                    </t>
+                                            </div>
+                                            <div class="col-6" align="left" style="text-align:right">
+                                                <b><span t-esc="o.get_date()"/> <br/>
+                                                    R.F.C.: <span t-esc="line.payment_req_id.rfc"/></b>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <table style="text-align:center" width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="33%">
+                                                        <span t-esc="line.check_folio_id.folio"/>
+                                                    </td>
+                                                    <td width="33%">
+                                                    <t t-if="line.payment_req_id">
+                                                        <span t-esc="line.amount_to_pay"
+                                                            t-options='{"widget": "monetary",
+                                                            "display_currency": line.currency_id}'/>
+                                                    </t> </td>
+                                                    
+                                                    <td width="33%">
+                                                         <t t-if="line.payment_req_id">
+                                                            <span t-esc="line.payment_req_id.name"/>
+                                                         </t>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br/>
+                                         <t t-if="line.payment_req_id">
+                                             <span style="margin-left:5px;">(</span>
+                                             <span
+                                           t-esc="line.payment_req_id.currency_id.with_context(from_supplier_payment_batch_report=True).amount_to_text(line.amount_to_pay)"/> )
+                                         </t>
+                                        <br/>
+                                        <hr/>
+                                        <br/>
+                                    </div>
+                                </t>
+                            </t>
+                        </div>
+                        <div class="page" t-if="o.type_of_batch in ('supplier','project')">
+                            <t t-if="not o" t-set="o" t-value="doc"/>
+                            <t t-if="not company">
+                                <!-- Multicompany -->
+                                <t t-if="company_id">
+                                    <t t-set="company_idany" t-value="company_id"/>
+                                </t>
+                                <t t-elif="o and 'company_id' in o">
+                                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                                </t>
+                                <t t-else="else">
+                                    <t t-set="company" t-value="res_company"/>
+                                </t>
+                            </t>
+                            <t t-foreach="o.payment_req_ids" t-as="line" t-if="o.type_of_batch in ('supplier','project')">
+                                <t t-if="line.selected and line.check_folio_id and line.check_status == 'Available for printing'">
+                                    <!--  -->
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-6" align="left" style="margin-left:5px;">
+                                            </div>
+                                            <div class="col-6" align="left" style="text-align:right">
+                                                <b>CIUDAD DE MEXICO A <span t-esc="o.get_date()"/> <br/></b>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <table style="text-align:center" width="100%">
+                                            <tbody>
+                                                <!-- <tr>
+                                                    <td width="33%">
+                                                    </td>
+                                                    <td width="33%">Zone</td>
+                                                </tr> -->
+                                                <tr>
+                                                    
+                                                    <td width="33%">
+                                                         <t t-if="line.payment_req_id">
+                                                            <span t-esc="line.payment_req_id.name"/>
+                                                         </t>
+                                                    </td>
+                                                    <td width="33%">
+                                                        <span t-esc="line.zone"/>
+                                                    </td>
+                                                    <td width="33%">
+                                                        <span t-esc="line.check_folio_id.folio"/>
+                                                    </td>
+                                                    <div class="row">
+                                                        <div class="col-6" align="left" style="margin-left:5px;">
+                                                            <!-- <t t-if="line.payment_req_id">
+                                                            <b><span t-esc="line.payment_req_id.partner_id.name"/></b>
+                                                            </t> -->
+                                                        </div>
+                                                        <div class="col-6" align="left" style="text-align:right">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:left" width="10%"><t t-if="line.payment_req_id">
+                                                    <b><span t-esc="line.payment_req_id.partner_id.name"/></b>
+                                                    </t></td>
+                                                    <td width="33%"></td>
+                                                    <td width="33%" style="text-align:right">
+                                                    <t t-if="line.payment_req_id">
+                                                        <span t-esc="line.amount_to_pay"
+                                                            t-options='{"widget": "monetary",
+                                                            "display_currency": line.currency_id}'/>
+                                                    </t> </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br/>
+                                         <t t-if="line.payment_req_id">
+                                             <span style="margin-left:5px;">(</span>
+                                             <span
+                                           t-esc="line.payment_req_id.currency_id.with_context(from_supplier_payment_batch_report=True).amount_to_text(line.amount_to_pay)"/> )
+                                         </t>
+                                        <br/>
+                                        <hr/>
+                                        <br/>
+                                    </div>
+                                </t>
+                            </t>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_print_payment_batch_sup_checks" model="report.paperformat">
+            <field name="name">Payment Batch Supplier Print Checks</field>
+            <field name="default" eval="True"/>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="margin_top">2</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="payslip_batch_supplier"
+                model="payment.batch.supplier"
+                string="Print Checks"
+                report_type="qweb-pdf"
+                name="jt_check_controls.print_payment_batch_sup_checks_tem"
+                file="jt_check_controls.print_payment_batch_sup_checks_tem"
+                paperformat="jt_check_controls.paperformat_print_payment_batch_sup_checks"
+        />
+
+    </data>
+</odoo>

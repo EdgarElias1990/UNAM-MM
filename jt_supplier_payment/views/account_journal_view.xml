@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="inherited_account_journal_form_view_payment" model="ir.ui.view">
+            <field name="name">Inherited account journal form view Payment</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='journal_entries']/group/group[2]" position="after">
+                    <group string="Accured">
+                        <field name="accured_debit_account_id"/>
+                        <field name="accured_credit_account_id"/>
+                        <field name="conac_accured_debit_account_id" readonly="1" force_save="1"/>
+                        <field name="conac_accured_credit_account_id" readonly="1" force_save="1"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <record id="inherited_account_journal_form_view_bank_layout" model="ir.ui.view">
+            <field name="name">Inherited account journal form view bank layout</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="jt_contact_base.account_journal_supplier_layout_inherit_view"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//group[@name='bank_layout']" position="inside">
+            		<field name="bank_format"/>
+            		<field name="load_bank_format"/> 
+            		<field name="payroll_beneficiaries_bank_format"/>
+            		<field name="payroll_bank_format"/>
+            		<field name="payroll_load_bank_format"/>
+            	</xpath>
+			</field>
+		</record>        
+		
+		<!-- Account Tax -->
+        <record id="view_tax_form_inherit" model="ir.ui.view">
+            <field name="name">view.tax.form.inherit</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form"/>
+            <field name="arch" type="xml">
+            	<field name="amount" position="attributes">
+					<attribute name="digits">[12,6]</attribute>            	
+            	</field>
+			</field>
+		</record>        		
+    </data>
+</odoo>

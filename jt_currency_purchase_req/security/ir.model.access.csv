@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_comission_profit,comission_profit_access,model_comission_profit,base.group_user,1,1,1,1
+access_auth_sign,auth_sign_access,model_auth_sign,,1,1,1,1
+access_finance_sender_recipient_trades,finance_sender_recipient_trades_access,model_finance_sender_recipient_trades,,1,1,1,1
+access_application_request,access_application_request,model_application_request,,1,1,1,1
+access_quote,access_quote,model_quote,,1,1,1,1
+access_dollar_fund,access_dollar_fund,model_dollar_fund,,1,1,1,1
+access_request_accounts_line,access_request_accounts_line,model_request_accounts_line,,1,1,1,1
+access_office_signature,access_office_signature,model_office_signature,,1,1,1,1
+access_account_open,access_account_open,model_account_open,,1,1,1,1
+access_account_cancellation,access_account_cancellation,model_account_cancellation,,1,1,1,1
+access_other_procedure,access_other_procedure,model_other_procedure,,1,1,1,1

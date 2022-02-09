@@ -1,0 +1,211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* jt_utils
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0-20190522\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-13 09:39+0000\n"
+"PO-Revision-Date: 2019-07-13 09:39+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.res_config_settings_view_form
+msgid "<strong>Save</strong> this page before triggering the migration."
+msgstr "<strong>Save</strong> esta página antes de iniciar la migración."
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_attachment_search
+msgid "All Data"
+msgstr "Todos los datos"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_attachment_search
+msgid "Attached Document Field"
+msgstr "Campo de documento adjunto"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_attachment_search
+msgid "Attached Document Model"
+msgstr "Modelo de documento adjunto"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_ir_attachment
+msgid "Attachment"
+msgstr "Adjunto"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.res_config_settings_view_form
+msgid "Attachment storage location"
+msgstr "Almacén de anexos"
+
+#. module: jt_utils
+#: model:ir.model.fields,help:jt_utils.field_res_config_settings__attachment_location
+msgid "Attachment storage location."
+msgstr "Almacén de archivos adjuntos."
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_attachment_search
+msgid "Attachments"
+msgstr "Adjuntos"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_base
+msgid "Base"
+msgstr ""
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__child_groups
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_mixins_groups_form
+msgid "Child Groups"
+msgstr "Grupos de niños"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__display_name
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_hierarchy__display_name
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_scss_editor__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__explicit_users
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_mixins_groups_form
+msgid "Explicit Users"
+msgstr "Usuarios Explícitos"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_attachment_search
+msgid "Field Data"
+msgstr "Datos de campo"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.res_config_settings_view_form
+msgid "Force Storage Migration"
+msgstr "Migración de almacenamiento forzado"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_mixins_groups_form
+msgid "Group"
+msgstr "Grupo"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_jt_utils_mixins_groups
+msgid "Group Mixin"
+msgstr "Mezcla de Grupo"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__name
+msgid "Group Name"
+msgstr "Nombre del grupo"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__users
+msgid "Group Users"
+msgstr "Usuarios del grupo"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__groups
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_mixins_groups_form
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_mixins_groups_tree
+msgid "Groups"
+msgstr "Grupos"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_jt_utils_mixins_hierarchy
+msgid "Hierarchy Mixin"
+msgstr "Mezcla de jerarquías"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__id
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_hierarchy__id
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_scss_editor__id
+msgid "ID"
+msgstr ""
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups____last_update
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_hierarchy____last_update
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_scss_editor____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: jt_utils
+#: model:ir.actions.server,name:jt_utils.action_attachment_migrate
+msgid "Migrate"
+msgstr "Migrar"
+
+#. module: jt_utils
+#: code:addons/jt_utils/models/ir_attachment.py:87
+#, python-format
+msgid "Only administrators can execute this action."
+msgstr ""
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__parent_group
+msgid "Parent Group"
+msgstr "Grupo de padres"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__parent_path
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_hierarchy__parent_path
+msgid "Parent Path"
+msgstr "Trayectoria de los padres"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_hierarchy__parent_path_json
+msgid "Path Json"
+msgstr "Camino Json"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_hierarchy__parent_path_names
+msgid "Path Names"
+msgstr "Nombres de senderos"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_jt_utils_scss_editor
+msgid "Scss Editor"
+msgstr "Editor de Scss"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_attachment_form
+msgid "Storage"
+msgstr "Almacenamiento"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_res_config_settings__attachment_location
+msgid "Storage Location"
+msgstr "Almacén"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_res_config_settings__attachment_location_changed
+msgid "Storage Location Changed"
+msgstr "Almacén modificado"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_ir_config_parameter
+msgid "System Parameter"
+msgstr "Parámetros del sistema"
+
+#. module: jt_utils
+#: sql_constraint:jt_utils.mixins.groups:0
+msgid "The name of the group must be unique!"
+msgstr "El nombre del grupo debe ser único!"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__count_users
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_mixins_groups_form
+msgid "Users"
+msgstr "Usuarios"
+

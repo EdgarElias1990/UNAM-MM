@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="upa_request_for_payment_action" model="ir.actions.act_window">
+            <field name="name">Request for Payment</field>
+            <field name="res_model">account.move</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'show_for_supplier_payment':True,'default_type': 'in_invoice', 'default_is_project_payment': 1,'from_move': 1,'from_conacyt':1}</field>
+            <field name="domain">[('type', '=', 'in_invoice'), ('is_project_payment', '=', True),('payment_state', '!=', 'draft')]</field>
+        </record>
+
+        <record id="upa_payment_request_form_action" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="jt_projects.payment_req_form_view_inherit"/>
+            <field name="act_window_id" ref="jt_projects.upa_request_for_payment_action"/>
+        </record>
+
+        <record id="upa_payment_request_tree_action" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="jt_projects.payment_req_tree_view_inherit"/>
+            <field name="act_window_id" ref="jt_projects.upa_request_for_payment_action"/>
+        </record>
+
+        <!-- Main menu -->
+        <menuitem id="upa_payment_main_menu" name="UPA PAPIIT"
+            sequence="3" parent="jt_payroll_payment.menu_payroll_payment"/>
+
+        <menuitem id="upa_supplier_payment_request_menu" name="Payment Request"
+                  action="upa_request_for_payment_action"
+                  parent="jt_projects.upa_payment_main_menu"/>
+
+	</data>
+</odoo>

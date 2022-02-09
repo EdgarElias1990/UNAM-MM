@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- account.account.type -->
+        <record model="account.account.type" id="data_account_type_budget_accounts">
+          <field name="name">Budget Accounts</field>
+          <field name="type">other</field>
+          <field name="include_initial_balance" eval="True"/>
+          <field name="internal_group">equity</field>
+        </record>
+	</data>
+</odoo>

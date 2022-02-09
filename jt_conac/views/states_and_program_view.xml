@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="states_program_form_view" model="ir.ui.view">
+            <field name="name">states.program.form.view</field>
+            <field name="model">states.program</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="code" invisible="1"/>
+                            <field name="concept"/>
+                            <field name="approved_amt"/>
+                            <field name="ext_and_red_amt"/>
+                            <field name="modified_amt"/>
+                            <field name="accrued_amt"/>
+                            <field name="paid_out_amt"/>
+                            <field name="sub_exercise"/>
+                            <field name="parent_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="states_program_tree_view" model="ir.ui.view">
+            <field name="name">states.program.tree.view</field>
+            <field name="model">states.program</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code" invisible="1"/>
+                    <field name="concept"/>
+                    <field name="approved_amt"/>
+                    <field name="ext_and_red_amt"/>
+                    <field name="modified_amt"/>
+                    <field name="accrued_amt"/>
+                    <field name="paid_out_amt"/>
+                    <field name="sub_exercise"/>
+                    <field name="parent_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_states_program" model="ir.actions.act_window">
+            <field name="name">States and Program</field>
+            <field name="res_model">states.program</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

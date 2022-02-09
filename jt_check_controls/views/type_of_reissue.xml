@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record id="type_of_reissue_tree_view" model="ir.ui.view">
+            <field name="name">type.of.reissue.tree.view</field>
+            <field name="model">type.of.reissue</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+         </record>
+
+        <record id="type_of_reissue_form_view" model="ir.ui.view">
+            <field name="name">type.of.reissue.form.view</field>
+            <field name="model">type.of.reissue</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <record id="action_type_of_reissue" model="ir.actions.act_window">
+            <field name="name">Type Of Reissue</field>
+            <field name="res_model">type.of.reissue</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_type_of_reissue" name="Type Of Reissue"
+                  parent="check_control_setting_menu"
+                  action="action_type_of_reissue" sequence="15"/>
+    </data>
+</odoo>

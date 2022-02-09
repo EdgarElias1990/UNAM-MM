@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for calendar assigned amounts model -->
+        <record id="calendar_assigned_amounts_search_view" model="ir.ui.view">
+            <field name="name">calendar.assigned.amounts.search.view</field>
+            <field name="model">calendar.assigned.amounts</field>
+            <field name="arch" type="xml">
+                <search string="Calendar of assigned amounts">
+                    <field name="date"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Date" name='date' context="{'group_by':'date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for calendar assigned amounts model -->
+        <record id="calendar_assigned_amounts_form_view" model="ir.ui.view">
+            <field name="name">calendar.assigned.amounts.form.view</field>
+            <field name="model">calendar.assigned.amounts</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date"/>
+                                <field name="amount_to_receive"/>
+                                <field name="amount_received"/>
+                                <field name="amount_pending"/>
+                                <field name="observations"/>
+                            </group>        
+                        </group>
+                        <notebook>
+                            <page string="Calendar of assigned amounts lines">
+                                <field name="line_ids">
+                                    <tree>
+                                       <field name="date"/>
+                                       <field name="observations"/>
+                                       <field name="amount_deposited"/>
+                                       <field name="bank_id"/>
+                                       <field name="bank_account_id"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="date"/>
+                                            <field name="observations"/>
+                                            <field name="amount_deposited"/>
+                                            <field name="bank_id"/>
+                                            <field name="bank_account_id"/>
+                                            <field name="calendar_assigned_amount_id" invisible="1"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for calendar assigned amounts model -->
+        <record id="calendar_assigned_amounts_tree_view" model="ir.ui.view">
+            <field name="name">calendar.assigned.amounts.tree.view</field>
+            <field name="model">calendar.assigned.amounts</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date"/>
+                    <field name="amount_to_receive"/>
+                    <field name="amount_received"/>
+                    <field name="amount_pending"/>
+                    <field name="observations"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for calendar assigned amounts views -->
+        <record id="action_calendar_assigned_amounts" model="ir.actions.act_window">
+            <field name="name">Calendar of assigned amounts</field>
+            <field name="res_model">calendar.assigned.amounts</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="calendar_assigned_amounts_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

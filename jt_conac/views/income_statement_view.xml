@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="income_statement_form_view" model="ir.ui.view">
+            <field name="name">income.statement.form.view</field>
+            <field name="model">income.statement</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <!-- <field name="estimated_amt" widget="float"/>
+                            <field name="exp_and_red_amt" widget="float"    />
+                            <field name="modified_amt" widget="float"/>
+                            <field name="accrued_amt" widget="float"/>
+                            <field name="raised_amt" widget="float"/>
+                            <field name="difference_amt" widget="float"/> -->
+                            <field name="parent_id"/>
+                            <field name="coa_conac_ids" widget="many2many_tags"/>
+                        </group>
+
+                        <!-- <group>
+                        	<field name="conac_accounts_ids">
+                        		<tree>
+                        		<field name="code"/>
+                        		<field name="name"/>
+                        		<field name="gender"/>
+                        		</tree>
+                        	</field>
+                        </group>
+                        <group>
+                        	<field name="conac_collected_accounts_ids">
+                        		<tree>
+                        		<field name="code"/>
+                        		<field name="name"/>
+                        		
+                        		</tree>
+                        	</field>
+                        </group>
+                        
+                        <group invisible="1">
+                        	<field name="accounts_ids" attrs="{'invisible':[('parent_id','=',False)]}">
+                        		<field name="code"/>
+                        		<field name="name"/>
+                        		<field name="coa_conac_id"/>
+                        	</field>
+                        </group>
+                        <group invisible="1">
+                        	<field name="collected_accounts_ids" attrs="{'invisible':[('parent_id','=',False)]}">
+                        		<field name="code"/>
+                        		<field name="name"/>
+                        		<field name="coa_conac_id"/>
+                        	</field>
+                        </group> -->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="income_statement_tree_view" model="ir.ui.view">
+            <field name="name">income.statement.tree.view</field>
+            <field name="model">income.statement</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <!-- <field name="estimated_amt"/>
+                    <field name="exp_and_red_amt"/>
+                    <field name="modified_amt"/>
+                    <field name="accrued_amt"/>
+                    <field name="raised_amt"/>
+                    <field name="difference_amt"/> -->
+                    <field name="parent_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_income_statement" model="ir.actions.act_window">
+            <field name="name">Statement of Income</field>
+            <field name="res_model">income.statement</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

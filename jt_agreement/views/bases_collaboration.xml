@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_req_open_balance_tree" model="ir.ui.view">
+            <field name="name">Opening Balance List view</field>
+            <field name="model">request.open.balance</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="operation_number"/>
+                    <field name="request_date"/>
+                    <field name="user_id"/>
+                     <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_req_open_balance_form" model="ir.ui.view">
+            <field name="name">Opening Form view</field>
+            <field name="model">request.open.balance</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="request" type="object" string="Request" class="oe_highlight"
+                                 attrs="{'invisible': [('state', 'not in', ('draft','rejected'))]}"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <field name="create_payment_request" invisible="1"/>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_create_payment_req" type="object" class="oe_stat_button"
+                                    widget="statinfo" string="Payment Requests"
+                                    icon="fa-random" attrs="{'invisible': [('create_payment_request', '=', False)]}">
+<!--&lt;!&ndash;                                <field name="total_operations" widget="statinfo"/>&ndash;&gt;-->
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" readonly="1"/>
+                                <field name="operation_number" required="1"
+                                 readonly="1"/>
+                                <field name="agreement_number" readonly="1"/>
+                                <field name="type_of_operation"
+                                       attrs="{'readonly': [('state', 'not in', ('draft','rejected'))]}" required="1"/>
+                                <field name="journal_id" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="apply_to_basis_collaboration" readonly="1"/>
+                                <field name="origin_resource_id" domain="[('is_it_enabled_for_agreement', '=',  True)]"
+                                attrs="{'readonly': [('state', 'not in', ('draft','rejected'))]}"
+                                required="1"/>
+                                <field name="bases_collaboration_beneficiary_ids" invisible="1"/>
+                                <field name="beneficiary_id" domain="[('id','in',bases_collaboration_beneficiary_ids)]" attrs="{'readonly': [('state', 'not in', ('draft','rejected'))]}"/>
+                                <field name="bases_collaboration_id" invisible="1"/>
+                                <field name="trust_id" invisible="1"/>
+                                <field name="provider_id" context="{'from_retier_operation':1,
+                                 'collaboration_id': bases_collaboration_id}"
+                                 attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="reason_rejection" attrs="{'invisible': [('state', '!=', 'rejected')]}"
+                             readonly="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Operation" name="operation">
+                                <group>
+                                    <group>
+                                        <field name="request_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="trade_number" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                        <field name="opening_balance" attrs="{'readonly': ['|',('state', 'not in', ('draft','rejected')),('type_of_operation','=','open_bal')]}" force_save="True"/>
+                                    </group>
+                                    <group>
+                                        <field name="observations" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                        <field name="user_id" readonly="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                             <page string="Supporting Documentaion" name="supporting_documentation">
+                                <group attrs="{'invisible': [('type_of_operation', 'in', ('withdrawal', 'increase',
+                                'retirement','withdrawal_cancellation', 'increase_by_closing', 'withdrawal_closure'))]}">
+                                    <group>
+                                        <field name="cbc_format"/>
+                                    </group>
+                                    <group>
+                                        <field name="cbc_shipping_office"/>
+                                    </group>
+                                </group>
+                                 <group attrs="{'invisible': [('type_of_operation', 'not in', ('withdrawal', 'increase',
+                                 'retirement', 'withdrawal_cancellation', 'withdrawal_closure', 'increase_by_closing'))]}">
+                                    <group>
+                                        <field name="supporting_documentation"/>
+                                    </group>
+                                </group>
+                            </page>
+                             <page string="Journal Items" name="accounts">
+                             	<field name="move_line_ids" context="{'delete': False}" readonly="1"/>
+<!--                                 <group>
+                                    <group>
+                                        <field name="liability_account_id" readonly="1"/>
+                                        <field name="investment_account_id" readonly="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="interest_account_id" readonly="1"/>
+                                        <field name="availability_account_id" readonly="1"/>
+                                    </group>
+                                </group>
+ -->                            
+ 						</page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_req_open_balance" model="ir.actions.act_window">
+            <field name="name">Request Opening Balance</field>
+            <field name="res_model">request.open.balance</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('name', '=', context.get('name'))]</field>
+        </record>
+
+<!--        <record id="action_req_open_balance_tree" model="ir.actions.act_window.view">-->
+<!--            <field eval="1" name="sequence"/>-->
+<!--            <field name="view_mode">tree</field>-->
+<!--            <field name="view_id" ref="view_req_open_balance_tree"/>-->
+<!--            <field name="act_window_id" ref="action_req_open_balance"/>-->
+<!--        </record>-->
+
+        <!-- <record id="action_req_open_balance_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_req_open_balance_form"/>
+            <field name="act_window_id" ref="action_req_open_balance"/>
+        </record> -->
+
+
+        <record id="view_bases_collabration_tree" model="ir.ui.view">
+            <field name="name">Bases Collabration List view</field>
+            <field name="model">bases.collaboration</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="agreement_type_id"/>
+                    <field name="convention_no"/>
+                    <field name="available_bal"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_bases_collabration_pivot" model="ir.ui.view">
+            <field name="name">Bases Collabration pivot view</field>
+            <field name="model">bases.collaboration</field>
+            <field name="arch" type="xml">
+                <pivot string="Bases Of Collaboration" disable_linking="True">
+                    <field name="name" type="row"/>
+                    <field name="opening_bal" type="measure"/>
+                    <field name="available_bal" type="measure"/>
+                    
+                </pivot>
+            </field>
+        </record>
+
+        <record id="view_bases_collabration_kanban" model="ir.ui.view">
+            <field name="name">Bases Collabration Kanban view</field>
+            <field name="model">bases.collaboration</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" create="0" group_create="0" >
+                    <field name="name"/>
+                    <field name="agreement_type_id"/>
+                    <field name="fund_type_id"/>
+                    <field name="available_bal"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row mb4">
+                                    <div class="col-6">
+                                        Agreement Name:
+                                    </div>
+                                    <div class="col-6">
+                                        <strong><span><field name="name"/></span></strong>
+                                    </div>
+                                </div>
+                                <div class="row mb4">
+                                    <div class="col-6">
+                                        Agreement Type:
+                                    </div>
+                                    <div class="col-6">
+                                        <strong><span><field name="agreement_type_id"/></span></strong>
+                                    </div>
+                                </div>
+                                <div class="row mb4">
+                                    <div class="col-6">
+                                        Fund Type:
+                                    </div>
+                                    <div class="col-6">
+                                        <strong><span><field name="fund_type_id"/></span></strong>
+                                    </div>
+                                </div>
+                                <div class="row mb4">
+                                    <div class="col-6">
+                                        Available Balance:
+                                    </div>
+                                    <div class="col-6">
+                                        <strong><span><field name="available_bal"/></span></strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_bases_collabration_dashboard" model="ir.ui.view">
+            <field name="name">Bases Collabration dashboard view</field>
+            <field name="model">bases.collaboration</field>
+            <field name="arch" type="xml">
+                <dashboard>
+                    <view type="graph" ref="jt_agreement.view_bases_collabration_pivot"/>
+                    <group>
+                        <aggregate name="opening_bal" field="opening_bal" widget="monetary" string="Opening Balance"/>
+                        <aggregate name="available_bal" field="available_bal" widget="monetary" string="Available Balance"/>
+                    </group>
+                    <view type="pivot" ref="jt_agreement.view_bases_collabration_pivot"/>
+                </dashboard>
+            </field>
+        </record>
+
+        <record id="view_bases_collabration_form" model="ir.ui.view">
+            <field name="name">Bases Collabration Form view</field>
+            <field name="model">bases.collaboration</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,valid,to_be_cancelled,cancelled"/>
+                        <button name="confirm" type="object" string="Confirm" class="oe_highlight"
+                                 attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        <button name="cancel" type="object" string="Cancel" class="oe_highlight"
+                                 attrs="{'invisible': [('state', '!=', 'valid')]}"/>
+                    </header>
+                    <sheet>
+                         <div class="oe_button_box" name="button_box">
+                            <button name="action_operations" type="object" class="oe_stat_button"
+                                    icon="fa-random" attrs="{'invisible': [('state', '=', 'draft')]}">
+                                <field name="total_operations" widget="statinfo"/>
+                            </button>
+                             <button name="action_modifications" type="object" class="oe_stat_button"
+                                     context="{'show_agreement_name':True}"
+                                    icon="fa-random" attrs="{'invisible': [('state', '=', 'draft')]}">
+                                <field name="total_modifications" widget="statinfo"/>
+                            </button>
+
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="dependency_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="desc_dependency" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="subdependency_id" attrs="{'readonly': [('state', '!=', 'draft')]}"
+                                domain="[('dependency_id', '=', dependency_id)]"/>
+                                <field name="desc_subdependency" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="agreement_type_id" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                <field name="fund_type_id" readonly="1" force_save="1"/>
+                                <field name="dependency_obs" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="next_no" invisible="1"/>
+                                
+                                <!-- <field name="fund_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/> -->
+                                
+                            </group>
+                            <group>
+                            	<field name="is_specific" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="convention_no" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                <field name="n_report" attrs="{'readonly': [('state', '!=', 'draft')]}" readonly="1" required="1" force_save="1"/>
+                                <field name="journal_id" invisible="1"/>
+                                <field name="opening_bal" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="available_bal" readonly="1"/>
+                                <field name="origin_resource_id" attrs="{'readonly': [('state', '!=', 'draft')]}"
+                                domain="[('is_it_enabled_for_agreement', '=',  True)]"/>
+                                <field name="goals" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="registration_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+<!--                             <page string="Journal Items" name="accounts">
+                                <field name="move_line_ids"/>
+                                 <group>
+                                    <group>
+                                        <field name="liability_account_id"
+                                        attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="investment_account_id"
+                                        attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="interest_account_id"
+                                        attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="availability_account_id"
+                                        attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                </group>
+                            </page>
+ -->                            
+ 							<page string="Collaboration Base Contacts" name="collaboration_base_contacts">
+                                <group>
+                                    <group string="Owner of Dependency">
+                                        <field name="employee_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="job_id" attrs="{'readonly': [('state', '!=', 'draft')]}"
+                                               invisible="1"/>
+                                        <field name="phone" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="holder_email" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                    <group string="Administrative Secretary">
+                                        <field name="administrative_secretary_id"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="administrative_secretary_phone"
+                                            attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="administrative_secretary_email" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                    <group string="Responsible Directer of CBC">
+                                        <field name="direct_manager_cbc_id"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="cbc_responsible_phone"
+                                            attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="email"
+                                            attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                    <group string="Address of Dependency">
+                                        <field name="unit_address"
+                                            attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="additional_observation"
+                                            attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Registration Documentation" name="registration_documentation">
+                                <group>
+                                    <group>
+                                        <field name="cbc_format" required="1"
+                                         attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="cbc_shipping_office" required="1"
+                                            attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Committee" name="committee">
+                                <group string="Committe">
+                                    <field name="committe_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                                        <tree editable="top">
+                                            <field name="column_id"/>
+                                            <field name="column_position_id" invisible="1"/>
+                                            <field name="position_column"/>
+                                        </tree>
+                                        <form>
+                                            <group>
+                                                <field name="column_id"/>
+                                                <field name="column_position_id" invisible="1"/>
+                                                <field name="position_column"/>
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                             <page string="Beneficiaries Management" name="beneficiaries">
+                                <group string="Beneficiaries Sectional">
+                                    <group>
+                                        <field name="no_beneficiary_allowed"
+                                        attrs="{'readonly': [('state', 'not in', ('draft','valid'))]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="beneficiary_ids" nolabel="1"
+                                               attrs="{'readonly': [('state', 'not in', ('draft','valid'))]}">
+                                            <tree>
+                                            	<field name="sequence"/>
+                                            	<field name="is_employee" invisible="1"/>
+                                            	<field name="is_contact" invisible="1"/>
+                                                <field name="employee_id" attrs="{'required':[('is_employee','=',True)],'invisible':[('is_employee','=',False)]}"/>
+                                                <field name="partner_id" domain="[('beneficiary_type','=','scholar')]" attrs="{'required':[('is_contact','=',True)],'invisible':[('is_contact','=',False)]}"/>
+                                                <field name="bank_account_ids" invisible="1"/>
+                                                <field name="bank_id" context="{'from_agreement':1}"
+                                                  domain="[('id', 'in', bank_account_ids)]" required="1"/>
+                                                <field name="account_number" required="1"/>
+                                                <field name="amount" required="1"/>
+                                                <field name="validity_start" required="1"/>
+                                                <field name="validity_final_beneficiary" required="1"/>
+                                                <field name="withdrawal_sch_date" required="1"/>
+                                            </tree>
+                                            <form>
+                                                <group>
+                                                    <group>
+		                                            	<field name="is_employee"/>
+		                                            	<field name="is_contact"/>
+		                                                <field name="employee_id" attrs="{'required':[('is_employee','=',True)],'invisible':[('is_employee','=',False)]}"/>
+		                                                <field name="partner_id" domain="[('beneficiary_type','=','scholar')]" attrs="{'required':[('is_contact','=',True)],'invisible':[('is_contact','=',False)]}"/>
+		                                                <field name="bank_account_ids" invisible="1"/>
+                                                        <field name="bank_id"
+                                                               domain="[('id', 'in', bank_account_ids)]"
+                                                               context="{'from_agreement':1}" required="1"/>
+                                                        <field name="account_number" required="1"/>
+                                                        <field name="payment_rule_id" required="1"/>
+                                                    </group>
+                                                     <group>
+                                                         <field name="amount" required="1"/>
+                                                        <field name="validity_start" required="1"/>
+                                                        <field name="validity_final_beneficiary" required="1"/>
+                                                        <field name="withdrawal_sch_date" required="1"/>
+                                                    </group>
+                                                </group>
+                                            </form>
+                                        </field>
+                                    </group>
+                                </group>
+                                 <group string="Providers" name="providers">
+                                     <field name="provider_ids" nolabel="1"
+                                            attrs="{'readonly': [('state', 'not in', ('draft','valid'))]}">
+                                         <tree editable="top">
+                                             <field name="partner_id" required="1"/>
+                                                <field name="bank_id" domain="[('partner_id', '=', partner_id)]"
+                                                context="{'from_agreement':1}"/>
+                                                <field name="account_number"/>
+                                         </tree>
+                                         <form>
+                                             <group>
+                                                 <field name="partner_id" required="1"/>
+                                                <field name="bank_id"
+                                                 domain="[('partner_id', '=', partner_id)]"
+                                                context="{'from_agreement':1}"/>
+                                                <field name="account_number"/>
+                                             </group>
+                                         </form>
+                                     </field>
+                                 </group>
+                            </page>
+                            <page name="cancellation_info" string="Cancellation Information"
+                                attrs="{'invisible': [('state', 'not in', ('in_force', 'to_be_cancelled', 'cancelled'))]}">
+                                <group>
+                                    <field name="cancel_date"/>
+                                    <field name="supporing_doc"/>
+                                    <field name="reason_cancel"/>
+                                </group>
+                            </page>
+                            <page name="closing_info" string="Information for Closing" attrs="{'invisible':[('is_specific','=',True)]}">
+                                <group>
+                                    <field name="fund_name_transfer_id" domain="[('is_specific','=',True),('state','=','valid')]" context="{'show_agreement_name':True}"/>
+                                    <field name="closing_amt"/>
+                                    <field name="periods_closing_ids" invisible="1">
+                                        <tree>
+                                            <field name="start_date"/>
+                                            <field name="end_date"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+
+                            <page name="interest_rate_page" string="Interest Rate">
+                            	<field name="rate_base_ids" readonly="1">
+                            		<tree>
+                                        <field name="cuenta"/>
+                                        <field name="tipo"/>
+                            			<field name="interest_rate"/>
+                            			<field name="interest_date"/>
+                            		</tree>
+                            	</field>
+<!--                                 <group>
+                                    <field name="interest_rate"/>
+                                </group>
+ -->                            </page>
+
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_bases_collabration" model="ir.actions.act_window">
+            <field name="name">Bases of Collabration</field>
+            <field name="res_model">bases.collaboration</field>
+            <field name="view_mode">tree,kanban,dashboard,form,pivot</field>
+            <field name="context">{'from_agreement':True,'show_agreement_name':True}</field>
+        </record>
+
+          <record id="view_req_open_balance_tree_invest" model="ir.ui.view">
+            <field name="name">Increments and Withdrawals List view</field>
+            <field name="model">request.open.balance.invest</field>
+            <field name="arch" type="xml">
+                <tree>
+                	<field name="name"/>
+                	<field name="operation_number" invisible="context.get('from_fund_view',False)"/>
+                	<field name="request_date" invisible="context.get('from_fund_view',False)"/>
+                	<field name="user_id" invisible="context.get('from_fund_view',False)"/>
+                    <field name="agreement_number" invisible="context.get('from_fund_view',False)"/>
+                    <field name="type_of_operation" invisible="context.get('from_fund_view',False)"/>
+                    <field name="apply_to_basis_collaboration" invisible="context.get('from_fund_view',False)"/>
+                    <field name="origin_resource_id" invisible="context.get('from_fund_view',False)"/>
+                    <field name="reason_rejection" invisible="context.get('from_fund_view',False)"/>
+                    <field name="trade_number" invisible="context.get('from_fund_view',False)"/>
+                    <field name="opening_balance" invisible="context.get('from_fund_view',False)"/>
+
+                     <field name="fund_request_date" invisible="not context.get('from_fund_view',False)"/>
+                     <field name="dependency_id"  invisible="not context.get('from_fund_view',False)"/>
+                     <field name="subdependency_id" invisible="not context.get('from_fund_view',False)"/>
+                     <field name="dependency_holder"  invisible="not context.get('from_fund_view',False)"/>
+                     <field name="responsible_user_id"  invisible="not context.get('from_fund_view',False)"/>
+                     <field name="type_of_resource"  invisible="not context.get('from_fund_view',False)"/>
+                     <field name="bank_id" invisible="not context.get('from_fund_view',False)"/>
+                     <field name="account_number" invisible="not context.get('from_fund_view',False)"/>
+                     <field name="request_office" invisible="not context.get('from_fund_view',False)"/>
+                    
+                    <field name="state"/>
+                    
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_req_open_balance_form_investment" model="ir.ui.view">
+            <field name="name">Increments and Withdrawals Form View</field>
+            <field name="model">request.open.balance.invest</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    	<field name="hide_is_manually" invisible="1"/>
+                    	<field name="hide_is_auto" invisible="1"/>
+                        <button name="reject_request" type="object" string="Reject" class="oe_highlight"
+                             attrs="{'invisible': [('hide_is_auto','=',True)]}" context="{'from_investment':1}"/>
+                        <button name="approve_investment" type="object" string="Approve" class="oe_highlight"
+                             attrs="{'invisible': [('hide_is_auto','=',True)]}"/>
+
+                        <button name="reject_request" type="object" string="Reject" class="oe_highlight"
+                             attrs="{'invisible': [('hide_is_manually','=',True)]}" context="{'from_investment':1}"/>
+                        <button name="approve_investment" type="object" string="Approve" class="oe_highlight"
+                             attrs="{'invisible': [('hide_is_manually','=',True)]}"/>
+
+                		<button name="approve_investment" states="confirmed" string="Investment Settlement" class="oe_highlight" type="object" />
+                		<button name="approve_investment" states="confirmed" string="Returns" class="oe_highlight" type="object" />
+                		<button name="approve_investment" states="confirmed" string="Commissions" class="oe_highlight" type="object" />
+                             
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                            	<field name="is_fund" invisible="1"/>
+                            	<field name="trust_id" invisible="1"/>
+                            	<field name="patrimonial_id" invisible="1"/>
+                            	<field name="is_manually" invisible="1"/>
+                            	<field name="first_number" readonly="1"/>
+                            	<field name="new_journal_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            	
+                                <field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                <field name="operation_number" attrs="{'readonly': [('state', '!=', 'draft')]}" required="not context.get('from_fund_view',False)"/>
+
+                                <field name="agreement_number" attrs="{'readonly': [('state', '!=', 'draft')],'required':[('trust_id','=',False),('patrimonial_id','=',False)],'invisible':['|',('trust_id','!=',False),('patrimonial_id','!=',False)]}" />
+
+                                <field name="type_of_operation" attrs="{'readonly': [('state', '!=', 'draft')]}" required="not context.get('from_fund_view',False)" invisible="context.get('from_fund_view',False)"/>
+                                
+                                <field name="fund_request_date" attrs="{'readonly': [('state', '!=', 'draft')]}" required="context.get('from_fund_view',False)" invisible="not context.get('from_fund_view',False)"/>
+                                <field name="dependency_id" attrs="{'readonly': [('state', '!=', 'draft')]}" required="context.get('from_fund_view',False)" invisible="not context.get('from_fund_view',False)"/>
+                                <field name="subdependency_id" domain="[('dependency_id','=',dependency_id)]" attrs="{'readonly': [('state', '!=', 'draft')]}" required="context.get('from_fund_view',False)" invisible="not context.get('from_fund_view',False)"/>
+                                <field name="dependency_holder" attrs="{'readonly': [('state', '!=', 'draft')]}" required="context.get('from_fund_view',False)" invisible="not context.get('from_fund_view',False)"/>
+                                <field name="responsible_user_id" attrs="{'readonly': [('state', '!=', 'draft')]}" required="context.get('from_fund_view',False)" invisible="not context.get('from_fund_view',False)"/>
+                                <field name="origin_resource_id" attrs="{'readonly': [('state', '!=', 'draft')]}"
+                                       domain="[('is_it_enabled_for_agreement', '=',  True)]" required="1"/>
+                               
+                                <field name="bank_id" attrs="{'readonly': [('state', '!=', 'draft')]}" required="context.get('from_fund_view',False)" invisible="not context.get('from_fund_view',False)"/>
+                                <field name="account_number"  required="context.get('from_fund_view',False)" invisible="not context.get('from_fund_view',False)"/>
+                                <field name="request_office" attrs="{'readonly': [('state', '!=', 'draft')]}" required="context.get('from_fund_view',False)" invisible="not context.get('from_fund_view',False)"/>
+                            </group>
+                            <group>
+                                <field name="apply_to_basis_collaboration" attrs="{'invisible':['|',('trust_id','!=',False),('patrimonial_id','!=',False)],'readonly': [('state', '!=', 'draft')]}" />
+                                <field name="apply_to_trust" attrs="{'invisible':[('trust_id','=',False)],'readonly': [('state', '!=', 'draft')]}" />
+                                <field name="apply_to_patrimonial" attrs="{'invisible':[('patrimonial_id','=',False)],'readonly': [('state', '!=', 'draft')]}" />
+                                
+                                <field name="origin_journal_id" domain="[('type','=','bank')]" attrs="{'required':[('trust_id','!=',False)],'invisible':[('trust_id','=',False)],'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="destination_journal_id" domain="[('type','=','bank')]" attrs="{'required':[('trust_id','!=',False)],'invisible':[('trust_id','=',False)],'readonly': [('state', '!=', 'draft')]}"/>
+                                
+                                <field name="permanent_instructions" attrs="{'readonly': [('state', '!=', 'draft')]}"  required="context.get('from_fund_view',False)" invisible="not context.get('from_fund_view',False)"/>
+                                <field name="fund_observation" attrs="{'readonly': [('state', '!=', 'draft')]}"  required="context.get('from_fund_view',False)" invisible="not context.get('from_fund_view',False)"/>
+                                
+                                <field name="yield_id" attrs="{'required':[('state', '=', 'draft')],'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="beneficiary_id" attrs="{'invisible': [('type_of_operation', 'not in', ('withdrawal', 'retirement'))]}"/>
+                                <field name="provider_id" attrs="{'invisible': [('type_of_operation', 'not in', ('withdrawal', 'retirement'))]}"/>
+                                <field name="specifics_project_id" attrs="{'invisible': [('patrimonial_id', '=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="background_project_id" attrs="{'invisible': [('patrimonial_id', '=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="reason_rejection" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            
+                        </group>
+                        <notebook>
+                            <page string="Operation" name="operation">
+                                <group>
+                                    <group>
+                                        <field name="request_date" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                        <field name="trade_number" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                        <field name="opening_balance" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="observations" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1"/>
+                                        <field name="user_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                             <page string="Supporting Documentaion" name="supporting_documentation" attrs="{'invisible': ['|',('trust_id', '!=', False),('patrimonial_id', '!=', False)]}">
+                                <group attrs="{'invisible': [('type_of_operation', 'in', ('withdrawal', 'increase', 'retirement', 'withdrawal_cancellation'))]}">
+                                    <group>
+                                        <field name="cbc_format" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="cbc_shipping_office"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                </group>
+                                  <group attrs="{'invisible': [('type_of_operation', 'not in', ('withdrawal', 'increase', 'retirement', 'withdrawal_cancellation'))]}">
+                                    <group>
+                                        <field name="supporting_documentation"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                </group>
+                            </page>
+
+                             <page string="Supporting Documentaion" name="supporting_documentation" attrs="{'invisible': [('trust_id', '=', False),('patrimonial_id', '=', False)]}">
+                        		<group>
+                        			<group>
+                        				<field name="trust_agreement_file_name" invisible="1"/>
+                        				<field name="trust_agreement_file" filename="trust_agreement_file_name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        			</group>
+                        			<group>
+                        				<field name="trust_office_file_name" invisible="1"/>
+                        				<field name="trust_office_file" filename="trust_office_file_name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        			</group>
+                        		</group>
+                            </page>
+                            
+                             <page string="Accounts" name="accounts" invisible="1">
+                                <group>
+                                    <group>
+                                    	<field name="patrimonial_equity_account_id" attrs="{'invisible': [('patrimonial_id', '=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                                    	
+                                        <field name="liability_account_id"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="investment_account_id"
+                                               attrs="{'invisible': [('patrimonial_id', '!=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                                               
+                                        <field name="patrimonial_account_id" attrs="{'invisible': [('trust_id', '=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="interest_account_id"
+                                               attrs="{'invisible': ['|',('patrimonial_id', '!=', False),('trust_id', '!=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="availability_account_id"
+                                               attrs="{'invisible': [('patrimonial_id', '!=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                                               
+                                        <field name="patrimonial_yield_account_id" attrs="{'invisible': [('patrimonial_id', '=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+
+                        				<field name="honorary_account_id" attrs="{'invisible': [('trust_id', '=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                        				<field name="availability_account_id" attrs="{'invisible': [('trust_id', '=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                                        
+                                    </group>
+                                </group>
+                            </page>
+                            
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_req_open_balance_investment" model="ir.actions.act_window">
+            <field name="name">Increases and Withdrawals</field>
+            <field name="res_model">request.open.balance.invest</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', '!=', 'draft')]</field>
+        </record>
+
+<!--          <record id="action_req_open_balance_inv_tree" model="ir.actions.act_window.view">-->
+<!--            <field eval="1" name="sequence"/>-->
+<!--            <field name="view_mode">tree</field>-->
+<!--            <field name="view_id" ref="view_req_open_balance_tree_invest"/>-->
+<!--            <field name="act_window_id" ref="action_req_open_balance_investment"/>-->
+<!--        </record>-->
+<!---->
+<!--          <record id="action_req_open_balance_inv_form" model="ir.actions.act_window.view">-->
+<!--            <field eval="2" name="sequence"/>-->
+<!--            <field name="view_mode">form</field>-->
+<!--            <field name="view_id" ref="view_req_open_balance_form_investment"/>-->
+<!--            <field name="act_window_id" ref="action_req_open_balance_investment"/>-->
+<!--        </record>-->
+
+          <record id="view_req_open_balance_tree_finance" model="ir.ui.view">
+            <field name="name">Trasfer Request List view</field>
+            <field name="model">request.open.balance.finance</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="invoice"/>
+                    <field name="operation_number"/>
+                    <field name="amount"/>
+                    <field name="date"/>
+                    <field name="prepared_by_user_id" string="Done By"/>
+                    <field name="state"/>
+                    <field name="trasnfer_request"/>
+                    <field name="is_manual" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_req_open_balance_form_finance" model="ir.ui.view">
+            <field name="name">Transfer Request Form View</field>
+            <field name="model">request.open.balance.finance</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="approve_finance" type="object" string="Approve" class="oe_highlight"
+                             attrs="{'invisible': [('state', '!=', 'requested')]}"/>
+                        <button name="reject_request" type="object" string="Reject" class="oe_highlight"
+                             attrs="{'invisible': [('state', '!=', 'requested')]}"/>
+
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="open_payments" type="object" class="oe_stat_button"
+                                    icon="fa-random">
+                                <field name="payment_count" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                            	<field name="is_manual" invisible="1"/>
+                                <field name="invoice" invisible="1"/>
+                                <field name="operation_number" readonly="1" string="Folio"/>
+                                <field name="attention_to_emp_id" attrs="{'invisible':[('trasnfer_request','!=','finances')],'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="agreement_number" attrs="{'invisible':[('trasnfer_request','!=','investments')],'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="bank_account_id" attrs="{'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="origin_account"/>
+                                <field name="desti_bank_account_id" attrs="{'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="desti_account"/>
+                                <field name="amount" attrs="{'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="currency_id" attrs="{'invisible':[('trasnfer_request','!=','finances')],'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="dependency_id" context="{'show_for_agreement':1}" attrs="{'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="sub_dependency_id" domain="[('dependency_id','=',dependency_id)]" context="{'show_for_agreement':1}" attrs="{'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="trasnfer_request" readonly="1"/>
+                                
+                                <field name="prepared_by_emp_id" readonly="1" attrs="{'invisible':[('trasnfer_request','!=','finances')]}" invisible="1"/>
+                                <field name="prepared_by_user_id" string="Prepared By" readonly="1" />
+                                <!-- attrs="{'invisible':[('trasnfer_request','!=','finances')]}" -->
+                                <field name="prepared_by_dept_id" readonly="1"/>
+                                
+                            </group>
+                            <group>
+                                <field name="date" string="Elaboration Date" readonly="1"/>
+                                <field name="concept" attrs="{'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="user_id" readonly="1"/>
+                                <field name="unit_req_transfer_id" context="{'show_for_agreement':1}"
+                                       attrs="{'invisible':[('trasnfer_request','!=','investments')],'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="date_required" required="1" attrs="{'readonly':
+                                [('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="fund_id" invisible="1" attrs="{'invisible':[('trasnfer_request','!=','investments')],'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="investment_fund_id" attrs="{'invisible':[('trasnfer_request','!=','investments')],'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="fund_type" attrs="{'invisible':[('trasnfer_request','!=','investments')],'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="agreement_type_id" attrs="{'invisible':[('trasnfer_request','!=','investments')],'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+                                <field name="base_collabaration_id" attrs="{'invisible':[('trasnfer_request','!=','investments')],'readonly':[('state', 'not in', ('draft','requested'))]}"/>
+
+                                <field name="authorized_by_emp_id" readonly="1" attrs="{'invisible':[('trasnfer_request','!=','finances')]}" invisible="1"/>
+                                <field name="authorized_by_user_id" string="Authorized by" readonly="1"/>
+                                <field name="authorized_by_dept_id"/>
+                                <!-- attrs="{'invisible':[('trasnfer_request','!=','finances')]}" -->
+                            </group>
+                        </group>
+                        <group>
+                            <field name="reason_rejection" readonly="1" attrs="{'invisible': [('state', '!=', 'rejected')]}"/>
+                        </group>
+                        <notebook></notebook>
+<!--                        <notebook>-->
+<!--                            <page string="Operation" name="operation">-->
+<!--                                <group>-->
+<!--                                    <group>-->
+<!--                                        <field name="request_date"/>-->
+<!--                                        <field name="trade_number"/>-->
+<!--                                        <field name="opening_balance"/>-->
+<!--                                    </group>-->
+<!--                                    <group>-->
+<!--                                        <field name="observations"/>-->
+<!--                                        <field name="user_id"/>-->
+<!--                                    </group>-->
+<!--                                </group>-->
+<!--                            </page>-->
+<!--                             <page string="Supporting Documentaion" name="supporting_documentation">-->
+<!--                                <group>-->
+<!--                                    <group>-->
+<!--                                        <field name="cbc_format"/>-->
+<!--                                    </group>-->
+<!--                                    <group>-->
+<!--                                        <field name="cbc_shipping_office"/>-->
+<!--                                    </group>-->
+<!--                                </group>-->
+<!--                            </page>-->
+<!--                             <page string="Accounts" name="accounts">-->
+<!--                                <group>-->
+<!--                                    <group>-->
+<!--                                        <field name="liability_account_id"/>-->
+<!--                                        <field name="investment_account_id"/>-->
+<!--                                    </group>-->
+<!--                                    <group>-->
+<!--                                        <field name="interest_account_id"/>-->
+<!--                                        <field name="availability_account_id"/>-->
+<!--                                    </group>-->
+<!--                                </group>-->
+<!--                            </page>-->
+<!--                        </notebook>-->
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="request_open_balance_finance_search" model="ir.ui.view">
+            <field name="name">request.open.balance.finance.search</field>
+            <field name="model">request.open.balance.finance</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                	<field name="trasnfer_request"/>
+                	<field name="bank_account_id"/>
+                	<field name="desti_bank_account_id"/>
+                	<field name="dependency_id"/>
+                	<field name="sub_dependency_id"/>
+                	
+                	<filter  string="Investments" name="investments"
+                        domain="[('trasnfer_request', '=', 'investments')]"/>
+                	<filter  string="Projects" name="projects"
+                        domain="[('trasnfer_request', '=', 'projects')]"/>
+                	<filter  string="Finances" name="finances"
+                        domain="[('trasnfer_request', '=', 'finances')]"/>
+
+                    <group expand="1" string="Group By">
+                    	<filter string="Transfer Request" name='trasnfer_request' context="{'group_by':'trasnfer_request'}"/>
+                        <filter string="Bank and Origin Account" name='bank_account_id' context="{'group_by':'bank_account_id'}"/>
+                        <filter string="Destination Bank and Account" name='desti_bank_account_id' context="{'group_by':'desti_bank_account_id'}"/>
+                        <filter string="Dependence" name='dependence_id' context="{'group_by':'dependency_id'}"/>
+                        <filter string="Subdependence" name='subdependence_id' context="{'group_by':'sub_dependency_id'}"/>
+                    </group>
+                        
+				</search>
+			</field>
+		</record>
+
+        <record id="action_req_open_balance_finance" model="ir.actions.act_window">
+            <field name="name">Transfer Request</field>
+            <field name="res_model">request.open.balance.finance</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'show_for_agreement':1,'show_agreement_name':1,'default_trasnfer_request':'finances','default_is_manual':True}</field>
+        </record>
+
+<!--          <record id="action_req_open_balance_finan_tree" model="ir.actions.act_window.view">-->
+<!--            <field eval="1" name="sequence"/>-->
+<!--            <field name="view_mode">tree</field>-->
+<!--            <field name="view_id" ref="view_req_open_balance_tree_finance"/>-->
+<!--            <field name="act_window_id" ref="action_req_open_balance_finance"/>-->
+<!--        </record>-->
+<!---->
+<!--          <record id="action_req_open_balance_finan_form" model="ir.actions.act_window.view">-->
+<!--            <field eval="2" name="sequence"/>-->
+<!--            <field name="view_mode">form</field>-->
+<!--            <field name="view_id" ref="view_req_open_balance_form_finance"/>-->
+<!--            <field name="act_window_id" ref="action_req_open_balance_finance"/>-->
+<!--        </record>-->
+
+        <record id="action_approve_transfers_open_balance_finance" model="ir.actions.server">
+            <field name="name">Approve Transfers</field>
+            <field name="model_id" ref="jt_agreement.model_request_open_balance_finance"/>
+            <field name="binding_model_id" ref="jt_agreement.model_request_open_balance_finance"/>
+            <field name="state">code</field>
+            <field name="binding_view_types"></field>
+            <field name="code">action = records.mass_approve_finance()</field>
+        </record>
+         <record id="action_reject_transfers_open_balance_finance" model="ir.actions.server">
+            <field name="name">Reject Transfers</field>
+            <field name="model_id" ref="jt_agreement.model_request_open_balance_finance"/>
+            <field name="binding_model_id" ref="jt_agreement.model_request_open_balance_finance"/>
+            <field name="state">code</field>
+            <field name="binding_view_types"></field>
+            <field name="code">action = records.reject_request()</field>
+        </record>
+         <record id="action_schedule_transfers" model="ir.actions.server">
+            <field name="name">Schedule Transfers</field>
+            <field name="model_id" ref="jt_agreement.model_request_open_balance_finance"/>
+            <field name="binding_model_id" ref="jt_agreement.model_request_open_balance_finance"/>
+            <field name="state">code</field>
+            <field name="binding_view_types"></field>
+            <field name="code">action = records.action_schedule_transfers()</field>
+        </record>
+
+
+          <record id="action_schedule_withdrawal" model="ir.actions.server">
+            <field name="name">Withdrawal Schedule</field>
+            <field name="model_id" ref="jt_agreement.model_bases_collaboration"/>
+            <field name="binding_model_id" ref="jt_agreement.model_bases_collaboration"/>
+            <field name="state">code</field>
+            <field name="binding_view_types">list</field>
+            <field name="code">action = records.action_schedule_withdrawal()</field>
+        </record>
+
+         <record id="action_closing_collaboration" model="ir.actions.server">
+            <field name="name">Closing of collaboration databases</field>
+            <field name="model_id" ref="jt_agreement.model_bases_collaboration"/>
+            <field name="binding_model_id" ref="jt_agreement.model_bases_collaboration"/>
+            <field name="state">code</field>
+            <field name="binding_view_types">list</field>
+            <field name="code">action = records.action_closing_collaboration()</field>
+        </record>
+
+		<!-- Action Inherit -->
+
+		<record id="account.action_account_payments" model="ir.actions.act_window">
+		    <field name="context">{
+                'default_payment_type': 'inbound',
+                'default_partner_type': 'customer',
+                'search_default_inbound_filter': 1,
+                'res_partner_search_mode': 'customer',
+                'show_for_agreement':True
+            }</field>
+
+		</record>		
+    </data>
+</odoo>

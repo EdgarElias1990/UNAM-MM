@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- hide banck account menu  -->
+        <record id="jt_projects.main_menu_open_request_account" model="ir.ui.menu">
+          <field name="groups_id" eval="[(6, 0, [ref('jt_projects.menu_hide_group')] )]"/>
+        </record>    
+    </data>
+</odoo>

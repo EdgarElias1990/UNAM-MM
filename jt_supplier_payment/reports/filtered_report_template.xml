@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="search_template_payment_method">
+        <a type="button" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-book"/>
+            Payment Method:
+            <t t-set="selected_payment_method" t-value="options.get('name_journal_group') or ', '.join(c.get('name') for c in options['payment_method'] if c.get('selected'))"/>
+            <t t-if="selected_payment_method">
+                <t t-esc="selected_payment_method"/>
+            </t>
+            <t t-else="">
+           		<span>All</span>	     
+            </t>
+        </a>
+         
+        <div class="dropdown-menu o_filters_menu" role="menu">
+            <t t-foreach="options['payment_method']" t-as="j">
+                <t t-if="j.get('id') == 'divider'">
+                    <div role="separator" class="dropdown-divider"/>
+                    <b role="menuitem" class="ml4 dropdown-item-text"><t t-esc="j.get('name')"/></b>
+                    <div role="separator" class="dropdown-divider"/>
+                </t>
+                <t t-if="j.get('id') != 'divider'">
+                    <t>
+                        <a role="menuitem" class="dropdown-item js_account_report_choice_filter" t-att-title="j.get('name')" t-att-data-id="j.get('id')" data-filter="payment_method">
+                            <t t-esc="j.get('name')"/>
+                        </a>
+                    </t>
+                </t>
+            </t>
+        </div>
+        
+    </template>
+
+    <template id="search_template_jt_supplier_payment" inherit_id="account_reports.search_template">
+        <xpath expr="." position="inside">
+            <div class="btn-group o_dropdown o_account_reports_filter_currency" t-if="options.get('payment_method') != None">
+                <t t-call="jt_supplier_payment.search_template_payment_method"/>
+            </div>
+        </xpath>
+    </template>
+    
+</odoo>
+

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="income_cash_cut_tree" model="ir.ui.view">
+            <field name="name">income.cash.cut.tree.view</field>
+            <field name="model">income.cash.cut</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="folio_cfs"/>
+                    <field name="folio_cfd"/>
+                    <field name="cut_date"/>
+                    <field name="user_id"/>
+                    <field name="l10n_mx_edi_payment_method_id"/>
+                    <field name="currency_id"/>
+                    <field name="tax_id"/>
+                    <field name="subtotal"/>
+                    <field name="total"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="income_cash_cut_from" model="ir.ui.view">
+            <field name="name">income.cash.cut.form.view</field>
+            <field name="model">income.cash.cut</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+			                    <field name="name"/>
+                                <field name="folio_cfs"/>
+                                <field name="folio_cfd"/>
+                                <field name="dependancy_id" context="{'show_for_supplier_payment':True}" options="{ 'no_create': True}"/>
+                                <field name="sub_dependancy_id" context="{'show_for_supplier_payment':True}" options="{ 'no_create': True}"/>
+                                <field name="cut_date"/>
+                                <field name="user_id" options="{ 'no_create': True}"/>
+                                <field name="l10n_mx_edi_payment_method_id"/>
+                                <field name="currency_id" options="{ 'no_create': True}"/>
+                                <field name="tax_id" options="{ 'no_create': True}"/>
+                                <field name="subtotal"/>
+                                <field name="total"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+          <record id="income_cash_cut_search" model="ir.ui.view">
+            <field name="name">income.cash.cut.search.view</field>
+            <field name="model">income.cash.cut</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="folio_cfs"/>
+                    <field name="folio_cfd"/>
+                    <field name="user_id"/>
+                    <field name="l10n_mx_edi_payment_method_id"/>
+                    <field name="tax_id"/>
+					<group expand="0" name="group_by" string="Group By">
+                        <filter name="user_id" string="User" domain="[]" context="{'group_by' : 'user_id'}"/>
+                        <filter name="l10n_mx_edi_payment_method_id" string="Payment Method" context="{'group_by': 'l10n_mx_edi_payment_method_id'}"/>
+                        <filter name="tax_id" string="Taxes" context="{'group_by': 'tax_id'}"/>
+                    </group>                    
+                </search>
+            </field>
+        </record>
+
+         <record id="action_daily_cash_cuts" model="ir.actions.act_window">
+            <field name="name">Daily cash cuts</field>
+            <field name="res_model">income.cash.cut</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="income_cash_cut_tree"/>
+        </record>
+
+        <!-- menu for Income Cash Cut-->
+
+        <menuitem id="menu_daily_cash_cur" name="Daily cash cuts" sequence="0"
+            parent="main_menu_income" action="action_daily_cash_cuts"/>
+
+
+
+    </data>
+</odoo>

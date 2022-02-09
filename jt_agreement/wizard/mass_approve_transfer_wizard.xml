@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mass_approve_transfer_views" model="ir.ui.view">
+            <field name="name">mass.approve.transfer.form.view</field>
+            <field name="model">mass.approve.transfer</field>
+            <field name="arch" type="xml">
+                <form>
+                	<group>
+                        <field name="bank_account_id" required="1"/>
+                        <field name="origin_account"/>
+                    </group>
+                	<footer>
+                        <button string="Approve" name="approve" type="object" class="oe_highlight"/>
+                        <button string="Close" class="oe_highlight" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

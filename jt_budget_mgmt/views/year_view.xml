@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for year model -->
+        <record id="year_search_view" model="ir.ui.view">
+            <field name="name">year.search.view</field>
+            <field name="model">year</field>
+            <field name="arch" type="xml">
+                <search string="Year">
+                    <field name="code"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Code" name='code' context="{'group_by':'code'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for year model -->
+    	<record id="year_form_view" model="ir.ui.view">
+            <field name="name">year.form.view</field>
+            <field name="model">year</field>
+            <field name="arch" type="xml">
+            	<form>
+            		<sheet>
+	            		<group>
+	            			<field name="code" required="1"/>
+                            <field name="description"/>
+                            <field name="year" required="1"/>
+	            		</group>
+	            	</sheet>
+            	</form>
+            </field>
+        </record>
+
+        <!-- tree view for year model -->
+    	<record id="year_tree_view" model="ir.ui.view">
+            <field name="name">year.tree.view</field>
+            <field name="model">year</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="code"/>
+                    <field name="description"/>
+                    <field name="year"/>
+            	</tree>
+            </field>
+        </record>
+
+        <!-- action for year views -->
+        <record id="action_year" model="ir.actions.act_window">
+            <field name="name">Year</field>
+            <field name="res_model">year</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="year_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

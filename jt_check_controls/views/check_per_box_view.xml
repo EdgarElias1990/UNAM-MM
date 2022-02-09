@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="check_per_box_tree_view" model="ir.ui.view">
+            <field name="name">check.per.box.tree.view</field>
+            <field name="model">check.per.box</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="bank_id"/>
+                    <field name="bank_account_id"/>
+                    <field name="checkbook_no"/>
+                    <field name="box_no"/>
+                    <field name="intial_folio"/>
+                    <field name="final_folio"/>
+                    <field name="check_per_box" sum="Total"/>
+                    <field name="cost_per_check"/>
+                    <field name="total_cost_for_checks" sum="Total"/>
+                    <field name="appliaction_date"/>
+                    <field name="check_receipt_date"/>
+                </tree>
+            </field>
+        </record>
+
+       <record id="check_per_box_search_view" model="ir.ui.view">
+            <field name="name">check.per.box.search.view</field>
+            <field name="model">check.per.box</field>
+            <field name="arch" type="xml">
+                <search string="Check Per Box">
+                    <field name="bank_id"/>
+                    <field name="bank_account_id"/>
+                    <field name="checkbook_no"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Bank" name='bank_id' context="{'group_by':'bank_id'}"/>
+                        <filter string="Bank Account" name='bank_account_id' context="{'group_by':'bank_account_id'}"/>
+                        <filter string="Checkbook No." name='checkbook_no' context="{'group_by':'checkbook_no'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_check_per_box" model="ir.actions.act_window">
+            <field name="name">Checks Per Box</field>
+            <field name="res_model">check.per.box</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+		<record id="action_check_per_box_tree_link" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="check_per_box_tree_view"/>
+            <field name="act_window_id" ref="action_check_per_box"/>
+        </record>        
+        <menuitem id="check_per_box_menu_sub" name="Checks Per Box"
+                  parent="checkbook_request_menu"
+                  action="action_check_per_box" sequence="4"/>
+
+        <record id="server_action_print_pdf" model="ir.actions.server">
+            <field name="name">Print PDF</field>
+            <field name="model_id" ref="jt_check_controls.model_check_per_box"/>
+            <field name="binding_model_id" ref="jt_check_controls.model_check_per_box"/>
+            <field name="state">code</field>
+            <field name="code">action = records.print_pdf_report()</field>
+        </record>
+                  
+	</data>
+</odoo>

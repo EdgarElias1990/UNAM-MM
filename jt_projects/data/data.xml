@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="sequence_account_request" model="ir.sequence">
+            <field name="name">Account Request</field>
+            <field name="code">request.accounts</field>
+            <field name="active">TRUE</field>
+            <field name="padding">2</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_account_request_cancel" model="ir.sequence">
+            <field name="name">Account Request</field>
+            <field name="code">request.accounts.cancel</field>
+            <field name="active">TRUE</field>
+            <field name="padding">2</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_transfer_request" model="ir.sequence">
+            <field name="name">Transfer request project</field>
+            <field name="code">request.transfer</field>
+            <field name="active">TRUE</field>
+            <field name="padding">2</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Journal for CONACYT -->
+        <record id="conacyt_journal_book" model="account.journal">
+            <field name="name">PROYECTOS CONACYT</field>
+            <field name="code">PCYT</field>
+            <field name="currency_id" ref="base.MXN"/>
+            <field name="type">general</field>
+        </record>
+
+    </data>
+    
+</odoo>

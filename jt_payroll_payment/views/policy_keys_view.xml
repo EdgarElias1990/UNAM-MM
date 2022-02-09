@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for policy keys model -->
+        <record id="policy_keys_search_view" model="ir.ui.view">
+            <field name="name">policy.keys.search.view</field>
+            <field name="model">policy.keys</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="origin"/>
+                    <field name="organization"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- form view for policy keys model -->
+        <record id="policy_keys_form_view" model="ir.ui.view">
+            <field name="name">policy.keys.form.view</field>
+            <field name="model">policy.keys</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="origin" required="1"/>
+                            <field name="organization" required="1"/>
+                            <field name="description" invisible="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for policy keys model -->
+        <record id="policy_keys_tree_view" model="ir.ui.view">
+            <field name="name">policy.keys.tree.view</field>
+            <field name="model">policy.keys</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="origin"/>
+                    <field name="organization"/>
+                    <field name="description" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for policy keys views -->
+        <record id="policy_keys_action" model="ir.actions.act_window">
+            <field name="name">UPA Catalog</field>
+            <field name="res_model">policy.keys</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="policy_keys_tree_view"/>
+            <field name="context">{}</field>
+        </record>
+
+    </data>
+</odoo>

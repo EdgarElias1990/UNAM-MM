@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!--  Filter template dependancy -->
+    <template id="search_template_dependancy">
+        <a type="button" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-book"/>
+            Dependency:
+            <t t-set="selected_dependancy" t-value="options.get('name_journal_group') or ', '.join(c.get('name') for c in options['dependancy'] if c.get('selected'))"/>
+            <t t-if="selected_dependancy">
+                <t t-esc="selected_dependancy"/>
+            </t>
+            <t t-else="">
+           		<span>All</span>	     
+            </t>
+        </a>
+         
+        <div class="dropdown-menu o_filters_menu" role="menu">
+            <t t-foreach="options['dependancy']" t-as="j">
+                <t t-if="j.get('id') == 'divider'">
+                    <div role="separator" class="dropdown-divider"/>
+                    <b role="menuitem" class="ml4 dropdown-item-text"><t t-esc="j.get('name')"/></b>
+                    <div role="separator" class="dropdown-divider"/>
+                </t>
+                <t t-if="j.get('id') != 'divider'">
+                    <t>
+                        <a role="menuitem" class="dropdown-item js_account_report_choice_filter" t-att-title="j.get('name')" t-att-data-id="j.get('id')" data-filter="dependancy">
+                            <t t-esc="j.get('name')"/>
+                        </a>
+                    </t>
+                </t>
+            </t>
+        </div>
+        
+    </template>
+
+    <template id="search_template_line_pages">
+        <a type="button" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-book"/>
+            Pages:
+            <t t-set="selected_line_pages" t-value="options.get('name_line_pages') or ', '.join(control.get('code') for control in options['line_pages'] if control.get('selected'))"/>
+            <t t-if="selected_line_pages">
+                <t t-esc="selected_line_pages"/>
+            </t>
+            <t t-else="">
+                Select
+            </t>
+        </a>
+        <div class="dropdown-menu o_filters_menu" role="menu">
+            <t t-foreach="options['line_pages']" t-as="j">
+                <t t-if="j.get('id') == 'divider'">
+                    <div role="separator" class="dropdown-divider"/>
+                    <b role="menuitem" class="ml4 dropdown-item-text"><t t-esc="j.get('name')"/></b>
+                    <div role="separator" class="dropdown-divider"/>
+                </t>
+                <t t-if="j.get('id') != 'divider'">
+                    <t t-if="j.get('id') == 'group'">
+                        <a role="menuitem" class="dropdown-item js_account_report_group_choice_filter" data-filter="line_pages" t-att-data-id="j.get('id')" t-att-data-member-ids="j.get('ids')">
+                            <t t-esc="j.get('name')"/>
+                        </a>
+                    </t>
+                    <t t-else="">
+                        <a role="menuitem" class="dropdown-item js_account_report_choice_filter" t-att-title="j.get('name')+ '-' + j.get('code')" t-att-data-id="j.get('id')" data-filter="line_pages">
+                            <t t-esc="j.get('name')"/>
+                        </a>
+                    </t>
+                </t>
+            </t>
+        </div>
+    </template>
+
+    <template id="search_template_budget_control">
+        <a type="button" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-book"/>
+            Budget Controls:
+            <t t-set="selected_control" t-value="options.get('name_budget_control') or ', '.join(control.get('code') for control in options['budget_control'] if control.get('selected'))"/>
+            <t t-if="selected_control">
+                <t t-esc="selected_control"/>
+            </t>
+            <t t-else="">
+                Select
+            </t>
+        </a>
+        <div class="dropdown-menu o_filters_menu" role="menu">
+        	<button role="menuitem" class="btn btn-primary js_account_report_choice_filter">Apply</button>
+            <t t-foreach="options['budget_control']" t-as="j">
+                <t t-if="j.get('id') == 'divider'">
+                    <div role="separator" class="dropdown-divider"/>
+                    <b role="menuitem" class="ml4 dropdown-item-text"><t t-esc="j.get('name')"/></b>
+                    <div role="separator" class="dropdown-divider"/>
+                </t>
+                <t t-if="j.get('id') != 'divider'">
+                    <t t-if="j.get('id') == 'group'">
+                         <a role="menuitem" class="dropdown-item js_account_report_group_choice_filter" data-filter="budget_control" t-att-data-id="j.get('id')" t-att-data-member-ids="j.get('ids')">
+                            <t t-esc="j.get('name')"/>
+                        </a>
+                        
+                    </t>
+                    <t t-else="">
+                       <a role="menuitem" class="dropdown-item js_budget_control_choice_filter" t-att-title="j.get('name')+ '-' + j.get('code')" t-att-data-id="j.get('id')" data-filter="budget_control">
+                            <t t-esc="j.get('name')"/>
+                        </a>
+                    </t>
+                </t>
+            </t>
+        </div>
+    </template>
+
+    <template id="search_template_program_code_section">
+        <a type="button" class="dropdown-toggle program_code_section_filter" data-toggle="dropdown">
+            <span class="fa fa-folder-open"/> Programmatic Code Section
+        </a>
+        <ul class="dropdown-menu o_filters_menu" role="menu">
+        	<button class="btn btn-primary o_budget_filter_search">Apply</button>
+            <li class="o_account_report_search js_program_code_section_m2m"/>
+        </ul>
+    </template>
+
+    <template id="search_template_jt" inherit_id="account_reports.search_template">
+        <xpath expr="." position="inside">
+            <div class="btn-group o_dropdown o_account_reports_filter_line_pages" t-if="options.get('line_pages') != None">
+                <t t-call="jt_budget_mgmt.search_template_line_pages"/>
+            </div>
+            <div class="btn-group o_dropdown o_account_reports_filter_budget_controls" t-if="options.get('budget_control') != None">
+                <t t-call="jt_budget_mgmt.search_template_budget_control"/>
+            </div>
+            <div class="btn-group o_dropdown o_account_reports_filter_program_code_section" t-if="options.get('code_sections') != None">
+                <t t-call="jt_budget_mgmt.search_template_program_code_section"/>
+            </div>
+           <div class="btn-group o_dropdown o_account_reports_filter_currency" t-if="options.get('dependancy') != None">
+                <t t-call="jt_budget_mgmt.search_template_dependancy"/>
+            </div>
+            
+        </xpath>
+    </template>
+
+    <template id="template_analytic_status_table_header" inherit_id="account_reports.main_table_header" primary="True">
+        <xpath expr="//thead//tr[hasclass('o_account_report_column_header')]" position="before">
+            <tr>
+                <th t-att-class="'o_account_report_column_header text-center'" colspan="1"/>
+<!--                <th t-att-class="'o_account_report_column_header text-center'" colspan="2">Initial Balance</th>-->
+                <t t-foreach="model.reverse(options['comparison'].get('periods'))" t-as="column_header">
+                    <th t-att-class="'o_account_report_column_header text-center'" colspan="6">
+                        <t t-esc="column_header.get('string')"/>
+                    </th>
+                </t>
+                <th t-att-class="'o_account_report_column_header text-center'" colspan="6">
+                    <t t-esc="options['date'].get('string')"/>
+                </th>
+<!--                <th t-att-class="'o_account_report_column_header text-center'" colspan="2">Total</th>-->
+            </tr>
+        </xpath>
+    </template>
+
+    <template id="template_statement_financial_position_header" inherit_id="account_reports.main_table_header" primary="True">
+        <xpath expr="//thead//tr[hasclass('o_account_report_column_header')]" position="before">
+            <tr>
+                <th t-att-class="'o_account_report_column_header'"/>
+<!--                <th t-att-class="'o_account_report_column_header text-center'" colspan="2">Initial Balance</th>-->
+                <t t-foreach="model.reverse(options['comparison'].get('periods'))" t-as="column_header">
+                    <th t-att-class="'o_account_report_column_header'">
+                        <t t-esc="column_header.get('string')"/>
+                    </th>
+                </t>
+                <th t-att-class="'o_account_report_column_header'">
+                    <t t-esc="options['date'].get('string')"/>
+                </th>
+<!--                <th t-att-class="'o_account_report_column_header text-center'" colspan="2">Total</th>-->
+            </tr>
+        </xpath>
+    </template>
+
+     <template id="template_analytic_status_of_asset_header" inherit_id="account_reports.main_table_header" primary="True">
+        <xpath expr="//thead//tr[hasclass('o_account_report_column_header')]" position="before">
+            <tr>
+                <th t-att-class="'o_account_report_column_header text-center'" colspan="1"/>
+<!--                <th t-att-class="'o_account_report_column_header text-center'" colspan="2">Initial Balance</th>-->
+                <t t-foreach="model.reverse(options['comparison'].get('periods'))" t-as="column_header">
+                    <th t-att-class="'o_account_report_column_header text-center'" colspan="5">
+                        <t t-esc="column_header.get('string')"/>
+                    </th>
+                </t>
+                <th t-att-class="'o_account_report_column_header text-center'" colspan="5">
+                    <t t-esc="options['date'].get('string')"/>
+                </th>
+<!--                <th t-att-class="'o_account_report_column_header text-center'" colspan="2">Total</th>-->
+            </tr>
+        </xpath>
+    </template>
+
+    <template id="template_statement_fianancial_position_header" inherit_id="account_reports.main_table_header" primary="True">
+        <xpath expr="//thead//tr[hasclass('o_account_report_column_header')]" position="before">
+            <tr>
+                <th t-att-class="'o_account_report_column_header text-center'" colspan="1"/>
+<!--                <th t-att-class="'o_account_report_column_header text-center'" colspan="2">Initial Balance</th>-->
+                <t t-foreach="model.reverse(options['comparison'].get('periods'))" t-as="column_header">
+                    <th t-att-class="'o_account_report_column_header text-center'" colspan="2">
+                        <t t-esc="column_header.get('string')"/>
+                    </th>
+                </t>
+                <th t-att-class="'o_account_report_column_header text-center'" colspan="2">
+                    <t t-esc="options['date'].get('string')"/>
+                </th>
+<!--                <th t-att-class="'o_account_report_column_header text-center'" colspan="2">Total</th>-->
+            </tr>
+        </xpath>
+    </template>
+
+    <template id="template_analytic_status_header" inherit_id="account_reports.main_table_header" primary="True">
+        <xpath expr="//thead//tr[hasclass('o_account_report_column_header')]" position="before">
+            <tr>
+                <th t-att-class="'o_account_report_column_header text-center'" colspan="1"/>
+<!--                <th t-att-class="'o_account_report_column_header text-center'" colspan="2">Initial Balance</th>-->
+                <t t-foreach="model.reverse(options['comparison'].get('periods'))" t-as="column_header">
+                    <th t-att-class="'o_account_report_column_header text-center'" colspan="6">
+                        <t t-esc="column_header.get('string')"/>
+                    </th>
+                </t>
+                <th t-att-class="'o_account_report_column_header text-center'" colspan="6">
+                    <t t-esc="options['date'].get('string')"/>
+                </th>
+<!--                <th t-att-class="'o_account_report_column_header text-center'" colspan="2">Total</th>-->
+            </tr>
+        </xpath>
+    </template>
+
+
+    <template id="account_reports.main_table_header">
+        <!-- <t t-if="options.get('print_previous_lines')">
+            <button class="text-cnter mb-0 no_print btn_print_previous_lines">Previous</button>
+        </t>
+        <t t-if="options.get('print_next_lines')">
+            <button class="text-cnter mb-0 no_print btn_print_next_lines">Next</button>
+        </t> -->
+        <t t-if="len(lines.get('columns_header', [])) > 1">
+            <thead class="o_account_reports_header_hierarchy">
+                <t t-foreach="lines.get('columns_header')" t-as="header_line">
+                    <tr>
+                        <t t-foreach="header_line" t-as="header">
+                            <th t-att-colspan="header.get('colspan')" t-att-title="header.get('title')" t-att-data-toggle="header.get('data-toggle')">
+                                <t t-esc="header.get('name')"/>
+                            </th>
+                        </t>
+                    </tr>
+                </t>
+                <!-- Empty <tr> to create a bottom border on the above
+                     <tr>. Necessary due to "border-collapse: collapse;" on the
+                     table. -->
+                <tr><th t-att-colspan="len(lines.get('columns_header')[-1])"></th></tr>
+            </thead>
+        </t>
+        <t t-else="">
+            <thead>
+                <tr class="o_account_report_column_header">
+                    <t t-foreach="lines.get('columns_header')[0]" t-as="column_header">
+                        <th t-att-class="'o_account_report_column_header ' + (column_header.get('class', ''))" t-att-style="column_header.get('style', '')"
+                            t-att-title="column_header.get('title')">
+                            <t t-raw="column_header.get('name')"/>
+                        </th>
+                    </t>
+                </tr>
+            </thead>
+        </t>
+    </template>
+</odoo>

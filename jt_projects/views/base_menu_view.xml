@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- hide all task  -->
+        <record id="project.menu_project_management" model="ir.ui.menu">
+          <field name="groups_id" eval="[(6, 0, [ref('menu_hide_group')] )]"/>
+        </record>
+
+        <!-- hide project menu -->
+        <record id="project.menu_projects" model="ir.ui.menu">
+          <field name="groups_id" eval="[(6, 0, [ref('menu_hide_group')] )]"/>
+        </record>
+
+        <!-- task analysis -->
+        <record id="project.menu_project_report_task_analysis" model="ir.ui.menu">
+          <field name="groups_id" eval="[(6, 0, [ref('menu_hide_group')] )]"/>
+        </record>
+
+        <!-- Stage -->
+        <record id="project.menu_project_config_project" model="ir.ui.menu">
+          <field name="groups_id" eval="[(6, 0, [ref('menu_hide_group')] )]"/>
+        </record>
+
+        <!-- Tags -->
+        <record id="project.menu_project_tags_act" model="ir.ui.menu">
+          <field name="groups_id" eval="[(6, 0, [ref('menu_hide_group')] )]"/>
+        </record>
+
+        <!-- Activity Type-->
+        <record id="project.project_menu_config_activity_type" model="ir.ui.menu">
+          <field name="groups_id" eval="[(6, 0, [ref('menu_hide_group')] )]"/>
+        </record>
+
+        <!-- settings -->
+        <record id="project.project_config_settings_menu_action" model="ir.ui.menu">
+          <field name="groups_id" eval="[(6, 0, [ref('menu_hide_group')] )]"/>
+        </record>
+    </data>
+</odoo>

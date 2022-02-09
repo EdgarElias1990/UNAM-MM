@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--
+             Precisions
+        -->
+        <record forcecreate="True" id="decimal_CETES" model="decimal.precision">
+            <field name="name">CETES</field>
+            <field name="digits">4</field>
+        </record>
+        <record forcecreate="True" id="decimal_UDIBONOS" model="decimal.precision">
+            <field name="name">UDIBONOS</field>
+            <field name="digits">4</field>
+        </record>
+        <record forcecreate="True" id="decimal_BONDS" model="decimal.precision">
+            <field name="name">BONDS</field>
+            <field name="digits">4</field>
+        </record>
+        <record forcecreate="True" id="decimal_REPAY" model="decimal.precision">
+            <field name="name">REPAY</field>
+            <field name="digits">4</field>
+        </record>
+        <record forcecreate="True" id="decimal_productive_accounts" model="decimal.precision">
+            <field name="name">Productive Accounts</field>
+            <field name="digits">4</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_journal_form_view_investment" model="ir.ui.view">
+            <field name="name">account.journal.form.view.investment</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <field name="code" position="before">
+            		<field name="is_productive_account"/>
+            		<field name="is_investment_account"/>
+            	</field>
+                
+            </field>
+        </record>
+	</data>
+</odoo>

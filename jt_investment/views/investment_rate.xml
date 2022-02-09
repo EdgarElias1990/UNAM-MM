@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<!-- TIIE Rate Views -->
+
+         <record id="action_investment_period_tiie_rate" model="ir.actions.act_window">
+            <field name="name">Investment Rate</field>
+            <field name="res_model">investment.period.rate</field>
+            <field name="domain">[('product_type', '=', 'TIIE')]</field>
+            <field name="context">{'default_product_type':'TIIE'}</field>
+        </record>
+		
+        <record id="investment_period_rate_tiie_tree" model="ir.ui.view">
+            <field name="name">investment.period.rate.tiie.tree.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="rate_date"/>
+                    <field name="rate_daily" />
+                    <field name="rate_days_28" />
+                    <field name="rate_days_91" />
+                    <field name="rate_days_182"/>
+                    <field name="product_type" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="investment_period_rate_tiie_form" model="ir.ui.view">
+            <field name="name">investment.period.rate.tiie.form.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" string="Rates" type="action" name="%(action_investment_period_tiie_rate)d" icon="fa-money" widget="statinfo"/>
+                        </div>
+                    
+                        <group>
+                            <group>
+                                <field name="rate_date" required="1"/>
+                                <field name="product_type" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="rate_daily" />
+			                    <field name="rate_days_28" />
+			                    <field name="rate_days_91" />
+			                    <field name="rate_days_182" />                            
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+          <record id="investment_period_rate_tiie_search" model="ir.ui.view">
+            <field name="name">investment.period.rate.search.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="rate_date"/>
+                </search>
+            </field>
+        </record>
+
+		<record id="action_investment_period_tiie_rate_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="investment_period_rate_tiie_tree"/>
+            <field name="act_window_id" ref="action_investment_period_tiie_rate"/>
+        </record>
+        <record id="action_investment_period_tiie_rate_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="investment_period_rate_tiie_form"/>
+            <field name="act_window_id" ref="action_investment_period_tiie_rate"/>
+        </record>
+        
+<!-- 
+        <menuitem id="menu_investment_contract" name="Investment Contract" sequence="5"
+            parent="submenu_menu_investment_config" action="action_investment_contract"/>
+ -->
+
+		<!-- CETES Rate Views -->
+
+         <record id="action_investment_period_cetes_rate" model="ir.actions.act_window">
+            <field name="name">Investment Rate</field>
+            <field name="res_model">investment.period.rate</field>
+            <field name="domain">[('product_type', '=', 'CETES')]</field>
+            <field name="context">{'default_product_type':'CETES'}</field>
+        </record>
+		
+        <record id="investment_period_rate_cetes_tree" model="ir.ui.view">
+            <field name="name">investment.period.rate.cetes.tree.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="rate_date"/>
+                    <field name="term_days_28"/>
+                    <field name="rate_days_28"/>
+                    <field name="term_days_91"/>
+                    <field name="rate_days_91" />
+                    <field name="term_days_182"/>
+                    <field name="rate_days_182" />
+                    <field name="term_days_364"/>
+                    <field name="rate_days_364" />
+                    <field name="product_type" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="investment_period_rate_cetes_form" model="ir.ui.view">
+            <field name="name">investment.period.rate.cetes.form.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" string="Rates" type="action" name="%(action_investment_period_cetes_rate)d" icon="fa-money" widget="statinfo"/>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="rate_date" required="1"/>
+                                <field name="product_type" invisible="1"/>
+                            </group>
+                            <group>
+			                    <field name="term_days_28"/>
+			                    <field name="rate_days_28" />
+			                    <field name="term_days_91"/>
+			                    <field name="rate_days_91" />
+			                    <field name="term_days_182"/>
+			                    <field name="rate_days_182" />
+			                    <field name="term_days_364"/>
+			                    <field name="rate_days_364" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+          <record id="investment_period_rate_cetes_search" model="ir.ui.view">
+            <field name="name">investment.period.rate.cetes.search.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="rate_date"/>
+                </search>
+            </field>
+        </record>        
+
+		<record id="action_investment_period_cetes_rate_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="investment_period_rate_cetes_tree"/>
+            <field name="act_window_id" ref="action_investment_period_cetes_rate"/>
+        </record>
+        <record id="action_investment_period_cetes_rate_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="investment_period_rate_cetes_form"/>
+            <field name="act_window_id" ref="action_investment_period_cetes_rate"/>
+        </record>
+        
+<!-- 
+        <menuitem id="menu_investment_contract" name="Investment Contract" sequence="5"
+            parent="submenu_menu_investment_config" action="action_investment_contract"/>
+ -->
+
+
+		<!-- Udibonos Rate Views -->
+
+         <record id="action_investment_period_udibonos_rate" model="ir.actions.act_window">
+            <field name="name">Investment Rate</field>
+            <field name="res_model">investment.period.rate</field>
+            <field name="domain">[('product_type', '=', 'UDIBONOS')]</field>
+            <field name="context">{'default_product_type':'UDIBONOS'}</field>
+        </record>
+		
+        <record id="investment_period_rate_udibonos_tree" model="ir.ui.view">
+            <field name="name">investment.period.rate.udibonos.tree.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="rate_date"/>
+                    <field name="term_year_3"/>
+                    <field name="rate_year_3" />
+                    <field name="term_year_5"/>
+                    <field name="rate_year_5" />
+                    <field name="term_year_10"/>
+                    <field name="rate_year_10" />
+                    <field name="term_year_20"/>
+                    <field name="rate_year_20" />
+                    <field name="term_year_30"/>
+                    <field name="rate_year_30" />
+                    
+                    <field name="product_type" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="investment_period_rate_udibonos_form" model="ir.ui.view">
+            <field name="name">investment.period.rate.udibonos.form.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" string="Rates" type="action" name="%(action_investment_period_udibonos_rate)d" icon="fa-money" widget="statinfo"/>
+                        </div>
+                    
+                        <group>
+                            <group>
+                                <field name="rate_date" required="1"/>
+                                <field name="product_type" invisible="1"/>
+                            </group>
+                            <group>
+			                    <field name="term_year_3"/>
+			                    <field name="rate_year_3" />
+			                    <field name="term_year_5"/>
+			                    <field name="rate_year_5" />
+			                    <field name="term_year_10"/>
+			                    <field name="rate_year_10" />
+			                    <field name="term_year_20"/>
+			                    <field name="rate_year_20" />
+			                    <field name="term_year_30"/>
+			                    <field name="rate_year_30" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+          <record id="investment_period_rate_udibonos_search" model="ir.ui.view">
+            <field name="name">investment.period.rate.udibonos.search.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="rate_date"/>
+                </search>
+            </field>
+        </record>
+
+		<record id="action_investment_period_udibonos_rate_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="investment_period_rate_udibonos_tree"/>
+            <field name="act_window_id" ref="action_investment_period_udibonos_rate"/>
+        </record>
+        <record id="action_investment_period_udibonos_rate_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="investment_period_rate_udibonos_form"/>
+            <field name="act_window_id" ref="action_investment_period_udibonos_rate"/>
+        </record>
+        
+<!-- 
+        <menuitem id="menu_investment_contract" name="Investment Contract" sequence="5"
+            parent="submenu_menu_investment_config" action="action_investment_contract"/>
+ -->
+
+		<!-- BONUS Rate Views -->
+         <record id="action_investment_period_BONUS_rate" model="ir.actions.act_window">
+            <field name="name">Investment Rate</field>
+            <field name="res_model">investment.period.rate</field>
+            <field name="domain">[('product_type', '=', 'BONUS')]</field>
+            <field name="context">{'default_product_type':'BONUS'}</field>
+        </record>
+
+		
+        <record id="investment_period_rate_BONUS_tree" model="ir.ui.view">
+            <field name="name">investment.period.rate.BONUS.tree.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="rate_date"/>
+                    <field name="term_year_3"/>
+                    <field name="rate_year_3" />
+                    <field name="term_year_5"/>
+                    <field name="rate_year_5" />
+                    <field name="term_year_7"/>
+                    <field name="rate_year_7" />                    
+                    <field name="term_year_10"/>
+                    <field name="rate_year_10" />
+                    <field name="term_year_20"/>
+                    <field name="rate_year_20" />
+                    <field name="term_year_30"/>
+                    <field name="rate_year_30" />
+                    
+                    <field name="product_type" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="investment_period_rate_BONUS_form" model="ir.ui.view">
+            <field name="name">investment.period.rate.BONUS.form.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" string="Rates" type="action" name="%(action_investment_period_BONUS_rate)d" icon="fa-money" widget="statinfo"/>
+                        </div>
+                    
+                        <group>
+                            <group>
+                                <field name="rate_date" required="1"/>
+                                <field name="product_type" invisible="1"/>
+                            </group>
+                            <group>
+			                    <field name="term_year_3"/>
+			                    <field name="rate_year_3" />
+			                    <field name="term_year_5"/>
+			                    <field name="rate_year_5" />
+			                    <field name="term_year_7"/>
+			                    <field name="rate_year_7" />
+			                    
+			                    <field name="term_year_10"/>
+			                    <field name="rate_year_10" />
+			                    <field name="term_year_20"/>
+			                    <field name="rate_year_20" />
+			                    <field name="term_year_30"/>
+			                    <field name="rate_year_30" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+          <record id="investment_period_rate_BONUS_search" model="ir.ui.view">
+            <field name="name">investment.period.rate.BONUS.search.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="rate_date"/>
+                </search>
+            </field>
+        </record>
+
+		<record id="action_investment_period_BONUS_rate_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="investment_period_rate_BONUS_tree"/>
+            <field name="act_window_id" ref="action_investment_period_BONUS_rate"/>
+        </record>
+        <record id="action_investment_period_BONUS_rate_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="investment_period_rate_BONUS_form"/>
+            <field name="act_window_id" ref="action_investment_period_BONUS_rate"/>
+        </record>
+        
+<!-- 
+        <menuitem id="menu_investment_contract" name="Investment Contract" sequence="5"
+            parent="submenu_menu_investment_config" action="action_investment_contract"/>
+ -->
+
+		<!-- PAGARE Rate Views -->
+         <record id="action_investment_period_PAGARE_rate" model="ir.actions.act_window">
+            <field name="name">Investment Rate</field>
+            <field name="res_model">investment.period.rate</field>
+            <field name="domain">[('product_type', '=', 'PAGARE')]</field>
+            <field name="context">{'default_product_type':'PAGARE'}</field>
+        </record>
+		
+        <record id="investment_period_rate_PAGARE_tree" model="ir.ui.view">
+            <field name="name">investment.period.rate.PAGARE.tree.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="rate_date"/>
+                    <field name="rate_daily" />
+                    <field name="rate_days_28" />
+                    <field name="rate_days_91" />
+                    <field name="rate_days_182" />
+                    <field name="product_type" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="investment_period_rate_PAGARE_form" model="ir.ui.view">
+            <field name="name">investment.period.rate.PAGARE.form.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" string="Rates" type="action" name="%(action_investment_period_PAGARE_rate)d" icon="fa-money" widget="statinfo"/>
+                        </div>
+                    
+                        <group>
+                            <group>
+                                <field name="rate_date" required="1"/>
+                                <field name="product_type" invisible="1"/>
+                            </group>
+                            <group>
+                            	<field name="rate_daily" />
+			                    <field name="rate_days_28" />
+			                    <field name="rate_days_91" />
+			                    <field name="rate_days_182" />                            
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+          <record id="investment_period_rate_PAGARE_search" model="ir.ui.view">
+            <field name="name">investment.period.rate.PAGARE.search.view</field>
+            <field name="model">investment.period.rate</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="rate_date"/>
+                </search>
+            </field>
+        </record>
+
+		<record id="action_investment_period_PAGARE_rate_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="investment_period_rate_PAGARE_tree"/>
+            <field name="act_window_id" ref="action_investment_period_PAGARE_rate"/>
+        </record>
+        <record id="action_investment_period_PAGARE_rate_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="investment_period_rate_PAGARE_form"/>
+            <field name="act_window_id" ref="action_investment_period_PAGARE_rate"/>
+        </record>
+        
+<!-- 
+        <menuitem id="menu_investment_contract" name="Investment Contract" sequence="5"
+            parent="submenu_menu_investment_config" action="action_investment_contract"/>
+ -->
+
+    </data>
+</odoo>

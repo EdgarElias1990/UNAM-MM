@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+         <record id="transfer_request_form_view" model="ir.ui.view">
+            <field name="name">transfer.request.view.inh</field>
+            <field name="model">request.open.balance.finance</field>
+            <field name="inherit_id" ref="jt_agreement.view_req_open_balance_form_finance"/>
+            <field name="arch" type="xml">
+            	
+                <xpath expr="//field[@name='sub_dependency_id']" position="after">
+                    <!-- <field name="worker" attrs="{'invisible':[('is_manual','=',True)]}"/>
+                    <field name="manger" attrs="{'invisible':[('is_manual','=',True)]}"/> -->
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

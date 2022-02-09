@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_employee_form_view" model="ir.ui.view">
+            <field name="name">hr.employee.form.view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group/group[2]/field[@name='department_id']" position="before">
+                	<field name="emp_title"/>
+                	<field name="emp_job_title"/>
+                	<field name="bank_journal_id" invisible="1"/>
+                    <field name="worker_payment_key"/>
+                    <field name="payment_place_id"/>
+                    <field name="payment_place_description"/>
+<!--                    <field name="journal_id"/>-->
+                </xpath>
+
+                <!-- Job Information Page Fields -->
+                <xpath expr="//notebook/page[@name='public']/div/div/group/field[@name='address_id']" position="after">
+                    <field name="entry_date"/>
+                    <field name="ss_number"/>
+                    <field name="worker_type"/>
+                    <field name="worker_status"/>
+                    <field name="occ_code"/>
+                    <field name="registration"/>
+                </xpath>
+                
+                <!-- Private Information Page Fields -->
+                <xpath expr="//notebook/page[@name='personal_information']/group/group/field[@name='address_home_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='personal_information']/group/group/field[@name='km_home_work']" position="after">
+                    <field name="rfc" required="1"/>
+                    <field name="curp"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='personal_information']/group/group[2]/field[@name='country_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='personal_information']/group/group[2]/field[@name='country_id']" position="after">
+                    <field name="nationality"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='personal_information']/group/group[7]/field[@name='certificate']" position="replace">
+                    <field name="certificatee"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='personal_information']/group/group[7]/field[@name='certificatee']" position="after">
+                    <field name="profession"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='personal_information']/group/group/field[@name='address_home_id']" position="after">
+                    <field name="emp_partner_id" widget="res_partner_many2one"
+                           context="{'show_address': 1, 'default_is_company': True}"
+                           options='{"always_reload": True, "no_quick_create": True}'
+                           />
+                	<!-- 
+                    <label for="" string="Address"/>
+                    <div class="o_address_format">
+                        <field name="street" placeholder="Street..." class="o_address_street"/>
+                        <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                        <field name="colonia" placeholder="Colonia..." class="o_address_street"/>
+                        <field name="city" placeholder="City" class="o_address_city"/>
+                        <field name="state_id" class="o_address_state" placeholder="State"/>
+                        <field name="zip_code" placeholder="ZIP" class="o_address_zip"/>
+                        <field name="country_id" placeholder="Country" class="o_address_country"/>
+                    </div>
+                     -->
+                    <field name="housing"/>
+                    <field name="road"/>
+                    
+                </xpath>
+                <field name="user_id" position="after">
+                      <field name="worker_number"/>
+                      <field name="number_of_square"/>
+                      <field name="place_number"/>
+                </field>
+                <!-- 
+                 <xpath expr="//notebook/page[@name='hr_settings']" position="after">
+                     <page string="Configuration RRHH">
+                         <group>
+                             <group>
+                                <field name="worker_number"/>
+                                <field name="number_of_square"/>
+                             </group>
+                             <group>
+                                <field name="place_number"/>
+                             </group>
+                         </group>
+                     </page>
+                 </xpath>
+                 -->
+                 
+                <!-- Accounting Page Fields -->
+                <xpath expr="//notebook/page[@name='hr_settings']" position="after">
+                    <page string='Accounting'>
+                        <group string='Accounting Entries'>
+                            <group>
+                                <field name="account_receivable_id" domain="[('internal_type', '=', 'receivable'), ('deprecated', '=', False)]"/>
+                                <field name="account_payable_id" domain="[('internal_type', '=', 'payable'), ('deprecated', '=', False)]"/>
+                            </group>
+                            <group>
+                                <field name="beneficiary_ids" widget="many2many_tags"
+                                    domain="[('beneficiary_type', '=', 'alimony')]"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string='Bank Accounts'>
+                        <group string='Bank Accounts' colspan="4">
+                            <field name="bank_ids" nolabel="1">
+                                <tree editable="bottom">
+                                 <field name="sequence" widget="handle"/>
+                                 <field name="bank_id"/>
+                                 <field name="acc_number"/>
+                                 <field name="branch_number"/>
+                                 <field name="account_type"/>
+                                 <field name="partner_id"/>
+                                 <field name="l10n_mx_edi_clabe"/>
+                                 <field name="bic_swift"/>
+                                 <field name="aba"/>
+                                 <field name="key_bank"/>
+                             </tree>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Remove Grous  -->
+        <record id="hr.menu_view_employee_category_form" model="ir.ui.menu">
+          <field name="groups_id" eval="[(6, 0, [])]"/>
+        </record>
+        <record id="hr.menu_human_resources_configuration_employee" model="ir.ui.menu">
+          <field name="groups_id" eval="[(6, 0, [])]"/>
+        </record>
+        
+    </data>
+</odoo>

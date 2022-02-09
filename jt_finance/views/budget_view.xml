@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- menu for finance module -->
+    <menuitem
+        name="UNAM Finance"
+        id="menu_finance"
+        web_icon="jt_finance,static/description/icon.png"
+        sequence="1"
+        parent="jt_payroll_payment.menu_payment_finance"
+
+    />
+
+    <!-- menu for revenue budget control -->
+    <menuitem
+        id="menu_revenue_budget_control"
+        name="Revenue budget control"
+        parent="menu_finance"
+        sequence="1"
+    />
+
+    <!-- menu for control of amounts received -->
+    <menuitem
+        id="menu_control_amounts_received"
+        name="Control of amounts received"
+        parent="menu_revenue_budget_control"
+        sequence="1"
+        action="action_control_amounts_received"/>
+
+
+    <!-- menu for finance settings -->
+    <menuitem
+        id="menu_finance_settings"
+        name="Settings"
+        parent="menu_finance"
+        sequence="2"
+    />
+
+    <!-- menu for calendar of assigned amounts -->
+    <menuitem
+        id="menu_calendar_assigned_amounts"
+        name="Calendar of assigned amounts"
+        parent="menu_finance_settings"
+        sequence="1"
+        action="action_calendar_assigned_amounts"
+    />
+
+    <!-- menu for finance settings -->
+    <menuitem
+        id="menu_jt_finance_report"
+        name="Reports"
+        parent="menu_finance"
+        sequence="5"
+    />
+
+</odoo>

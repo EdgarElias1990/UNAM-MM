@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <record id="confirm_printed_checks" model="ir.ui.view">
+            <field name="name">Confirm Printed Checks form view</field>
+            <field name="model">confirm.printed.check</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="is_cancel_req" invisible="1"/>
+                            <field name="batch_ids" invisible="1"/>
+                            <span attrs="{'invisible': [('is_cancel_req', '=', True)]}">
+                                Were the checks printed correctly?
+                            </span>
+                        </group>
+                        <group>
+                            <field name="payment_req_ids" nolabel="1"
+                                    attrs="{'invisible': [('is_cancel_req', '=', False)]}">
+                                <tree editable="bottom" create="false" delete="false">
+                                    <field name="selected"/>
+                                    <field name="check_folio_id" readonly="1" force_save="1"/>
+                                    <field name="payment_id" readonly="1" force_save="1"/>
+                                    <field name="payment_req_id" readonly="1" force_save="1"/>
+                                    <field name="amount_to_pay" readonly="1" force_save="1"/>
+                                    <field name="check_status" readonly="1" force_save="1"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <footer>
+                            <button string="Yes" class="btn btn-primary" type="object" name="action_yes"
+                            attrs="{'invisible': [('is_cancel_req', '=', True)]}"/>
+                            <button string="No" class="btn btn-primary" type="object" name="action_no"
+                            attrs="{'invisible': [('is_cancel_req', '=', True)]}"/>
+                             <button string="Apply" class="btn btn-primary" type="object" name="action_apply"
+                            attrs="{'invisible': [('is_cancel_req', '=', False)]}"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

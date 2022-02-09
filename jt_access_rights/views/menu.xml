@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<odoo>
+	<!-- Conam Main Menu -->
+	<record model="ir.ui.menu" id="jt_conac.menu_root_conac">
+	  <field name="groups_id" eval="[(6,0,[ref('group_unam_conam')])]"/>
+	</record>	
+
+	<!-- Payment Main Menu -->
+	<record model="ir.ui.menu" id="jt_payroll_payment.menu_payroll_payment">
+	  <field name="groups_id" eval="[(6,0,[ref('group_unam_payment')])]"/>
+	</record>	
+
+	<!-- Payment Of Payroll Main Menu -->
+	<record model="ir.ui.menu" id="jt_payroll_payment.menu_payment_of_payroll">
+	  <field name="groups_id" eval="[(6,0,[ref('group_unam_payment_of_payroll')])]"/>
+	</record>	
+
+	<!-- Finance Main Menu -->
+	<record model="ir.ui.menu" id="jt_payroll_payment.menu_payment_finance">
+	  <field name="groups_id" eval="[(6,0,[ref('group_unam_finance')])]"/>
+	</record>	
+
+	<!-- Agreements Main Menu -->
+	<record model="ir.ui.menu" id="jt_agreement.menu_agreements">
+	  <field name="groups_id" eval="[(6,0,[ref('group_unam_agreements')])]"/>
+	</record>	
+
+	<!-- Income Main Menu -->
+	<record model="ir.ui.menu" id="jt_income.main_menu_income">
+	  <field name="groups_id" eval="[(6,0,[ref('group_unam_incomes')])]"/>
+	</record>	
+
+	<!-- Check Control Main Menu -->
+	<record model="ir.ui.menu" id="jt_check_controls.check_control_main_menu">
+	  <field name="groups_id" eval="[(6,0,[ref('group_unam_check_control')])]"/>
+	</record>	
+
+	<!-- Investments Main Menu -->
+	<record model="ir.ui.menu" id="jt_investment.main_menu_investment">
+	  <field name="groups_id" eval="[(6,0,[ref('group_unam_investment')])]"/>
+	</record>	
+
+	<!-- Budget Main Menu -->
+	<record model="ir.ui.menu" id="jt_budget_mgmt.menu_budget">
+	  <field name="groups_id" eval="[(6,0,[ref('group_unam_budget')])]"/>
+	</record>	
+	
+</odoo>

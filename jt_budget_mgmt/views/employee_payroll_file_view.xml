@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--        <record id="employee_payroll_file_inherit" model="ir.ui.view">-->
+<!--            <field name="name">employee.payroll.file.inherit.view</field>-->
+<!--            <field name="model">employee.payroll.file</field>-->
+<!--            <field name="inherit_id" ref="jt_payroll_payment.employee_payroll_file_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <field name="employee_number" position="after">-->
+<!--                    <field name="dependancy_id"/>-->
+<!--                    <field name="sub_dependancy_id"/>-->
+<!--                </field>-->
+<!--                <xpath expr="//sheet" position="inside">-->
+<!--                    <notebook>-->
+<!--                        <page string="Accounting" name="accounting">-->
+<!--                            <group>-->
+<!--                                <field name="program_code_id" attrs="{'readonly':[('state','=','done')]}"/>-->
+<!--                            </group>-->
+<!--                        </page>-->
+<!--                    </notebook>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="employee_payroll_file_form_processing_inherit" model="ir.ui.view">
+            <field name="name">employee.payroll.file.inherit.view.inherit</field>
+            <field name="model">employee.payroll.file</field>
+            <field name="inherit_id" ref="jt_payroll_payment.employee_payroll_file_form_processing"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field[@name='preception_line_ids']/tree/field[@name='description']" position="after">
+                	<field name="program_code_id"/>
+				</xpath>
+                <xpath expr="//notebook/page/field[@name='preception_line_ids']/form/group/field[@name='description']" position="after">
+                	<field name="program_code_id"/>
+				</xpath>
+
+                <xpath expr="//notebook/page[@name='additional_payments_line']/field[@name='additional_payments_line_ids']/tree/field[@name='description']"
+                       position="after">
+                	<field name="program_code_id"/>
+				</xpath>
+                <xpath expr="//notebook/page[@name='additional_payments_line']/field[@name='additional_payments_line_ids']/form/group/field[@name='description']"
+                       position="after">
+                	<field name="program_code_id"/>
+				</xpath>
+				<field name="total_deduction" position="before">
+                    <field name="total_preception"/>
+                </field>
+			</field>
+		</record>
+
+        <record id="employee_payroll_file_tree_process_inherit" model="ir.ui.view">
+            <field name="name">employee.payroll.file.tree.process.inherit</field>
+            <field name="model">employee.payroll.file</field>
+            <field name="inherit_id" ref="jt_payroll_payment.employee_payroll_file_tree_process"/>
+            <field name="arch" type="xml">
+            	<field name="name" position="after">
+            		<field name="total_deduction"/>
+            		<field name="total_preception"/>
+            	</field>
+			</field>
+		</record>		
+    </data>
+</odoo>

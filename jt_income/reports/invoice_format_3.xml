@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="invoice_format_3_document">
+            <t t-call="jt_income.external_layout_3">
+                </t>
+                <t t-set="o" t-value="o.with_context(lang=lang)" />
+                <br/><br/><br/><br/><br/><br/><br/>
+                <div class="page">
+                    <style>
+                        .main_box{
+                        position: relative;
+                        width: 410px;
+                        height: 70px;
+                        border: 2px solid black;
+                        }
+
+                        .box{
+
+                        position: absolute;
+                        left:15px;
+                        right:15px;
+                        width: 380px;
+                        height: 50px;
+                        top:5px;
+                        bottom:5px;
+                        border: 1px solid gray;
+                        padding-top:10px;
+                        color:red;
+                        font-size:20px;
+                        }
+
+                        .tab1 { 
+                                tab-size: 2; 
+                                text-indent: 5.0em; font-size:22px;
+                            } 
+                    </style>
+					<br/><br/>
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="width:50%;">
+                            	<!-- 
+                                <div class="main_box">
+                                    <div class="box"><b>FORMATO DE AVISO CAMBIO FORMA<br/>DE COBRO A TRANSFERENCIA</b></div>
+                                </div>
+                                 -->
+                            </td>
+
+                            <td style="width:50%;">
+                                <div style="text-align:left;font-size:20px;">
+                                    <b>Dirección General de Finanzas<br/>
+                                    Dirección de Ingresos y Op. Financiera<br/>Departamento de Ingresos<br/></b>
+                                </div>
+                            </td>
+                        </tr>
+							<tr>
+								<td style="width:50%;">
+									<br/><b><span t-field="o.template3_recipient_title"/>&#160;<span t-if="o.template3_recipient_emp_id" t-field="o.template3_recipient_emp_id.name"/>
+										<br/><span t-field="o.template3_recipient_professional_title"/>
+									</b>
+								</td>
+								<td style="width:50%;">
+									<b>Of. No. <span t-field="o.trade_no"/><br/>Asunto: 20% de Indemnización</b>
+								</td>
+							</tr>
+                        
+                    </table>
+
+                    <table style="width:100%;">
+                        <p style="font-size:20px;">
+                        <b><span t-field="o.addressee"/><br/>
+                        P r e s e n t e</b>
+                        </p>
+
+                        <p class="tab1">
+                            En respuesta a su Oficio No. <span t-field="o.legal_compensation"/>, le informo que su solicitud de condonación de indemnización del 20% establecida en la Circular <span t-field="o.circular_number"/> por cheque devuelto, por la <span t-field="o.dependancy_id.description"/>., por la cantidad de <span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>, excede las facultades de esta Dirección General de Finanzas.
+                        </p><br/>
+
+                        <p style="font-size:20px;">
+                            Con el objetivo de evitar en lo sucesivo las circunstancias que dieron origen a una eventual condonación, me permito sugerir que los pagos se realicen mediante transferencia bancaria a las cuentas señaladas en la circular en comento.
+                        </p><br/>
+
+                        <p style="font-size:20px;">
+                            Sin más por el momento, quedo de usted enviándole un cordial saludo.
+                        </p>
+						<t t-set="invoice_date" t-value="o.get_invoice_date_in_pdf()"/>
+                        <p style="font-size:20px;">
+                            <b>A t e n t a m e n t e<br/>
+                            “POR MI RAZA HABLARÁ EL ESPÍRITU”</b><br/>
+                            Ciudad Universitaria, Cd. Mex., <span t-esc="invoice_date"/> 
+                        </p>
+
+                        <div class="row" style="float:right;">
+                            <div class="col-6">
+                                <div>
+                                    <img t-attf-src="data:image/png;base64,{{res_company.sign}}" style="width:120px;height:100px;"/>
+                                </div>
+                            </div>
+                        </div>
+
+                    </table>
+                </div>
+        </template>
+
+        <template id="invoice_format_3">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="lang" t-value="o.invoice_user_id.sudo().lang if o.type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                    <t t-call="jt_income.invoice_format_3_document" t-lang="lang"/>
+                </t>
+            </t>
+        </template>
+
+            <record id="paperformat_invoice_format_3" model="report.paperformat">
+                <field name="name">Format 3</field>
+                <field name="default" eval="True"/>
+                <field name="format">A4</field>
+                <field name="orientation">Portrait</field>
+                <field name="margin_top">15</field>
+                <field name="margin_bottom">60</field>
+                <field name="margin_left">10</field>
+                <field name="margin_right">10</field>
+                <field name="header_line" eval="False"/>
+                <field name="header_spacing">5</field>
+                <field name="dpi">100</field>
+            </record>
+
+            <report 
+                id="invoice_pdf_format3_name"
+                model="account.move"
+                string="FORMATO DE AVISO CAMBIO FORMA DE COBRO A TRANSFERENCIA"
+                report_type="qweb-pdf"
+                name="jt_income.invoice_format_3"
+                file="jt_income.invoice_format_3"
+                paperformat="jt_income.paperformat_invoice_format_3"
+            />
+
+    </data>
+</odoo>

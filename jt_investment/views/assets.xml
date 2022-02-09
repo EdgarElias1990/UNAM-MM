@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="inv_assets_backend_calendar_color" inherit_id="web.assets_backend">
+		<xpath expr="." position="inside">
+            <script type="text/javascript" src="/jt_investment/static/src/js/calendar_view_extend.js"/>
+		</xpath>
+	</template>
+</odoo>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <template id="search_template_project_type">
+        <a type="button" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-book"/>
+            Project Type:
+            <t t-set="selected_project_type" t-value="options.get('name_journal_group') or ', '.join(c.get('name') for c in options['project_type'] if c.get('selected'))"/>
+            <t t-if="selected_project_type">
+                <t t-esc="selected_project_type"/>
+            </t>
+            <t t-else="">
+                
+            </t>
+        </a>
+         
+        <div class="dropdown-menu o_filters_menu" role="menu">
+            <t t-foreach="options['project_type']" t-as="j">
+                <t t-if="j.get('id') == 'divider'">
+                    <div role="separator" class="dropdown-divider"/>
+                    <b role="menuitem" class="ml4 dropdown-item-text"><t t-esc="j.get('name')"/></b>
+                    <div role="separator" class="dropdown-divider"/>
+                </t>
+                <t t-if="j.get('id') != 'divider'">
+                    <t>
+                        <a role="menuitem" class="dropdown-item js_account_report_choice_filter" t-att-title="j.get('name')" t-att-data-id="j.get('id')" data-filter="project_type">
+                            <t t-esc="j.get('name')"/>
+                        </a>
+                    </t>
+                </t>
+            </t>
+        </div>
+        
+    </template>
+
+    <template id="search_template_jt_projects_product_type" inherit_id="account_reports.search_template">
+        <xpath expr="." position="inside">
+            <div class="btn-group o_dropdown o_account_reports_filter_product_type" t-if="options.get('project_type') != None">
+                <t t-call="jt_projects.search_template_project_type"/>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="search_template_subdependancy">
+        <a type="button" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-book"/>
+            Sub Dependency:
+            <t t-set="selected_subdependancy" t-value="options.get('name_journal_group') or ', '.join(c.get('name') for c in options['subdependancy'] if c.get('selected'))"/>
+            <t t-if="selected_subdependancy">
+                <t t-esc="selected_subdependancy"/>
+            </t>
+            <t t-else="">
+                <span>All</span>         
+            </t>
+        </a>
+         
+        <div class="dropdown-menu o_filters_menu" role="menu">
+            <t t-foreach="options['subdependancy']" t-as="j">
+                <t t-if="j.get('id') == 'divider'">
+                    <div role="separator" class="dropdown-divider"/>
+                    <b role="menuitem" class="ml4 dropdown-item-text"><t t-esc="j.get('name')"/></b>
+                    <div role="separator" class="dropdown-divider"/>
+                </t>
+                <t t-if="j.get('id') != 'divider'">
+                    <t>
+                        <a role="menuitem" class="dropdown-item js_account_report_choice_filter" t-att-title="j.get('name')" t-att-data-id="j.get('id')" data-filter="subdependancy">
+                            <t t-esc="j.get('name')"/>
+                        </a>
+                    </t>
+                </t>
+            </t>
+        </div>
+    </template>
+
+    <template id="search_template_jt_projects_subdependancy" inherit_id="account_reports.search_template">
+        <xpath expr="." position="inside">
+            <div class="btn-group o_dropdown o_account_reports_filter_product_type" t-if="options.get('subdependancy') != None">
+                <t t-call="jt_projects.search_template_subdependancy"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<menuitem name="Purchases"
+            id="purchase.menu_purchase_root"
+            sequence="25"/>
+</odoo>

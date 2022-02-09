@@ -1,0 +1,211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* jt_utils
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0-20190522\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-13 09:39+0000\n"
+"PO-Revision-Date: 2019-07-13 09:39+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.res_config_settings_view_form
+msgid "<strong>Save</strong> this page before triggering the migration."
+msgstr "<strong>Speichern</strong>Sie diese Seite, bevor Sie die Migration auslösen."
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_attachment_search
+msgid "All Data"
+msgstr "Alle Daten"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_attachment_search
+msgid "Attached Document Field"
+msgstr "Dokumenten Feld"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_attachment_search
+msgid "Attached Document Model"
+msgstr "Dokumenten Model"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_ir_attachment
+msgid "Attachment"
+msgstr "Dateianhang"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.res_config_settings_view_form
+msgid "Attachment storage location"
+msgstr "Speicherort des Attachments"
+
+#. module: jt_utils
+#: model:ir.model.fields,help:jt_utils.field_res_config_settings__attachment_location
+msgid "Attachment storage location."
+msgstr "Speicherort des Attachments."
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_attachment_search
+msgid "Attachments"
+msgstr "Dateianhänge"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_base
+msgid "Base"
+msgstr "Basis"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__child_groups
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_mixins_groups_form
+msgid "Child Groups"
+msgstr "Untergruppen"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfiguration "
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__display_name
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_hierarchy__display_name
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_scss_editor__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__explicit_users
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_mixins_groups_form
+msgid "Explicit Users"
+msgstr "Explizite Benutzer"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_attachment_search
+msgid "Field Data"
+msgstr "Felddaten"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.res_config_settings_view_form
+msgid "Force Storage Migration"
+msgstr "Speichermigration erzwingen"
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_mixins_groups_form
+msgid "Group"
+msgstr "Gruppe"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_jt_utils_mixins_groups
+msgid "Group Mixin"
+msgstr "Gruppen Mixin"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__name
+msgid "Group Name"
+msgstr "Gruppenname"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__users
+msgid "Group Users"
+msgstr "Gruppenbenutzer"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__groups
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_mixins_groups_form
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_mixins_groups_tree
+msgid "Groups"
+msgstr "Gruppen"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_jt_utils_mixins_hierarchy
+msgid "Hierarchy Mixin"
+msgstr "Hierarchie Mixin"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__id
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_hierarchy__id
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_scss_editor__id
+msgid "ID"
+msgstr ""
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups____last_update
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_hierarchy____last_update
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_scss_editor____last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: jt_utils
+#: model:ir.actions.server,name:jt_utils.action_attachment_migrate
+msgid "Migrate"
+msgstr "Migrieren"
+
+#. module: jt_utils
+#: code:addons/jt_utils/models/ir_attachment.py:87
+#, python-format
+msgid "Only administrators can execute this action."
+msgstr ""
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__parent_group
+msgid "Parent Group"
+msgstr "Übergeordnete Gruppe"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__parent_path
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_hierarchy__parent_path
+msgid "Parent Path"
+msgstr "Übergeordneter Pfad"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_hierarchy__parent_path_json
+msgid "Path Json"
+msgstr "Json Pfad"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_hierarchy__parent_path_names
+msgid "Path Names"
+msgstr "Pfadnamen"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_jt_utils_scss_editor
+msgid "Scss Editor"
+msgstr ""
+
+#. module: jt_utils
+#: model_terms:ir.ui.view,arch_db:jt_utils.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_attachment_form
+msgid "Storage"
+msgstr "Speicher"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_res_config_settings__attachment_location
+msgid "Storage Location"
+msgstr "Speicherort"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_res_config_settings__attachment_location_changed
+msgid "Storage Location Changed"
+msgstr "Speicherort geändert"
+
+#. module: jt_utils
+#: model:ir.model,name:jt_utils.model_ir_config_parameter
+msgid "System Parameter"
+msgstr "Systemparameter"
+
+#. module: jt_utils
+#: sql_constraint:jt_utils.mixins.groups:0
+msgid "The name of the group must be unique!"
+msgstr "Der Name der Gruppe muss einzigartig sein!"
+
+#. module: jt_utils
+#: model:ir.model.fields,field_description:jt_utils.field_jt_utils_mixins_groups__count_users
+#: model_terms:ir.ui.view,arch_db:jt_utils.view_mixins_groups_form
+msgid "Users"
+msgstr "Benutzer"
+

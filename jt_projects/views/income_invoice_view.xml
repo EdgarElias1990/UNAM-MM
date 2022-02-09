@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="account_invoice_income_form_view_inherit" model="ir.ui.view">
+            <field name="name">account.invoice.income.form.view.inherit</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="jt_income.account_invoice_income_form_view"/>
+            <field name="arch" type="xml">
+            	<field name="conacyt_project_key" position='attributes'>
+            		<attribute name="domain">[('project_type','!=',False)]</attribute>  
+            	</field>
+ 			</field>
+ 		</record>    
+    </data>
+ </odoo>

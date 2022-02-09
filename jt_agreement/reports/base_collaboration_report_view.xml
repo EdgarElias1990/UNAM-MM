@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="bases_collaboration_resemble_report_template">
+            <t t-call="web.html_container">
+                <div class="page">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="row mt32 mb32">
+                        <div class="col-12" style='text-align:left;margin-top:40px;'>
+                            <b><span style="font-size:30px;" >ESTADO DE CUENTA</span></b><br/><br/><br/><br/>
+                            <span style="font-size:20px"><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/></span><br/>
+                            <span style="font-size:20px;" >UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</span><br/>
+                            
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <table style="width:100%">
+                        <thead>
+                            <tr  style="font-size:25px;font-weight:bold;">
+                                <th class='text-right'>Fecha</th>
+                                <th class='text-right'>Operación</th>
+                                <th class='text-right'>Depósitos</th>
+                                <th class='text-right'>Retiro</th>
+                                <th class='text-right'>Saldo</th>
+                            </tr>
+                        </thead>
+
+                    <tbody>
+	                    	<t t-set="total_final" t-value="opening_bal"/>
+	                    	<t t-set="total_inc" t-value="0"/>
+	                    	<t t-set="total_ret" t-value="0"/>
+	                    	
+	                    	<t t-set="total_final" t-value="0"/>
+	                    	<t t-set="total_debit" t-value="0"/>
+	                    	<t t-set="total_credit" t-value="0"/>
+                    
+                    	 <t t-foreach="docs" t-as="o">
+	                    	<tr>
+	                    		<td></td>
+	                    		<td></td>
+	                    		<td></td>
+	                    		<td></td>
+	                    		<td class="style1 border1" style="text-align:right;"><span t-esc="opening_bal"/></td>
+	                    	</tr>
+	                    	 <tr style="font-size:20px;">
+                                    <td style="text-align:left;">Convenio:<span t-field="o.name"/></td>
+                                    <td style="text-align:left;">Num.de Convenio:<span t-field="o.n_report"/></td>
+                                    <td style="text-align:left;"></td>
+                                    <td style="text-align:left;"></td>
+                                    <td style="text-align:left;"></td>       
+                                </tr>
+	                    	
+		                    <tr class="style1" t-foreach="o.get_report_lines()" t-as="line">
+		                    
+		                        <td class="style1 border1" style="text-align:left;"><span t-esc="line['date']"/></td>
+		                        <td class="style1 border1" style="text-align:left;"><span t-esc="line['opt']"/></td>
+		                        <td class="style1 border1" style="text-align:right;"><span t-esc="line['debit']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+		                        <td class="style1 border1" style="text-align:right;"><span t-esc="line['credit']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+		                        <td class="style1 border1" style="text-align:right;"><span t-esc="line['final']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+		                        <t t-set="total_final" t-value="line['final']"/>
+		                        <t t-set="total_debit" t-value="total_debit + line['debit']"/>
+	                    		<t t-set="total_credit" t-value="total_credit + line['credit']"/>
+		                        
+		                    </tr>
+		                   </t>
+		                   
+	                        <tr>
+	                        	<th>Total</th>
+	                        	<th></th>
+		                        <th class="style1 border1" style="text-align:right;">$ <span t-esc="total_debit"/></th>
+		                        <th class="style1 border1" style="text-align:right;">$ <span t-esc="total_credit" /></th>
+		                        <th class="style1 border1" style="text-align:right;">$ <span t-esc="total_final" /></th>
+	                        </tr>
+	                       </tbody>
+                    </table>
+                </div>
+            </t>
+        </template>
+
+        <record id="paperformat_bases_collaboration" model="report.paperformat">
+            <field name="name">Format 1</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="margin_top">6</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="dpi">100</field>
+        </record>
+
+        <report 
+            id="bases_collaboration_view_report"
+            model="bases.collaboration"
+            string="Account Statement"
+            report_type="qweb-pdf"
+            name="jt_agreement.bases_collaboration_resemble_report_template"
+            file="jt_agreement.bases_collaboration_resemble_report_template"
+            print_report_name="object.name"
+            paperformat="jt_agreement.paperformat_bases_collaboration"
+            menu="False"
+        
+        />
+
+    </data>
+</odoo>

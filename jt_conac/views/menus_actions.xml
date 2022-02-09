@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+            id="menu_root_conac"
+            name="CONAC"
+            sequence="1"
+            web_icon="jt_conac,static/description/icon.png"
+        />
+
+        <menuitem
+            id="menu_overview_conac"
+            name="Overview"
+            parent="jt_conac.menu_root_conac"
+            sequence="1"
+            action="account.open_account_journal_dashboard_kanban"
+        />
+
+        <!-- Change action -->
+        <menuitem
+            id="menu_accounting_conac"
+            name="Accounting"
+            parent="jt_conac.menu_root_conac"
+            sequence="2"
+        />
+
+        <menuitem
+            id="menu_miscelleneous"
+            name="Miscellaneous"
+            parent="jt_conac.menu_accounting_conac"
+            sequence="0"
+        />
+
+
+
+        <menuitem
+            id="menu_reporting_conac"
+            name="Reporting"
+            parent="jt_conac.menu_root_conac"
+            sequence="3"
+        />
+
+        <menuitem
+            id="menu_child_reporting_conac"
+            name="Reporting"
+            parent="jt_conac.menu_reporting_conac"
+            sequence="0"
+        />
+
+        <record id="action_coa_conac_report" model="ir.actions.client">
+            <field name="name">COA CONAC</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_conac.coa.conac.report'}" />
+        </record>
+
+        <menuitem
+            id="menu_coa_report"
+            name="COA CONAC"
+            parent="jt_conac.menu_child_reporting_conac"
+            sequence="0"
+            action="action_coa_conac_report"
+        />
+
+        <record id="action_financial_position_report" model="ir.actions.client">
+            <field name="name">Statement of Financial Position</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_conac.financial.position.report'}" />
+        </record>
+
+        <menuitem
+            id="menu_financial_position_report"
+            name="Statement of Financial Position"
+            parent="jt_conac.menu_child_reporting_conac"
+            sequence="1"
+            action="action_financial_position_report"
+        />
+
+        <record id="action_status_of_activities_report" model="ir.actions.client">
+            <field name="name">Status of Activities</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_conac.status.of.activities.report'}" />
+        </record>
+
+        <menuitem
+            id="menu_status_of_activities_report"
+            name="Status of Activities"
+            parent="jt_conac.menu_child_reporting_conac"
+            sequence="2"
+            action="action_status_of_activities_report"
+        />
+
+        <record id="action_state_of_variation_report" model="ir.actions.client">
+            <field name="name">State of Variation in the Public Treasury</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_conac.state.of.variation.report'}" />
+        </record>
+
+        <menuitem
+            id="menu_state_of_variation_report"
+            name="State of Variation in the Public Treasury"
+            parent="jt_conac.menu_child_reporting_conac"
+            sequence="3"
+            action="action_state_of_variation_report"
+        />
+
+        <record id="action_analytical_status_of_assets_report" model="ir.actions.client">
+            <field name="name">Analytical Status of Assets</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_conac.analytical.status.of.assets.report'}" />
+        </record>
+
+        <menuitem
+            id="menu_analytical_status_of_assets_report"
+            name="Analytical Status of Assets"
+            parent="jt_conac.menu_child_reporting_conac"
+            sequence="4"
+            action="action_analytical_status_of_assets_report"
+        />
+
+        <record id="action_analytical_status_of_debts_report" model="ir.actions.client">
+            <field name="name">Analytical Statement of Debt and Other Liabilities</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_conac.analytical.status.of.debts.report'}" />
+        </record>
+
+        <menuitem
+            id="menu_analytical_status_of_debts_report"
+            name="Analytical Statement of Debt and Other Liabilities"
+            parent="jt_conac.menu_child_reporting_conac"
+            sequence="5"
+            action="action_analytical_status_of_debts_report"
+        />
+
+        <record id="action_statement_of_changes_report" model="ir.actions.client">
+            <field name="name">Statement of Changes in the Financial Position</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_conac.statement.of.changes.report'}" />
+        </record>
+
+        <menuitem
+            id="menu_statement_of_changes_report"
+            name="Statement of Changes in the Financial Position"
+            parent="jt_conac.menu_child_reporting_conac"
+            sequence="6"
+            action="action_statement_of_changes_report"
+        />
+
+        <record id="action_statement_of_cash_report" model="ir.actions.client">
+            <field name="name">Statement of Cash Flows</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_conac.statement.of.cash.report'}" />
+        </record>
+
+        <menuitem
+            id="menu_statement_of_cash_report"
+            name="Statement of Cash Flows"
+            parent="jt_conac.menu_child_reporting_conac"
+            sequence="7"
+            action="action_statement_of_cash_report"
+        />
+
+        <record id="action_analytical_income_statement_report" model="ir.actions.client">
+            <field name="name">Analytical Income Statement</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_conac.analytical.income.statement.report'}" />
+        </record>
+
+        <menuitem
+            id="menu_analytical_income_statement_report"
+            name="Analytical Income Statement"
+            parent="jt_conac.menu_child_reporting_conac"
+            sequence="8"
+            action="action_analytical_income_statement_report"
+        />
+
+        <record id="action_status_of_expenditure_report" model="ir.actions.client">
+            <field name="name">Analytical Status of the Expenditure Budget Exercise</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_conac.status.of.expenditure.report'}" />
+        </record>
+
+        <menuitem
+            id="menu_status_of_expenditure_report"
+            name="Analytical Status of the Expenditure Budget Exercise"
+            parent="jt_conac.menu_child_reporting_conac"
+            sequence="9"
+            action="action_status_of_expenditure_report"
+        />
+
+        <record id="action_states_and_program_report" model="ir.actions.client">
+            <field name="name">States and Program Reports</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'jt_conac.states.and.program.report'}" />
+        </record>
+
+        <menuitem
+            id="menu_states_and_program_report"
+            name="States and Program Reports"
+            parent="jt_conac.menu_child_reporting_conac"
+            sequence="10"
+            action="action_states_and_program_report"
+        />
+
+        <menuitem
+            id="menu_configuration_conac"
+            name="Configuration"
+            parent="jt_conac.menu_root_conac"
+            sequence="40"
+            action="account.open_account_journal_dashboard_kanban"
+            groups="base.group_system,base.group_erp_manager"
+        />
+
+        <menuitem
+            id="menu_accounting_conf_conac"
+            name="Accounting"
+            parent="jt_conac.menu_configuration_conac"
+            sequence="0"
+        />
+
+        <menuitem
+            id="menu_coa_conac_conac"
+            name="Chart Of Accounts CONAC"
+            parent="jt_conac.menu_accounting_conf_conac"
+            sequence="0"
+            action="jt_conac.action_view_coa_conac"
+        />
+
+        <menuitem
+            id="menu_coa_conac"
+            name="Chart Of Accounts"
+            parent="jt_conac.menu_accounting_conf_conac"
+            sequence="1"
+            action="jt_conac.action_coa_view"
+        />
+
+        <menuitem
+            id="menu_cog_conac"
+            name="COG CONAC"
+            parent="jt_conac.menu_accounting_conf_conac"
+            sequence="2"
+            action="jt_conac.action_view_cog_conac"
+        />
+
+        <menuitem
+            id="menu_journals_conac"
+            name="Journals"
+            parent="jt_conac.menu_accounting_conf_conac"
+            sequence="9"
+            action="account.action_account_journal_form"
+        />
+
+        <menuitem
+            id="menu_currency_conac"
+            name="Currencies"
+            parent="jt_conac.menu_accounting_conf_conac"
+            sequence="10"
+            action="base.action_currency_form"
+        />
+
+        <menuitem
+            id="menu_debt_statement"
+            name="Statement of Debt"
+            parent="jt_conac.menu_accounting_conf_conac"
+            sequence="11"
+            action="jt_conac.action_view_debt_statement"
+        />
+
+        <menuitem
+            id="menu_cash_statement"
+            name="Statement of Cash"
+            parent="jt_conac.menu_accounting_conf_conac"
+            sequence="12"
+            action="jt_conac.action_view_cash_statement"
+        />
+
+        <menuitem
+            id="menu_income_statement"
+            name="Statement of Income"
+            parent="jt_conac.menu_accounting_conf_conac"
+            sequence="13"
+            action="jt_conac.action_view_income_statement"
+        />
+
+        <menuitem
+            id="menu_expenditure_status"
+            name="Status of Expenditure"
+            parent="jt_conac.menu_accounting_conf_conac"
+            sequence="14"
+            action="jt_conac.action_view_expenditure_status"
+        />
+
+        <menuitem
+            id="menu_states_program"
+            name="States and Program"
+            parent="jt_conac.menu_accounting_conf_conac"
+            sequence="15"
+            action="jt_conac.action_view_states_program"
+        />
+    </data>
+</odoo>

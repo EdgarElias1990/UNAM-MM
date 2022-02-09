@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search view for agreement type model -->
+        <record id="agreement_type_search_view" model="ir.ui.view">
+            <field name="name">agreement.type.search.view</field>
+            <field name="model">agreement.type</field>
+            <field name="arch" type="xml">
+                <search string="Agreement type">
+                    <field name="number"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Number" name='number' context="{'group_by':'number'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- form view for agreement type model -->
+        <record id="agreement_type_form_view" model="ir.ui.view">
+            <field name="name">agreement.type.form.view</field>
+            <field name="model">agreement.type</field>
+            <field name="arch" type="xml">
+                <form create="0" edit="0">
+                    <sheet>
+                        <group>
+                            <field name="project_id" required="1"/>
+                            <field name="name_agreement"/>
+                            <field name="number_agreement"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree view for agreement type model -->
+        <record id="agreement_type_tree_view" model="ir.ui.view">
+            <field name="name">agreement.type.tree.view</field>
+            <field name="model">agreement.type</field>
+            <field name="arch" type="xml">
+                <tree create="0" edit="0">
+                    <field name="project_id"/>
+                    <field name="name" invisible="1"/>
+                    <field name="number" invisible="1"/>
+                    <field name="project_type_identifier" invisible="1"/>
+                    <field name="stage_identifier" invisible="1"/>
+                    <field name="agreement_type" invisible="1"/>
+                    <field name="name_agreement" />
+                    <field name="number_agreement" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- action for agreement type views -->
+        <record id="action_agreement_type" model="ir.actions.act_window">
+            <field name="name">Type of agreement (TC)</field>
+            <field name="res_model">agreement.type</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="agreement_type_tree_view"/>
+            <field name="context">{'display_name_custom': 'agreement_type'}</field>
+        </record>
+    </data>
+</odoo>

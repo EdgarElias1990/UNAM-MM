@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<odoo>
+        <record id="group_unam_conam" model="res.groups">
+            <field name="name">CONAC</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="group_unam_payment" model="res.groups">
+            <field name="name">Payment</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="group_unam_payment_of_payroll" model="res.groups">
+            <field name="name">Payment of Payroll</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="group_unam_finance" model="res.groups">
+            <field name="name">Finance</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="group_unam_agreements" model="res.groups">
+            <field name="name">Agreements</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="group_unam_incomes" model="res.groups">
+            <field name="name">Incomes</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="group_unam_check_control" model="res.groups">
+            <field name="name">Check Control</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="group_unam_investment" model="res.groups">
+            <field name="name">Investment</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="group_unam_budget" model="res.groups">
+            <field name="name">UNAM Budget</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        
+</odoo>

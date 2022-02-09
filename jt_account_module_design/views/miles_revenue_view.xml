@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="miles_revenue_form_view" model="ir.ui.view">
+			<field name="name">Miles Revenue Form View</field>
+            <field name="model">miles.revenue</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="concept" required="1"/>
+                            <field name="account_ids" widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+		</record>
+
+        <record id="miles_revenue_tree_view" model="ir.ui.view">
+            <field name="name">Miles Revenue Tree view</field>
+            <field name="model">miles.revenue</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="concept" />
+                    <field name="account_ids" widget="many2many_tags"/>
+                </tree>
+            </field>
+         </record>
+
+         <record id="miles_revenue_action" model="ir.actions.act_window">
+            <field name="name">Miles Revenue</field>
+            <field name="res_model">miles.revenue</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="miles_revenue_menu" name="Miles Revenue"  action="miles_revenue_action" parent="menu_conf_item" sequence="2"/>
+
+	</data>
+</odoo>

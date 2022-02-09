@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_payment_batch_project" model="ir.actions.act_window">
+            <field name="name">Payment Batch(Project)</field>
+            <field name="res_model">payment.batch.supplier</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type_of_batch','=','project')]</field>
+            <field name="context">{'from_approve_check':1,'default_type_of_batch':'project','readonly_bank_fields':True}</field>
+        </record>
+
+        <menuitem id="payment_batch_project_menu" name="Payment Batch(Project)"
+                  parent="payment_batch_main_menu"
+                  action="action_payment_batch_project" sequence="5"/>
+
+		<!-- Menu Into Finance -->
+
+        <menuitem id="payment_batch_project_menu_finance" name="Payment Batch(Project)"
+                  parent="payment_batch_menu_finance"
+                  action="action_payment_batch_project" sequence="5"/>
+		                  
+	</data>
+</odoo>

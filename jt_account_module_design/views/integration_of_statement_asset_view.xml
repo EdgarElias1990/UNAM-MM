@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="integration_asset_form_view" model="ir.ui.view">
+			<field name="name">Integration Asset Form View</field>
+            <field name="model">integration.statement.asset</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="concept" required="1"/>
+                            <field name="account_ids" widget="many2many_tags" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+		</record>
+
+        <record id="integration_asset_tree_view" model="ir.ui.view">
+            <field name="name">Integration Asset Tree view</field>
+            <field name="model">integration.statement.asset</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="concept" />
+                    <field name="account_ids" widget="many2many_tags"/>
+                </tree>
+            </field>
+         </record>
+
+         <record id="integration_asset_action" model="ir.actions.act_window">
+            <field name="name">State Partimonial Situation</field>
+            <field name="res_model">integration.statement.asset</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_conf_item" name="Configuration Item Accounting"
+                 sequence="101"
+                 parent="account.menu_finance_configuration"
+         />
+
+        <menuitem id="integration_asset_menu" name="State Partimonial Situation"  action="integration_asset_action" parent="menu_conf_item" sequence="1"/>
+
+	</data>
+</odoo>

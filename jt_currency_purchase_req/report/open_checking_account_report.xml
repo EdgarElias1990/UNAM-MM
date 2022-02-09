@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="external_layout_header_check_registration1">
+            <div t-attf-class="header o_company_#{company.id}_layout">
+                <div class="row">
+                    <div class="col-2" align="left">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                             style="max-height: 150px;" alt="Logo"/>
+                    </div>
+                    <div class="col-4" style="padding-left:15px;padding-top:7px;padding-right:0px;">
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">UNIVERSITY BOARD OF TRUSTEES</p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            TREASURY
+                        </p>
+                    </div>
+                    <div class="col-6" align="left" style="padding-right:0;padding-left:0px;">
+                        <img src="/jt_currency_purchase_req/static/src/img/dgf.png"
+                             style="max-height:100px;width:54%"/>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            GENERAL DIRECTORATE OF FINANCE
+                        </p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;">
+                            DIRECTORATE OF REVENUE AND FINANCIAL OPERATIONS
+                        </p>
+                        <p style="margin-top:0;margin-bottom:0;font-size:15px;padding-left:10px;">
+                            <strong>Oficio No:</strong><span t-field="o.account_modification_id.no_trade"/><br/>
+                            <strong>No. Solicitude:</strong><span t-field="o.account_modification_id.invoice"/><br/>
+                            <strong>Asunsto:</strong>Checking Account Opening<br/>
+                        </p>
+    
+                    </div>
+                </div>
+               
+            </div>
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"
+                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+                <div class="row">
+                    <div class="col-8" align="left" style="font-size:15px">
+                        <span>Sin Particular ,agradecemos la atencion a la presente y aprovechamos la oportunidad para enviarle un cordial saludo.</span><br/>
+                        <span style="font-size:15px">
+                            Kind regards,
+                            <br/>
+                        </span>
+                        <span style="font-size:15px;">
+                            "BY MY RACE THE SPIRIT WILL SPEAK"
+                        </span><br/>
+                        <span style="font-size:15px;">
+                            Ciudad Universitaria, Cd. Mx., A<strong style="padding-left:15px;"><t t-esc="o.account_modification_id.modification_date"/></strong>
+                            <br/>
+                        </span>
+                    </div>
+                    <div class="col-4" align="right">
+                        <img src="/jt_currency_purchase_req/static/src/img/sign.png"
+                             style="max-height:100px;width:50%;"/>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <t t-set="trade" t-value="o.get_sender_recipet2()"/>
+                    <div class="col-6" align="left">
+                        <t t-if="trade">
+                                <t>
+                                    <span style="font-size:15px;" t-esc="trade.sender_title"/>
+                                    <span style="font-size:15px;" t-esc="trade.sender_emp_id.name"/><br/>
+                                    <span style="font-size:15px">Treasurer of the UNAM</span>
+                                </t>
+                            </t>
+                            
+                    </div>
+                    <div class="col-6" align="right">
+                         <t t-if="trade">
+                                <t>
+                                    <span style="font-size:15px;" t-esc="trade.recipient_title"/>
+                                    <span style="font-size:15px;" t-esc="trade.executive_id.name"/><br/>
+                                    <span style="font-size:15px;">General Director Of Finance</span>
+                                </t>                            
+                            </t>
+                            
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                
+                
+            </div>
+        </template>
+
+        <template id="external_layout_check_registration1">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="jt_currency_purchase_req.external_layout_header_check_registration1">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+        <template id="check_account_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <!--                    <t t-if="o.state == 'approved'">-->
+
+                    <t t-call="jt_currency_purchase_req.external_layout_check_registration1">
+                        <div class="page">
+                            <br/><br/><br/><br/><br/><br/><br/>
+                            <div class="row">
+                                <div class="col-12" align="right">
+                                    <p><b>Dependencia:</b><span t-field="o.dependancy_id.dependency"/><span t-field="o.dependancy_id.description"/></p>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-6" align="left" style="font-size:15px;">
+                                    <t>
+                                        <span t-field="o.bank_id.name"/>
+                                        <br/>
+                                        <span t-field="o.bank_id.street" t-if="o.bank_id.street"/>,<span t-field="o.bank_id.street2" t-if="o.bank_id.street2"/>,<span t-field="o.bank_id.zip" t-if="o.bank_id.zip"/>,<br/><span t-field="o.bank_id.state" t-if="o.bank_id.state"/>,<span t-field="o.bank_id.country" t-if="o.bank_id.country"/>.
+                                    </t>
+                                </div>
+                                <div class="col-6">
+                                    <t t-foreach="o.bank_account_id.executive_ids" t-as="data" t-if="o.bank_account_id">
+                                        <p><b>Atn:</b><span t-field="data.name"/>,
+                                            <span t-field="data.position"/>,
+                                            <span t-field="data.email"/>
+                                        </p>        
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p style="padding-left:25px;">By means of this document,we allow ourselves to request that youopen a non-productive checking account according to the following guidelines<br/>
+                                    <span>Name of the UNAM account:<b><span t-field="o.bank_account_id.unam_account_name"/></b></span>
+                                    <br/>
+                                    <span>Concept:<b><span t-field="o.bank_account_id.concept_id"/></b></span><br/>
+                                    <span><b>Object of the Comes Alive​ to: Specific Account:</b></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6 style="padding-left:45px;">Persons authorized to sign:</h6>
+                                    
+                                    <center>
+                                    <table class="table-bordered" style="font-size:15px;width:auto;height:100%;" cellspacing="10px" cellpadding="10px">
+                                        <thead style="font-weight:bold;">
+                                            <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Ownership</th>
+                                            <th>Type Of signature</th>
+                                            
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr t-foreach="o.bank_account_id.auth_sign_ids" t-as="auth">
+                                                <td><span t-field="auth.employee_id.name"/></td>
+                                                <td><span t-field="auth.poistion"/></td>
+                                                <td><span t-field="auth.ownership"/></td>
+                                                <td><span t-field="auth.type_of_signature"/></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </center><br/>
+                                <p style="font-size:16px;margin-top:50px;">The conditions of the signatures pooled as follows: 2 of 4 (“A” with “A”) we also request the allocation of 100 checks</p>
+
+                                </div>
+                            </div>
+                            <br/><br/><br/><br/>
+                                
+                            <div class="row">
+                                <div class="col-12" style="margin-top:50px;">
+                                    <p style="text-align:justify;"><b>This account must be linked to the <u><t t-esc="o.bank_account_id.contract_number" t-if="o.bank_account_id"/></u> contracts that are in the name of the National Autonomous University of Mexico and register it in the check protection service.</b></p><br/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 style="font-size:15px;">Attached information:</h5>
+                                    <ul>
+                                      <li>Copy of the Organic Law of UNAM</li>
+                                      <li>Copy of the internal regulations of the P University BoardTrustees</li>
+                                      <li>ofCopy of the deed testimony 102. 430. PA Vol. 4749, pages 665254 Issued by the Public Notary 153, which contains the powers granted in favor of the Treasurer and the Director General of Finance as legal
+                                      representatives of the UNAM</li>
+                                      <li>Copy of the RFC of the UNAM</li>
+                                      <li>Copy of proof of address</li>
+                                      <li>Copy of the identifications of the signatories</li>
+                                    </ul>  
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_check_account" model="report.paperformat">
+            <field name="name">Open Checking Account</field>
+            <field name="default" eval="True"/>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">80</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="open_checking_account_action"
+                model="account.open"
+                string="Open a Checking Account"
+                report_type="qweb-pdf"
+                name="jt_currency_purchase_req.check_account_template"
+                file="jt_currency_purchase_req.check_account_template"
+                paperformat="jt_currency_purchase_req.paperformat_check_account"
+        />
+
+    </data>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="summary_report_template">
+		<div class="o_main"></div>
+		<div class="o_control_panel">
+			<ol class="breadcrumb" role="navigation">
+				<li class="breadcrumb-item active">Proforma Budget Summary Report</li>
+			</ol>
+			<div class="o_cp_searchview" role="search"></div>
+			<div class="o_cp_left">
+				<div aria-label="Control panel toolbar" class="o_cp_buttons" role="toolbar">
+                    <button class="btn btn-primary summary_print_pdf" type="button">Export to PDF</button>
+                    <button class="btn btn-primary summary_print_xls" type="button">Export (XLSX)</button>
+                </div>
+				<aside class="o_cp_sidebar"></aside>
+			</div>
+			<div class="o_cp_right">
+				<!-- <div class="btn-group o_search_options position-static" role="search">
+					<t t-call="{{model._get_templates()['line_template']}}"/>
+				</div> -->
+					<!-- <div class="btn-group o_dropdown o_account_reports_filter_date"> -->
+					<!-- <div class="btn-group o_dropdown o_account_reports_filter_partner"> -->
+						<!-- <t t-call="account_reports.search_template_date_filter"/> -->
+						<!-- <template id="summary_report_inherit" inherit_id="account_reports.search_template_date_filter">
+							<xpath expr="//ul[@class='dropdown-menu o_filters_menu']/t[1]" position="after">
+								<span>HII...</span>
+							</xpath>
+						</template> -->
+						<!-- <template id="search_template_partner">
+						    <a type="button" class="dropdown-toggle account_partner_filter" data-toggle="dropdown">
+						        <span class="fa fa-folder-open"/> Partners
+						    </a>
+						    <ul class="dropdown-menu o_filters_menu" role="menu">
+						        <li class="o_account_report_search js_account_partner_m2m"/>
+						    </ul>
+						</template> -->
+					<!-- </div> -->
+			</div>
+		</div>
+		<div class="o_content">
+			<div>
+				<div class="o_summary_reports_body">
+					<div>
+						<center>
+							<h3>Please go to <b>UNAM Budget >> Reports >> Proforma Budget Summary</b> to print report.</h3>
+						</center>
+					</div>
+				</div>
+			</div>
+		</div>
+    </t>
+</templates>

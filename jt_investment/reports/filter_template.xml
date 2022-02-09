@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="search_template_funds">
+        <a type="button" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-book"/>
+            Funds:
+            <t t-set="selected_fund" t-value="options.get('name_journal_group') or ', '.join(c.get('name') for c in options['funds'] if c.get('selected'))"/>
+            <t t-if="selected_fund">
+                <t t-esc="selected_fund"/>
+            </t>
+            <t t-else="">
+                <span>All</span>
+            </t>
+        </a>
+         
+        <div class="dropdown-menu o_filters_menu" role="menu">
+            <t t-foreach="options['funds']" t-as="j">
+                <t t-if="j.get('id') == 'divider'">
+                    <div role="separator" class="dropdown-divider"/>
+                    <b role="menuitem" class="ml4 dropdown-item-text"><t t-esc="j.get('name')"/></b>
+                    <div role="separator" class="dropdown-divider"/>
+                </t>
+                <t t-if="j.get('id') != 'divider'">
+                    <t>
+                        <a role="menuitem" class="dropdown-item js_account_report_choice_filter" t-att-title="j.get('name')" t-att-data-id="j.get('id')" data-filter="funds">
+                            <t t-esc="j.get('name')"/>
+                        </a>
+                    </t>
+                </t>
+            </t>
+        </div>
+        
+    </template>
+
+    <template id="search_template_jt_investment" inherit_id="account_reports.search_template">
+        <xpath expr="." position="inside">
+            <div class="btn-group o_dropdown o_account_reports_filter_fund" t-if="options.get('funds') != None">
+                <t t-call="jt_investment.search_template_funds"/>
+            </div>
+        </xpath>
+    </template>
+
+
+    <template id="search_template_contract">
+        <a type="button" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-book"/>
+            Contract:
+            <t t-set="selected_contract" t-value="options.get('name_journal_group') or ', '.join(c.get('name') for c in options['contract'] if c.get('selected'))"/>
+            <t t-if="selected_contract">
+                <t t-esc="selected_contract"/>
+            </t>
+            <t t-else="">
+                <span>All</span>
+            </t>
+        </a>
+         
+        <div class="dropdown-menu o_filters_menu" role="menu">
+            <t t-foreach="options['contract']" t-as="j">
+                <t t-if="j.get('id') == 'divider'">
+                    <div role="separator" class="dropdown-divider"/>
+                    <b role="menuitem" class="ml4 dropdown-item-text"><t t-esc="j.get('name')"/></b>
+                    <div role="separator" class="dropdown-divider"/>
+                </t>
+                <t t-if="j.get('id') != 'divider'">
+                    <t>
+                        <a role="menuitem" class="dropdown-item js_account_report_choice_filter" t-att-title="j.get('name')" t-att-data-id="j.get('id')" data-filter="contract">
+                            <t t-esc="j.get('name')"/>
+                        </a>
+                    </t>
+                </t>
+            </t>
+        </div>
+        
+    </template>
+
+    <template id="search_contract_template_jt_investment" inherit_id="account_reports.search_template">
+        <xpath expr="." position="inside">
+            <div class="btn-group o_dropdown o_account_reports_filter_fund" t-if="options.get('contract') != None">
+                <t t-call="jt_investment.search_template_contract"/>
+            </div>
+        </xpath>
+    </template>
+
+
+    <template id="search_template_bank">
+        <a type="button" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-book"/>
+            Bank:
+            <t t-set="selected_bank" t-value="options.get('name_journal_group') or ', '.join(c.get('name') for c in options['bank'] if c.get('selected'))"/>
+            <t t-if="selected_bank">
+                <t t-esc="selected_bank"/>
+            </t>
+            <t t-else="">
+                <span>All</span>
+            </t>
+        </a>
+         
+        <div class="dropdown-menu o_filters_menu" role="menu">
+            <t t-foreach="options['bank']" t-as="j">
+                <t t-if="j.get('id') == 'divider'">
+                    <div role="separator" class="dropdown-divider"/>
+                    <b role="menuitem" class="ml4 dropdown-item-text"><t t-esc="j.get('name')"/></b>
+                    <div role="separator" class="dropdown-divider"/>
+                </t>
+                <t t-if="j.get('id') != 'divider'">
+                    <t>
+                        <a role="menuitem" class="dropdown-item js_account_report_choice_filter" t-att-title="j.get('name')" t-att-data-id="j.get('id')" data-filter="bank">
+                            <t t-esc="j.get('name')"/>
+                        </a>
+                    </t>
+                </t>
+            </t>
+        </div>
+        
+    </template>
+
+    <template id="search_bank_template_jt_investment" inherit_id="account_reports.search_template">
+        <xpath expr="." position="inside">
+            <div class="btn-group o_dropdown o_account_reports_filter_fund" t-if="options.get('bank') != None">
+                <t t-call="jt_investment.search_template_bank"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
